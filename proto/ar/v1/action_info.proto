@@ -16,6 +16,7 @@ enum ActionGroup {
   ACTION_GROUP_TASK = 3;
 }
 
+// TODO: Rename to ActionDefinition
 message ActionInfoMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;

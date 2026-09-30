@@ -3,11 +3,6 @@
 
 ## Table of Contents
 
-- [common/v1/actor.proto](#common_v1_actor-proto)
-    - [ActorRef](#common-v1-ActorRef)
-  
-    - [ActorKind](#common-v1-ActorKind)
-  
 - [validation/v1/predefined_string_rules.proto](#validation_v1_predefined_string_rules-proto)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
@@ -52,6 +47,19 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+  
+- [ar/v1/provenance.proto](#ar_v1_provenance-proto)
+    - [ARContentProvenance](#ar-v1-ARContentProvenance)
+  
+    - [ARContentOrigin](#ar-v1-ARContentOrigin)
+    - [AdaptiveParticipation](#ar-v1-AdaptiveParticipation)
+  
+- [common/v1/actor.proto](#common_v1_actor-proto)
+    - [ActorRef](#common-v1-ActorRef)
+  
+    - [ActorKind](#common-v1-ActorKind)
   
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
@@ -77,6 +85,7 @@
     - [ActionMessage](#ar-v1-ActionMessage)
     - [ActionMessages](#ar-v1-ActionMessages)
     - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
+    - [RequestActionOwnership](#ar-v1-RequestActionOwnership)
   
     - [ActionType](#ar-v1-ActionType)
   
@@ -110,6 +119,11 @@
     - [ARContextSlotType](#ar-v1-ARContextSlotType)
     - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
     - [ARRunSelection](#ar-v1-ARRunSelection)
+  
+- [ar/v1/presentation_binding.proto](#ar_v1_presentation_binding-proto)
+    - [PresentationBinding](#ar-v1-PresentationBinding)
+    - [PresentationBindingReset](#ar-v1-PresentationBindingReset)
+    - [PresentationBindingUpdate](#ar-v1-PresentationBindingUpdate)
   
 - [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
     - [ARConfigAddMessage](#ar-v1-ARConfigAddMessage)
@@ -175,12 +189,30 @@
     - [FeedbackMessage](#ar-v1-FeedbackMessage)
     - [FeedbackMessages](#ar-v1-FeedbackMessages)
     - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
+    - [RequestFeedbackOwnership](#ar-v1-RequestFeedbackOwnership)
   
     - [FeedbackType](#ar-v1-FeedbackType)
-    - [VisibilityScope](#ar-v1-VisibilityScope)
+  
+- [ar/v1/property_influence.proto](#ar_v1_property_influence-proto)
+    - [PropertyInfluence](#ar-v1-PropertyInfluence)
+  
+    - [AssistanceScalingAxis](#ar-v1-AssistanceScalingAxis)
+    - [PropertyInfluenceType](#ar-v1-PropertyInfluenceType)
+  
+- [ar/v1/semantic_source.proto](#ar_v1_semantic_source-proto)
+    - [SemanticSourceRequirement](#ar-v1-SemanticSourceRequirement)
+  
+    - [AssistanceSemantic](#ar-v1-AssistanceSemantic)
+    - [SemanticSourceType](#ar-v1-SemanticSourceType)
+    - [SemanticValueType](#ar-v1-SemanticValueType)
+  
+- [ar/v1/feedback_capability.proto](#ar_v1_feedback_capability-proto)
+    - [FeedbackCapability](#ar-v1-FeedbackCapability)
+  
+- [ar/v1/feedback_features.proto](#ar_v1_feedback_features-proto)
+    - [FeedbackFeature](#ar-v1-FeedbackFeature)
   
 - [ar/v1/feedback_info.proto](#ar_v1_feedback_info-proto)
-    - [FeedbackCapability](#ar-v1-FeedbackCapability)
     - [FeedbackInfoMessage](#ar-v1-FeedbackInfoMessage)
     - [FeedbackInfoMessages](#ar-v1-FeedbackInfoMessages)
   
@@ -199,6 +231,18 @@
     - [FunctionInfoMessages](#ar-v1-FunctionInfoMessages)
   
     - [FunctionGroup](#ar-v1-FunctionGroup)
+  
+- [ar/v1/presentation_strategy.proto](#ar_v1_presentation_strategy-proto)
+    - [AssistancePresentationRule](#ar-v1-AssistancePresentationRule)
+    - [PresentationFidelityAnchor](#ar-v1-PresentationFidelityAnchor)
+    - [PresentationRole](#ar-v1-PresentationRole)
+    - [PresentationRolePreset](#ar-v1-PresentationRolePreset)
+    - [PresentationStrategies](#ar-v1-PresentationStrategies)
+    - [PresentationStrategy](#ar-v1-PresentationStrategy)
+    - [PresentationStrategyAdd](#ar-v1-PresentationStrategyAdd)
+    - [PropertyValueAssignment](#ar-v1-PropertyValueAssignment)
+  
+    - [PresentationFidelity](#ar-v1-PresentationFidelity)
   
 - [common/v1/enums.proto](#common_v1_enums-proto)
     - [CollaborationMode](#common-v1-CollaborationMode)
@@ -678,6 +722,162 @@
 
 
 
+<a name="validation_v1_predefined_string_rules-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## validation/v1/predefined_string_rules.proto
+
+
+ 
+
+ 
+
+
+<a name="validation_v1_predefined_string_rules-proto-extensions"></a>
+
+### File-level Extensions
+| Extension | Type | Base | Number | Description |
+| --------- | ---- | ---- | ------ | ----------- |
+| action_id_component | bool | .buf.validate.StringRules | 10041 |  |
+| actor_assignment_id_component | bool | .buf.validate.StringRules | 100039 |  |
+| actor_availability_id_component | bool | .buf.validate.StringRules | 100038 |  |
+| ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
+| ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
+| ar_config_instance_id_component | bool | .buf.validate.StringRules | 100030 |  |
+| ar_input_slot_id_component | bool | .buf.validate.StringRules | 100031 |  |
+| asset_definition_id_component | bool | .buf.validate.StringRules | 10006 |  |
+| asset_instance_id_component | bool | .buf.validate.StringRules | 10007 |  |
+| cell_id_component | bool | .buf.validate.StringRules | 10023 |  |
+| container_definition_id_component | bool | .buf.validate.StringRules | 10025 |  |
+| container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
+| device_id_component | bool | .buf.validate.StringRules | 100036 |  |
+| environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| feedback_id_component | bool | .buf.validate.StringRules | 10040 |  |
+| fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
+| function_id_component | bool | .buf.validate.StringRules | 10042 |  |
+| image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
+| key_component | bool | .buf.validate.StringRules | 10044 |  |
+| line_id_component | bool | .buf.validate.StringRules | 10024 |  |
+| marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
+| model_asset_id_component | bool | .buf.validate.StringRules | 100032 |  |
+| model_id_component | bool | .buf.validate.StringRules | 10001 |  |
+| name_component | bool | .buf.validate.StringRules | 10000 |  |
+| part_definition_id_component | bool | .buf.validate.StringRules | 10009 |  |
+| part_instance_id_component | bool | .buf.validate.StringRules | 10010 |  |
+| presentation_strategy_id_component | bool | .buf.validate.StringRules | 10043 |  |
+| process_recipe_id_component | bool | .buf.validate.StringRules | 10020 |  |
+| process_run_id_component | bool | .buf.validate.StringRules | 10017 |  |
+| product_id_component | bool | .buf.validate.StringRules | 100028 |  |
+| property_definition_id_component | bool | .buf.validate.StringRules | 10003 |  |
+| property_instance_id_component | bool | .buf.validate.StringRules | 10035 |  |
+| robot_definition_id_component | bool | .buf.validate.StringRules | 10004 |  |
+| robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
+| sequence_definition_id_component | bool | .buf.validate.StringRules | 10021 |  |
+| sequence_run_id_component | bool | .buf.validate.StringRules | 10018 |  |
+| sidecar_asset_id_component | bool | .buf.validate.StringRules | 100033 |  |
+| skill_id_component | bool | .buf.validate.StringRules | 10016 |  |
+| station_id_component | bool | .buf.validate.StringRules | 10015 |  |
+| task_definition_id_component | bool | .buf.validate.StringRules | 10022 |  |
+| task_run_id_component | bool | .buf.validate.StringRules | 10019 |  |
+| tool_definition_id_component | bool | .buf.validate.StringRules | 10011 |  |
+| tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
+| worker_id_component | bool | .buf.validate.StringRules | 100027 |  |
+| zone_id_component | bool | .buf.validate.StringRules | 100037 |  |
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_provenance-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/provenance.proto
+
+
+
+<a name="ar-v1-ARContentProvenance"></a>
+
+### ARContentProvenance
+Describes ownership and adaptive lifecycle semantics for AR content.
+
+Valid states:
+Origin	    Participation	  Meaning
+Strategy	  Managed	        Automatically created/reconciled by strategy
+Author	    Available	      Author owns it, resolver may use/adapt it within bounds
+Author	    Fixed	          Normal authored content, resolver leaves it alone
+
+source_strategy_id is populated only for STRATEGY-owned content.
+
+The following state diagram should be possible:
+                   ┌──────────────────────┐
+                   │ STRATEGY / MANAGED   │
+                   └──────────┬───────────┘
+                              │
+                     &#34;Take ownership&#34;
+                              │
+                              ▼
+                   ┌──────────────────────┐
+             ┌────&gt;│ AUTHOR / AVAILABLE   │
+             │     └──────────┬───────────┘
+             │                │
+         enable               │ disable
+       adaptation             │ adaptation
+             │                ▼
+             │     ┌──────────────────────┐
+             └─────│ AUTHOR / FIXED       │
+                   └──────────────────────┘
+Where the system might have to create/delete {Strategy, Managed} when moving between: {Author, Available} &lt;--&gt; {Author, Fixed}
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| origin | [ARContentOrigin](#ar-v1-ARContentOrigin) |  |  |
+| participation | [AdaptiveParticipation](#ar-v1-AdaptiveParticipation) |  |  |
+| source_strategy_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ARContentOrigin"></a>
+
+### ARContentOrigin
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CONTENT_ORIGIN_UNSPECIFIED | 0 |  |
+| AR_CONTENT_ORIGIN_AUTHOR | 1 | Created and owned by an AR author. |
+| AR_CONTENT_ORIGIN_STRATEGY | 2 | Created by PresentationStrategy reconciliation. |
+
+
+
+<a name="ar-v1-AdaptiveParticipation"></a>
+
+### AdaptiveParticipation
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ADAPTIVE_PARTICIPATION_UNSPECIFIED | 0 |  |
+| ADAPTIVE_PARTICIPATION_FIXED | 1 | Ordinary authored content. The adaptive resolver must not select, configure, replace, or remove this entity. |
+| ADAPTIVE_PARTICIPATION_AVAILABLE | 2 | Author-owned content that may be selected/configured by the active PresentationStrategy, subject to its adaptation envelope. |
+| ADAPTIVE_PARTICIPATION_MANAGED | 3 | Strategy-owned content whose lifecycle is controlled by reconciliation. |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="common_v1_actor-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -717,72 +917,6 @@
 
 
  
-
- 
-
- 
-
-
-
-<a name="validation_v1_predefined_string_rules-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## validation/v1/predefined_string_rules.proto
-
-
- 
-
- 
-
-
-<a name="validation_v1_predefined_string_rules-proto-extensions"></a>
-
-### File-level Extensions
-| Extension | Type | Base | Number | Description |
-| --------- | ---- | ---- | ------ | ----------- |
-| action_id_component | bool | .buf.validate.StringRules | 10041 |  |
-| actor_assignment_id_component | bool | .buf.validate.StringRules | 100039 |  |
-| actor_availability_id_component | bool | .buf.validate.StringRules | 100038 |  |
-| ar_config_binding_id_component | bool | .buf.validate.StringRules | 100029 |  |
-| ar_config_id_component | bool | .buf.validate.StringRules | 10002 |  |
-| ar_config_instance_id_component | bool | .buf.validate.StringRules | 100030 |  |
-| ar_input_slot_id_component | bool | .buf.validate.StringRules | 100031 |  |
-| asset_definition_id_component | bool | .buf.validate.StringRules | 10006 |  |
-| asset_instance_id_component | bool | .buf.validate.StringRules | 10007 |  |
-| cell_id_component | bool | .buf.validate.StringRules | 10023 |  |
-| container_definition_id_component | bool | .buf.validate.StringRules | 10025 |  |
-| container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
-| device_id_component | bool | .buf.validate.StringRules | 100036 |  |
-| environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
-| feedback_id_component | bool | .buf.validate.StringRules | 10040 |  |
-| fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
-| function_id_component | bool | .buf.validate.StringRules | 10042 |  |
-| image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
-| line_id_component | bool | .buf.validate.StringRules | 10024 |  |
-| marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
-| model_asset_id_component | bool | .buf.validate.StringRules | 100032 |  |
-| model_id_component | bool | .buf.validate.StringRules | 10001 |  |
-| name_component | bool | .buf.validate.StringRules | 10000 |  |
-| part_definition_id_component | bool | .buf.validate.StringRules | 10009 |  |
-| part_instance_id_component | bool | .buf.validate.StringRules | 10010 |  |
-| process_recipe_id_component | bool | .buf.validate.StringRules | 10020 |  |
-| process_run_id_component | bool | .buf.validate.StringRules | 10017 |  |
-| product_id_component | bool | .buf.validate.StringRules | 100028 |  |
-| property_definition_id_component | bool | .buf.validate.StringRules | 10003 |  |
-| property_instance_id_component | bool | .buf.validate.StringRules | 10035 |  |
-| robot_definition_id_component | bool | .buf.validate.StringRules | 10004 |  |
-| robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
-| sequence_definition_id_component | bool | .buf.validate.StringRules | 10021 |  |
-| sequence_run_id_component | bool | .buf.validate.StringRules | 10018 |  |
-| sidecar_asset_id_component | bool | .buf.validate.StringRules | 100033 |  |
-| skill_id_component | bool | .buf.validate.StringRules | 10016 |  |
-| station_id_component | bool | .buf.validate.StringRules | 10015 |  |
-| task_definition_id_component | bool | .buf.validate.StringRules | 10022 |  |
-| task_run_id_component | bool | .buf.validate.StringRules | 10019 |  |
-| tool_definition_id_component | bool | .buf.validate.StringRules | 10011 |  |
-| tool_instance_id_component | bool | .buf.validate.StringRules | 10012 |  |
-| worker_id_component | bool | .buf.validate.StringRules | 100027 |  |
-| zone_id_component | bool | .buf.validate.StringRules | 100037 |  |
 
  
 
@@ -1146,6 +1280,7 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | type | [ActionType](#ar-v1-ActionType) |  |  |
 | eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
 | config_id | [string](#string) |  |  |
+| provenance | [ARContentProvenance](#ar-v1-ARContentProvenance) |  |  |
 
 
 
@@ -1180,6 +1315,24 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | eligibility_requirements | [capability.v1.SkillRequirement](#capability-v1-SkillRequirement) | repeated |  |
+| participation | [AdaptiveParticipation](#ar-v1-AdaptiveParticipation) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-RequestActionOwnership"></a>
+
+### RequestActionOwnership
+Request action ownership.
+Only possible to be called on a STRATEGY/MANAGED action.
+It will result in AUTHOR/AVAILABLE.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
 
 
 
@@ -1203,6 +1356,8 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | ACTION_TYPE_TASK_HIGHLIGHT | 14 | Requests that a task be visually emphasized. |
 | ACTION_TYPE_TASK_HELP | 15 | Requests help for a task. |
 | ACTION_TYPE_TASK_IN_PROGRESS | 16 | Marks a task as being in progress. |
+| ACTION_TYPE_TASK_MORE_ASSISTANCE | 17 | Requests more assistance for a task. |
+| ACTION_TYPE_TASK_LESS_ASSISTANCE | 18 | Requests less assistance for a task. |
 | ACTION_TYPE_ROBOT_PLAY_PAUSE | 50 | Toggles robot execution between playing and paused. |
 | ACTION_TYPE_ROBOT_ACKNOWLEDGE | 51 | Acknowledges a robot notification or request. |
 | ACTION_TYPE_ROBOT_FREE_DRIVE | 52 | Enables or disables the robot&#39;s free-drive mode. |
@@ -1411,7 +1566,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 <a name="ar-v1-ActionInfoMessage"></a>
 
 ### ActionInfoMessage
-
+TODO: Rename to ActionDefinition
 
 
 | Field | Type | Label | Description |
@@ -1718,6 +1873,75 @@ The selected task need not currently be workable. Tasks that cannot be assigned 
 
 
 
+<a name="ar_v1_presentation_binding-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/presentation_binding.proto
+
+
+
+<a name="ar-v1-PresentationBinding"></a>
+
+### PresentationBinding
+Binds one PresentationRole from the ARConfig&#39;s active PresentationStrategy
+to one concrete AR-content entity owned by the same ARConfig.
+
+Functions are intentionally not presentation bindings. Supporting Functions
+are implementation dependencies and should be reconciled by the backend.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| role_key | [string](#string) |  |  |
+| feedback_id | [string](#string) |  |  |
+| action_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationBindingReset"></a>
+
+### PresentationBindingReset
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| role_key | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationBindingUpdate"></a>
+
+### PresentationBindingUpdate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| binding | [PresentationBinding](#ar-v1-PresentationBinding) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_ar_config-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1738,6 +1962,7 @@ The selected task need not currently be workable. Tasks that cannot be assigned 
 | description | [string](#string) |  |  |
 | primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| presentation_strategy_id | [string](#string) |  |  |
 
 
 
@@ -1795,6 +2020,8 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 | primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
 | input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
+| presentation_strategy_id | [string](#string) |  | no strategy --&gt; traditional/manual ARConfig, strategy --&gt; adaptive presentation is enabled |
+| presentation_bindings | [PresentationBinding](#ar-v1-PresentationBinding) | repeated |  |
 
 
 
@@ -1829,6 +2056,7 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| presentation_strategy_id | [string](#string) |  |  |
 
 
 
@@ -2716,7 +2944,6 @@ instance owned by the target station or cell.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 | robot_property_id | [string](#string) |  | If required, this should point to a property definition of type ROBOT |
 | anchor | [geometry.v1.Anchor](#geometry-v1-Anchor) |  |  |
 | link_default_properties | [bool](#bool) |  |  |
@@ -2739,8 +2966,8 @@ instance owned by the target station or cell.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
-| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
 | config_id | [string](#string) |  |  |
+| provenance | [ARContentProvenance](#ar-v1-ARContentProvenance) |  |  |
 
 
 
@@ -2774,7 +3001,24 @@ instance owned by the target station or cell.
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
-| visibility_scope | [VisibilityScope](#ar-v1-VisibilityScope) |  |  |
+| participation | [AdaptiveParticipation](#ar-v1-AdaptiveParticipation) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-RequestFeedbackOwnership"></a>
+
+### RequestFeedbackOwnership
+Request feedback ownership.
+Only possible to be called on STRATEGY/MANAGED feedback.
+It will result in AUTHOR/AVAILABLE
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
 
 
 
@@ -2868,20 +3112,238 @@ Custom training video       MANUAL_ONLY
 | FEEDBACK_TYPE_PLAY_SOUND | 204 |  |
 
 
+ 
 
-<a name="ar-v1-VisibilityScope"></a>
+ 
 
-### VisibilityScope
+ 
+
+
+
+<a name="ar_v1_property_influence-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/property_influence.proto
+
+
+
+<a name="ar-v1-PropertyInfluence"></a>
+
+### PropertyInfluence
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| property_key | [string](#string) |  |  |
+| axis | [AssistanceScalingAxis](#ar-v1-AssistanceScalingAxis) |  |  |
+| influence | [PropertyInfluenceType](#ar-v1-PropertyInfluenceType) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-AssistanceScalingAxis"></a>
+
+### AssistanceScalingAxis
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| VISIBILITY_SCOPE_UNSPECIFIED | 0 | No visibility scope has been specified. |
-| VISIBILITY_SCOPE_ALWAYS | 1 | Shows the feedback regardless of the selected guidance level. |
-| VISIBILITY_SCOPE_LOW_GUIDANCE | 2 | Shows the feedback at the low guidance level. |
-| VISIBILITY_SCOPE_MEDIUM_GUIDANCE | 3 | Shows the feedback at the medium guidance level. |
-| VISIBILITY_SCOPE_FULL_GUIDANCE | 4 | Shows the feedback at the full guidance level. |
+| ASSISTANCE_SCALING_AXIS_UNSPECIFIED | 0 |  |
+| ASSISTANCE_SCALING_AXIS_PRESENTATION | 1 |  |
+| ASSISTANCE_SCALING_AXIS_SEMANTIC_DETAIL | 2 |  |
+| ASSISTANCE_SCALING_AXIS_SCOPE | 3 |  |
 
+
+
+<a name="ar-v1-PropertyInfluenceType"></a>
+
+### PropertyInfluenceType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROPERTY_INFLUENCE_TYPE_UNSPECIFIED | 0 |  |
+| PROPERTY_INFLUENCE_TYPE_MODULATES | 1 | Changes strength along an axis. |
+| PROPERTY_INFLUENCE_TYPE_ENABLES | 2 | Property enables/disables a capability or additional information. |
+| PROPERTY_INFLUENCE_TYPE_SELECTS | 3 | Property selects between discrete representations/modes. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_semantic_source-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/semantic_source.proto
+
+
+
+<a name="ar-v1-SemanticSourceRequirement"></a>
+
+### SemanticSourceRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| source | [SemanticSourceType](#ar-v1-SemanticSourceType) |  |  |
+| value_type | [SemanticValueType](#ar-v1-SemanticValueType) |  |  |
+| optional | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-AssistanceSemantic"></a>
+
+### AssistanceSemantic
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSISTANCE_SEMANTIC_UNSPECIFIED | 0 |  |
+| ASSISTANCE_SEMANTIC_LOCATE_ENTITY | 1 |  |
+| ASSISTANCE_SEMANTIC_DIRECT_ATTENTION | 2 |  |
+| ASSISTANCE_SEMANTIC_SHOW_TARGET_POSITION | 10 |  |
+| ASSISTANCE_SEMANTIC_SHOW_TARGET_ORIENTATION | 11 |  |
+| ASSISTANCE_SEMANTIC_SUPPORT_ALIGNMENT | 12 |  |
+| ASSISTANCE_SEMANTIC_COMMUNICATE_ACTION | 20 |  |
+| ASSISTANCE_SEMANTIC_COMMUNICATE_CONSTRAINT | 21 |  |
+| ASSISTANCE_SEMANTIC_COMMUNICATE_EXCEPTION | 22 |  |
+| ASSISTANCE_SEMANTIC_COMMUNICATE_VARIANT | 23 |  |
+| ASSISTANCE_SEMANTIC_REQUEST_ACKNOWLEDGEMENT | 30 |  |
+| ASSISTANCE_SEMANTIC_VERIFY_STATE | 31 |  |
+| ASSISTANCE_SEMANTIC_ESTABLISH_COMPLETION | 32 |  |
+| ASSISTANCE_SEMANTIC_PRESENT_ACTION | 40 |  |
+| ASSISTANCE_SEMANTIC_COMMUNICATE_ACTION_CONSEQUENCE | 41 |  |
+| ASSISTANCE_SEMANTIC_PROTECT_ACTION | 42 |  |
+
+
+
+<a name="ar-v1-SemanticSourceType"></a>
+
+### SemanticSourceType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEMANTIC_SOURCE_TYPE_UNSPECIFIED | 0 |  |
+| SEMANTIC_SOURCE_TYPE_ACTION | 1 |  |
+| SEMANTIC_SOURCE_TYPE_SUBJECT | 2 |  |
+| SEMANTIC_SOURCE_TYPE_SUBJECT_LABEL | 3 |  |
+| SEMANTIC_SOURCE_TYPE_SUBJECT_GEOMETRY | 4 |  |
+| SEMANTIC_SOURCE_TYPE_CURRENT_POSE | 10 |  |
+| SEMANTIC_SOURCE_TYPE_TARGET_POSE | 11 |  |
+| SEMANTIC_SOURCE_TYPE_CONSTRAINT | 20 |  |
+| SEMANTIC_SOURCE_TYPE_COMPLETION_CRITERION | 21 |  |
+| SEMANTIC_SOURCE_TYPE_VARIANT_CONTEXT | 22 |  |
+| SEMANTIC_SOURCE_TYPE_PROCESS_TRANSITION | 30 |  |
+
+
+
+<a name="ar-v1-SemanticValueType"></a>
+
+### SemanticValueType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SEMANTIC_VALUE_TYPE_UNSPECIFIED | 0 |  |
+| SEMANTIC_VALUE_TYPE_ENTITY | 1 |  |
+| SEMANTIC_VALUE_TYPE_FACT | 2 |  |
+| SEMANTIC_VALUE_TYPE_ACTION | 3 |  |
+| SEMANTIC_VALUE_TYPE_SPATIAL_ANCHOR | 10 |  |
+| SEMANTIC_VALUE_TYPE_POSE | 11 |  |
+| SEMANTIC_VALUE_TYPE_GEOMETRY | 12 |  |
+| SEMANTIC_VALUE_TYPE_PATH | 13 |  |
+| SEMANTIC_VALUE_TYPE_REGION | 14 |  |
+| SEMANTIC_VALUE_TYPE_PROCESS_TRANSITION | 20 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_feedback_capability-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/feedback_capability.proto
+
+
+
+<a name="ar-v1-FeedbackCapability"></a>
+
+### FeedbackCapability
+Capability says what assistance it can provide.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| semantic | [AssistanceSemantic](#ar-v1-AssistanceSemantic) |  |  |
+| target_types | [SemanticValueType](#ar-v1-SemanticValueType) | repeated | Empty target_types means the capability does not impose a target-type restriction. |
+| source_requirements | [SemanticSourceRequirement](#ar-v1-SemanticSourceRequirement) | repeated |  |
+| property_influences | [PropertyInfluence](#ar-v1-PropertyInfluence) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_feedback_features-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/feedback_features.proto
+
+
+
+<a name="ar-v1-FeedbackFeature"></a>
+
+### FeedbackFeature
+Describes a type-level behavior supported by a feedback implementation.
+Capability metadata is server-owned and intended for read-only discovery by
+authoring clients. It does not describe whether a particular feedback
+instance is currently active.
+
+Feature says what behavior/configuration the implementation exposes.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | Stable machine-readable feature identifier. |
+| description | [string](#string) |  | Human-readable explanation shown by authoring tools. |
+| property_keys | [string](#string) | repeated | Stable PropertyDefinition keys used to configure this feature. |
+
+
+
+
+
+ 
 
  
 
@@ -2898,30 +3360,10 @@ Custom training video       MANUAL_ONLY
 
 
 
-<a name="ar-v1-FeedbackCapability"></a>
-
-### FeedbackCapability
-Describes a type-level behavior supported by a feedback implementation.
-Capability metadata is server-owned and intended for read-only discovery by
-authoring clients. It does not describe whether a particular feedback
-instance is currently active.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [string](#string) |  | Stable machine-readable capability identifier. |
-| description | [string](#string) |  | Human-readable explanation shown by authoring tools. |
-| property_keys | [string](#string) | repeated | Stable PropertyDefinition keys used to configure this capability. |
-
-
-
-
-
-
 <a name="ar-v1-FeedbackInfoMessage"></a>
 
 ### FeedbackInfoMessage
-
+TODO: Rename to FeedbackDefinition
 
 
 | Field | Type | Label | Description |
@@ -2938,7 +3380,8 @@ instance is currently active.
 | required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react) |
 | emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
 | disabled | [bool](#bool) |  |  |
-| capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Optional behaviors supported by this feedback type. |
+| features | [FeedbackFeature](#ar-v1-FeedbackFeature) | repeated | Implementation/configuration features |
+| capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Assistance semantics |
 
 
 
@@ -3027,6 +3470,7 @@ instance is currently active.
 | description | [string](#string) |  |  |
 | type | [FunctionType](#ar-v1-FunctionType) |  |  |
 | config_id | [string](#string) |  |  |
+| provenance | [ARContentProvenance](#ar-v1-ARContentProvenance) |  |  |
 
 
 
@@ -3176,6 +3620,210 @@ instance is currently active.
 | FUNCTION_GROUP_LOGIC | 7 | Boolean operations and predicates. |
 | FUNCTION_GROUP_DATA | 8 | Formatting, conversion, parsing, and other value transformations. |
 | FUNCTION_GROUP_TEMPORAL | 9 | Functions related to durations, timing, and schedules. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_presentation_strategy-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/presentation_strategy.proto
+
+
+
+<a name="ar-v1-AssistancePresentationRule"></a>
+
+### AssistancePresentationRule
+Describes how one communicative assistance semantic is presented across
+authored fidelity landmarks.
+
+Example:
+SHOW_TARGET_POSITION:
+  LOW  -&gt; target_overview
+  HIGH -&gt; target_pose
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| semantic | [AssistanceSemantic](#ar-v1-AssistanceSemantic) |  |  |
+| anchors | [PresentationFidelityAnchor](#ar-v1-PresentationFidelityAnchor) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationFidelityAnchor"></a>
+
+### PresentationFidelityAnchor
+A discrete authored landmark for satisfying one AssistanceSemantic.
+
+target_coverage is local to the owning AssistancePresentationRule. It should
+not be interpreted as a global assistance/expertise score.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fidelity | [PresentationFidelity](#ar-v1-PresentationFidelity) |  |  |
+| target_coverage | [double](#double) |  |  |
+| presentations | [PresentationRolePreset](#ar-v1-PresentationRolePreset) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationRole"></a>
+
+### PresentationRole
+A role is a reusable slot in a PresentationStrategy.
+
+Examples:
+  target_overview
+  target_pose
+  task_instruction
+  task_complete
+
+Roles do not reference concrete ARConfig entities. PresentationBinding
+performs that mapping for each ARConfig using the strategy.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| required_semantics | [AssistanceSemantic](#ar-v1-AssistanceSemantic) | repeated | Assistance semantics that an implementation of this role must support.
+
+For Feedback, these are checked against FeedbackInfoMessage.capabilities. Action compatibility may initially also depend on ActionType until semantic Action capabilities are introduced. |
+| default_feedback_type | [FeedbackType](#ar-v1-FeedbackType) | optional | Default implementation created by reconciliation when the role has no compatible explicit binding. |
+| default_action_type | [ActionType](#ar-v1-ActionType) | optional |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationRolePreset"></a>
+
+### PresentationRolePreset
+Configures one strategy role at a particular fidelity anchor.
+
+role_key references PresentationRole.key in the same strategy.
+Cross-message validation is performed by the backend.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| role_key | [string](#string) |  |  |
+| properties | [PropertyValueAssignment](#ar-v1-PropertyValueAssignment) | repeated | Desired adaptive values for the AR content bound to this role.
+
+The backend/runtime must validate that each key exists for the bound implementation, has a compatible PropertyType, and is permitted to adapt. |
+
+
+
+
+
+
+<a name="ar-v1-PresentationStrategies"></a>
+
+### PresentationStrategies
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PresentationStrategy](#ar-v1-PresentationStrategy) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationStrategy"></a>
+
+### PresentationStrategy
+PresentationStrategy can be used by ARConfigs. One strategy can be used by multiple ARConfigs.
+A PresentationStrategy should define:
+ - WHAT representation / fidelity
+ARConfig defaults
+ - visual language / styling
+Feedback adaptation envelope
+ - what this particular Feedback may change
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| key | [string](#string) |  | Stable machine-readable identifier, useful for seeded/default strategies. Example: &#34;adaptive_assembly_default&#34;. |
+| roles | [PresentationRole](#ar-v1-PresentationRole) | repeated |  |
+| rules | [AssistancePresentationRule](#ar-v1-AssistancePresentationRule) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationStrategyAdd"></a>
+
+### PresentationStrategyAdd
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PropertyValueAssignment"></a>
+
+### PropertyValueAssignment
+Assigns a desired value to a property identified by its stable,
+type-level PropertyDefinition.key.
+
+This does not reference a concrete PropertyInstance. The active ARConfig
+resolves property_key against the Feedback or Action currently bound to
+the presentation role.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| property_key | [string](#string) |  |  |
+| value | [common.v1.PropertyValue](#common-v1-PropertyValue) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-PresentationFidelity"></a>
+
+### PresentationFidelity
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PRESENTATION_FIDELITY_UNSPECIFIED | 0 |  |
+| PRESENTATION_FIDELITY_LOW | 1 |  |
+| PRESENTATION_FIDELITY_MEDIUM | 2 |  |
+| PRESENTATION_FIDELITY_HIGH | 3 |  |
 
 
  
@@ -4806,7 +5454,7 @@ across workcells. Concrete runtime bindings belong in runtime.v1.TaskRun.
 <a name="process-v1-TaskExecutionPolicy"></a>
 
 ### TaskExecutionPolicy
-TODO: ActorUnavailabilityPolicy 2 and 3 only allowed when `can_reassign = true`
+
 
 
 | Field | Type | Label | Description |
@@ -9305,11 +9953,14 @@ is represented by TASK_RUN_STATE_DONE.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TASK_PROGRESS_PHASE_UNSPECIFIED | 0 |  |
-| TASK_PROGRESS_PHASE_LOCATING | 1 | The actor is finding the target, part, tool, or work area. |
-| TASK_PROGRESS_PHASE_APPROACHING | 2 | The actor is moving toward the target or preferred pre-target pose. |
-| TASK_PROGRESS_PHASE_POSITIONING | 3 | The actor is aligning, inserting, or otherwise establishing the target pose. |
-| TASK_PROGRESS_PHASE_VERIFYING | 4 | The task result is being checked against its validation requirements. |
-| TASK_PROGRESS_PHASE_READY_TO_COMPLETE | 5 | All known requirements are satisfied and the task may be completed. |
+| TASK_PROGRESS_PHASE_PREPARING | 1 | The actor is preparing for starting the task |
+| TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES | 2 | The actor is acquiring resources for the task |
+| TASK_PROGRESS_PHASE_LOCATING | 3 | The actor is finding the target, part, tool, or work area. |
+| TASK_PROGRESS_PHASE_APPROACHING | 4 | The actor is moving toward the target or preferred pre-target pose. |
+| TASK_PROGRESS_PHASE_EXECUTING | 5 | The actor is executing the task |
+| TASK_PROGRESS_PHASE_POSITIONING | 6 | The actor is aligning, inserting, or otherwise establishing the target pose. |
+| TASK_PROGRESS_PHASE_VERIFYING | 7 | The task result is being checked against its validation requirements. |
+| TASK_PROGRESS_PHASE_READY_TO_COMPLETE | 8 | All known requirements are satisfied and the task may be completed. |
 
 
 

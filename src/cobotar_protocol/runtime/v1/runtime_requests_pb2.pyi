@@ -21,8 +21,11 @@ class TaskStateRequest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 class TaskProgressPhase(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     TASK_PROGRESS_PHASE_UNSPECIFIED: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_PREPARING: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES: _ClassVar[TaskProgressPhase]
     TASK_PROGRESS_PHASE_LOCATING: _ClassVar[TaskProgressPhase]
     TASK_PROGRESS_PHASE_APPROACHING: _ClassVar[TaskProgressPhase]
+    TASK_PROGRESS_PHASE_EXECUTING: _ClassVar[TaskProgressPhase]
     TASK_PROGRESS_PHASE_POSITIONING: _ClassVar[TaskProgressPhase]
     TASK_PROGRESS_PHASE_VERIFYING: _ClassVar[TaskProgressPhase]
     TASK_PROGRESS_PHASE_READY_TO_COMPLETE: _ClassVar[TaskProgressPhase]
@@ -33,8 +36,11 @@ TASK_STATE_REQUEST_UNDO: TaskStateRequest
 TASK_STATE_REQUEST_ERROR: TaskStateRequest
 TASK_STATE_REQUEST_SUSPENDED: TaskStateRequest
 TASK_PROGRESS_PHASE_UNSPECIFIED: TaskProgressPhase
+TASK_PROGRESS_PHASE_PREPARING: TaskProgressPhase
+TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES: TaskProgressPhase
 TASK_PROGRESS_PHASE_LOCATING: TaskProgressPhase
 TASK_PROGRESS_PHASE_APPROACHING: TaskProgressPhase
+TASK_PROGRESS_PHASE_EXECUTING: TaskProgressPhase
 TASK_PROGRESS_PHASE_POSITIONING: TaskProgressPhase
 TASK_PROGRESS_PHASE_VERIFYING: TaskProgressPhase
 TASK_PROGRESS_PHASE_READY_TO_COMPLETE: TaskProgressPhase

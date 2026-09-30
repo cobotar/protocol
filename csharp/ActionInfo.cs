@@ -68,6 +68,9 @@ namespace Messages.AR.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// TODO: Rename to ActionDefinition
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ActionInfoMessage : pb::IMessage<ActionInfoMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

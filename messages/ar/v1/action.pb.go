@@ -42,6 +42,10 @@ const (
 	ActionType_ACTION_TYPE_TASK_HELP ActionType = 15
 	// Marks a task as being in progress.
 	ActionType_ACTION_TYPE_TASK_IN_PROGRESS ActionType = 16
+	// Requests more assistance for a task.
+	ActionType_ACTION_TYPE_TASK_MORE_ASSISTANCE ActionType = 17
+	// Requests less assistance for a task.
+	ActionType_ACTION_TYPE_TASK_LESS_ASSISTANCE ActionType = 18
 	// Toggles robot execution between playing and paused.
 	ActionType_ACTION_TYPE_ROBOT_PLAY_PAUSE ActionType = 50
 	// Acknowledges a robot notification or request.
@@ -67,6 +71,8 @@ var (
 		14: "ACTION_TYPE_TASK_HIGHLIGHT",
 		15: "ACTION_TYPE_TASK_HELP",
 		16: "ACTION_TYPE_TASK_IN_PROGRESS",
+		17: "ACTION_TYPE_TASK_MORE_ASSISTANCE",
+		18: "ACTION_TYPE_TASK_LESS_ASSISTANCE",
 		50: "ACTION_TYPE_ROBOT_PLAY_PAUSE",
 		51: "ACTION_TYPE_ROBOT_ACKNOWLEDGE",
 		52: "ACTION_TYPE_ROBOT_FREE_DRIVE",
@@ -83,6 +89,8 @@ var (
 		"ACTION_TYPE_TASK_HIGHLIGHT":           14,
 		"ACTION_TYPE_TASK_HELP":                15,
 		"ACTION_TYPE_TASK_IN_PROGRESS":         16,
+		"ACTION_TYPE_TASK_MORE_ASSISTANCE":     17,
+		"ACTION_TYPE_TASK_LESS_ASSISTANCE":     18,
 		"ACTION_TYPE_ROBOT_PLAY_PAUSE":         50,
 		"ACTION_TYPE_ROBOT_ACKNOWLEDGE":        51,
 		"ACTION_TYPE_ROBOT_FREE_DRIVE":         52,
@@ -128,6 +136,7 @@ type ActionMessage struct {
 	Type                    ActionType             `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.ActionType" json:"type,omitempty"`
 	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,7,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
 	ConfigId                string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Provenance              *ARContentProvenance   `protobuf:"bytes,9,opt,name=provenance,proto3" json:"provenance,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -209,6 +218,13 @@ func (x *ActionMessage) GetConfigId() string {
 		return x.ConfigId
 	}
 	return ""
+}
+
+func (x *ActionMessage) GetProvenance() *ARContentProvenance {
+	if x != nil {
+		return x.Provenance
+	}
+	return nil
 }
 
 type ActionMessages struct {
@@ -362,6 +378,7 @@ type ActionUpdateMessage struct {
 	Icon                    string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description             string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	EligibilityRequirements []*v1.SkillRequirement `protobuf:"bytes,5,rep,name=eligibility_requirements,json=eligibilityRequirements,proto3" json:"eligibility_requirements,omitempty"`
+	Participation           AdaptiveParticipation  `protobuf:"varint,6,opt,name=participation,proto3,enum=ar.v1.AdaptiveParticipation" json:"participation,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -431,36 +448,97 @@ func (x *ActionUpdateMessage) GetEligibilityRequirements() []*v1.SkillRequiremen
 	return nil
 }
 
+func (x *ActionUpdateMessage) GetParticipation() AdaptiveParticipation {
+	if x != nil {
+		return x.Participation
+	}
+	return AdaptiveParticipation_ADAPTIVE_PARTICIPATION_UNSPECIFIED
+}
+
+// Request action ownership.
+// Only possible to be called on a STRATEGY/MANAGED action.
+// It will result in AUTHOR/AVAILABLE.
+type RequestActionOwnership struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestActionOwnership) Reset() {
+	*x = RequestActionOwnership{}
+	mi := &file_ar_v1_action_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestActionOwnership) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestActionOwnership) ProtoMessage() {}
+
+func (x *RequestActionOwnership) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_action_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestActionOwnership.ProtoReflect.Descriptor instead.
+func (*RequestActionOwnership) Descriptor() ([]byte, []int) {
+	return file_ar_v1_action_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *RequestActionOwnership) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 var File_ar_v1_action_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_proto_rawDesc = "" +
 	"\n" +
-	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x02\n" +
+	"\x12ar/v1/action.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfe\x02\n" +
 	"\rActionMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12Z\n" +
-	"\x18eligibility_requirements\x18\a \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12&\n" +
-	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"<\n" +
+	"\x18eligibility_requirements\x18\a \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12)\n" +
+	"\tconfig_id\x18\b \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
+	"\n" +
+	"provenance\x18\t \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"provenance\"<\n" +
 	"\x0eActionMessages\x12*\n" +
-	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x97\x03\n" +
-	"\x10ActionAddMessage\x12&\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
+	"\x05items\x18\x01 \x03(\v2\x14.ar.v1.ActionMessageR\x05items\"\x9a\x03\n" +
+	"\x10ActionAddMessage\x12)\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x122\n" +
 	"\x04type\x18\x05 \x01(\x0e2\x11.ar.v1.ActionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
 	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n" +
 	"\x16activating_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14activatingPropertyId\x12Z\n" +
-	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\xe1\x01\n" +
+	"\x18eligibility_requirements\x18\b \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\"\xb1\x02\n" +
 	"\x13ActionUpdateMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12Z\n" +
-	"\x18eligibility_requirements\x18\x05 \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements*\xe0\x03\n" +
+	"\x18eligibility_requirements\x18\x05 \x03(\v2\x1f.capability.v1.SkillRequirementR\x17eligibilityRequirements\x12N\n" +
+	"\rparticipation\x18\x06 \x01(\x0e2\x1c.ar.v1.AdaptiveParticipationB\n" +
+	"\xbaH\a\x82\x01\x04\x18\x01\x18\x02R\rparticipation\"6\n" +
+	"\x16RequestActionOwnership\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc8\xf3\x04\x01R\x02id*\xac\x04\n" +
 	"\n" +
 	"ActionType\x12\x1b\n" +
 	"\x17ACTION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
@@ -471,7 +549,9 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x1cACTION_TYPE_TASK_ASSIGN_NEXT\x10\r\x12\x1e\n" +
 	"\x1aACTION_TYPE_TASK_HIGHLIGHT\x10\x0e\x12\x19\n" +
 	"\x15ACTION_TYPE_TASK_HELP\x10\x0f\x12 \n" +
-	"\x1cACTION_TYPE_TASK_IN_PROGRESS\x10\x10\x12 \n" +
+	"\x1cACTION_TYPE_TASK_IN_PROGRESS\x10\x10\x12$\n" +
+	" ACTION_TYPE_TASK_MORE_ASSISTANCE\x10\x11\x12$\n" +
+	" ACTION_TYPE_TASK_LESS_ASSISTANCE\x10\x12\x12 \n" +
 	"\x1cACTION_TYPE_ROBOT_PLAY_PAUSE\x102\x12!\n" +
 	"\x1dACTION_TYPE_ROBOT_ACKNOWLEDGE\x103\x12 \n" +
 	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104\x12'\n" +
@@ -493,27 +573,32 @@ func file_ar_v1_action_proto_rawDescGZIP() []byte {
 }
 
 var file_ar_v1_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ar_v1_action_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_ar_v1_action_proto_goTypes = []any{
-	(ActionType)(0),             // 0: ar.v1.ActionType
-	(*ActionMessage)(nil),       // 1: ar.v1.ActionMessage
-	(*ActionMessages)(nil),      // 2: ar.v1.ActionMessages
-	(*ActionAddMessage)(nil),    // 3: ar.v1.ActionAddMessage
-	(*ActionUpdateMessage)(nil), // 4: ar.v1.ActionUpdateMessage
-	(*v1.SkillRequirement)(nil), // 5: capability.v1.SkillRequirement
+	(ActionType)(0),                // 0: ar.v1.ActionType
+	(*ActionMessage)(nil),          // 1: ar.v1.ActionMessage
+	(*ActionMessages)(nil),         // 2: ar.v1.ActionMessages
+	(*ActionAddMessage)(nil),       // 3: ar.v1.ActionAddMessage
+	(*ActionUpdateMessage)(nil),    // 4: ar.v1.ActionUpdateMessage
+	(*RequestActionOwnership)(nil), // 5: ar.v1.RequestActionOwnership
+	(*v1.SkillRequirement)(nil),    // 6: capability.v1.SkillRequirement
+	(*ARContentProvenance)(nil),    // 7: ar.v1.ARContentProvenance
+	(AdaptiveParticipation)(0),     // 8: ar.v1.AdaptiveParticipation
 }
 var file_ar_v1_action_proto_depIdxs = []int32{
 	0, // 0: ar.v1.ActionMessage.type:type_name -> ar.v1.ActionType
-	5, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	1, // 2: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
-	0, // 3: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
-	5, // 4: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	5, // 5: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	6, // 1: ar.v1.ActionMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	7, // 2: ar.v1.ActionMessage.provenance:type_name -> ar.v1.ARContentProvenance
+	1, // 3: ar.v1.ActionMessages.items:type_name -> ar.v1.ActionMessage
+	0, // 4: ar.v1.ActionAddMessage.type:type_name -> ar.v1.ActionType
+	6, // 5: ar.v1.ActionAddMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	6, // 6: ar.v1.ActionUpdateMessage.eligibility_requirements:type_name -> capability.v1.SkillRequirement
+	8, // 7: ar.v1.ActionUpdateMessage.participation:type_name -> ar.v1.AdaptiveParticipation
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_action_proto_init() }
@@ -521,13 +606,14 @@ func file_ar_v1_action_proto_init() {
 	if File_ar_v1_action_proto != nil {
 		return
 	}
+	file_ar_v1_provenance_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_action_proto_rawDesc), len(file_ar_v1_action_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

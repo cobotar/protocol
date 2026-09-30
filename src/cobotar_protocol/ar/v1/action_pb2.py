@@ -22,12 +22,13 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from ar.v1 import provenance_pb2 as ar_dot_v1_dot_provenance__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from capability.v1 import skill_requirement_pb2 as capability_dot_v1_dot_skill__requirement__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/action.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb7\x02\n\rActionMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12Z\n\x18\x65ligibility_requirements\x18\x07 \x03(\x0b\x32\x1f.capability.v1.SkillRequirementR\x17\x65ligibilityRequirements\x12&\n\tconfig_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\"<\n\x0e\x41\x63tionMessages\x12*\n\x05items\x18\x01 \x03(\x0b\x32\x14.ar.v1.ActionMessageR\x05items\"\x97\x03\n\x10\x41\x63tionAddMessage\x12&\n\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x08\x63onfigId\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x35\n\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n\x16\x61\x63tivating_property_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14\x61\x63tivatingPropertyId\x12Z\n\x18\x65ligibility_requirements\x18\x08 \x03(\x0b\x32\x1f.capability.v1.SkillRequirementR\x17\x65ligibilityRequirements\"\xe1\x01\n\x13\x41\x63tionUpdateMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12Z\n\x18\x65ligibility_requirements\x18\x05 \x03(\x0b\x32\x1f.capability.v1.SkillRequirementR\x17\x65ligibilityRequirements*\xe0\x03\n\nActionType\x12\x1b\n\x17\x41\x43TION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41\x43TION_TYPE_TASK_COMPLETE\x10\n\x12\x19\n\x15\x41\x43TION_TYPE_TASK_UNDO\x10\x0b\x12\x1b\n\x17\x41\x43TION_TYPE_TASK_ASSIGN\x10\x0c\x12 \n\x1c\x41\x43TION_TYPE_TASK_ASSIGN_NEXT\x10\r\x12\x1e\n\x1a\x41\x43TION_TYPE_TASK_HIGHLIGHT\x10\x0e\x12\x19\n\x15\x41\x43TION_TYPE_TASK_HELP\x10\x0f\x12 \n\x1c\x41\x43TION_TYPE_TASK_IN_PROGRESS\x10\x10\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_PLAY_PAUSE\x10\x32\x12!\n\x1d\x41\x43TION_TYPE_ROBOT_ACKNOWLEDGE\x10\x33\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_FREE_DRIVE\x10\x34\x12\'\n#ACTION_TYPE_ROBOT_BEGIN_COLLABORATE\x10\x35\x12%\n!ACTION_TYPE_ROBOT_END_COLLABORATE\x10\x36\x12(\n$ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10\x37\x42\x87\x01\n\tcom.ar.v1B\x0b\x41\x63tionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61r/v1/action.proto\x12\x05\x61r.v1\x1a\x16\x61r/v1/provenance.proto\x1a\x1b\x62uf/validate/validate.proto\x1a%capability/v1/skill_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfe\x02\n\rActionMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12Z\n\x18\x65ligibility_requirements\x18\x07 \x03(\x0b\x32\x1f.capability.v1.SkillRequirementR\x17\x65ligibilityRequirements\x12)\n\tconfig_id\x18\x08 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\x42\n\nprovenance\x18\t \x01(\x0b\x32\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\nprovenance\"<\n\x0e\x41\x63tionMessages\x12*\n\x05items\x18\x01 \x03(\x0b\x32\x14.ar.v1.ActionMessageR\x05items\"\x9a\x03\n\x10\x41\x63tionAddMessage\x12)\n\tconfig_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x11.ar.v1.ActionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x35\n\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12?\n\x16\x61\x63tivating_property_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x14\x61\x63tivatingPropertyId\x12Z\n\x18\x65ligibility_requirements\x18\x08 \x03(\x0b\x32\x1f.capability.v1.SkillRequirementR\x17\x65ligibilityRequirements\"\xb1\x02\n\x13\x41\x63tionUpdateMessage\x12\x19\n\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12Z\n\x18\x65ligibility_requirements\x18\x05 \x03(\x0b\x32\x1f.capability.v1.SkillRequirementR\x17\x65ligibilityRequirements\x12N\n\rparticipation\x18\x06 \x01(\x0e\x32\x1c.ar.v1.AdaptiveParticipationB\n\xbaH\x07\x82\x01\x04\x18\x01\x18\x02R\rparticipation\"6\n\x16RequestActionOwnership\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xc8\xf3\x04\x01\xc8\x01\x01R\x02id*\xac\x04\n\nActionType\x12\x1b\n\x17\x41\x43TION_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x41\x43TION_TYPE_TASK_COMPLETE\x10\n\x12\x19\n\x15\x41\x43TION_TYPE_TASK_UNDO\x10\x0b\x12\x1b\n\x17\x41\x43TION_TYPE_TASK_ASSIGN\x10\x0c\x12 \n\x1c\x41\x43TION_TYPE_TASK_ASSIGN_NEXT\x10\r\x12\x1e\n\x1a\x41\x43TION_TYPE_TASK_HIGHLIGHT\x10\x0e\x12\x19\n\x15\x41\x43TION_TYPE_TASK_HELP\x10\x0f\x12 \n\x1c\x41\x43TION_TYPE_TASK_IN_PROGRESS\x10\x10\x12$\n ACTION_TYPE_TASK_MORE_ASSISTANCE\x10\x11\x12$\n ACTION_TYPE_TASK_LESS_ASSISTANCE\x10\x12\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_PLAY_PAUSE\x10\x32\x12!\n\x1d\x41\x43TION_TYPE_ROBOT_ACKNOWLEDGE\x10\x33\x12 \n\x1c\x41\x43TION_TYPE_ROBOT_FREE_DRIVE\x10\x34\x12\'\n#ACTION_TYPE_ROBOT_BEGIN_COLLABORATE\x10\x35\x12%\n!ACTION_TYPE_ROBOT_END_COLLABORATE\x10\x36\x12(\n$ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10\x37\x42\x87\x01\n\tcom.ar.v1B\x0b\x41\x63tionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,9 +43,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACTIONMESSAGE'].fields_by_name['type']._loaded_options = None
   _globals['_ACTIONMESSAGE'].fields_by_name['type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
   _globals['_ACTIONMESSAGE'].fields_by_name['config_id']._loaded_options = None
-  _globals['_ACTIONMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\006r\004\220\361\004\001'
+  _globals['_ACTIONMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\tr\004\220\361\004\001\310\001\001'
+  _globals['_ACTIONMESSAGE'].fields_by_name['provenance']._loaded_options = None
+  _globals['_ACTIONMESSAGE'].fields_by_name['provenance']._serialized_options = b'\272H\003\310\001\001'
   _globals['_ACTIONADDMESSAGE'].fields_by_name['config_id']._loaded_options = None
-  _globals['_ACTIONADDMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\006r\004\220\361\004\001'
+  _globals['_ACTIONADDMESSAGE'].fields_by_name['config_id']._serialized_options = b'\272H\tr\004\220\361\004\001\310\001\001'
   _globals['_ACTIONADDMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_ACTIONADDMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_ACTIONADDMESSAGE'].fields_by_name['type']._loaded_options = None
@@ -57,14 +60,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['id']._serialized_options = b'\272H\006r\004\310\363\004\001'
   _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['name']._loaded_options = None
   _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_ACTIONTYPE']._serialized_start=1157
-  _globals['_ACTIONTYPE']._serialized_end=1637
-  _globals['_ACTIONMESSAGE']._serialized_start=143
-  _globals['_ACTIONMESSAGE']._serialized_end=454
-  _globals['_ACTIONMESSAGES']._serialized_start=456
-  _globals['_ACTIONMESSAGES']._serialized_end=516
-  _globals['_ACTIONADDMESSAGE']._serialized_start=519
-  _globals['_ACTIONADDMESSAGE']._serialized_end=926
-  _globals['_ACTIONUPDATEMESSAGE']._serialized_start=929
-  _globals['_ACTIONUPDATEMESSAGE']._serialized_end=1154
+  _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['participation']._loaded_options = None
+  _globals['_ACTIONUPDATEMESSAGE'].fields_by_name['participation']._serialized_options = b'\272H\007\202\001\004\030\001\030\002'
+  _globals['_REQUESTACTIONOWNERSHIP'].fields_by_name['id']._loaded_options = None
+  _globals['_REQUESTACTIONOWNERSHIP'].fields_by_name['id']._serialized_options = b'\272H\tr\004\310\363\004\001\310\001\001'
+  _globals['_ACTIONTYPE']._serialized_start=1391
+  _globals['_ACTIONTYPE']._serialized_end=1947
+  _globals['_ACTIONMESSAGE']._serialized_start=167
+  _globals['_ACTIONMESSAGE']._serialized_end=549
+  _globals['_ACTIONMESSAGES']._serialized_start=551
+  _globals['_ACTIONMESSAGES']._serialized_end=611
+  _globals['_ACTIONADDMESSAGE']._serialized_start=614
+  _globals['_ACTIONADDMESSAGE']._serialized_end=1024
+  _globals['_ACTIONUPDATEMESSAGE']._serialized_start=1027
+  _globals['_ACTIONUPDATEMESSAGE']._serialized_end=1332
+  _globals['_REQUESTACTIONOWNERSHIP']._serialized_start=1334
+  _globals['_REQUESTACTIONOWNERSHIP']._serialized_end=1388
 # @@protoc_insertion_point(module_scope)

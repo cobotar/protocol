@@ -65,17 +65,19 @@ namespace Messages.Runtime.V1 {
             "RklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsK",
             "F1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFV",
             "RVNUX1VORE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIgChxU",
-            "QVNLX1NUQVRFX1JFUVVFU1RfU1VTUEVOREVEEAYq8gEKEVRhc2tQcm9ncmVz",
-            "c1BoYXNlEiMKH1RBU0tfUFJPR1JFU1NfUEhBU0VfVU5TUEVDSUZJRUQQABIg",
-            "ChxUQVNLX1BST0dSRVNTX1BIQVNFX0xPQ0FUSU5HEAESIwofVEFTS19QUk9H",
-            "UkVTU19QSEFTRV9BUFBST0FDSElORxACEiMKH1RBU0tfUFJPR1JFU1NfUEhB",
-            "U0VfUE9TSVRJT05JTkcQAxIhCh1UQVNLX1BST0dSRVNTX1BIQVNFX1ZFUklG",
-            "WUlORxAEEikKJVRBU0tfUFJPR1JFU1NfUEhBU0VfUkVBRFlfVE9fQ09NUExF",
-            "VEUQBUKzAQoOY29tLnJ1bnRpbWUudjFCFFJ1bnRpbWVSZXF1ZXN0c1Byb3Rv",
-            "UAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50",
-            "aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHK",
-            "AgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRp",
-            "bWU6OlYxYgZwcm90bzM="));
+            "QVNLX1NUQVRFX1JFUVVFU1RfU1VTUEVOREVEEAYq5QIKEVRhc2tQcm9ncmVz",
+            "c1BoYXNlEiMKH1RBU0tfUFJPR1JFU1NfUEhBU0VfVU5TUEVDSUZJRUQQABIh",
+            "Ch1UQVNLX1BST0dSRVNTX1BIQVNFX1BSRVBBUklORxABEisKJ1RBU0tfUFJP",
+            "R1JFU1NfUEhBU0VfQUNRVUlSSU5HX1JFU09VUkNFUxACEiAKHFRBU0tfUFJP",
+            "R1JFU1NfUEhBU0VfTE9DQVRJTkcQAxIjCh9UQVNLX1BST0dSRVNTX1BIQVNF",
+            "X0FQUFJPQUNISU5HEAQSIQodVEFTS19QUk9HUkVTU19QSEFTRV9FWEVDVVRJ",
+            "TkcQBRIjCh9UQVNLX1BST0dSRVNTX1BIQVNFX1BPU0lUSU9OSU5HEAYSIQod",
+            "VEFTS19QUk9HUkVTU19QSEFTRV9WRVJJRllJTkcQBxIpCiVUQVNLX1BST0dS",
+            "RVNTX1BIQVNFX1JFQURZX1RPX0NPTVBMRVRFEAhCswEKDmNvbS5ydW50aW1l",
+            "LnYxQhRSdW50aW1lUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90",
+            "YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNS",
+            "WFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRp",
+            "bWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), typeof(global::Messages.Runtime.V1.TaskProgressPhase), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -117,25 +119,37 @@ namespace Messages.Runtime.V1 {
   public enum TaskProgressPhase {
     [pbr::OriginalName("TASK_PROGRESS_PHASE_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
+    /// The actor is preparing for starting the task
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_PREPARING")] Preparing = 1,
+    /// <summary>
+    /// The actor is acquiring resources for the task
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES")] AcquiringResources = 2,
+    /// <summary>
     /// The actor is finding the target, part, tool, or work area.
     /// </summary>
-    [pbr::OriginalName("TASK_PROGRESS_PHASE_LOCATING")] Locating = 1,
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_LOCATING")] Locating = 3,
     /// <summary>
     /// The actor is moving toward the target or preferred pre-target pose.
     /// </summary>
-    [pbr::OriginalName("TASK_PROGRESS_PHASE_APPROACHING")] Approaching = 2,
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_APPROACHING")] Approaching = 4,
+    /// <summary>
+    /// The actor is executing the task
+    /// </summary>
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_EXECUTING")] Executing = 5,
     /// <summary>
     /// The actor is aligning, inserting, or otherwise establishing the target pose.
     /// </summary>
-    [pbr::OriginalName("TASK_PROGRESS_PHASE_POSITIONING")] Positioning = 3,
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_POSITIONING")] Positioning = 6,
     /// <summary>
     /// The task result is being checked against its validation requirements.
     /// </summary>
-    [pbr::OriginalName("TASK_PROGRESS_PHASE_VERIFYING")] Verifying = 4,
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_VERIFYING")] Verifying = 7,
     /// <summary>
     /// All known requirements are satisfied and the task may be completed.
     /// </summary>
-    [pbr::OriginalName("TASK_PROGRESS_PHASE_READY_TO_COMPLETE")] ReadyToComplete = 5,
+    [pbr::OriginalName("TASK_PROGRESS_PHASE_READY_TO_COMPLETE")] ReadyToComplete = 8,
   }
 
   #endregion

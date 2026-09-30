@@ -240,77 +240,17 @@ func (FeedbackType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{0}
 }
 
-type VisibilityScope int32
-
-const (
-	// No visibility scope has been specified.
-	VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED VisibilityScope = 0
-	// Shows the feedback regardless of the selected guidance level.
-	VisibilityScope_VISIBILITY_SCOPE_ALWAYS VisibilityScope = 1
-	// Shows the feedback at the low guidance level.
-	VisibilityScope_VISIBILITY_SCOPE_LOW_GUIDANCE VisibilityScope = 2
-	// Shows the feedback at the medium guidance level.
-	VisibilityScope_VISIBILITY_SCOPE_MEDIUM_GUIDANCE VisibilityScope = 3
-	// Shows the feedback at the full guidance level.
-	VisibilityScope_VISIBILITY_SCOPE_FULL_GUIDANCE VisibilityScope = 4
-)
-
-// Enum value maps for VisibilityScope.
-var (
-	VisibilityScope_name = map[int32]string{
-		0: "VISIBILITY_SCOPE_UNSPECIFIED",
-		1: "VISIBILITY_SCOPE_ALWAYS",
-		2: "VISIBILITY_SCOPE_LOW_GUIDANCE",
-		3: "VISIBILITY_SCOPE_MEDIUM_GUIDANCE",
-		4: "VISIBILITY_SCOPE_FULL_GUIDANCE",
-	}
-	VisibilityScope_value = map[string]int32{
-		"VISIBILITY_SCOPE_UNSPECIFIED":     0,
-		"VISIBILITY_SCOPE_ALWAYS":          1,
-		"VISIBILITY_SCOPE_LOW_GUIDANCE":    2,
-		"VISIBILITY_SCOPE_MEDIUM_GUIDANCE": 3,
-		"VISIBILITY_SCOPE_FULL_GUIDANCE":   4,
-	}
-)
-
-func (x VisibilityScope) Enum() *VisibilityScope {
-	p := new(VisibilityScope)
-	*p = x
-	return p
-}
-
-func (x VisibilityScope) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (VisibilityScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_ar_v1_feedback_proto_enumTypes[1].Descriptor()
-}
-
-func (VisibilityScope) Type() protoreflect.EnumType {
-	return &file_ar_v1_feedback_proto_enumTypes[1]
-}
-
-func (x VisibilityScope) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use VisibilityScope.Descriptor instead.
-func (VisibilityScope) EnumDescriptor() ([]byte, []int) {
-	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{1}
-}
-
 type FeedbackMessage struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type            FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	VisibilityScope VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
-	ConfigId        string                 `protobuf:"bytes,8,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type          FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
+	ConfigId      string                 `protobuf:"bytes,6,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Provenance    *ARContentProvenance   `protobuf:"bytes,7,opt,name=provenance,proto3" json:"provenance,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FeedbackMessage) Reset() {
@@ -378,18 +318,18 @@ func (x *FeedbackMessage) GetType() FeedbackType {
 	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
 }
 
-func (x *FeedbackMessage) GetVisibilityScope() VisibilityScope {
-	if x != nil {
-		return x.VisibilityScope
-	}
-	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
-}
-
 func (x *FeedbackMessage) GetConfigId() string {
 	if x != nil {
 		return x.ConfigId
 	}
 	return ""
+}
+
+func (x *FeedbackMessage) GetProvenance() *ARContentProvenance {
+	if x != nil {
+		return x.Provenance
+	}
+	return nil
 }
 
 type FeedbackMessages struct {
@@ -443,10 +383,9 @@ type FeedbackAddMessage struct {
 	Icon                  string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description           string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type                  FeedbackType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
-	VisibilityScope       VisibilityScope        `protobuf:"varint,6,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
-	RobotPropertyId       string                 `protobuf:"bytes,7,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
-	Anchor                *v1.Anchor             `protobuf:"bytes,8,opt,name=anchor,proto3" json:"anchor,omitempty"`
-	LinkDefaultProperties bool                   `protobuf:"varint,9,opt,name=link_default_properties,json=linkDefaultProperties,proto3" json:"link_default_properties,omitempty"`
+	RobotPropertyId       string                 `protobuf:"bytes,6,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If required, this should point to a property definition of type ROBOT
+	Anchor                *v1.Anchor             `protobuf:"bytes,7,opt,name=anchor,proto3" json:"anchor,omitempty"`
+	LinkDefaultProperties bool                   `protobuf:"varint,8,opt,name=link_default_properties,json=linkDefaultProperties,proto3" json:"link_default_properties,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -516,13 +455,6 @@ func (x *FeedbackAddMessage) GetType() FeedbackType {
 	return FeedbackType_FEEDBACK_TYPE_UNSPECIFIED
 }
 
-func (x *FeedbackAddMessage) GetVisibilityScope() VisibilityScope {
-	if x != nil {
-		return x.VisibilityScope
-	}
-	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
-}
-
 func (x *FeedbackAddMessage) GetRobotPropertyId() string {
 	if x != nil {
 		return x.RobotPropertyId
@@ -545,14 +477,14 @@ func (x *FeedbackAddMessage) GetLinkDefaultProperties() bool {
 }
 
 type FeedbackUpdateMessage struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description     string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	VisibilityScope VisibilityScope        `protobuf:"varint,5,opt,name=visibility_scope,json=visibilityScope,proto3,enum=ar.v1.VisibilityScope" json:"visibility_scope,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Participation AdaptiveParticipation  `protobuf:"varint,5,opt,name=participation,proto3,enum=ar.v1.AdaptiveParticipation" json:"participation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FeedbackUpdateMessage) Reset() {
@@ -613,44 +545,95 @@ func (x *FeedbackUpdateMessage) GetDescription() string {
 	return ""
 }
 
-func (x *FeedbackUpdateMessage) GetVisibilityScope() VisibilityScope {
+func (x *FeedbackUpdateMessage) GetParticipation() AdaptiveParticipation {
 	if x != nil {
-		return x.VisibilityScope
+		return x.Participation
 	}
-	return VisibilityScope_VISIBILITY_SCOPE_UNSPECIFIED
+	return AdaptiveParticipation_ADAPTIVE_PARTICIPATION_UNSPECIFIED
+}
+
+// Request feedback ownership.
+// Only possible to be called on STRATEGY/MANAGED feedback.
+// It will result in AUTHOR/AVAILABLE
+type RequestFeedbackOwnership struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestFeedbackOwnership) Reset() {
+	*x = RequestFeedbackOwnership{}
+	mi := &file_ar_v1_feedback_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestFeedbackOwnership) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestFeedbackOwnership) ProtoMessage() {}
+
+func (x *RequestFeedbackOwnership) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_feedback_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestFeedbackOwnership.ProtoReflect.Descriptor instead.
+func (*RequestFeedbackOwnership) Descriptor() ([]byte, []int) {
+	return file_ar_v1_feedback_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *RequestFeedbackOwnership) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
 }
 
 var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xac\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa3\x02\n" +
 	"\x0fFeedbackMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
-	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x12&\n" +
-	"\tconfig_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"H\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12&\n" +
+	"\tconfig_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
+	"\n" +
+	"provenance\x18\a \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"provenance\"H\n" +
 	"\x10FeedbackMessages\x124\n" +
-	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xb0\x03\n" +
-	"\x12FeedbackAddMessage\x12&\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
+	"\tfeedbacks\x18\x01 \x03(\v2\x16.ar.v1.FeedbackMessageR\tfeedbacks\"\xe6\x02\n" +
+	"\x12FeedbackAddMessage\x12)\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12K\n" +
-	"\x10visibility_scope\x18\x06 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope\x125\n" +
-	"\x11robot_property_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12+\n" +
-	"\x06anchor\x18\b \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x126\n" +
-	"\x17link_default_properties\x18\t \x01(\bR\x15linkDefaultProperties\"\xd4\x01\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x125\n" +
+	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\x12+\n" +
+	"\x06anchor\x18\a \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x126\n" +
+	"\x17link_default_properties\x18\b \x01(\bR\x15linkDefaultProperties\"\xd7\x01\n" +
 	"\x15FeedbackUpdateMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12K\n" +
-	"\x10visibility_scope\x18\x05 \x01(\x0e2\x16.ar.v1.VisibilityScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fvisibilityScope*\xae\t\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12N\n" +
+	"\rparticipation\x18\x05 \x01(\x0e2\x1c.ar.v1.AdaptiveParticipationB\n" +
+	"\xbaH\a\x82\x01\x04\x18\x01\x18\x02R\rparticipation\"8\n" +
+	"\x18RequestFeedbackOwnership\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc0\xf3\x04\x01R\x02id*\xae\t\n" +
 	"\fFeedbackType\x12\x1d\n" +
 	"\x19FEEDBACK_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aFEEDBACK_TYPE_TARGET_GHOST\x10\n" +
@@ -687,13 +670,7 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x12FEEDBACK_TYPE_ICON\x10\xc9\x01\x12\x1c\n" +
 	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10\xca\x01\x12\x17\n" +
 	"\x12FEEDBACK_TYPE_ZONE\x10\xcb\x01\x12\x1d\n" +
-	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10\xcc\x01*\xbd\x01\n" +
-	"\x0fVisibilityScope\x12 \n" +
-	"\x1cVISIBILITY_SCOPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
-	"\x17VISIBILITY_SCOPE_ALWAYS\x10\x01\x12!\n" +
-	"\x1dVISIBILITY_SCOPE_LOW_GUIDANCE\x10\x02\x12$\n" +
-	" VISIBILITY_SCOPE_MEDIUM_GUIDANCE\x10\x03\x12\"\n" +
-	"\x1eVISIBILITY_SCOPE_FULL_GUIDANCE\x10\x04B\x89\x01\n" +
+	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10\xcc\x01B\x89\x01\n" +
 	"\tcom.ar.v1B\rFeedbackProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -708,30 +685,31 @@ func file_ar_v1_feedback_proto_rawDescGZIP() []byte {
 	return file_ar_v1_feedback_proto_rawDescData
 }
 
-var file_ar_v1_feedback_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_ar_v1_feedback_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ar_v1_feedback_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_ar_v1_feedback_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_ar_v1_feedback_proto_goTypes = []any{
-	(FeedbackType)(0),             // 0: ar.v1.FeedbackType
-	(VisibilityScope)(0),          // 1: ar.v1.VisibilityScope
-	(*FeedbackMessage)(nil),       // 2: ar.v1.FeedbackMessage
-	(*FeedbackMessages)(nil),      // 3: ar.v1.FeedbackMessages
-	(*FeedbackAddMessage)(nil),    // 4: ar.v1.FeedbackAddMessage
-	(*FeedbackUpdateMessage)(nil), // 5: ar.v1.FeedbackUpdateMessage
-	(*v1.Anchor)(nil),             // 6: geometry.v1.Anchor
+	(FeedbackType)(0),                // 0: ar.v1.FeedbackType
+	(*FeedbackMessage)(nil),          // 1: ar.v1.FeedbackMessage
+	(*FeedbackMessages)(nil),         // 2: ar.v1.FeedbackMessages
+	(*FeedbackAddMessage)(nil),       // 3: ar.v1.FeedbackAddMessage
+	(*FeedbackUpdateMessage)(nil),    // 4: ar.v1.FeedbackUpdateMessage
+	(*RequestFeedbackOwnership)(nil), // 5: ar.v1.RequestFeedbackOwnership
+	(*ARContentProvenance)(nil),      // 6: ar.v1.ARContentProvenance
+	(*v1.Anchor)(nil),                // 7: geometry.v1.Anchor
+	(AdaptiveParticipation)(0),       // 8: ar.v1.AdaptiveParticipation
 }
 var file_ar_v1_feedback_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FeedbackMessage.type:type_name -> ar.v1.FeedbackType
-	1, // 1: ar.v1.FeedbackMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	2, // 2: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
+	6, // 1: ar.v1.FeedbackMessage.provenance:type_name -> ar.v1.ARContentProvenance
+	1, // 2: ar.v1.FeedbackMessages.feedbacks:type_name -> ar.v1.FeedbackMessage
 	0, // 3: ar.v1.FeedbackAddMessage.type:type_name -> ar.v1.FeedbackType
-	1, // 4: ar.v1.FeedbackAddMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	6, // 5: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
-	1, // 6: ar.v1.FeedbackUpdateMessage.visibility_scope:type_name -> ar.v1.VisibilityScope
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	7, // 4: ar.v1.FeedbackAddMessage.anchor:type_name -> geometry.v1.Anchor
+	8, // 5: ar.v1.FeedbackUpdateMessage.participation:type_name -> ar.v1.AdaptiveParticipation
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_proto_init() }
@@ -739,13 +717,14 @@ func file_ar_v1_feedback_proto_init() {
 	if File_ar_v1_feedback_proto != nil {
 		return
 	}
+	file_ar_v1_provenance_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_feedback_proto_rawDesc), len(file_ar_v1_feedback_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   4,
+			NumEnums:      1,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

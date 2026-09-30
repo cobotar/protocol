@@ -1253,9 +1253,9 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"TaskTarget\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
 	"\tcontainer\x18\x02 \x01(\v2\x1b.process.v1.ContainerTargetR\tcontainer\x126\n" +
-	"\bresource\x18\x03 \x01(\v2\x1a.process.v1.ResourceTargetR\bresource\"Z\n" +
-	"\x13QuantityRequirement\x12&\n" +
-	"\x06amount\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00R\x06amount\x12\x1b\n" +
+	"\bresource\x18\x03 \x01(\v2\x1a.process.v1.ResourceTargetR\bresource\"\\\n" +
+	"\x13QuantityRequirement\x12(\n" +
+	"\x06amount\x18\x01 \x01(\x01B\x10\xbaH\r\x12\v@\x01!\x00\x00\x00\x00\x00\x00\x00\x00R\x06amount\x12\x1b\n" +
 	"\x04unit\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x04unit\"~\n" +
 	"\fTaskEndpoint\x123\n" +
 	"\aproduct\x18\x01 \x01(\v2\x19.process.v1.ProductTargetR\aproduct\x129\n" +
@@ -1266,16 +1266,17 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x19allow_manual_confirmation\x18\x03 \x01(\bR\x17allowManualConfirmation\x12f\n" +
 	"\x1dmanual_confirmation_min_level\x18\x04 \x01(\x0e2\x19.capability.v1.SkillLevelB\b\xbaH\x05\x82\x01\x02\x10\x01R\x1amanualConfirmationMinLevel\x12:\n" +
 	"\x04mode\x18\x05 \x01(\x0e2\x1c.resources.v1.ValidationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04mode\x12?\n" +
-	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xc4\x04\n" +
-	"\x13TaskExecutionPolicy\x12Y\n" +
-	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceR\x14assignmentPreference\x12I\n" +
+	"\vconstraints\x18\x06 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xdc\a\n" +
+	"\x13TaskExecutionPolicy\x12c\n" +
+	"\x15assignment_preference\x18\x01 \x01(\x0e2$.process.v1.TaskAssignmentPreferenceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x14assignmentPreference\x12I\n" +
 	"\x10actor_constraint\x18\x02 \x01(\v2\x1e.capability.v1.ActorConstraintR\x0factorConstraint\x12!\n" +
 	"\fcan_reassign\x18\x03 \x01(\bR\vcanReassign\x12\x19\n" +
-	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12e\n" +
-	"\x1bactor_unavailability_policy\x18\b \x01(\x0e2%.process.v1.ActorUnavailabilityPolicyR\x19actorUnavailabilityPolicy\x12V\n" +
+	"\bcan_undo\x18\x04 \x01(\bR\acanUndo\x12o\n" +
+	"\x1bactor_unavailability_policy\x18\b \x01(\x0e2%.process.v1.ActorUnavailabilityPolicyB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19actorUnavailabilityPolicy\x12V\n" +
 	"\x18estimated_human_duration\x18\x05 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedHumanDuration\x12V\n" +
 	"\x18estimated_robot_duration\x18\x06 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedRobotDuration\x122\n" +
-	"\x15require_full_guidance\x18\a \x01(\bR\x13requireFullGuidance\"\x97\x02\n" +
+	"\x15require_full_guidance\x18\a \x01(\bR\x13requireFullGuidance:\x81\x03\xbaH\xfd\x02\x1a\xfa\x02\n" +
+	"Gtask_execution_policy.actor_unavailability_policy.requires_reassignment\x12?reassignment actor-unavailability policies require can_reassign\x1a\xed\x01this.can_reassign || !(this.actor_unavailability_policy in [process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED, process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN])\"\x97\x02\n" +
 	"\fTaskOverride\x12,\n" +
 	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12.\n" +
@@ -1284,12 +1285,12 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x0fapproach_offset\x18\x05 \x01(\v2\x14.geometry.v1.Vector3R\x0eapproachOffset\"\x91\x01\n" +
 	"\x15OrientationConstraint\x12Z\n" +
 	"\x19angular_tolerance_degrees\x18\x01 \x01(\x01B\x19\xbaH\x16\x12\x14@\x01\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\x17angularToleranceDegrees\x88\x01\x01B\x1c\n" +
-	"\x1a_angular_tolerance_degrees\"\x84\x01\n" +
-	"\x0eTaskConstraint\x12\x17\n" +
-	"\x02id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\x02id\x12C\n" +
+	"\x1a_angular_tolerance_degrees\"\x86\x01\n" +
+	"\x0eTaskConstraint\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x02id\x12C\n" +
 	"\vorientation\x18\n" +
 	" \x01(\v2!.process.v1.OrientationConstraintR\vorientation:\x14\xbaH\x11\"\x0f\n" +
-	"\vorientation\x10\x01\"\x8b\v\n" +
+	"\vorientation\x10\x01\"\x8f\f\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1313,8 +1314,9 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\vdestination\x18\x12 \x01(\v2\x18.process.v1.TaskEndpointR\vdestination\x12;\n" +
 	"\bquantity\x18\x13 \x01(\v2\x1f.process.v1.QuantityRequirementR\bquantity\x12>\n" +
 	"\rapplicability\x18\x15 \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability\x126\n" +
-	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\x12<\n" +
-	"\vconstraints\x18\x17 \x03(\v2\x1a.process.v1.TaskConstraintR\vconstraints:\xf7\x01\xbaH\xf3\x01\x1a\xf0\x01\n" +
+	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\x12\xbf\x01\n" +
+	"\vconstraints\x18\x17 \x03(\v2\x1a.process.v1.TaskConstraintB\x80\x01\xbaH}\xba\x01z\n" +
+	"&task_definition.constraints.unique_ids\x12\"task constraint ids must be unique\x1a,this.map(constraint, constraint.id).unique()R\vconstraints:\xf7\x01\xbaH\xf3\x01\x1a\xf0\x01\n" +
 	"Btask_definition.orientation_constraint_requires_target_orientation\x12Gorientation constraints require target.product.local_target.orientation\x1aathis.constraints.all(c, !has(c.orientation) || has(this.target.product.local_target.orientation))\"C\n" +
 	"\x0fTaskDefinitions\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.process.v1.TaskDefinitionR\x05items*\xbf\x03\n" +

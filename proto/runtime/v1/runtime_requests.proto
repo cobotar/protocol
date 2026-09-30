@@ -40,20 +40,29 @@ enum TaskStateRequest {
 enum TaskProgressPhase {
   TASK_PROGRESS_PHASE_UNSPECIFIED = 0;
 
+  // The actor is preparing for starting the task
+  TASK_PROGRESS_PHASE_PREPARING = 1;
+
+  // The actor is acquiring resources for the task
+  TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES = 2;
+
   // The actor is finding the target, part, tool, or work area.
-  TASK_PROGRESS_PHASE_LOCATING = 1;
+  TASK_PROGRESS_PHASE_LOCATING = 3;
 
   // The actor is moving toward the target or preferred pre-target pose.
-  TASK_PROGRESS_PHASE_APPROACHING = 2;
+  TASK_PROGRESS_PHASE_APPROACHING = 4;
+
+  // The actor is executing the task
+  TASK_PROGRESS_PHASE_EXECUTING = 5;
 
   // The actor is aligning, inserting, or otherwise establishing the target pose.
-  TASK_PROGRESS_PHASE_POSITIONING = 3;
+  TASK_PROGRESS_PHASE_POSITIONING = 6;
 
   // The task result is being checked against its validation requirements.
-  TASK_PROGRESS_PHASE_VERIFYING = 4;
+  TASK_PROGRESS_PHASE_VERIFYING = 7;
 
   // All known requirements are satisfied and the task may be completed.
-  TASK_PROGRESS_PHASE_READY_TO_COMPLETE = 5;
+  TASK_PROGRESS_PHASE_READY_TO_COMPLETE = 8;
 }
 
 message TaskStateChangeRequest {

@@ -1,3 +1,4 @@
+from ar.v1 import provenance_pb2 as _provenance_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from capability.v1 import skill_requirement_pb2 as _skill_requirement_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
@@ -20,6 +21,8 @@ class ActionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ACTION_TYPE_TASK_HIGHLIGHT: _ClassVar[ActionType]
     ACTION_TYPE_TASK_HELP: _ClassVar[ActionType]
     ACTION_TYPE_TASK_IN_PROGRESS: _ClassVar[ActionType]
+    ACTION_TYPE_TASK_MORE_ASSISTANCE: _ClassVar[ActionType]
+    ACTION_TYPE_TASK_LESS_ASSISTANCE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_PLAY_PAUSE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_ACKNOWLEDGE: _ClassVar[ActionType]
     ACTION_TYPE_ROBOT_FREE_DRIVE: _ClassVar[ActionType]
@@ -34,6 +37,8 @@ ACTION_TYPE_TASK_ASSIGN_NEXT: ActionType
 ACTION_TYPE_TASK_HIGHLIGHT: ActionType
 ACTION_TYPE_TASK_HELP: ActionType
 ACTION_TYPE_TASK_IN_PROGRESS: ActionType
+ACTION_TYPE_TASK_MORE_ASSISTANCE: ActionType
+ACTION_TYPE_TASK_LESS_ASSISTANCE: ActionType
 ACTION_TYPE_ROBOT_PLAY_PAUSE: ActionType
 ACTION_TYPE_ROBOT_ACKNOWLEDGE: ActionType
 ACTION_TYPE_ROBOT_FREE_DRIVE: ActionType
@@ -42,7 +47,7 @@ ACTION_TYPE_ROBOT_END_COLLABORATE: ActionType
 ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT: ActionType
 
 class ActionMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "eligibility_requirements", "config_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "eligibility_requirements", "config_id", "provenance")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -50,6 +55,7 @@ class ActionMessage(_message.Message):
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ELIGIBILITY_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
+    PROVENANCE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -57,7 +63,8 @@ class ActionMessage(_message.Message):
     type: ActionType
     eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
     config_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., config_id: _Optional[str] = ...) -> None: ...
+    provenance: _provenance_pb2.ARContentProvenance
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
 
 class ActionMessages(_message.Message):
     __slots__ = ("items",)
@@ -86,15 +93,23 @@ class ActionAddMessage(_message.Message):
     def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ActionType, str]] = ..., robot_property_id: _Optional[str] = ..., activating_property_id: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
 
 class ActionUpdateMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "eligibility_requirements")
+    __slots__ = ("id", "name", "icon", "description", "eligibility_requirements", "participation")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     ELIGIBILITY_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
+    PARTICIPATION_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     eligibility_requirements: _containers.RepeatedCompositeFieldContainer[_skill_requirement_pb2.SkillRequirement]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ...) -> None: ...
+    participation: _provenance_pb2.AdaptiveParticipation
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., eligibility_requirements: _Optional[_Iterable[_Union[_skill_requirement_pb2.SkillRequirement, _Mapping]]] = ..., participation: _Optional[_Union[_provenance_pb2.AdaptiveParticipation, str]] = ...) -> None: ...
+
+class RequestActionOwnership(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...

@@ -25,54 +25,69 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVhci92MS9hcl9jb25maWcucHJvdG8SBWFyLnYxGhZhci92MS9pbnB1dF9z",
-            "bG90LnByb3RvGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aK3ZhbGlk",
-            "YXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8iegoTQVJD",
-            "b25maWdJbmZvTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEo",
-            "CUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVz",
-            "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIkgKFEFSQ29uZmlnSW5mb01l",
-            "c3NhZ2VzEjAKBWluZm9zGAEgAygLMhouYXIudjEuQVJDb25maWdJbmZvTWVz",
-            "c2FnZVIFaW5mb3MixgIKD0FSQ29uZmlnTWVzc2FnZRIZCgJpZBgBIAEoCUIJ",
-            "ukgGcgSQ8QQBUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBBABGEBSBG5hbWUS",
-            "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
-            "Y3JpcHRpb24SRwoMcHJpbWFyeV90eXBlGAUgASgOMhouYXIudjEuQVJDb25m",
-            "aWdQcmltYXJ5VHlwZUIIukgFggECEAFSC3ByaW1hcnlUeXBlEj4KFWFyX2Rp",
-            "c2FwcGVhcl9kaXN0YW5jZRgGIAEoA0IKukgHIgUoAEjeAlITYXJEaXNhcHBl",
-            "YXJEaXN0YW5jZRI6CgtpbnB1dF9zbG90cxgHIAMoCzIZLmFyLnYxLkFSSW5w",
-            "dXRTbG90TWVzc2FnZVIKaW5wdXRTbG90cyJAChBBUkNvbmZpZ01lc3NhZ2Vz",
-            "EiwKBWl0ZW1zGAEgAygLMhYuYXIudjEuQVJDb25maWdNZXNzYWdlUgVpdGVt",
-            "cyLyAQoSQVJDb25maWdBZGRNZXNzYWdlEh0KBG5hbWUYAiABKAlCCbpIBnIE",
-            "EAEYQFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9u",
-            "GAQgASgJUgtkZXNjcmlwdGlvbhJHCgxwcmltYXJ5X3R5cGUYBSABKA4yGi5h",
-            "ci52MS5BUkNvbmZpZ1ByaW1hcnlUeXBlQgi6SAWCAQIQAVILcHJpbWFyeVR5",
-            "cGUSPgoVYXJfZGlzYXBwZWFyX2Rpc3RhbmNlGAYgASgDQgq6SAciBSgASN4C",
-            "UhNhckRpc2FwcGVhckRpc3RhbmNlIscBChVBUkNvbmZpZ1VwZGF0ZU1lc3Nh",
-            "Z2USGQoCaWQYASABKAlCCbpIBnIEkPEEAVICaWQSHQoEbmFtZRgCIAEoCUIJ",
-            "ukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3Jp",
-            "cHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEj4KFWFyX2Rpc2FwcGVhcl9kaXN0",
-            "YW5jZRgGIAEoA0IKukgHIgUoAEjeAlITYXJEaXNhcHBlYXJEaXN0YW5jZSrW",
-            "AwoTQVJDb25maWdQcmltYXJ5VHlwZRImCiJBUl9DT05GSUdfUFJJTUFSWV9U",
-            "WVBFX1VOU1BFQ0lGSUVEEAASIgoeQVJfQ09ORklHX1BSSU1BUllfVFlQRV9H",
-            "RU5FUkFMEAESLAooQVJfQ09ORklHX1BSSU1BUllfVFlQRV9BU1NFTUJMWV9H",
-            "VUlEQU5DRRACEi4KKkFSX0NPTkZJR19QUklNQVJZX1RZUEVfUFJPQ0VEVVJF",
-            "X0NIRUNLTElTVBADEikKJUFSX0NPTkZJR19QUklNQVJZX1RZUEVfUk9CT1Rf",
-            "R1VJREFOQ0UQBBIxCi1BUl9DT05GSUdfUFJJTUFSWV9UWVBFX0NPTExBQk9S",
-            "QVRJT05fR1VJREFOQ0UQBRIwCixBUl9DT05GSUdfUFJJTUFSWV9UWVBFX1ZB",
-            "TElEQVRJT05fSU5TUEVDVElPThAGEisKJ0FSX0NPTkZJR19QUklNQVJZX1RZ",
-            "UEVfUFJPQ0VTU19PVkVSVklFVxAHEiwKKEFSX0NPTkZJR19QUklNQVJZX1RZ",
-            "UEVfVFJBSU5JTkdfR1VJREFOQ0UQCBIqCiZBUl9DT05GSUdfUFJJTUFSWV9U",
-            "WVBFX1NBRkVUWV9HVUlEQU5DRRAJQokBCgljb20uYXIudjFCDUFyQ29uZmln",
-            "UHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIR",
-            "QXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "bG90LnByb3RvGiBhci92MS9wcmVzZW50YXRpb25fYmluZGluZy5wcm90bxob",
+            "YnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3YxL3By",
+            "ZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvInoKE0FSQ29uZmlnSW5mb01l",
+            "c3NhZ2USDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEEAEY",
+            "QFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
+            "ASgJUgtkZXNjcmlwdGlvbiJIChRBUkNvbmZpZ0luZm9NZXNzYWdlcxIwCgVp",
+            "bmZvcxgBIAMoCzIaLmFyLnYxLkFSQ29uZmlnSW5mb01lc3NhZ2VSBWluZm9z",
+            "IqwGCg9BUkNvbmZpZ01lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIEkPEEAVIC",
+            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgQQARhAUgRuYW1lEhIKBGljb24YAyAB",
+            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEkcK",
+            "DHByaW1hcnlfdHlwZRgFIAEoDjIaLmFyLnYxLkFSQ29uZmlnUHJpbWFyeVR5",
+            "cGVCCLpIBYIBAhABUgtwcmltYXJ5VHlwZRI+ChVhcl9kaXNhcHBlYXJfZGlz",
+            "dGFuY2UYBiABKANCCrpIByIFKABI3gJSE2FyRGlzYXBwZWFyRGlzdGFuY2US",
+            "OgoLaW5wdXRfc2xvdHMYByADKAsyGS5hci52MS5BUklucHV0U2xvdE1lc3Nh",
+            "Z2VSCmlucHV0U2xvdHMSQwoYcHJlc2VudGF0aW9uX3N0cmF0ZWd5X2lkGAgg",
+            "ASgJQgm6SAZyBNjzBAFSFnByZXNlbnRhdGlvblN0cmF0ZWd5SWQS6QEKFXBy",
+            "ZXNlbnRhdGlvbl9iaW5kaW5ncxgJIAMoCzIaLmFyLnYxLlByZXNlbnRhdGlv",
+            "bkJpbmRpbmdClwG6SJMBugGPAQowYXJfY29uZmlnLnByZXNlbnRhdGlvbl9i",
+            "aW5kaW5ncy51bmlxdWVfcm9sZV9rZXlzEi1wcmVzZW50YXRpb24gYmluZGlu",
+            "ZyByb2xlIGtleXMgbXVzdCBiZSB1bmlxdWUaLHRoaXMubWFwKGJpbmRpbmcs",
+            "IGJpbmRpbmcucm9sZV9rZXkpLnVuaXF1ZSgpUhRwcmVzZW50YXRpb25CaW5k",
+            "aW5nczqyAbpIrgEaqwEKI2FyX2NvbmZpZy5iaW5kaW5nc19yZXF1aXJlX3N0",
+            "cmF0ZWd5EjVwcmVzZW50YXRpb24gYmluZGluZ3MgcmVxdWlyZSBhIHByZXNl",
+            "bnRhdGlvbiBzdHJhdGVneRpNdGhpcy5wcmVzZW50YXRpb25fc3RyYXRlZ3lf",
+            "aWQgIT0gJycgfHwgdGhpcy5wcmVzZW50YXRpb25fYmluZGluZ3Muc2l6ZSgp",
+            "ID09IDAiQAoQQVJDb25maWdNZXNzYWdlcxIsCgVpdGVtcxgBIAMoCzIWLmFy",
+            "LnYxLkFSQ29uZmlnTWVzc2FnZVIFaXRlbXMitwIKEkFSQ29uZmlnQWRkTWVz",
+            "c2FnZRIdCgRuYW1lGAIgASgJQgm6SAZyBBABGEBSBG5hbWUSEgoEaWNvbhgD",
+            "IAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S",
+            "RwoMcHJpbWFyeV90eXBlGAUgASgOMhouYXIudjEuQVJDb25maWdQcmltYXJ5",
+            "VHlwZUIIukgFggECEAFSC3ByaW1hcnlUeXBlEj4KFWFyX2Rpc2FwcGVhcl9k",
+            "aXN0YW5jZRgGIAEoA0IKukgHIgUoAEjeAlITYXJEaXNhcHBlYXJEaXN0YW5j",
+            "ZRJDChhwcmVzZW50YXRpb25fc3RyYXRlZ3lfaWQYByABKAlCCbpIBnIE2PME",
+            "AVIWcHJlc2VudGF0aW9uU3RyYXRlZ3lJZCKMAgoVQVJDb25maWdVcGRhdGVN",
+            "ZXNzYWdlEhkKAmlkGAEgASgJQgm6SAZyBJDxBAFSAmlkEh0KBG5hbWUYAiAB",
+            "KAlCCbpIBnIEEAEYQFIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
+            "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI+ChVhcl9kaXNhcHBlYXJf",
+            "ZGlzdGFuY2UYBiABKANCCrpIByIFKABI3gJSE2FyRGlzYXBwZWFyRGlzdGFu",
+            "Y2USQwoYcHJlc2VudGF0aW9uX3N0cmF0ZWd5X2lkGAggASgJQgm6SAZyBNjz",
+            "BAFSFnByZXNlbnRhdGlvblN0cmF0ZWd5SWQq1gMKE0FSQ29uZmlnUHJpbWFy",
+            "eVR5cGUSJgoiQVJfQ09ORklHX1BSSU1BUllfVFlQRV9VTlNQRUNJRklFRBAA",
+            "EiIKHkFSX0NPTkZJR19QUklNQVJZX1RZUEVfR0VORVJBTBABEiwKKEFSX0NP",
+            "TkZJR19QUklNQVJZX1RZUEVfQVNTRU1CTFlfR1VJREFOQ0UQAhIuCipBUl9D",
+            "T05GSUdfUFJJTUFSWV9UWVBFX1BST0NFRFVSRV9DSEVDS0xJU1QQAxIpCiVB",
+            "Ul9DT05GSUdfUFJJTUFSWV9UWVBFX1JPQk9UX0dVSURBTkNFEAQSMQotQVJf",
+            "Q09ORklHX1BSSU1BUllfVFlQRV9DT0xMQUJPUkFUSU9OX0dVSURBTkNFEAUS",
+            "MAosQVJfQ09ORklHX1BSSU1BUllfVFlQRV9WQUxJREFUSU9OX0lOU1BFQ1RJ",
+            "T04QBhIrCidBUl9DT05GSUdfUFJJTUFSWV9UWVBFX1BST0NFU1NfT1ZFUlZJ",
+            "RVcQBxIsCihBUl9DT05GSUdfUFJJTUFSWV9UWVBFX1RSQUlOSU5HX0dVSURB",
+            "TkNFEAgSKgomQVJfQ09ORklHX1BSSU1BUllfVFlQRV9TQUZFVFlfR1VJREFO",
+            "Q0UQCUKJAQoJY29tLmFyLnYxQg1BckNvbmZpZ1Byb3RvUAFaL2dpdGh1Yi5j",
+            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhY",
+            "qgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh",
+            "6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.InputSlotReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.InputSlotReflection.Descriptor, global::Messages.AR.V1.PresentationBindingReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARConfigPrimaryType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessage), global::Messages.AR.V1.ARConfigInfoMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigInfoMessages), global::Messages.AR.V1.ARConfigInfoMessages.Parser, new[]{ "Infos" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "PrimaryType", "ArDisappearDistance", "InputSlots" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessage), global::Messages.AR.V1.ARConfigMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "PrimaryType", "ArDisappearDistance", "InputSlots", "PresentationStrategyId", "PresentationBindings" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigMessages), global::Messages.AR.V1.ARConfigMessages.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigAddMessage), global::Messages.AR.V1.ARConfigAddMessage.Parser, new[]{ "Name", "Icon", "Description", "PrimaryType", "ArDisappearDistance" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigUpdateMessage), global::Messages.AR.V1.ARConfigUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigAddMessage), global::Messages.AR.V1.ARConfigAddMessage.Parser, new[]{ "Name", "Icon", "Description", "PrimaryType", "ArDisappearDistance", "PresentationStrategyId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigUpdateMessage), global::Messages.AR.V1.ARConfigUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "ArDisappearDistance", "PresentationStrategyId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -708,6 +723,8 @@ namespace Messages.AR.V1 {
       primaryType_ = other.primaryType_;
       arDisappearDistance_ = other.arDisappearDistance_;
       inputSlots_ = other.inputSlots_.Clone();
+      presentationStrategyId_ = other.presentationStrategyId_;
+      presentationBindings_ = other.presentationBindings_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -812,6 +829,32 @@ namespace Messages.AR.V1 {
       get { return inputSlots_; }
     }
 
+    /// <summary>Field number for the "presentation_strategy_id" field.</summary>
+    public const int PresentationStrategyIdFieldNumber = 8;
+    private string presentationStrategyId_ = "";
+    /// <summary>
+    /// no strategy --> traditional/manual ARConfig, strategy --> adaptive presentation is enabled
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PresentationStrategyId {
+      get { return presentationStrategyId_; }
+      set {
+        presentationStrategyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "presentation_bindings" field.</summary>
+    public const int PresentationBindingsFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.PresentationBinding> _repeated_presentationBindings_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.AR.V1.PresentationBinding.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.PresentationBinding> presentationBindings_ = new pbc::RepeatedField<global::Messages.AR.V1.PresentationBinding>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.PresentationBinding> PresentationBindings {
+      get { return presentationBindings_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -834,6 +877,8 @@ namespace Messages.AR.V1 {
       if (PrimaryType != other.PrimaryType) return false;
       if (ArDisappearDistance != other.ArDisappearDistance) return false;
       if(!inputSlots_.Equals(other.inputSlots_)) return false;
+      if (PresentationStrategyId != other.PresentationStrategyId) return false;
+      if(!presentationBindings_.Equals(other.presentationBindings_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -848,6 +893,8 @@ namespace Messages.AR.V1 {
       if (PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) hash ^= PrimaryType.GetHashCode();
       if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
       hash ^= inputSlots_.GetHashCode();
+      if (PresentationStrategyId.Length != 0) hash ^= PresentationStrategyId.GetHashCode();
+      hash ^= presentationBindings_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -891,6 +938,11 @@ namespace Messages.AR.V1 {
         output.WriteInt64(ArDisappearDistance);
       }
       inputSlots_.WriteTo(output, _repeated_inputSlots_codec);
+      if (PresentationStrategyId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PresentationStrategyId);
+      }
+      presentationBindings_.WriteTo(output, _repeated_presentationBindings_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -926,6 +978,11 @@ namespace Messages.AR.V1 {
         output.WriteInt64(ArDisappearDistance);
       }
       inputSlots_.WriteTo(ref output, _repeated_inputSlots_codec);
+      if (PresentationStrategyId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PresentationStrategyId);
+      }
+      presentationBindings_.WriteTo(ref output, _repeated_presentationBindings_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -955,6 +1012,10 @@ namespace Messages.AR.V1 {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
       }
       size += inputSlots_.CalculateSize(_repeated_inputSlots_codec);
+      if (PresentationStrategyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PresentationStrategyId);
+      }
+      size += presentationBindings_.CalculateSize(_repeated_presentationBindings_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -986,6 +1047,10 @@ namespace Messages.AR.V1 {
         ArDisappearDistance = other.ArDisappearDistance;
       }
       inputSlots_.Add(other.inputSlots_);
+      if (other.PresentationStrategyId.Length != 0) {
+        PresentationStrategyId = other.PresentationStrategyId;
+      }
+      presentationBindings_.Add(other.presentationBindings_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1033,6 +1098,14 @@ namespace Messages.AR.V1 {
             inputSlots_.AddEntriesFrom(input, _repeated_inputSlots_codec);
             break;
           }
+          case 66: {
+            PresentationStrategyId = input.ReadString();
+            break;
+          }
+          case 74: {
+            presentationBindings_.AddEntriesFrom(input, _repeated_presentationBindings_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1078,6 +1151,14 @@ namespace Messages.AR.V1 {
           }
           case 58: {
             inputSlots_.AddEntriesFrom(ref input, _repeated_inputSlots_codec);
+            break;
+          }
+          case 66: {
+            PresentationStrategyId = input.ReadString();
+            break;
+          }
+          case 74: {
+            presentationBindings_.AddEntriesFrom(ref input, _repeated_presentationBindings_codec);
             break;
           }
         }
@@ -1317,6 +1398,7 @@ namespace Messages.AR.V1 {
       description_ = other.description_;
       primaryType_ = other.primaryType_;
       arDisappearDistance_ = other.arDisappearDistance_;
+      presentationStrategyId_ = other.presentationStrategyId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1392,6 +1474,18 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "presentation_strategy_id" field.</summary>
+    public const int PresentationStrategyIdFieldNumber = 7;
+    private string presentationStrategyId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PresentationStrategyId {
+      get { return presentationStrategyId_; }
+      set {
+        presentationStrategyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1412,6 +1506,7 @@ namespace Messages.AR.V1 {
       if (Description != other.Description) return false;
       if (PrimaryType != other.PrimaryType) return false;
       if (ArDisappearDistance != other.ArDisappearDistance) return false;
+      if (PresentationStrategyId != other.PresentationStrategyId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1424,6 +1519,7 @@ namespace Messages.AR.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (PrimaryType != global::Messages.AR.V1.ARConfigPrimaryType.Unspecified) hash ^= PrimaryType.GetHashCode();
       if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
+      if (PresentationStrategyId.Length != 0) hash ^= PresentationStrategyId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1462,6 +1558,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteInt64(ArDisappearDistance);
       }
+      if (PresentationStrategyId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PresentationStrategyId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1492,6 +1592,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteInt64(ArDisappearDistance);
       }
+      if (PresentationStrategyId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PresentationStrategyId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1516,6 +1620,9 @@ namespace Messages.AR.V1 {
       }
       if (ArDisappearDistance != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
+      }
+      if (PresentationStrategyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PresentationStrategyId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1543,6 +1650,9 @@ namespace Messages.AR.V1 {
       }
       if (other.ArDisappearDistance != 0L) {
         ArDisappearDistance = other.ArDisappearDistance;
+      }
+      if (other.PresentationStrategyId.Length != 0) {
+        PresentationStrategyId = other.PresentationStrategyId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1583,6 +1693,10 @@ namespace Messages.AR.V1 {
             ArDisappearDistance = input.ReadInt64();
             break;
           }
+          case 58: {
+            PresentationStrategyId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1620,6 +1734,10 @@ namespace Messages.AR.V1 {
           }
           case 48: {
             ArDisappearDistance = input.ReadInt64();
+            break;
+          }
+          case 58: {
+            PresentationStrategyId = input.ReadString();
             break;
           }
         }
@@ -1669,6 +1787,7 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       arDisappearDistance_ = other.arDisappearDistance_;
+      presentationStrategyId_ = other.presentationStrategyId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1744,6 +1863,18 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "presentation_strategy_id" field.</summary>
+    public const int PresentationStrategyIdFieldNumber = 8;
+    private string presentationStrategyId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PresentationStrategyId {
+      get { return presentationStrategyId_; }
+      set {
+        presentationStrategyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1764,6 +1895,7 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (ArDisappearDistance != other.ArDisappearDistance) return false;
+      if (PresentationStrategyId != other.PresentationStrategyId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1776,6 +1908,7 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ArDisappearDistance != 0L) hash ^= ArDisappearDistance.GetHashCode();
+      if (PresentationStrategyId.Length != 0) hash ^= PresentationStrategyId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1814,6 +1947,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteInt64(ArDisappearDistance);
       }
+      if (PresentationStrategyId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PresentationStrategyId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1844,6 +1981,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(48);
         output.WriteInt64(ArDisappearDistance);
       }
+      if (PresentationStrategyId.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PresentationStrategyId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1868,6 +2009,9 @@ namespace Messages.AR.V1 {
       }
       if (ArDisappearDistance != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ArDisappearDistance);
+      }
+      if (PresentationStrategyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PresentationStrategyId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1895,6 +2039,9 @@ namespace Messages.AR.V1 {
       }
       if (other.ArDisappearDistance != 0L) {
         ArDisappearDistance = other.ArDisappearDistance;
+      }
+      if (other.PresentationStrategyId.Length != 0) {
+        PresentationStrategyId = other.PresentationStrategyId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1935,6 +2082,10 @@ namespace Messages.AR.V1 {
             ArDisappearDistance = input.ReadInt64();
             break;
           }
+          case 66: {
+            PresentationStrategyId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1972,6 +2123,10 @@ namespace Messages.AR.V1 {
           }
           case 48: {
             ArDisappearDistance = input.ReadInt64();
+            break;
+          }
+          case 66: {
+            PresentationStrategyId = input.ReadString();
             break;
           }
         }

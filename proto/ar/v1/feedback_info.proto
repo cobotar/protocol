@@ -3,32 +3,13 @@ package ar.v1;
 
 import "ar/v1/events.proto";
 import "ar/v1/feedback.proto";
+import "ar/v1/feedback_capability.proto";
+import "ar/v1/feedback_features.proto";
 import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
-
-// Describes a type-level behavior supported by a feedback implementation.
-// Capability metadata is server-owned and intended for read-only discovery by
-// authoring clients. It does not describe whether a particular feedback
-// instance is currently active.
-message FeedbackCapability {
-  string key = 1 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 64
-  }]; // Stable machine-readable capability identifier.
-  string description = 2; // Human-readable explanation shown by authoring tools.
-  repeated string property_keys = 3 [(buf.validate.field).repeated = {
-    unique: true
-    items: {
-      string: {
-        min_len: 1
-        max_len: 64
-      }
-    }
-  }]; // Stable PropertyDefinition keys used to configure this capability.
-}
 
 enum FeedbackGroup {
   FEEDBACK_GROUP_UNSPECIFIED = 0;
@@ -55,6 +36,7 @@ enum FeedbackGroup {
   FEEDBACK_GROUP_COLLABORATION = 7;
 }
 
+// TODO: Rename to FeedbackDefinition
 message FeedbackInfoMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
@@ -71,7 +53,16 @@ message FeedbackInfoMessage {
   repeated HandlerRequirement required_handlers = 11; // Events that MUST have at least one handler somewhere else in the system. (i.e., if the feedback emits these, it expects the environment to react)
   repeated ExchangeType emits = 12; // / Outputs the feedback publishes
   bool disabled = 13;
-  repeated FeedbackCapability capabilities = 14; // Optional behaviors supported by this feedback type.
+  repeated FeedbackFeature features = 14 [(buf.validate.field).cel = {
+    id: "feedback_info.features.unique_keys"
+    message: "feature keys must be unique"
+    expression: "this.map(feature, feature.key).unique()"
+  }]; // Implementation/configuration features
+  repeated FeedbackCapability capabilities = 15 [(buf.validate.field).cel = {
+    id: "feedback_info.capabilities.unique_semantics"
+    message: "capability semantics must be unique"
+    expression: "this.map(capability, capability.semantic).unique()"
+  }]; // Assistance semantics
 }
 
 message FeedbackInfoMessages {

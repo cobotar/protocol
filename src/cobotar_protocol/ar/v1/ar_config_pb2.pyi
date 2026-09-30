@@ -1,4 +1,5 @@
 from ar.v1 import input_slot_pb2 as _input_slot_pb2
+from ar.v1 import presentation_binding_pb2 as _presentation_binding_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -52,7 +53,7 @@ class ARConfigInfoMessages(_message.Message):
     def __init__(self, infos: _Optional[_Iterable[_Union[ARConfigInfoMessage, _Mapping]]] = ...) -> None: ...
 
 class ARConfigMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "primary_type", "ar_disappear_distance", "input_slots")
+    __slots__ = ("id", "name", "icon", "description", "primary_type", "ar_disappear_distance", "input_slots", "presentation_strategy_id", "presentation_bindings")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -60,6 +61,8 @@ class ARConfigMessage(_message.Message):
     PRIMARY_TYPE_FIELD_NUMBER: _ClassVar[int]
     AR_DISAPPEAR_DISTANCE_FIELD_NUMBER: _ClassVar[int]
     INPUT_SLOTS_FIELD_NUMBER: _ClassVar[int]
+    PRESENTATION_STRATEGY_ID_FIELD_NUMBER: _ClassVar[int]
+    PRESENTATION_BINDINGS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -67,7 +70,9 @@ class ARConfigMessage(_message.Message):
     primary_type: ARConfigPrimaryType
     ar_disappear_distance: int
     input_slots: _containers.RepeatedCompositeFieldContainer[_input_slot_pb2.ARInputSlotMessage]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., primary_type: _Optional[_Union[ARConfigPrimaryType, str]] = ..., ar_disappear_distance: _Optional[int] = ..., input_slots: _Optional[_Iterable[_Union[_input_slot_pb2.ARInputSlotMessage, _Mapping]]] = ...) -> None: ...
+    presentation_strategy_id: str
+    presentation_bindings: _containers.RepeatedCompositeFieldContainer[_presentation_binding_pb2.PresentationBinding]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., primary_type: _Optional[_Union[ARConfigPrimaryType, str]] = ..., ar_disappear_distance: _Optional[int] = ..., input_slots: _Optional[_Iterable[_Union[_input_slot_pb2.ARInputSlotMessage, _Mapping]]] = ..., presentation_strategy_id: _Optional[str] = ..., presentation_bindings: _Optional[_Iterable[_Union[_presentation_binding_pb2.PresentationBinding, _Mapping]]] = ...) -> None: ...
 
 class ARConfigMessages(_message.Message):
     __slots__ = ("items",)
@@ -76,29 +81,33 @@ class ARConfigMessages(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[ARConfigMessage, _Mapping]]] = ...) -> None: ...
 
 class ARConfigAddMessage(_message.Message):
-    __slots__ = ("name", "icon", "description", "primary_type", "ar_disappear_distance")
+    __slots__ = ("name", "icon", "description", "primary_type", "ar_disappear_distance", "presentation_strategy_id")
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     PRIMARY_TYPE_FIELD_NUMBER: _ClassVar[int]
     AR_DISAPPEAR_DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    PRESENTATION_STRATEGY_ID_FIELD_NUMBER: _ClassVar[int]
     name: str
     icon: str
     description: str
     primary_type: ARConfigPrimaryType
     ar_disappear_distance: int
-    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., primary_type: _Optional[_Union[ARConfigPrimaryType, str]] = ..., ar_disappear_distance: _Optional[int] = ...) -> None: ...
+    presentation_strategy_id: str
+    def __init__(self, name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., primary_type: _Optional[_Union[ARConfigPrimaryType, str]] = ..., ar_disappear_distance: _Optional[int] = ..., presentation_strategy_id: _Optional[str] = ...) -> None: ...
 
 class ARConfigUpdateMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance")
+    __slots__ = ("id", "name", "icon", "description", "ar_disappear_distance", "presentation_strategy_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     AR_DISAPPEAR_DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    PRESENTATION_STRATEGY_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     ar_disappear_distance: int
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ...) -> None: ...
+    presentation_strategy_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., ar_disappear_distance: _Optional[int] = ..., presentation_strategy_id: _Optional[str] = ...) -> None: ...

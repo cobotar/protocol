@@ -1,0 +1,51 @@
+syntax = "proto3";
+package ar.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// Binds one PresentationRole from the ARConfig's active PresentationStrategy
+// to one concrete AR-content entity owned by the same ARConfig.
+//
+// Functions are intentionally not presentation bindings. Supporting Functions
+// are implementation dependencies and should be reconciled by the backend.
+message PresentationBinding {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "feedback_id",
+      "action_id"
+    ]
+    required: true
+  };
+
+  string role_key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+
+  string feedback_id = 2 [(buf.validate.field).string.(validation.v1.feedback_id_component) = true];
+
+  string action_id = 3 [(buf.validate.field).string.(validation.v1.action_id_component) = true];
+}
+
+message PresentationBindingUpdate {
+  string config_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
+  PresentationBinding binding = 2 [(buf.validate.field).required = true];
+}
+
+message PresentationBindingReset {
+  string config_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
+  string role_key = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+}

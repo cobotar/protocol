@@ -1,3 +1,4 @@
+from ar.v1 import provenance_pb2 as _provenance_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
@@ -65,20 +66,22 @@ FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT: FunctionType
 FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT: FunctionType
 
 class FunctionMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "config_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "config_id", "provenance")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
+    PROVENANCE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     type: FunctionType
     config_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FunctionType, str]] = ..., config_id: _Optional[str] = ...) -> None: ...
+    provenance: _provenance_pb2.ARContentProvenance
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[FunctionType, str]] = ..., config_id: _Optional[str] = ..., provenance: _Optional[_Union[_provenance_pb2.ARContentProvenance, _Mapping]] = ...) -> None: ...
 
 class FunctionMessages(_message.Message):
     __slots__ = ("items",)

@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ar.v1;
 
+import "ar/v1/provenance.proto";
 import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -123,7 +124,10 @@ enum FunctionType {
 }
 
 message FunctionMessage {
-  string id = 1 [(buf.validate.field).string.(validation.v1.function_id_component) = true];
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.function_id_component) = true
+  ];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
@@ -131,7 +135,11 @@ message FunctionMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
+  ARContentProvenance provenance = 7 [(buf.validate.field).required = true];
 }
 
 message FunctionMessages {
@@ -139,7 +147,10 @@ message FunctionMessages {
 }
 
 message FunctionAddMessage {
-  string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;

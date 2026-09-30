@@ -8,6 +8,10 @@ import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
 import { file_ar_v1_events } from "./events_pb.ts";
 import type { FeedbackType } from "./feedback_pb.ts";
 import { file_ar_v1_feedback } from "./feedback_pb.ts";
+import type { FeedbackCapability } from "./feedback_capability_pb.ts";
+import { file_ar_v1_feedback_capability } from "./feedback_capability_pb.ts";
+import type { FeedbackFeature } from "./feedback_features_pb.ts";
+import { file_ar_v1_feedback_features } from "./feedback_features_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -16,47 +20,11 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback_info.proto.
  */
 export const file_ar_v1_feedback_info: GenFile = /*@__PURE__*/
-  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSJqChJGZWVkYmFja0NhcGFiaWxpdHkSFgoDa2V5GAEgASgJQgm6SAZyBBABGEASEwoLZGVzY3JpcHRpb24YAiABKAkSJwoNcHJvcGVydHlfa2V5cxgDIAMoCUIQukgNkgEKGAEiBnIEEAEYQCLdAwoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZlZWRiYWNrR3JvdXBCCLpIBYIBAhABEhUKDXJlcXVpcmVfYWdlbnQYByABKAgSFQoNcmVxdWlyZV9mcmFtZRgIIAEoCBIvChJjb25zdW1lcnNfcmVxdWlyZWQYCSADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAogAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGAsgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEhAKCGRpc2FibGVkGA0gASgIEi8KDGNhcGFiaWxpdGllcxgOIAMoCzIZLmFyLnYxLkZlZWRiYWNrQ2FwYWJpbGl0eSJBChRGZWVkYmFja0luZm9NZXNzYWdlcxIpCgVpbmZvcxgBIAMoCzIaLmFyLnYxLkZlZWRiYWNrSW5mb01lc3NhZ2Uq+wEKDUZlZWRiYWNrR3JvdXASHgoaRkVFREJBQ0tfR1JPVVBfVU5TUEVDSUZJRUQQABIaChZGRUVEQkFDS19HUk9VUF9HRU5FUkFMEAESGgoWRkVFREJBQ0tfR1JPVVBfU1BBVElBTBACEhsKF0ZFRURCQUNLX0dST1VQX1JFU09VUkNFEAMSGgoWRkVFREJBQ0tfR1JPVVBfUFJPQ0VTUxAEEh0KGUZFRURCQUNLX0dST1VQX1ZBTElEQVRJT04QBRIYChRGRUVEQkFDS19HUk9VUF9ST0JPVBAGEiAKHEZFRURCQUNLX0dST1VQX0NPTExBQk9SQVRJT04QB0KNAQoJY29tLmFyLnYxQhFGZWVkYmFja0luZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_events, file_ar_v1_feedback, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chlhci92MS9mZWVkYmFja19pbmZvLnByb3RvEgVhci52MSKMBgoTRmVlZGJhY2tJbmZvTWVzc2FnZRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARItCgVncm91cBgGIAEoDjIULmFyLnYxLkZlZWRiYWNrR3JvdXBCCLpIBYIBAhABEhUKDXJlcXVpcmVfYWdlbnQYByABKAgSFQoNcmVxdWlyZV9mcmFtZRgIIAEoCBIvChJjb25zdW1lcnNfcmVxdWlyZWQYCSADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAogAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGAsgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEhAKCGRpc2FibGVkGA0gASgIEpoBCghmZWF0dXJlcxgOIAMoCzIWLmFyLnYxLkZlZWRiYWNrRmVhdHVyZUJwukhtugFqCiJmZWVkYmFja19pbmZvLmZlYXR1cmVzLnVuaXF1ZV9rZXlzEhtmZWF0dXJlIGtleXMgbXVzdCBiZSB1bmlxdWUaJ3RoaXMubWFwKGZlYXR1cmUsIGZlYXR1cmUua2V5KS51bmlxdWUoKRLAAQoMY2FwYWJpbGl0aWVzGA8gAygLMhkuYXIudjEuRmVlZGJhY2tDYXBhYmlsaXR5Qo4BukiKAboBhgEKK2ZlZWRiYWNrX2luZm8uY2FwYWJpbGl0aWVzLnVuaXF1ZV9zZW1hbnRpY3MSI2NhcGFiaWxpdHkgc2VtYW50aWNzIG11c3QgYmUgdW5pcXVlGjJ0aGlzLm1hcChjYXBhYmlsaXR5LCBjYXBhYmlsaXR5LnNlbWFudGljKS51bmlxdWUoKSJBChRGZWVkYmFja0luZm9NZXNzYWdlcxIpCgVpbmZvcxgBIAMoCzIaLmFyLnYxLkZlZWRiYWNrSW5mb01lc3NhZ2Uq+wEKDUZlZWRiYWNrR3JvdXASHgoaRkVFREJBQ0tfR1JPVVBfVU5TUEVDSUZJRUQQABIaChZGRUVEQkFDS19HUk9VUF9HRU5FUkFMEAESGgoWRkVFREJBQ0tfR1JPVVBfU1BBVElBTBACEhsKF0ZFRURCQUNLX0dST1VQX1JFU09VUkNFEAMSGgoWRkVFREJBQ0tfR1JPVVBfUFJPQ0VTUxAEEh0KGUZFRURCQUNLX0dST1VQX1ZBTElEQVRJT04QBRIYChRGRUVEQkFDS19HUk9VUF9ST0JPVBAGEiAKHEZFRURCQUNLX0dST1VQX0NPTExBQk9SQVRJT04QB0KNAQoJY29tLmFyLnYxQhFGZWVkYmFja0luZm9Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_events, file_ar_v1_feedback, file_ar_v1_feedback_capability, file_ar_v1_feedback_features, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
- * Describes a type-level behavior supported by a feedback implementation.
- * Capability metadata is server-owned and intended for read-only discovery by
- * authoring clients. It does not describe whether a particular feedback
- * instance is currently active.
+ * TODO: Rename to FeedbackDefinition
  *
- * @generated from message ar.v1.FeedbackCapability
- */
-export type FeedbackCapability = Message<"ar.v1.FeedbackCapability"> & {
-  /**
-   * Stable machine-readable capability identifier.
-   *
-   * @generated from field: string key = 1;
-   */
-  key: string;
-
-  /**
-   * Human-readable explanation shown by authoring tools.
-   *
-   * @generated from field: string description = 2;
-   */
-  description: string;
-
-  /**
-   * Stable PropertyDefinition keys used to configure this capability.
-   *
-   * @generated from field: repeated string property_keys = 3;
-   */
-  propertyKeys: string[];
-};
-
-/**
- * Describes the message ar.v1.FeedbackCapability.
- * Use `create(FeedbackCapabilitySchema)` to create a new message.
- */
-export const FeedbackCapabilitySchema: GenMessage<FeedbackCapability> = /*@__PURE__*/
-  messageDesc(file_ar_v1_feedback_info, 0);
-
-/**
  * @generated from message ar.v1.FeedbackInfoMessage
  */
 export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
@@ -129,9 +97,16 @@ export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
   disabled: boolean;
 
   /**
-   * Optional behaviors supported by this feedback type.
+   * Implementation/configuration features
    *
-   * @generated from field: repeated ar.v1.FeedbackCapability capabilities = 14;
+   * @generated from field: repeated ar.v1.FeedbackFeature features = 14;
+   */
+  features: FeedbackFeature[];
+
+  /**
+   * Assistance semantics
+   *
+   * @generated from field: repeated ar.v1.FeedbackCapability capabilities = 15;
    */
   capabilities: FeedbackCapability[];
 };
@@ -141,7 +116,7 @@ export type FeedbackInfoMessage = Message<"ar.v1.FeedbackInfoMessage"> & {
  * Use `create(FeedbackInfoMessageSchema)` to create a new message.
  */
 export const FeedbackInfoMessageSchema: GenMessage<FeedbackInfoMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_feedback_info, 1);
+  messageDesc(file_ar_v1_feedback_info, 0);
 
 /**
  * @generated from message ar.v1.FeedbackInfoMessages
@@ -158,7 +133,7 @@ export type FeedbackInfoMessages = Message<"ar.v1.FeedbackInfoMessages"> & {
  * Use `create(FeedbackInfoMessagesSchema)` to create a new message.
  */
 export const FeedbackInfoMessagesSchema: GenMessage<FeedbackInfoMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_feedback_info, 2);
+  messageDesc(file_ar_v1_feedback_info, 1);
 
 /**
  * @generated from enum ar.v1.FeedbackGroup

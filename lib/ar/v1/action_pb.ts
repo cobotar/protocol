@@ -4,6 +4,8 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { AdaptiveParticipation, ARContentProvenance } from "./provenance_pb.ts";
+import { file_ar_v1_provenance } from "./provenance_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { SkillRequirement } from "../../capability/v1/skill_requirement_pb.ts";
 import { file_capability_v1_skill_requirement } from "../../capability/v1/skill_requirement_pb.ts";
@@ -14,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/action.proto.
  */
 export const file_ar_v1_action: GenFile = /*@__PURE__*/
-  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxIvEBCg1BY3Rpb25NZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBMjzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICMgBAYIBAhABEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgHIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudBIcCgljb25maWdfaWQYCCABKAlCCbpIBnIEkPEEASI1Cg5BY3Rpb25NZXNzYWdlcxIjCgVpdGVtcxgBIAMoCzIULmFyLnYxLkFjdGlvbk1lc3NhZ2UirgIKEEFjdGlvbkFkZE1lc3NhZ2USHAoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICMgBAYIBAhABEiQKEXJvYm90X3Byb3BlcnR5X2lkGAYgASgJQgm6SAZyBJjxBAESKQoWYWN0aXZhdGluZ19wcm9wZXJ0eV9pZBgHIAEoCUIJukgGcgSY8QQBEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgIIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudCKrAQoTQWN0aW9uVXBkYXRlTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTI8wQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgFIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudCrgAwoKQWN0aW9uVHlwZRIbChdBQ1RJT05fVFlQRV9VTlNQRUNJRklFRBAAEh0KGUFDVElPTl9UWVBFX1RBU0tfQ09NUExFVEUQChIZChVBQ1RJT05fVFlQRV9UQVNLX1VORE8QCxIbChdBQ1RJT05fVFlQRV9UQVNLX0FTU0lHThAMEiAKHEFDVElPTl9UWVBFX1RBU0tfQVNTSUdOX05FWFQQDRIeChpBQ1RJT05fVFlQRV9UQVNLX0hJR0hMSUdIVBAOEhkKFUFDVElPTl9UWVBFX1RBU0tfSEVMUBAPEiAKHEFDVElPTl9UWVBFX1RBU0tfSU5fUFJPR1JFU1MQEBIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDQSJwojQUNUSU9OX1RZUEVfUk9CT1RfQkVHSU5fQ09MTEFCT1JBVEUQNRIlCiFBQ1RJT05fVFlQRV9ST0JPVF9FTkRfQ09MTEFCT1JBVEUQNhIoCiRBQ1RJT05fVFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfSU5QVVQQN0KHAQoJY29tLmFyLnYxQgtBY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_skill_requirement, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChJhci92MS9hY3Rpb24ucHJvdG8SBWFyLnYxIqwCCg1BY3Rpb25NZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBMjzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLAoEdHlwZRgFIAEoDjIRLmFyLnYxLkFjdGlvblR5cGVCC7pICMgBAYIBAhABEkEKGGVsaWdpYmlsaXR5X3JlcXVpcmVtZW50cxgHIAMoCzIfLmNhcGFiaWxpdHkudjEuU2tpbGxSZXF1aXJlbWVudBIfCgljb25maWdfaWQYCCABKAlCDLpICcgBAXIEkPEEARI2Cgpwcm92ZW5hbmNlGAkgASgLMhouYXIudjEuQVJDb250ZW50UHJvdmVuYW5jZUIGukgDyAEBIjUKDkFjdGlvbk1lc3NhZ2VzEiMKBWl0ZW1zGAEgAygLMhQuYXIudjEuQWN0aW9uTWVzc2FnZSKxAgoQQWN0aW9uQWRkTWVzc2FnZRIfCgljb25maWdfaWQYASABKAlCDLpICcgBAXIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIsCgR0eXBlGAUgASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIyAEBggECEAESJAoRcm9ib3RfcHJvcGVydHlfaWQYBiABKAlCCbpIBnIEmPEEARIpChZhY3RpdmF0aW5nX3Byb3BlcnR5X2lkGAcgASgJQgm6SAZyBJjxBAESQQoYZWxpZ2liaWxpdHlfcmVxdWlyZW1lbnRzGAggAygLMh8uY2FwYWJpbGl0eS52MS5Ta2lsbFJlcXVpcmVtZW50IuwBChNBY3Rpb25VcGRhdGVNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBMjzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSQQoYZWxpZ2liaWxpdHlfcmVxdWlyZW1lbnRzGAUgAygLMh8uY2FwYWJpbGl0eS52MS5Ta2lsbFJlcXVpcmVtZW50Ej8KDXBhcnRpY2lwYXRpb24YBiABKA4yHC5hci52MS5BZGFwdGl2ZVBhcnRpY2lwYXRpb25CCrpIB4IBBBgBGAIiMgoWUmVxdWVzdEFjdGlvbk93bmVyc2hpcBIYCgJpZBgBIAEoCUIMukgJyAEBcgTI8wQBKqwECgpBY3Rpb25UeXBlEhsKF0FDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQUNUSU9OX1RZUEVfVEFTS19DT01QTEVURRAKEhkKFUFDVElPTl9UWVBFX1RBU0tfVU5ETxALEhsKF0FDVElPTl9UWVBFX1RBU0tfQVNTSUdOEAwSIAocQUNUSU9OX1RZUEVfVEFTS19BU1NJR05fTkVYVBANEh4KGkFDVElPTl9UWVBFX1RBU0tfSElHSExJR0hUEA4SGQoVQUNUSU9OX1RZUEVfVEFTS19IRUxQEA8SIAocQUNUSU9OX1RZUEVfVEFTS19JTl9QUk9HUkVTUxAQEiQKIEFDVElPTl9UWVBFX1RBU0tfTU9SRV9BU1NJU1RBTkNFEBESJAogQUNUSU9OX1RZUEVfVEFTS19MRVNTX0FTU0lTVEFOQ0UQEhIgChxBQ1RJT05fVFlQRV9ST0JPVF9QTEFZX1BBVVNFEDISIQodQUNUSU9OX1RZUEVfUk9CT1RfQUNLTk9XTEVER0UQMxIgChxBQ1RJT05fVFlQRV9ST0JPVF9GUkVFX0RSSVZFEDQSJwojQUNUSU9OX1RZUEVfUk9CT1RfQkVHSU5fQ09MTEFCT1JBVEUQNRIlCiFBQ1RJT05fVFlQRV9ST0JPVF9FTkRfQ09MTEFCT1JBVEUQNhIoCiRBQ1RJT05fVFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfSU5QVVQQN0KHAQoJY29tLmFyLnYxQgtBY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_provenance, file_buf_validate_validate, file_capability_v1_skill_requirement, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ActionMessage
@@ -54,6 +56,11 @@ export type ActionMessage = Message<"ar.v1.ActionMessage"> & {
    * @generated from field: string config_id = 8;
    */
   configId: string;
+
+  /**
+   * @generated from field: ar.v1.ARContentProvenance provenance = 9;
+   */
+  provenance?: ARContentProvenance;
 };
 
 /**
@@ -164,6 +171,11 @@ export type ActionUpdateMessage = Message<"ar.v1.ActionUpdateMessage"> & {
    * @generated from field: repeated capability.v1.SkillRequirement eligibility_requirements = 5;
    */
   eligibilityRequirements: SkillRequirement[];
+
+  /**
+   * @generated from field: ar.v1.AdaptiveParticipation participation = 6;
+   */
+  participation: AdaptiveParticipation;
 };
 
 /**
@@ -172,6 +184,27 @@ export type ActionUpdateMessage = Message<"ar.v1.ActionUpdateMessage"> & {
  */
 export const ActionUpdateMessageSchema: GenMessage<ActionUpdateMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_action, 3);
+
+/**
+ * Request action ownership.
+ * Only possible to be called on a STRATEGY/MANAGED action.
+ * It will result in AUTHOR/AVAILABLE.
+ *
+ * @generated from message ar.v1.RequestActionOwnership
+ */
+export type RequestActionOwnership = Message<"ar.v1.RequestActionOwnership"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
+
+/**
+ * Describes the message ar.v1.RequestActionOwnership.
+ * Use `create(RequestActionOwnershipSchema)` to create a new message.
+ */
+export const RequestActionOwnershipSchema: GenMessage<RequestActionOwnership> = /*@__PURE__*/
+  messageDesc(file_ar_v1_action, 4);
 
 /**
  * @generated from enum ar.v1.ActionType
@@ -230,6 +263,20 @@ export enum ActionType {
    * @generated from enum value: ACTION_TYPE_TASK_IN_PROGRESS = 16;
    */
   TASK_IN_PROGRESS = 16,
+
+  /**
+   * Requests more assistance for a task.
+   *
+   * @generated from enum value: ACTION_TYPE_TASK_MORE_ASSISTANCE = 17;
+   */
+  TASK_MORE_ASSISTANCE = 17,
+
+  /**
+   * Requests less assistance for a task.
+   *
+   * @generated from enum value: ACTION_TYPE_TASK_LESS_ASSISTANCE = 18;
+   */
+  TASK_LESS_ASSISTANCE = 18,
 
   /**
    * Toggles robot execution between playing and paused.

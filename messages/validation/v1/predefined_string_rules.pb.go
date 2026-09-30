@@ -366,6 +366,22 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10042,opt,name=function_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10043,
+		Name:          "validation.v1.presentation_strategy_id_component",
+		Tag:           "varint,10043,opt,name=presentation_strategy_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10044,
+		Name:          "validation.v1.key_component",
+		Tag:           "varint,10044,opt,name=key_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -456,6 +472,10 @@ var (
 	E_ActionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[41]
 	// optional bool function_id_component = 10042;
 	E_FunctionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[42]
+	// optional bool presentation_strategy_id_component = 10043;
+	E_PresentationStrategyIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[43]
+	// optional bool key_component = 10044;
+	E_KeyComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[44]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -591,7 +611,13 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1astring.action_id_component\x12$this does not seem to be a action id\x1a*(this == '' || this.startsWith('action-'))R\x11actionIdComponent:\xc9\x01\n" +
 	"\x15function_id_component\x12\x19.buf.validate.StringRules\x18\xbaN \x01(\bBy\xc2Hv\n" +
 	"t\n" +
-	"\x1cstring.function_id_component\x12&this does not seem to be a function id\x1a,(this == '' || this.startsWith('function-'))R\x13functionIdComponentB\xb5\x01\n" +
+	"\x1cstring.function_id_component\x12&this does not seem to be a function id\x1a,(this == '' || this.startsWith('function-'))R\x13functionIdComponent:\x83\x02\n" +
+	"\"presentation_strategy_id_component\x12\x19.buf.validate.StringRules\x18\xbbN \x01(\bB\x99\x01\xc2H\x95\x01\n" +
+	"\x92\x01\n" +
+	")string.presentation_strategy_id_component\x123this does not seem to be a presentation-strategy id\x1a0(this == '' || this.startsWith('presentation-'))R\x1fpresentationStrategyIdComponent:\x9f\x02\n" +
+	"\rkey_component\x12\x19.buf.validate.StringRules\x18\xbcN \x01(\bB\xdd\x01\xc2H\xd9\x01\n" +
+	"\xd6\x01\n" +
+	"\x14string.key_component\x12rKey must be 1 to 64 characters and contain only lowercase letters, digits, and underscores, starting with a letter\x1aJthis.size() >= 1 && this.size() <= 64 && this.matches('^[a-z][a-z0-9_]*$')R\fkeyComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -641,10 +667,12 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 40: validation.v1.feedback_id_component:extendee -> buf.validate.StringRules
 	0,  // 41: validation.v1.action_id_component:extendee -> buf.validate.StringRules
 	0,  // 42: validation.v1.function_id_component:extendee -> buf.validate.StringRules
-	43, // [43:43] is the sub-list for method output_type
-	43, // [43:43] is the sub-list for method input_type
-	43, // [43:43] is the sub-list for extension type_name
-	0,  // [0:43] is the sub-list for extension extendee
+	0,  // 43: validation.v1.presentation_strategy_id_component:extendee -> buf.validate.StringRules
+	0,  // 44: validation.v1.key_component:extendee -> buf.validate.StringRules
+	45, // [45:45] is the sub-list for method output_type
+	45, // [45:45] is the sub-list for method input_type
+	45, // [45:45] is the sub-list for extension type_name
+	0,  // [0:45] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -660,7 +688,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 43,
+			NumExtensions: 45,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

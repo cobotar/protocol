@@ -174,6 +174,7 @@ type FunctionMessage struct {
 	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type          FunctionType           `protobuf:"varint,5,opt,name=type,proto3,enum=ar.v1.FunctionType" json:"type,omitempty"`
 	ConfigId      string                 `protobuf:"bytes,6,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
+	Provenance    *ARContentProvenance   `protobuf:"bytes,7,opt,name=provenance,proto3" json:"provenance,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -248,6 +249,13 @@ func (x *FunctionMessage) GetConfigId() string {
 		return x.ConfigId
 	}
 	return ""
+}
+
+func (x *FunctionMessage) GetProvenance() *ARContentProvenance {
+	if x != nil {
+		return x.Provenance
+	}
+	return nil
 }
 
 type FunctionMessages struct {
@@ -442,18 +450,21 @@ var File_ar_v1_function_proto protoreflect.FileDescriptor
 
 const file_ar_v1_function_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/function.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdf\x01\n" +
-	"\x0fFunctionMessage\x12\x19\n" +
-	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
+	"\x14ar/v1/function.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa9\x02\n" +
+	"\x0fFunctionMessage\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12&\n" +
-	"\tconfig_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\"@\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12)\n" +
+	"\tconfig_id\x18\x06 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
+	"\n" +
+	"provenance\x18\a \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"provenance\"@\n" +
 	"\x10FunctionMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xc7\x01\n" +
-	"\x12FunctionAddMessage\x12&\n" +
-	"\tconfig_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xca\x01\n" +
+	"\x12FunctionAddMessage\x12)\n" +
+	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x124\n" +
@@ -513,16 +524,18 @@ var file_ar_v1_function_proto_goTypes = []any{
 	(*FunctionMessages)(nil),      // 2: ar.v1.FunctionMessages
 	(*FunctionAddMessage)(nil),    // 3: ar.v1.FunctionAddMessage
 	(*FunctionUpdateMessage)(nil), // 4: ar.v1.FunctionUpdateMessage
+	(*ARContentProvenance)(nil),   // 5: ar.v1.ARContentProvenance
 }
 var file_ar_v1_function_proto_depIdxs = []int32{
 	0, // 0: ar.v1.FunctionMessage.type:type_name -> ar.v1.FunctionType
-	1, // 1: ar.v1.FunctionMessages.items:type_name -> ar.v1.FunctionMessage
-	0, // 2: ar.v1.FunctionAddMessage.type:type_name -> ar.v1.FunctionType
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	5, // 1: ar.v1.FunctionMessage.provenance:type_name -> ar.v1.ARContentProvenance
+	1, // 2: ar.v1.FunctionMessages.items:type_name -> ar.v1.FunctionMessage
+	0, // 3: ar.v1.FunctionAddMessage.type:type_name -> ar.v1.FunctionType
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_function_proto_init() }
@@ -530,6 +543,7 @@ func file_ar_v1_function_proto_init() {
 	if File_ar_v1_function_proto != nil {
 		return
 	}
+	file_ar_v1_provenance_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

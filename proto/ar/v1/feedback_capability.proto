@@ -1,0 +1,36 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/property_influence.proto";
+import "ar/v1/semantic_source.proto";
+import "buf/validate/validate.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// Capability says what assistance it can provide.
+message FeedbackCapability {
+  AssistanceSemantic semantic = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated SemanticValueType target_types = 2 [(buf.validate.field).repeated = {
+    unique: true
+    items: {
+      enum: {
+        defined_only: true
+        not_in: [0]
+      }
+    }
+  }]; // Empty target_types means the capability does not impose a target-type restriction.
+  repeated SemanticSourceRequirement source_requirements = 3 [(buf.validate.field).cel = {
+    id: "feedback_capability.source_requirements.unique_source_value_type_pairs"
+    message: "source and value type combinations must be unique"
+    expression: "this.all(requirement, this.filter(other, other.source == requirement.source && other.value_type == requirement.value_type).size() == 1)"
+  }];
+  repeated PropertyInfluence property_influences = 4 [(buf.validate.field).cel = {
+    id: "feedback_capability.property_influences.unique_property_axis_pairs"
+    message: "property and axis combinations must be unique"
+    expression: "this.all(property, this.filter(other, other.property_key == property.property_key && other.axis == property.axis).size() == 1)"
+  }];
+}

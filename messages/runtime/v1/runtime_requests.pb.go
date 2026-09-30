@@ -91,35 +91,47 @@ type TaskProgressPhase int32
 
 const (
 	TaskProgressPhase_TASK_PROGRESS_PHASE_UNSPECIFIED TaskProgressPhase = 0
+	// The actor is preparing for starting the task
+	TaskProgressPhase_TASK_PROGRESS_PHASE_PREPARING TaskProgressPhase = 1
+	// The actor is acquiring resources for the task
+	TaskProgressPhase_TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES TaskProgressPhase = 2
 	// The actor is finding the target, part, tool, or work area.
-	TaskProgressPhase_TASK_PROGRESS_PHASE_LOCATING TaskProgressPhase = 1
+	TaskProgressPhase_TASK_PROGRESS_PHASE_LOCATING TaskProgressPhase = 3
 	// The actor is moving toward the target or preferred pre-target pose.
-	TaskProgressPhase_TASK_PROGRESS_PHASE_APPROACHING TaskProgressPhase = 2
+	TaskProgressPhase_TASK_PROGRESS_PHASE_APPROACHING TaskProgressPhase = 4
+	// The actor is executing the task
+	TaskProgressPhase_TASK_PROGRESS_PHASE_EXECUTING TaskProgressPhase = 5
 	// The actor is aligning, inserting, or otherwise establishing the target pose.
-	TaskProgressPhase_TASK_PROGRESS_PHASE_POSITIONING TaskProgressPhase = 3
+	TaskProgressPhase_TASK_PROGRESS_PHASE_POSITIONING TaskProgressPhase = 6
 	// The task result is being checked against its validation requirements.
-	TaskProgressPhase_TASK_PROGRESS_PHASE_VERIFYING TaskProgressPhase = 4
+	TaskProgressPhase_TASK_PROGRESS_PHASE_VERIFYING TaskProgressPhase = 7
 	// All known requirements are satisfied and the task may be completed.
-	TaskProgressPhase_TASK_PROGRESS_PHASE_READY_TO_COMPLETE TaskProgressPhase = 5
+	TaskProgressPhase_TASK_PROGRESS_PHASE_READY_TO_COMPLETE TaskProgressPhase = 8
 )
 
 // Enum value maps for TaskProgressPhase.
 var (
 	TaskProgressPhase_name = map[int32]string{
 		0: "TASK_PROGRESS_PHASE_UNSPECIFIED",
-		1: "TASK_PROGRESS_PHASE_LOCATING",
-		2: "TASK_PROGRESS_PHASE_APPROACHING",
-		3: "TASK_PROGRESS_PHASE_POSITIONING",
-		4: "TASK_PROGRESS_PHASE_VERIFYING",
-		5: "TASK_PROGRESS_PHASE_READY_TO_COMPLETE",
+		1: "TASK_PROGRESS_PHASE_PREPARING",
+		2: "TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES",
+		3: "TASK_PROGRESS_PHASE_LOCATING",
+		4: "TASK_PROGRESS_PHASE_APPROACHING",
+		5: "TASK_PROGRESS_PHASE_EXECUTING",
+		6: "TASK_PROGRESS_PHASE_POSITIONING",
+		7: "TASK_PROGRESS_PHASE_VERIFYING",
+		8: "TASK_PROGRESS_PHASE_READY_TO_COMPLETE",
 	}
 	TaskProgressPhase_value = map[string]int32{
-		"TASK_PROGRESS_PHASE_UNSPECIFIED":       0,
-		"TASK_PROGRESS_PHASE_LOCATING":          1,
-		"TASK_PROGRESS_PHASE_APPROACHING":       2,
-		"TASK_PROGRESS_PHASE_POSITIONING":       3,
-		"TASK_PROGRESS_PHASE_VERIFYING":         4,
-		"TASK_PROGRESS_PHASE_READY_TO_COMPLETE": 5,
+		"TASK_PROGRESS_PHASE_UNSPECIFIED":         0,
+		"TASK_PROGRESS_PHASE_PREPARING":           1,
+		"TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES": 2,
+		"TASK_PROGRESS_PHASE_LOCATING":            3,
+		"TASK_PROGRESS_PHASE_APPROACHING":         4,
+		"TASK_PROGRESS_PHASE_EXECUTING":           5,
+		"TASK_PROGRESS_PHASE_POSITIONING":         6,
+		"TASK_PROGRESS_PHASE_VERIFYING":           7,
+		"TASK_PROGRESS_PHASE_READY_TO_COMPLETE":   8,
 	}
 )
 
@@ -609,14 +621,17 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n" +
 	"\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12 \n" +
-	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06*\xf2\x01\n" +
+	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06*\xe5\x02\n" +
 	"\x11TaskProgressPhase\x12#\n" +
-	"\x1fTASK_PROGRESS_PHASE_UNSPECIFIED\x10\x00\x12 \n" +
-	"\x1cTASK_PROGRESS_PHASE_LOCATING\x10\x01\x12#\n" +
-	"\x1fTASK_PROGRESS_PHASE_APPROACHING\x10\x02\x12#\n" +
-	"\x1fTASK_PROGRESS_PHASE_POSITIONING\x10\x03\x12!\n" +
-	"\x1dTASK_PROGRESS_PHASE_VERIFYING\x10\x04\x12)\n" +
-	"%TASK_PROGRESS_PHASE_READY_TO_COMPLETE\x10\x05B\xb3\x01\n" +
+	"\x1fTASK_PROGRESS_PHASE_UNSPECIFIED\x10\x00\x12!\n" +
+	"\x1dTASK_PROGRESS_PHASE_PREPARING\x10\x01\x12+\n" +
+	"'TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES\x10\x02\x12 \n" +
+	"\x1cTASK_PROGRESS_PHASE_LOCATING\x10\x03\x12#\n" +
+	"\x1fTASK_PROGRESS_PHASE_APPROACHING\x10\x04\x12!\n" +
+	"\x1dTASK_PROGRESS_PHASE_EXECUTING\x10\x05\x12#\n" +
+	"\x1fTASK_PROGRESS_PHASE_POSITIONING\x10\x06\x12!\n" +
+	"\x1dTASK_PROGRESS_PHASE_VERIFYING\x10\a\x12)\n" +
+	"%TASK_PROGRESS_PHASE_READY_TO_COMPLETE\x10\bB\xb3\x01\n" +
 	"\x0ecom.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 

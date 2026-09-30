@@ -75,6 +75,7 @@ func (ActionGroup) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_action_info_proto_rawDescGZIP(), []int{0}
 }
 
+// TODO: Rename to ActionDefinition
 type ActionInfoMessage struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`

@@ -1,0 +1,44 @@
+syntax = "proto3";
+package ar.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum AssistanceScalingAxis {
+  ASSISTANCE_SCALING_AXIS_UNSPECIFIED = 0;
+  ASSISTANCE_SCALING_AXIS_PRESENTATION = 1;
+  ASSISTANCE_SCALING_AXIS_SEMANTIC_DETAIL = 2;
+  ASSISTANCE_SCALING_AXIS_SCOPE = 3;
+}
+
+enum PropertyInfluenceType {
+  PROPERTY_INFLUENCE_TYPE_UNSPECIFIED = 0;
+
+  // Changes strength along an axis.
+  PROPERTY_INFLUENCE_TYPE_MODULATES = 1;
+
+  // Property enables/disables a capability or additional information.
+  PROPERTY_INFLUENCE_TYPE_ENABLES = 2;
+
+  // Property selects between discrete representations/modes.
+  PROPERTY_INFLUENCE_TYPE_SELECTS = 3;
+}
+
+message PropertyInfluence {
+  string property_key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+
+  AssistanceScalingAxis axis = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  PropertyInfluenceType influence = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+}

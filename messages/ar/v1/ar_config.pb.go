@@ -250,16 +250,18 @@ func (x *ARConfigInfoMessages) GetInfos() []*ARConfigInfoMessage {
 // It references feedback, actions, helpers, properties, and input slots that
 // are later materialized through ARConfigBindingMessage and runtime resolution.
 type ARConfigMessage struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
-	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	PrimaryType         ARConfigPrimaryType    `protobuf:"varint,5,opt,name=primary_type,json=primaryType,proto3,enum=ar.v1.ARConfigPrimaryType" json:"primary_type,omitempty"` // Main purpose used to seed default properties and feedback presets.
-	ArDisappearDistance int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"`      // Threshold distance in cm all AR elements should disappear. 0 = ignored
-	InputSlots          []*ARInputSlotMessage  `protobuf:"bytes,7,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                                    // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
+	Name                   string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                   string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description            string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	PrimaryType            ARConfigPrimaryType    `protobuf:"varint,5,opt,name=primary_type,json=primaryType,proto3,enum=ar.v1.ARConfigPrimaryType" json:"primary_type,omitempty"`    // Main purpose used to seed default properties and feedback presets.
+	ArDisappearDistance    int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"`         // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	InputSlots             []*ARInputSlotMessage  `protobuf:"bytes,7,rep,name=input_slots,json=inputSlots,proto3" json:"input_slots,omitempty"`                                       // Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities.
+	PresentationStrategyId string                 `protobuf:"bytes,8,opt,name=presentation_strategy_id,json=presentationStrategyId,proto3" json:"presentation_strategy_id,omitempty"` // no strategy --> traditional/manual ARConfig, strategy --> adaptive presentation is enabled
+	PresentationBindings   []*PresentationBinding `protobuf:"bytes,9,rep,name=presentation_bindings,json=presentationBindings,proto3" json:"presentation_bindings,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *ARConfigMessage) Reset() {
@@ -341,6 +343,20 @@ func (x *ARConfigMessage) GetInputSlots() []*ARInputSlotMessage {
 	return nil
 }
 
+func (x *ARConfigMessage) GetPresentationStrategyId() string {
+	if x != nil {
+		return x.PresentationStrategyId
+	}
+	return ""
+}
+
+func (x *ARConfigMessage) GetPresentationBindings() []*PresentationBinding {
+	if x != nil {
+		return x.PresentationBindings
+	}
+	return nil
+}
+
 type ARConfigMessages struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ARConfigMessage     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"` // AR config templates.
@@ -386,14 +402,15 @@ func (x *ARConfigMessages) GetItems() []*ARConfigMessage {
 }
 
 type ARConfigAddMessage struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	PrimaryType         ARConfigPrimaryType    `protobuf:"varint,5,opt,name=primary_type,json=primaryType,proto3,enum=ar.v1.ARConfigPrimaryType" json:"primary_type,omitempty"` // Main purpose used to seed default properties and feedback presets.
-	ArDisappearDistance int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"`      // Threshold distance in cm all AR elements should disappear. 0 = ignored
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Name                   string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                   string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description            string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	PrimaryType            ARConfigPrimaryType    `protobuf:"varint,5,opt,name=primary_type,json=primaryType,proto3,enum=ar.v1.ARConfigPrimaryType" json:"primary_type,omitempty"` // Main purpose used to seed default properties and feedback presets.
+	ArDisappearDistance    int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"`      // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	PresentationStrategyId string                 `protobuf:"bytes,7,opt,name=presentation_strategy_id,json=presentationStrategyId,proto3" json:"presentation_strategy_id,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *ARConfigAddMessage) Reset() {
@@ -461,15 +478,23 @@ func (x *ARConfigAddMessage) GetArDisappearDistance() int64 {
 	return 0
 }
 
+func (x *ARConfigAddMessage) GetPresentationStrategyId() string {
+	if x != nil {
+		return x.PresentationStrategyId
+	}
+	return ""
+}
+
 type ARConfigUpdateMessage struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
-	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description         string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	ArDisappearDistance int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable config identifier.
+	Name                   string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                   string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description            string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	ArDisappearDistance    int64                  `protobuf:"varint,6,opt,name=ar_disappear_distance,json=arDisappearDistance,proto3" json:"ar_disappear_distance,omitempty"` // Threshold distance in cm all AR elements should disappear. 0 = ignored
+	PresentationStrategyId string                 `protobuf:"bytes,8,opt,name=presentation_strategy_id,json=presentationStrategyId,proto3" json:"presentation_strategy_id,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *ARConfigUpdateMessage) Reset() {
@@ -537,18 +562,25 @@ func (x *ARConfigUpdateMessage) GetArDisappearDistance() int64 {
 	return 0
 }
 
+func (x *ARConfigUpdateMessage) GetPresentationStrategyId() string {
+	if x != nil {
+		return x.PresentationStrategyId
+	}
+	return ""
+}
+
 var File_ar_v1_ar_config_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\n" +
-	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x16ar/v1/input_slot.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n" +
+	"\x15ar/v1/ar_config.proto\x12\x05ar.v1\x1a\x16ar/v1/input_slot.proto\x1a ar/v1/presentation_binding.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"z\n" +
 	"\x13ARConfigInfoMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\"H\n" +
 	"\x14ARConfigInfoMessages\x120\n" +
-	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xc6\x02\n" +
+	"\x05infos\x18\x01 \x03(\v2\x1a.ar.v1.ARConfigInfoMessageR\x05infos\"\xac\x06\n" +
 	"\x0fARConfigMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
@@ -558,23 +590,29 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	"\x15ar_disappear_distance\x18\x06 \x01(\x03B\n" +
 	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12:\n" +
 	"\vinput_slots\x18\a \x03(\v2\x19.ar.v1.ARInputSlotMessageR\n" +
-	"inputSlots\"@\n" +
+	"inputSlots\x12C\n" +
+	"\x18presentation_strategy_id\x18\b \x01(\tB\t\xbaH\x06r\x04\xd8\xf3\x04\x01R\x16presentationStrategyId\x12\xe9\x01\n" +
+	"\x15presentation_bindings\x18\t \x03(\v2\x1a.ar.v1.PresentationBindingB\x97\x01\xbaH\x93\x01\xba\x01\x8f\x01\n" +
+	"0ar_config.presentation_bindings.unique_role_keys\x12-presentation binding role keys must be unique\x1a,this.map(binding, binding.role_key).unique()R\x14presentationBindings:\xb2\x01\xbaH\xae\x01\x1a\xab\x01\n" +
+	"#ar_config.bindings_require_strategy\x125presentation bindings require a presentation strategy\x1aMthis.presentation_strategy_id != '' || this.presentation_bindings.size() == 0\"@\n" +
 	"\x10ARConfigMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05items\"\xf2\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.ARConfigMessageR\x05items\"\xb7\x02\n" +
 	"\x12ARConfigAddMessage\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12G\n" +
 	"\fprimary_type\x18\x05 \x01(\x0e2\x1a.ar.v1.ARConfigPrimaryTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\vprimaryType\x12>\n" +
 	"\x15ar_disappear_distance\x18\x06 \x01(\x03B\n" +
-	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\"\xc7\x01\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12C\n" +
+	"\x18presentation_strategy_id\x18\a \x01(\tB\t\xbaH\x06r\x04\xd8\xf3\x04\x01R\x16presentationStrategyId\"\x8c\x02\n" +
 	"\x15ARConfigUpdateMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18@R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12>\n" +
 	"\x15ar_disappear_distance\x18\x06 \x01(\x03B\n" +
-	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance*\xd6\x03\n" +
+	"\xbaH\a\"\x05H\xde\x02(\x00R\x13arDisappearDistance\x12C\n" +
+	"\x18presentation_strategy_id\x18\b \x01(\tB\t\xbaH\x06r\x04\xd8\xf3\x04\x01R\x16presentationStrategyId*\xd6\x03\n" +
 	"\x13ARConfigPrimaryType\x12&\n" +
 	"\"AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED\x10\x00\x12\"\n" +
 	"\x1eAR_CONFIG_PRIMARY_TYPE_GENERAL\x10\x01\x12,\n" +
@@ -611,18 +649,20 @@ var file_ar_v1_ar_config_proto_goTypes = []any{
 	(*ARConfigAddMessage)(nil),    // 5: ar.v1.ARConfigAddMessage
 	(*ARConfigUpdateMessage)(nil), // 6: ar.v1.ARConfigUpdateMessage
 	(*ARInputSlotMessage)(nil),    // 7: ar.v1.ARInputSlotMessage
+	(*PresentationBinding)(nil),   // 8: ar.v1.PresentationBinding
 }
 var file_ar_v1_ar_config_proto_depIdxs = []int32{
 	1, // 0: ar.v1.ARConfigInfoMessages.infos:type_name -> ar.v1.ARConfigInfoMessage
 	0, // 1: ar.v1.ARConfigMessage.primary_type:type_name -> ar.v1.ARConfigPrimaryType
 	7, // 2: ar.v1.ARConfigMessage.input_slots:type_name -> ar.v1.ARInputSlotMessage
-	3, // 3: ar.v1.ARConfigMessages.items:type_name -> ar.v1.ARConfigMessage
-	0, // 4: ar.v1.ARConfigAddMessage.primary_type:type_name -> ar.v1.ARConfigPrimaryType
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	8, // 3: ar.v1.ARConfigMessage.presentation_bindings:type_name -> ar.v1.PresentationBinding
+	3, // 4: ar.v1.ARConfigMessages.items:type_name -> ar.v1.ARConfigMessage
+	0, // 5: ar.v1.ARConfigAddMessage.primary_type:type_name -> ar.v1.ARConfigPrimaryType
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_proto_init() }
@@ -631,6 +671,7 @@ func file_ar_v1_ar_config_proto_init() {
 		return
 	}
 	file_ar_v1_input_slot_proto_init()
+	file_ar_v1_presentation_binding_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

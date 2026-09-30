@@ -4,6 +4,8 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { AdaptiveParticipation, ARContentProvenance } from "./provenance_pb.ts";
+import { file_ar_v1_provenance } from "./provenance_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Anchor } from "../../geometry/v1/anchor_pb.ts";
 import { file_geometry_v1_anchor } from "../../geometry/v1/anchor_pb.ts";
@@ -14,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback.proto.
  */
 export const file_ar_v1_feedback: GenFile = /*@__PURE__*/
-  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi7gEKD0ZlZWRiYWNrTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTA8wQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVCC7pICMgBAYIBAhABEjoKEHZpc2liaWxpdHlfc2NvcGUYBiABKA4yFi5hci52MS5WaXNpYmlsaXR5U2NvcGVCCLpIBYIBAhABEhwKCWNvbmZpZ19pZBgIIAEoCUIJukgGcgSQ8QQBIj0KEEZlZWRiYWNrTWVzc2FnZXMSKQoJZmVlZGJhY2tzGAEgAygLMhYuYXIudjEuRmVlZGJhY2tNZXNzYWdlIsYCChJGZWVkYmFja0FkZE1lc3NhZ2USHAoJY29uZmlnX2lkGAEgASgJQgm6SAZyBJDxBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSLgoEdHlwZRgFIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIyAEBggECEAESOgoQdmlzaWJpbGl0eV9zY29wZRgGIAEoDjIWLmFyLnYxLlZpc2liaWxpdHlTY29wZUIIukgFggECEAESJAoRcm9ib3RfcHJvcGVydHlfaWQYByABKAlCCbpIBnIEmPEEARIjCgZhbmNob3IYCCABKAsyEy5nZW9tZXRyeS52MS5BbmNob3ISHwoXbGlua19kZWZhdWx0X3Byb3BlcnRpZXMYCSABKAgipgEKFUZlZWRiYWNrVXBkYXRlTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTA8wQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjoKEHZpc2liaWxpdHlfc2NvcGUYBSABKA4yFi5hci52MS5WaXNpYmlsaXR5U2NvcGVCCLpIBYIBAhABKq4JCgxGZWVkYmFja1R5cGUSHQoZRkVFREJBQ0tfVFlQRV9VTlNQRUNJRklFRBAAEh4KGkZFRURCQUNLX1RZUEVfVEFSR0VUX0dIT1NUEAoSIgoeRkVFREJBQ0tfVFlQRV9UQVJHRVRfSElHSExJR0hUEAsSHQoZRkVFREJBQ0tfVFlQRV9TTkFQX0dVSURFUxAMEisKJ0ZFRURCQUNLX1RZUEVfQ09OVEFDVF9TVVJGQUNFX0hJR0hMSUdIVBANEiAKHEZFRURCQUNLX1RZUEVfVE9MRVJBTkNFX1pPTkUQDhIfChtGRUVEQkFDS19UWVBFX0VYUExPREVEX1ZJRVcQDxIgChxGRUVEQkFDS19UWVBFX1BBUlRfSElHSExJR0hUEB4SIAocRkVFREJBQ0tfVFlQRV9UT09MX0hJR0hMSUdIVBAfEiYKIkZFRURCQUNLX1RZUEVfQ09OU1VNQUJMRV9JTkRJQ0FUT1IQIBIdChlGRUVEQkFDS19UWVBFX0lOU1RSVUNUSU9OEDISGwoXRkVFREJBQ0tfVFlQRV9DSEVDS0xJU1QQMxIgChxGRUVEQkFDS19UWVBFX1BST0dSRVNTX1BBTkVMEDQSIgoeRkVFREJBQ0tfVFlQRV9ERVBFTkRFTkNZX0dSQVBIEDUSHwobRkVFREJBQ0tfVFlQRV9USU1FX0VTVElNQVRFEDYSFwoTRkVFREJBQ0tfVFlQRV9SVUxFUhBGEiAKHEZFRURCQUNLX1RZUEVfUE9TRV9WQUxJREFUT1IQRxIlCiFGRUVEQkFDS19UWVBFX1ZJU0lPTl9DT05GSVJNQVRJT04QSBIlCiFGRUVEQkFDS19UWVBFX1RPUlFVRV9DT05GSVJNQVRJT04QSRIcChhGRUVEQkFDS19UWVBFX1JPQk9UX1BBVEgQWhIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX1dBWVBPSU5UUxBbEiIKHkZFRURCQUNLX1RZUEVfUk9CT1RfU0lMSE9VRVRURRBcEiMKH0ZFRURCQUNLX1RZUEVfUk9CT1RfSU5URU5UX0NPTkUQXRIoCiRGRUVEQkFDS19UWVBFX1JPQk9UX09DQ1VQQU5DWV9WT0xVTUUQXhIeChpGRUVEQkFDS19UWVBFX1JPQk9UX1NUQVRVUxBfEh0KGUZFRURCQUNLX1RZUEVfUk9CT1RfTElHSFQQYBIfChtGRUVEQkFDS19UWVBFX0hBTkRPVkVSX1pPTkUQeBIpCiVGRUVEQkFDS19UWVBFX1NZTkNIUk9OSVpBVElPTl9CQVJSSUVSEHkSJwojRkVFREJBQ0tfVFlQRV9TSEFSRURfVEFTS19JTkRJQ0FUT1IQehIhCh1GRUVEQkFDS19UWVBFX1JPQk9UX0FUVEVOVElPThB7EhoKFUZFRURCQUNLX1RZUEVfTUVTU0FHRRDIARIXChJGRUVEQkFDS19UWVBFX0lDT04QyQESHAoXRkVFREJBQ0tfVFlQRV9ISUdITElHSFQQygESFwoSRkVFREJBQ0tfVFlQRV9aT05FEMsBEh0KGEZFRURCQUNLX1RZUEVfUExBWV9TT1VORBDMASq9AQoPVmlzaWJpbGl0eVNjb3BlEiAKHFZJU0lCSUxJVFlfU0NPUEVfVU5TUEVDSUZJRUQQABIbChdWSVNJQklMSVRZX1NDT1BFX0FMV0FZUxABEiEKHVZJU0lCSUxJVFlfU0NPUEVfTE9XX0dVSURBTkNFEAISJAogVklTSUJJTElUWV9TQ09QRV9NRURJVU1fR1VJREFOQ0UQAxIiCh5WSVNJQklMSVRZX1NDT1BFX0ZVTExfR1VJREFOQ0UQBEKJAQoJY29tLmFyLnYxQg1GZWVkYmFja1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_anchor, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChRhci92MS9mZWVkYmFjay5wcm90bxIFYXIudjEi6gEKD0ZlZWRiYWNrTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTA8wQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KBHR5cGUYBSABKA4yEy5hci52MS5GZWVkYmFja1R5cGVCC7pICMgBAYIBAhABEhwKCWNvbmZpZ19pZBgGIAEoCUIJukgGcgSQ8QQBEjYKCnByb3ZlbmFuY2UYByABKAsyGi5hci52MS5BUkNvbnRlbnRQcm92ZW5hbmNlQga6SAPIAQEiPQoQRmVlZGJhY2tNZXNzYWdlcxIpCglmZWVkYmFja3MYASADKAsyFi5hci52MS5GZWVkYmFja01lc3NhZ2UijQIKEkZlZWRiYWNrQWRkTWVzc2FnZRIfCgljb25maWdfaWQYASABKAlCDLpICcgBAXIEkPEEARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIuCgR0eXBlGAUgASgOMhMuYXIudjEuRmVlZGJhY2tUeXBlQgu6SAjIAQGCAQIQARIkChFyb2JvdF9wcm9wZXJ0eV9pZBgGIAEoCUIJukgGcgSY8QQBEiMKBmFuY2hvchgHIAEoCzITLmdlb21ldHJ5LnYxLkFuY2hvchIfChdsaW5rX2RlZmF1bHRfcHJvcGVydGllcxgIIAEoCCKrAQoVRmVlZGJhY2tVcGRhdGVNZXNzYWdlEhUKAmlkGAEgASgJQgm6SAZyBMDzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSPwoNcGFydGljaXBhdGlvbhgFIAEoDjIcLmFyLnYxLkFkYXB0aXZlUGFydGljaXBhdGlvbkIKukgHggEEGAEYAiI0ChhSZXF1ZXN0RmVlZGJhY2tPd25lcnNoaXASGAoCaWQYASABKAlCDLpICcgBAXIEwPMEASquCQoMRmVlZGJhY2tUeXBlEh0KGUZFRURCQUNLX1RZUEVfVU5TUEVDSUZJRUQQABIeChpGRUVEQkFDS19UWVBFX1RBUkdFVF9HSE9TVBAKEiIKHkZFRURCQUNLX1RZUEVfVEFSR0VUX0hJR0hMSUdIVBALEh0KGUZFRURCQUNLX1RZUEVfU05BUF9HVUlERVMQDBIrCidGRUVEQkFDS19UWVBFX0NPTlRBQ1RfU1VSRkFDRV9ISUdITElHSFQQDRIgChxGRUVEQkFDS19UWVBFX1RPTEVSQU5DRV9aT05FEA4SHwobRkVFREJBQ0tfVFlQRV9FWFBMT0RFRF9WSUVXEA8SIAocRkVFREJBQ0tfVFlQRV9QQVJUX0hJR0hMSUdIVBAeEiAKHEZFRURCQUNLX1RZUEVfVE9PTF9ISUdITElHSFQQHxImCiJGRUVEQkFDS19UWVBFX0NPTlNVTUFCTEVfSU5ESUNBVE9SECASHQoZRkVFREJBQ0tfVFlQRV9JTlNUUlVDVElPThAyEhsKF0ZFRURCQUNLX1RZUEVfQ0hFQ0tMSVNUEDMSIAocRkVFREJBQ0tfVFlQRV9QUk9HUkVTU19QQU5FTBA0EiIKHkZFRURCQUNLX1RZUEVfREVQRU5ERU5DWV9HUkFQSBA1Eh8KG0ZFRURCQUNLX1RZUEVfVElNRV9FU1RJTUFURRA2EhcKE0ZFRURCQUNLX1RZUEVfUlVMRVIQRhIgChxGRUVEQkFDS19UWVBFX1BPU0VfVkFMSURBVE9SEEcSJQohRkVFREJBQ0tfVFlQRV9WSVNJT05fQ09ORklSTUFUSU9OEEgSJQohRkVFREJBQ0tfVFlQRV9UT1JRVUVfQ09ORklSTUFUSU9OEEkSHAoYRkVFREJBQ0tfVFlQRV9ST0JPVF9QQVRIEFoSIQodRkVFREJBQ0tfVFlQRV9ST0JPVF9XQVlQT0lOVFMQWxIiCh5GRUVEQkFDS19UWVBFX1JPQk9UX1NJTEhPVUVUVEUQXBIjCh9GRUVEQkFDS19UWVBFX1JPQk9UX0lOVEVOVF9DT05FEF0SKAokRkVFREJBQ0tfVFlQRV9ST0JPVF9PQ0NVUEFOQ1lfVk9MVU1FEF4SHgoaRkVFREJBQ0tfVFlQRV9ST0JPVF9TVEFUVVMQXxIdChlGRUVEQkFDS19UWVBFX1JPQk9UX0xJR0hUEGASHwobRkVFREJBQ0tfVFlQRV9IQU5ET1ZFUl9aT05FEHgSKQolRkVFREJBQ0tfVFlQRV9TWU5DSFJPTklaQVRJT05fQkFSUklFUhB5EicKI0ZFRURCQUNLX1RZUEVfU0hBUkVEX1RBU0tfSU5ESUNBVE9SEHoSIQodRkVFREJBQ0tfVFlQRV9ST0JPVF9BVFRFTlRJT04QexIaChVGRUVEQkFDS19UWVBFX01FU1NBR0UQyAESFwoSRkVFREJBQ0tfVFlQRV9JQ09OEMkBEhwKF0ZFRURCQUNLX1RZUEVfSElHSExJR0hUEMoBEhcKEkZFRURCQUNLX1RZUEVfWk9ORRDLARIdChhGRUVEQkFDS19UWVBFX1BMQVlfU09VTkQQzAFCiQEKCWNvbS5hci52MUINRmVlZGJhY2tQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_provenance, file_buf_validate_validate, file_geometry_v1_anchor, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackMessage
@@ -46,14 +48,14 @@ export type FeedbackMessage = Message<"ar.v1.FeedbackMessage"> & {
   type: FeedbackType;
 
   /**
-   * @generated from field: ar.v1.VisibilityScope visibility_scope = 6;
-   */
-  visibilityScope: VisibilityScope;
-
-  /**
-   * @generated from field: string config_id = 8;
+   * @generated from field: string config_id = 6;
    */
   configId: string;
+
+  /**
+   * @generated from field: ar.v1.ARContentProvenance provenance = 7;
+   */
+  provenance?: ARContentProvenance;
 };
 
 /**
@@ -110,24 +112,19 @@ export type FeedbackAddMessage = Message<"ar.v1.FeedbackAddMessage"> & {
   type: FeedbackType;
 
   /**
-   * @generated from field: ar.v1.VisibilityScope visibility_scope = 6;
-   */
-  visibilityScope: VisibilityScope;
-
-  /**
    * If required, this should point to a property definition of type ROBOT
    *
-   * @generated from field: string robot_property_id = 7;
+   * @generated from field: string robot_property_id = 6;
    */
   robotPropertyId: string;
 
   /**
-   * @generated from field: geometry.v1.Anchor anchor = 8;
+   * @generated from field: geometry.v1.Anchor anchor = 7;
    */
   anchor?: Anchor;
 
   /**
-   * @generated from field: bool link_default_properties = 9;
+   * @generated from field: bool link_default_properties = 8;
    */
   linkDefaultProperties: boolean;
 };
@@ -164,9 +161,9 @@ export type FeedbackUpdateMessage = Message<"ar.v1.FeedbackUpdateMessage"> & {
   description: string;
 
   /**
-   * @generated from field: ar.v1.VisibilityScope visibility_scope = 5;
+   * @generated from field: ar.v1.AdaptiveParticipation participation = 5;
    */
-  visibilityScope: VisibilityScope;
+  participation: AdaptiveParticipation;
 };
 
 /**
@@ -175,6 +172,27 @@ export type FeedbackUpdateMessage = Message<"ar.v1.FeedbackUpdateMessage"> & {
  */
 export const FeedbackUpdateMessageSchema: GenMessage<FeedbackUpdateMessage> = /*@__PURE__*/
   messageDesc(file_ar_v1_feedback, 3);
+
+/**
+ * Request feedback ownership.
+ * Only possible to be called on STRATEGY/MANAGED feedback.
+ * It will result in AUTHOR/AVAILABLE
+ *
+ * @generated from message ar.v1.RequestFeedbackOwnership
+ */
+export type RequestFeedbackOwnership = Message<"ar.v1.RequestFeedbackOwnership"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
+
+/**
+ * Describes the message ar.v1.RequestFeedbackOwnership.
+ * Use `create(RequestFeedbackOwnershipSchema)` to create a new message.
+ */
+export const RequestFeedbackOwnershipSchema: GenMessage<RequestFeedbackOwnership> = /*@__PURE__*/
+  messageDesc(file_ar_v1_feedback, 4);
 
 /**
  *
@@ -464,50 +482,4 @@ export enum FeedbackType {
  */
 export const FeedbackTypeSchema: GenEnum<FeedbackType> = /*@__PURE__*/
   enumDesc(file_ar_v1_feedback, 0);
-
-/**
- * @generated from enum ar.v1.VisibilityScope
- */
-export enum VisibilityScope {
-  /**
-   * No visibility scope has been specified.
-   *
-   * @generated from enum value: VISIBILITY_SCOPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * Shows the feedback regardless of the selected guidance level.
-   *
-   * @generated from enum value: VISIBILITY_SCOPE_ALWAYS = 1;
-   */
-  ALWAYS = 1,
-
-  /**
-   * Shows the feedback at the low guidance level.
-   *
-   * @generated from enum value: VISIBILITY_SCOPE_LOW_GUIDANCE = 2;
-   */
-  LOW_GUIDANCE = 2,
-
-  /**
-   * Shows the feedback at the medium guidance level.
-   *
-   * @generated from enum value: VISIBILITY_SCOPE_MEDIUM_GUIDANCE = 3;
-   */
-  MEDIUM_GUIDANCE = 3,
-
-  /**
-   * Shows the feedback at the full guidance level.
-   *
-   * @generated from enum value: VISIBILITY_SCOPE_FULL_GUIDANCE = 4;
-   */
-  FULL_GUIDANCE = 4,
-}
-
-/**
- * Describes the enum ar.v1.VisibilityScope.
- */
-export const VisibilityScopeSchema: GenEnum<VisibilityScope> = /*@__PURE__*/
-  enumDesc(file_ar_v1_feedback, 1);
 

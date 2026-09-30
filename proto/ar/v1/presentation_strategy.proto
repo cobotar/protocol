@@ -1,0 +1,213 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/action.proto";
+import "ar/v1/feedback.proto";
+import "ar/v1/semantic_source.proto";
+import "buf/validate/validate.proto";
+import "common/v1/property.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// Assigns a desired value to a property identified by its stable,
+// type-level PropertyDefinition.key.
+//
+// This does not reference a concrete PropertyInstance. The active ARConfig
+// resolves property_key against the Feedback or Action currently bound to
+// the presentation role.
+message PropertyValueAssignment {
+  string property_key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+
+  common.v1.PropertyValue value = 2 [(buf.validate.field).required = true];
+}
+
+// A role is a reusable slot in a PresentationStrategy.
+//
+// Examples:
+//   target_overview
+//   target_pose
+//   task_instruction
+//   task_complete
+//
+// Roles do not reference concrete ARConfig entities. PresentationBinding
+// performs that mapping for each ARConfig using the strategy.
+message PresentationRole {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "default_feedback_type",
+      "default_action_type"
+    ]
+    required: true
+  };
+
+  string key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+
+  string description = 3;
+
+  // Assistance semantics that an implementation of this role must support.
+  //
+  // For Feedback, these are checked against FeedbackInfoMessage.capabilities.
+  // Action compatibility may initially also depend on ActionType until
+  // semantic Action capabilities are introduced.
+  repeated AssistanceSemantic required_semantics = 4 [
+    (buf.validate.field).repeated.unique = true,
+    (buf.validate.field).repeated.items.enum = {
+      not_in: [0]
+      defined_only: true
+    }
+  ];
+
+  // Default implementation created by reconciliation when the role has no
+  // compatible explicit binding.
+  optional FeedbackType default_feedback_type = 5 [(buf.validate.field).enum = {
+    not_in: [0]
+    defined_only: true
+  }];
+
+  optional ActionType default_action_type = 6 [(buf.validate.field).enum = {
+    not_in: [0]
+    defined_only: true
+  }];
+}
+
+enum PresentationFidelity {
+  PRESENTATION_FIDELITY_UNSPECIFIED = 0;
+  PRESENTATION_FIDELITY_LOW = 1;
+  PRESENTATION_FIDELITY_MEDIUM = 2;
+  PRESENTATION_FIDELITY_HIGH = 3;
+}
+
+// Configures one strategy role at a particular fidelity anchor.
+//
+// role_key references PresentationRole.key in the same strategy.
+// Cross-message validation is performed by the backend.
+message PresentationRolePreset {
+  string role_key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+
+  // Desired adaptive values for the AR content bound to this role.
+  //
+  // The backend/runtime must validate that each key exists for the bound
+  // implementation, has a compatible PropertyType, and is permitted to adapt.
+  repeated PropertyValueAssignment properties = 2 [(buf.validate.field).cel = {
+    id: "presentation_role_preset.properties.unique_property_keys"
+    message: "property keys must be unique"
+    expression: "this.map(property, property.property_key).unique()"
+  }];
+}
+
+// A discrete authored landmark for satisfying one AssistanceSemantic.
+//
+// target_coverage is local to the owning AssistancePresentationRule. It should
+// not be interpreted as a global assistance/expertise score.
+message PresentationFidelityAnchor {
+  PresentationFidelity fidelity = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  double target_coverage = 2 [(buf.validate.field).double = {
+    gte: 0
+    lte: 1
+  }];
+
+  repeated PresentationRolePreset presentations = 3 [(buf.validate.field).cel = {
+    id: "presentation_fidelity_anchor.presentations.unique_role_keys"
+    message: "role keys must be unique"
+    expression: "this.map(presentation, presentation.role_key).unique()"
+  }];
+}
+
+// Describes how one communicative assistance semantic is presented across
+// authored fidelity landmarks.
+//
+// Example:
+// SHOW_TARGET_POSITION:
+//   LOW  -> target_overview
+//   HIGH -> target_pose
+message AssistancePresentationRule {
+  AssistanceSemantic semantic = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  repeated PresentationFidelityAnchor anchors = 2 [
+    (buf.validate.field).repeated = {
+      min_items: 3
+      max_items: 3
+    },
+    (buf.validate.field).cel = {
+      id: "assistance_presentation_rule.anchors.unique_fidelities"
+      message: "anchor fidelity must be unique"
+      expression: "this.map(anchor, anchor.fidelity).unique()"
+    }
+  ];
+
+  // TODO: add name?
+  // TODO: add group?
+}
+
+// PresentationStrategy can be used by ARConfigs. One strategy can be used by multiple ARConfigs.
+// A PresentationStrategy should define:
+//  - WHAT representation / fidelity
+// ARConfig defaults
+//  - visual language / styling
+// Feedback adaptation envelope
+//  - what this particular Feedback may change
+message PresentationStrategy {
+  option (buf.validate.message).cel = {
+    id: "presentation_strategy.presets.reference_roles"
+    message: "every presentation preset must reference a role in the strategy"
+    expression: "this.rules.all(rule, rule.anchors.all(anchor, anchor.presentations.all(preset, preset.role_key in this.roles.map(role, role.key))))"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "presentation_strategy.presets.roles_support_rule_semantics"
+    message: "every referenced role must declare the rule's assistance semantic"
+    expression: "this.rules.all(rule, rule.anchors.all(anchor, anchor.presentations.all(preset, this.roles.filter(role, role.key == preset.role_key).all(role, rule.semantic in role.required_semantics))))"
+  };
+
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.presentation_strategy_id_component) = true
+  ];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  string key = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ]; // Stable machine-readable identifier, useful for seeded/default strategies. Example: "adaptive_assembly_default".
+  repeated PresentationRole roles = 6 [(buf.validate.field).cel = {
+    id: "presentation_strategy.roles.unique_keys"
+    message: "role keys must be unique"
+    expression: "this.map(role, role.key).unique()"
+  }];
+  repeated AssistancePresentationRule rules = 7 [(buf.validate.field).cel = {
+    id: "presentation_strategy.rules.unique_semantics"
+    message: "rule semantics must be unique"
+    expression: "this.map(rule, rule.semantic).unique()"
+  }];
+}
+
+message PresentationStrategyAdd {
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+}
+
+message PresentationStrategies {
+  repeated PresentationStrategy items = 1;
+}

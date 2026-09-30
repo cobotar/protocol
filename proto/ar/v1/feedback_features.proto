@@ -1,0 +1,25 @@
+syntax = "proto3";
+package ar.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// Describes a type-level behavior supported by a feedback implementation.
+// Capability metadata is server-owned and intended for read-only discovery by
+// authoring clients. It does not describe whether a particular feedback
+// instance is currently active.
+//
+// Feature says what behavior/configuration the implementation exposes.
+message FeedbackFeature {
+  string key = 1 [(buf.validate.field).string.(validation.v1.key_component) = true]; // Stable machine-readable feature identifier.
+  string description = 2; // Human-readable explanation shown by authoring tools.
+  repeated string property_keys = 3 [(buf.validate.field).repeated = {
+    unique: true
+    items: {
+      string: {[validation.v1.key_component]: true}
+    }
+  }]; // Stable PropertyDefinition keys used to configure this feature.
+}

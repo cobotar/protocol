@@ -89,3 +89,7 @@ ACTION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 action_id_component: _descriptor.FieldDescriptor
 FUNCTION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 function_id_component: _descriptor.FieldDescriptor
+PRESENTATION_STRATEGY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+presentation_strategy_id_component: _descriptor.FieldDescriptor
+KEY_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+key_component: _descriptor.FieldDescriptor

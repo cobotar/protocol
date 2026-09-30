@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ar.v1;
 
+import "ar/v1/provenance.proto";
 import "buf/validate/validate.proto";
 import "geometry/v1/anchor.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -181,23 +182,6 @@ enum FeedbackType {
   FEEDBACK_TYPE_PLAY_SOUND = 204;
 }
 
-enum VisibilityScope {
-  // No visibility scope has been specified.
-  VISIBILITY_SCOPE_UNSPECIFIED = 0;
-
-  // Shows the feedback regardless of the selected guidance level.
-  VISIBILITY_SCOPE_ALWAYS = 1;
-
-  // Shows the feedback at the low guidance level.
-  VISIBILITY_SCOPE_LOW_GUIDANCE = 2;
-
-  // Shows the feedback at the medium guidance level.
-  VISIBILITY_SCOPE_MEDIUM_GUIDANCE = 3;
-
-  // Shows the feedback at the full guidance level.
-  VISIBILITY_SCOPE_FULL_GUIDANCE = 4;
-}
-
 message FeedbackMessage {
   string id = 1 [(buf.validate.field).string.(validation.v1.feedback_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
@@ -207,8 +191,8 @@ message FeedbackMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  VisibilityScope visibility_scope = 6 [(buf.validate.field).enum.defined_only = true];
-  string config_id = 8 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  ARContentProvenance provenance = 7 [(buf.validate.field).required = true];
 }
 
 message FeedbackMessages {
@@ -216,7 +200,10 @@ message FeedbackMessages {
 }
 
 message FeedbackAddMessage {
-  string config_id = 1 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
@@ -224,10 +211,9 @@ message FeedbackAddMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  VisibilityScope visibility_scope = 6 [(buf.validate.field).enum.defined_only = true];
-  string robot_property_id = 7 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // If required, this should point to a property definition of type ROBOT
-  geometry.v1.Anchor anchor = 8;
-  bool link_default_properties = 9;
+  string robot_property_id = 6 [(buf.validate.field).string.(validation.v1.property_definition_id_component) = true]; // If required, this should point to a property definition of type ROBOT
+  geometry.v1.Anchor anchor = 7;
+  bool link_default_properties = 8;
 }
 
 message FeedbackUpdateMessage {
@@ -235,5 +221,20 @@ message FeedbackUpdateMessage {
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  VisibilityScope visibility_scope = 5 [(buf.validate.field).enum.defined_only = true];
+  AdaptiveParticipation participation = 5 [(buf.validate.field).enum = {
+    in: [
+      1,
+      2
+    ]
+  }];
+}
+
+// Request feedback ownership.
+// Only possible to be called on STRATEGY/MANAGED feedback.
+// It will result in AUTHOR/AVAILABLE
+message RequestFeedbackOwnership {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.feedback_id_component) = true
+  ];
 }

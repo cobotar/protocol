@@ -123,7 +123,10 @@ message TaskTarget {
 // Amount of material or number of discrete items acted on by a task.
 message QuantityRequirement {
   // Required amount. Must be finite and greater than zero.
-  double amount = 1 [(buf.validate.field).double.gt = 0];
+  double amount = 1 [(buf.validate.field).double = {
+    finite: true
+    gt: 0
+  }];
 
   // Unit such as "pcs", "g", "ml", or "m".
   string unit = 2 [(buf.validate.field).string.min_len = 1];
@@ -149,13 +152,21 @@ message ValidationRequirement {
 }
 
 message TaskExecutionPolicy {
-  // TODO: ActorUnavailabilityPolicy 2 and 3 only allowed when `can_reassign = true`
+  option (buf.validate.message).cel = {
+    id: "task_execution_policy.actor_unavailability_policy.requires_reassignment"
+    message: "reassignment actor-unavailability policies require can_reassign"
+    expression:
+      "this.can_reassign || "
+      "!(this.actor_unavailability_policy in ["
+      "process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED, "
+      "process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN])"
+  };
 
-  TaskAssignmentPreference assignment_preference = 1;
+  TaskAssignmentPreference assignment_preference = 1 [(buf.validate.field).enum.defined_only = true];
   capability.v1.ActorConstraint actor_constraint = 2;
   bool can_reassign = 3;
   bool can_undo = 4;
-  ActorUnavailabilityPolicy actor_unavailability_policy = 8;
+  ActorUnavailabilityPolicy actor_unavailability_policy = 8 [(buf.validate.field).enum.defined_only = true];
   common.v1.EstimatedDuration estimated_human_duration = 5;
   common.v1.EstimatedDuration estimated_robot_duration = 6;
   bool require_full_guidance = 7;
@@ -197,7 +208,7 @@ message OrientationConstraint {
 // A semantic condition that can be evaluated while executing or validating a
 // task. Exactly one constraint kind must be selected.
 message TaskConstraint {
-  string id = 1 [(buf.validate.field).string.min_len = 1]; // Stable identifier within the task definition.
+  string id = 1 [(buf.validate.field).string.(validation.v1.key_component) = true]; // Stable identifier within the task definition.
 
   option (buf.validate.message).oneof = {
     fields: ["orientation"]
@@ -239,7 +250,11 @@ message TaskDefinition {
   QuantityRequirement quantity = 19; // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
   repeated variance.v1.VariantRule applicability = 21; // Task applies if any rule matches. Empty means always applicable.
   repeated TaskOverride overrides = 22; // adjust small authoring/runtime details when the task is otherwise the same task.
-  repeated TaskConstraint constraints = 23; // Semantic conditions that supplement the task's validation mechanism.
+  repeated TaskConstraint constraints = 23 [(buf.validate.field).cel = {
+    id: "task_definition.constraints.unique_ids"
+    message: "task constraint ids must be unique"
+    expression: "this.map(constraint, constraint.id).unique()"
+  }]; // Semantic conditions that supplement the task's validation mechanism.
 }
 
 message TaskDefinitions {

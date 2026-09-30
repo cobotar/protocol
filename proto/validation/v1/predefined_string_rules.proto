@@ -261,4 +261,16 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a function id"
     expression: "(this == '' || this.startsWith('function-'))"
   }];
+
+  optional bool presentation_strategy_id_component = 10043 [(buf.validate.predefined).cel = {
+    id: "string.presentation_strategy_id_component"
+    message: "this does not seem to be a presentation-strategy id"
+    expression: "(this == '' || this.startsWith('presentation-'))"
+  }];
+
+  optional bool key_component = 10044 [(buf.validate.predefined).cel = {
+    id: "string.key_component"
+    message: "Key must be 1 to 64 characters and contain only lowercase letters, digits, and underscores, starting with a letter"
+    expression: "this.size() >= 1 && this.size() <= 64 && this.matches('^[a-z][a-z0-9_]*$')"
+  }];
 }

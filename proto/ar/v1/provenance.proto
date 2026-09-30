@@ -1,0 +1,85 @@
+syntax = "proto3";
+package ar.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+enum ARContentOrigin {
+  AR_CONTENT_ORIGIN_UNSPECIFIED = 0;
+  AR_CONTENT_ORIGIN_AUTHOR = 1; // Created and owned by an AR author.
+  AR_CONTENT_ORIGIN_STRATEGY = 2; // Created by PresentationStrategy reconciliation.
+}
+
+enum AdaptiveParticipation {
+  ADAPTIVE_PARTICIPATION_UNSPECIFIED = 0;
+
+  // Ordinary authored content. The adaptive resolver must not select,
+  // configure, replace, or remove this entity.
+  ADAPTIVE_PARTICIPATION_FIXED = 1;
+
+  // Author-owned content that may be selected/configured by the active
+  // PresentationStrategy, subject to its adaptation envelope.
+  ADAPTIVE_PARTICIPATION_AVAILABLE = 2;
+
+  // Strategy-owned content whose lifecycle is controlled by reconciliation.
+  ADAPTIVE_PARTICIPATION_MANAGED = 3;
+}
+
+// Describes ownership and adaptive lifecycle semantics for AR content.
+//
+// Valid states:
+// Origin	    Participation	  Meaning
+// Strategy	  Managed	        Automatically created/reconciled by strategy
+// Author	    Available	      Author owns it, resolver may use/adapt it within bounds
+// Author	    Fixed	          Normal authored content, resolver leaves it alone
+//
+// source_strategy_id is populated only for STRATEGY-owned content.
+//
+// The following state diagram should be possible:
+//                    ┌──────────────────────┐
+//                    │ STRATEGY / MANAGED   │
+//                    └──────────┬───────────┘
+//                               │
+//                      "Take ownership"
+//                               │
+//                               ▼
+//                    ┌──────────────────────┐
+//              ┌────>│ AUTHOR / AVAILABLE   │
+//              │     └──────────┬───────────┘
+//              │                │
+//          enable               │ disable
+//        adaptation             │ adaptation
+//              │                ▼
+//              │     ┌──────────────────────┐
+//              └─────│ AUTHOR / FIXED       │
+//                    └──────────────────────┘
+// Where the system might have to create/delete {Strategy, Managed} when moving between: {Author, Available} <--> {Author, Fixed}
+message ARContentProvenance {
+  ARContentOrigin origin = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  AdaptiveParticipation participation = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  string source_strategy_id = 3 [(buf.validate.field).string.(validation.v1.presentation_strategy_id_component) = true];
+
+  option (buf.validate.message).cel = {
+    id: "ar_content_provenance.valid_combination"
+    message: "valid combinations are AUTHOR/FIXED, AUTHOR/AVAILABLE, or STRATEGY/MANAGED"
+    expression:
+      "(this.origin == ar.v1.ARContentOrigin.AR_CONTENT_ORIGIN_AUTHOR && "
+      "(this.participation == ar.v1.AdaptiveParticipation.ADAPTIVE_PARTICIPATION_FIXED || "
+      " this.participation == ar.v1.AdaptiveParticipation.ADAPTIVE_PARTICIPATION_AVAILABLE) && "
+      "this.source_strategy_id == '') || "
+      "(this.origin == ar.v1.ARContentOrigin.AR_CONTENT_ORIGIN_STRATEGY && "
+      " this.participation == ar.v1.AdaptiveParticipation.ADAPTIVE_PARTICIPATION_MANAGED && "
+      " this.source_strategy_id != '')"
+  };
+}
