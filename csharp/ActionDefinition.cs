@@ -26,43 +26,44 @@ namespace Messages.AR.V1 {
           string.Concat(
             "Ch1hci92MS9hY3Rpb25fZGVmaW5pdGlvbi5wcm90bxIFYXIudjEaEmFyL3Yx",
             "L2FjdGlvbi5wcm90bxodYXIvdjEvZGVmaW5pdGlvbl9zdGF0dXMucHJvdG8a",
-            "EmFyL3YxL2V2ZW50cy5wcm90bxobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnBy",
-            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvIpMFChBBY3Rpb25EZWZpbml0aW9uEhwKAmlkGAEgASgJQgy6SAlyBOjz",
-            "BAHIAQFSAmlkEh4KA2tleRgCIAEoCUIMukgJcgTg8wQByAEBUgNrZXkSHQoE",
-            "bmFtZRgDIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YBCABKAlSBGlj",
-            "b24SIAoLZGVzY3JpcHRpb24YBSABKAlSC2Rlc2NyaXB0aW9uEjIKBHR5cGUY",
-            "BiABKA4yES5hci52MS5BY3Rpb25UeXBlQgu6SAiCAQIQAcgBAVIEdHlwZRI1",
-            "CgVncm91cBgHIAEoDjISLmFyLnYxLkFjdGlvbkdyb3VwQgu6SAiCAQIQAcgB",
-            "AVIFZ3JvdXASIwoIcmV2aXNpb24YCCABKARCB7pIBDICKAFSCHJldmlzaW9u",
-            "EjwKBnN0YXR1cxgJIAEoDjIXLmFyLnYxLkRlZmluaXRpb25TdGF0dXNCC7pI",
-            "CIIBAhAByAEBUgZzdGF0dXMSIwoNcmVxdWlyZV9hZ2VudBgKIAEoCFIMcmVx",
-            "dWlyZUFnZW50EkIKEmNvbnN1bWVyc19yZXF1aXJlZBgLIAMoCzITLmFyLnYx",
-            "LkV4Y2hhbmdlVHlwZVIRY29uc3VtZXJzUmVxdWlyZWQSQgoSY29uc3VtZXJz",
-            "X29wdGlvbmFsGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlUhFjb25zdW1l",
-            "cnNPcHRpb25hbBJGChFyZXF1aXJlZF9oYW5kbGVycxgNIAMoCzIZLmFyLnYx",
-            "LkhhbmRsZXJSZXF1aXJlbWVudFIQcmVxdWlyZWRIYW5kbGVycxIpCgVlbWl0",
-            "cxgOIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZVIFZW1pdHMiuwMKEUFjdGlv",
-            "bkRlZmluaXRpb25zEqUDCgVpdGVtcxgBIAMoCzIXLmFyLnYxLkFjdGlvbkRl",
-            "ZmluaXRpb25C9QK6SPECugF5CiNhY3Rpb25fZGVmaW5pdGlvbnMuaXRlbXMu",
-            "dW5pcXVlX2lkcxIkYWN0aW9uIGRlZmluaXRpb24gaWRzIG11c3QgYmUgdW5p",
-            "cXVlGix0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0aW9uLmlkKS51bmlx",
-            "dWUoKboB8QEKLWFjdGlvbl9kZWZpbml0aW9ucy5pdGVtcy51bmlxdWVfa2V5",
-            "X3JldmlzaW9ucxI3YWN0aW9uIGRlZmluaXRpb24ga2V5IGFuZCByZXZpc2lv",
-            "biBwYWlycyBtdXN0IGJlIHVuaXF1ZRqGAXRoaXMuYWxsKGRlZmluaXRpb24s",
-            "IHRoaXMuZmlsdGVyKGNhbmRpZGF0ZSwgY2FuZGlkYXRlLmtleSA9PSBkZWZp",
-            "bml0aW9uLmtleSAmJiBjYW5kaWRhdGUucmV2aXNpb24gPT0gZGVmaW5pdGlv",
-            "bi5yZXZpc2lvbikuc2l6ZSgpID09IDEpUgVpdGVtcyp0CgtBY3Rpb25Hcm91",
-            "cBIcChhBQ1RJT05fR1JPVVBfVU5TUEVDSUZJRUQQABIYChRBQ1RJT05fR1JP",
-            "VVBfR0VORVJBTBABEhYKEkFDVElPTl9HUk9VUF9ST0JPVBACEhUKEUFDVElP",
-            "Tl9HUk9VUF9UQVNLEANCkQEKCWNvbS5hci52MUIVQWN0aW9uRGVmaW5pdGlv",
-            "blByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdl",
-            "cy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeIC",
-            "EUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
+            "HmFyL3YxL2V4ZWN1dGlvbl9jb250cmFjdC5wcm90bxobYnVmL3ZhbGlkYXRl",
+            "L3ZhbGlkYXRlLnByb3RvGhhjb21tb24vdjEvcHJvcGVydHkucHJvdG8aK3Zh",
+            "bGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8iggUK",
+            "EEFjdGlvbkRlZmluaXRpb24SHAoCaWQYASABKAlCDLpICXIE6PMEAcgBAVIC",
+            "aWQSHgoDa2V5GAIgASgJQgy6SAlyBODzBAHIAQFSA2tleRIdCgRuYW1lGAMg",
+            "ASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgEIAEoCVIEaWNvbhIgCgtk",
+            "ZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24SMgoEdHlwZRgGIAEoDjIR",
+            "LmFyLnYxLkFjdGlvblR5cGVCC7pICIIBAhAByAEBUgR0eXBlEjUKBWdyb3Vw",
+            "GAcgASgOMhIuYXIudjEuQWN0aW9uR3JvdXBCC7pICIIBAhAByAEBUgVncm91",
+            "cBIjCghyZXZpc2lvbhgIIAEoBEIHukgEMgIoAVIIcmV2aXNpb24SPAoGc3Rh",
+            "dHVzGAkgASgOMhcuYXIudjEuRGVmaW5pdGlvblN0YXR1c0ILukgIggECEAHI",
+            "AQFSBnN0YXR1cxLAAQoKcHJvcGVydGllcxgKIAMoCzIbLmNvbW1vbi52MS5Q",
+            "cm9wZXJ0eVRlbXBsYXRlQoIBukh/ugF8CihhY3Rpb25fZGVmaW5pdGlvbi5w",
+            "cm9wZXJ0aWVzLnVuaXF1ZV9rZXlzEiVwcm9wZXJ0eSB0ZW1wbGF0ZSBrZXlz",
+            "IG11c3QgYmUgdW5pcXVlGil0aGlzLm1hcChwcm9wZXJ0eSwgcHJvcGVydHku",
+            "a2V5KS51bmlxdWUoKVIKcHJvcGVydGllcxI+CglleGVjdXRpb24YDSABKAsy",
+            "GC5hci52MS5FeGVjdXRpb25Db250cmFjdEIGukgDyAEBUglleGVjdXRpb25K",
+            "BAgLEAxKBAgMEA0iuwMKEUFjdGlvbkRlZmluaXRpb25zEqUDCgVpdGVtcxgB",
+            "IAMoCzIXLmFyLnYxLkFjdGlvbkRlZmluaXRpb25C9QK6SPECugF5CiNhY3Rp",
+            "b25fZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2lkcxIkYWN0aW9uIGRlZmlu",
+            "aXRpb24gaWRzIG11c3QgYmUgdW5pcXVlGix0aGlzLm1hcChkZWZpbml0aW9u",
+            "LCBkZWZpbml0aW9uLmlkKS51bmlxdWUoKboB8QEKLWFjdGlvbl9kZWZpbml0",
+            "aW9ucy5pdGVtcy51bmlxdWVfa2V5X3JldmlzaW9ucxI3YWN0aW9uIGRlZmlu",
+            "aXRpb24ga2V5IGFuZCByZXZpc2lvbiBwYWlycyBtdXN0IGJlIHVuaXF1ZRqG",
+            "AXRoaXMuYWxsKGRlZmluaXRpb24sIHRoaXMuZmlsdGVyKGNhbmRpZGF0ZSwg",
+            "Y2FuZGlkYXRlLmtleSA9PSBkZWZpbml0aW9uLmtleSAmJiBjYW5kaWRhdGUu",
+            "cmV2aXNpb24gPT0gZGVmaW5pdGlvbi5yZXZpc2lvbikuc2l6ZSgpID09IDEp",
+            "UgVpdGVtcyp0CgtBY3Rpb25Hcm91cBIcChhBQ1RJT05fR1JPVVBfVU5TUEVD",
+            "SUZJRUQQABIYChRBQ1RJT05fR1JPVVBfR0VORVJBTBABEhYKEkFDVElPTl9H",
+            "Uk9VUF9ST0JPVBACEhUKEUFDVElPTl9HUk9VUF9UQVNLEANCkQEKCWNvbS5h",
+            "ci52MUIVQWN0aW9uRGVmaW5pdGlvblByb3RvUAFaL2dpdGh1Yi5jb20vY29i",
+            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVz",
+            "c2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6",
+            "OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.DefinitionStatusReflection.Descriptor, global::Messages.AR.V1.EventsReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.DefinitionStatusReflection.Descriptor, global::Messages.AR.V1.ExecutionContractReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ActionGroup), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionDefinition), global::Messages.AR.V1.ActionDefinition.Parser, new[]{ "Id", "Key", "Name", "Icon", "Description", "Type", "Group", "Revision", "Status", "RequireAgent", "ConsumersRequired", "ConsumersOptional", "RequiredHandlers", "Emits" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionDefinition), global::Messages.AR.V1.ActionDefinition.Parser, new[]{ "Id", "Key", "Name", "Icon", "Description", "Type", "Group", "Revision", "Status", "Properties", "Execution" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ActionDefinitions), global::Messages.AR.V1.ActionDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -124,11 +125,8 @@ namespace Messages.AR.V1 {
       group_ = other.group_;
       revision_ = other.revision_;
       status_ = other.status_;
-      requireAgent_ = other.requireAgent_;
-      consumersRequired_ = other.consumersRequired_.Clone();
-      consumersOptional_ = other.consumersOptional_.Clone();
-      requiredHandlers_ = other.requiredHandlers_.Clone();
-      emits_ = other.emits_.Clone();
+      properties_ = other.properties_.Clone();
+      execution_ = other.execution_ != null ? other.execution_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -255,72 +253,27 @@ namespace Messages.AR.V1 {
       }
     }
 
-    /// <summary>Field number for the "require_agent" field.</summary>
-    public const int RequireAgentFieldNumber = 10;
-    private bool requireAgent_;
+    /// <summary>Field number for the "properties" field.</summary>
+    public const int PropertiesFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.PropertyTemplate> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(82, global::Messages.Common.V1.PropertyTemplate.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.PropertyTemplate> properties_ = new pbc::RepeatedField<global::Messages.Common.V1.PropertyTemplate>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool RequireAgent {
-      get { return requireAgent_; }
+    public pbc::RepeatedField<global::Messages.Common.V1.PropertyTemplate> Properties {
+      get { return properties_; }
+    }
+
+    /// <summary>Field number for the "execution" field.</summary>
+    public const int ExecutionFieldNumber = 13;
+    private global::Messages.AR.V1.ExecutionContract execution_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ExecutionContract Execution {
+      get { return execution_; }
       set {
-        requireAgent_ = value;
+        execution_ = value;
       }
-    }
-
-    /// <summary>Field number for the "consumers_required" field.</summary>
-    public const int ConsumersRequiredFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeType> _repeated_consumersRequired_codec
-        = pb::FieldCodec.ForMessage(90, global::Messages.AR.V1.ExchangeType.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> consumersRequired_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
-    /// <summary>
-    /// Inputs the action expects to receive
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> ConsumersRequired {
-      get { return consumersRequired_; }
-    }
-
-    /// <summary>Field number for the "consumers_optional" field.</summary>
-    public const int ConsumersOptionalFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeType> _repeated_consumersOptional_codec
-        = pb::FieldCodec.ForMessage(98, global::Messages.AR.V1.ExchangeType.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> consumersOptional_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
-    /// <summary>
-    /// Inputs that will enhance the action, but are not needed to function
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> ConsumersOptional {
-      get { return consumersOptional_; }
-    }
-
-    /// <summary>Field number for the "required_handlers" field.</summary>
-    public const int RequiredHandlersFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.HandlerRequirement> _repeated_requiredHandlers_codec
-        = pb::FieldCodec.ForMessage(106, global::Messages.AR.V1.HandlerRequirement.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement> requiredHandlers_ = new pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement>();
-    /// <summary>
-    /// Events that MUST have at least one handler somewhere else in the system.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.HandlerRequirement> RequiredHandlers {
-      get { return requiredHandlers_; }
-    }
-
-    /// <summary>Field number for the "emits" field.</summary>
-    public const int EmitsFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Messages.AR.V1.ExchangeType> _repeated_emits_codec
-        = pb::FieldCodec.ForMessage(114, global::Messages.AR.V1.ExchangeType.Parser);
-    private readonly pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> emits_ = new pbc::RepeatedField<global::Messages.AR.V1.ExchangeType>();
-    /// <summary>
-    /// Outputs the action publishes
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.AR.V1.ExchangeType> Emits {
-      get { return emits_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -347,11 +300,8 @@ namespace Messages.AR.V1 {
       if (Group != other.Group) return false;
       if (Revision != other.Revision) return false;
       if (Status != other.Status) return false;
-      if (RequireAgent != other.RequireAgent) return false;
-      if(!consumersRequired_.Equals(other.consumersRequired_)) return false;
-      if(!consumersOptional_.Equals(other.consumersOptional_)) return false;
-      if(!requiredHandlers_.Equals(other.requiredHandlers_)) return false;
-      if(!emits_.Equals(other.emits_)) return false;
+      if(!properties_.Equals(other.properties_)) return false;
+      if (!object.Equals(Execution, other.Execution)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -368,11 +318,8 @@ namespace Messages.AR.V1 {
       if (Group != global::Messages.AR.V1.ActionGroup.Unspecified) hash ^= Group.GetHashCode();
       if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (Status != global::Messages.AR.V1.DefinitionStatus.Unspecified) hash ^= Status.GetHashCode();
-      if (RequireAgent != false) hash ^= RequireAgent.GetHashCode();
-      hash ^= consumersRequired_.GetHashCode();
-      hash ^= consumersOptional_.GetHashCode();
-      hash ^= requiredHandlers_.GetHashCode();
-      hash ^= emits_.GetHashCode();
+      hash ^= properties_.GetHashCode();
+      if (execution_ != null) hash ^= Execution.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -427,14 +374,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(72);
         output.WriteEnum((int) Status);
       }
-      if (RequireAgent != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(RequireAgent);
+      properties_.WriteTo(output, _repeated_properties_codec);
+      if (execution_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Execution);
       }
-      consumersRequired_.WriteTo(output, _repeated_consumersRequired_codec);
-      consumersOptional_.WriteTo(output, _repeated_consumersOptional_codec);
-      requiredHandlers_.WriteTo(output, _repeated_requiredHandlers_codec);
-      emits_.WriteTo(output, _repeated_emits_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -481,14 +425,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(72);
         output.WriteEnum((int) Status);
       }
-      if (RequireAgent != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(RequireAgent);
+      properties_.WriteTo(ref output, _repeated_properties_codec);
+      if (execution_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Execution);
       }
-      consumersRequired_.WriteTo(ref output, _repeated_consumersRequired_codec);
-      consumersOptional_.WriteTo(ref output, _repeated_consumersOptional_codec);
-      requiredHandlers_.WriteTo(ref output, _repeated_requiredHandlers_codec);
-      emits_.WriteTo(ref output, _repeated_emits_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -526,13 +467,10 @@ namespace Messages.AR.V1 {
       if (Status != global::Messages.AR.V1.DefinitionStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
-      if (RequireAgent != false) {
-        size += 1 + 1;
+      size += properties_.CalculateSize(_repeated_properties_codec);
+      if (execution_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Execution);
       }
-      size += consumersRequired_.CalculateSize(_repeated_consumersRequired_codec);
-      size += consumersOptional_.CalculateSize(_repeated_consumersOptional_codec);
-      size += requiredHandlers_.CalculateSize(_repeated_requiredHandlers_codec);
-      size += emits_.CalculateSize(_repeated_emits_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -572,13 +510,13 @@ namespace Messages.AR.V1 {
       if (other.Status != global::Messages.AR.V1.DefinitionStatus.Unspecified) {
         Status = other.Status;
       }
-      if (other.RequireAgent != false) {
-        RequireAgent = other.RequireAgent;
+      properties_.Add(other.properties_);
+      if (other.execution_ != null) {
+        if (execution_ == null) {
+          Execution = new global::Messages.AR.V1.ExecutionContract();
+        }
+        Execution.MergeFrom(other.Execution);
       }
-      consumersRequired_.Add(other.consumersRequired_);
-      consumersOptional_.Add(other.consumersOptional_);
-      requiredHandlers_.Add(other.requiredHandlers_);
-      emits_.Add(other.emits_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -634,24 +572,15 @@ namespace Messages.AR.V1 {
             Status = (global::Messages.AR.V1.DefinitionStatus) input.ReadEnum();
             break;
           }
-          case 80: {
-            RequireAgent = input.ReadBool();
-            break;
-          }
-          case 90: {
-            consumersRequired_.AddEntriesFrom(input, _repeated_consumersRequired_codec);
-            break;
-          }
-          case 98: {
-            consumersOptional_.AddEntriesFrom(input, _repeated_consumersOptional_codec);
+          case 82: {
+            properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
           case 106: {
-            requiredHandlers_.AddEntriesFrom(input, _repeated_requiredHandlers_codec);
-            break;
-          }
-          case 114: {
-            emits_.AddEntriesFrom(input, _repeated_emits_codec);
+            if (execution_ == null) {
+              Execution = new global::Messages.AR.V1.ExecutionContract();
+            }
+            input.ReadMessage(Execution);
             break;
           }
         }
@@ -709,24 +638,15 @@ namespace Messages.AR.V1 {
             Status = (global::Messages.AR.V1.DefinitionStatus) input.ReadEnum();
             break;
           }
-          case 80: {
-            RequireAgent = input.ReadBool();
-            break;
-          }
-          case 90: {
-            consumersRequired_.AddEntriesFrom(ref input, _repeated_consumersRequired_codec);
-            break;
-          }
-          case 98: {
-            consumersOptional_.AddEntriesFrom(ref input, _repeated_consumersOptional_codec);
+          case 82: {
+            properties_.AddEntriesFrom(ref input, _repeated_properties_codec);
             break;
           }
           case 106: {
-            requiredHandlers_.AddEntriesFrom(ref input, _repeated_requiredHandlers_codec);
-            break;
-          }
-          case 114: {
-            emits_.AddEntriesFrom(ref input, _repeated_emits_codec);
+            if (execution_ == null) {
+              Execution = new global::Messages.AR.V1.ExecutionContract();
+            }
+            input.ReadMessage(Execution);
             break;
           }
         }

@@ -2013,14 +2013,232 @@ func (*CreatePropertyMessage_PoseExtras) isCreatePropertyMessage_Extras() {}
 
 func (*CreatePropertyMessage_AnchorExtras) isCreatePropertyMessage_Extras() {}
 
+// PropertyTemplate describes a property contract independently of a concrete
+// owning entity and authoring/runtime context. Definition catalogs expose these
+// templates so clients can build typed editors before an instance exists.
+type PropertyTemplate struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Key                       string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Name                      string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon                      string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description               string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type                      PropertyType           `protobuf:"varint,5,opt,name=type,proto3,enum=common.v1.PropertyType" json:"type,omitempty"`
+	Scope                     PropertyScope          `protobuf:"varint,6,opt,name=scope,proto3,enum=common.v1.PropertyScope" json:"scope,omitempty"`
+	MinimumRequiredPermission PropertyPermission     `protobuf:"varint,7,opt,name=minimum_required_permission,json=minimumRequiredPermission,proto3,enum=common.v1.PropertyPermission" json:"minimum_required_permission,omitempty"`
+	AllowedOrigins            []PropertyOrigin       `protobuf:"varint,8,rep,packed,name=allowed_origins,json=allowedOrigins,proto3,enum=common.v1.PropertyOrigin" json:"allowed_origins,omitempty"`
+	Group                     PropertyGroup          `protobuf:"varint,9,opt,name=group,proto3,enum=common.v1.PropertyGroup" json:"group,omitempty"`
+	Ordering                  int32                  `protobuf:"varint,10,opt,name=ordering,proto3" json:"ordering,omitempty"`
+	HideGroup                 bool                   `protobuf:"varint,11,opt,name=hide_group,json=hideGroup,proto3" json:"hide_group,omitempty"`
+	Advanced                  bool                   `protobuf:"varint,12,opt,name=advanced,proto3" json:"advanced,omitempty"`
+	AllowToBeMirrored         bool                   `protobuf:"varint,13,opt,name=allow_to_be_mirrored,json=allowToBeMirrored,proto3" json:"allow_to_be_mirrored,omitempty"`
+	SemanticRole              PropertySemanticRole   `protobuf:"varint,14,opt,name=semantic_role,json=semanticRole,proto3,enum=common.v1.PropertySemanticRole" json:"semantic_role,omitempty"`
+	// Default values are omitted when they can only be resolved in a concrete
+	// authoring/runtime context.
+	DefaultValue *PropertyValue `protobuf:"bytes,15,opt,name=default_value,json=defaultValue,proto3" json:"default_value,omitempty"`
+	// True when PresentationStrategy presets may override this property.
+	PresentationConfigurable bool           `protobuf:"varint,16,opt,name=presentation_configurable,json=presentationConfigurable,proto3" json:"presentation_configurable,omitempty"`
+	NumberExtras             *NumberExtras  `protobuf:"bytes,41,opt,name=number_extras,json=numberExtras,proto3" json:"number_extras,omitempty"`
+	EnumExtras               *EnumExtras    `protobuf:"bytes,42,opt,name=enum_extras,json=enumExtras,proto3" json:"enum_extras,omitempty"`
+	Vector3Extras            *Vector3Extras `protobuf:"bytes,43,opt,name=vector3_extras,json=vector3Extras,proto3" json:"vector3_extras,omitempty"`
+	ColorExtras              *ColorExtras   `protobuf:"bytes,44,opt,name=color_extras,json=colorExtras,proto3" json:"color_extras,omitempty"`
+	PoseExtras               *PoseExtras    `protobuf:"bytes,45,opt,name=pose_extras,json=poseExtras,proto3" json:"pose_extras,omitempty"`
+	AnchorExtras             *AnchorExtras  `protobuf:"bytes,46,opt,name=anchor_extras,json=anchorExtras,proto3" json:"anchor_extras,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *PropertyTemplate) Reset() {
+	*x = PropertyTemplate{}
+	mi := &file_common_v1_property_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PropertyTemplate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PropertyTemplate) ProtoMessage() {}
+
+func (x *PropertyTemplate) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_property_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PropertyTemplate.ProtoReflect.Descriptor instead.
+func (*PropertyTemplate) Descriptor() ([]byte, []int) {
+	return file_common_v1_property_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *PropertyTemplate) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *PropertyTemplate) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *PropertyTemplate) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *PropertyTemplate) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *PropertyTemplate) GetType() PropertyType {
+	if x != nil {
+		return x.Type
+	}
+	return PropertyType_PROPERTY_TYPE_UNSPECIFIED
+}
+
+func (x *PropertyTemplate) GetScope() PropertyScope {
+	if x != nil {
+		return x.Scope
+	}
+	return PropertyScope_PROPERTY_SCOPE_UNSPECIFIED
+}
+
+func (x *PropertyTemplate) GetMinimumRequiredPermission() PropertyPermission {
+	if x != nil {
+		return x.MinimumRequiredPermission
+	}
+	return PropertyPermission_PROPERTY_PERMISSION_UNSPECIFIED
+}
+
+func (x *PropertyTemplate) GetAllowedOrigins() []PropertyOrigin {
+	if x != nil {
+		return x.AllowedOrigins
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetGroup() PropertyGroup {
+	if x != nil {
+		return x.Group
+	}
+	return PropertyGroup_PROPERTY_GROUP_UNSPECIFIED
+}
+
+func (x *PropertyTemplate) GetOrdering() int32 {
+	if x != nil {
+		return x.Ordering
+	}
+	return 0
+}
+
+func (x *PropertyTemplate) GetHideGroup() bool {
+	if x != nil {
+		return x.HideGroup
+	}
+	return false
+}
+
+func (x *PropertyTemplate) GetAdvanced() bool {
+	if x != nil {
+		return x.Advanced
+	}
+	return false
+}
+
+func (x *PropertyTemplate) GetAllowToBeMirrored() bool {
+	if x != nil {
+		return x.AllowToBeMirrored
+	}
+	return false
+}
+
+func (x *PropertyTemplate) GetSemanticRole() PropertySemanticRole {
+	if x != nil {
+		return x.SemanticRole
+	}
+	return PropertySemanticRole_PROPERTY_SEMANTIC_ROLE_UNSPECIFIED
+}
+
+func (x *PropertyTemplate) GetDefaultValue() *PropertyValue {
+	if x != nil {
+		return x.DefaultValue
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetPresentationConfigurable() bool {
+	if x != nil {
+		return x.PresentationConfigurable
+	}
+	return false
+}
+
+func (x *PropertyTemplate) GetNumberExtras() *NumberExtras {
+	if x != nil {
+		return x.NumberExtras
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetEnumExtras() *EnumExtras {
+	if x != nil {
+		return x.EnumExtras
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetVector3Extras() *Vector3Extras {
+	if x != nil {
+		return x.Vector3Extras
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetColorExtras() *ColorExtras {
+	if x != nil {
+		return x.ColorExtras
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetPoseExtras() *PoseExtras {
+	if x != nil {
+		return x.PoseExtras
+	}
+	return nil
+}
+
+func (x *PropertyTemplate) GetAnchorExtras() *AnchorExtras {
+	if x != nil {
+		return x.AnchorExtras
+	}
+	return nil
+}
+
 var File_common_v1_property_proto protoreflect.FileDescriptor
 
 const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
-	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa6\v\n" +
+	"\x18common/v1/property.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/color.proto\x1a\x18geometry/v1/anchor.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\v\n" +
 	"\x12PropertyDefinition\x12\x19\n" +
-	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12<\n" +
-	"\x03key\x18\x11 \x01(\tB*\xbaH'r%\x10\x01\x18@2\x1f^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$R\x03key\x12\x12\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x02id\x12\x1b\n" +
+	"\x03key\x18\x11 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
@@ -2127,14 +2345,14 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\x13PropertyDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.common.v1.PropertyDefinitionR\x05items\"F\n" +
 	"\x11PropertyInstances\x121\n" +
-	"\x05items\x18\x01 \x03(\v2\x1b.common.v1.PropertyInstanceR\x05items\"\xe7\x03\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.common.v1.PropertyInstanceR\x05items\"\xc6\x03\n" +
 	"\fNumberExtras\x12\x15\n" +
 	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
 	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
 	"\x04step\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t!\x00\x00\x00\x00\x00\x00\x00\x00H\x02R\x04step\x88\x01\x01\x12\x1b\n" +
 	"\x04unit\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit\x12%\n" +
-	"\tprecision\x18\x05 \x01(\rB\a\xbaH\x04*\x02(\x00R\tprecision:\xa2\x02\xbaH\x9e\x02\x1a\x9b\x02\n" +
-	"\x18number_extras_consistent\x12TIf any of min/max/step is set, all must be set; and min < max; and step <= (max-min)\x1a\xa8\x01(!has(this.min) && !has(this.max) && !has(this.step)) || (has(this.min) && has(this.max) && has(this.step) && this.min < this.max && this.step <= (this.max - this.min))B\x06\n" +
+	"\tprecision\x18\x05 \x01(\rB\a\xbaH\x04*\x02(\x00R\tprecision:\x81\x02\xbaH\xfd\x01\x1a\xfa\x01\n" +
+	"\x18number_extras_consistent\x12Cmin must be less than max, and step must not exceed a bounded range\x1a\x98\x01(!has(this.min) || !has(this.max) || this.min < this.max) && (!has(this.step) || !has(this.min) || !has(this.max) || this.step <= (this.max - this.min))B\x06\n" +
 	"\x04_minB\x06\n" +
 	"\x04_maxB\a\n" +
 	"\x05_step\"\x90\x01\n" +
@@ -2153,7 +2371,7 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"show_icons\x18\x04 \x01(\bR\tshowIcons\x12.\n" +
 	"\x13max_selected_labels\x18\x05 \x01(\rR\x11maxSelectedLabels\x129\n" +
-	"\aoptions\x18\x06 \x03(\v2\x15.common.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\xa7\x04\n" +
+	"\aoptions\x18\x06 \x03(\v2\x15.common.v1.EnumOptionB\b\xbaH\x05\x92\x01\x02\b\x01R\aoptions\"\x86\x04\n" +
 	"\rVector3Extras\x12\x15\n" +
 	"\x03min\x18\x01 \x01(\x01H\x00R\x03min\x88\x01\x01\x12\x15\n" +
 	"\x03max\x18\x02 \x01(\x01H\x01R\x03max\x88\x01\x01\x12'\n" +
@@ -2161,8 +2379,8 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\alabel_x\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelX\x12 \n" +
 	"\alabel_y\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelY\x12 \n" +
 	"\alabel_z\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18\x05R\x06labelZ\x12\x1b\n" +
-	"\x04unit\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit:\xa2\x02\xbaH\x9e\x02\x1a\x9b\x02\n" +
-	"\x18number_extras_consistent\x12TIf any of min/max/step is set, all must be set; and min < max; and step <= (max-min)\x1a\xa8\x01(!has(this.min) && !has(this.max) && !has(this.step)) || (has(this.min) && has(this.max) && has(this.step) && this.min < this.max && this.step <= (this.max - this.min))B\x06\n" +
+	"\x04unit\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\x03R\x04unit:\x81\x02\xbaH\xfd\x01\x1a\xfa\x01\n" +
+	"\x18number_extras_consistent\x12Cmin must be less than max, and step must not exceed a bounded range\x1a\x98\x01(!has(this.min) || !has(this.max) || this.min < this.max) && (!has(this.step) || !has(this.min) || !has(this.max) || this.step <= (this.max - this.min))B\x06\n" +
 	"\x04_minB\x06\n" +
 	"\x04_maxB\a\n" +
 	"\x05_step\"]\n" +
@@ -2174,7 +2392,7 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\n" +
 	"PoseExtras\x12'\n" +
 	"\x0fanchor_editable\x18\x01 \x01(\bR\x0eanchorEditable\x12#\n" +
-	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\x8d\r\n" +
+	"\rpose_editable\x18\x02 \x01(\bR\fposeEditable\"\xec\f\n" +
 	"\x15CreatePropertyMessage\x12\x1b\n" +
 	"\tparent_id\x18\x01 \x01(\tR\bparentId\x120\n" +
 	"\x14authoring_context_id\x18\x02 \x01(\tR\x12authoringContextId\x12\x12\n" +
@@ -2192,8 +2410,8 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"hide_group\x18\f \x01(\bR\thideGroup\x12\x1a\n" +
 	"\badvanced\x18\r \x01(\bR\badvanced\x12/\n" +
 	"\x14allow_to_be_mirrored\x18\x0e \x01(\bR\x11allowToBeMirrored\x12N\n" +
-	"\rsemantic_role\x18\x10 \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12<\n" +
-	"\x03key\x18\x11 \x01(\tB*\xbaH'r%\x10\x01\x18@2\x1f^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$R\x03key\x12>\n" +
+	"\rsemantic_role\x18\x10 \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12\x1b\n" +
+	"\x03key\x18\x11 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12>\n" +
 	"\x06origin\x18\x14 \x01(\x0e2\x19.common.v1.PropertyOriginB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06origin\x12\x19\n" +
 	"\bscope_id\x18\x15 \x01(\tR\ascopeId\x12L\n" +
 	"\x1dmirror_property_definition_id\x18\x16 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x1amirrorPropertyDefinitionId\x12E\n" +
@@ -2208,7 +2426,43 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\ranchor_extras\x18. \x01(\v2\x17.common.v1.AnchorExtrasH\x00R\fanchorExtras:\x8c\x02\xbaH\x88\x02\x1al\n" +
 	" definition_and_value_types_match\x12\"type must match initial_value.type\x1a$this.type == this.initial_value.type\x1a\x97\x01\n" +
 	"\x1amirror_requires_definition\x12;mirror_property_definition_id is required for MIRROR origin\x1a<this.origin != 2 || this.mirror_property_definition_id != ''B\b\n" +
-	"\x06extras*\xa9\x03\n" +
+	"\x06extras\"\x9a\f\n" +
+	"\x10PropertyTemplate\x12\x1b\n" +
+	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x17.common.v1.PropertyTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x128\n" +
+	"\x05scope\x18\x06 \x01(\x0e2\x18.common.v1.PropertyScopeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05scope\x12g\n" +
+	"\x1bminimum_required_permission\x18\a \x01(\x0e2\x1d.common.v1.PropertyPermissionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x19minimumRequiredPermission\x12Q\n" +
+	"\x0fallowed_origins\x18\b \x03(\x0e2\x19.common.v1.PropertyOriginB\r\xbaH\n" +
+	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\x0eallowedOrigins\x128\n" +
+	"\x05group\x18\t \x01(\x0e2\x18.common.v1.PropertyGroupB\b\xbaH\x05\x82\x01\x02\x10\x01R\x05group\x12\x1a\n" +
+	"\bordering\x18\n" +
+	" \x01(\x05R\bordering\x12\x1d\n" +
+	"\n" +
+	"hide_group\x18\v \x01(\bR\thideGroup\x12\x1a\n" +
+	"\badvanced\x18\f \x01(\bR\badvanced\x12/\n" +
+	"\x14allow_to_be_mirrored\x18\r \x01(\bR\x11allowToBeMirrored\x12N\n" +
+	"\rsemantic_role\x18\x0e \x01(\x0e2\x1f.common.v1.PropertySemanticRoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\fsemanticRole\x12=\n" +
+	"\rdefault_value\x18\x0f \x01(\v2\x18.common.v1.PropertyValueR\fdefaultValue\x12;\n" +
+	"\x19presentation_configurable\x18\x10 \x01(\bR\x18presentationConfigurable\x12<\n" +
+	"\rnumber_extras\x18) \x01(\v2\x17.common.v1.NumberExtrasR\fnumberExtras\x126\n" +
+	"\venum_extras\x18* \x01(\v2\x15.common.v1.EnumExtrasR\n" +
+	"enumExtras\x12?\n" +
+	"\x0evector3_extras\x18+ \x01(\v2\x18.common.v1.Vector3ExtrasR\rvector3Extras\x129\n" +
+	"\fcolor_extras\x18, \x01(\v2\x16.common.v1.ColorExtrasR\vcolorExtras\x126\n" +
+	"\vpose_extras\x18- \x01(\v2\x15.common.v1.PoseExtrasR\n" +
+	"poseExtras\x12<\n" +
+	"\ranchor_extras\x18. \x01(\v2\x17.common.v1.AnchorExtrasR\fanchorExtras:\xf8\x02\xbaH\xf4\x02\x1a\x94\x01\n" +
+	"\x19enum_requires_enum_extras\x127enum_extras must be set when type is ENUM or ENUM_MULTI\x1a>!(this.type == 11 || this.type == 12) || has(this.enum_extras)\x1a\x82\x01\n" +
+	"\x1adefault_value_type_matches\x12\"type must match default_value.type\x1a@!has(this.default_value) || this.type == this.default_value.type\"V\n" +
+	"\rnumber_extras\n" +
+	"\venum_extras\n" +
+	"\x0evector3_extras\n" +
+	"\fcolor_extras\n" +
+	"\vpose_extras\n" +
+	"\ranchor_extras*\xa9\x03\n" +
 	"\fPropertyType\x12\x1d\n" +
 	"\x19PROPERTY_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12PROPERTY_TYPE_BOOL\x10\x01\x12\x15\n" +
@@ -2317,7 +2571,7 @@ func file_common_v1_property_proto_rawDescGZIP() []byte {
 }
 
 var file_common_v1_property_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
-var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_common_v1_property_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_common_v1_property_proto_goTypes = []any{
 	(PropertyType)(0),              // 0: common.v1.PropertyType
 	(PropertyOrigin)(0),            // 1: common.v1.PropertyOrigin
@@ -2339,10 +2593,11 @@ var file_common_v1_property_proto_goTypes = []any{
 	(*AnchorExtras)(nil),           // 17: common.v1.AnchorExtras
 	(*PoseExtras)(nil),             // 18: common.v1.PoseExtras
 	(*CreatePropertyMessage)(nil),  // 19: common.v1.CreatePropertyMessage
-	(*v1.Vector3)(nil),             // 20: geometry.v1.Vector3
-	(*v1.LocalizedPose)(nil),       // 21: geometry.v1.LocalizedPose
-	(*v1.Anchor)(nil),              // 22: geometry.v1.Anchor
-	(*Color)(nil),                  // 23: common.v1.Color
+	(*PropertyTemplate)(nil),       // 20: common.v1.PropertyTemplate
+	(*v1.Vector3)(nil),             // 21: geometry.v1.Vector3
+	(*v1.LocalizedPose)(nil),       // 22: geometry.v1.LocalizedPose
+	(*v1.Anchor)(nil),              // 23: geometry.v1.Anchor
+	(*Color)(nil),                  // 24: common.v1.Color
 }
 var file_common_v1_property_proto_depIdxs = []int32{
 	0,  // 0: common.v1.PropertyDefinition.type:type_name -> common.v1.PropertyType
@@ -2361,16 +2616,16 @@ var file_common_v1_property_proto_depIdxs = []int32{
 	1,  // 13: common.v1.PropertyInstance.origin:type_name -> common.v1.PropertyOrigin
 	8,  // 14: common.v1.PropertyInstance.value:type_name -> common.v1.PropertyValue
 	0,  // 15: common.v1.PropertyValue.type:type_name -> common.v1.PropertyType
-	20, // 16: common.v1.PropertyValue.vector3_value:type_name -> geometry.v1.Vector3
-	21, // 17: common.v1.PropertyValue.pose_value:type_name -> geometry.v1.LocalizedPose
-	22, // 18: common.v1.PropertyValue.anchor_value:type_name -> geometry.v1.Anchor
-	23, // 19: common.v1.PropertyValue.color_value:type_name -> common.v1.Color
+	21, // 16: common.v1.PropertyValue.vector3_value:type_name -> geometry.v1.Vector3
+	22, // 17: common.v1.PropertyValue.pose_value:type_name -> geometry.v1.LocalizedPose
+	23, // 18: common.v1.PropertyValue.anchor_value:type_name -> geometry.v1.Anchor
+	24, // 19: common.v1.PropertyValue.color_value:type_name -> common.v1.Color
 	1,  // 20: common.v1.PropertyInstanceUpdate.origin:type_name -> common.v1.PropertyOrigin
 	8,  // 21: common.v1.PropertyInstanceUpdate.value:type_name -> common.v1.PropertyValue
 	6,  // 22: common.v1.PropertyDefinitions.items:type_name -> common.v1.PropertyDefinition
 	7,  // 23: common.v1.PropertyInstances.items:type_name -> common.v1.PropertyInstance
 	13, // 24: common.v1.EnumExtras.options:type_name -> common.v1.EnumOption
-	23, // 25: common.v1.ColorExtras.default:type_name -> common.v1.Color
+	24, // 25: common.v1.ColorExtras.default:type_name -> common.v1.Color
 	0,  // 26: common.v1.CreatePropertyMessage.type:type_name -> common.v1.PropertyType
 	5,  // 27: common.v1.CreatePropertyMessage.scope:type_name -> common.v1.PropertyScope
 	3,  // 28: common.v1.CreatePropertyMessage.minimum_required_permission:type_name -> common.v1.PropertyPermission
@@ -2385,11 +2640,24 @@ var file_common_v1_property_proto_depIdxs = []int32{
 	16, // 37: common.v1.CreatePropertyMessage.color_extras:type_name -> common.v1.ColorExtras
 	18, // 38: common.v1.CreatePropertyMessage.pose_extras:type_name -> common.v1.PoseExtras
 	17, // 39: common.v1.CreatePropertyMessage.anchor_extras:type_name -> common.v1.AnchorExtras
-	40, // [40:40] is the sub-list for method output_type
-	40, // [40:40] is the sub-list for method input_type
-	40, // [40:40] is the sub-list for extension type_name
-	40, // [40:40] is the sub-list for extension extendee
-	0,  // [0:40] is the sub-list for field type_name
+	0,  // 40: common.v1.PropertyTemplate.type:type_name -> common.v1.PropertyType
+	5,  // 41: common.v1.PropertyTemplate.scope:type_name -> common.v1.PropertyScope
+	3,  // 42: common.v1.PropertyTemplate.minimum_required_permission:type_name -> common.v1.PropertyPermission
+	1,  // 43: common.v1.PropertyTemplate.allowed_origins:type_name -> common.v1.PropertyOrigin
+	2,  // 44: common.v1.PropertyTemplate.group:type_name -> common.v1.PropertyGroup
+	4,  // 45: common.v1.PropertyTemplate.semantic_role:type_name -> common.v1.PropertySemanticRole
+	8,  // 46: common.v1.PropertyTemplate.default_value:type_name -> common.v1.PropertyValue
+	12, // 47: common.v1.PropertyTemplate.number_extras:type_name -> common.v1.NumberExtras
+	14, // 48: common.v1.PropertyTemplate.enum_extras:type_name -> common.v1.EnumExtras
+	15, // 49: common.v1.PropertyTemplate.vector3_extras:type_name -> common.v1.Vector3Extras
+	16, // 50: common.v1.PropertyTemplate.color_extras:type_name -> common.v1.ColorExtras
+	18, // 51: common.v1.PropertyTemplate.pose_extras:type_name -> common.v1.PoseExtras
+	17, // 52: common.v1.PropertyTemplate.anchor_extras:type_name -> common.v1.AnchorExtras
+	53, // [53:53] is the sub-list for method output_type
+	53, // [53:53] is the sub-list for method input_type
+	53, // [53:53] is the sub-list for extension type_name
+	53, // [53:53] is the sub-list for extension extendee
+	0,  // [0:53] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_property_proto_init() }
@@ -2415,7 +2683,7 @@ func file_common_v1_property_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_property_proto_rawDesc), len(file_common_v1_property_proto_rawDesc)),
 			NumEnums:      6,
-			NumMessages:   14,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

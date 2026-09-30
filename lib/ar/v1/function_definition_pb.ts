@@ -6,11 +6,13 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { DefinitionStatus } from "./definition_status_pb.ts";
 import { file_ar_v1_definition_status } from "./definition_status_pb.ts";
-import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
-import { file_ar_v1_events } from "./events_pb.ts";
+import type { ExecutionContract } from "./execution_contract_pb.ts";
+import { file_ar_v1_execution_contract } from "./execution_contract_pb.ts";
 import type { FunctionType } from "./function_pb.ts";
 import { file_ar_v1_function } from "./function_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { PropertyTemplate } from "../../common/v1/property_pb.ts";
+import { file_common_v1_property } from "../../common/v1/property_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -18,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/function_definition.proto.
  */
 export const file_ar_v1_function_definition: GenFile = /*@__PURE__*/
-  fileDesc("Ch9hci92MS9mdW5jdGlvbl9kZWZpbml0aW9uLnByb3RvEgVhci52MSL0AwoSRnVuY3Rpb25EZWZpbml0aW9uEhgKAmlkGAEgASgJQgy6SAnIAQFyBPjzBAESGQoDa2V5GAIgASgJQgy6SAnIAQFyBODzBAESFwoEbmFtZRgDIAEoCUIJukgGcgSA8QQBEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSLgoEdHlwZRgGIAEoDjITLmFyLnYxLkZ1bmN0aW9uVHlwZUILukgIyAEBggECEAESMAoFZ3JvdXAYByABKA4yFC5hci52MS5GdW5jdGlvbkdyb3VwQgu6SAjIAQGCAQIQARIZCghyZXZpc2lvbhgIIAEoBEIHukgEMgIoARI0CgZzdGF0dXMYCSABKA4yFy5hci52MS5EZWZpbml0aW9uU3RhdHVzQgu6SAjIAQGCAQIQARIvChJjb25zdW1lcnNfcmVxdWlyZWQYCiADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAsgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGAwgAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGA0gAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlIsADChNGdW5jdGlvbkRlZmluaXRpb25zEqgDCgVpdGVtcxgBIAMoCzIZLmFyLnYxLkZ1bmN0aW9uRGVmaW5pdGlvbkL9ArpI+QK6AX0KJWZ1bmN0aW9uX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9pZHMSJmZ1bmN0aW9uIGRlZmluaXRpb24gaWRzIG11c3QgYmUgdW5pcXVlGix0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0aW9uLmlkKS51bmlxdWUoKboB9QEKL2Z1bmN0aW9uX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9rZXlfcmV2aXNpb25zEjlmdW5jdGlvbiBkZWZpbml0aW9uIGtleSBhbmQgcmV2aXNpb24gcGFpcnMgbXVzdCBiZSB1bmlxdWUahgF0aGlzLmFsbChkZWZpbml0aW9uLCB0aGlzLmZpbHRlcihjYW5kaWRhdGUsIGNhbmRpZGF0ZS5rZXkgPT0gZGVmaW5pdGlvbi5rZXkgJiYgY2FuZGlkYXRlLnJldmlzaW9uID09IGRlZmluaXRpb24ucmV2aXNpb24pLnNpemUoKSA9PSAxKSqnAgoNRnVuY3Rpb25Hcm91cBIeChpGVU5DVElPTl9HUk9VUF9VTlNQRUNJRklFRBAAEhoKFkZVTkNUSU9OX0dST1VQX0dFTkVSQUwQARIYChRGVU5DVElPTl9HUk9VUF9ST0JPVBACEhcKE0ZVTkNUSU9OX0dST1VQX1RBU0sQAxIeChpGVU5DVElPTl9HUk9VUF9FTlZJUk9OTUVOVBAEEhsKF0ZVTkNUSU9OX0dST1VQX09QRVJBVE9SEAUSGgoWRlVOQ1RJT05fR1JPVVBfU1BBVElBTBAGEhgKFEZVTkNUSU9OX0dST1VQX0xPR0lDEAcSFwoTRlVOQ1RJT05fR1JPVVBfREFUQRAIEhsKF0ZVTkNUSU9OX0dST1VQX1RFTVBPUkFMEAlCkwEKCWNvbS5hci52MUIXRnVuY3Rpb25EZWZpbml0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_definition_status, file_ar_v1_events, file_ar_v1_function, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9hci92MS9mdW5jdGlvbl9kZWZpbml0aW9uLnByb3RvEgVhci52MSKzBAoSRnVuY3Rpb25EZWZpbml0aW9uEhgKAmlkGAEgASgJQgy6SAnIAQFyBPjzBAESGQoDa2V5GAIgASgJQgy6SAnIAQFyBODzBAESFwoEbmFtZRgDIAEoCUIJukgGcgSA8QQBEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSLgoEdHlwZRgGIAEoDjITLmFyLnYxLkZ1bmN0aW9uVHlwZUILukgIyAEBggECEAESMAoFZ3JvdXAYByABKA4yFC5hci52MS5GdW5jdGlvbkdyb3VwQgu6SAjIAQGCAQIQARIZCghyZXZpc2lvbhgIIAEoBEIHukgEMgIoARI0CgZzdGF0dXMYCSABKA4yFy5hci52MS5EZWZpbml0aW9uU3RhdHVzQgu6SAjIAQGCAQIQARK3AQoKcHJvcGVydGllcxgKIAMoCzIbLmNvbW1vbi52MS5Qcm9wZXJ0eVRlbXBsYXRlQoUBukiBAboBfgoqZnVuY3Rpb25fZGVmaW5pdGlvbi5wcm9wZXJ0aWVzLnVuaXF1ZV9rZXlzEiVwcm9wZXJ0eSB0ZW1wbGF0ZSBrZXlzIG11c3QgYmUgdW5pcXVlGil0aGlzLm1hcChwcm9wZXJ0eSwgcHJvcGVydHkua2V5KS51bmlxdWUoKRIzCglleGVjdXRpb24YDSABKAsyGC5hci52MS5FeGVjdXRpb25Db250cmFjdEIGukgDyAEBSgQICxAMSgQIDBANIsADChNGdW5jdGlvbkRlZmluaXRpb25zEqgDCgVpdGVtcxgBIAMoCzIZLmFyLnYxLkZ1bmN0aW9uRGVmaW5pdGlvbkL9ArpI+QK6AX0KJWZ1bmN0aW9uX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9pZHMSJmZ1bmN0aW9uIGRlZmluaXRpb24gaWRzIG11c3QgYmUgdW5pcXVlGix0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0aW9uLmlkKS51bmlxdWUoKboB9QEKL2Z1bmN0aW9uX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9rZXlfcmV2aXNpb25zEjlmdW5jdGlvbiBkZWZpbml0aW9uIGtleSBhbmQgcmV2aXNpb24gcGFpcnMgbXVzdCBiZSB1bmlxdWUahgF0aGlzLmFsbChkZWZpbml0aW9uLCB0aGlzLmZpbHRlcihjYW5kaWRhdGUsIGNhbmRpZGF0ZS5rZXkgPT0gZGVmaW5pdGlvbi5rZXkgJiYgY2FuZGlkYXRlLnJldmlzaW9uID09IGRlZmluaXRpb24ucmV2aXNpb24pLnNpemUoKSA9PSAxKSqnAgoNRnVuY3Rpb25Hcm91cBIeChpGVU5DVElPTl9HUk9VUF9VTlNQRUNJRklFRBAAEhoKFkZVTkNUSU9OX0dST1VQX0dFTkVSQUwQARIYChRGVU5DVElPTl9HUk9VUF9ST0JPVBACEhcKE0ZVTkNUSU9OX0dST1VQX1RBU0sQAxIeChpGVU5DVElPTl9HUk9VUF9FTlZJUk9OTUVOVBAEEhsKF0ZVTkNUSU9OX0dST1VQX09QRVJBVE9SEAUSGgoWRlVOQ1RJT05fR1JPVVBfU1BBVElBTBAGEhgKFEZVTkNUSU9OX0dST1VQX0xPR0lDEAcSFwoTRlVOQ1RJT05fR1JPVVBfREFUQRAIEhsKF0ZVTkNUSU9OX0dST1VQX1RFTVBPUkFMEAlCkwEKCWNvbS5hci52MUIXRnVuY3Rpb25EZWZpbml0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_definition_status, file_ar_v1_execution_contract, file_ar_v1_function, file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FunctionDefinition
@@ -76,32 +78,14 @@ export type FunctionDefinition = Message<"ar.v1.FunctionDefinition"> & {
   status: DefinitionStatus;
 
   /**
-   * Inputs the function expects to receive
-   *
-   * @generated from field: repeated ar.v1.ExchangeType consumers_required = 10;
+   * @generated from field: repeated common.v1.PropertyTemplate properties = 10;
    */
-  consumersRequired: ExchangeType[];
+  properties: PropertyTemplate[];
 
   /**
-   * Inputs that will enhance the function, but are not needed to function
-   *
-   * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 11;
+   * @generated from field: ar.v1.ExecutionContract execution = 13;
    */
-  consumersOptional: ExchangeType[];
-
-  /**
-   * Events that MUST have at least one handler somewhere else in the system.
-   *
-   * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 12;
-   */
-  requiredHandlers: HandlerRequirement[];
-
-  /**
-   * Outputs the function publishes
-   *
-   * @generated from field: repeated ar.v1.ExchangeType emits = 13;
-   */
-  emits: ExchangeType[];
+  execution?: ExecutionContract;
 };
 
 /**

@@ -3,8 +3,9 @@ package ar.v1;
 
 import "ar/v1/action.proto";
 import "ar/v1/definition_status.proto";
-import "ar/v1/events.proto";
+import "ar/v1/execution_contract.proto";
 import "buf/validate/validate.proto";
+import "common/v1/property.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -45,11 +46,13 @@ message ActionDefinition {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  bool require_agent = 10;
-  repeated ExchangeType consumers_required = 11; // Inputs the action expects to receive
-  repeated ExchangeType consumers_optional = 12; // Inputs that will enhance the action, but are not needed to function
-  repeated HandlerRequirement required_handlers = 13; // Events that MUST have at least one handler somewhere else in the system.
-  repeated ExchangeType emits = 14; // Outputs the action publishes
+  repeated common.v1.PropertyTemplate properties = 10 [(buf.validate.field).cel = {
+    id: "action_definition.properties.unique_keys"
+    message: "property template keys must be unique"
+    expression: "this.map(property, property.key).unique()"
+  }];
+  reserved 11, 12;
+  ExecutionContract execution = 13 [(buf.validate.field).required = true];
 }
 
 // The catalog service additionally enforces that revisions sharing a key also

@@ -8,6 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -114,14 +115,12 @@ type FunctionDefinition struct {
 	Type        FunctionType  `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.FunctionType" json:"type,omitempty"`
 	Group       FunctionGroup `protobuf:"varint,7,opt,name=group,proto3,enum=ar.v1.FunctionGroup" json:"group,omitempty"`
 	// Monotonic revision of the externally visible definition contract.
-	Revision          uint64                `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
-	Status            DefinitionStatus      `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
-	ConsumersRequired []*ExchangeType       `protobuf:"bytes,10,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"` // Inputs the function expects to receive
-	ConsumersOptional []*ExchangeType       `protobuf:"bytes,11,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the function, but are not needed to function
-	RequiredHandlers  []*HandlerRequirement `protobuf:"bytes,12,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system.
-	Emits             []*ExchangeType       `protobuf:"bytes,13,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // Outputs the function publishes
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	Revision      uint64                 `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
+	Status        DefinitionStatus       `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
+	Properties    []*v1.PropertyTemplate `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
+	Execution     *ExecutionContract     `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FunctionDefinition) Reset() {
@@ -217,30 +216,16 @@ func (x *FunctionDefinition) GetStatus() DefinitionStatus {
 	return DefinitionStatus_DEFINITION_STATUS_UNSPECIFIED
 }
 
-func (x *FunctionDefinition) GetConsumersRequired() []*ExchangeType {
+func (x *FunctionDefinition) GetProperties() []*v1.PropertyTemplate {
 	if x != nil {
-		return x.ConsumersRequired
+		return x.Properties
 	}
 	return nil
 }
 
-func (x *FunctionDefinition) GetConsumersOptional() []*ExchangeType {
+func (x *FunctionDefinition) GetExecution() *ExecutionContract {
 	if x != nil {
-		return x.ConsumersOptional
-	}
-	return nil
-}
-
-func (x *FunctionDefinition) GetRequiredHandlers() []*HandlerRequirement {
-	if x != nil {
-		return x.RequiredHandlers
-	}
-	return nil
-}
-
-func (x *FunctionDefinition) GetEmits() []*ExchangeType {
-	if x != nil {
-		return x.Emits
+		return x.Execution
 	}
 	return nil
 }
@@ -295,7 +280,7 @@ var File_ar_v1_function_definition_proto protoreflect.FileDescriptor
 
 const file_ar_v1_function_definition_proto_rawDesc = "" +
 	"\n" +
-	"\x1far/v1/function_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x12ar/v1/events.proto\x1a\x14ar/v1/function.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf4\x04\n" +
+	"\x1far/v1/function_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/function.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8b\x05\n" +
 	"\x12FunctionDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x02id\x12\x1e\n" +
 	"\x03key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
@@ -305,12 +290,13 @@ const file_ar_v1_function_definition_proto_rawDesc = "" +
 	"\x04type\x18\x06 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x127\n" +
 	"\x05group\x18\a \x01(\x0e2\x14.ar.v1.FunctionGroupB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05group\x12#\n" +
 	"\brevision\x18\b \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x12<\n" +
-	"\x06status\x18\t \x01(\x0e2\x17.ar.v1.DefinitionStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12B\n" +
-	"\x12consumers_required\x18\n" +
-	" \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersRequired\x12B\n" +
-	"\x12consumers_optional\x18\v \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersOptional\x12F\n" +
-	"\x11required_handlers\x18\f \x03(\v2\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n" +
-	"\x05emits\x18\r \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\"\xc7\x03\n" +
+	"\x06status\x18\t \x01(\x0e2\x17.ar.v1.DefinitionStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12\xc3\x01\n" +
+	"\n" +
+	"properties\x18\n" +
+	" \x03(\v2\x1b.common.v1.PropertyTemplateB\x85\x01\xbaH\x81\x01\xba\x01~\n" +
+	"*function_definition.properties.unique_keys\x12%property template keys must be unique\x1a)this.map(property, property.key).unique()R\n" +
+	"properties\x12>\n" +
+	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecutionJ\x04\b\v\x10\fJ\x04\b\f\x10\r\"\xc7\x03\n" +
 	"\x13FunctionDefinitions\x12\xaf\x03\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.ar.v1.FunctionDefinitionB\xfd\x02\xbaH\xf9\x02\xba\x01}\n" +
 	"%function_definitions.items.unique_ids\x12&function definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xf5\x01\n" +
@@ -348,23 +334,21 @@ var file_ar_v1_function_definition_proto_goTypes = []any{
 	(*FunctionDefinitions)(nil), // 2: ar.v1.FunctionDefinitions
 	(FunctionType)(0),           // 3: ar.v1.FunctionType
 	(DefinitionStatus)(0),       // 4: ar.v1.DefinitionStatus
-	(*ExchangeType)(nil),        // 5: ar.v1.ExchangeType
-	(*HandlerRequirement)(nil),  // 6: ar.v1.HandlerRequirement
+	(*v1.PropertyTemplate)(nil), // 5: common.v1.PropertyTemplate
+	(*ExecutionContract)(nil),   // 6: ar.v1.ExecutionContract
 }
 var file_ar_v1_function_definition_proto_depIdxs = []int32{
 	3, // 0: ar.v1.FunctionDefinition.type:type_name -> ar.v1.FunctionType
 	0, // 1: ar.v1.FunctionDefinition.group:type_name -> ar.v1.FunctionGroup
 	4, // 2: ar.v1.FunctionDefinition.status:type_name -> ar.v1.DefinitionStatus
-	5, // 3: ar.v1.FunctionDefinition.consumers_required:type_name -> ar.v1.ExchangeType
-	5, // 4: ar.v1.FunctionDefinition.consumers_optional:type_name -> ar.v1.ExchangeType
-	6, // 5: ar.v1.FunctionDefinition.required_handlers:type_name -> ar.v1.HandlerRequirement
-	5, // 6: ar.v1.FunctionDefinition.emits:type_name -> ar.v1.ExchangeType
-	1, // 7: ar.v1.FunctionDefinitions.items:type_name -> ar.v1.FunctionDefinition
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	5, // 3: ar.v1.FunctionDefinition.properties:type_name -> common.v1.PropertyTemplate
+	6, // 4: ar.v1.FunctionDefinition.execution:type_name -> ar.v1.ExecutionContract
+	1, // 5: ar.v1.FunctionDefinitions.items:type_name -> ar.v1.FunctionDefinition
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_function_definition_proto_init() }
@@ -373,7 +357,7 @@ func file_ar_v1_function_definition_proto_init() {
 		return
 	}
 	file_ar_v1_definition_status_proto_init()
-	file_ar_v1_events_proto_init()
+	file_ar_v1_execution_contract_proto_init()
 	file_ar_v1_function_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{

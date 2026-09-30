@@ -1,0 +1,18 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/events.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// ExecutionContract declares the runtime dependencies and exchanges required
+// to execute or render a built-in definition.
+message ExecutionContract {
+  bool require_agent = 1;
+  bool require_frame = 2;
+  repeated ExchangeType consumers_required = 3; // Inputs the action expects to receive
+  repeated ExchangeType consumers_optional = 4; // Inputs that will enhance the action, but are not needed to function
+  repeated HandlerRequirement required_handlers = 5; // Events that MUST have at least one handler somewhere else in the system.
+  repeated ExchangeType emits = 6; // Outputs the action publishes
+}

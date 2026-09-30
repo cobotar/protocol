@@ -6,8 +6,8 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2"
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { DefinitionStatus } from "./definition_status_pb.ts";
 import { file_ar_v1_definition_status } from "./definition_status_pb.ts";
-import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
-import { file_ar_v1_events } from "./events_pb.ts";
+import type { ExecutionContract } from "./execution_contract_pb.ts";
+import { file_ar_v1_execution_contract } from "./execution_contract_pb.ts";
 import type { FeedbackType } from "./feedback_pb.ts";
 import { file_ar_v1_feedback } from "./feedback_pb.ts";
 import type { FeedbackCapability } from "./feedback_capability_pb.ts";
@@ -15,6 +15,8 @@ import { file_ar_v1_feedback_capability } from "./feedback_capability_pb.ts";
 import type { FeedbackFeature } from "./feedback_features_pb.ts";
 import { file_ar_v1_feedback_features } from "./feedback_features_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { PropertyTemplate } from "../../common/v1/property_pb.ts";
+import { file_common_v1_property } from "../../common/v1/property_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -22,7 +24,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/feedback_definition.proto.
  */
 export const file_ar_v1_feedback_definition: GenFile = /*@__PURE__*/
-  fileDesc("Ch9hci92MS9mZWVkYmFja19kZWZpbml0aW9uLnByb3RvEgVhci52MSKOBwoSRmVlZGJhY2tEZWZpbml0aW9uEhgKAmlkGAEgASgJQgy6SAnIAQFyBPDzBAESGQoDa2V5GAIgASgJQgy6SAnIAQFyBODzBAESFwoEbmFtZRgDIAEoCUIJukgGcgSA8QQBEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSLgoEdHlwZRgGIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIyAEBggECEAESMAoFZ3JvdXAYByABKA4yFC5hci52MS5GZWVkYmFja0dyb3VwQgu6SAjIAQGCAQIQARIZCghyZXZpc2lvbhgIIAEoBEIHukgEMgIoARI0CgZzdGF0dXMYCSABKA4yFy5hci52MS5EZWZpbml0aW9uU3RhdHVzQgu6SAjIAQGCAQIQARIVCg1yZXF1aXJlX2FnZW50GAogASgIEhUKDXJlcXVpcmVfZnJhbWUYCyABKAgSLwoSY29uc3VtZXJzX3JlcXVpcmVkGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEi8KEmNvbnN1bWVyc19vcHRpb25hbBgNIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRI0ChFyZXF1aXJlZF9oYW5kbGVycxgOIAMoCzIZLmFyLnYxLkhhbmRsZXJSZXF1aXJlbWVudBIiCgVlbWl0cxgPIAMoCzITLmFyLnYxLkV4Y2hhbmdlVHlwZRKgAQoIZmVhdHVyZXMYECADKAsyFi5hci52MS5GZWVkYmFja0ZlYXR1cmVCdrpIc7oBcAooZmVlZGJhY2tfZGVmaW5pdGlvbi5mZWF0dXJlcy51bmlxdWVfa2V5cxIbZmVhdHVyZSBrZXlzIG11c3QgYmUgdW5pcXVlGid0aGlzLm1hcChmZWF0dXJlLCBmZWF0dXJlLmtleSkudW5pcXVlKCkSxgEKDGNhcGFiaWxpdGllcxgRIAMoCzIZLmFyLnYxLkZlZWRiYWNrQ2FwYWJpbGl0eUKUAbpIkAG6AYwBCjFmZWVkYmFja19kZWZpbml0aW9uLmNhcGFiaWxpdGllcy51bmlxdWVfc2VtYW50aWNzEiNjYXBhYmlsaXR5IHNlbWFudGljcyBtdXN0IGJlIHVuaXF1ZRoydGhpcy5tYXAoY2FwYWJpbGl0eSwgY2FwYWJpbGl0eS5zZW1hbnRpYykudW5pcXVlKCkiwAMKE0ZlZWRiYWNrRGVmaW5pdGlvbnMSqAMKBWl0ZW1zGAEgAygLMhkuYXIudjEuRmVlZGJhY2tEZWZpbml0aW9uQv0Cukj5AroBfQolZmVlZGJhY2tfZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2lkcxImZmVlZGJhY2sgZGVmaW5pdGlvbiBpZHMgbXVzdCBiZSB1bmlxdWUaLHRoaXMubWFwKGRlZmluaXRpb24sIGRlZmluaXRpb24uaWQpLnVuaXF1ZSgpugH1AQovZmVlZGJhY2tfZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2tleV9yZXZpc2lvbnMSOWZlZWRiYWNrIGRlZmluaXRpb24ga2V5IGFuZCByZXZpc2lvbiBwYWlycyBtdXN0IGJlIHVuaXF1ZRqGAXRoaXMuYWxsKGRlZmluaXRpb24sIHRoaXMuZmlsdGVyKGNhbmRpZGF0ZSwgY2FuZGlkYXRlLmtleSA9PSBkZWZpbml0aW9uLmtleSAmJiBjYW5kaWRhdGUucmV2aXNpb24gPT0gZGVmaW5pdGlvbi5yZXZpc2lvbikuc2l6ZSgpID09IDEpKvsBCg1GZWVkYmFja0dyb3VwEh4KGkZFRURCQUNLX0dST1VQX1VOU1BFQ0lGSUVEEAASGgoWRkVFREJBQ0tfR1JPVVBfR0VORVJBTBABEhoKFkZFRURCQUNLX0dST1VQX1NQQVRJQUwQAhIbChdGRUVEQkFDS19HUk9VUF9SRVNPVVJDRRADEhoKFkZFRURCQUNLX0dST1VQX1BST0NFU1MQBBIdChlGRUVEQkFDS19HUk9VUF9WQUxJREFUSU9OEAUSGAoURkVFREJBQ0tfR1JPVVBfUk9CT1QQBhIgChxGRUVEQkFDS19HUk9VUF9DT0xMQUJPUkFUSU9OEAdCkwEKCWNvbS5hci52MUIXRmVlZGJhY2tEZWZpbml0aW9uUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_ar_v1_definition_status, file_ar_v1_events, file_ar_v1_feedback, file_ar_v1_feedback_capability, file_ar_v1_feedback_features, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9hci92MS9mZWVkYmFja19kZWZpbml0aW9uLnByb3RvEgVhci52MSKTBwoSRmVlZGJhY2tEZWZpbml0aW9uEhgKAmlkGAEgASgJQgy6SAnIAQFyBPDzBAESGQoDa2V5GAIgASgJQgy6SAnIAQFyBODzBAESFwoEbmFtZRgDIAEoCUIJukgGcgSA8QQBEgwKBGljb24YBCABKAkSEwoLZGVzY3JpcHRpb24YBSABKAkSLgoEdHlwZRgGIAEoDjITLmFyLnYxLkZlZWRiYWNrVHlwZUILukgIyAEBggECEAESMAoFZ3JvdXAYByABKA4yFC5hci52MS5GZWVkYmFja0dyb3VwQgu6SAjIAQGCAQIQARIZCghyZXZpc2lvbhgIIAEoBEIHukgEMgIoARI0CgZzdGF0dXMYCSABKA4yFy5hci52MS5EZWZpbml0aW9uU3RhdHVzQgu6SAjIAQGCAQIQARK3AQoKcHJvcGVydGllcxgKIAMoCzIbLmNvbW1vbi52MS5Qcm9wZXJ0eVRlbXBsYXRlQoUBukiBAboBfgoqZmVlZGJhY2tfZGVmaW5pdGlvbi5wcm9wZXJ0aWVzLnVuaXF1ZV9rZXlzEiVwcm9wZXJ0eSB0ZW1wbGF0ZSBrZXlzIG11c3QgYmUgdW5pcXVlGil0aGlzLm1hcChwcm9wZXJ0eSwgcHJvcGVydHkua2V5KS51bmlxdWUoKRKgAQoIZmVhdHVyZXMYCyADKAsyFi5hci52MS5GZWVkYmFja0ZlYXR1cmVCdrpIc7oBcAooZmVlZGJhY2tfZGVmaW5pdGlvbi5mZWF0dXJlcy51bmlxdWVfa2V5cxIbZmVhdHVyZSBrZXlzIG11c3QgYmUgdW5pcXVlGid0aGlzLm1hcChmZWF0dXJlLCBmZWF0dXJlLmtleSkudW5pcXVlKCkSxgEKDGNhcGFiaWxpdGllcxgMIAMoCzIZLmFyLnYxLkZlZWRiYWNrQ2FwYWJpbGl0eUKUAbpIkAG6AYwBCjFmZWVkYmFja19kZWZpbml0aW9uLmNhcGFiaWxpdGllcy51bmlxdWVfc2VtYW50aWNzEiNjYXBhYmlsaXR5IHNlbWFudGljcyBtdXN0IGJlIHVuaXF1ZRoydGhpcy5tYXAoY2FwYWJpbGl0eSwgY2FwYWJpbGl0eS5zZW1hbnRpYykudW5pcXVlKCkSMwoJZXhlY3V0aW9uGA0gASgLMhguYXIudjEuRXhlY3V0aW9uQ29udHJhY3RCBrpIA8gBASLAAwoTRmVlZGJhY2tEZWZpbml0aW9ucxKoAwoFaXRlbXMYASADKAsyGS5hci52MS5GZWVkYmFja0RlZmluaXRpb25C/QK6SPkCugF9CiVmZWVkYmFja19kZWZpbml0aW9ucy5pdGVtcy51bmlxdWVfaWRzEiZmZWVkYmFjayBkZWZpbml0aW9uIGlkcyBtdXN0IGJlIHVuaXF1ZRosdGhpcy5tYXAoZGVmaW5pdGlvbiwgZGVmaW5pdGlvbi5pZCkudW5pcXVlKCm6AfUBCi9mZWVkYmFja19kZWZpbml0aW9ucy5pdGVtcy51bmlxdWVfa2V5X3JldmlzaW9ucxI5ZmVlZGJhY2sgZGVmaW5pdGlvbiBrZXkgYW5kIHJldmlzaW9uIHBhaXJzIG11c3QgYmUgdW5pcXVlGoYBdGhpcy5hbGwoZGVmaW5pdGlvbiwgdGhpcy5maWx0ZXIoY2FuZGlkYXRlLCBjYW5kaWRhdGUua2V5ID09IGRlZmluaXRpb24ua2V5ICYmIGNhbmRpZGF0ZS5yZXZpc2lvbiA9PSBkZWZpbml0aW9uLnJldmlzaW9uKS5zaXplKCkgPT0gMSkq+wEKDUZlZWRiYWNrR3JvdXASHgoaRkVFREJBQ0tfR1JPVVBfVU5TUEVDSUZJRUQQABIaChZGRUVEQkFDS19HUk9VUF9HRU5FUkFMEAESGgoWRkVFREJBQ0tfR1JPVVBfU1BBVElBTBACEhsKF0ZFRURCQUNLX0dST1VQX1JFU09VUkNFEAMSGgoWRkVFREJBQ0tfR1JPVVBfUFJPQ0VTUxAEEh0KGUZFRURCQUNLX0dST1VQX1ZBTElEQVRJT04QBRIYChRGRUVEQkFDS19HUk9VUF9ST0JPVBAGEiAKHEZFRURCQUNLX0dST1VQX0NPTExBQk9SQVRJT04QB0KTAQoJY29tLmFyLnYxQhdGZWVkYmFja0RlZmluaXRpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_definition_status, file_ar_v1_execution_contract, file_ar_v1_feedback, file_ar_v1_feedback_capability, file_ar_v1_feedback_features, file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.FeedbackDefinition
@@ -80,56 +82,28 @@ export type FeedbackDefinition = Message<"ar.v1.FeedbackDefinition"> & {
   status: DefinitionStatus;
 
   /**
-   * @generated from field: bool require_agent = 10;
+   * @generated from field: repeated common.v1.PropertyTemplate properties = 10;
    */
-  requireAgent: boolean;
-
-  /**
-   * @generated from field: bool require_frame = 11;
-   */
-  requireFrame: boolean;
-
-  /**
-   * Inputs the feedback expects to receive
-   *
-   * @generated from field: repeated ar.v1.ExchangeType consumers_required = 12;
-   */
-  consumersRequired: ExchangeType[];
-
-  /**
-   * Inputs that will enhance the feedback, but are not needed to function
-   *
-   * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 13;
-   */
-  consumersOptional: ExchangeType[];
-
-  /**
-   * Events that MUST have at least one handler somewhere else in the system.
-   *
-   * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 14;
-   */
-  requiredHandlers: HandlerRequirement[];
-
-  /**
-   * Outputs the feedback publishes
-   *
-   * @generated from field: repeated ar.v1.ExchangeType emits = 15;
-   */
-  emits: ExchangeType[];
+  properties: PropertyTemplate[];
 
   /**
    * Implementation/configuration features
    *
-   * @generated from field: repeated ar.v1.FeedbackFeature features = 16;
+   * @generated from field: repeated ar.v1.FeedbackFeature features = 11;
    */
   features: FeedbackFeature[];
 
   /**
    * Assistance semantics
    *
-   * @generated from field: repeated ar.v1.FeedbackCapability capabilities = 17;
+   * @generated from field: repeated ar.v1.FeedbackCapability capabilities = 12;
    */
   capabilities: FeedbackCapability[];
+
+  /**
+   * @generated from field: ar.v1.ExecutionContract execution = 13;
+   */
+  execution?: ExecutionContract;
 };
 
 /**

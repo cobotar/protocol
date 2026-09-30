@@ -107,39 +107,8 @@
     - [PlanType](#ar-v1-PlanType)
     - [TelemetryType](#ar-v1-TelemetryType)
   
-- [ar/v1/action_definition.proto](#ar_v1_action_definition-proto)
-    - [ActionDefinition](#ar-v1-ActionDefinition)
-    - [ActionDefinitions](#ar-v1-ActionDefinitions)
-  
-    - [ActionGroup](#ar-v1-ActionGroup)
-  
-- [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
-    - [ARActorSelector](#ar-v1-ARActorSelector)
-    - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
-    - [ARInputSlotDeleteMessage](#ar-v1-ARInputSlotDeleteMessage)
-    - [ARInputSlotMessage](#ar-v1-ARInputSlotMessage)
-    - [ARInputSlotMessages](#ar-v1-ARInputSlotMessages)
-    - [ARInputSlotUpdateMessage](#ar-v1-ARInputSlotUpdateMessage)
-    - [ARRunContextSelector](#ar-v1-ARRunContextSelector)
-  
-    - [ARContextSlotType](#ar-v1-ARContextSlotType)
-    - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
-    - [ARRunSelection](#ar-v1-ARRunSelection)
-  
-- [ar/v1/presentation_binding.proto](#ar_v1_presentation_binding-proto)
-    - [PresentationBinding](#ar-v1-PresentationBinding)
-    - [PresentationBindingReset](#ar-v1-PresentationBindingReset)
-    - [PresentationBindingUpdate](#ar-v1-PresentationBindingUpdate)
-  
-- [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
-    - [ARConfigAddMessage](#ar-v1-ARConfigAddMessage)
-    - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
-    - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
-    - [ARConfigMessage](#ar-v1-ARConfigMessage)
-    - [ARConfigMessages](#ar-v1-ARConfigMessages)
-    - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
-  
-    - [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType)
+- [ar/v1/execution_contract.proto](#ar_v1_execution_contract-proto)
+    - [ExecutionContract](#ar-v1-ExecutionContract)
   
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
@@ -175,6 +144,7 @@
     - [PropertyInstance](#common-v1-PropertyInstance)
     - [PropertyInstanceUpdate](#common-v1-PropertyInstanceUpdate)
     - [PropertyInstances](#common-v1-PropertyInstances)
+    - [PropertyTemplate](#common-v1-PropertyTemplate)
     - [PropertyValue](#common-v1-PropertyValue)
     - [Vector3Extras](#common-v1-Vector3Extras)
   
@@ -184,6 +154,40 @@
     - [PropertyScope](#common-v1-PropertyScope)
     - [PropertySemanticRole](#common-v1-PropertySemanticRole)
     - [PropertyType](#common-v1-PropertyType)
+  
+- [ar/v1/action_definition.proto](#ar_v1_action_definition-proto)
+    - [ActionDefinition](#ar-v1-ActionDefinition)
+    - [ActionDefinitions](#ar-v1-ActionDefinitions)
+  
+    - [ActionGroup](#ar-v1-ActionGroup)
+  
+- [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
+    - [ARActorSelector](#ar-v1-ARActorSelector)
+    - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
+    - [ARInputSlotDeleteMessage](#ar-v1-ARInputSlotDeleteMessage)
+    - [ARInputSlotMessage](#ar-v1-ARInputSlotMessage)
+    - [ARInputSlotMessages](#ar-v1-ARInputSlotMessages)
+    - [ARInputSlotUpdateMessage](#ar-v1-ARInputSlotUpdateMessage)
+    - [ARRunContextSelector](#ar-v1-ARRunContextSelector)
+  
+    - [ARContextSlotType](#ar-v1-ARContextSlotType)
+    - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
+    - [ARRunSelection](#ar-v1-ARRunSelection)
+  
+- [ar/v1/presentation_binding.proto](#ar_v1_presentation_binding-proto)
+    - [PresentationBinding](#ar-v1-PresentationBinding)
+    - [PresentationBindingReset](#ar-v1-PresentationBindingReset)
+    - [PresentationBindingUpdate](#ar-v1-PresentationBindingUpdate)
+  
+- [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
+    - [ARConfigAddMessage](#ar-v1-ARConfigAddMessage)
+    - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
+    - [ARConfigInfoMessages](#ar-v1-ARConfigInfoMessages)
+    - [ARConfigMessage](#ar-v1-ARConfigMessage)
+    - [ARConfigMessages](#ar-v1-ARConfigMessages)
+    - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
+  
+    - [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType)
   
 - [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
     - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
@@ -1598,31 +1602,24 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
-<a name="ar_v1_action_definition-proto"></a>
+<a name="ar_v1_execution_contract-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## ar/v1/action_definition.proto
+## ar/v1/execution_contract.proto
 
 
 
-<a name="ar-v1-ActionDefinition"></a>
+<a name="ar-v1-ExecutionContract"></a>
 
-### ActionDefinition
-
+### ExecutionContract
+ExecutionContract declares the runtime dependencies and exchanges required
+to execute or render a built-in definition.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable identity of this immutable built-in definition revision. |
-| key | [string](#string) |  | Stable logical identity shared by every revision of this definition. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| type | [ActionType](#ar-v1-ActionType) |  |  |
-| group | [ActionGroup](#ar-v1-ActionGroup) |  |  |
-| revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
-| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
 | require_agent | [bool](#bool) |  |  |
+| require_frame | [bool](#bool) |  |  |
 | consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
 | consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but are not needed to function |
 | required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
@@ -1632,511 +1629,7 @@ It is expected to be high-frequency updates or at least updates every time the s
 
 
 
-
-<a name="ar-v1-ActionDefinitions"></a>
-
-### ActionDefinitions
-The catalog service additionally enforces that revisions sharing a key also
-share a type, and that at most one revision per key/type is ACTIVE.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ActionDefinition](#ar-v1-ActionDefinition) | repeated |  |
-
-
-
-
-
  
-
-
-<a name="ar-v1-ActionGroup"></a>
-
-### ActionGroup
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ACTION_GROUP_UNSPECIFIED | 0 |  |
-| ACTION_GROUP_GENERAL | 1 |  |
-| ACTION_GROUP_ROBOT | 2 |  |
-| ACTION_GROUP_TASK | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_input_slot-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/input_slot.proto
-
-
-
-<a name="ar-v1-ARActorSelector"></a>
-
-### ARActorSelector
-ARActorSelector identifies the actor whose tasks are considered by a run
-selector.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| current_worker | [bool](#bool) |  | Use the worker authenticated in the current AR application session. Because scalar presence is represented by a non-default value here, this field must be true when selected. |
-| resource_slot_id | [string](#string) |  | Use the robot bound to another ROBOT input slot in the same AR config. The referenced slot must exist and have resource_type ROBOT; this cross-entity constraint must be checked by the application/backend. |
-
-
-
-
-
-
-<a name="ar-v1-ARInputSlotAddMessage"></a>
-
-### ARInputSlotAddMessage
-ARInputSlotAddMessage creates a new config-owned input slot.
-
-The source kind determines the generated property&#39;s value kind. If the source
-kind must change later, prefer delete &#43; recreate. A run selector is a mutable
-resolution policy and may be changed with ARInputSlotUpdateMessage.
-Resource slots are always required; context slots are always optional.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| config_id | [string](#string) |  | Owning AR config to attach the new slot to. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Use for slots that should be bound to a resource instance. |
-| context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Use for slots that should be populated from runtime context. |
-| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
-
-
-
-
-
-
-<a name="ar-v1-ARInputSlotDeleteMessage"></a>
-
-### ARInputSlotDeleteMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Slot to delete. |
-
-
-
-
-
-
-<a name="ar-v1-ARInputSlotMessage"></a>
-
-### ARInputSlotMessage
-ARInputSlotMessage is the authoritative config-owned input slot entity for
-AR configs.
-
-The backend is expected to derive and manage generated_property_id from the
-slot identity and value kind. Users should not author or edit the generated
-property directly.
-
-Resource slots are mandatory and materialization fails if no compatible
-resource binding can satisfy them. Context slots are optional and leave their
-generated property empty when the requested context cannot be resolved.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable slot identifier used by configs and runtime resolution. |
-| config_id | [string](#string) |  | Owning AR config. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| generated_property_id | [string](#string) |  | Server-managed property that should receive the resolved slot value at runtime. |
-| resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Selected when this slot expects a concrete resource binding. |
-| context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Selected when this slot expects a runtime context value. |
-| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
-
-
-
-
-
-
-<a name="ar-v1-ARInputSlotMessages"></a>
-
-### ARInputSlotMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Config-owned input slots. |
-
-
-
-
-
-
-<a name="ar-v1-ARInputSlotUpdateMessage"></a>
-
-### ARInputSlotUpdateMessage
-ARInputSlotUpdateMessage updates the editable fields and resolution policy of
-an existing slot.
-
-The source kind and generated_property_id are intentionally not updated here.
-Those are structural and should be changed via recreate. The run selector may
-be updated because it changes resolution policy without changing value type.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Slot to update. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type. |
-
-
-
-
-
-
-<a name="ar-v1-ARRunContextSelector"></a>
-
-### ARRunContextSelector
-ARRunContextSelector selects an actor-related task and projects it to the run
-ID requested by the owning input slot:
-
-- TASK_RUN_ID returns the selected task.
-- SEQUENCE_RUN_ID returns the selected task&#39;s immediate parent sequence.
-- PROCESS_RUN_ID returns the process containing the selected task.
-
-FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
-to a parent sequence or process.
-
-If no task satisfies the policy, resolution produces no value and the
-context slot&#39;s generated property remains empty.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| selection | [ARRunSelection](#ar-v1-ARRunSelection) |  | Policy used to choose a task before projecting it to the requested run ID. |
-| actor | [ARActorSelector](#ar-v1-ARActorSelector) |  | Actor whose tasks are considered. |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-ARContextSlotType"></a>
-
-### ARContextSlotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_CONTEXT_SLOT_TYPE_UNSPECIFIED | 0 | No runtime context selected. Invalid for stored or add-requested slots. |
-| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 | Slot resolves to the line containing the binding target, if known. |
-| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 | Slot resolves to the targeted cell or the parent cell of the targeted station. |
-| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 | Slot resolves to the targeted station. This may be empty for a cell-level binding when no station has been established by the runtime session. |
-| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 | Slot resolves to the worker authenticated in the AR application session. |
-| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 | Slot resolves to a process run id selected by run_selector. |
-| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 | Slot resolves to a sequence run id selected by run_selector. |
-| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 | Slot resolves to a task run id selected by run_selector. |
-
-
-
-<a name="ar-v1-ARResourceSlotType"></a>
-
-### ARResourceSlotType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_RESOURCE_SLOT_TYPE_UNSPECIFIED | 0 | No resource kind selected. Invalid for stored or add-requested slots. |
-| AR_RESOURCE_SLOT_TYPE_ROBOT | 1 | Slot expects a concrete robot instance. |
-| AR_RESOURCE_SLOT_TYPE_ASSET | 2 | Slot expects a concrete asset instance. |
-
-
-
-<a name="ar-v1-ARRunSelection"></a>
-
-### ARRunSelection
-ARRunSelection defines how an actor-related task candidate is chosen.
-
-Candidate tasks are limited to ProcessRuns associated with the station or
-cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
-assigned to or performed by the selected actor are excluded unless a policy
-explicitly selects historical or errored work.
-
-Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
-1. state precedence: IN_PROGRESS, READY, QUEUED
-2. initiated_at ascending
-3. id ascending
-
-Within each ProcessRun, task order follows ProcessRun.task_run_ids. The
-runtime must populate that list in canonical execution order. IDs provide a
-deterministic tie-breaker when a policy otherwise considers candidates
-equivalent.
-
-To summarize
-• FIRST_WORKABLE: actionable now.
-• CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
-• NEXT_EXPECTED: likely relevant next, but potentially blocked.
-• LAST_COMPLETED: most recently completed.
-• FIRST_IN_ERROR: errored task requiring attention.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_RUN_SELECTION_UNSPECIFIED | 0 | No selection policy specified. Invalid for a stored run selector. |
-| AR_RUN_SELECTION_FIRST_WORKABLE | 1 | Select the first ordered task that is currently workable for the actor. Workability is determined by runtime assignment, actor feasibility, task state, dependencies, and other effective execution restrictions. |
-| AR_RUN_SELECTION_CURRENT_ASSIGNED | 2 | Select the first ordered task assigned to the actor where state is READY or IN_PROGRESS. This answers &#34;what is this actor&#39;s current task?&#34;.
-
-Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work; the task must already be assigned to the actor. |
-| AR_RUN_SELECTION_NEXT_EXPECTED | 3 | Select the next non-terminal task expected to become relevant to the actor.
-
-Resolution: 1. Build the actor&#39;s ordered candidate task list. 2. If FIRST_WORKABLE resolves, select the first later non-terminal candidate. 3. Otherwise, select the first candidate expected to become workable after its currently unmet dependencies are completed.
-
-The selected task need not currently be workable. Tasks that cannot be assigned to or performed by the actor are excluded. |
-| AR_RUN_SELECTION_LAST_COMPLETED | 4 | Select the actor&#39;s completed task with the latest completed_at timestamp. Canonical execution order and then id are used as tie-breakers. |
-| AR_RUN_SELECTION_FIRST_IN_ERROR | 5 | Select the first ordered ERROR task associated with the actor. This policy is valid only for TASK_RUN_ID. |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_presentation_binding-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/presentation_binding.proto
-
-
-
-<a name="ar-v1-PresentationBinding"></a>
-
-### PresentationBinding
-Binds one PresentationRole from the ARConfig&#39;s active PresentationStrategy
-to one concrete AR-content entity owned by the same ARConfig.
-
-Functions are intentionally not presentation bindings. Supporting Functions
-are implementation dependencies and should be reconciled by the backend.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| role_key | [string](#string) |  |  |
-| feedback_id | [string](#string) |  |  |
-| action_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-PresentationBindingReset"></a>
-
-### PresentationBindingReset
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| config_id | [string](#string) |  |  |
-| role_key | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-PresentationBindingUpdate"></a>
-
-### PresentationBindingUpdate
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| config_id | [string](#string) |  |  |
-| binding | [PresentationBinding](#ar-v1-PresentationBinding) |  |  |
-
-
-
-
-
- 
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_ar_config-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/ar_config.proto
-
-
-
-<a name="ar-v1-ARConfigAddMessage"></a>
-
-### ARConfigAddMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
-| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
-| presentation_strategy_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigInfoMessage"></a>
-
-### ARConfigInfoMessage
-Just delete this?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable config identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigInfoMessages"></a>
-
-### ARConfigInfoMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated | Lightweight AR config metadata entries. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigMessage"></a>
-
-### ARConfigMessage
-ARConfigMessage is the reusable authoring-time template for an AR experience.
-
-It references feedback, actions, helpers, properties, and input slots that
-are later materialized through ARConfigBindingMessage and runtime resolution.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable config identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
-| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
-| input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
-| presentation_strategy_id | [string](#string) |  | no strategy --&gt; traditional/manual ARConfig, strategy --&gt; adaptive presentation is enabled |
-| presentation_bindings | [PresentationBinding](#ar-v1-PresentationBinding) | repeated |  |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigMessages"></a>
-
-### ARConfigMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigUpdateMessage"></a>
-
-### ARConfigUpdateMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable config identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
-| presentation_strategy_id | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-ARConfigPrimaryType"></a>
-
-### ARConfigPrimaryType
-ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.
-
-The primary type can be used by the backend or authoring UI to create the most
-relevant default properties, feedback elements, and visual styling tokens for
-a newly created AR configuration.
-
-It is intentionally a high-level category rather than a complete list of all
-feedback types. A configuration may still contain any combination of feedback,
-actions, properties, and input slots.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED | 0 |  |
-| AR_CONFIG_PRIMARY_TYPE_GENERAL | 1 | General-purpose AR configuration with only basic defaults. |
-| AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE | 2 | Step-by-step AR guidance for assembly tasks. Typical defaults: instruction panel, target ghost, part/tool highlights, checklist, current/completed task colors. |
-| AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST | 3 | Procedure/checklist-oriented guidance such as startup, shutdown, maintenance, cleaning, or recovery procedures. Typical defaults: checklist panel, confirmation controls, warning/success colors, compact status indicators. |
-| AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE | 4 | Robot-awareness configuration focused on communicating robot intent. Typical defaults: robot path color, robot silhouette color, robot status, robot warning/occupancy styling. |
-| AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE | 5 | Human-robot collaboration configuration focused on shared tasks, handovers, synchronization, and actor assignments. Typical defaults: operator color, robot color, shared task color, handover zone styling, synchronization indicators. |
-| AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION | 6 | Validation/inspection-oriented configuration focused on confirming whether work was completed correctly. Typical defaults: validation panel, ruler/measurement styling, vision confirmation indicators, warning/error/success colors. |
-| AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW | 7 | Overview/dashboard-style configuration for process status, task queues, assignments, and runtime control. Typical defaults: overview panel, progress indicators, task status colors, reassignment and completion controls. |
-| AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE | 8 | Training/onboarding configuration with stronger guidance, explanations, examples, and optional help content. Typical defaults: larger instruction panels, help icons, tutorial prompts, slower animations, and extra confirmation feedback. |
-| AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE | 9 | Safety-focused configuration used to communicate hazards, restricted zones, required approvals, or critical warnings. Typical defaults: warning/error colors, safety zones, alert sounds, approval prompts, and high-visibility icons. |
-
 
  
 
@@ -2672,6 +2165,44 @@ PropertyInstanceUpdate
 
 
 
+<a name="common-v1-PropertyTemplate"></a>
+
+### PropertyTemplate
+PropertyTemplate describes a property contract independently of a concrete
+owning entity and authoring/runtime context. Definition catalogs expose these
+templates so clients can build typed editors before an instance exists.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [PropertyType](#common-v1-PropertyType) |  |  |
+| scope | [PropertyScope](#common-v1-PropertyScope) |  |  |
+| minimum_required_permission | [PropertyPermission](#common-v1-PropertyPermission) |  |  |
+| allowed_origins | [PropertyOrigin](#common-v1-PropertyOrigin) | repeated |  |
+| group | [PropertyGroup](#common-v1-PropertyGroup) |  |  |
+| ordering | [int32](#int32) |  |  |
+| hide_group | [bool](#bool) |  |  |
+| advanced | [bool](#bool) |  |  |
+| allow_to_be_mirrored | [bool](#bool) |  |  |
+| semantic_role | [PropertySemanticRole](#common-v1-PropertySemanticRole) |  |  |
+| default_value | [PropertyValue](#common-v1-PropertyValue) |  | Default values are omitted when they can only be resolved in a concrete authoring/runtime context. |
+| presentation_configurable | [bool](#bool) |  | True when PresentationStrategy presets may override this property. |
+| number_extras | [NumberExtras](#common-v1-NumberExtras) |  |  |
+| enum_extras | [EnumExtras](#common-v1-EnumExtras) |  |  |
+| vector3_extras | [Vector3Extras](#common-v1-Vector3Extras) |  |  |
+| color_extras | [ColorExtras](#common-v1-ColorExtras) |  |  |
+| pose_extras | [PoseExtras](#common-v1-PoseExtras) |  |  |
+| anchor_extras | [AnchorExtras](#common-v1-AnchorExtras) |  |  |
+
+
+
+
+
+
 <a name="common-v1-PropertyValue"></a>
 
 ### PropertyValue
@@ -2874,6 +2405,551 @@ Used to specify the type of a property
 | PROPERTY_TYPE_ICON | 13 | Icon property type - icon-name-something from https://pictogrammers.com/ |
 | PROPERTY_TYPE_ASSET | 14 | Asset type property - asset_id as string |
 | PROPERTY_TYPE_WORKER | 15 | Worker type property - worker_id as string |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_action_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/action_definition.proto
+
+
+
+<a name="ar-v1-ActionDefinition"></a>
+
+### ActionDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable identity of this immutable built-in definition revision. |
+| key | [string](#string) |  | Stable logical identity shared by every revision of this definition. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| type | [ActionType](#ar-v1-ActionType) |  |  |
+| group | [ActionGroup](#ar-v1-ActionGroup) |  |  |
+| revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
+| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
+| properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
+| execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ActionDefinitions"></a>
+
+### ActionDefinitions
+The catalog service additionally enforces that revisions sharing a key also
+share a type, and that at most one revision per key/type is ACTIVE.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ActionDefinition](#ar-v1-ActionDefinition) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ActionGroup"></a>
+
+### ActionGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACTION_GROUP_UNSPECIFIED | 0 |  |
+| ACTION_GROUP_GENERAL | 1 |  |
+| ACTION_GROUP_ROBOT | 2 |  |
+| ACTION_GROUP_TASK | 3 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_input_slot-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/input_slot.proto
+
+
+
+<a name="ar-v1-ARActorSelector"></a>
+
+### ARActorSelector
+ARActorSelector identifies the actor whose tasks are considered by a run
+selector.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| current_worker | [bool](#bool) |  | Use the worker authenticated in the current AR application session. Because scalar presence is represented by a non-default value here, this field must be true when selected. |
+| resource_slot_id | [string](#string) |  | Use the robot bound to another ROBOT input slot in the same AR config. The referenced slot must exist and have resource_type ROBOT; this cross-entity constraint must be checked by the application/backend. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotAddMessage"></a>
+
+### ARInputSlotAddMessage
+ARInputSlotAddMessage creates a new config-owned input slot.
+
+The source kind determines the generated property&#39;s value kind. If the source
+kind must change later, prefer delete &#43; recreate. A run selector is a mutable
+resolution policy and may be changed with ARInputSlotUpdateMessage.
+Resource slots are always required; context slots are always optional.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  | Owning AR config to attach the new slot to. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Use for slots that should be bound to a resource instance. |
+| context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Use for slots that should be populated from runtime context. |
+| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotDeleteMessage"></a>
+
+### ARInputSlotDeleteMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Slot to delete. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotMessage"></a>
+
+### ARInputSlotMessage
+ARInputSlotMessage is the authoritative config-owned input slot entity for
+AR configs.
+
+The backend is expected to derive and manage generated_property_id from the
+slot identity and value kind. Users should not author or edit the generated
+property directly.
+
+Resource slots are mandatory and materialization fails if no compatible
+resource binding can satisfy them. Context slots are optional and leave their
+generated property empty when the requested context cannot be resolved.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable slot identifier used by configs and runtime resolution. |
+| config_id | [string](#string) |  | Owning AR config. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| generated_property_id | [string](#string) |  | Server-managed property that should receive the resolved slot value at runtime. |
+| resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Selected when this slot expects a concrete resource binding. |
+| context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Selected when this slot expects a runtime context value. |
+| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotMessages"></a>
+
+### ARInputSlotMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Config-owned input slots. |
+
+
+
+
+
+
+<a name="ar-v1-ARInputSlotUpdateMessage"></a>
+
+### ARInputSlotUpdateMessage
+ARInputSlotUpdateMessage updates the editable fields and resolution policy of
+an existing slot.
+
+The source kind and generated_property_id are intentionally not updated here.
+Those are structural and should be changed via recreate. The run selector may
+be updated because it changes resolution policy without changing value type.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Slot to update. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type. |
+
+
+
+
+
+
+<a name="ar-v1-ARRunContextSelector"></a>
+
+### ARRunContextSelector
+ARRunContextSelector selects an actor-related task and projects it to the run
+ID requested by the owning input slot:
+
+- TASK_RUN_ID returns the selected task.
+- SEQUENCE_RUN_ID returns the selected task&#39;s immediate parent sequence.
+- PROCESS_RUN_ID returns the process containing the selected task.
+
+FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
+to a parent sequence or process.
+
+If no task satisfies the policy, resolution produces no value and the
+context slot&#39;s generated property remains empty.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| selection | [ARRunSelection](#ar-v1-ARRunSelection) |  | Policy used to choose a task before projecting it to the requested run ID. |
+| actor | [ARActorSelector](#ar-v1-ARActorSelector) |  | Actor whose tasks are considered. |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ARContextSlotType"></a>
+
+### ARContextSlotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CONTEXT_SLOT_TYPE_UNSPECIFIED | 0 | No runtime context selected. Invalid for stored or add-requested slots. |
+| AR_CONTEXT_SLOT_TYPE_LINE_ID | 1 | Slot resolves to the line containing the binding target, if known. |
+| AR_CONTEXT_SLOT_TYPE_CELL_ID | 2 | Slot resolves to the targeted cell or the parent cell of the targeted station. |
+| AR_CONTEXT_SLOT_TYPE_STATION_ID | 3 | Slot resolves to the targeted station. This may be empty for a cell-level binding when no station has been established by the runtime session. |
+| AR_CONTEXT_SLOT_TYPE_WORKER_ID | 4 | Slot resolves to the worker authenticated in the AR application session. |
+| AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID | 5 | Slot resolves to a process run id selected by run_selector. |
+| AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID | 6 | Slot resolves to a sequence run id selected by run_selector. |
+| AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID | 7 | Slot resolves to a task run id selected by run_selector. |
+
+
+
+<a name="ar-v1-ARResourceSlotType"></a>
+
+### ARResourceSlotType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RESOURCE_SLOT_TYPE_UNSPECIFIED | 0 | No resource kind selected. Invalid for stored or add-requested slots. |
+| AR_RESOURCE_SLOT_TYPE_ROBOT | 1 | Slot expects a concrete robot instance. |
+| AR_RESOURCE_SLOT_TYPE_ASSET | 2 | Slot expects a concrete asset instance. |
+
+
+
+<a name="ar-v1-ARRunSelection"></a>
+
+### ARRunSelection
+ARRunSelection defines how an actor-related task candidate is chosen.
+
+Candidate tasks are limited to ProcessRuns associated with the station or
+cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
+assigned to or performed by the selected actor are excluded unless a policy
+explicitly selects historical or errored work.
+
+Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
+1. state precedence: IN_PROGRESS, READY, QUEUED
+2. initiated_at ascending
+3. id ascending
+
+Within each ProcessRun, task order follows ProcessRun.task_run_ids. The
+runtime must populate that list in canonical execution order. IDs provide a
+deterministic tie-breaker when a policy otherwise considers candidates
+equivalent.
+
+To summarize
+• FIRST_WORKABLE: actionable now.
+• CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
+• NEXT_EXPECTED: likely relevant next, but potentially blocked.
+• LAST_COMPLETED: most recently completed.
+• FIRST_IN_ERROR: errored task requiring attention.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RUN_SELECTION_UNSPECIFIED | 0 | No selection policy specified. Invalid for a stored run selector. |
+| AR_RUN_SELECTION_FIRST_WORKABLE | 1 | Select the first ordered task that is currently workable for the actor. Workability is determined by runtime assignment, actor feasibility, task state, dependencies, and other effective execution restrictions. |
+| AR_RUN_SELECTION_CURRENT_ASSIGNED | 2 | Select the first ordered task assigned to the actor where state is READY or IN_PROGRESS. This answers &#34;what is this actor&#39;s current task?&#34;.
+
+Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work; the task must already be assigned to the actor. |
+| AR_RUN_SELECTION_NEXT_EXPECTED | 3 | Select the next non-terminal task expected to become relevant to the actor.
+
+Resolution: 1. Build the actor&#39;s ordered candidate task list. 2. If FIRST_WORKABLE resolves, select the first later non-terminal candidate. 3. Otherwise, select the first candidate expected to become workable after its currently unmet dependencies are completed.
+
+The selected task need not currently be workable. Tasks that cannot be assigned to or performed by the actor are excluded. |
+| AR_RUN_SELECTION_LAST_COMPLETED | 4 | Select the actor&#39;s completed task with the latest completed_at timestamp. Canonical execution order and then id are used as tie-breakers. |
+| AR_RUN_SELECTION_FIRST_IN_ERROR | 5 | Select the first ordered ERROR task associated with the actor. This policy is valid only for TASK_RUN_ID. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_presentation_binding-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/presentation_binding.proto
+
+
+
+<a name="ar-v1-PresentationBinding"></a>
+
+### PresentationBinding
+Binds one PresentationRole from the ARConfig&#39;s active PresentationStrategy
+to one concrete AR-content entity owned by the same ARConfig.
+
+Functions are intentionally not presentation bindings. Supporting Functions
+are implementation dependencies and should be reconciled by the backend.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| role_key | [string](#string) |  |  |
+| feedback_id | [string](#string) |  |  |
+| action_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationBindingReset"></a>
+
+### PresentationBindingReset
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| role_key | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-PresentationBindingUpdate"></a>
+
+### PresentationBindingUpdate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| config_id | [string](#string) |  |  |
+| binding | [PresentationBinding](#ar-v1-PresentationBinding) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_ar_config-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/ar_config.proto
+
+
+
+<a name="ar-v1-ARConfigAddMessage"></a>
+
+### ARConfigAddMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| presentation_strategy_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigInfoMessage"></a>
+
+### ARConfigInfoMessage
+Just delete this?
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable config identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigInfoMessages"></a>
+
+### ARConfigInfoMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| infos | [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage) | repeated | Lightweight AR config metadata entries. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigMessage"></a>
+
+### ARConfigMessage
+ARConfigMessage is the reusable authoring-time template for an AR experience.
+
+It references feedback, actions, helpers, properties, and input slots that
+are later materialized through ARConfigBindingMessage and runtime resolution.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable config identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| primary_type | [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType) |  | Main purpose used to seed default properties and feedback presets. |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| input_slots | [ARInputSlotMessage](#ar-v1-ARInputSlotMessage) | repeated | Authoritative config-owned input slots, edited directly as ARInputSlotMessage entities. |
+| presentation_strategy_id | [string](#string) |  | no strategy --&gt; traditional/manual ARConfig, strategy --&gt; adaptive presentation is enabled |
+| presentation_bindings | [PresentationBinding](#ar-v1-PresentationBinding) | repeated |  |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigMessages"></a>
+
+### ARConfigMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ARConfigMessage](#ar-v1-ARConfigMessage) | repeated | AR config templates. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigUpdateMessage"></a>
+
+### ARConfigUpdateMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable config identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| ar_disappear_distance | [int64](#int64) |  | Threshold distance in cm all AR elements should disappear. 0 = ignored |
+| presentation_strategy_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ARConfigPrimaryType"></a>
+
+### ARConfigPrimaryType
+ARConfigPrimaryType describes the main authoring/runtime purpose of an AR configuration.
+
+The primary type can be used by the backend or authoring UI to create the most
+relevant default properties, feedback elements, and visual styling tokens for
+a newly created AR configuration.
+
+It is intentionally a high-level category rather than a complete list of all
+feedback types. A configuration may still contain any combination of feedback,
+actions, properties, and input slots.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_CONFIG_PRIMARY_TYPE_UNSPECIFIED | 0 |  |
+| AR_CONFIG_PRIMARY_TYPE_GENERAL | 1 | General-purpose AR configuration with only basic defaults. |
+| AR_CONFIG_PRIMARY_TYPE_ASSEMBLY_GUIDANCE | 2 | Step-by-step AR guidance for assembly tasks. Typical defaults: instruction panel, target ghost, part/tool highlights, checklist, current/completed task colors. |
+| AR_CONFIG_PRIMARY_TYPE_PROCEDURE_CHECKLIST | 3 | Procedure/checklist-oriented guidance such as startup, shutdown, maintenance, cleaning, or recovery procedures. Typical defaults: checklist panel, confirmation controls, warning/success colors, compact status indicators. |
+| AR_CONFIG_PRIMARY_TYPE_ROBOT_GUIDANCE | 4 | Robot-awareness configuration focused on communicating robot intent. Typical defaults: robot path color, robot silhouette color, robot status, robot warning/occupancy styling. |
+| AR_CONFIG_PRIMARY_TYPE_COLLABORATION_GUIDANCE | 5 | Human-robot collaboration configuration focused on shared tasks, handovers, synchronization, and actor assignments. Typical defaults: operator color, robot color, shared task color, handover zone styling, synchronization indicators. |
+| AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION | 6 | Validation/inspection-oriented configuration focused on confirming whether work was completed correctly. Typical defaults: validation panel, ruler/measurement styling, vision confirmation indicators, warning/error/success colors. |
+| AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW | 7 | Overview/dashboard-style configuration for process status, task queues, assignments, and runtime control. Typical defaults: overview panel, progress indicators, task status colors, reassignment and completion controls. |
+| AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE | 8 | Training/onboarding configuration with stronger guidance, explanations, examples, and optional help content. Typical defaults: larger instruction panels, help icons, tutorial prompts, slower animations, and extra confirmation feedback. |
+| AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE | 9 | Safety-focused configuration used to communicate hazards, restricted zones, required approvals, or critical warnings. Typical defaults: warning/error colors, safety zones, alert sounds, approval prompts, and high-visibility icons. |
 
 
  
@@ -3423,14 +3499,10 @@ Feature says what behavior/configuration the implementation exposes.
 | group | [FeedbackGroup](#ar-v1-FeedbackGroup) |  |  |
 | revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
 | status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
-| require_agent | [bool](#bool) |  |  |
-| require_frame | [bool](#bool) |  |  |
-| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the feedback expects to receive |
-| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the feedback, but are not needed to function |
-| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
-| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the feedback publishes |
+| properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
 | features | [FeedbackFeature](#ar-v1-FeedbackFeature) | repeated | Implementation/configuration features |
 | capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Assistance semantics |
+| execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
 
 
 
@@ -3629,10 +3701,8 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | group | [FunctionGroup](#ar-v1-FunctionGroup) |  |  |
 | revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
 | status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
-| consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the function expects to receive |
-| consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the function, but are not needed to function |
-| required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
-| emits | [ExchangeType](#ar-v1-ExchangeType) | repeated | Outputs the function publishes |
+| properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
+| execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
 
 
 

@@ -8,6 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -106,18 +107,14 @@ type FeedbackDefinition struct {
 	Type        FeedbackType  `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
 	Group       FeedbackGroup `protobuf:"varint,7,opt,name=group,proto3,enum=ar.v1.FeedbackGroup" json:"group,omitempty"`
 	// Monotonic revision of the externally visible definition contract.
-	Revision          uint64                `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
-	Status            DefinitionStatus      `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
-	RequireAgent      bool                  `protobuf:"varint,10,opt,name=require_agent,json=requireAgent,proto3" json:"require_agent,omitempty"`
-	RequireFrame      bool                  `protobuf:"varint,11,opt,name=require_frame,json=requireFrame,proto3" json:"require_frame,omitempty"`
-	ConsumersRequired []*ExchangeType       `protobuf:"bytes,12,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"` // Inputs the feedback expects to receive
-	ConsumersOptional []*ExchangeType       `protobuf:"bytes,13,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the feedback, but are not needed to function
-	RequiredHandlers  []*HandlerRequirement `protobuf:"bytes,14,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system.
-	Emits             []*ExchangeType       `protobuf:"bytes,15,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // Outputs the feedback publishes
-	Features          []*FeedbackFeature    `protobuf:"bytes,16,rep,name=features,proto3" json:"features,omitempty"`                                            // Implementation/configuration features
-	Capabilities      []*FeedbackCapability `protobuf:"bytes,17,rep,name=capabilities,proto3" json:"capabilities,omitempty"`                                    // Assistance semantics
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	Revision      uint64                 `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
+	Status        DefinitionStatus       `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
+	Properties    []*v1.PropertyTemplate `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
+	Features      []*FeedbackFeature     `protobuf:"bytes,11,rep,name=features,proto3" json:"features,omitempty"`         // Implementation/configuration features
+	Capabilities  []*FeedbackCapability  `protobuf:"bytes,12,rep,name=capabilities,proto3" json:"capabilities,omitempty"` // Assistance semantics
+	Execution     *ExecutionContract     `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FeedbackDefinition) Reset() {
@@ -213,44 +210,9 @@ func (x *FeedbackDefinition) GetStatus() DefinitionStatus {
 	return DefinitionStatus_DEFINITION_STATUS_UNSPECIFIED
 }
 
-func (x *FeedbackDefinition) GetRequireAgent() bool {
+func (x *FeedbackDefinition) GetProperties() []*v1.PropertyTemplate {
 	if x != nil {
-		return x.RequireAgent
-	}
-	return false
-}
-
-func (x *FeedbackDefinition) GetRequireFrame() bool {
-	if x != nil {
-		return x.RequireFrame
-	}
-	return false
-}
-
-func (x *FeedbackDefinition) GetConsumersRequired() []*ExchangeType {
-	if x != nil {
-		return x.ConsumersRequired
-	}
-	return nil
-}
-
-func (x *FeedbackDefinition) GetConsumersOptional() []*ExchangeType {
-	if x != nil {
-		return x.ConsumersOptional
-	}
-	return nil
-}
-
-func (x *FeedbackDefinition) GetRequiredHandlers() []*HandlerRequirement {
-	if x != nil {
-		return x.RequiredHandlers
-	}
-	return nil
-}
-
-func (x *FeedbackDefinition) GetEmits() []*ExchangeType {
-	if x != nil {
-		return x.Emits
+		return x.Properties
 	}
 	return nil
 }
@@ -265,6 +227,13 @@ func (x *FeedbackDefinition) GetFeatures() []*FeedbackFeature {
 func (x *FeedbackDefinition) GetCapabilities() []*FeedbackCapability {
 	if x != nil {
 		return x.Capabilities
+	}
+	return nil
+}
+
+func (x *FeedbackDefinition) GetExecution() *ExecutionContract {
+	if x != nil {
+		return x.Execution
 	}
 	return nil
 }
@@ -319,7 +288,7 @@ var File_ar_v1_feedback_definition_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_definition_proto_rawDesc = "" +
 	"\n" +
-	"\x1far/v1/feedback_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x12ar/v1/events.proto\x1a\x14ar/v1/feedback.proto\x1a\x1far/v1/feedback_capability.proto\x1a\x1dar/v1/feedback_features.proto\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc2\b\n" +
+	"\x1far/v1/feedback_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/feedback.proto\x1a\x1far/v1/feedback_capability.proto\x1a\x1dar/v1/feedback_features.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x83\b\n" +
 	"\x12FeedbackDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf3\x04\x01R\x02id\x12\x1e\n" +
 	"\x03key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
@@ -329,18 +298,17 @@ const file_ar_v1_feedback_definition_proto_rawDesc = "" +
 	"\x04type\x18\x06 \x01(\x0e2\x13.ar.v1.FeedbackTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x127\n" +
 	"\x05group\x18\a \x01(\x0e2\x14.ar.v1.FeedbackGroupB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05group\x12#\n" +
 	"\brevision\x18\b \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x12<\n" +
-	"\x06status\x18\t \x01(\x0e2\x17.ar.v1.DefinitionStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12#\n" +
-	"\rrequire_agent\x18\n" +
-	" \x01(\bR\frequireAgent\x12#\n" +
-	"\rrequire_frame\x18\v \x01(\bR\frequireFrame\x12B\n" +
-	"\x12consumers_required\x18\f \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersRequired\x12B\n" +
-	"\x12consumers_optional\x18\r \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersOptional\x12F\n" +
-	"\x11required_handlers\x18\x0e \x03(\v2\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n" +
-	"\x05emits\x18\x0f \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emits\x12\xaa\x01\n" +
-	"\bfeatures\x18\x10 \x03(\v2\x16.ar.v1.FeedbackFeatureBv\xbaHs\xba\x01p\n" +
+	"\x06status\x18\t \x01(\x0e2\x17.ar.v1.DefinitionStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12\xc3\x01\n" +
+	"\n" +
+	"properties\x18\n" +
+	" \x03(\v2\x1b.common.v1.PropertyTemplateB\x85\x01\xbaH\x81\x01\xba\x01~\n" +
+	"*feedback_definition.properties.unique_keys\x12%property template keys must be unique\x1a)this.map(property, property.key).unique()R\n" +
+	"properties\x12\xaa\x01\n" +
+	"\bfeatures\x18\v \x03(\v2\x16.ar.v1.FeedbackFeatureBv\xbaHs\xba\x01p\n" +
 	"(feedback_definition.features.unique_keys\x12\x1bfeature keys must be unique\x1a'this.map(feature, feature.key).unique()R\bfeatures\x12\xd4\x01\n" +
-	"\fcapabilities\x18\x11 \x03(\v2\x19.ar.v1.FeedbackCapabilityB\x94\x01\xbaH\x90\x01\xba\x01\x8c\x01\n" +
-	"1feedback_definition.capabilities.unique_semantics\x12#capability semantics must be unique\x1a2this.map(capability, capability.semantic).unique()R\fcapabilities\"\xc7\x03\n" +
+	"\fcapabilities\x18\f \x03(\v2\x19.ar.v1.FeedbackCapabilityB\x94\x01\xbaH\x90\x01\xba\x01\x8c\x01\n" +
+	"1feedback_definition.capabilities.unique_semantics\x12#capability semantics must be unique\x1a2this.map(capability, capability.semantic).unique()R\fcapabilities\x12>\n" +
+	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecution\"\xc7\x03\n" +
 	"\x13FeedbackDefinitions\x12\xaf\x03\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.ar.v1.FeedbackDefinitionB\xfd\x02\xbaH\xf9\x02\xba\x01}\n" +
 	"%feedback_definitions.items.unique_ids\x12&feedback definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xf5\x01\n" +
@@ -376,27 +344,25 @@ var file_ar_v1_feedback_definition_proto_goTypes = []any{
 	(*FeedbackDefinitions)(nil), // 2: ar.v1.FeedbackDefinitions
 	(FeedbackType)(0),           // 3: ar.v1.FeedbackType
 	(DefinitionStatus)(0),       // 4: ar.v1.DefinitionStatus
-	(*ExchangeType)(nil),        // 5: ar.v1.ExchangeType
-	(*HandlerRequirement)(nil),  // 6: ar.v1.HandlerRequirement
-	(*FeedbackFeature)(nil),     // 7: ar.v1.FeedbackFeature
-	(*FeedbackCapability)(nil),  // 8: ar.v1.FeedbackCapability
+	(*v1.PropertyTemplate)(nil), // 5: common.v1.PropertyTemplate
+	(*FeedbackFeature)(nil),     // 6: ar.v1.FeedbackFeature
+	(*FeedbackCapability)(nil),  // 7: ar.v1.FeedbackCapability
+	(*ExecutionContract)(nil),   // 8: ar.v1.ExecutionContract
 }
 var file_ar_v1_feedback_definition_proto_depIdxs = []int32{
-	3,  // 0: ar.v1.FeedbackDefinition.type:type_name -> ar.v1.FeedbackType
-	0,  // 1: ar.v1.FeedbackDefinition.group:type_name -> ar.v1.FeedbackGroup
-	4,  // 2: ar.v1.FeedbackDefinition.status:type_name -> ar.v1.DefinitionStatus
-	5,  // 3: ar.v1.FeedbackDefinition.consumers_required:type_name -> ar.v1.ExchangeType
-	5,  // 4: ar.v1.FeedbackDefinition.consumers_optional:type_name -> ar.v1.ExchangeType
-	6,  // 5: ar.v1.FeedbackDefinition.required_handlers:type_name -> ar.v1.HandlerRequirement
-	5,  // 6: ar.v1.FeedbackDefinition.emits:type_name -> ar.v1.ExchangeType
-	7,  // 7: ar.v1.FeedbackDefinition.features:type_name -> ar.v1.FeedbackFeature
-	8,  // 8: ar.v1.FeedbackDefinition.capabilities:type_name -> ar.v1.FeedbackCapability
-	1,  // 9: ar.v1.FeedbackDefinitions.items:type_name -> ar.v1.FeedbackDefinition
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	3, // 0: ar.v1.FeedbackDefinition.type:type_name -> ar.v1.FeedbackType
+	0, // 1: ar.v1.FeedbackDefinition.group:type_name -> ar.v1.FeedbackGroup
+	4, // 2: ar.v1.FeedbackDefinition.status:type_name -> ar.v1.DefinitionStatus
+	5, // 3: ar.v1.FeedbackDefinition.properties:type_name -> common.v1.PropertyTemplate
+	6, // 4: ar.v1.FeedbackDefinition.features:type_name -> ar.v1.FeedbackFeature
+	7, // 5: ar.v1.FeedbackDefinition.capabilities:type_name -> ar.v1.FeedbackCapability
+	8, // 6: ar.v1.FeedbackDefinition.execution:type_name -> ar.v1.ExecutionContract
+	1, // 7: ar.v1.FeedbackDefinitions.items:type_name -> ar.v1.FeedbackDefinition
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_definition_proto_init() }
@@ -405,7 +371,7 @@ func file_ar_v1_feedback_definition_proto_init() {
 		return
 	}
 	file_ar_v1_definition_status_proto_init()
-	file_ar_v1_events_proto_init()
+	file_ar_v1_execution_contract_proto_init()
 	file_ar_v1_feedback_proto_init()
 	file_ar_v1_feedback_capability_proto_init()
 	file_ar_v1_feedback_features_proto_init()

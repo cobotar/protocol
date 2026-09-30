@@ -1,9 +1,10 @@
 from ar.v1 import definition_status_pb2 as _definition_status_pb2
-from ar.v1 import events_pb2 as _events_pb2
+from ar.v1 import execution_contract_pb2 as _execution_contract_pb2
 from ar.v1 import feedback_pb2 as _feedback_pb2
 from ar.v1 import feedback_capability_pb2 as _feedback_capability_pb2
 from ar.v1 import feedback_features_pb2 as _feedback_features_pb2
 from buf.validate import validate_pb2 as _validate_pb2
+from common.v1 import property_pb2 as _property_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -34,7 +35,7 @@ FEEDBACK_GROUP_ROBOT: FeedbackGroup
 FEEDBACK_GROUP_COLLABORATION: FeedbackGroup
 
 class FeedbackDefinition(_message.Message):
-    __slots__ = ("id", "key", "name", "icon", "description", "type", "group", "revision", "status", "require_agent", "require_frame", "consumers_required", "consumers_optional", "required_handlers", "emits", "features", "capabilities")
+    __slots__ = ("id", "key", "name", "icon", "description", "type", "group", "revision", "status", "properties", "features", "capabilities", "execution")
     ID_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -44,14 +45,10 @@ class FeedbackDefinition(_message.Message):
     GROUP_FIELD_NUMBER: _ClassVar[int]
     REVISION_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
-    REQUIRE_AGENT_FIELD_NUMBER: _ClassVar[int]
-    REQUIRE_FRAME_FIELD_NUMBER: _ClassVar[int]
-    CONSUMERS_REQUIRED_FIELD_NUMBER: _ClassVar[int]
-    CONSUMERS_OPTIONAL_FIELD_NUMBER: _ClassVar[int]
-    REQUIRED_HANDLERS_FIELD_NUMBER: _ClassVar[int]
-    EMITS_FIELD_NUMBER: _ClassVar[int]
+    PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     CAPABILITIES_FIELD_NUMBER: _ClassVar[int]
+    EXECUTION_FIELD_NUMBER: _ClassVar[int]
     id: str
     key: str
     name: str
@@ -61,15 +58,11 @@ class FeedbackDefinition(_message.Message):
     group: FeedbackGroup
     revision: int
     status: _definition_status_pb2.DefinitionStatus
-    require_agent: bool
-    require_frame: bool
-    consumers_required: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
-    consumers_optional: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
-    required_handlers: _containers.RepeatedCompositeFieldContainer[_events_pb2.HandlerRequirement]
-    emits: _containers.RepeatedCompositeFieldContainer[_events_pb2.ExchangeType]
+    properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.PropertyTemplate]
     features: _containers.RepeatedCompositeFieldContainer[_feedback_features_pb2.FeedbackFeature]
     capabilities: _containers.RepeatedCompositeFieldContainer[_feedback_capability_pb2.FeedbackCapability]
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_feedback_pb2.FeedbackType, str]] = ..., group: _Optional[_Union[FeedbackGroup, str]] = ..., revision: _Optional[int] = ..., status: _Optional[_Union[_definition_status_pb2.DefinitionStatus, str]] = ..., require_agent: bool = ..., require_frame: bool = ..., consumers_required: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., consumers_optional: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., required_handlers: _Optional[_Iterable[_Union[_events_pb2.HandlerRequirement, _Mapping]]] = ..., emits: _Optional[_Iterable[_Union[_events_pb2.ExchangeType, _Mapping]]] = ..., features: _Optional[_Iterable[_Union[_feedback_features_pb2.FeedbackFeature, _Mapping]]] = ..., capabilities: _Optional[_Iterable[_Union[_feedback_capability_pb2.FeedbackCapability, _Mapping]]] = ...) -> None: ...
+    execution: _execution_contract_pb2.ExecutionContract
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_feedback_pb2.FeedbackType, str]] = ..., group: _Optional[_Union[FeedbackGroup, str]] = ..., revision: _Optional[int] = ..., status: _Optional[_Union[_definition_status_pb2.DefinitionStatus, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.PropertyTemplate, _Mapping]]] = ..., features: _Optional[_Iterable[_Union[_feedback_features_pb2.FeedbackFeature, _Mapping]]] = ..., capabilities: _Optional[_Iterable[_Union[_feedback_capability_pb2.FeedbackCapability, _Mapping]]] = ..., execution: _Optional[_Union[_execution_contract_pb2.ExecutionContract, _Mapping]] = ...) -> None: ...
 
 class FeedbackDefinitions(_message.Message):
     __slots__ = ("items",)

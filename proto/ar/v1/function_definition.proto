@@ -2,9 +2,10 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/definition_status.proto";
-import "ar/v1/events.proto";
+import "ar/v1/execution_contract.proto";
 import "ar/v1/function.proto";
 import "buf/validate/validate.proto";
+import "common/v1/property.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -69,10 +70,13 @@ message FunctionDefinition {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  repeated ExchangeType consumers_required = 10; // Inputs the function expects to receive
-  repeated ExchangeType consumers_optional = 11; // Inputs that will enhance the function, but are not needed to function
-  repeated HandlerRequirement required_handlers = 12; // Events that MUST have at least one handler somewhere else in the system.
-  repeated ExchangeType emits = 13; // Outputs the function publishes
+  repeated common.v1.PropertyTemplate properties = 10 [(buf.validate.field).cel = {
+    id: "function_definition.properties.unique_keys"
+    message: "property template keys must be unique"
+    expression: "this.map(property, property.key).unique()"
+  }];
+  reserved 11, 12;
+  ExecutionContract execution = 13 [(buf.validate.field).required = true];
 }
 
 // The catalog service additionally enforces that revisions sharing a key also

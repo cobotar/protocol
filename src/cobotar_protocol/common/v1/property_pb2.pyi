@@ -464,3 +464,51 @@ class CreatePropertyMessage(_message.Message):
     pose_extras: PoseExtras
     anchor_extras: AnchorExtras
     def __init__(self, parent_id: _Optional[str] = ..., authoring_context_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., key: _Optional[str] = ..., origin: _Optional[_Union[PropertyOrigin, str]] = ..., scope_id: _Optional[str] = ..., mirror_property_definition_id: _Optional[str] = ..., initial_value: _Optional[_Union[PropertyValue, _Mapping]] = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...
+
+class PropertyTemplate(_message.Message):
+    __slots__ = ("key", "name", "icon", "description", "type", "scope", "minimum_required_permission", "allowed_origins", "group", "ordering", "hide_group", "advanced", "allow_to_be_mirrored", "semantic_role", "default_value", "presentation_configurable", "number_extras", "enum_extras", "vector3_extras", "color_extras", "pose_extras", "anchor_extras")
+    KEY_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    SCOPE_FIELD_NUMBER: _ClassVar[int]
+    MINIMUM_REQUIRED_PERMISSION_FIELD_NUMBER: _ClassVar[int]
+    ALLOWED_ORIGINS_FIELD_NUMBER: _ClassVar[int]
+    GROUP_FIELD_NUMBER: _ClassVar[int]
+    ORDERING_FIELD_NUMBER: _ClassVar[int]
+    HIDE_GROUP_FIELD_NUMBER: _ClassVar[int]
+    ADVANCED_FIELD_NUMBER: _ClassVar[int]
+    ALLOW_TO_BE_MIRRORED_FIELD_NUMBER: _ClassVar[int]
+    SEMANTIC_ROLE_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_VALUE_FIELD_NUMBER: _ClassVar[int]
+    PRESENTATION_CONFIGURABLE_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_EXTRAS_FIELD_NUMBER: _ClassVar[int]
+    ENUM_EXTRAS_FIELD_NUMBER: _ClassVar[int]
+    VECTOR3_EXTRAS_FIELD_NUMBER: _ClassVar[int]
+    COLOR_EXTRAS_FIELD_NUMBER: _ClassVar[int]
+    POSE_EXTRAS_FIELD_NUMBER: _ClassVar[int]
+    ANCHOR_EXTRAS_FIELD_NUMBER: _ClassVar[int]
+    key: str
+    name: str
+    icon: str
+    description: str
+    type: PropertyType
+    scope: PropertyScope
+    minimum_required_permission: PropertyPermission
+    allowed_origins: _containers.RepeatedScalarFieldContainer[PropertyOrigin]
+    group: PropertyGroup
+    ordering: int
+    hide_group: bool
+    advanced: bool
+    allow_to_be_mirrored: bool
+    semantic_role: PropertySemanticRole
+    default_value: PropertyValue
+    presentation_configurable: bool
+    number_extras: NumberExtras
+    enum_extras: EnumExtras
+    vector3_extras: Vector3Extras
+    color_extras: ColorExtras
+    pose_extras: PoseExtras
+    anchor_extras: AnchorExtras
+    def __init__(self, key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[PropertyType, str]] = ..., scope: _Optional[_Union[PropertyScope, str]] = ..., minimum_required_permission: _Optional[_Union[PropertyPermission, str]] = ..., allowed_origins: _Optional[_Iterable[_Union[PropertyOrigin, str]]] = ..., group: _Optional[_Union[PropertyGroup, str]] = ..., ordering: _Optional[int] = ..., hide_group: bool = ..., advanced: bool = ..., allow_to_be_mirrored: bool = ..., semantic_role: _Optional[_Union[PropertySemanticRole, str]] = ..., default_value: _Optional[_Union[PropertyValue, _Mapping]] = ..., presentation_configurable: bool = ..., number_extras: _Optional[_Union[NumberExtras, _Mapping]] = ..., enum_extras: _Optional[_Union[EnumExtras, _Mapping]] = ..., vector3_extras: _Optional[_Union[Vector3Extras, _Mapping]] = ..., color_extras: _Optional[_Union[ColorExtras, _Mapping]] = ..., pose_extras: _Optional[_Union[PoseExtras, _Mapping]] = ..., anchor_extras: _Optional[_Union[AnchorExtras, _Mapping]] = ...) -> None: ...

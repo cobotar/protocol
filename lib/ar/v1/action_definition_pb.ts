@@ -8,9 +8,11 @@ import type { ActionType } from "./action_pb.ts";
 import { file_ar_v1_action } from "./action_pb.ts";
 import type { DefinitionStatus } from "./definition_status_pb.ts";
 import { file_ar_v1_definition_status } from "./definition_status_pb.ts";
-import type { ExchangeType, HandlerRequirement } from "./events_pb.ts";
-import { file_ar_v1_events } from "./events_pb.ts";
+import type { ExecutionContract } from "./execution_contract_pb.ts";
+import { file_ar_v1_execution_contract } from "./execution_contract_pb.ts";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { PropertyTemplate } from "../../common/v1/property_pb.ts";
+import { file_common_v1_property } from "../../common/v1/property_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -18,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/action_definition.proto.
  */
 export const file_ar_v1_action_definition: GenFile = /*@__PURE__*/
-  fileDesc("Ch1hci92MS9hY3Rpb25fZGVmaW5pdGlvbi5wcm90bxIFYXIudjEihQQKEEFjdGlvbkRlZmluaXRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE6PMEARIZCgNrZXkYAiABKAlCDLpICcgBAXIE4PMEARIXCgRuYW1lGAMgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgEIAEoCRITCgtkZXNjcmlwdGlvbhgFIAEoCRIsCgR0eXBlGAYgASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIyAEBggECEAESLgoFZ3JvdXAYByABKA4yEi5hci52MS5BY3Rpb25Hcm91cEILukgIyAEBggECEAESGQoIcmV2aXNpb24YCCABKARCB7pIBDICKAESNAoGc3RhdHVzGAkgASgOMhcuYXIudjEuRGVmaW5pdGlvblN0YXR1c0ILukgIyAEBggECEAESFQoNcmVxdWlyZV9hZ2VudBgKIAEoCBIvChJjb25zdW1lcnNfcmVxdWlyZWQYCyADKAsyEy5hci52MS5FeGNoYW5nZVR5cGUSLwoSY29uc3VtZXJzX29wdGlvbmFsGAwgAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlEjQKEXJlcXVpcmVkX2hhbmRsZXJzGA0gAygLMhkuYXIudjEuSGFuZGxlclJlcXVpcmVtZW50EiIKBWVtaXRzGA4gAygLMhMuYXIudjEuRXhjaGFuZ2VUeXBlIrQDChFBY3Rpb25EZWZpbml0aW9ucxKeAwoFaXRlbXMYASADKAsyFy5hci52MS5BY3Rpb25EZWZpbml0aW9uQvUCukjxAroBeQojYWN0aW9uX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9pZHMSJGFjdGlvbiBkZWZpbml0aW9uIGlkcyBtdXN0IGJlIHVuaXF1ZRosdGhpcy5tYXAoZGVmaW5pdGlvbiwgZGVmaW5pdGlvbi5pZCkudW5pcXVlKCm6AfEBCi1hY3Rpb25fZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2tleV9yZXZpc2lvbnMSN2FjdGlvbiBkZWZpbml0aW9uIGtleSBhbmQgcmV2aXNpb24gcGFpcnMgbXVzdCBiZSB1bmlxdWUahgF0aGlzLmFsbChkZWZpbml0aW9uLCB0aGlzLmZpbHRlcihjYW5kaWRhdGUsIGNhbmRpZGF0ZS5rZXkgPT0gZGVmaW5pdGlvbi5rZXkgJiYgY2FuZGlkYXRlLnJldmlzaW9uID09IGRlZmluaXRpb24ucmV2aXNpb24pLnNpemUoKSA9PSAxKSp0CgtBY3Rpb25Hcm91cBIcChhBQ1RJT05fR1JPVVBfVU5TUEVDSUZJRUQQABIYChRBQ1RJT05fR1JPVVBfR0VORVJBTBABEhYKEkFDVElPTl9HUk9VUF9ST0JPVBACEhUKEUFDVElPTl9HUk9VUF9UQVNLEANCkQEKCWNvbS5hci52MUIVQWN0aW9uRGVmaW5pdGlvblByb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM", [file_ar_v1_action, file_ar_v1_definition_status, file_ar_v1_events, file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch1hci92MS9hY3Rpb25fZGVmaW5pdGlvbi5wcm90bxIFYXIudjEiqgQKEEFjdGlvbkRlZmluaXRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE6PMEARIZCgNrZXkYAiABKAlCDLpICcgBAXIE4PMEARIXCgRuYW1lGAMgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgEIAEoCRITCgtkZXNjcmlwdGlvbhgFIAEoCRIsCgR0eXBlGAYgASgOMhEuYXIudjEuQWN0aW9uVHlwZUILukgIyAEBggECEAESLgoFZ3JvdXAYByABKA4yEi5hci52MS5BY3Rpb25Hcm91cEILukgIyAEBggECEAESGQoIcmV2aXNpb24YCCABKARCB7pIBDICKAESNAoGc3RhdHVzGAkgASgOMhcuYXIudjEuRGVmaW5pdGlvblN0YXR1c0ILukgIyAEBggECEAEStAEKCnByb3BlcnRpZXMYCiADKAsyGy5jb21tb24udjEuUHJvcGVydHlUZW1wbGF0ZUKCAbpIf7oBfAooYWN0aW9uX2RlZmluaXRpb24ucHJvcGVydGllcy51bmlxdWVfa2V5cxIlcHJvcGVydHkgdGVtcGxhdGUga2V5cyBtdXN0IGJlIHVuaXF1ZRopdGhpcy5tYXAocHJvcGVydHksIHByb3BlcnR5LmtleSkudW5pcXVlKCkSMwoJZXhlY3V0aW9uGA0gASgLMhguYXIudjEuRXhlY3V0aW9uQ29udHJhY3RCBrpIA8gBAUoECAsQDEoECAwQDSK0AwoRQWN0aW9uRGVmaW5pdGlvbnMSngMKBWl0ZW1zGAEgAygLMhcuYXIudjEuQWN0aW9uRGVmaW5pdGlvbkL1ArpI8QK6AXkKI2FjdGlvbl9kZWZpbml0aW9ucy5pdGVtcy51bmlxdWVfaWRzEiRhY3Rpb24gZGVmaW5pdGlvbiBpZHMgbXVzdCBiZSB1bmlxdWUaLHRoaXMubWFwKGRlZmluaXRpb24sIGRlZmluaXRpb24uaWQpLnVuaXF1ZSgpugHxAQotYWN0aW9uX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9rZXlfcmV2aXNpb25zEjdhY3Rpb24gZGVmaW5pdGlvbiBrZXkgYW5kIHJldmlzaW9uIHBhaXJzIG11c3QgYmUgdW5pcXVlGoYBdGhpcy5hbGwoZGVmaW5pdGlvbiwgdGhpcy5maWx0ZXIoY2FuZGlkYXRlLCBjYW5kaWRhdGUua2V5ID09IGRlZmluaXRpb24ua2V5ICYmIGNhbmRpZGF0ZS5yZXZpc2lvbiA9PSBkZWZpbml0aW9uLnJldmlzaW9uKS5zaXplKCkgPT0gMSkqdAoLQWN0aW9uR3JvdXASHAoYQUNUSU9OX0dST1VQX1VOU1BFQ0lGSUVEEAASGAoUQUNUSU9OX0dST1VQX0dFTkVSQUwQARIWChJBQ1RJT05fR1JPVVBfUk9CT1QQAhIVChFBQ1RJT05fR1JPVVBfVEFTSxADQpEBCgljb20uYXIudjFCFUFjdGlvbkRlZmluaXRpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_ar_v1_action, file_ar_v1_definition_status, file_ar_v1_execution_contract, file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message ar.v1.ActionDefinition
@@ -76,37 +78,14 @@ export type ActionDefinition = Message<"ar.v1.ActionDefinition"> & {
   status: DefinitionStatus;
 
   /**
-   * @generated from field: bool require_agent = 10;
+   * @generated from field: repeated common.v1.PropertyTemplate properties = 10;
    */
-  requireAgent: boolean;
+  properties: PropertyTemplate[];
 
   /**
-   * Inputs the action expects to receive
-   *
-   * @generated from field: repeated ar.v1.ExchangeType consumers_required = 11;
+   * @generated from field: ar.v1.ExecutionContract execution = 13;
    */
-  consumersRequired: ExchangeType[];
-
-  /**
-   * Inputs that will enhance the action, but are not needed to function
-   *
-   * @generated from field: repeated ar.v1.ExchangeType consumers_optional = 12;
-   */
-  consumersOptional: ExchangeType[];
-
-  /**
-   * Events that MUST have at least one handler somewhere else in the system.
-   *
-   * @generated from field: repeated ar.v1.HandlerRequirement required_handlers = 13;
-   */
-  requiredHandlers: HandlerRequirement[];
-
-  /**
-   * Outputs the action publishes
-   *
-   * @generated from field: repeated ar.v1.ExchangeType emits = 14;
-   */
-  emits: ExchangeType[];
+  execution?: ExecutionContract;
 };
 
 /**
