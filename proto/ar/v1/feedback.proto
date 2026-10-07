@@ -191,7 +191,10 @@ message FeedbackMessage {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.feedback_definition_id_component) = true
   ];
-  string config_id = 6 [(buf.validate.field).string.(validation.v1.ar_config_id_component) = true];
+  string config_id = 6 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
   ARContentProvenance provenance = 7 [(buf.validate.field).required = true];
 }
 

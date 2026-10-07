@@ -603,14 +603,14 @@ var File_ar_v1_feedback_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\n" +
-	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb1\x02\n" +
+	"\x14ar/v1/feedback.proto\x12\x05ar.v1\x1a\x16ar/v1/provenance.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb4\x02\n" +
 	"\x0fFeedbackMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12B\n" +
-	"\x16feedback_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf3\x04\x01R\x14feedbackDefinitionId\x12&\n" +
-	"\tconfig_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
+	"\x16feedback_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf3\x04\x01R\x14feedbackDefinitionId\x12)\n" +
+	"\tconfig_id\x18\x06 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12B\n" +
 	"\n" +
 	"provenance\x18\a \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"provenance\"H\n" +
