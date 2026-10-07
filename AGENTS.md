@@ -22,7 +22,7 @@ When you are asked to track, plan or pick up work:
 2. **Create issues in the repo where the code changes.** Use issue type Bug, Feature or Task. Add the label `needs-decision` for open design or protocol questions, and `breaking-change` for protocol changes that consumers must follow.
 3. **Issue body:** context, with permalinks to the relevant lines (a `blob/<sha>/path#Lx-Ly` URL), then a checklist, then a "Done when" section.
 4. **Changes across repos:** create a parent issue (usually in `protocol`) and sub-issues in each affected repo.
-5. **Add new issues to the CobotAR Roadmap board**, with Status, Priority (P0–P3), Area and Size.
+5. **Put every new issue on the CobotAR Roadmap board.** With `gh`, always pass `--project "CobotAR Roadmap"` to `gh issue create` (a GitHub Action also adds new issues as a fallback). Then set Status, Priority (P0–P3), Area and Size on the board item (`gh project item-edit`, or in the browser).
 
 ## Code conventions
 

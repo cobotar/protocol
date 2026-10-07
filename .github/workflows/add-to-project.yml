@@ -1,0 +1,20 @@
+name: Add to CobotAR Roadmap
+
+# Adds every new issue in this repo to the org-wide "CobotAR Roadmap" board,
+# no matter how it was created (web form, gh CLI, API, AI assistant).
+# Requires the org secret ADD_TO_PROJECT_PAT (fine-grained PAT with Projects: read & write).
+
+on:
+  issues:
+    types: [opened, reopened, transferred]
+
+permissions: {}
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v2.0.0
+        with:
+          project-url: https://github.com/orgs/cobotar/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
