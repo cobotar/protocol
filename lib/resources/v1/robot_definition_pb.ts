@@ -5,6 +5,8 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { SkillLevel } from "../../capability/v1/actor_skill_pb.ts";
+import { file_capability_v1_actor_skill } from "../../capability/v1/actor_skill_pb.ts";
 import type { CapabilityProfile } from "../../capability/v1/capability_profile_pb.ts";
 import { file_capability_v1_capability_profile } from "../../capability/v1/capability_profile_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
@@ -14,7 +16,29 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/robot_definition.proto.
  */
 export const file_resources_v1_robot_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIrYDCg9Sb2JvdERlZmluaXRpb24SCgoCaWQYASABKAkSFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEgwKBGljb24YAyABKAkSEwoLZGVzY3JpcHRpb24YBCABKAkSMgoEdHlwZRgFIAEoDjIXLnJlc291cmNlcy52MS5Sb2JvdFR5cGVCC7pICMgBAYIBAhABEj8KC2RyaXZlcl90eXBlGAYgASgOMh0ucmVzb3VyY2VzLnYxLlJvYm90RHJpdmVyVHlwZUILukgIyAEBggECEAESGwoIbW9kZWxfaWQYByABKAlCCbpIBnIEiPEEARIjChBjb3VwbGVyX21vZGVsX2lkGAggASgJQgm6SAZyBIjxBAESJQodc3VwcG9ydGVkX3Rvb2xfZGVmaW5pdGlvbl9pZHMYCSADKAkSIgoaZGVmYXVsdF90b29sX2RlZmluaXRpb25faWQYCiABKAkSGwoKdG9vbF9zbG90cxgLIAEoBUIHukgEGgIoABI8ChJjYXBhYmlsaXR5X3Byb2ZpbGUYDCABKAsyIC5jYXBhYmlsaXR5LnYxLkNhcGFiaWxpdHlQcm9maWxlIkAKEFJvYm90RGVmaW5pdGlvbnMSLAoFaXRlbXMYASADKAsyHS5yZXNvdXJjZXMudjEuUm9ib3REZWZpbml0aW9uKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACQsEBChBjb20ucmVzb3VyY2VzLnYxQhRSb2JvdERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_capability_profile, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIloKEURlZmF1bHRSb2JvdFNraWxsEhsKCHNraWxsX2lkGAEgASgJQgm6SAZyBIDyBAESKAoFbGV2ZWwYAiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWwi7wMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucmVzb3VyY2VzLnYxLlJvYm90VHlwZUILukgIyAEBggECEAESPwoLZHJpdmVyX3R5cGUYBiABKA4yHS5yZXNvdXJjZXMudjEuUm9ib3REcml2ZXJUeXBlQgu6SAjIAQGCAQIQARIbCghtb2RlbF9pZBgHIAEoCUIJukgGcgSI8QQBEiMKEGNvdXBsZXJfbW9kZWxfaWQYCCABKAlCCbpIBnIEiPEEARIlCh1zdXBwb3J0ZWRfdG9vbF9kZWZpbml0aW9uX2lkcxgJIAMoCRIiChpkZWZhdWx0X3Rvb2xfZGVmaW5pdGlvbl9pZBgKIAEoCRIbCgp0b29sX3Nsb3RzGAsgASgFQge6SAQaAigAEjwKEmNhcGFiaWxpdHlfcHJvZmlsZRgMIAEoCzIgLmNhcGFiaWxpdHkudjEuQ2FwYWJpbGl0eVByb2ZpbGUSNwoOZGVmYXVsdF9za2lsbHMYDSADKAsyHy5yZXNvdXJjZXMudjEuRGVmYXVsdFJvYm90U2tpbGwiQAoQUm9ib3REZWZpbml0aW9ucxIsCgVpdGVtcxgBIAMoCzIdLnJlc291cmNlcy52MS5Sb2JvdERlZmluaXRpb24qgQEKCVJvYm90VHlwZRIaChZST0JPVF9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPUk9CT1RfVFlQRV9VUjNFEAoSEwoPUk9CT1RfVFlQRV9VUjVFEAsSFAoQUk9CT1RfVFlQRV9VUjEwRRAMEhgKFFJPQk9UX1RZUEVfS1VLQV9JSVdBEBQqbQoPUm9ib3REcml2ZXJUeXBlEiEKHVJPQk9UX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUUk9CT1RfRFJJVkVSX1RZUEVfVVIQARIdChlST0JPVF9EUklWRVJfVFlQRV9HRU5FUklDEAJCwQEKEGNvbS5yZXNvdXJjZXMudjFCFFJvYm90RGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_capability_v1_actor_skill, file_capability_v1_capability_profile, file_validation_v1_predefined_string_rules]);
+
+/**
+ * @generated from message resources.v1.DefaultRobotSkill
+ */
+export type DefaultRobotSkill = Message<"resources.v1.DefaultRobotSkill"> & {
+  /**
+   * @generated from field: string skill_id = 1;
+   */
+  skillId: string;
+
+  /**
+   * @generated from field: capability.v1.SkillLevel level = 2;
+   */
+  level: SkillLevel;
+};
+
+/**
+ * Describes the message resources.v1.DefaultRobotSkill.
+ * Use `create(DefaultRobotSkillSchema)` to create a new message.
+ */
+export const DefaultRobotSkillSchema: GenMessage<DefaultRobotSkill> = /*@__PURE__*/
+  messageDesc(file_resources_v1_robot_definition, 0);
 
 /**
  * @generated from message resources.v1.RobotDefinition
@@ -93,6 +117,11 @@ export type RobotDefinition = Message<"resources.v1.RobotDefinition"> & {
    * @generated from field: capability.v1.CapabilityProfile capability_profile = 12;
    */
   capabilityProfile?: CapabilityProfile;
+
+  /**
+   * @generated from field: repeated resources.v1.DefaultRobotSkill default_skills = 13;
+   */
+  defaultSkills: DefaultRobotSkill[];
 };
 
 /**
@@ -100,7 +129,7 @@ export type RobotDefinition = Message<"resources.v1.RobotDefinition"> & {
  * Use `create(RobotDefinitionSchema)` to create a new message.
  */
 export const RobotDefinitionSchema: GenMessage<RobotDefinition> = /*@__PURE__*/
-  messageDesc(file_resources_v1_robot_definition, 0);
+  messageDesc(file_resources_v1_robot_definition, 1);
 
 /**
  * @generated from message resources.v1.RobotDefinitions
@@ -117,7 +146,7 @@ export type RobotDefinitions = Message<"resources.v1.RobotDefinitions"> & {
  * Use `create(RobotDefinitionsSchema)` to create a new message.
  */
 export const RobotDefinitionsSchema: GenMessage<RobotDefinitions> = /*@__PURE__*/
-  messageDesc(file_resources_v1_robot_definition, 1);
+  messageDesc(file_resources_v1_robot_definition, 2);
 
 /**
  * @generated from enum resources.v1.RobotType

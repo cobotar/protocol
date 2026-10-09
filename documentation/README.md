@@ -510,6 +510,7 @@
     - [SidecarAssetFormat](#resources-v1-SidecarAssetFormat)
   
 - [resources/v1/robot_definition.proto](#resources_v1_robot_definition-proto)
+    - [DefaultRobotSkill](#resources-v1-DefaultRobotSkill)
     - [RobotDefinition](#resources-v1-RobotDefinition)
     - [RobotDefinitions](#resources-v1-RobotDefinitions)
   
@@ -4154,7 +4155,6 @@ Systems should require strict validation, restricted actor permissions, and expl
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  |  |
 | default_validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | default validity policy |
 | standard_worker_skill | [bool](#bool) |  | Automatically add this skill to a worker when the worker is created |
-| standard_robot_skill | [bool](#bool) |  | Automatically add this skill to a robot when the robot is created |
 
 
 
@@ -7753,6 +7753,22 @@ content_type: &#34;model/gltf-binary&#34;
 
 
 
+<a name="resources-v1-DefaultRobotSkill"></a>
+
+### DefaultRobotSkill
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| skill_id | [string](#string) |  |  |
+| level | [capability.v1.SkillLevel](#capability-v1-SkillLevel) |  |  |
+
+
+
+
+
+
 <a name="resources-v1-RobotDefinition"></a>
 
 ### RobotDefinition
@@ -7773,6 +7789,7 @@ content_type: &#34;model/gltf-binary&#34;
 | default_tool_definition_id | [string](#string) |  |  |
 | tool_slots | [int32](#int32) |  |  |
 | capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
+| default_skills | [DefaultRobotSkill](#resources-v1-DefaultRobotSkill) | repeated |  |
 
 
 

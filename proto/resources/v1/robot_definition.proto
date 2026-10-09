@@ -2,6 +2,7 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
+import "capability/v1/actor_skill.proto";
 import "capability/v1/capability_profile.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -20,6 +21,11 @@ enum RobotDriverType {
   ROBOT_DRIVER_TYPE_UNSPECIFIED = 0;
   ROBOT_DRIVER_TYPE_UR = 1;
   ROBOT_DRIVER_TYPE_GENERIC = 2;
+}
+
+message DefaultRobotSkill {
+  string skill_id = 1 [(buf.validate.field).string.(validation.v1.skill_id_component) = true];
+  capability.v1.SkillLevel level = 2;
 }
 
 message RobotDefinition {
@@ -44,6 +50,8 @@ message RobotDefinition {
   int32 tool_slots = 11 [(buf.validate.field).int32.gte = 0];
 
   capability.v1.CapabilityProfile capability_profile = 12;
+
+  repeated DefaultRobotSkill default_skills = 13;
 }
 
 message RobotDefinitions {

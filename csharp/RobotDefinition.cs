@@ -25,38 +25,44 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3Vy",
-            "Y2VzLnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aJmNhcGFiaWxp",
-            "dHkvdjEvY2FwYWJpbGl0eV9wcm9maWxlLnByb3RvGit2YWxpZGF0aW9uL3Yx",
-            "L3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvItEECg9Sb2JvdERlZmlu",
-            "aXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEE",
-            "AVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQg",
-            "ASgJUgtkZXNjcmlwdGlvbhI4CgR0eXBlGAUgASgOMhcucmVzb3VyY2VzLnYx",
-            "LlJvYm90VHlwZUILukgIggECEAHIAQFSBHR5cGUSSwoLZHJpdmVyX3R5cGUY",
-            "BiABKA4yHS5yZXNvdXJjZXMudjEuUm9ib3REcml2ZXJUeXBlQgu6SAiCAQIQ",
-            "AcgBAVIKZHJpdmVyVHlwZRIkCghtb2RlbF9pZBgHIAEoCUIJukgGcgSI8QQB",
-            "Ugdtb2RlbElkEjMKEGNvdXBsZXJfbW9kZWxfaWQYCCABKAlCCbpIBnIEiPEE",
-            "AVIOY291cGxlck1vZGVsSWQSQQodc3VwcG9ydGVkX3Rvb2xfZGVmaW5pdGlv",
-            "bl9pZHMYCSADKAlSGnN1cHBvcnRlZFRvb2xEZWZpbml0aW9uSWRzEjsKGmRl",
-            "ZmF1bHRfdG9vbF9kZWZpbml0aW9uX2lkGAogASgJUhdkZWZhdWx0VG9vbERl",
-            "ZmluaXRpb25JZBImCgp0b29sX3Nsb3RzGAsgASgFQge6SAQaAigAUgl0b29s",
-            "U2xvdHMSTwoSY2FwYWJpbGl0eV9wcm9maWxlGAwgASgLMiAuY2FwYWJpbGl0",
-            "eS52MS5DYXBhYmlsaXR5UHJvZmlsZVIRY2FwYWJpbGl0eVByb2ZpbGUiRwoQ",
-            "Um9ib3REZWZpbml0aW9ucxIzCgVpdGVtcxgBIAMoCzIdLnJlc291cmNlcy52",
-            "MS5Sb2JvdERlZmluaXRpb25SBWl0ZW1zKoEBCglSb2JvdFR5cGUSGgoWUk9C",
-            "T1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMK",
-            "D1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRS",
-            "T0JPVF9UWVBFX0tVS0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1S",
-            "T0JPVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZF",
-            "Ul9UWVBFX1VSEAESHQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACQsEB",
-            "ChBjb20ucmVzb3VyY2VzLnYxQhRSb2JvdERlZmluaXRpb25Qcm90b1ABWj1n",
-            "aXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2Vz",
-            "L3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYx",
-            "ygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gIN",
-            "UmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
+            "Y2VzLnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aH2NhcGFiaWxp",
+            "dHkvdjEvYWN0b3Jfc2tpbGwucHJvdG8aJmNhcGFiaWxpdHkvdjEvY2FwYWJp",
+            "bGl0eV9wcm9maWxlLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRf",
+            "c3RyaW5nX3J1bGVzLnByb3RvImoKEURlZmF1bHRSb2JvdFNraWxsEiQKCHNr",
+            "aWxsX2lkGAEgASgJQgm6SAZyBIDyBAFSB3NraWxsSWQSLwoFbGV2ZWwYAiAB",
+            "KA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWxSBWxldmVsIpkFCg9Sb2Jv",
+            "dERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpI",
+            "BnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
+            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI4CgR0eXBlGAUgASgOMhcucmVzb3Vy",
+            "Y2VzLnYxLlJvYm90VHlwZUILukgIggECEAHIAQFSBHR5cGUSSwoLZHJpdmVy",
+            "X3R5cGUYBiABKA4yHS5yZXNvdXJjZXMudjEuUm9ib3REcml2ZXJUeXBlQgu6",
+            "SAiCAQIQAcgBAVIKZHJpdmVyVHlwZRIkCghtb2RlbF9pZBgHIAEoCUIJukgG",
+            "cgSI8QQBUgdtb2RlbElkEjMKEGNvdXBsZXJfbW9kZWxfaWQYCCABKAlCCbpI",
+            "BnIEiPEEAVIOY291cGxlck1vZGVsSWQSQQodc3VwcG9ydGVkX3Rvb2xfZGVm",
+            "aW5pdGlvbl9pZHMYCSADKAlSGnN1cHBvcnRlZFRvb2xEZWZpbml0aW9uSWRz",
+            "EjsKGmRlZmF1bHRfdG9vbF9kZWZpbml0aW9uX2lkGAogASgJUhdkZWZhdWx0",
+            "VG9vbERlZmluaXRpb25JZBImCgp0b29sX3Nsb3RzGAsgASgFQge6SAQaAigA",
+            "Ugl0b29sU2xvdHMSTwoSY2FwYWJpbGl0eV9wcm9maWxlGAwgASgLMiAuY2Fw",
+            "YWJpbGl0eS52MS5DYXBhYmlsaXR5UHJvZmlsZVIRY2FwYWJpbGl0eVByb2Zp",
+            "bGUSRgoOZGVmYXVsdF9za2lsbHMYDSADKAsyHy5yZXNvdXJjZXMudjEuRGVm",
+            "YXVsdFJvYm90U2tpbGxSDWRlZmF1bHRTa2lsbHMiRwoQUm9ib3REZWZpbml0",
+            "aW9ucxIzCgVpdGVtcxgBIAMoCzIdLnJlc291cmNlcy52MS5Sb2JvdERlZmlu",
+            "aXRpb25SBWl0ZW1zKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQ",
+            "RUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVf",
+            "VVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tV",
+            "S0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJf",
+            "VFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAES",
+            "HQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACQsEBChBjb20ucmVzb3Vy",
+            "Y2VzLnYxQhRSb2JvdERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2Nv",
+            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNl",
+            "c3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2Vz",
+            "XFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpW",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.CapabilityProfileReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.CapabilityProfileReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.RobotType), typeof(global::Messages.Resources.V1.RobotDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotDefinition), global::Messages.Resources.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DefaultRobotSkill), global::Messages.Resources.V1.DefaultRobotSkill.Parser, new[]{ "SkillId", "Level" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotDefinition), global::Messages.Resources.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile", "DefaultSkills" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotDefinitions), global::Messages.Resources.V1.RobotDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -82,6 +88,241 @@ namespace Messages.Resources.V1 {
 
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class DefaultRobotSkill : pb::IMessage<DefaultRobotSkill>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DefaultRobotSkill> _parser = new pb::MessageParser<DefaultRobotSkill>(() => new DefaultRobotSkill());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DefaultRobotSkill> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DefaultRobotSkill() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DefaultRobotSkill(DefaultRobotSkill other) : this() {
+      skillId_ = other.skillId_;
+      level_ = other.level_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DefaultRobotSkill Clone() {
+      return new DefaultRobotSkill(this);
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 1;
+    private string skillId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 2;
+    private global::Messages.Capability.V1.SkillLevel level_ = global::Messages.Capability.V1.SkillLevel.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Capability.V1.SkillLevel Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DefaultRobotSkill);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DefaultRobotSkill other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SkillId != other.SkillId) return false;
+      if (Level != other.Level) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SkillId.Length != 0) hash ^= SkillId.GetHashCode();
+      if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) hash ^= Level.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SkillId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(SkillId);
+      }
+      if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Level);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SkillId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(SkillId);
+      }
+      if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Level);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SkillId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SkillId);
+      }
+      if (Level != global::Messages.Capability.V1.SkillLevel.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Level);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DefaultRobotSkill other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SkillId.Length != 0) {
+        SkillId = other.SkillId;
+      }
+      if (other.Level != global::Messages.Capability.V1.SkillLevel.Unspecified) {
+        Level = other.Level;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            SkillId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Level = (global::Messages.Capability.V1.SkillLevel) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            SkillId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Level = (global::Messages.Capability.V1.SkillLevel) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class RobotDefinition : pb::IMessage<RobotDefinition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -96,7 +337,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,6 +369,7 @@ namespace Messages.Resources.V1 {
       defaultToolDefinitionId_ = other.defaultToolDefinitionId_;
       toolSlots_ = other.toolSlots_;
       capabilityProfile_ = other.capabilityProfile_ != null ? other.capabilityProfile_.Clone() : null;
+      defaultSkills_ = other.defaultSkills_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -301,6 +543,17 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "default_skills" field.</summary>
+    public const int DefaultSkillsFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.DefaultRobotSkill> _repeated_defaultSkills_codec
+        = pb::FieldCodec.ForMessage(106, global::Messages.Resources.V1.DefaultRobotSkill.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.DefaultRobotSkill> defaultSkills_ = new pbc::RepeatedField<global::Messages.Resources.V1.DefaultRobotSkill>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Resources.V1.DefaultRobotSkill> DefaultSkills {
+      get { return defaultSkills_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -328,6 +581,7 @@ namespace Messages.Resources.V1 {
       if (DefaultToolDefinitionId != other.DefaultToolDefinitionId) return false;
       if (ToolSlots != other.ToolSlots) return false;
       if (!object.Equals(CapabilityProfile, other.CapabilityProfile)) return false;
+      if(!defaultSkills_.Equals(other.defaultSkills_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -347,6 +601,7 @@ namespace Messages.Resources.V1 {
       if (DefaultToolDefinitionId.Length != 0) hash ^= DefaultToolDefinitionId.GetHashCode();
       if (ToolSlots != 0) hash ^= ToolSlots.GetHashCode();
       if (capabilityProfile_ != null) hash ^= CapabilityProfile.GetHashCode();
+      hash ^= defaultSkills_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -410,6 +665,7 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(98);
         output.WriteMessage(CapabilityProfile);
       }
+      defaultSkills_.WriteTo(output, _repeated_defaultSkills_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -465,6 +721,7 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(98);
         output.WriteMessage(CapabilityProfile);
       }
+      defaultSkills_.WriteTo(ref output, _repeated_defaultSkills_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -509,6 +766,7 @@ namespace Messages.Resources.V1 {
       if (capabilityProfile_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CapabilityProfile);
       }
+      size += defaultSkills_.CalculateSize(_repeated_defaultSkills_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -558,6 +816,7 @@ namespace Messages.Resources.V1 {
         }
         CapabilityProfile.MergeFrom(other.CapabilityProfile);
       }
+      defaultSkills_.Add(other.defaultSkills_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -626,6 +885,10 @@ namespace Messages.Resources.V1 {
               CapabilityProfile = new global::Messages.Capability.V1.CapabilityProfile();
             }
             input.ReadMessage(CapabilityProfile);
+            break;
+          }
+          case 106: {
+            defaultSkills_.AddEntriesFrom(input, _repeated_defaultSkills_codec);
             break;
           }
         }
@@ -698,6 +961,10 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(CapabilityProfile);
             break;
           }
+          case 106: {
+            defaultSkills_.AddEntriesFrom(ref input, _repeated_defaultSkills_codec);
+            break;
+          }
         }
       }
     }
@@ -720,7 +987,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

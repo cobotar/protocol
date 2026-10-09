@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from capability.v1 import actor_skill_pb2 as capability_dot_v1_dot_actor__skill__pb2
 from capability.v1 import capability_profile_pb2 as capability_dot_v1_dot_capability__profile__pb2
 from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#resources/v1/robot_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd1\x04\n\x0fRobotDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x38\n\x04type\x18\x05 \x01(\x0e\x32\x17.resources.v1.RobotTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12K\n\x0b\x64river_type\x18\x06 \x01(\x0e\x32\x1d.resources.v1.RobotDriverTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\ndriverType\x12$\n\x08model_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x07modelId\x12\x33\n\x10\x63oupler_model_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x0e\x63ouplerModelId\x12\x41\n\x1dsupported_tool_definition_ids\x18\t \x03(\tR\x1asupportedToolDefinitionIds\x12;\n\x1a\x64\x65\x66\x61ult_tool_definition_id\x18\n \x01(\tR\x17\x64\x65\x66\x61ultToolDefinitionId\x12&\n\ntool_slots\x18\x0b \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\ttoolSlots\x12O\n\x12\x63\x61pability_profile\x18\x0c \x01(\x0b\x32 .capability.v1.CapabilityProfileR\x11\x63\x61pabilityProfile\"G\n\x10RobotDefinitions\x12\x33\n\x05items\x18\x01 \x03(\x0b\x32\x1d.resources.v1.RobotDefinitionR\x05items*\x81\x01\n\tRobotType\x12\x1a\n\x16ROBOT_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fROBOT_TYPE_UR3E\x10\n\x12\x13\n\x0fROBOT_TYPE_UR5E\x10\x0b\x12\x14\n\x10ROBOT_TYPE_UR10E\x10\x0c\x12\x18\n\x14ROBOT_TYPE_KUKA_IIWA\x10\x14*m\n\x0fRobotDriverType\x12!\n\x1dROBOT_DRIVER_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14ROBOT_DRIVER_TYPE_UR\x10\x01\x12\x1d\n\x19ROBOT_DRIVER_TYPE_GENERIC\x10\x02\x42\xc1\x01\n\x10\x63om.resources.v1B\x14RobotDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#resources/v1/robot_definition.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1f\x63\x61pability/v1/actor_skill.proto\x1a&capability/v1/capability_profile.proto\x1a+validation/v1/predefined_string_rules.proto\"j\n\x11\x44\x65\x66\x61ultRobotSkill\x12$\n\x08skill_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\x07skillId\x12/\n\x05level\x18\x02 \x01(\x0e\x32\x19.capability.v1.SkillLevelR\x05level\"\x99\x05\n\x0fRobotDefinition\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x38\n\x04type\x18\x05 \x01(\x0e\x32\x17.resources.v1.RobotTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12K\n\x0b\x64river_type\x18\x06 \x01(\x0e\x32\x1d.resources.v1.RobotDriverTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\ndriverType\x12$\n\x08model_id\x18\x07 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x07modelId\x12\x33\n\x10\x63oupler_model_id\x18\x08 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x0e\x63ouplerModelId\x12\x41\n\x1dsupported_tool_definition_ids\x18\t \x03(\tR\x1asupportedToolDefinitionIds\x12;\n\x1a\x64\x65\x66\x61ult_tool_definition_id\x18\n \x01(\tR\x17\x64\x65\x66\x61ultToolDefinitionId\x12&\n\ntool_slots\x18\x0b \x01(\x05\x42\x07\xbaH\x04\x1a\x02(\x00R\ttoolSlots\x12O\n\x12\x63\x61pability_profile\x18\x0c \x01(\x0b\x32 .capability.v1.CapabilityProfileR\x11\x63\x61pabilityProfile\x12\x46\n\x0e\x64\x65\x66\x61ult_skills\x18\r \x03(\x0b\x32\x1f.resources.v1.DefaultRobotSkillR\rdefaultSkills\"G\n\x10RobotDefinitions\x12\x33\n\x05items\x18\x01 \x03(\x0b\x32\x1d.resources.v1.RobotDefinitionR\x05items*\x81\x01\n\tRobotType\x12\x1a\n\x16ROBOT_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fROBOT_TYPE_UR3E\x10\n\x12\x13\n\x0fROBOT_TYPE_UR5E\x10\x0b\x12\x14\n\x10ROBOT_TYPE_UR10E\x10\x0c\x12\x18\n\x14ROBOT_TYPE_KUKA_IIWA\x10\x14*m\n\x0fRobotDriverType\x12!\n\x1dROBOT_DRIVER_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14ROBOT_DRIVER_TYPE_UR\x10\x01\x12\x1d\n\x19ROBOT_DRIVER_TYPE_GENERIC\x10\x02\x42\xc1\x01\n\x10\x63om.resources.v1B\x14RobotDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +36,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'resources.v1.robot_definiti
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\020com.resources.v1B\024RobotDefinitionProtoP\001Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\242\002\003RXX\252\002\025Messages.Resources.V1\312\002\014Resources\\V1\342\002\030Resources\\V1\\GPBMetadata\352\002\rResources::V1'
+  _globals['_DEFAULTROBOTSKILL'].fields_by_name['skill_id']._loaded_options = None
+  _globals['_DEFAULTROBOTSKILL'].fields_by_name['skill_id']._serialized_options = b'\272H\006r\004\200\362\004\001'
   _globals['_ROBOTDEFINITION'].fields_by_name['name']._loaded_options = None
   _globals['_ROBOTDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
   _globals['_ROBOTDEFINITION'].fields_by_name['type']._loaded_options = None
@@ -47,12 +50,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ROBOTDEFINITION'].fields_by_name['coupler_model_id']._serialized_options = b'\272H\006r\004\210\361\004\001'
   _globals['_ROBOTDEFINITION'].fields_by_name['tool_slots']._loaded_options = None
   _globals['_ROBOTDEFINITION'].fields_by_name['tool_slots']._serialized_options = b'\272H\004\032\002(\000'
-  _globals['_ROBOTTYPE']._serialized_start=837
-  _globals['_ROBOTTYPE']._serialized_end=966
-  _globals['_ROBOTDRIVERTYPE']._serialized_start=968
-  _globals['_ROBOTDRIVERTYPE']._serialized_end=1077
-  _globals['_ROBOTDEFINITION']._serialized_start=168
-  _globals['_ROBOTDEFINITION']._serialized_end=761
-  _globals['_ROBOTDEFINITIONS']._serialized_start=763
-  _globals['_ROBOTDEFINITIONS']._serialized_end=834
+  _globals['_ROBOTTYPE']._serialized_start=1050
+  _globals['_ROBOTTYPE']._serialized_end=1179
+  _globals['_ROBOTDRIVERTYPE']._serialized_start=1181
+  _globals['_ROBOTDRIVERTYPE']._serialized_end=1290
+  _globals['_DEFAULTROBOTSKILL']._serialized_start=200
+  _globals['_DEFAULTROBOTSKILL']._serialized_end=306
+  _globals['_ROBOTDEFINITION']._serialized_start=309
+  _globals['_ROBOTDEFINITION']._serialized_end=974
+  _globals['_ROBOTDEFINITIONS']._serialized_start=976
+  _globals['_ROBOTDEFINITIONS']._serialized_end=1047
 # @@protoc_insertion_point(module_scope)
