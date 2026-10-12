@@ -7,6 +7,7 @@
 package servicev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -76,19 +77,82 @@ func (MutationStatus) EnumDescriptor() ([]byte, []int) {
 	return file_service_v1_response_proto_rawDescGZIP(), []int{0}
 }
 
+type ValidationViolation struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Empty for message-level violations. Otherwise, a protobuf field path,
+	// using snake_case field names, for example "items[0].name".
+	FieldPath     string `protobuf:"bytes,1,opt,name=field_path,json=fieldPath,proto3" json:"field_path,omitempty"`
+	Message       string `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	RuleId        string `protobuf:"bytes,3,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty"` // Optional because validators are not guaranteed to supply a stable rule ID.
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ValidationViolation) Reset() {
+	*x = ValidationViolation{}
+	mi := &file_service_v1_response_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidationViolation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidationViolation) ProtoMessage() {}
+
+func (x *ValidationViolation) ProtoReflect() protoreflect.Message {
+	mi := &file_service_v1_response_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidationViolation.ProtoReflect.Descriptor instead.
+func (*ValidationViolation) Descriptor() ([]byte, []int) {
+	return file_service_v1_response_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ValidationViolation) GetFieldPath() string {
+	if x != nil {
+		return x.FieldPath
+	}
+	return ""
+}
+
+func (x *ValidationViolation) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *ValidationViolation) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
 type Response struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Success        bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`                                      // True if the request was carried out, false if an error occurred
-	Message        string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                                       // Either a status/response message or an error message if the request wasn't a success
-	MainModifiedId string                 `protobuf:"bytes,3,opt,name=main_modified_id,json=mainModifiedId,proto3" json:"main_modified_id,omitempty"` // Might contain an ID of the entity that mainly was modified (added, updated, deleted)
-	Status         MutationStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=service.v1.MutationStatus" json:"status,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Success              bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`                                      // True if the request was carried out, false if an error occurred
+	Message              string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                                       // Human-readable status or error summary. It may be empty when validation_violations contains the complete error details.
+	MainModifiedId       string                 `protobuf:"bytes,3,opt,name=main_modified_id,json=mainModifiedId,proto3" json:"main_modified_id,omitempty"` // Might contain an ID of the entity that mainly was modified (added, updated, deleted)
+	Status               MutationStatus         `protobuf:"varint,4,opt,name=status,proto3,enum=service.v1.MutationStatus" json:"status,omitempty"`
+	ValidationViolations []*ValidationViolation `protobuf:"bytes,5,rep,name=validation_violations,json=validationViolations,proto3" json:"validation_violations,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *Response) Reset() {
 	*x = Response{}
-	mi := &file_service_v1_response_proto_msgTypes[0]
+	mi := &file_service_v1_response_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -100,7 +164,7 @@ func (x *Response) String() string {
 func (*Response) ProtoMessage() {}
 
 func (x *Response) ProtoReflect() protoreflect.Message {
-	mi := &file_service_v1_response_proto_msgTypes[0]
+	mi := &file_service_v1_response_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -113,7 +177,7 @@ func (x *Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Response.ProtoReflect.Descriptor instead.
 func (*Response) Descriptor() ([]byte, []int) {
-	return file_service_v1_response_proto_rawDescGZIP(), []int{0}
+	return file_service_v1_response_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Response) GetSuccess() bool {
@@ -144,17 +208,34 @@ func (x *Response) GetStatus() MutationStatus {
 	return MutationStatus_MUTATION_STATUS_UNSPECIFIED
 }
 
+func (x *Response) GetValidationViolations() []*ValidationViolation {
+	if x != nil {
+		return x.ValidationViolations
+	}
+	return nil
+}
+
 var File_service_v1_response_proto protoreflect.FileDescriptor
 
 const file_service_v1_response_proto_rawDesc = "" +
 	"\n" +
 	"\x19service/v1/response.proto\x12\n" +
-	"service.v1\"\x9c\x01\n" +
+	"service.v1\x1a\x1bbuf/validate/validate.proto\"\x87\x01\n" +
+	"\x13ValidationViolation\x12'\n" +
+	"\n" +
+	"field_path\x18\x01 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x04R\tfieldPath\x12$\n" +
+	"\amessage\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\amessage\x12!\n" +
+	"\arule_id\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x02R\x06ruleId\"\xca\x06\n" +
 	"\bResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\x12(\n" +
-	"\x10main_modified_id\x18\x03 \x01(\tR\x0emainModifiedId\x122\n" +
-	"\x06status\x18\x04 \x01(\x0e2\x1a.service.v1.MutationStatusR\x06status*\xa7\x01\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\"\n" +
+	"\amessage\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\x80 R\amessage\x122\n" +
+	"\x10main_modified_id\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x02R\x0emainModifiedId\x12<\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x1a.service.v1.MutationStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12^\n" +
+	"\x15validation_violations\x18\x05 \x03(\v2\x1f.service.v1.ValidationViolationB\b\xbaH\x05\x92\x01\x02\x10dR\x14validationViolations:\xad\x04\xbaH\xa9\x04\x1a\xc0\x01\n" +
+	"\"response.failure_has_error_details\x12Ma failed response must contain a message or at least one validation violation\x1aKthis.success || this.message != '' || this.validation_violations.size() > 0\x1a\xa7\x01\n" +
+	".response.validation_violations_only_on_failure\x12<a successful response must not contain validation violations\x1a7!this.success || this.validation_violations.size() == 0\x1a\xb9\x01\n" +
+	"(response.mutation_result_only_on_success\x12Ja failed response must not contain a mutation status or modified entity ID\x1aAthis.success || (this.status == 0 && this.main_modified_id == '')*\xa7\x01\n" +
 	"\x0eMutationStatus\x12\x1f\n" +
 	"\x1bMUTATION_STATUS_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17MUTATION_STATUS_CREATED\x10\x01\x12\x1b\n" +
@@ -177,18 +258,20 @@ func file_service_v1_response_proto_rawDescGZIP() []byte {
 }
 
 var file_service_v1_response_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_service_v1_response_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_service_v1_response_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_service_v1_response_proto_goTypes = []any{
-	(MutationStatus)(0), // 0: service.v1.MutationStatus
-	(*Response)(nil),    // 1: service.v1.Response
+	(MutationStatus)(0),         // 0: service.v1.MutationStatus
+	(*ValidationViolation)(nil), // 1: service.v1.ValidationViolation
+	(*Response)(nil),            // 2: service.v1.Response
 }
 var file_service_v1_response_proto_depIdxs = []int32{
 	0, // 0: service.v1.Response.status:type_name -> service.v1.MutationStatus
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 1: service.v1.Response.validation_violations:type_name -> service.v1.ValidationViolation
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_service_v1_response_proto_init() }
@@ -202,7 +285,7 @@ func file_service_v1_response_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_v1_response_proto_rawDesc), len(file_service_v1_response_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

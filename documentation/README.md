@@ -717,6 +717,7 @@
   
 - [service/v1/response.proto](#service_v1_response-proto)
     - [Response](#service-v1-Response)
+    - [ValidationViolation](#service-v1-ValidationViolation)
   
     - [MutationStatus](#service-v1-MutationStatus)
   
@@ -10620,9 +10621,27 @@ Concrete runtime/deployment bindings resolved for this task run.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | success | [bool](#bool) |  | True if the request was carried out, false if an error occurred |
-| message | [string](#string) |  | Either a status/response message or an error message if the request wasn&#39;t a success |
+| message | [string](#string) |  | Human-readable status or error summary. It may be empty when validation_violations contains the complete error details. |
 | main_modified_id | [string](#string) |  | Might contain an ID of the entity that mainly was modified (added, updated, deleted) |
 | status | [MutationStatus](#service-v1-MutationStatus) |  |  |
+| validation_violations | [ValidationViolation](#service-v1-ValidationViolation) | repeated |  |
+
+
+
+
+
+
+<a name="service-v1-ValidationViolation"></a>
+
+### ValidationViolation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| field_path | [string](#string) |  | Empty for message-level violations. Otherwise, a protobuf field path, using snake_case field names, for example &#34;items[0].name&#34;. |
+| message | [string](#string) |  |  |
+| rule_id | [string](#string) |  | Optional because validators are not guaranteed to supply a stable rule ID. |
 
 
 

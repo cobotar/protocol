@@ -4,13 +4,46 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file service/v1/response.proto.
  */
 export const file_service_v1_response: GenFile = /*@__PURE__*/
-  fileDesc("ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxInIKCFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIYChBtYWluX21vZGlmaWVkX2lkGAMgASgJEioKBnN0YXR1cxgEIAEoDjIaLnNlcnZpY2UudjEuTXV0YXRpb25TdGF0dXMqpwEKDk11dGF0aW9uU3RhdHVzEh8KG01VVEFUSU9OX1NUQVRVU19VTlNQRUNJRklFRBAAEhsKF01VVEFUSU9OX1NUQVRVU19DUkVBVEVEEAESGwoXTVVUQVRJT05fU1RBVFVTX1VQREFURUQQAhIdChlNVVRBVElPTl9TVEFUVVNfVU5DSEFOR0VEEAMSGwoXTVVUQVRJT05fU1RBVFVTX0RFTEVURUQQBEKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlcnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2VydmljZTo6VjFiBnByb3RvMw");
+  fileDesc("ChlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvEgpzZXJ2aWNlLnYxImsKE1ZhbGlkYXRpb25WaW9sYXRpb24SHAoKZmllbGRfcGF0aBgBIAEoCUIIukgFcgMYgAQSGwoHbWVzc2FnZRgCIAEoCUIKukgHcgUQARiAEBIZCgdydWxlX2lkGAMgASgJQgi6SAVyAxiAAiKKBgoIUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIZCgdtZXNzYWdlGAIgASgJQgi6SAVyAxiAIBIiChBtYWluX21vZGlmaWVkX2lkGAMgASgJQgi6SAVyAxiAAhI0CgZzdGF0dXMYBCABKA4yGi5zZXJ2aWNlLnYxLk11dGF0aW9uU3RhdHVzQgi6SAWCAQIQARJIChV2YWxpZGF0aW9uX3Zpb2xhdGlvbnMYBSADKAsyHy5zZXJ2aWNlLnYxLlZhbGlkYXRpb25WaW9sYXRpb25CCLpIBZIBAhBkOq0EukipBBrAAQoicmVzcG9uc2UuZmFpbHVyZV9oYXNfZXJyb3JfZGV0YWlscxJNYSBmYWlsZWQgcmVzcG9uc2UgbXVzdCBjb250YWluIGEgbWVzc2FnZSBvciBhdCBsZWFzdCBvbmUgdmFsaWRhdGlvbiB2aW9sYXRpb24aS3RoaXMuc3VjY2VzcyB8fCB0aGlzLm1lc3NhZ2UgIT0gJycgfHwgdGhpcy52YWxpZGF0aW9uX3Zpb2xhdGlvbnMuc2l6ZSgpID4gMBqnAQoucmVzcG9uc2UudmFsaWRhdGlvbl92aW9sYXRpb25zX29ubHlfb25fZmFpbHVyZRI8YSBzdWNjZXNzZnVsIHJlc3BvbnNlIG11c3Qgbm90IGNvbnRhaW4gdmFsaWRhdGlvbiB2aW9sYXRpb25zGjchdGhpcy5zdWNjZXNzIHx8IHRoaXMudmFsaWRhdGlvbl92aW9sYXRpb25zLnNpemUoKSA9PSAwGrkBCihyZXNwb25zZS5tdXRhdGlvbl9yZXN1bHRfb25seV9vbl9zdWNjZXNzEkphIGZhaWxlZCByZXNwb25zZSBtdXN0IG5vdCBjb250YWluIGEgbXV0YXRpb24gc3RhdHVzIG9yIG1vZGlmaWVkIGVudGl0eSBJRBpBdGhpcy5zdWNjZXNzIHx8ICh0aGlzLnN0YXR1cyA9PSAwICYmIHRoaXMubWFpbl9tb2RpZmllZF9pZCA9PSAnJykqpwEKDk11dGF0aW9uU3RhdHVzEh8KG01VVEFUSU9OX1NUQVRVU19VTlNQRUNJRklFRBAAEhsKF01VVEFUSU9OX1NUQVRVU19DUkVBVEVEEAESGwoXTVVUQVRJT05fU1RBVFVTX1VQREFURUQQAhIdChlNVVRBVElPTl9TVEFUVVNfVU5DSEFOR0VEEAMSGwoXTVVUQVRJT05fU1RBVFVTX0RFTEVURUQQBEKsAQoOY29tLnNlcnZpY2UudjFCDVJlc3BvbnNlUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlcnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2VydmljZTo6VjFiBnByb3RvMw", [file_buf_validate_validate]);
+
+/**
+ * @generated from message service.v1.ValidationViolation
+ */
+export type ValidationViolation = Message<"service.v1.ValidationViolation"> & {
+  /**
+   * Empty for message-level violations. Otherwise, a protobuf field path,
+   * using snake_case field names, for example "items[0].name".
+   *
+   * @generated from field: string field_path = 1;
+   */
+  fieldPath: string;
+
+  /**
+   * @generated from field: string message = 2;
+   */
+  message: string;
+
+  /**
+   * Optional because validators are not guaranteed to supply a stable rule ID.
+   *
+   * @generated from field: string rule_id = 3;
+   */
+  ruleId: string;
+};
+
+/**
+ * Describes the message service.v1.ValidationViolation.
+ * Use `create(ValidationViolationSchema)` to create a new message.
+ */
+export const ValidationViolationSchema: GenMessage<ValidationViolation> = /*@__PURE__*/
+  messageDesc(file_service_v1_response, 0);
 
 /**
  * @generated from message service.v1.Response
@@ -24,7 +57,7 @@ export type Response = Message<"service.v1.Response"> & {
   success: boolean;
 
   /**
-   * Either a status/response message or an error message if the request wasn't a success
+   * Human-readable status or error summary. It may be empty when validation_violations contains the complete error details.
    *
    * @generated from field: string message = 2;
    */
@@ -41,6 +74,11 @@ export type Response = Message<"service.v1.Response"> & {
    * @generated from field: service.v1.MutationStatus status = 4;
    */
   status: MutationStatus;
+
+  /**
+   * @generated from field: repeated service.v1.ValidationViolation validation_violations = 5;
+   */
+  validationViolations: ValidationViolation[];
 };
 
 /**
@@ -48,7 +86,7 @@ export type Response = Message<"service.v1.Response"> & {
  * Use `create(ResponseSchema)` to create a new message.
  */
 export const ResponseSchema: GenMessage<Response> = /*@__PURE__*/
-  messageDesc(file_service_v1_response, 0);
+  messageDesc(file_service_v1_response, 1);
 
 /**
  * @generated from enum service.v1.MutationStatus
