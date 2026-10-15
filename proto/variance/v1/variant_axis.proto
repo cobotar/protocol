@@ -33,6 +33,11 @@ message VariantAxis {
   string description = 4;
   repeated VariantOption options = 5 [
     (buf.validate.field).cel = {
+      id: "variant_axis.options.min_items"
+      message: "a variant axis must define at least two options"
+      expression: "this.size() >= 2"
+    },
+    (buf.validate.field).cel = {
       id: "variant_axis.options.unique_ids"
       message: "variant option ids must be unique within an axis"
       expression: "this.map(option, option.id).unique()"
