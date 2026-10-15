@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1evariance/v1/variant_axis.proto\x12\x0bvariance.v1\"G\n\rVariantOption\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\"{\n\x0bVariantAxis\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12\x34\n\x07options\x18\x04 \x03(\x0b\x32\x1a.variance.v1.VariantOptionR\x07optionsB\xb6\x01\n\x0f\x63om.variance.v1B\x10VariantAxisProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1evariance/v1/variant_axis.proto\x12\x0bvariance.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\x01\n\rVariantOption\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x02id\x12 \n\x04name\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x80\xf1\x04\x01\xc8\x01\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x96\x04\n\x0bVariantAxis\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x02id\x12 \n\x04name\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x80\xf1\x04\x01\xc8\x01\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x90\x03\n\x07options\x18\x05 \x03(\x0b\x32\x1a.variance.v1.VariantOptionB\xd9\x02\xbaH\xd5\x02\xba\x01y\n\x1fvariant_axis.options.unique_ids\x12\x30variant option ids must be unique within an axis\x1a$this.map(option, option.id).unique()\xba\x01\xd5\x01\n,variant_axis.options.unique_normalized_names\x12ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\x1a:this.map(option, option.name.trim().lowerAscii()).unique()R\x07optionsB\xb6\x01\n\x0f\x63om.variance.v1B\x10VariantAxisProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +34,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'variance.v1.variant_axis_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\017com.variance.v1B\020VariantAxisProtoP\001Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\242\002\003VXX\252\002\024Messages.Variance.V1\312\002\013Variance\\V1\342\002\027Variance\\V1\\GPBMetadata\352\002\014Variance::V1'
-  _globals['_VARIANTOPTION']._serialized_start=47
-  _globals['_VARIANTOPTION']._serialized_end=118
-  _globals['_VARIANTAXIS']._serialized_start=120
-  _globals['_VARIANTAXIS']._serialized_end=243
+  _globals['_VARIANTOPTION'].fields_by_name['id']._loaded_options = None
+  _globals['_VARIANTOPTION'].fields_by_name['id']._serialized_options = b'\272H\tr\004\340\363\004\001\310\001\001'
+  _globals['_VARIANTOPTION'].fields_by_name['name']._loaded_options = None
+  _globals['_VARIANTOPTION'].fields_by_name['name']._serialized_options = b'\272H\tr\004\200\361\004\001\310\001\001'
+  _globals['_VARIANTAXIS'].fields_by_name['id']._loaded_options = None
+  _globals['_VARIANTAXIS'].fields_by_name['id']._serialized_options = b'\272H\tr\004\340\363\004\001\310\001\001'
+  _globals['_VARIANTAXIS'].fields_by_name['name']._loaded_options = None
+  _globals['_VARIANTAXIS'].fields_by_name['name']._serialized_options = b'\272H\tr\004\200\361\004\001\310\001\001'
+  _globals['_VARIANTAXIS'].fields_by_name['options']._loaded_options = None
+  _globals['_VARIANTAXIS'].fields_by_name['options']._serialized_options = b'\272H\325\002\272\001y\n\037variant_axis.options.unique_ids\0220variant option ids must be unique within an axis\032$this.map(option, option.id).unique()\272\001\325\001\n,variant_axis.options.unique_normalized_names\022ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\032:this.map(option, option.name.trim().lowerAscii()).unique()'
+  _globals['_VARIANTOPTION']._serialized_start=122
+  _globals['_VARIANTOPTION']._serialized_end=255
+  _globals['_VARIANTAXIS']._serialized_start=258
+  _globals['_VARIANTAXIS']._serialized_end=792
 # @@protoc_insertion_point(module_scope)

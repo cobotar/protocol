@@ -1,18 +1,46 @@
 syntax = "proto3";
 package variance.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.Variance.V1";
 option go_package = "github.com/cobotar/protocol/messages/variance/v1";
 
 message VariantOption {
-  string id = 1;
-  string name = 2;
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.name_component) = true
+  ];
   string icon = 3;
+  string description = 4;
 }
 
 message VariantAxis {
-  string id = 1;
-  string name = 2;
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.name_component) = true
+  ];
   string icon = 3;
-  repeated VariantOption options = 4;
+  string description = 4;
+  repeated VariantOption options = 5 [
+    (buf.validate.field).cel = {
+      id: "variant_axis.options.unique_ids"
+      message: "variant option ids must be unique within an axis"
+      expression: "this.map(option, option.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "variant_axis.options.unique_normalized_names"
+      message: "variant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case"
+      expression: "this.map(option, option.name.trim().lowerAscii()).unique()"
+    }
+  ];
 }

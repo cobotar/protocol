@@ -512,10 +512,10 @@ var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
 
 const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\n" +
-	"+validation/v1/predefined_string_rules.proto\x12\rvalidation.v1\x1a\x1bbuf/validate/validate.proto:\xb1\x01\n" +
-	"\x0ename_component\x12\x19.buf.validate.StringRules\x18\x90N \x01(\bBn\xc2Hk\n" +
-	"i\n" +
-	"\x15string.name_component\x12*Name must have between 1 and 64 characters\x1a$this.size() > 0 && this.size() <= 64R\rnameComponent:\xba\x01\n" +
+	"+validation/v1/predefined_string_rules.proto\x12\rvalidation.v1\x1a\x1bbuf/validate/validate.proto:\xe7\x01\n" +
+	"\x0ename_component\x12\x19.buf.validate.StringRules\x18\x90N \x01(\bB\xa3\x01\xc2H\x9f\x01\n" +
+	"\x9c\x01\n" +
+	"\x15string.name_component\x12VName must have at most 64 characters and contain at least one non-whitespace character\x1a+this.size() <= 64 && this.trim().size() > 0R\rnameComponent:\xba\x01\n" +
 	"\x12model_id_component\x12\x19.buf.validate.StringRules\x18\x91N \x01(\bBp\xc2Hm\n" +
 	"k\n" +
 	"\x19string.model_id_component\x12#this does not seem to be a model id\x1a)(this == '' || this.startsWith('model-'))R\x10modelIdComponent:\xcc\x01\n" +

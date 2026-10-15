@@ -151,6 +151,7 @@ func (JoinMethod) EnumDescriptor() ([]byte, []int) {
 	return file_product_v1_assembly_node_proto_rawDescGZIP(), []int{1}
 }
 
+// TODO: add validation for: id, ...
 type AssemblyNode struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`

@@ -1,19 +1,33 @@
 syntax = "proto3";
 package product.v1;
 
+import "buf/validate/validate.proto";
 import "common/v1/external_references.proto";
 import "product/v1/assembly_node.proto";
+import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_axis.proto";
 
 option csharp_namespace = "Messages.Product.V1";
 option go_package = "github.com/cobotar/protocol/messages/product/v1";
 
+// TODO: add validation for: root_node_id, nodes
 message ProductDefinition {
-  string id = 1;
-  string name = 2;
+  string id = 1 [(buf.validate.field).string.(validation.v1.product_id_component) = true];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
   string description = 4;
-  repeated variance.v1.VariantAxis variant_axes = 5;
+  repeated variance.v1.VariantAxis variant_axes = 5 [
+    (buf.validate.field).cel = {
+      id: "product_definition.variant_axes.unique_ids"
+      message: "variant axis ids must be unique within a product definition"
+      expression: "this.map(axis, axis.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "product_definition.variant_axes.unique_normalized_names"
+      message: "variant axis names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case"
+      expression: "this.map(axis, axis.name.trim().lowerAscii()).unique()"
+    }
+  ];
   string root_node_id = 6;
   repeated AssemblyNode nodes = 7;
   repeated common.v1.ExternalReference external_references = 8;

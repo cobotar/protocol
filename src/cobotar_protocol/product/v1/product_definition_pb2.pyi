@@ -1,5 +1,7 @@
+from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import external_references_pb2 as _external_references_pb2
 from product.v1 import assembly_node_pb2 as _assembly_node_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from variance.v1 import variant_axis_pb2 as _variant_axis_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor

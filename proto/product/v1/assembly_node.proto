@@ -38,6 +38,7 @@ enum JoinMethod {
   JOIN_METHOD_PLACE = 7; // Part is placed at its final pose without an explicit joining operation beyond positioning.
 }
 
+// TODO: add validation for: id, ...
 message AssemblyNode {
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true]; // Name of this assembly node

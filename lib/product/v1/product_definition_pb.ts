@@ -4,10 +4,12 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
 import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
 import type { AssemblyNode } from "./assembly_node_pb.ts";
 import { file_product_v1_assembly_node } from "./assembly_node_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { VariantAxis } from "../../variance/v1/variant_axis_pb.ts";
 import { file_variance_v1_variant_axis } from "../../variance/v1/variant_axis_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
@@ -16,9 +18,11 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file product/v1/product_definition.proto.
  */
 export const file_product_v1_product_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiNwcm9kdWN0L3YxL3Byb2R1Y3RfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVjdC52MSL6AQoRUHJvZHVjdERlZmluaXRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEi4KDHZhcmlhbnRfYXhlcxgFIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRBeGlzEhQKDHJvb3Rfbm9kZV9pZBgGIAEoCRInCgVub2RlcxgHIAMoCzIYLnByb2R1Y3QudjEuQXNzZW1ibHlOb2RlEjkKE2V4dGVybmFsX3JlZmVyZW5jZXMYCCADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2UiQgoSUHJvZHVjdERlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0ucHJvZHVjdC52MS5Qcm9kdWN0RGVmaW5pdGlvbkK1AQoOY29tLnByb2R1Y3QudjFCFlByb2R1Y3REZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw", [file_common_v1_external_references, file_product_v1_assembly_node, file_variance_v1_variant_axis]);
+  fileDesc("CiNwcm9kdWN0L3YxL3Byb2R1Y3RfZGVmaW5pdGlvbi5wcm90bxIKcHJvZHVjdC52MSKSBQoRUHJvZHVjdERlZmluaXRpb24SFQoCaWQYASABKAlCCbpIBnIE4OswARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRKvAwoMdmFyaWFudF9heGVzGAUgAygLMhgudmFyaWFuY2UudjEuVmFyaWFudEF4aXNC/gK6SPoCugGLAQoqcHJvZHVjdF9kZWZpbml0aW9uLnZhcmlhbnRfYXhlcy51bmlxdWVfaWRzEjt2YXJpYW50IGF4aXMgaWRzIG11c3QgYmUgdW5pcXVlIHdpdGhpbiBhIHByb2R1Y3QgZGVmaW5pdGlvbhogdGhpcy5tYXAoYXhpcywgYXhpcy5pZCkudW5pcXVlKCm6AecBCjdwcm9kdWN0X2RlZmluaXRpb24udmFyaWFudF9heGVzLnVuaXF1ZV9ub3JtYWxpemVkX25hbWVzEnR2YXJpYW50IGF4aXMgbmFtZXMgbXVzdCBiZSB1bmlxdWUgd2l0aGluIGEgcHJvZHVjdCBkZWZpbml0aW9uLCBpZ25vcmluZyBzdXJyb3VuZGluZyB3aGl0ZXNwYWNlIGFuZCBBU0NJSSBsZXR0ZXIgY2FzZRo2dGhpcy5tYXAoYXhpcywgYXhpcy5uYW1lLnRyaW0oKS5sb3dlckFzY2lpKCkpLnVuaXF1ZSgpEhQKDHJvb3Rfbm9kZV9pZBgGIAEoCRInCgVub2RlcxgHIAMoCzIYLnByb2R1Y3QudjEuQXNzZW1ibHlOb2RlEjkKE2V4dGVybmFsX3JlZmVyZW5jZXMYCCADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2UiQgoSUHJvZHVjdERlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0ucHJvZHVjdC52MS5Qcm9kdWN0RGVmaW5pdGlvbkK1AQoOY29tLnByb2R1Y3QudjFCFlByb2R1Y3REZWZpbml0aW9uUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_external_references, file_product_v1_assembly_node, file_validation_v1_predefined_string_rules, file_variance_v1_variant_axis]);
 
 /**
+ * TODO: add validation for: root_node_id, nodes
+ *
  * @generated from message product.v1.ProductDefinition
  */
 export type ProductDefinition = Message<"product.v1.ProductDefinition"> & {

@@ -6,8 +6,8 @@ import "buf/validate/validate.proto";
 extend buf.validate.StringRules {
   optional bool name_component = 10000 [(buf.validate.predefined).cel = {
     id: "string.name_component"
-    message: "Name must have between 1 and 64 characters"
-    expression: "this.size() > 0 && this.size() <= 64"
+    message: "Name must have at most 64 characters and contain at least one non-whitespace character"
+    expression: "this.size() <= 64 && this.trim().size() > 0"
   }];
 
   optional bool model_id_component = 10001 [(buf.validate.predefined).cel = {

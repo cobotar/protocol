@@ -6501,7 +6501,7 @@ be resolved from container definitions and routing overrides.
 <a name="product-v1-AssemblyNode"></a>
 
 ### AssemblyNode
-
+TODO: add validation for: id, ...
 
 
 | Field | Type | Label | Description |
@@ -6763,6 +6763,7 @@ Omit this for independently tracked discrete parts. |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 | options | [VariantOption](#variance-v1-VariantOption) | repeated |  |
 
 
@@ -6781,6 +6782,7 @@ Omit this for independently tracked discrete parts. |
 | id | [string](#string) |  |  |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
 
 
 
@@ -6806,7 +6808,7 @@ Omit this for independently tracked discrete parts. |
 <a name="product-v1-ProductDefinition"></a>
 
 ### ProductDefinition
-
+TODO: add validation for: root_node_id, nodes
 
 
 | Field | Type | Label | Description |

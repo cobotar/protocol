@@ -7,6 +7,8 @@
 package variancev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,6 +28,7 @@ type VariantOption struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -81,12 +84,20 @@ func (x *VariantOption) GetIcon() string {
 	return ""
 }
 
+func (x *VariantOption) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 type VariantAxis struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Options       []*VariantOption       `protobuf:"bytes,4,rep,name=options,proto3" json:"options,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Options       []*VariantOption       `protobuf:"bytes,5,rep,name=options,proto3" json:"options,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -142,6 +153,13 @@ func (x *VariantAxis) GetIcon() string {
 	return ""
 }
 
+func (x *VariantAxis) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 func (x *VariantAxis) GetOptions() []*VariantOption {
 	if x != nil {
 		return x.Options
@@ -153,16 +171,20 @@ var File_variance_v1_variant_axis_proto protoreflect.FileDescriptor
 
 const file_variance_v1_variant_axis_proto_rawDesc = "" +
 	"\n" +
-	"\x1evariance/v1/variant_axis.proto\x12\vvariance.v1\"G\n" +
-	"\rVariantOption\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\"{\n" +
-	"\vVariantAxis\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
-	"\x04icon\x18\x03 \x01(\tR\x04icon\x124\n" +
-	"\aoptions\x18\x04 \x03(\v2\x1a.variance.v1.VariantOptionR\aoptionsB\xb6\x01\n" +
+	"\x1evariance/v1/variant_axis.proto\x12\vvariance.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\x01\n" +
+	"\rVariantOption\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x02id\x12 \n" +
+	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\"\x96\x04\n" +
+	"\vVariantAxis\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x02id\x12 \n" +
+	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x90\x03\n" +
+	"\aoptions\x18\x05 \x03(\v2\x1a.variance.v1.VariantOptionB\xd9\x02\xbaH\xd5\x02\xba\x01y\n" +
+	"\x1fvariant_axis.options.unique_ids\x120variant option ids must be unique within an axis\x1a$this.map(option, option.id).unique()\xba\x01\xd5\x01\n" +
+	",variant_axis.options.unique_normalized_names\x12ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\x1a:this.map(option, option.name.trim().lowerAscii()).unique()R\aoptionsB\xb6\x01\n" +
 	"\x0fcom.variance.v1B\x10VariantAxisProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (

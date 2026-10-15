@@ -25,20 +25,32 @@ namespace Messages.Variance.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch52YXJpYW5jZS92MS92YXJpYW50X2F4aXMucHJvdG8SC3ZhcmlhbmNlLnYx",
-            "IkcKDVZhcmlhbnRPcHRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiAB",
-            "KAlSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbiJ7CgtWYXJpYW50QXhpcxIO",
-            "CgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMg",
-            "ASgJUgRpY29uEjQKB29wdGlvbnMYBCADKAsyGi52YXJpYW5jZS52MS5WYXJp",
-            "YW50T3B0aW9uUgdvcHRpb25zQrYBCg9jb20udmFyaWFuY2UudjFCEFZhcmlh",
-            "bnRBeGlzUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21l",
-            "c3NhZ2VzL3ZhcmlhbmNlL3YxO3ZhcmlhbmNldjGiAgNWWFiqAhRNZXNzYWdl",
-            "cy5WYXJpYW5jZS5WMcoCC1ZhcmlhbmNlXFYx4gIXVmFyaWFuY2VcVjFcR1BC",
-            "TWV0YWRhdGHqAgxWYXJpYW5jZTo6VjFiBnByb3RvMw=="));
+            "GhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEv",
+            "cHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8ihQEKDVZhcmlhbnRPcHRp",
+            "b24SHAoCaWQYASABKAlCDLpICXIE4PMEAcgBAVICaWQSIAoEbmFtZRgCIAEo",
+            "CUIMukgJcgSA8QQByAEBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
+            "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIpYECgtWYXJpYW50QXhp",
+            "cxIcCgJpZBgBIAEoCUIMukgJcgTg8wQByAEBUgJpZBIgCgRuYW1lGAIgASgJ",
+            "Qgy6SAlyBIDxBAHIAQFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtk",
+            "ZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SkAMKB29wdGlvbnMYBSAD",
+            "KAsyGi52YXJpYW5jZS52MS5WYXJpYW50T3B0aW9uQtkCukjVAroBeQofdmFy",
+            "aWFudF9heGlzLm9wdGlvbnMudW5pcXVlX2lkcxIwdmFyaWFudCBvcHRpb24g",
+            "aWRzIG11c3QgYmUgdW5pcXVlIHdpdGhpbiBhbiBheGlzGiR0aGlzLm1hcChv",
+            "cHRpb24sIG9wdGlvbi5pZCkudW5pcXVlKCm6AdUBCix2YXJpYW50X2F4aXMu",
+            "b3B0aW9ucy51bmlxdWVfbm9ybWFsaXplZF9uYW1lcxJpdmFyaWFudCBvcHRp",
+            "b24gbmFtZXMgbXVzdCBiZSB1bmlxdWUgd2l0aGluIGFuIGF4aXMsIGlnbm9y",
+            "aW5nIHN1cnJvdW5kaW5nIHdoaXRlc3BhY2UgYW5kIEFTQ0lJIGxldHRlciBj",
+            "YXNlGjp0aGlzLm1hcChvcHRpb24sIG9wdGlvbi5uYW1lLnRyaW0oKS5sb3dl",
+            "ckFzY2lpKCkpLnVuaXF1ZSgpUgdvcHRpb25zQrYBCg9jb20udmFyaWFuY2Uu",
+            "djFCEFZhcmlhbnRBeGlzUHJvdG9QAVo7Z2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL3ZhcmlhbmNlL3YxO3ZhcmlhbmNldjGiAgNWWFiq",
+            "AhRNZXNzYWdlcy5WYXJpYW5jZS5WMcoCC1ZhcmlhbmNlXFYx4gIXVmFyaWFu",
+            "Y2VcVjFcR1BCTWV0YWRhdGHqAgxWYXJpYW5jZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantOption), global::Messages.Variance.V1.VariantOption.Parser, new[]{ "Id", "Name", "Icon" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantAxis), global::Messages.Variance.V1.VariantAxis.Parser, new[]{ "Id", "Name", "Icon", "Options" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantOption), global::Messages.Variance.V1.VariantOption.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantAxis), global::Messages.Variance.V1.VariantAxis.Parser, new[]{ "Id", "Name", "Icon", "Description", "Options" }, null, null, null, null)
           }));
     }
     #endregion
@@ -83,6 +95,7 @@ namespace Messages.Variance.V1 {
       id_ = other.id_;
       name_ = other.name_;
       icon_ = other.icon_;
+      description_ = other.description_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -128,6 +141,18 @@ namespace Messages.Variance.V1 {
       }
     }
 
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -146,6 +171,7 @@ namespace Messages.Variance.V1 {
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -156,6 +182,7 @@ namespace Messages.Variance.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,6 +213,10 @@ namespace Messages.Variance.V1 {
         output.WriteRawTag(26);
         output.WriteString(Icon);
       }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -208,6 +239,10 @@ namespace Messages.Variance.V1 {
         output.WriteRawTag(26);
         output.WriteString(Icon);
       }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -226,6 +261,9 @@ namespace Messages.Variance.V1 {
       }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -247,6 +285,9 @@ namespace Messages.Variance.V1 {
       }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -279,6 +320,10 @@ namespace Messages.Variance.V1 {
             Icon = input.ReadString();
             break;
           }
+          case 34: {
+            Description = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -308,6 +353,10 @@ namespace Messages.Variance.V1 {
           }
           case 26: {
             Icon = input.ReadString();
+            break;
+          }
+          case 34: {
+            Description = input.ReadString();
             break;
           }
         }
@@ -355,6 +404,7 @@ namespace Messages.Variance.V1 {
       id_ = other.id_;
       name_ = other.name_;
       icon_ = other.icon_;
+      description_ = other.description_;
       options_ = other.options_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -401,10 +451,22 @@ namespace Messages.Variance.V1 {
       }
     }
 
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 4;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "options" field.</summary>
-    public const int OptionsFieldNumber = 4;
+    public const int OptionsFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Messages.Variance.V1.VariantOption> _repeated_options_codec
-        = pb::FieldCodec.ForMessage(34, global::Messages.Variance.V1.VariantOption.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Messages.Variance.V1.VariantOption.Parser);
     private readonly pbc::RepeatedField<global::Messages.Variance.V1.VariantOption> options_ = new pbc::RepeatedField<global::Messages.Variance.V1.VariantOption>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -430,6 +492,7 @@ namespace Messages.Variance.V1 {
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
       if (Icon != other.Icon) return false;
+      if (Description != other.Description) return false;
       if(!options_.Equals(other.options_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -441,6 +504,7 @@ namespace Messages.Variance.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= options_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -472,6 +536,10 @@ namespace Messages.Variance.V1 {
         output.WriteRawTag(26);
         output.WriteString(Icon);
       }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
       options_.WriteTo(output, _repeated_options_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -495,6 +563,10 @@ namespace Messages.Variance.V1 {
         output.WriteRawTag(26);
         output.WriteString(Icon);
       }
+      if (Description.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Description);
+      }
       options_.WriteTo(ref output, _repeated_options_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -514,6 +586,9 @@ namespace Messages.Variance.V1 {
       }
       if (Icon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       size += options_.CalculateSize(_repeated_options_codec);
       if (_unknownFields != null) {
@@ -536,6 +611,9 @@ namespace Messages.Variance.V1 {
       }
       if (other.Icon.Length != 0) {
         Icon = other.Icon;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       options_.Add(other.options_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -570,6 +648,10 @@ namespace Messages.Variance.V1 {
             break;
           }
           case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42: {
             options_.AddEntriesFrom(input, _repeated_options_codec);
             break;
           }
@@ -605,6 +687,10 @@ namespace Messages.Variance.V1 {
             break;
           }
           case 34: {
+            Description = input.ReadString();
+            break;
+          }
+          case 42: {
             options_.AddEntriesFrom(ref input, _repeated_options_codec);
             break;
           }

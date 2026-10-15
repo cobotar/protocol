@@ -143,6 +143,9 @@ namespace Messages.Product.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// TODO: add validation for: id, ...
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class AssemblyNode : pb::IMessage<AssemblyNode>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

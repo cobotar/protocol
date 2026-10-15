@@ -4,13 +4,15 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file variance/v1/variant_axis.proto.
  */
 export const file_variance_v1_variant_axis: GenFile = /*@__PURE__*/
-  fileDesc("Ch52YXJpYW5jZS92MS92YXJpYW50X2F4aXMucHJvdG8SC3ZhcmlhbmNlLnYxIjcKDVZhcmlhbnRPcHRpb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIMCgRpY29uGAMgASgJImIKC1ZhcmlhbnRBeGlzEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRIrCgdvcHRpb25zGAQgAygLMhoudmFyaWFuY2UudjEuVmFyaWFudE9wdGlvbkK2AQoPY29tLnZhcmlhbmNlLnYxQhBWYXJpYW50QXhpc1Byb3RvUAFaO2dpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy92YXJpYW5jZS92MTt2YXJpYW5jZXYxogIDVlhYqgIUTWVzc2FnZXMuVmFyaWFuY2UuVjHKAgtWYXJpYW5jZVxWMeICF1ZhcmlhbmNlXFYxXEdQQk1ldGFkYXRh6gIMVmFyaWFuY2U6OlYxYgZwcm90bzM");
+  fileDesc("Ch52YXJpYW5jZS92MS92YXJpYW50X2F4aXMucHJvdG8SC3ZhcmlhbmNlLnYxImgKDVZhcmlhbnRPcHRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSLwAwoLVmFyaWFudEF4aXMSGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRKHAwoHb3B0aW9ucxgFIAMoCzIaLnZhcmlhbmNlLnYxLlZhcmlhbnRPcHRpb25C2QK6SNUCugF5Ch92YXJpYW50X2F4aXMub3B0aW9ucy51bmlxdWVfaWRzEjB2YXJpYW50IG9wdGlvbiBpZHMgbXVzdCBiZSB1bmlxdWUgd2l0aGluIGFuIGF4aXMaJHRoaXMubWFwKG9wdGlvbiwgb3B0aW9uLmlkKS51bmlxdWUoKboB1QEKLHZhcmlhbnRfYXhpcy5vcHRpb25zLnVuaXF1ZV9ub3JtYWxpemVkX25hbWVzEml2YXJpYW50IG9wdGlvbiBuYW1lcyBtdXN0IGJlIHVuaXF1ZSB3aXRoaW4gYW4gYXhpcywgaWdub3Jpbmcgc3Vycm91bmRpbmcgd2hpdGVzcGFjZSBhbmQgQVNDSUkgbGV0dGVyIGNhc2UaOnRoaXMubWFwKG9wdGlvbiwgb3B0aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNjaWkoKSkudW5pcXVlKClCtgEKD2NvbS52YXJpYW5jZS52MUIQVmFyaWFudEF4aXNQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvdmFyaWFuY2UvdjE7dmFyaWFuY2V2MaICA1ZYWKoCFE1lc3NhZ2VzLlZhcmlhbmNlLlYxygILVmFyaWFuY2VcVjHiAhdWYXJpYW5jZVxWMVxHUEJNZXRhZGF0YeoCDFZhcmlhbmNlOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message variance.v1.VariantOption
@@ -30,6 +32,11 @@ export type VariantOption = Message<"variance.v1.VariantOption"> & {
    * @generated from field: string icon = 3;
    */
   icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
 };
 
 /**
@@ -59,7 +66,12 @@ export type VariantAxis = Message<"variance.v1.VariantAxis"> & {
   icon: string;
 
   /**
-   * @generated from field: repeated variance.v1.VariantOption options = 4;
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: repeated variance.v1.VariantOption options = 5;
    */
   options: VariantOption[];
 };

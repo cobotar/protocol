@@ -7,7 +7,9 @@
 package productv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v11 "github.com/cobotar/protocol/messages/common/v1"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	v1 "github.com/cobotar/protocol/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -23,6 +25,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// TODO: add validation for: root_node_id, nodes
 type ProductDefinition struct {
 	state              protoimpl.MessageState   `protogen:"open.v1"`
 	Id                 string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -172,13 +175,15 @@ var File_product_v1_product_definition_proto protoreflect.FileDescriptor
 const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\n" +
 	"#product/v1/product_definition.proto\x12\n" +
-	"product.v1\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a\x1evariance/v1/variant_axis.proto\"\xcb\x02\n" +
-	"\x11ProductDefinition\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_axis.proto\"\xe3\x05\n" +
+	"\x11ProductDefinition\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xeb0\x01R\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\x12;\n" +
-	"\fvariant_axes\x18\x05 \x03(\v2\x18.variance.v1.VariantAxisR\vvariantAxes\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\xbc\x03\n" +
+	"\fvariant_axes\x18\x05 \x03(\v2\x18.variance.v1.VariantAxisB\xfe\x02\xbaH\xfa\x02\xba\x01\x8b\x01\n" +
+	"*product_definition.variant_axes.unique_ids\x12;variant axis ids must be unique within a product definition\x1a this.map(axis, axis.id).unique()\xba\x01\xe7\x01\n" +
+	"7product_definition.variant_axes.unique_normalized_names\x12tvariant axis names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case\x1a6this.map(axis, axis.name.trim().lowerAscii()).unique()R\vvariantAxes\x12 \n" +
 	"\froot_node_id\x18\x06 \x01(\tR\n" +
 	"rootNodeId\x12.\n" +
 	"\x05nodes\x18\a \x03(\v2\x18.product.v1.AssemblyNodeR\x05nodes\x12M\n" +
