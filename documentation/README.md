@@ -10076,8 +10076,8 @@ A human is required but no worker with valid skills exists. |
 | ----- | ---- | ----- | ----------- |
 | task_run_id | [string](#string) |  |  |
 | state | [TaskStateRequest](#runtime-v1-TaskStateRequest) |  |  |
-| error_code | [string](#string) |  |  |
-| error_message | [string](#string) |  |  |
+| failure_code | [string](#string) |  | Machine-readable failure reason supplied with TASK_STATE_REQUEST_FAILED. |
+| failure_message | [string](#string) |  | Human-readable failure reason supplied with TASK_STATE_REQUEST_FAILED. |
 | expected_revision | [uint64](#uint64) |  | Revision of the TaskRun on which this request is based. |
 
 
@@ -10115,12 +10115,13 @@ is represented by TASK_RUN_STATE_DONE.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| TASK_STATE_REQUEST_UNSPECIFIED | 0 |  |
-| TASK_STATE_REQUEST_IN_PROGRESS | 1 | Start a ready task or resume a suspended task. |
-| TASK_STATE_REQUEST_DONE | 2 |  |
-| TASK_STATE_REQUEST_UNDO | 3 |  |
-| TASK_STATE_REQUEST_ERROR | 4 | TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?) |
-| TASK_STATE_REQUEST_SUSPENDED | 6 | Suspend a started task without completing or failing it. |
+| TASK_STATE_REQUEST_UNSPECIFIED | 0 | Invalid sentinel; callers must request an explicit state transition. |
+| TASK_STATE_REQUEST_IN_PROGRESS | 1 | Start a ready task, resume a suspended task, or retry a failed task. |
+| TASK_STATE_REQUEST_DONE | 2 | Report that the task successfully achieved its intended outcome. |
+| TASK_STATE_REQUEST_UNDO | 3 | Report that an undoable completed task has been reversed and return it to ready. |
+| TASK_STATE_REQUEST_FAILED | 4 | Report that an attempted task did not achieve its intended outcome. A failed task remains recoverable through IN_PROGRESS or RESET. |
+| TASK_STATE_REQUEST_SUSPENDED | 5 | Pause an in-progress task without completing or failing it so it can be resumed later. |
+| TASK_STATE_REQUEST_RESET | 6 | Reset a failed task to ready so that it can be replanned, reassigned, or restarted. |
 
 
  
@@ -10233,8 +10234,8 @@ is represented by TASK_RUN_STATE_DONE.
 | estimated_duration | [common.v1.EstimatedDuration](#common-v1-EstimatedDuration) |  |  |
 | started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| error_code | [string](#string) |  |  |
-| error_message | [string](#string) |  |  |
+| failure_code | [string](#string) |  | Machine-readable reason for the current FAILED state. |
+| failure_message | [string](#string) |  | Human-readable reason for the current FAILED state. |
 | binding | [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding) |  |  |
 | restrictions | [RuntimeRestriction](#runtime-v1-RuntimeRestriction) | repeated | Effective runtime restrictions that currently apply to this task.
 
@@ -10293,14 +10294,14 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| TASK_RUN_STATE_UNSPECIFIED | 0 |  |
-| TASK_RUN_STATE_NOT_READY | 1 |  |
-| TASK_RUN_STATE_READY | 2 |  |
-| TASK_RUN_STATE_IN_PROGRESS | 3 |  |
-| TASK_RUN_STATE_DONE | 4 |  |
-| TASK_RUN_STATE_ERROR | 5 |  |
-| TASK_RUN_STATE_ABORTED | 6 |  |
-| TASK_RUN_STATE_SUSPENDED | 7 |  |
+| TASK_RUN_STATE_UNSPECIFIED | 0 | Invalid sentinel; persisted task runs must have a concrete runtime state. |
+| TASK_RUN_STATE_NOT_READY | 1 | The task is blocked by sequence ordering, prerequisites, or runtime conditions. |
+| TASK_RUN_STATE_READY | 2 | The task is eligible to start when its actor and runtime requirements are satisfied. |
+| TASK_RUN_STATE_IN_PROGRESS | 3 | The task has started, resumed, or is being retried. |
+| TASK_RUN_STATE_DONE | 4 | The task successfully achieved its intended outcome. |
+| TASK_RUN_STATE_FAILED | 5 | The task was attempted but did not achieve its intended outcome. It may be retried or reset; aborting the owning process remains a separate action. |
+| TASK_RUN_STATE_ABORTED | 6 | The task was stopped because its owning process was aborted and cannot resume. |
+| TASK_RUN_STATE_SUSPENDED | 7 | The task is paused after starting and may later resume in progress. |
 
 
  

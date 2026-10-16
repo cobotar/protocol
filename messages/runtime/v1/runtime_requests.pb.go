@@ -27,14 +27,21 @@ const (
 type TaskStateRequest int32
 
 const (
+	// Invalid sentinel; callers must request an explicit state transition.
 	TaskStateRequest_TASK_STATE_REQUEST_UNSPECIFIED TaskStateRequest = 0
-	// Start a ready task or resume a suspended task.
+	// Start a ready task, resume a suspended task, or retry a failed task.
 	TaskStateRequest_TASK_STATE_REQUEST_IN_PROGRESS TaskStateRequest = 1
-	TaskStateRequest_TASK_STATE_REQUEST_DONE        TaskStateRequest = 2
-	TaskStateRequest_TASK_STATE_REQUEST_UNDO        TaskStateRequest = 3
-	TaskStateRequest_TASK_STATE_REQUEST_ERROR       TaskStateRequest = 4 // TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?)
-	// Suspend a started task without completing or failing it.
-	TaskStateRequest_TASK_STATE_REQUEST_SUSPENDED TaskStateRequest = 6
+	// Report that the task successfully achieved its intended outcome.
+	TaskStateRequest_TASK_STATE_REQUEST_DONE TaskStateRequest = 2
+	// Report that an undoable completed task has been reversed and return it to ready.
+	TaskStateRequest_TASK_STATE_REQUEST_UNDO TaskStateRequest = 3
+	// Report that an attempted task did not achieve its intended outcome.
+	// A failed task remains recoverable through IN_PROGRESS or RESET.
+	TaskStateRequest_TASK_STATE_REQUEST_FAILED TaskStateRequest = 4
+	// Pause an in-progress task without completing or failing it so it can be resumed later.
+	TaskStateRequest_TASK_STATE_REQUEST_SUSPENDED TaskStateRequest = 5
+	// Reset a failed task to ready so that it can be replanned, reassigned, or restarted.
+	TaskStateRequest_TASK_STATE_REQUEST_RESET TaskStateRequest = 6
 )
 
 // Enum value maps for TaskStateRequest.
@@ -44,16 +51,18 @@ var (
 		1: "TASK_STATE_REQUEST_IN_PROGRESS",
 		2: "TASK_STATE_REQUEST_DONE",
 		3: "TASK_STATE_REQUEST_UNDO",
-		4: "TASK_STATE_REQUEST_ERROR",
-		6: "TASK_STATE_REQUEST_SUSPENDED",
+		4: "TASK_STATE_REQUEST_FAILED",
+		5: "TASK_STATE_REQUEST_SUSPENDED",
+		6: "TASK_STATE_REQUEST_RESET",
 	}
 	TaskStateRequest_value = map[string]int32{
 		"TASK_STATE_REQUEST_UNSPECIFIED": 0,
 		"TASK_STATE_REQUEST_IN_PROGRESS": 1,
 		"TASK_STATE_REQUEST_DONE":        2,
 		"TASK_STATE_REQUEST_UNDO":        3,
-		"TASK_STATE_REQUEST_ERROR":       4,
-		"TASK_STATE_REQUEST_SUSPENDED":   6,
+		"TASK_STATE_REQUEST_FAILED":      4,
+		"TASK_STATE_REQUEST_SUSPENDED":   5,
+		"TASK_STATE_REQUEST_RESET":       6,
 	}
 )
 
@@ -224,11 +233,11 @@ func (x *ProcessAbortRequest) GetExpectedRevision() uint64 {
 }
 
 type TaskStateChangeRequest struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	TaskRunId    string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
-	State        TaskStateRequest       `protobuf:"varint,2,opt,name=state,proto3,enum=runtime.v1.TaskStateRequest" json:"state,omitempty"`
-	ErrorCode    string                 `protobuf:"bytes,3,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
-	ErrorMessage string                 `protobuf:"bytes,4,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	TaskRunId      string                 `protobuf:"bytes,1,opt,name=task_run_id,json=taskRunId,proto3" json:"task_run_id,omitempty"`
+	State          TaskStateRequest       `protobuf:"varint,2,opt,name=state,proto3,enum=runtime.v1.TaskStateRequest" json:"state,omitempty"`
+	FailureCode    string                 `protobuf:"bytes,3,opt,name=failure_code,json=failureCode,proto3" json:"failure_code,omitempty"`          // Machine-readable failure reason supplied with TASK_STATE_REQUEST_FAILED.
+	FailureMessage string                 `protobuf:"bytes,4,opt,name=failure_message,json=failureMessage,proto3" json:"failure_message,omitempty"` // Human-readable failure reason supplied with TASK_STATE_REQUEST_FAILED.
 	// Revision of the TaskRun on which this request is based.
 	ExpectedRevision uint64 `protobuf:"varint,5,opt,name=expected_revision,json=expectedRevision,proto3" json:"expected_revision,omitempty"`
 	unknownFields    protoimpl.UnknownFields
@@ -279,16 +288,16 @@ func (x *TaskStateChangeRequest) GetState() TaskStateRequest {
 	return TaskStateRequest_TASK_STATE_REQUEST_UNSPECIFIED
 }
 
-func (x *TaskStateChangeRequest) GetErrorCode() string {
+func (x *TaskStateChangeRequest) GetFailureCode() string {
 	if x != nil {
-		return x.ErrorCode
+		return x.FailureCode
 	}
 	return ""
 }
 
-func (x *TaskStateChangeRequest) GetErrorMessage() string {
+func (x *TaskStateChangeRequest) GetFailureMessage() string {
 	if x != nil {
-		return x.ErrorMessage
+		return x.FailureMessage
 	}
 	return ""
 }
@@ -584,14 +593,15 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x13ProcessAbortRequest\x122\n" +
 	"\x0eprocess_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf2\x04\x01R\fprocessRunId\x12\x16\n" +
 	"\x06reason\x18\x02 \x01(\tR\x06reason\x124\n" +
-	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\x81\x02\n" +
+	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xcd\x06\n" +
 	"\x16TaskStateChangeRequest\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12?\n" +
-	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12\x1d\n" +
-	"\n" +
-	"error_code\x18\x03 \x01(\tR\terrorCode\x12#\n" +
-	"\rerror_message\x18\x04 \x01(\tR\ferrorMessage\x124\n" +
-	"\x11expected_revision\x18\x05 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\xac\x01\n" +
+	"\x05state\x18\x02 \x01(\x0e2\x1c.runtime.v1.TaskStateRequestB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05state\x12/\n" +
+	"\ffailure_code\x18\x03 \x01(\tB\f\xbaH\t\xd8\x01\x01r\x04\xe0\xf3\x04\x01R\vfailureCode\x121\n" +
+	"\x0ffailure_message\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x10R\x0efailureMessage\x124\n" +
+	"\x11expected_revision\x18\x05 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision:\xa9\x04\xbaH\xa5\x04\x1a\x8d\x02\n" +
+	"9task_state_change_request.failed_requires_failure_details\x12HTASK_STATE_REQUEST_FAILED requires both failure_code and failure_message\x1a\x85\x01this.state != runtime.v1.TaskStateRequest.TASK_STATE_REQUEST_FAILED || (this.failure_code != '' && this.failure_message.trim() != '')\x1a\x92\x02\n" +
+	">task_state_change_request.failure_details_require_failed_state\x12Pfailure_code and failure_message are only allowed with TASK_STATE_REQUEST_FAILED\x1a~this.state == runtime.v1.TaskStateRequest.TASK_STATE_REQUEST_FAILED || (this.failure_code == '' && this.failure_message == '')\"\xac\x01\n" +
 	"\x13TaskReassignRequest\x12,\n" +
 	"\vtask_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x121\n" +
 	"\x05actor\x18\x02 \x01(\v2\x13.common.v1.ActorRefB\x06\xbaH\x03\xc8\x01\x01R\x05actor\x124\n" +
@@ -614,14 +624,15 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x11expected_revision\x18\x03 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision\"\x85\x01\n" +
 	"\x17SequenceCompleteRequest\x124\n" +
 	"\x0fsequence_run_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf2\x04\x01R\rsequenceRunId\x124\n" +
-	"\x11expected_revision\x18\x02 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision*\xd4\x01\n" +
+	"\x11expected_revision\x18\x02 \x01(\x04B\a\xbaH\x042\x02(\x01R\x10expectedRevision*\xf3\x01\n" +
 	"\x10TaskStateRequest\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_UNSPECIFIED\x10\x00\x12\"\n" +
 	"\x1eTASK_STATE_REQUEST_IN_PROGRESS\x10\x01\x12\x1b\n" +
 	"\x17TASK_STATE_REQUEST_DONE\x10\x02\x12\x1b\n" +
-	"\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1c\n" +
-	"\x18TASK_STATE_REQUEST_ERROR\x10\x04\x12 \n" +
-	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x06*\xe5\x02\n" +
+	"\x17TASK_STATE_REQUEST_UNDO\x10\x03\x12\x1d\n" +
+	"\x19TASK_STATE_REQUEST_FAILED\x10\x04\x12 \n" +
+	"\x1cTASK_STATE_REQUEST_SUSPENDED\x10\x05\x12\x1c\n" +
+	"\x18TASK_STATE_REQUEST_RESET\x10\x06*\xe5\x02\n" +
 	"\x11TaskProgressPhase\x12#\n" +
 	"\x1fTASK_PROGRESS_PHASE_UNSPECIFIED\x10\x00\x12!\n" +
 	"\x1dTASK_PROGRESS_PHASE_PREPARING\x10\x01\x12+\n" +

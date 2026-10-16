@@ -30,59 +30,73 @@ namespace Messages.Runtime.V1 {
             "bGVzLnByb3RvIpcBChNQcm9jZXNzQWJvcnRSZXF1ZXN0EjIKDnByb2Nlc3Nf",
             "cnVuX2lkGAEgASgJQgy6SAlyBIjyBAHIAQFSDHByb2Nlc3NSdW5JZBIWCgZy",
             "ZWFzb24YAiABKAlSBnJlYXNvbhI0ChFleHBlY3RlZF9yZXZpc2lvbhgDIAEo",
-            "BEIHukgEMgIoAVIQZXhwZWN0ZWRSZXZpc2lvbiKBAgoWVGFza1N0YXRlQ2hh",
+            "BEIHukgEMgIoAVIQZXhwZWN0ZWRSZXZpc2lvbiLNBgoWVGFza1N0YXRlQ2hh",
             "bmdlUmVxdWVzdBIsCgt0YXNrX3J1bl9pZBgBIAEoCUIMukgJcgSY8gQByAEB",
             "Ugl0YXNrUnVuSWQSPwoFc3RhdGUYAiABKA4yHC5ydW50aW1lLnYxLlRhc2tT",
-            "dGF0ZVJlcXVlc3RCC7pICIIBAhAByAEBUgVzdGF0ZRIdCgplcnJvcl9jb2Rl",
-            "GAMgASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2FnZRgEIAEoCVIMZXJy",
-            "b3JNZXNzYWdlEjQKEWV4cGVjdGVkX3JldmlzaW9uGAUgASgEQge6SAQyAigB",
-            "UhBleHBlY3RlZFJldmlzaW9uIqwBChNUYXNrUmVhc3NpZ25SZXF1ZXN0EiwK",
-            "C3Rhc2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIx",
-            "CgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVh",
-            "Y3RvchI0ChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoAVIQZXhw",
-            "ZWN0ZWRSZXZpc2lvbiLYBAoSVGFza1Byb2dyZXNzVXBkYXRlEiwKC3Rhc2tf",
-            "cnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIxCgVhY3Rv",
-            "chgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVhY3RvchIY",
-            "CgdtZXNzYWdlGAMgASgJUgdtZXNzYWdlEioKDGVsYXBzZWRfdGltZRgEIAEo",
-            "BUIHukgEGgIoAFILZWxhcHNlZFRpbWUSNwoTZXN0aW1hdGVkX3RpbWVfbGVm",
-            "dBgFIAEoBUIHukgEGgIoAFIRZXN0aW1hdGVkVGltZUxlZnQSNAoRZXhwZWN0",
-            "ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24S",
-            "PQoFcGhhc2UYByABKA4yHS5ydW50aW1lLnYxLlRhc2tQcm9ncmVzc1BoYXNl",
-            "Qgi6SAWCAQIQAVIFcGhhc2USQQoQcGhhc2VfY29uZmlkZW5jZRgIIAEoAkIR",
-            "ukgOCgwdAACAPy0AAAAAQAFIAFIPcGhhc2VDb25maWRlbmNliAEBOpQBukiQ",
-            "ARqNAQoudGFza19wcm9ncmVzc191cGRhdGUuY29uZmlkZW5jZV9yZXF1aXJl",
-            "c19waGFzZRIrcGhhc2VfY29uZmlkZW5jZSByZXF1aXJlcyBhIHNwZWNpZmll",
-            "ZCBwaGFzZRouIWhhcyh0aGlzLnBoYXNlX2NvbmZpZGVuY2UpIHx8IHRoaXMu",
-            "cGhhc2UgIT0gMEITChFfcGhhc2VfY29uZmlkZW5jZSK4AQoXU2VxdWVuY2VS",
-            "ZWFzc2lnblJlcXVlc3QSNAoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6SAly",
-            "BJDyBAHIAQFSDXNlcXVlbmNlUnVuSWQSMQoFYWN0b3IYAiABKAsyEy5jb21t",
-            "b24udjEuQWN0b3JSZWZCBrpIA8gBAVIFYWN0b3ISNAoRZXhwZWN0ZWRfcmV2",
-            "aXNpb24YAyABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24ihQEKF1Nl",
-            "cXVlbmNlQ29tcGxldGVSZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9pZBgBIAEo",
-            "CUIMukgJcgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjQKEWV4cGVjdGVkX3Jl",
-            "dmlzaW9uGAIgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlzaW9uKtQBChBU",
-            "YXNrU3RhdGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQRUNJ",
-            "RklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxABEhsK",
-            "F1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9SRVFV",
-            "RVNUX1VORE8QAxIcChhUQVNLX1NUQVRFX1JFUVVFU1RfRVJST1IQBBIgChxU",
-            "QVNLX1NUQVRFX1JFUVVFU1RfU1VTUEVOREVEEAYq5QIKEVRhc2tQcm9ncmVz",
-            "c1BoYXNlEiMKH1RBU0tfUFJPR1JFU1NfUEhBU0VfVU5TUEVDSUZJRUQQABIh",
-            "Ch1UQVNLX1BST0dSRVNTX1BIQVNFX1BSRVBBUklORxABEisKJ1RBU0tfUFJP",
-            "R1JFU1NfUEhBU0VfQUNRVUlSSU5HX1JFU09VUkNFUxACEiAKHFRBU0tfUFJP",
-            "R1JFU1NfUEhBU0VfTE9DQVRJTkcQAxIjCh9UQVNLX1BST0dSRVNTX1BIQVNF",
-            "X0FQUFJPQUNISU5HEAQSIQodVEFTS19QUk9HUkVTU19QSEFTRV9FWEVDVVRJ",
-            "TkcQBRIjCh9UQVNLX1BST0dSRVNTX1BIQVNFX1BPU0lUSU9OSU5HEAYSIQod",
-            "VEFTS19QUk9HUkVTU19QSEFTRV9WRVJJRllJTkcQBxIpCiVUQVNLX1BST0dS",
-            "RVNTX1BIQVNFX1JFQURZX1RPX0NPTVBMRVRFEAhCswEKDmNvbS5ydW50aW1l",
-            "LnYxQhRSdW50aW1lUmVxdWVzdHNQcm90b1ABWjlnaXRodWIuY29tL2NvYm90",
-            "YXIvcHJvdG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNS",
-            "WFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRp",
-            "bWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z"));
+            "dGF0ZVJlcXVlc3RCC7pICIIBAhAByAEBUgVzdGF0ZRIvCgxmYWlsdXJlX2Nv",
+            "ZGUYAyABKAlCDLpICXIE4PMEAdgBAVILZmFpbHVyZUNvZGUSMQoPZmFpbHVy",
+            "ZV9tZXNzYWdlGAQgASgJQgi6SAVyAxiAEFIOZmFpbHVyZU1lc3NhZ2USNAoR",
+            "ZXhwZWN0ZWRfcmV2aXNpb24YBSABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2",
+            "aXNpb246qQS6SKUEGo0CCjl0YXNrX3N0YXRlX2NoYW5nZV9yZXF1ZXN0LmZh",
+            "aWxlZF9yZXF1aXJlc19mYWlsdXJlX2RldGFpbHMSSFRBU0tfU1RBVEVfUkVR",
+            "VUVTVF9GQUlMRUQgcmVxdWlyZXMgYm90aCBmYWlsdXJlX2NvZGUgYW5kIGZh",
+            "aWx1cmVfbWVzc2FnZRqFAXRoaXMuc3RhdGUgIT0gcnVudGltZS52MS5UYXNr",
+            "U3RhdGVSZXF1ZXN0LlRBU0tfU1RBVEVfUkVRVUVTVF9GQUlMRUQgfHwgKHRo",
+            "aXMuZmFpbHVyZV9jb2RlICE9ICcnICYmIHRoaXMuZmFpbHVyZV9tZXNzYWdl",
+            "LnRyaW0oKSAhPSAnJykakgIKPnRhc2tfc3RhdGVfY2hhbmdlX3JlcXVlc3Qu",
+            "ZmFpbHVyZV9kZXRhaWxzX3JlcXVpcmVfZmFpbGVkX3N0YXRlElBmYWlsdXJl",
+            "X2NvZGUgYW5kIGZhaWx1cmVfbWVzc2FnZSBhcmUgb25seSBhbGxvd2VkIHdp",
+            "dGggVEFTS19TVEFURV9SRVFVRVNUX0ZBSUxFRBp+dGhpcy5zdGF0ZSA9PSBy",
+            "dW50aW1lLnYxLlRhc2tTdGF0ZVJlcXVlc3QuVEFTS19TVEFURV9SRVFVRVNU",
+            "X0ZBSUxFRCB8fCAodGhpcy5mYWlsdXJlX2NvZGUgPT0gJycgJiYgdGhpcy5m",
+            "YWlsdXJlX21lc3NhZ2UgPT0gJycpIqwBChNUYXNrUmVhc3NpZ25SZXF1ZXN0",
+            "EiwKC3Rhc2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5J",
+            "ZBIxCgVhY3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEB",
+            "UgVhY3RvchI0ChFleHBlY3RlZF9yZXZpc2lvbhgDIAEoBEIHukgEMgIoAVIQ",
+            "ZXhwZWN0ZWRSZXZpc2lvbiLYBAoSVGFza1Byb2dyZXNzVXBkYXRlEiwKC3Rh",
+            "c2tfcnVuX2lkGAEgASgJQgy6SAlyBJjyBAHIAQFSCXRhc2tSdW5JZBIxCgVh",
+            "Y3RvchgCIAEoCzITLmNvbW1vbi52MS5BY3RvclJlZkIGukgDyAEBUgVhY3Rv",
+            "chIYCgdtZXNzYWdlGAMgASgJUgdtZXNzYWdlEioKDGVsYXBzZWRfdGltZRgE",
+            "IAEoBUIHukgEGgIoAFILZWxhcHNlZFRpbWUSNwoTZXN0aW1hdGVkX3RpbWVf",
+            "bGVmdBgFIAEoBUIHukgEGgIoAFIRZXN0aW1hdGVkVGltZUxlZnQSNAoRZXhw",
+            "ZWN0ZWRfcmV2aXNpb24YBiABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNp",
+            "b24SPQoFcGhhc2UYByABKA4yHS5ydW50aW1lLnYxLlRhc2tQcm9ncmVzc1Bo",
+            "YXNlQgi6SAWCAQIQAVIFcGhhc2USQQoQcGhhc2VfY29uZmlkZW5jZRgIIAEo",
+            "AkIRukgOCgwdAACAPy0AAAAAQAFIAFIPcGhhc2VDb25maWRlbmNliAEBOpQB",
+            "ukiQARqNAQoudGFza19wcm9ncmVzc191cGRhdGUuY29uZmlkZW5jZV9yZXF1",
+            "aXJlc19waGFzZRIrcGhhc2VfY29uZmlkZW5jZSByZXF1aXJlcyBhIHNwZWNp",
+            "ZmllZCBwaGFzZRouIWhhcyh0aGlzLnBoYXNlX2NvbmZpZGVuY2UpIHx8IHRo",
+            "aXMucGhhc2UgIT0gMEITChFfcGhhc2VfY29uZmlkZW5jZSK4AQoXU2VxdWVu",
+            "Y2VSZWFzc2lnblJlcXVlc3QSNAoPc2VxdWVuY2VfcnVuX2lkGAEgASgJQgy6",
+            "SAlyBJDyBAHIAQFSDXNlcXVlbmNlUnVuSWQSMQoFYWN0b3IYAiABKAsyEy5j",
+            "b21tb24udjEuQWN0b3JSZWZCBrpIA8gBAVIFYWN0b3ISNAoRZXhwZWN0ZWRf",
+            "cmV2aXNpb24YAyABKARCB7pIBDICKAFSEGV4cGVjdGVkUmV2aXNpb24ihQEK",
+            "F1NlcXVlbmNlQ29tcGxldGVSZXF1ZXN0EjQKD3NlcXVlbmNlX3J1bl9pZBgB",
+            "IAEoCUIMukgJcgSQ8gQByAEBUg1zZXF1ZW5jZVJ1bklkEjQKEWV4cGVjdGVk",
+            "X3JldmlzaW9uGAIgASgEQge6SAQyAigBUhBleHBlY3RlZFJldmlzaW9uKvMB",
+            "ChBUYXNrU3RhdGVSZXF1ZXN0EiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9VTlNQ",
+            "RUNJRklFRBAAEiIKHlRBU0tfU1RBVEVfUkVRVUVTVF9JTl9QUk9HUkVTUxAB",
+            "EhsKF1RBU0tfU1RBVEVfUkVRVUVTVF9ET05FEAISGwoXVEFTS19TVEFURV9S",
+            "RVFVRVNUX1VORE8QAxIdChlUQVNLX1NUQVRFX1JFUVVFU1RfRkFJTEVEEAQS",
+            "IAocVEFTS19TVEFURV9SRVFVRVNUX1NVU1BFTkRFRBAFEhwKGFRBU0tfU1RB",
+            "VEVfUkVRVUVTVF9SRVNFVBAGKuUCChFUYXNrUHJvZ3Jlc3NQaGFzZRIjCh9U",
+            "QVNLX1BST0dSRVNTX1BIQVNFX1VOU1BFQ0lGSUVEEAASIQodVEFTS19QUk9H",
+            "UkVTU19QSEFTRV9QUkVQQVJJTkcQARIrCidUQVNLX1BST0dSRVNTX1BIQVNF",
+            "X0FDUVVJUklOR19SRVNPVVJDRVMQAhIgChxUQVNLX1BST0dSRVNTX1BIQVNF",
+            "X0xPQ0FUSU5HEAMSIwofVEFTS19QUk9HUkVTU19QSEFTRV9BUFBST0FDSElO",
+            "RxAEEiEKHVRBU0tfUFJPR1JFU1NfUEhBU0VfRVhFQ1VUSU5HEAUSIwofVEFT",
+            "S19QUk9HUkVTU19QSEFTRV9QT1NJVElPTklORxAGEiEKHVRBU0tfUFJPR1JF",
+            "U1NfUEhBU0VfVkVSSUZZSU5HEAcSKQolVEFTS19QUk9HUkVTU19QSEFTRV9S",
+            "RUFEWV9UT19DT01QTEVURRAIQrMBCg5jb20ucnVudGltZS52MUIUUnVudGlt",
+            "ZVJlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
+            "L21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2Fn",
+            "ZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1l",
+            "dGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskStateRequest), typeof(global::Messages.Runtime.V1.TaskProgressPhase), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessAbortRequest), global::Messages.Runtime.V1.ProcessAbortRequest.Parser, new[]{ "ProcessRunId", "Reason", "ExpectedRevision" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "ErrorCode", "ErrorMessage", "ExpectedRevision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskStateChangeRequest), global::Messages.Runtime.V1.TaskStateChangeRequest.Parser, new[]{ "TaskRunId", "State", "FailureCode", "FailureMessage", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskReassignRequest), global::Messages.Runtime.V1.TaskReassignRequest.Parser, new[]{ "TaskRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskProgressUpdate), global::Messages.Runtime.V1.TaskProgressUpdate.Parser, new[]{ "TaskRunId", "Actor", "Message", "ElapsedTime", "EstimatedTimeLeft", "ExpectedRevision", "Phase", "PhaseConfidence" }, new[]{ "PhaseConfidence" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.SequenceReassignRequest), global::Messages.Runtime.V1.SequenceReassignRequest.Parser, new[]{ "SequenceRunId", "Actor", "ExpectedRevision" }, null, null, null, null),
@@ -94,21 +108,35 @@ namespace Messages.Runtime.V1 {
   }
   #region Enums
   public enum TaskStateRequest {
+    /// <summary>
+    /// Invalid sentinel; callers must request an explicit state transition.
+    /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// Start a ready task or resume a suspended task.
+    /// Start a ready task, resume a suspended task, or retry a failed task.
     /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_IN_PROGRESS")] InProgress = 1,
+    /// <summary>
+    /// Report that the task successfully achieved its intended outcome.
+    /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_DONE")] Done = 2,
+    /// <summary>
+    /// Report that an undoable completed task has been reversed and return it to ready.
+    /// </summary>
     [pbr::OriginalName("TASK_STATE_REQUEST_UNDO")] Undo = 3,
     /// <summary>
-    /// TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?)
+    /// Report that an attempted task did not achieve its intended outcome.
+    /// A failed task remains recoverable through IN_PROGRESS or RESET.
     /// </summary>
-    [pbr::OriginalName("TASK_STATE_REQUEST_ERROR")] Error = 4,
+    [pbr::OriginalName("TASK_STATE_REQUEST_FAILED")] Failed = 4,
     /// <summary>
-    /// Suspend a started task without completing or failing it.
+    /// Pause an in-progress task without completing or failing it so it can be resumed later.
     /// </summary>
-    [pbr::OriginalName("TASK_STATE_REQUEST_SUSPENDED")] Suspended = 6,
+    [pbr::OriginalName("TASK_STATE_REQUEST_SUSPENDED")] Suspended = 5,
+    /// <summary>
+    /// Reset a failed task to ready so that it can be replanned, reassigned, or restarted.
+    /// </summary>
+    [pbr::OriginalName("TASK_STATE_REQUEST_RESET")] Reset = 6,
   }
 
   /// <summary>
@@ -467,8 +495,8 @@ namespace Messages.Runtime.V1 {
     public TaskStateChangeRequest(TaskStateChangeRequest other) : this() {
       taskRunId_ = other.taskRunId_;
       state_ = other.state_;
-      errorCode_ = other.errorCode_;
-      errorMessage_ = other.errorMessage_;
+      failureCode_ = other.failureCode_;
+      failureMessage_ = other.failureMessage_;
       expectedRevision_ = other.expectedRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -503,27 +531,33 @@ namespace Messages.Runtime.V1 {
       }
     }
 
-    /// <summary>Field number for the "error_code" field.</summary>
-    public const int ErrorCodeFieldNumber = 3;
-    private string errorCode_ = "";
+    /// <summary>Field number for the "failure_code" field.</summary>
+    public const int FailureCodeFieldNumber = 3;
+    private string failureCode_ = "";
+    /// <summary>
+    /// Machine-readable failure reason supplied with TASK_STATE_REQUEST_FAILED.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ErrorCode {
-      get { return errorCode_; }
+    public string FailureCode {
+      get { return failureCode_; }
       set {
-        errorCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        failureCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "error_message" field.</summary>
-    public const int ErrorMessageFieldNumber = 4;
-    private string errorMessage_ = "";
+    /// <summary>Field number for the "failure_message" field.</summary>
+    public const int FailureMessageFieldNumber = 4;
+    private string failureMessage_ = "";
+    /// <summary>
+    /// Human-readable failure reason supplied with TASK_STATE_REQUEST_FAILED.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ErrorMessage {
-      get { return errorMessage_; }
+    public string FailureMessage {
+      get { return failureMessage_; }
       set {
-        errorMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        failureMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -559,8 +593,8 @@ namespace Messages.Runtime.V1 {
       }
       if (TaskRunId != other.TaskRunId) return false;
       if (State != other.State) return false;
-      if (ErrorCode != other.ErrorCode) return false;
-      if (ErrorMessage != other.ErrorMessage) return false;
+      if (FailureCode != other.FailureCode) return false;
+      if (FailureMessage != other.FailureMessage) return false;
       if (ExpectedRevision != other.ExpectedRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -571,8 +605,8 @@ namespace Messages.Runtime.V1 {
       int hash = 1;
       if (TaskRunId.Length != 0) hash ^= TaskRunId.GetHashCode();
       if (State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) hash ^= State.GetHashCode();
-      if (ErrorCode.Length != 0) hash ^= ErrorCode.GetHashCode();
-      if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
+      if (FailureCode.Length != 0) hash ^= FailureCode.GetHashCode();
+      if (FailureMessage.Length != 0) hash ^= FailureMessage.GetHashCode();
       if (ExpectedRevision != 0UL) hash ^= ExpectedRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -600,13 +634,13 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
-      if (ErrorCode.Length != 0) {
+      if (FailureCode.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ErrorCode);
+        output.WriteString(FailureCode);
       }
-      if (ErrorMessage.Length != 0) {
+      if (FailureMessage.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(ErrorMessage);
+        output.WriteString(FailureMessage);
       }
       if (ExpectedRevision != 0UL) {
         output.WriteRawTag(40);
@@ -630,13 +664,13 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
-      if (ErrorCode.Length != 0) {
+      if (FailureCode.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ErrorCode);
+        output.WriteString(FailureCode);
       }
-      if (ErrorMessage.Length != 0) {
+      if (FailureMessage.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(ErrorMessage);
+        output.WriteString(FailureMessage);
       }
       if (ExpectedRevision != 0UL) {
         output.WriteRawTag(40);
@@ -658,11 +692,11 @@ namespace Messages.Runtime.V1 {
       if (State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
-      if (ErrorCode.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorCode);
+      if (FailureCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FailureCode);
       }
-      if (ErrorMessage.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
+      if (FailureMessage.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FailureMessage);
       }
       if (ExpectedRevision != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ExpectedRevision);
@@ -685,11 +719,11 @@ namespace Messages.Runtime.V1 {
       if (other.State != global::Messages.Runtime.V1.TaskStateRequest.Unspecified) {
         State = other.State;
       }
-      if (other.ErrorCode.Length != 0) {
-        ErrorCode = other.ErrorCode;
+      if (other.FailureCode.Length != 0) {
+        FailureCode = other.FailureCode;
       }
-      if (other.ErrorMessage.Length != 0) {
-        ErrorMessage = other.ErrorMessage;
+      if (other.FailureMessage.Length != 0) {
+        FailureMessage = other.FailureMessage;
       }
       if (other.ExpectedRevision != 0UL) {
         ExpectedRevision = other.ExpectedRevision;
@@ -722,11 +756,11 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 26: {
-            ErrorCode = input.ReadString();
+            FailureCode = input.ReadString();
             break;
           }
           case 34: {
-            ErrorMessage = input.ReadString();
+            FailureMessage = input.ReadString();
             break;
           }
           case 40: {
@@ -761,11 +795,11 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 26: {
-            ErrorCode = input.ReadString();
+            FailureCode = input.ReadString();
             break;
           }
           case 34: {
-            ErrorMessage = input.ReadString();
+            FailureMessage = input.ReadString();
             break;
           }
           case 40: {

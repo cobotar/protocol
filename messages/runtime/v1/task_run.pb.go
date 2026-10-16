@@ -29,14 +29,23 @@ const (
 type TaskRunState int32
 
 const (
+	// Invalid sentinel; persisted task runs must have a concrete runtime state.
 	TaskRunState_TASK_RUN_STATE_UNSPECIFIED TaskRunState = 0
-	TaskRunState_TASK_RUN_STATE_NOT_READY   TaskRunState = 1
-	TaskRunState_TASK_RUN_STATE_READY       TaskRunState = 2
+	// The task is blocked by sequence ordering, prerequisites, or runtime conditions.
+	TaskRunState_TASK_RUN_STATE_NOT_READY TaskRunState = 1
+	// The task is eligible to start when its actor and runtime requirements are satisfied.
+	TaskRunState_TASK_RUN_STATE_READY TaskRunState = 2
+	// The task has started, resumed, or is being retried.
 	TaskRunState_TASK_RUN_STATE_IN_PROGRESS TaskRunState = 3
-	TaskRunState_TASK_RUN_STATE_DONE        TaskRunState = 4
-	TaskRunState_TASK_RUN_STATE_ERROR       TaskRunState = 5
-	TaskRunState_TASK_RUN_STATE_ABORTED     TaskRunState = 6
-	TaskRunState_TASK_RUN_STATE_SUSPENDED   TaskRunState = 7
+	// The task successfully achieved its intended outcome.
+	TaskRunState_TASK_RUN_STATE_DONE TaskRunState = 4
+	// The task was attempted but did not achieve its intended outcome. It may
+	// be retried or reset; aborting the owning process remains a separate action.
+	TaskRunState_TASK_RUN_STATE_FAILED TaskRunState = 5
+	// The task was stopped because its owning process was aborted and cannot resume.
+	TaskRunState_TASK_RUN_STATE_ABORTED TaskRunState = 6
+	// The task is paused after starting and may later resume in progress.
+	TaskRunState_TASK_RUN_STATE_SUSPENDED TaskRunState = 7
 )
 
 // Enum value maps for TaskRunState.
@@ -47,7 +56,7 @@ var (
 		2: "TASK_RUN_STATE_READY",
 		3: "TASK_RUN_STATE_IN_PROGRESS",
 		4: "TASK_RUN_STATE_DONE",
-		5: "TASK_RUN_STATE_ERROR",
+		5: "TASK_RUN_STATE_FAILED",
 		6: "TASK_RUN_STATE_ABORTED",
 		7: "TASK_RUN_STATE_SUSPENDED",
 	}
@@ -57,7 +66,7 @@ var (
 		"TASK_RUN_STATE_READY":       2,
 		"TASK_RUN_STATE_IN_PROGRESS": 3,
 		"TASK_RUN_STATE_DONE":        4,
-		"TASK_RUN_STATE_ERROR":       5,
+		"TASK_RUN_STATE_FAILED":      5,
 		"TASK_RUN_STATE_ABORTED":     6,
 		"TASK_RUN_STATE_SUSPENDED":   7,
 	}
@@ -183,8 +192,8 @@ type TaskRun struct {
 	EstimatedDuration   *v11.EstimatedDuration `protobuf:"bytes,12,opt,name=estimated_duration,json=estimatedDuration,proto3" json:"estimated_duration,omitempty"`
 	StartedAt           *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
 	CompletedAt         *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
-	ErrorCode           string                 `protobuf:"bytes,15,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`
-	ErrorMessage        string                 `protobuf:"bytes,16,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
+	FailureCode         string                 `protobuf:"bytes,15,opt,name=failure_code,json=failureCode,proto3" json:"failure_code,omitempty"`          // Machine-readable reason for the current FAILED state.
+	FailureMessage      string                 `protobuf:"bytes,16,opt,name=failure_message,json=failureMessage,proto3" json:"failure_message,omitempty"` // Human-readable reason for the current FAILED state.
 	Binding             *TaskRuntimeBinding    `protobuf:"bytes,17,opt,name=binding,proto3" json:"binding,omitempty"`
 	// Effective runtime restrictions that currently apply to this task.
 	//
@@ -335,16 +344,16 @@ func (x *TaskRun) GetCompletedAt() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *TaskRun) GetErrorCode() string {
+func (x *TaskRun) GetFailureCode() string {
 	if x != nil {
-		return x.ErrorCode
+		return x.FailureCode
 	}
 	return ""
 }
 
-func (x *TaskRun) GetErrorMessage() string {
+func (x *TaskRun) GetFailureMessage() string {
 	if x != nil {
-		return x.ErrorMessage
+		return x.FailureMessage
 	}
 	return ""
 }
@@ -440,7 +449,7 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"station_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\"\n" +
 	"\acell_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12E\n" +
 	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\x12M\n" +
-	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\"\xd1\b\n" +
+	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\"\xd9\b\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -457,24 +466,23 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\x12estimated_duration\x18\f \x01(\v2\x1c.common.v1.EstimatedDurationR\x11estimatedDuration\x129\n" +
 	"\n" +
 	"started_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tstartedAt\x12=\n" +
-	"\fcompleted_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12\x1d\n" +
-	"\n" +
-	"error_code\x18\x0f \x01(\tR\terrorCode\x12#\n" +
-	"\rerror_message\x18\x10 \x01(\tR\ferrorMessage\x128\n" +
+	"\fcompleted_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\x12!\n" +
+	"\ffailure_code\x18\x0f \x01(\tR\vfailureCode\x12'\n" +
+	"\x0ffailure_message\x18\x10 \x01(\tR\x0efailureMessage\x128\n" +
 	"\abinding\x18\x11 \x01(\v2\x1e.runtime.v1.TaskRuntimeBindingR\abinding\x12B\n" +
 	"\frestrictions\x18\x13 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x12d\n" +
 	"\x1bcandidate_actor_evaluations\x18\x14 \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\x12e\n" +
 	"\x17actor_assignment_status\x18\x15 \x01(\v2%.runtime.v1.TaskActorAssignmentStatusB\x06\xbaH\x03\xc8\x01\x01R\x15actorAssignmentStatus\x12#\n" +
 	"\brevision\x18\x16 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\"5\n" +
 	"\bTaskRuns\x12)\n" +
-	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xf3\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xf4\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +
 	"\x1aTASK_RUN_STATE_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18TASK_RUN_STATE_NOT_READY\x10\x01\x12\x18\n" +
 	"\x14TASK_RUN_STATE_READY\x10\x02\x12\x1e\n" +
 	"\x1aTASK_RUN_STATE_IN_PROGRESS\x10\x03\x12\x17\n" +
-	"\x13TASK_RUN_STATE_DONE\x10\x04\x12\x18\n" +
-	"\x14TASK_RUN_STATE_ERROR\x10\x05\x12\x1a\n" +
+	"\x13TASK_RUN_STATE_DONE\x10\x04\x12\x19\n" +
+	"\x15TASK_RUN_STATE_FAILED\x10\x05\x12\x1a\n" +
 	"\x16TASK_RUN_STATE_ABORTED\x10\x06\x12\x1c\n" +
 	"\x18TASK_RUN_STATE_SUSPENDED\x10\aB\xab\x01\n" +
 	"\x0ecom.runtime.v1B\fTaskRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +

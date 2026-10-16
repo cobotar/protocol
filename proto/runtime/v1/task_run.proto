@@ -15,13 +15,29 @@ option csharp_namespace = "Messages.Runtime.V1";
 option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 
 enum TaskRunState {
+  // Invalid sentinel; persisted task runs must have a concrete runtime state.
   TASK_RUN_STATE_UNSPECIFIED = 0;
+
+  // The task is blocked by sequence ordering, prerequisites, or runtime conditions.
   TASK_RUN_STATE_NOT_READY = 1;
+
+  // The task is eligible to start when its actor and runtime requirements are satisfied.
   TASK_RUN_STATE_READY = 2;
+
+  // The task has started, resumed, or is being retried.
   TASK_RUN_STATE_IN_PROGRESS = 3;
+
+  // The task successfully achieved its intended outcome.
   TASK_RUN_STATE_DONE = 4;
-  TASK_RUN_STATE_ERROR = 5;
+
+  // The task was attempted but did not achieve its intended outcome. It may
+  // be retried or reset; aborting the owning process remains a separate action.
+  TASK_RUN_STATE_FAILED = 5;
+
+  // The task was stopped because its owning process was aborted and cannot resume.
   TASK_RUN_STATE_ABORTED = 6;
+
+  // The task is paused after starting and may later resume in progress.
   TASK_RUN_STATE_SUSPENDED = 7;
 }
 
@@ -58,8 +74,8 @@ message TaskRun {
   common.v1.EstimatedDuration estimated_duration = 12;
   google.protobuf.Timestamp started_at = 13;
   google.protobuf.Timestamp completed_at = 14;
-  string error_code = 15;
-  string error_message = 16;
+  string failure_code = 15; // Machine-readable reason for the current FAILED state.
+  string failure_message = 16; // Human-readable reason for the current FAILED state.
   TaskRuntimeBinding binding = 17;
 
   // Effective runtime restrictions that currently apply to this task.

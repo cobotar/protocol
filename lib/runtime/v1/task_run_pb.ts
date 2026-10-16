@@ -26,7 +26,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file runtime/v1/task_run.proto.
  */
 export const file_runtime_v1_task_run: GenFile = /*@__PURE__*/
-  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIuIBChJUYXNrUnVudGltZUJpbmRpbmcSJAoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAlCCbpIBnIEuPEEARIdCgpzdGF0aW9uX2lkGAIgASgJQgm6SAZyBPjxBAESGgoHY2VsbF9pZBgDIAEoCUIJukgGcgS48gQBEjYKDmNvbnRhaW5lcl9zbG90GAQgASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYSMwobY2FuZGlkYXRlX3BhcnRfaW5zdGFuY2VfaWRzGAUgAygJQg66SAuSAQgiBnIE0PEEASK7BgoHVGFza1J1bhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSKAoSdGFza19kZWZpbml0aW9uX2lkGAQgASgJQgy6SAnIAQFyBLDyBAESLAoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJyAEBcgSQ8gQBEjQKBXN0YXRlGAYgASgOMhgucnVudGltZS52MS5UYXNrUnVuU3RhdGVCC7pICMgBAYIBAhABEi0KEGNhbmRpZGF0ZV9hY3RvcnMYByADKAsyEy5jb21tb24udjEuQWN0b3JSZWYSKwoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5jb21tb24udjEuQWN0b3JSZWYSDgoGY2FuX2RvGAkgASgIEhAKCGNhbl91bmRvGAogASgIEhgKEHdvcmthYmxlX2hvcml6b24YCyABKAUSOAoSZXN0aW1hdGVkX2R1cmF0aW9uGAwgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uEi4KCnN0YXJ0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKDGNvbXBsZXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEgoKZXJyb3JfY29kZRgPIAEoCRIVCg1lcnJvcl9tZXNzYWdlGBAgASgJEi8KB2JpbmRpbmcYESABKAsyHi5ydW50aW1lLnYxLlRhc2tSdW50aW1lQmluZGluZxI0CgxyZXN0cmljdGlvbnMYEyADKAsyHi5ydW50aW1lLnYxLlJ1bnRpbWVSZXN0cmljdGlvbhJJChtjYW5kaWRhdGVfYWN0b3JfZXZhbHVhdGlvbnMYFCADKAsyJC5ydW50aW1lLnYxLkNhbmRpZGF0ZUFjdG9yRXZhbHVhdGlvbhJOChdhY3Rvcl9hc3NpZ25tZW50X3N0YXR1cxgVIAEoCzIlLnJ1bnRpbWUudjEuVGFza0FjdG9yQXNzaWdubWVudFN0YXR1c0IGukgDyAEBEhkKCHJldmlzaW9uGBYgASgEQge6SAQyAigBIi4KCFRhc2tSdW5zEiIKBWl0ZW1zGAEgAygLMhMucnVudGltZS52MS5UYXNrUnVuKvMBCgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhUQVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIYChRUQVNLX1JVTl9TVEFURV9SRUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSFwoTVEFTS19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tfUlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAGEhwKGFRBU0tfUlVOX1NUQVRFX1NVU1BFTkRFRBAHQqsBCg5jb20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_actor_assignment, file_runtime_v1_process_requests, file_runtime_v1_runtime_restriction, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChlydW50aW1lL3YxL3Rhc2tfcnVuLnByb3RvEgpydW50aW1lLnYxIuIBChJUYXNrUnVudGltZUJpbmRpbmcSJAoRYXNzZXRfaW5zdGFuY2VfaWQYASABKAlCCbpIBnIEuPEEARIdCgpzdGF0aW9uX2lkGAIgASgJQgm6SAZyBPjxBAESGgoHY2VsbF9pZBgDIAEoCUIJukgGcgS48gQBEjYKDmNvbnRhaW5lcl9zbG90GAQgASgLMh4ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RSZWYSMwobY2FuZGlkYXRlX3BhcnRfaW5zdGFuY2VfaWRzGAUgAygJQg66SAuSAQgiBnIE0PEEASK/BgoHVGFza1J1bhIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgwKBGljb24YAyABKAkSKAoSdGFza19kZWZpbml0aW9uX2lkGAQgASgJQgy6SAnIAQFyBLDyBAESLAoWcGFyZW50X3NlcXVlbmNlX3J1bl9pZBgFIAEoCUIMukgJyAEBcgSQ8gQBEjQKBXN0YXRlGAYgASgOMhgucnVudGltZS52MS5UYXNrUnVuU3RhdGVCC7pICMgBAYIBAhABEi0KEGNhbmRpZGF0ZV9hY3RvcnMYByADKAsyEy5jb21tb24udjEuQWN0b3JSZWYSKwoOYXNzaWduZWRfYWN0b3IYCCABKAsyEy5jb21tb24udjEuQWN0b3JSZWYSDgoGY2FuX2RvGAkgASgIEhAKCGNhbl91bmRvGAogASgIEhgKEHdvcmthYmxlX2hvcml6b24YCyABKAUSOAoSZXN0aW1hdGVkX2R1cmF0aW9uGAwgASgLMhwuY29tbW9uLnYxLkVzdGltYXRlZER1cmF0aW9uEi4KCnN0YXJ0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjAKDGNvbXBsZXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASFAoMZmFpbHVyZV9jb2RlGA8gASgJEhcKD2ZhaWx1cmVfbWVzc2FnZRgQIAEoCRIvCgdiaW5kaW5nGBEgASgLMh4ucnVudGltZS52MS5UYXNrUnVudGltZUJpbmRpbmcSNAoMcmVzdHJpY3Rpb25zGBMgAygLMh4ucnVudGltZS52MS5SdW50aW1lUmVzdHJpY3Rpb24SSQobY2FuZGlkYXRlX2FjdG9yX2V2YWx1YXRpb25zGBQgAygLMiQucnVudGltZS52MS5DYW5kaWRhdGVBY3RvckV2YWx1YXRpb24STgoXYWN0b3JfYXNzaWdubWVudF9zdGF0dXMYFSABKAsyJS5ydW50aW1lLnYxLlRhc2tBY3RvckFzc2lnbm1lbnRTdGF0dXNCBrpIA8gBARIZCghyZXZpc2lvbhgWIAEoBEIHukgEMgIoASIuCghUYXNrUnVucxIiCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEuVGFza1J1bir0AQoMVGFza1J1blN0YXRlEh4KGlRBU0tfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASHAoYVEFTS19SVU5fU1RBVEVfTk9UX1JFQURZEAESGAoUVEFTS19SVU5fU1RBVEVfUkVBRFkQAhIeChpUQVNLX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhcKE1RBU0tfUlVOX1NUQVRFX0RPTkUQBBIZChVUQVNLX1JVTl9TVEFURV9GQUlMRUQQBRIaChZUQVNLX1JVTl9TVEFURV9BQk9SVEVEEAYSHAoYVEFTS19SVU5fU1RBVEVfU1VTUEVOREVEEAdCqwEKDmNvbS5ydW50aW1lLnYxQgxUYXNrUnVuUHJvdG9QAVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_actor, file_common_v1_time, file_google_protobuf_timestamp, file_resources_v1_container_definition, file_runtime_v1_actor_assignment, file_runtime_v1_process_requests, file_runtime_v1_runtime_restriction, file_validation_v1_predefined_string_rules]);
 
 /**
  * Concrete runtime/deployment bindings resolved for this task run.
@@ -156,14 +156,18 @@ export type TaskRun = Message<"runtime.v1.TaskRun"> & {
   completedAt?: Timestamp;
 
   /**
-   * @generated from field: string error_code = 15;
+   * Machine-readable reason for the current FAILED state.
+   *
+   * @generated from field: string failure_code = 15;
    */
-  errorCode: string;
+  failureCode: string;
 
   /**
-   * @generated from field: string error_message = 16;
+   * Human-readable reason for the current FAILED state.
+   *
+   * @generated from field: string failure_message = 16;
    */
-  errorMessage: string;
+  failureMessage: string;
 
   /**
    * @generated from field: runtime.v1.TaskRuntimeBinding binding = 17;
@@ -236,41 +240,58 @@ export const TaskRunsSchema: GenMessage<TaskRuns> = /*@__PURE__*/
  */
 export enum TaskRunState {
   /**
+   * Invalid sentinel; persisted task runs must have a concrete runtime state.
+   *
    * @generated from enum value: TASK_RUN_STATE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * The task is blocked by sequence ordering, prerequisites, or runtime conditions.
+   *
    * @generated from enum value: TASK_RUN_STATE_NOT_READY = 1;
    */
   NOT_READY = 1,
 
   /**
+   * The task is eligible to start when its actor and runtime requirements are satisfied.
+   *
    * @generated from enum value: TASK_RUN_STATE_READY = 2;
    */
   READY = 2,
 
   /**
+   * The task has started, resumed, or is being retried.
+   *
    * @generated from enum value: TASK_RUN_STATE_IN_PROGRESS = 3;
    */
   IN_PROGRESS = 3,
 
   /**
+   * The task successfully achieved its intended outcome.
+   *
    * @generated from enum value: TASK_RUN_STATE_DONE = 4;
    */
   DONE = 4,
 
   /**
-   * @generated from enum value: TASK_RUN_STATE_ERROR = 5;
+   * The task was attempted but did not achieve its intended outcome. It may
+   * be retried or reset; aborting the owning process remains a separate action.
+   *
+   * @generated from enum value: TASK_RUN_STATE_FAILED = 5;
    */
-  ERROR = 5,
+  FAILED = 5,
 
   /**
+   * The task was stopped because its owning process was aborted and cannot resume.
+   *
    * @generated from enum value: TASK_RUN_STATE_ABORTED = 6;
    */
   ABORTED = 6,
 
   /**
+   * The task is paused after starting and may later resume in progress.
+   *
    * @generated from enum value: TASK_RUN_STATE_SUSPENDED = 7;
    */
   SUSPENDED = 7,

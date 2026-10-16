@@ -20,18 +20,27 @@ message ProcessAbortRequest {
 }
 
 enum TaskStateRequest {
+  // Invalid sentinel; callers must request an explicit state transition.
   TASK_STATE_REQUEST_UNSPECIFIED = 0;
 
-  // Start a ready task or resume a suspended task.
+  // Start a ready task, resume a suspended task, or retry a failed task.
   TASK_STATE_REQUEST_IN_PROGRESS = 1;
 
+  // Report that the task successfully achieved its intended outcome.
   TASK_STATE_REQUEST_DONE = 2;
-  TASK_STATE_REQUEST_UNDO = 3;
-  TASK_STATE_REQUEST_ERROR = 4;
-  // TODO: add TASK_STATE_REQUEST_FAILED? (perhaps instead of ERROR?)
 
-  // Suspend a started task without completing or failing it.
-  TASK_STATE_REQUEST_SUSPENDED = 6;
+  // Report that an undoable completed task has been reversed and return it to ready.
+  TASK_STATE_REQUEST_UNDO = 3;
+
+  // Report that an attempted task did not achieve its intended outcome.
+  // A failed task remains recoverable through IN_PROGRESS or RESET.
+  TASK_STATE_REQUEST_FAILED = 4;
+
+  // Pause an in-progress task without completing or failing it so it can be resumed later.
+  TASK_STATE_REQUEST_SUSPENDED = 5;
+
+  // Reset a failed task to ready so that it can be replanned, reassigned, or restarted.
+  TASK_STATE_REQUEST_RESET = 6;
 }
 
 // Fine-grained progress within an in-progress task. This complements
@@ -66,6 +75,18 @@ enum TaskProgressPhase {
 }
 
 message TaskStateChangeRequest {
+  option (buf.validate.message).cel = {
+    id: "task_state_change_request.failed_requires_failure_details"
+    message: "TASK_STATE_REQUEST_FAILED requires both failure_code and failure_message"
+    expression: "this.state != runtime.v1.TaskStateRequest.TASK_STATE_REQUEST_FAILED || (this.failure_code != '' && this.failure_message.trim() != '')"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "task_state_change_request.failure_details_require_failed_state"
+    message: "failure_code and failure_message are only allowed with TASK_STATE_REQUEST_FAILED"
+    expression: "this.state == runtime.v1.TaskStateRequest.TASK_STATE_REQUEST_FAILED || (this.failure_code == '' && this.failure_message == '')"
+  };
+
   string task_run_id = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.task_run_id_component) = true
@@ -74,8 +95,11 @@ message TaskStateChangeRequest {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
-  string error_code = 3;
-  string error_message = 4;
+  string failure_code = 3 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ]; // Machine-readable failure reason supplied with TASK_STATE_REQUEST_FAILED.
+  string failure_message = 4 [(buf.validate.field).string.max_len = 2048]; // Human-readable failure reason supplied with TASK_STATE_REQUEST_FAILED.
 
   // Revision of the TaskRun on which this request is based.
   uint64 expected_revision = 5 [(buf.validate.field).uint64.gte = 1];

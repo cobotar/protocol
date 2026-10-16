@@ -15,8 +15,9 @@ class TaskStateRequest(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TASK_STATE_REQUEST_IN_PROGRESS: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_DONE: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_UNDO: _ClassVar[TaskStateRequest]
-    TASK_STATE_REQUEST_ERROR: _ClassVar[TaskStateRequest]
+    TASK_STATE_REQUEST_FAILED: _ClassVar[TaskStateRequest]
     TASK_STATE_REQUEST_SUSPENDED: _ClassVar[TaskStateRequest]
+    TASK_STATE_REQUEST_RESET: _ClassVar[TaskStateRequest]
 
 class TaskProgressPhase(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -33,8 +34,9 @@ TASK_STATE_REQUEST_UNSPECIFIED: TaskStateRequest
 TASK_STATE_REQUEST_IN_PROGRESS: TaskStateRequest
 TASK_STATE_REQUEST_DONE: TaskStateRequest
 TASK_STATE_REQUEST_UNDO: TaskStateRequest
-TASK_STATE_REQUEST_ERROR: TaskStateRequest
+TASK_STATE_REQUEST_FAILED: TaskStateRequest
 TASK_STATE_REQUEST_SUSPENDED: TaskStateRequest
+TASK_STATE_REQUEST_RESET: TaskStateRequest
 TASK_PROGRESS_PHASE_UNSPECIFIED: TaskProgressPhase
 TASK_PROGRESS_PHASE_PREPARING: TaskProgressPhase
 TASK_PROGRESS_PHASE_ACQUIRING_RESOURCES: TaskProgressPhase
@@ -56,18 +58,18 @@ class ProcessAbortRequest(_message.Message):
     def __init__(self, process_run_id: _Optional[str] = ..., reason: _Optional[str] = ..., expected_revision: _Optional[int] = ...) -> None: ...
 
 class TaskStateChangeRequest(_message.Message):
-    __slots__ = ("task_run_id", "state", "error_code", "error_message", "expected_revision")
+    __slots__ = ("task_run_id", "state", "failure_code", "failure_message", "expected_revision")
     TASK_RUN_ID_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
-    ERROR_CODE_FIELD_NUMBER: _ClassVar[int]
-    ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    FAILURE_CODE_FIELD_NUMBER: _ClassVar[int]
+    FAILURE_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     EXPECTED_REVISION_FIELD_NUMBER: _ClassVar[int]
     task_run_id: str
     state: TaskStateRequest
-    error_code: str
-    error_message: str
+    failure_code: str
+    failure_message: str
     expected_revision: int
-    def __init__(self, task_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskStateRequest, str]] = ..., error_code: _Optional[str] = ..., error_message: _Optional[str] = ..., expected_revision: _Optional[int] = ...) -> None: ...
+    def __init__(self, task_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskStateRequest, str]] = ..., failure_code: _Optional[str] = ..., failure_message: _Optional[str] = ..., expected_revision: _Optional[int] = ...) -> None: ...
 
 class TaskReassignRequest(_message.Message):
     __slots__ = ("task_run_id", "actor", "expected_revision")

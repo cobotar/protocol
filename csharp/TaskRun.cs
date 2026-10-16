@@ -38,7 +38,7 @@ namespace Messages.Runtime.V1 {
             "ZBJFCg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250",
             "YWluZXJTbG90UmVmUg1jb250YWluZXJTbG90Ek0KG2NhbmRpZGF0ZV9wYXJ0",
             "X2luc3RhbmNlX2lkcxgFIAMoCUIOukgLkgEIIgZyBNDxBAFSGGNhbmRpZGF0",
-            "ZVBhcnRJbnN0YW5jZUlkcyLRCAoHVGFza1J1bhIOCgJpZBgBIAEoCVICaWQS",
+            "ZVBhcnRJbnN0YW5jZUlkcyLZCAoHVGFza1J1bhIOCgJpZBgBIAEoCVICaWQS",
             "EgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEjoKEnRh",
             "c2tfZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJcgSw8gQByAEBUhB0YXNrRGVm",
             "aW5pdGlvbklkEkEKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpI",
@@ -53,32 +53,32 @@ namespace Messages.Runtime.V1 {
             "dXJhdGlvblIRZXN0aW1hdGVkRHVyYXRpb24SOQoKc3RhcnRlZF9hdBgNIAEo",
             "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXN0YXJ0ZWRBdBI9Cgxj",
             "b21wbGV0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "Ugtjb21wbGV0ZWRBdBIdCgplcnJvcl9jb2RlGA8gASgJUgllcnJvckNvZGUS",
-            "IwoNZXJyb3JfbWVzc2FnZRgQIAEoCVIMZXJyb3JNZXNzYWdlEjgKB2JpbmRp",
-            "bmcYESABKAsyHi5ydW50aW1lLnYxLlRhc2tSdW50aW1lQmluZGluZ1IHYmlu",
-            "ZGluZxJCCgxyZXN0cmljdGlvbnMYEyADKAsyHi5ydW50aW1lLnYxLlJ1bnRp",
-            "bWVSZXN0cmljdGlvblIMcmVzdHJpY3Rpb25zEmQKG2NhbmRpZGF0ZV9hY3Rv",
-            "cl9ldmFsdWF0aW9ucxgUIAMoCzIkLnJ1bnRpbWUudjEuQ2FuZGlkYXRlQWN0",
-            "b3JFdmFsdWF0aW9uUhljYW5kaWRhdGVBY3RvckV2YWx1YXRpb25zEmUKF2Fj",
-            "dG9yX2Fzc2lnbm1lbnRfc3RhdHVzGBUgASgLMiUucnVudGltZS52MS5UYXNr",
-            "QWN0b3JBc3NpZ25tZW50U3RhdHVzQga6SAPIAQFSFWFjdG9yQXNzaWdubWVu",
-            "dFN0YXR1cxIjCghyZXZpc2lvbhgWIAEoBEIHukgEMgIoAVIIcmV2aXNpb24i",
-            "NQoIVGFza1J1bnMSKQoFaXRlbXMYASADKAsyEy5ydW50aW1lLnYxLlRhc2tS",
-            "dW5SBWl0ZW1zKvMBCgxUYXNrUnVuU3RhdGUSHgoaVEFTS19SVU5fU1RBVEVf",
-            "VU5TUEVDSUZJRUQQABIcChhUQVNLX1JVTl9TVEFURV9OT1RfUkVBRFkQARIY",
-            "ChRUQVNLX1JVTl9TVEFURV9SRUFEWRACEh4KGlRBU0tfUlVOX1NUQVRFX0lO",
-            "X1BST0dSRVNTEAMSFwoTVEFTS19SVU5fU1RBVEVfRE9ORRAEEhgKFFRBU0tf",
-            "UlVOX1NUQVRFX0VSUk9SEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJPUlRFRBAG",
-            "EhwKGFRBU0tfUlVOX1NUQVRFX1NVU1BFTkRFRBAHQqsBCg5jb20ucnVudGlt",
-            "ZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90",
-            "b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaICA1JYWKoCE01l",
-            "c3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVudGltZVxWMVxH",
-            "UEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
+            "Ugtjb21wbGV0ZWRBdBIhCgxmYWlsdXJlX2NvZGUYDyABKAlSC2ZhaWx1cmVD",
+            "b2RlEicKD2ZhaWx1cmVfbWVzc2FnZRgQIAEoCVIOZmFpbHVyZU1lc3NhZ2US",
+            "OAoHYmluZGluZxgRIAEoCzIeLnJ1bnRpbWUudjEuVGFza1J1bnRpbWVCaW5k",
+            "aW5nUgdiaW5kaW5nEkIKDHJlc3RyaWN0aW9ucxgTIAMoCzIeLnJ1bnRpbWUu",
+            "djEuUnVudGltZVJlc3RyaWN0aW9uUgxyZXN0cmljdGlvbnMSZAobY2FuZGlk",
+            "YXRlX2FjdG9yX2V2YWx1YXRpb25zGBQgAygLMiQucnVudGltZS52MS5DYW5k",
+            "aWRhdGVBY3RvckV2YWx1YXRpb25SGWNhbmRpZGF0ZUFjdG9yRXZhbHVhdGlv",
+            "bnMSZQoXYWN0b3JfYXNzaWdubWVudF9zdGF0dXMYFSABKAsyJS5ydW50aW1l",
+            "LnYxLlRhc2tBY3RvckFzc2lnbm1lbnRTdGF0dXNCBrpIA8gBAVIVYWN0b3JB",
+            "c3NpZ25tZW50U3RhdHVzEiMKCHJldmlzaW9uGBYgASgEQge6SAQyAigBUghy",
+            "ZXZpc2lvbiI1CghUYXNrUnVucxIpCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUu",
+            "djEuVGFza1J1blIFaXRlbXMq9AEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JV",
+            "Tl9TVEFURV9VTlNQRUNJRklFRBAAEhwKGFRBU0tfUlVOX1NUQVRFX05PVF9S",
+            "RUFEWRABEhgKFFRBU0tfUlVOX1NUQVRFX1JFQURZEAISHgoaVEFTS19SVU5f",
+            "U1RBVEVfSU5fUFJPR1JFU1MQAxIXChNUQVNLX1JVTl9TVEFURV9ET05FEAQS",
+            "GQoVVEFTS19SVU5fU1RBVEVfRkFJTEVEEAUSGgoWVEFTS19SVU5fU1RBVEVf",
+            "QUJPUlRFRBAGEhwKGFRBU0tfUlVOX1NUQVRFX1NVU1BFTkRFRBAHQqsBCg5j",
+            "b20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaOWdpdGh1Yi5jb20vY29i",
+            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaIC",
+            "A1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVu",
+            "dGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "StationId", "CellId", "ContainerSlot", "CandidatePartInstanceIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "ErrorCode", "ErrorMessage", "Binding", "Restrictions", "CandidateActorEvaluations", "ActorAssignmentStatus", "Revision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "FailureCode", "FailureMessage", "Binding", "Restrictions", "CandidateActorEvaluations", "ActorAssignmentStatus", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -87,13 +87,38 @@ namespace Messages.Runtime.V1 {
   }
   #region Enums
   public enum TaskRunState {
+    /// <summary>
+    /// Invalid sentinel; persisted task runs must have a concrete runtime state.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// The task is blocked by sequence ordering, prerequisites, or runtime conditions.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_NOT_READY")] NotReady = 1,
+    /// <summary>
+    /// The task is eligible to start when its actor and runtime requirements are satisfied.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_READY")] Ready = 2,
+    /// <summary>
+    /// The task has started, resumed, or is being retried.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_IN_PROGRESS")] InProgress = 3,
+    /// <summary>
+    /// The task successfully achieved its intended outcome.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_DONE")] Done = 4,
-    [pbr::OriginalName("TASK_RUN_STATE_ERROR")] Error = 5,
+    /// <summary>
+    /// The task was attempted but did not achieve its intended outcome. It may
+    /// be retried or reset; aborting the owning process remains a separate action.
+    /// </summary>
+    [pbr::OriginalName("TASK_RUN_STATE_FAILED")] Failed = 5,
+    /// <summary>
+    /// The task was stopped because its owning process was aborted and cannot resume.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_ABORTED")] Aborted = 6,
+    /// <summary>
+    /// The task is paused after starting and may later resume in progress.
+    /// </summary>
     [pbr::OriginalName("TASK_RUN_STATE_SUSPENDED")] Suspended = 7,
   }
 
@@ -511,8 +536,8 @@ namespace Messages.Runtime.V1 {
       estimatedDuration_ = other.estimatedDuration_ != null ? other.estimatedDuration_.Clone() : null;
       startedAt_ = other.startedAt_ != null ? other.startedAt_.Clone() : null;
       completedAt_ = other.completedAt_ != null ? other.completedAt_.Clone() : null;
-      errorCode_ = other.errorCode_;
-      errorMessage_ = other.errorMessage_;
+      failureCode_ = other.failureCode_;
+      failureMessage_ = other.failureMessage_;
       binding_ = other.binding_ != null ? other.binding_.Clone() : null;
       restrictions_ = other.restrictions_.Clone();
       candidateActorEvaluations_ = other.candidateActorEvaluations_.Clone();
@@ -700,27 +725,33 @@ namespace Messages.Runtime.V1 {
       }
     }
 
-    /// <summary>Field number for the "error_code" field.</summary>
-    public const int ErrorCodeFieldNumber = 15;
-    private string errorCode_ = "";
+    /// <summary>Field number for the "failure_code" field.</summary>
+    public const int FailureCodeFieldNumber = 15;
+    private string failureCode_ = "";
+    /// <summary>
+    /// Machine-readable reason for the current FAILED state.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ErrorCode {
-      get { return errorCode_; }
+    public string FailureCode {
+      get { return failureCode_; }
       set {
-        errorCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        failureCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "error_message" field.</summary>
-    public const int ErrorMessageFieldNumber = 16;
-    private string errorMessage_ = "";
+    /// <summary>Field number for the "failure_message" field.</summary>
+    public const int FailureMessageFieldNumber = 16;
+    private string failureMessage_ = "";
+    /// <summary>
+    /// Human-readable reason for the current FAILED state.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ErrorMessage {
-      get { return errorMessage_; }
+    public string FailureMessage {
+      get { return failureMessage_; }
       set {
-        errorMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        failureMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -830,8 +861,8 @@ namespace Messages.Runtime.V1 {
       if (!object.Equals(EstimatedDuration, other.EstimatedDuration)) return false;
       if (!object.Equals(StartedAt, other.StartedAt)) return false;
       if (!object.Equals(CompletedAt, other.CompletedAt)) return false;
-      if (ErrorCode != other.ErrorCode) return false;
-      if (ErrorMessage != other.ErrorMessage) return false;
+      if (FailureCode != other.FailureCode) return false;
+      if (FailureMessage != other.FailureMessage) return false;
       if (!object.Equals(Binding, other.Binding)) return false;
       if(!restrictions_.Equals(other.restrictions_)) return false;
       if(!candidateActorEvaluations_.Equals(other.candidateActorEvaluations_)) return false;
@@ -858,8 +889,8 @@ namespace Messages.Runtime.V1 {
       if (estimatedDuration_ != null) hash ^= EstimatedDuration.GetHashCode();
       if (startedAt_ != null) hash ^= StartedAt.GetHashCode();
       if (completedAt_ != null) hash ^= CompletedAt.GetHashCode();
-      if (ErrorCode.Length != 0) hash ^= ErrorCode.GetHashCode();
-      if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
+      if (FailureCode.Length != 0) hash ^= FailureCode.GetHashCode();
+      if (FailureMessage.Length != 0) hash ^= FailureMessage.GetHashCode();
       if (binding_ != null) hash ^= Binding.GetHashCode();
       hash ^= restrictions_.GetHashCode();
       hash ^= candidateActorEvaluations_.GetHashCode();
@@ -936,13 +967,13 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(114);
         output.WriteMessage(CompletedAt);
       }
-      if (ErrorCode.Length != 0) {
+      if (FailureCode.Length != 0) {
         output.WriteRawTag(122);
-        output.WriteString(ErrorCode);
+        output.WriteString(FailureCode);
       }
-      if (ErrorMessage.Length != 0) {
+      if (FailureMessage.Length != 0) {
         output.WriteRawTag(130, 1);
-        output.WriteString(ErrorMessage);
+        output.WriteString(FailureMessage);
       }
       if (binding_ != null) {
         output.WriteRawTag(138, 1);
@@ -1021,13 +1052,13 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(114);
         output.WriteMessage(CompletedAt);
       }
-      if (ErrorCode.Length != 0) {
+      if (FailureCode.Length != 0) {
         output.WriteRawTag(122);
-        output.WriteString(ErrorCode);
+        output.WriteString(FailureCode);
       }
-      if (ErrorMessage.Length != 0) {
+      if (FailureMessage.Length != 0) {
         output.WriteRawTag(130, 1);
-        output.WriteString(ErrorMessage);
+        output.WriteString(FailureMessage);
       }
       if (binding_ != null) {
         output.WriteRawTag(138, 1);
@@ -1093,11 +1124,11 @@ namespace Messages.Runtime.V1 {
       if (completedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CompletedAt);
       }
-      if (ErrorCode.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorCode);
+      if (FailureCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FailureCode);
       }
-      if (ErrorMessage.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
+      if (FailureMessage.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(FailureMessage);
       }
       if (binding_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Binding);
@@ -1174,11 +1205,11 @@ namespace Messages.Runtime.V1 {
         }
         CompletedAt.MergeFrom(other.CompletedAt);
       }
-      if (other.ErrorCode.Length != 0) {
-        ErrorCode = other.ErrorCode;
+      if (other.FailureCode.Length != 0) {
+        FailureCode = other.FailureCode;
       }
-      if (other.ErrorMessage.Length != 0) {
-        ErrorMessage = other.ErrorMessage;
+      if (other.FailureMessage.Length != 0) {
+        FailureMessage = other.FailureMessage;
       }
       if (other.binding_ != null) {
         if (binding_ == null) {
@@ -1285,11 +1316,11 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 122: {
-            ErrorCode = input.ReadString();
+            FailureCode = input.ReadString();
             break;
           }
           case 130: {
-            ErrorMessage = input.ReadString();
+            FailureMessage = input.ReadString();
             break;
           }
           case 138: {
@@ -1406,11 +1437,11 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 122: {
-            ErrorCode = input.ReadString();
+            FailureCode = input.ReadString();
             break;
           }
           case 130: {
-            ErrorMessage = input.ReadString();
+            FailureMessage = input.ReadString();
             break;
           }
           case 138: {
