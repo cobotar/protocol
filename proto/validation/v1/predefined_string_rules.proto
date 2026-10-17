@@ -291,4 +291,16 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a function definition id"
     expression: "(this == '' || this.startsWith('function_definition-'))"
   }];
+
+  optional bool execution_evidence_id_component = 10048 [(buf.validate.predefined).cel = {
+    id: "string.execution_evidence_id_component"
+    message: "this does not seem to be a execution evidence id"
+    expression: "(this == '' || this.startsWith('execution_evidence-'))"
+  }];
+
+  optional bool not_blank = 10049 [(buf.validate.predefined).cel = {
+    id: "string.not_blank"
+    message: "value must contain at least one non-whitespace character"
+    expression: "!rule || this.trim().size() > 0"
+  }];
 }

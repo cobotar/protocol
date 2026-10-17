@@ -13,9 +13,20 @@ option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
 // Use this for measurements, classifications, result details, operator notes,
 // and other structured runtime output.
 message EvidenceFact {
-  string key = 1;
-  string value = 2;
-  string unit = 3;
+  string key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string value = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.max_len = 4096,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+  string unit = 3 [
+    (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    (buf.validate.field).string.max_len = 64,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
 }
 
 // ExecutionEvidence records runtime facts produced during task execution.
@@ -27,14 +38,18 @@ message EvidenceFact {
 // strongly recommended when known, because they make later aggregation much
 // simpler and more robust than parsing facts alone.
 message ExecutionEvidence {
-  string id = 1;
+  string id = 1 [(buf.validate.field).string.(validation.v1.execution_evidence_id_component) = true];
   string task_run_id = 2 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.task_run_id_component) = true
   ];
   string source = 3; // tool, vision, operator, robot driver, etc.
   google.protobuf.Timestamp recorded_at = 4;
-  repeated EvidenceFact facts = 5;
+  repeated EvidenceFact facts = 5 [(buf.validate.field).cel = {
+    id: "execution_evidence.facts.unique_keys"
+    message: "evidence fact keys must be unique within an execution evidence record"
+    expression: "this.map(fact, fact.key).unique()"
+  }];
   string blob_uri = 6; // Optional external payload such as image, log, trace, or report.
 
   common.v1.ActorRef actor = 7; // Optional actor who produced or is primarily associated with this evidence.
