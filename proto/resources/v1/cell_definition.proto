@@ -24,6 +24,10 @@ option go_package = "github.com/cobotar/protocol/messages/resources/v1";
 //
 // This field is operational and should be considered together with
 // max_concurrent_processes and the status of contained stations.
+//
+// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+// BUSY from the number of active runs in this cell. Otherwise OPEN and BUSY
+// are set by hand. CLOSED and BLOCKED are always set by hand.
 enum CellStatus {
   CELL_STATUS_UNSPECIFIED = 0;
 
@@ -69,7 +73,7 @@ message CellDefinition {
   string icon = 4;
 
   CellStatus status = 5 [(buf.validate.field).enum.defined_only = true]; // Current operational availability of the cell as a whole.
-  int32 max_concurrent_processes = 6 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this cell should host concurrently.
+  int32 max_concurrent_processes = 6 [(buf.validate.field).int32.gte = 0]; // Maximum number of active (READY or IN_PROGRESS) ProcessRuns this cell should host concurrently. Queued runs don't count. 0 means unlimited.
   bool allow_queued_process = 7; // If true, loaders may create queued ProcessRuns when the cell is BUSY.
 
   repeated string station_ids = 8; // Stations belonging to this cell.

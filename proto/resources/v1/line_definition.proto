@@ -27,6 +27,10 @@ enum LineType {
 //
 // This field is operational and should be considered together with
 // max_concurrent_processes and the statuses of child cells/stations.
+//
+// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+// BUSY from the number of active runs in this line. Otherwise OPEN and BUSY
+// are set by hand. CLOSED and BLOCKED are always set by hand.
 enum LineStatus {
   LINE_STATUS_UNSPECIFIED = 0;
 
@@ -64,7 +68,7 @@ message LineDefinition {
   string icon = 4;
   LineType type = 5 [(buf.validate.field).enum.defined_only = true]; // Broad line classification. Keep optional until concrete line types are introduced.
   LineStatus status = 6 [(buf.validate.field).enum.defined_only = true]; // Current operational availability of the line as a whole.
-  int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this line should host concurrently.
+  int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active (READY or IN_PROGRESS) ProcessRuns this line should host concurrently. Queued runs don't count. 0 means unlimited.
   repeated string cell_ids = 8 [(buf.validate.field).repeated.items.string.(validation.v1.cell_id_component) = true]; // Cells belonging to this line.
   repeated string station_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.station_id_component) = true]; // Optional directly attached stations when a line references stations without an intermediate cell.
 }

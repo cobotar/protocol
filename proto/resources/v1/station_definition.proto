@@ -31,6 +31,10 @@ enum StationType {
 //
 // A station may also expose capacity constraints through
 // max_concurrent_processes, which is separate from this status field.
+//
+// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+// BUSY from the number of active runs in this station. Otherwise OPEN and BUSY
+// are set by hand. CLOSED and BLOCKED are always set by hand.
 enum StationStatus {
   STATION_STATUS_UNSPECIFIED = 0;
 
@@ -75,8 +79,9 @@ message StationDefinition {
   string icon = 4;
   StationType type = 5 [(buf.validate.field).enum.defined_only = true]; // Broad station classification, e.g. manual, automatic, or hybrid.
   StationStatus status = 6 [(buf.validate.field).enum.defined_only = true]; // Current operational availability used by loaders, planners, and UIs.
-  int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active/queued processes this station should host concurrently.
+  int32 max_concurrent_processes = 7 [(buf.validate.field).int32.gte = 0]; // Maximum number of active (READY or IN_PROGRESS) ProcessRuns this station should host concurrently. Queued runs don't count. 0 means unlimited.
   bool allow_queued_process = 8; // If true, loaders may create queued ProcessRuns when the station is BUSY.
+  // TODO: consider int32 max_queued_processes
 
   repeated ToolPlacement tools = 9; // Station-local tools mounted, parked, or otherwise directly available here.
   repeated RobotPlacement robots = 10; // Robots directly assigned to or executing within this station.
