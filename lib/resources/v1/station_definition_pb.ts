@@ -77,7 +77,7 @@ export type StationDefinition = Message<"resources.v1.StationDefinition"> & {
   status: StationStatus;
 
   /**
-   * Maximum number of active/queued processes this station should host concurrently.
+   * Maximum number of active (READY or IN_PROGRESS) ProcessRuns this station should host concurrently. Queued runs don't count. 0 means unlimited.
    *
    * @generated from field: int32 max_concurrent_processes = 7;
    */
@@ -201,6 +201,10 @@ export const StationTypeSchema: GenEnum<StationType> = /*@__PURE__*/
  *
  * A station may also expose capacity constraints through
  * max_concurrent_processes, which is separate from this status field.
+ *
+ * When max_concurrent_processes is greater than 0, the backend sets OPEN and
+ * BUSY from the number of active runs in this station. Otherwise OPEN and BUSY
+ * are set by hand. CLOSED and BLOCKED are always set by hand.
  *
  * @generated from enum resources.v1.StationStatus
  */

@@ -71,7 +71,7 @@ export type CellDefinition = Message<"resources.v1.CellDefinition"> & {
   status: CellStatus;
 
   /**
-   * Maximum number of active/queued processes this cell should host concurrently.
+   * Maximum number of active (READY or IN_PROGRESS) ProcessRuns this cell should host concurrently. Queued runs don't count. 0 means unlimited.
    *
    * @generated from field: int32 max_concurrent_processes = 6;
    */
@@ -167,6 +167,10 @@ export const CellDefinitionsSchema: GenMessage<CellDefinitions> = /*@__PURE__*/
  *
  * This field is operational and should be considered together with
  * max_concurrent_processes and the status of contained stations.
+ *
+ * When max_concurrent_processes is greater than 0, the backend sets OPEN and
+ * BUSY from the number of active runs in this cell. Otherwise OPEN and BUSY
+ * are set by hand. CLOSED and BLOCKED are always set by hand.
  *
  * @generated from enum resources.v1.CellStatus
  */

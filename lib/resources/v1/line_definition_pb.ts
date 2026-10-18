@@ -66,7 +66,7 @@ export type LineDefinition = Message<"resources.v1.LineDefinition"> & {
   status: LineStatus;
 
   /**
-   * Maximum number of active/queued processes this line should host concurrently.
+   * Maximum number of active (READY or IN_PROGRESS) ProcessRuns this line should host concurrently. Queued runs don't count. 0 means unlimited.
    *
    * @generated from field: int32 max_concurrent_processes = 7;
    */
@@ -144,6 +144,10 @@ export const LineTypeSchema: GenEnum<LineType> = /*@__PURE__*/
  *
  * This field is operational and should be considered together with
  * max_concurrent_processes and the statuses of child cells/stations.
+ *
+ * When max_concurrent_processes is greater than 0, the backend sets OPEN and
+ * BUSY from the number of active runs in this line. Otherwise OPEN and BUSY
+ * are set by hand. CLOSED and BLOCKED are always set by hand.
  *
  * @generated from enum resources.v1.LineStatus
  */

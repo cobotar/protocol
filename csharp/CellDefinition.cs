@@ -78,6 +78,10 @@ namespace Messages.Resources.V1 {
   ///
   /// This field is operational and should be considered together with
   /// max_concurrent_processes and the status of contained stations.
+  ///
+  /// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+  /// BUSY from the number of active runs in this cell. Otherwise OPEN and BUSY
+  /// are set by hand. CLOSED and BLOCKED are always set by hand.
   /// </summary>
   public enum CellStatus {
     [pbr::OriginalName("CELL_STATUS_UNSPECIFIED")] Unspecified = 0,
@@ -250,7 +254,7 @@ namespace Messages.Resources.V1 {
     public const int MaxConcurrentProcessesFieldNumber = 6;
     private int maxConcurrentProcesses_;
     /// <summary>
-    /// Maximum number of active/queued processes this cell should host concurrently.
+    /// Maximum number of active (READY or IN_PROGRESS) ProcessRuns this cell should host concurrently. Queued runs don't count. 0 means unlimited.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

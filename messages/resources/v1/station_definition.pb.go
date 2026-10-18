@@ -93,6 +93,10 @@ func (StationType) EnumDescriptor() ([]byte, []int) {
 //
 // A station may also expose capacity constraints through
 // max_concurrent_processes, which is separate from this status field.
+//
+// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+// BUSY from the number of active runs in this station. Otherwise OPEN and BUSY
+// are set by hand. CLOSED and BLOCKED are always set by hand.
 type StationStatus int32
 
 const (
@@ -181,7 +185,7 @@ type StationDefinition struct {
 	Icon                   string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
 	Type                   StationType            `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.StationType" json:"type,omitempty"`                                       // Broad station classification, e.g. manual, automatic, or hybrid.
 	Status                 StationStatus          `protobuf:"varint,6,opt,name=status,proto3,enum=resources.v1.StationStatus" json:"status,omitempty"`                                 // Current operational availability used by loaders, planners, and UIs.
-	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this station should host concurrently.
+	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active (READY or IN_PROGRESS) ProcessRuns this station should host concurrently. Queued runs don't count. 0 means unlimited.
 	AllowQueuedProcess     bool                   `protobuf:"varint,8,opt,name=allow_queued_process,json=allowQueuedProcess,proto3" json:"allow_queued_process,omitempty"`             // If true, loaders may create queued ProcessRuns when the station is BUSY.
 	Tools                  []*ToolPlacement       `protobuf:"bytes,9,rep,name=tools,proto3" json:"tools,omitempty"`                                                                    // Station-local tools mounted, parked, or otherwise directly available here.
 	Robots                 []*RobotPlacement      `protobuf:"bytes,10,rep,name=robots,proto3" json:"robots,omitempty"`                                                                 // Robots directly assigned to or executing within this station.

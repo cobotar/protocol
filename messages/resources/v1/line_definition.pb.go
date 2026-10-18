@@ -82,6 +82,10 @@ func (LineType) EnumDescriptor() ([]byte, []int) {
 //
 // This field is operational and should be considered together with
 // max_concurrent_processes and the statuses of child cells/stations.
+//
+// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+// BUSY from the number of active runs in this line. Otherwise OPEN and BUSY
+// are set by hand. CLOSED and BLOCKED are always set by hand.
 type LineStatus int32
 
 const (
@@ -163,7 +167,7 @@ type LineDefinition struct {
 	Icon                   string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
 	Type                   LineType               `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.LineType" json:"type,omitempty"`                                          // Broad line classification. Keep optional until concrete line types are introduced.
 	Status                 LineStatus             `protobuf:"varint,6,opt,name=status,proto3,enum=resources.v1.LineStatus" json:"status,omitempty"`                                    // Current operational availability of the line as a whole.
-	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this line should host concurrently.
+	MaxConcurrentProcesses int32                  `protobuf:"varint,7,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active (READY or IN_PROGRESS) ProcessRuns this line should host concurrently. Queued runs don't count. 0 means unlimited.
 	CellIds                []string               `protobuf:"bytes,8,rep,name=cell_ids,json=cellIds,proto3" json:"cell_ids,omitempty"`                                                 // Cells belonging to this line.
 	StationIds             []string               `protobuf:"bytes,9,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`                                        // Optional directly attached stations when a line references stations without an intermediate cell.
 	unknownFields          protoimpl.UnknownFields

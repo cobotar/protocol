@@ -253,18 +253,19 @@ var File_runtime_v1_execution_evidence_proto protoreflect.FileDescriptor
 const file_runtime_v1_execution_evidence_proto_rawDesc = "" +
 	"\n" +
 	"#runtime/v1/execution_evidence.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"J\n" +
-	"\fEvidenceFact\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\x12\x12\n" +
-	"\x04unit\x18\x03 \x01(\tR\x04unit\"\xd1\x02\n" +
-	"\x11ExecutionEvidence\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12,\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"y\n" +
+	"\fEvidenceFact\x12\x1e\n" +
+	"\x03key\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12%\n" +
+	"\x05value\x18\x02 \x01(\tB\x0f\xbaH\f\xc8\x01\x01r\a\x88\xf4\x04\x01\x18\x80 R\x05value\x12\"\n" +
+	"\x04unit\x18\x03 \x01(\tB\x0e\xbaH\v\xd8\x01\x01r\x06\x88\xf4\x04\x01\x18@R\x04unit\"\xf8\x03\n" +
+	"\x11ExecutionEvidence\x12\x19\n" +
+	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x80\xf4\x04\x01R\x02id\x12,\n" +
 	"\vtask_run_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf2\x04\x01R\ttaskRunId\x12\x16\n" +
 	"\x06source\x18\x03 \x01(\tR\x06source\x12;\n" +
 	"\vrecorded_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"recordedAt\x12.\n" +
-	"\x05facts\x18\x05 \x03(\v2\x18.runtime.v1.EvidenceFactR\x05facts\x12\x19\n" +
+	"recordedAt\x12\xc9\x01\n" +
+	"\x05facts\x18\x05 \x03(\v2\x18.runtime.v1.EvidenceFactB\x98\x01\xbaH\x94\x01\xba\x01\x90\x01\n" +
+	"$execution_evidence.facts.unique_keys\x12Eevidence fact keys must be unique within an execution evidence record\x1a!this.map(fact, fact.key).unique()R\x05facts\x12\x19\n" +
 	"\bblob_uri\x18\x06 \x01(\tR\ablobUri\x12)\n" +
 	"\x05actor\x18\a \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x19\n" +
 	"\bskill_id\x18\b \x01(\tR\askillId\x12\x18\n" +

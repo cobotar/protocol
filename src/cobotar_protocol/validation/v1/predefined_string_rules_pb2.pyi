@@ -99,3 +99,7 @@ FEEDBACK_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 feedback_definition_id_component: _descriptor.FieldDescriptor
 FUNCTION_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 function_definition_id_component: _descriptor.FieldDescriptor
+EXECUTION_EVIDENCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+execution_evidence_id_component: _descriptor.FieldDescriptor
+NOT_BLANK_FIELD_NUMBER: _ClassVar[int]
+not_blank: _descriptor.FieldDescriptor

@@ -39,6 +39,10 @@ const (
 //
 // This field is operational and should be considered together with
 // max_concurrent_processes and the status of contained stations.
+//
+// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+// BUSY from the number of active runs in this cell. Otherwise OPEN and BUSY
+// are set by hand. CLOSED and BLOCKED are always set by hand.
 type CellStatus int32
 
 const (
@@ -127,7 +131,7 @@ type CellDefinition struct {
 	Description            string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	Icon                   string                 `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
 	Status                 CellStatus             `protobuf:"varint,5,opt,name=status,proto3,enum=resources.v1.CellStatus" json:"status,omitempty"`                                    // Current operational availability of the cell as a whole.
-	MaxConcurrentProcesses int32                  `protobuf:"varint,6,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active/queued processes this cell should host concurrently.
+	MaxConcurrentProcesses int32                  `protobuf:"varint,6,opt,name=max_concurrent_processes,json=maxConcurrentProcesses,proto3" json:"max_concurrent_processes,omitempty"` // Maximum number of active (READY or IN_PROGRESS) ProcessRuns this cell should host concurrently. Queued runs don't count. 0 means unlimited.
 	AllowQueuedProcess     bool                   `protobuf:"varint,7,opt,name=allow_queued_process,json=allowQueuedProcess,proto3" json:"allow_queued_process,omitempty"`             // If true, loaders may create queued ProcessRuns when the cell is BUSY.
 	StationIds             []string               `protobuf:"bytes,8,rep,name=station_ids,json=stationIds,proto3" json:"station_ids,omitempty"`                                        // Stations belonging to this cell.
 	Tools                  []*ToolPlacement       `protobuf:"bytes,9,rep,name=tools,proto3" json:"tools,omitempty"`                                                                    // Shared tools mounted, parked, or otherwise directly available here.

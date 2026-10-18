@@ -90,6 +90,10 @@ namespace Messages.Resources.V1 {
   ///
   /// A station may also expose capacity constraints through
   /// max_concurrent_processes, which is separate from this status field.
+  ///
+  /// When max_concurrent_processes is greater than 0, the backend sets OPEN and
+  /// BUSY from the number of active runs in this station. Otherwise OPEN and BUSY
+  /// are set by hand. CLOSED and BLOCKED are always set by hand.
   /// </summary>
   public enum StationStatus {
     [pbr::OriginalName("STATION_STATUS_UNSPECIFIED")] Unspecified = 0,
@@ -276,7 +280,7 @@ namespace Messages.Resources.V1 {
     public const int MaxConcurrentProcessesFieldNumber = 7;
     private int maxConcurrentProcesses_;
     /// <summary>
-    /// Maximum number of active/queued processes this station should host concurrently.
+    /// Maximum number of active (READY or IN_PROGRESS) ProcessRuns this station should host concurrently. Queued runs don't count. 0 means unlimited.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

@@ -52,6 +52,8 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/provenance.proto](#ar_v1_provenance-proto)
     - [ARContentProvenance](#ar-v1-ARContentProvenance)
@@ -668,6 +670,12 @@
     - [ProcessRunPrecheckStatus](#runtime-v1-ProcessRunPrecheckStatus)
     - [RequirementImportance](#runtime-v1-RequirementImportance)
   
+- [runtime/v1/process_run_definitions.proto](#runtime_v1_process_run_definitions-proto)
+    - [ProcessRunDefinitions](#runtime-v1-ProcessRunDefinitions)
+    - [ProcessRunDefinitionsRequest](#runtime-v1-ProcessRunDefinitionsRequest)
+  
+    - [ProcessRunDefinitionsSource](#runtime-v1-ProcessRunDefinitionsSource)
+  
 - [runtime/v1/runtime_requests.proto](#runtime_v1_runtime_requests-proto)
     - [ProcessAbortRequest](#runtime-v1-ProcessAbortRequest)
     - [SequenceCompleteRequest](#runtime-v1-SequenceCompleteRequest)
@@ -765,6 +773,7 @@
 | container_instance_id_component | bool | .buf.validate.StringRules | 100026 |  |
 | device_id_component | bool | .buf.validate.StringRules | 100036 |  |
 | environment_id_component | bool | .buf.validate.StringRules | 10008 |  |
+| execution_evidence_id_component | bool | .buf.validate.StringRules | 10048 |  |
 | feedback_definition_id_component | bool | .buf.validate.StringRules | 10046 |  |
 | feedback_id_component | bool | .buf.validate.StringRules | 10040 |  |
 | fixture_id_component | bool | .buf.validate.StringRules | 10014 |  |
@@ -777,6 +786,7 @@
 | model_asset_id_component | bool | .buf.validate.StringRules | 100032 |  |
 | model_id_component | bool | .buf.validate.StringRules | 10001 |  |
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
+| not_blank | bool | .buf.validate.StringRules | 10049 |  |
 | part_definition_id_component | bool | .buf.validate.StringRules | 10009 |  |
 | part_instance_id_component | bool | .buf.validate.StringRules | 10010 |  |
 | presentation_strategy_id_component | bool | .buf.validate.StringRules | 10043 |  |
@@ -7025,7 +7035,7 @@ current location because they move independently through the system.
 | description | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | status | [CellStatus](#resources-v1-CellStatus) |  | Current operational availability of the cell as a whole. |
-| max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this cell should host concurrently. |
+| max_concurrent_processes | [int32](#int32) |  | Maximum number of active (READY or IN_PROGRESS) ProcessRuns this cell should host concurrently. Queued runs don&#39;t count. 0 means unlimited. |
 | allow_queued_process | [bool](#bool) |  | If true, loaders may create queued ProcessRuns when the cell is BUSY. |
 | station_ids | [string](#string) | repeated | Stations belonging to this cell. |
 | tools | [ToolPlacement](#resources-v1-ToolPlacement) | repeated | Shared tools mounted, parked, or otherwise directly available here. |
@@ -7074,6 +7084,10 @@ Status should be interpreted as:
 
 This field is operational and should be considered together with
 max_concurrent_processes and the status of contained stations.
+
+When max_concurrent_processes is greater than 0, the backend sets OPEN and
+BUSY from the number of active runs in this cell. Otherwise OPEN and BUSY
+are set by hand. CLOSED and BLOCKED are always set by hand.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -7314,7 +7328,7 @@ Typical line responsibilities:
 | icon | [string](#string) |  |  |
 | type | [LineType](#resources-v1-LineType) |  | Broad line classification. Keep optional until concrete line types are introduced. |
 | status | [LineStatus](#resources-v1-LineStatus) |  | Current operational availability of the line as a whole. |
-| max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this line should host concurrently. |
+| max_concurrent_processes | [int32](#int32) |  | Maximum number of active (READY or IN_PROGRESS) ProcessRuns this line should host concurrently. Queued runs don&#39;t count. 0 means unlimited. |
 | cell_ids | [string](#string) | repeated | Cells belonging to this line. |
 | station_ids | [string](#string) | repeated | Optional directly attached stations when a line references stations without an intermediate cell. |
 
@@ -7359,6 +7373,10 @@ Status should be interpreted as:
 
 This field is operational and should be considered together with
 max_concurrent_processes and the statuses of child cells/stations.
+
+When max_concurrent_processes is greater than 0, the backend sets OPEN and
+BUSY from the number of active runs in this line. Otherwise OPEN and BUSY
+are set by hand. CLOSED and BLOCKED are always set by hand.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -7946,7 +7964,7 @@ current location because they move independently through the system.
 | icon | [string](#string) |  |  |
 | type | [StationType](#resources-v1-StationType) |  | Broad station classification, e.g. manual, automatic, or hybrid. |
 | status | [StationStatus](#resources-v1-StationStatus) |  | Current operational availability used by loaders, planners, and UIs. |
-| max_concurrent_processes | [int32](#int32) |  | Maximum number of active/queued processes this station should host concurrently. |
+| max_concurrent_processes | [int32](#int32) |  | Maximum number of active (READY or IN_PROGRESS) ProcessRuns this station should host concurrently. Queued runs don&#39;t count. 0 means unlimited. |
 | allow_queued_process | [bool](#bool) |  | If true, loaders may create queued ProcessRuns when the station is BUSY. |
 | tools | [ToolPlacement](#resources-v1-ToolPlacement) | repeated | Station-local tools mounted, parked, or otherwise directly available here. |
 | robots | [RobotPlacement](#resources-v1-RobotPlacement) | repeated | Robots directly assigned to or executing within this station. |
@@ -7993,6 +8011,10 @@ Status should be interpreted as:
 
 A station may also expose capacity constraints through
 max_concurrent_processes, which is separate from this status field.
+
+When max_concurrent_processes is greater than 0, the backend sets OPEN and
+BUSY from the number of active runs in this station. Otherwise OPEN and BUSY
+are set by hand. CLOSED and BLOCKED are always set by hand.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -9960,6 +9982,92 @@ A human is required but no worker with valid skills exists. |
 | REQUIREMENT_IMPORTANCE_UNSPECIFIED | 0 |  |
 | REQUIREMENT_IMPORTANCE_REQUIRED | 1 |  |
 | REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="runtime_v1_process_run_definitions-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## runtime/v1/process_run_definitions.proto
+
+
+
+<a name="runtime-v1-ProcessRunDefinitions"></a>
+
+### ProcessRunDefinitions
+ProcessRunDefinitions are the authoring definitions of a process run: the
+recipe it was loaded from, the recipe&#39;s sequence and task definitions, and
+the part definitions those tasks target (task.target.product.part_definition_id).
+
+A run is pinned to the definitions it was loaded with, including a queued
+run, which keeps the definitions its precheck checked. Editing or deleting a
+definition afterwards only affects runs loaded later. Clients resolve a
+run&#39;s recipe, sequence, task and part definitions through this message only;
+the global definition stores hold the current versions, which can differ.
+
+AR content (AR configs, feedback, actions and functions) isn&#39;t pinned: it
+stays live, so guidance can be authored in-situ while a run is active. Live
+AR content reads its process data through the run&#39;s pinned definitions.
+
+The pinned definitions are kept while the run is active and for a
+retention period after it is done or aborted (configured in the backend,
+two weeks by default). After that, source is LATEST.
+
+Published as an added event when a run is loaded, with the process run ID
+as the entity ID, and fetched with ProcessRunDefinitionsRequest.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_run_id | [string](#string) |  |  |
+| source | [ProcessRunDefinitionsSource](#runtime-v1-ProcessRunDefinitionsSource) |  |  |
+| pinned_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | When the run was loaded and its definitions pinned. Set when source is PINNED. |
+| recipe | [process.v1.ProcessRecipe](#process-v1-ProcessRecipe) |  |  |
+| sequence_definitions | [process.v1.SequenceDefinition](#process-v1-SequenceDefinition) | repeated |  |
+| task_definitions | [process.v1.TaskDefinition](#process-v1-TaskDefinition) | repeated |  |
+| part_definitions | [product.v1.PartDefinition](#product-v1-PartDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessRunDefinitionsRequest"></a>
+
+### ProcessRunDefinitionsRequest
+ProcessRunDefinitionsRequest fetches the definitions of a process run. See
+ProcessRunDefinitions for which version is returned.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| process_run_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="runtime-v1-ProcessRunDefinitionsSource"></a>
+
+### ProcessRunDefinitionsSource
+ProcessRunDefinitionsSource says which version of the definitions a
+ProcessRunDefinitions holds.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PROCESS_RUN_DEFINITIONS_SOURCE_UNSPECIFIED | 0 |  |
+| PROCESS_RUN_DEFINITIONS_SOURCE_PINNED | 1 | The definitions the run was loaded with. The run keeps using these while it is active, whatever happens to the definitions afterwards. |
+| PROCESS_RUN_DEFINITIONS_SOURCE_LATEST | 2 | The run ended longer ago than the retention period, so its pinned definitions are no longer kept and these are the current versions. Definitions deleted since the run was loaded are missing. Show the run with a note that this isn&#39;t the version it used. |
 
 
  
