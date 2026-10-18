@@ -1,0 +1,77 @@
+syntax = "proto3";
+package runtime.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
+import "process/v1/process_recipe.proto";
+import "process/v1/sequence_definition.proto";
+import "process/v1/task_definition.proto";
+import "product/v1/part_definition.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Runtime.V1";
+option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+
+// ProcessRunDefinitionsSource says which version of the definitions a
+// ProcessRunDefinitions holds.
+enum ProcessRunDefinitionsSource {
+  PROCESS_RUN_DEFINITIONS_SOURCE_UNSPECIFIED = 0;
+
+  // The definitions the run was loaded with. The run keeps using these while
+  // it is active, whatever happens to the definitions afterwards.
+  PROCESS_RUN_DEFINITIONS_SOURCE_PINNED = 1;
+
+  // The run ended longer ago than the retention period, so its pinned
+  // definitions are no longer kept and these are the current versions.
+  // Definitions deleted since the run was loaded are missing. Show the run
+  // with a note that this isn't the version it used.
+  PROCESS_RUN_DEFINITIONS_SOURCE_LATEST = 2;
+}
+
+// ProcessRunDefinitions are the authoring definitions of a process run: the
+// recipe it was loaded from, the recipe's sequence and task definitions, and
+// the part definitions those tasks target (task.target.product.part_definition_id).
+//
+// A run is pinned to the definitions it was loaded with, including a queued
+// run, which keeps the definitions its precheck checked. Editing or deleting a
+// definition afterwards only affects runs loaded later. Clients resolve a
+// run's recipe, sequence, task and part definitions through this message only;
+// the global definition stores hold the current versions, which can differ.
+//
+// AR content (AR configs, feedback, actions and functions) isn't pinned: it
+// stays live, so guidance can be authored in-situ while a run is active. Live
+// AR content reads its process data through the run's pinned definitions.
+//
+// The pinned definitions are kept while the run is active and for a
+// retention period after it is done or aborted (configured in the backend,
+// two weeks by default). After that, source is LATEST.
+//
+// Published as an added event when a run is loaded, with the process run ID
+// as the entity ID, and fetched with ProcessRunDefinitionsRequest.
+message ProcessRunDefinitions {
+  string process_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_run_id_component) = true
+  ];
+  ProcessRunDefinitionsSource source = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // When the run was loaded and its definitions pinned. Set when source is
+  // PINNED.
+  google.protobuf.Timestamp pinned_at = 3;
+
+  process.v1.ProcessRecipe recipe = 4;
+  repeated process.v1.SequenceDefinition sequence_definitions = 5;
+  repeated process.v1.TaskDefinition task_definitions = 6;
+  repeated product.v1.PartDefinition part_definitions = 7;
+}
+
+// ProcessRunDefinitionsRequest fetches the definitions of a process run. See
+// ProcessRunDefinitions for which version is returned.
+message ProcessRunDefinitionsRequest {
+  string process_run_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.process_run_id_component) = true
+  ];
+}
