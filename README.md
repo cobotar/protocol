@@ -12,35 +12,17 @@ Find it here: [documentation/README.md](documentation/README.md)
 
 
 
-## NATS subject convention
-### CRUD
-* add: `edit.<domain>.add`
-* update: `edit.<domain>.update`
-* delete: `edit.<domain>.delete`
-* get: `get.<domain>.one`
-* getByIds: `get.<domain>.some`
-* getAll: `get.<domain>.all`
+## NATS subjects
 
+NATS subjects are defined in [`subjects/catalog.yaml`](subjects/catalog.yaml). The
+catalog records each subject pattern, protobuf payload or request/reply types,
+lifecycle, conformance state, intended publishers, and consumers. Generated Go,
+C#, TypeScript, and Python helpers reject invalid concrete subject tokens and
+provide explicit wildcard builders for subscriptions.
 
-### Events
- Subject shape: `<kind>.<domain>.<type>.<scope..>`
-where:
-* kind: `{command | event | plan | telemetry}`
-* domain: `{robot | task | asset | ...}`
-* type: event type as lower_snake_case string token (`start_stop`, `started`, `task_completed`, etc.) 
-* scope optional identifiers for routing (`robotId`, `taskId`, `assetId`, `lineId`, etc.). Generally following this:
-  ```
-  <kind>.<domain>.<type>.<site>.<workcell>.<entityId>[.<planId>]
-  ```
-
-Examples:
-```
-command.robot.start_stop.workcellA.robot-1
-plan.robot.path.workcellA.robot-1.plan-P123
-telemetry.robot.state.workcellA.robot-1
-event.robot.started.workcellA.robot-1
-event.plan.cancelled.workcellA.plan-P123
-```
+See the generated [subject catalog and naming rules](documentation/subjects.md).
+Run `go run ./cmd/subjectgen check` to validate the catalog and verify that all
+generated outputs are current.
 
 
 ## Conceptual design of Assembly processes
@@ -215,4 +197,3 @@ product_selection:
   handle = long
 ```
 thus the system chooses the `recipe-door-flipped` recipe and the recipe stays the same regardless of `color`.
-

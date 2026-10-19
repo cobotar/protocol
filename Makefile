@@ -42,11 +42,18 @@ generate:
 	rm -rf ./lib/*
 	@echo 'Generating new files...'
 	buf generate
+	go run ./cmd/subjectgen generate
 
-## verify: run lint, format, breaking, and generate command
+## subject-check: validate the subject catalog and ensure generated helpers are current
+.PHONY: subject-check
+subject-check:
+	go test ./internal/subjectgen ./subjects
+	go run ./cmd/subjectgen check
+
+## verify: format, lint, generate protobuf and subject files, and verify subjects
 ## TODO: removed breaking until a more stable protocol have been established
 .PHONY: verify
-verify: format lint generate
+verify: format lint generate subject-check
 	@echo 'Remember to check if new files were created!'
 
 ## publish bump=$1: run checks, bump version, and publish. bump={major,minor,patch}

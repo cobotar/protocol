@@ -24,6 +24,10 @@ jobs:
           setup_only: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
       - name: Run linter
         run: buf lint
 
@@ -35,3 +39,8 @@ jobs:
 
       - name: Generate proto messages
         run: buf generate
+
+      - name: Check generated NATS subject helpers
+        run: |
+          go test ./internal/subjectgen ./subjects
+          go run ./cmd/subjectgen check
