@@ -1,10 +1,21 @@
 package subjectgen
 
 type Catalog struct {
-	Version     int         `yaml:"version" json:"version"`
-	Conformance Conformance `yaml:"conformance" json:"conformance"`
-	Components  []string    `yaml:"components" json:"components"`
-	Routes      []Route     `yaml:"routes" json:"routes"`
+	Version        int                 `yaml:"version" json:"version"`
+	Conformance    Conformance         `yaml:"conformance" json:"conformance"`
+	Components     []string            `yaml:"components" json:"components"`
+	Entities       []Entity            `yaml:"entities,omitempty" json:"entities,omitempty"`
+	EntitySets     map[string][]string `yaml:"entity_sets,omitempty" json:"entity_sets,omitempty"`
+	RouteFamilies  []RouteFamily       `yaml:"route_families,omitempty" json:"route_families,omitempty"`
+	Routes         []Route             `yaml:"routes" json:"routes"`
+	expandedRoutes []Route
+}
+
+// Entity declares one stable subject token and the protobuf message roles that
+// route-family templates may reference (for example $entity or $list).
+type Entity struct {
+	Name     string            `yaml:"name" json:"name"`
+	Messages map[string]string `yaml:"messages,omitempty" json:"messages,omitempty"`
 }
 
 type Conformance struct {
@@ -29,6 +40,24 @@ type Route struct {
 	Replacement   string               `yaml:"replacement,omitempty" json:"replacement,omitempty"`
 	Description   string               `yaml:"description,omitempty" json:"description,omitempty"`
 	parameterList []string
+	familyID      string
+	entityName    string
+}
+
+// RouteFamily expands one entity-parameterized route into concrete routes for
+// every member of EntitySet. Message fields may refer to an entity message role
+// with a $ prefix, such as $entity, $list, $create, or $update.
+type RouteFamily struct {
+	Route           `yaml:",inline" json:",inline"`
+	EntitySet       string                   `yaml:"entity_set" json:"entity_set"`
+	EntityOverrides map[string]RouteOverride `yaml:"entity_overrides,omitempty" json:"entity_overrides,omitempty"`
+}
+
+type RouteOverride struct {
+	Lifecycle   string       `yaml:"lifecycle,omitempty" json:"lifecycle,omitempty"`
+	Conformance *Conformance `yaml:"conformance,omitempty" json:"conformance,omitempty"`
+	Publishers  []string     `yaml:"publishers,omitempty" json:"publishers,omitempty"`
+	Consumers   []string     `yaml:"consumers,omitempty" json:"consumers,omitempty"`
 }
 
 type Replies struct {
@@ -49,6 +78,25 @@ type Subscription struct {
 
 func (r Route) ParameterList() []string {
 	return append([]string(nil), r.parameterList...)
+}
+
+func (r Route) FamilyID() string {
+	return r.familyID
+}
+
+func (r Route) EntityName() string {
+	return r.entityName
+}
+
+func (f RouteFamily) ParameterList() []string {
+	return append([]string(nil), f.parameterList...)
+}
+
+func (c Catalog) AllRoutes() []Route {
+	routes := make([]Route, 0, len(c.Routes)+len(c.expandedRoutes))
+	routes = append(routes, c.Routes...)
+	routes = append(routes, c.expandedRoutes...)
+	return routes
 }
 
 type Output struct {

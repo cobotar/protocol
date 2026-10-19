@@ -4280,6 +4280,7 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | function_definition_id | [string](#string) |  |  |
+| robot_property_id | [string](#string) |  | If the function uses a robot, this should point to a property definition of type ROBOT, e.g. a robot input slot&#39;s property, which the function&#39;s robot property then mirrors |
 
 
 
@@ -4375,6 +4376,8 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | FUNCTION_TYPE_NOT | 102 | Negates a boolean value. |
 | FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT | 120 | Reads a configured robot input. |
 | FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT | 121 | Reads a configured robot output. |
+| FUNCTION_TYPE_ROBOT_ANCHOR | 122 | Outputs the anchor of one of a robot&#39;s frames (e.g. its base, end effector or tool center point), following the robot that its robot property resolves to. |
+| FUNCTION_TYPE_ROBOT_STATE | 123 | Outputs a robot&#39;s state (robot.v1.RobotState). |
 
 
  

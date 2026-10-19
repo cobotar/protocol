@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=./catalog.schema.json
-version: 1
+version: 2
 
 # The initial inventory is intentionally staged while the hand-written helpers
 # in each consumer are reconciled with this catalog.
@@ -12,6 +12,255 @@ components:
   - web_cobotar
   - holo_cobotar
   - fusion360_exporter
+
+# Entity names are stable NATS subject tokens. Message roles let route-family
+# templates expand into concrete routes without losing per-entity protobuf
+# request and reply metadata.
+entities:
+  - name: action
+    messages: {entity: ar.v1.ActionMessage, list: ar.v1.ActionMessages, create: ar.v1.ActionAddMessage, update: ar.v1.ActionUpdateMessage}
+  - name: action_definition
+    messages: {entity: ar.v1.ActionDefinition, list: ar.v1.ActionDefinitions}
+  - name: actor_availability
+    messages: {entity: runtime.v1.ActorAvailability, list: runtime.v1.ActorAvailabilities}
+  - name: actor_skill
+    messages: {entity: capability.v1.ActorSkill, list: capability.v1.ActorSkills, create: capability.v1.ActorSkill, update: capability.v1.ActorSkill}
+  - name: ar_config
+    messages: {entity: ar.v1.ARConfigMessage, list: ar.v1.ARConfigMessages, create: ar.v1.ARConfigAddMessage, update: ar.v1.ARConfigUpdateMessage}
+  - name: ar_config_binding
+    messages: {entity: ar.v1.ARConfigBindingMessage, list: ar.v1.ARConfigBindingMessages, create: ar.v1.ARConfigBindingMessage, update: ar.v1.ARConfigBindingMessage}
+  - name: asset_adapter_definition
+    messages: {entity: resources.v1.AssetAdapterDefinition, list: resources.v1.AssetAdapterDefinitions}
+  - name: asset_definition
+    messages: {entity: resources.v1.AssetDefinition, list: resources.v1.AssetDefinitions, create: resources.v1.AssetDefinition, update: resources.v1.AssetDefinition}
+  - name: asset_instance
+    messages: {entity: resources.v1.AssetInstance, list: resources.v1.AssetInstances, create: resources.v1.AssetInstance, update: resources.v1.AssetInstance}
+  - name: cell
+    messages: {entity: resources.v1.CellDefinition, list: resources.v1.CellDefinitions, create: resources.v1.CellDefinition, update: resources.v1.CellDefinition}
+  - name: container_definition
+    messages: {entity: resources.v1.ContainerDefinition, list: resources.v1.ContainerDefinitions, create: resources.v1.ContainerDefinition, update: resources.v1.ContainerDefinition}
+  - name: container_instance
+    messages: {entity: resources.v1.ContainerInstance, list: resources.v1.ContainerInstances, create: resources.v1.ContainerInstance, update: resources.v1.ContainerInstance}
+  - name: device
+    messages: {entity: resources.v1.DeviceMessage, list: resources.v1.DeviceMessages, create: resources.v1.DeviceMessage, update: resources.v1.DeviceMessage}
+  - name: execution_evidence
+    messages: {entity: runtime.v1.ExecutionEvidence, list: runtime.v1.ExecutionEvidences, create: runtime.v1.ExecutionEvidence}
+  - name: feedback
+    messages: {entity: ar.v1.FeedbackMessage, list: ar.v1.FeedbackMessages, create: ar.v1.FeedbackAddMessage, update: ar.v1.FeedbackUpdateMessage}
+  - name: feedback_definition
+    messages: {entity: ar.v1.FeedbackDefinition, list: ar.v1.FeedbackDefinitions}
+  - name: function
+    messages: {entity: ar.v1.FunctionMessage, list: ar.v1.FunctionMessages, create: ar.v1.FunctionAddMessage, update: ar.v1.FunctionUpdateMessage}
+  - name: function_definition
+    messages: {entity: ar.v1.FunctionDefinition, list: ar.v1.FunctionDefinitions}
+  - name: line
+    messages: {entity: resources.v1.LineDefinition, list: resources.v1.LineDefinitions, create: resources.v1.LineDefinition, update: resources.v1.LineDefinition}
+  - name: marker
+    messages: {entity: resources.v1.MarkerInstance, list: resources.v1.MarkerInstances, create: resources.v1.MarkerInstance, update: resources.v1.MarkerInstance}
+  - name: model
+    messages: {entity: resources.v1.ModelArtifact, list: resources.v1.ModelArtifacts, create: resources.v1.ModelArtifact, update: resources.v1.ModelArtifact}
+  - name: part_definition
+    messages: {entity: product.v1.PartDefinition, list: product.v1.PartDefinitions, create: product.v1.PartDefinition, update: product.v1.PartDefinition}
+  - name: part_instance
+    messages: {entity: product.v1.PartInstance, list: product.v1.PartInstances, create: product.v1.PartInstance, update: product.v1.PartInstance}
+  - name: presentation_strategy
+    messages: {entity: ar.v1.PresentationStrategy, list: ar.v1.PresentationStrategies, create: ar.v1.PresentationStrategyAdd, update: ar.v1.PresentationStrategy}
+  - name: process_recipe
+    messages: {entity: process.v1.ProcessRecipe, list: process.v1.ProcessRecipes, create: process.v1.CreateProcessRecipe, update: process.v1.ProcessRecipe}
+  - name: process_run
+    messages: {entity: runtime.v1.ProcessRun, list: runtime.v1.ProcessRuns}
+  - name: process_run_definitions
+    messages: {entity: runtime.v1.ProcessRunDefinitions}
+  - name: product
+    messages: {entity: product.v1.ProductDefinition, list: product.v1.ProductDefinitions, create: product.v1.ProductDefinition, update: product.v1.ProductDefinition}
+  - name: property_definition
+    messages: {entity: common.v1.PropertyDefinition, list: common.v1.PropertyDefinitions, create: common.v1.CreatePropertyMessage, update: common.v1.PropertyDefinition}
+  - name: property_instance
+    messages: {entity: common.v1.PropertyInstance, list: common.v1.PropertyInstances, create: common.v1.PropertyInstance, update: common.v1.PropertyInstance}
+  - name: robot_adapter_definition
+    messages: {entity: resources.v1.RobotAdapterDefinition, list: resources.v1.RobotAdapterDefinitions}
+  - name: robot_definition
+    messages: {entity: resources.v1.RobotDefinition, list: resources.v1.RobotDefinitions, create: resources.v1.RobotDefinition, update: resources.v1.RobotDefinition}
+  - name: robot_instance
+    messages: {entity: resources.v1.RobotInstance, list: resources.v1.RobotInstances, create: resources.v1.RobotInstance, update: resources.v1.RobotInstance}
+  - name: sequence_definition
+    messages: {entity: process.v1.SequenceDefinition, list: process.v1.SequenceDefinitions, create: process.v1.SequenceDefinition, update: process.v1.SequenceDefinition}
+  - name: sequence_run
+    messages: {entity: runtime.v1.SequenceRun, list: runtime.v1.SequenceRuns}
+  - name: skill
+    messages: {entity: capability.v1.SkillDefinition, list: capability.v1.SkillDefinitions, create: capability.v1.SkillDefinition, update: capability.v1.SkillDefinition}
+  - name: station
+    messages: {entity: resources.v1.StationDefinition, list: resources.v1.StationDefinitions, create: resources.v1.StationDefinition, update: resources.v1.StationDefinition}
+  - name: task_definition
+    messages: {entity: process.v1.TaskDefinition, list: process.v1.TaskDefinitions, create: process.v1.TaskDefinition, update: process.v1.TaskDefinition}
+  - name: task_run
+    messages: {entity: runtime.v1.TaskRun, list: runtime.v1.TaskRuns}
+  - name: tool_definition
+    messages: {entity: resources.v1.ToolDefinition, list: resources.v1.ToolDefinitions, create: resources.v1.ToolDefinition, update: resources.v1.ToolDefinition}
+  - name: tool_instance
+    messages: {entity: resources.v1.ToolInstance, list: resources.v1.ToolInstances, create: resources.v1.ToolInstance, update: resources.v1.ToolInstance}
+  - name: validity_policy
+    messages: {entity: capability.v1.ValidityPolicy, list: capability.v1.ValidityPolicies, create: capability.v1.ValidityPolicy, update: capability.v1.ValidityPolicy}
+  - name: worker
+    messages: {entity: resources.v1.WorkerDefinition, list: resources.v1.WorkerDefinitions, create: resources.v1.WorkerDefinition, update: resources.v1.WorkerDefinition}
+  - name: zone
+    messages: {entity: geometry.v1.ZoneDefinition, list: geometry.v1.ZoneDefinitions, create: geometry.v1.ZoneDefinition, update: geometry.v1.ZoneDefinition}
+
+entity_sets:
+  readable: &readable_entities
+    [action, action_definition, actor_availability, actor_skill, ar_config, ar_config_binding,
+     asset_adapter_definition, asset_definition, asset_instance, cell, container_definition,
+     container_instance, device, execution_evidence, feedback, feedback_definition, function,
+     function_definition, line, marker, model, part_definition, part_instance,
+     presentation_strategy, process_recipe, process_run, product, property_definition,
+     property_instance, robot_adapter_definition, robot_definition, robot_instance,
+     sequence_definition, sequence_run, skill, station, task_definition, task_run,
+     tool_definition, tool_instance, validity_policy, worker, zone]
+  creatable:
+    [action, actor_skill, ar_config, ar_config_binding, asset_definition, asset_instance, cell,
+     container_definition, container_instance, device, execution_evidence, feedback, function,
+     line, marker, model, part_definition, part_instance, presentation_strategy, process_recipe,
+     product, property_definition, property_instance, robot_definition, robot_instance,
+     sequence_definition, skill, station, task_definition, tool_definition, tool_instance,
+     validity_policy, worker, zone]
+  mutable:
+    [action, actor_skill, ar_config, ar_config_binding, asset_definition, asset_instance, cell,
+     container_definition, container_instance, device, feedback, function, line, marker, model,
+     part_definition, part_instance, presentation_strategy, process_recipe, product,
+     property_definition, property_instance, robot_definition, robot_instance,
+     sequence_definition, skill, station, task_definition, tool_definition, tool_instance,
+     validity_policy, worker, zone]
+  evented: *readable_entities
+
+route_families:
+  - id: get.entity.all
+    pattern: get.{entity}.all
+    entity_set: readable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    empty_request: true
+    replies: {success: $list, failure: service.v1.Response}
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+
+  - id: get.entity.some
+    pattern: get.{entity}.some
+    entity_set: readable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    request: common.v1.GetByIdMessage
+    replies: {success: $list, failure: service.v1.Response}
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+
+  - id: get.entity.one
+    pattern: get.{entity}.one
+    entity_set: readable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    request: common.v1.GetMessage
+    replies: {success: $entity, failure: service.v1.Response}
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+
+  - id: edit.entity.add
+    pattern: edit.{entity}.add
+    entity_set: creatable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    request: $create
+    replies: {success: service.v1.Response, failure: service.v1.Response}
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    entity_overrides:
+      model:
+        publishers: [fusion360_exporter, web_cobotar]
+      part_definition:
+        publishers: [fusion360_exporter, web_cobotar]
+      product:
+        publishers: [fusion360_exporter, web_cobotar]
+
+  - id: edit.entity.clone
+    pattern: edit.{entity}.clone
+    entity_set: mutable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    request: common.v1.CloneMessage
+    replies: {success: service.v1.Response, failure: service.v1.Response}
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.entity.update
+    pattern: edit.{entity}.update
+    entity_set: mutable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    request: $update
+    replies: {success: service.v1.Response, failure: service.v1.Response}
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.entity.remove
+    pattern: edit.{entity}.remove
+    entity_set: mutable
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: request_reply
+    request: common.v1.DeleteMessage
+    replies: {success: service.v1.Response, failure: service.v1.Response}
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: event.entity.added
+    pattern: event.{entity}.added.{entity_id}
+    entity_set: evented
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: publish
+    payload: $entity
+    parameters:
+      entity_id: {type: subject_token}
+    subscriptions:
+      - name: for_entity
+        parameters: [entity]
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: event.entity.updated
+    pattern: event.{entity}.updated.{entity_id}
+    entity_set: evented
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: publish
+    payload: $entity
+    parameters:
+      entity_id: {type: subject_token}
+    subscriptions:
+      - name: for_entity
+        parameters: [entity]
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: event.entity.removed
+    pattern: event.{entity}.removed.{entity_id}
+    entity_set: evented
+    lifecycle: active
+    conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
+    interaction: publish
+    payload: $entity
+    parameters:
+      entity_id: {type: subject_token}
+    subscriptions:
+      - name: for_entity
+        parameters: [entity]
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
 
 routes:
   - id: command.robot.visibility
@@ -102,48 +351,6 @@ routes:
     consumers: [authoring]
     description: Reserved for the upcoming reset operation; request and reply types are not decided yet.
 
-  - id: edit.model.add
-    pattern: edit.model.add
-    lifecycle: active
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/protocol#11
-    interaction: request_reply
-    request: resources.v1.ModelArtifact
-    replies:
-      success: service.v1.Response
-      failure: service.v1.Response
-    publishers: [fusion360_exporter, web_cobotar]
-    consumers: [authoring]
-
-  - id: edit.part_definition.add
-    pattern: edit.part_definition.add
-    lifecycle: active
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/protocol#11
-    interaction: request_reply
-    request: product.v1.PartDefinition
-    replies:
-      success: service.v1.Response
-      failure: service.v1.Response
-    publishers: [fusion360_exporter, web_cobotar]
-    consumers: [authoring]
-
-  - id: edit.product.add
-    pattern: edit.product.add
-    lifecycle: active
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/protocol#11
-    interaction: request_reply
-    request: product.v1.ProductDefinition
-    replies:
-      success: service.v1.Response
-      failure: service.v1.Response
-    publishers: [fusion360_exporter, web_cobotar]
-    consumers: [authoring]
-
   - id: get.asset_adapter.info
     pattern: get.asset_adapter.info.{asset_instance_id}
     lifecycle: planned
@@ -162,36 +369,6 @@ routes:
     consumers: [authoring]
     description: Request the connected adapter information for one asset instance.
 
-  - id: get.asset_adapter_definition.all
-    pattern: get.asset_adapter_definition.all
-    lifecycle: planned
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/Authoring#65
-    interaction: request_reply
-    empty_request: true
-    replies:
-      success: resources.v1.AssetAdapterDefinitions
-      failure: service.v1.Response
-    publishers: [authoring, web_cobotar, holo_cobotar]
-    consumers: [authoring]
-    description: Request every built-in asset adapter definition.
-
-  - id: get.asset_adapter_definition.one
-    pattern: get.asset_adapter_definition.one
-    lifecycle: planned
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/Authoring#65
-    interaction: request_reply
-    request: common.v1.GetMessage
-    replies:
-      success: resources.v1.AssetAdapterDefinition
-      failure: service.v1.Response
-    publishers: [authoring, web_cobotar, holo_cobotar]
-    consumers: [authoring]
-    description: Request one built-in asset adapter definition by id.
-
   - id: get.robot_adapter.info
     pattern: get.robot_adapter.info.{robot_instance_id}
     lifecycle: active
@@ -209,36 +386,6 @@ routes:
     publishers: [authoring, web_cobotar, holo_cobotar]
     consumers: [authoring]
     description: Request the connected adapter information for one robot instance.
-
-  - id: get.robot_adapter_definition.all
-    pattern: get.robot_adapter_definition.all
-    lifecycle: planned
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/Authoring#49
-    interaction: request_reply
-    empty_request: true
-    replies:
-      success: resources.v1.RobotAdapterDefinitions
-      failure: service.v1.Response
-    publishers: [authoring, web_cobotar, holo_cobotar]
-    consumers: [authoring]
-    description: Request every built-in robot adapter definition.
-
-  - id: get.robot_adapter_definition.one
-    pattern: get.robot_adapter_definition.one
-    lifecycle: planned
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/Authoring#49
-    interaction: request_reply
-    request: common.v1.GetMessage
-    replies:
-      success: resources.v1.RobotAdapterDefinition
-      failure: service.v1.Response
-    publishers: [authoring, web_cobotar, holo_cobotar]
-    consumers: [authoring]
-    description: Request one built-in robot adapter definition by id.
 
   - id: get.storage.info
     pattern: get.storage.info

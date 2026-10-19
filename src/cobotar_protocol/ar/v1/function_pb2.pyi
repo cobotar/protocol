@@ -38,6 +38,8 @@ class FunctionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FUNCTION_TYPE_NOT: _ClassVar[FunctionType]
     FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT: _ClassVar[FunctionType]
     FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT: _ClassVar[FunctionType]
+    FUNCTION_TYPE_ROBOT_ANCHOR: _ClassVar[FunctionType]
+    FUNCTION_TYPE_ROBOT_STATE: _ClassVar[FunctionType]
 FUNCTION_TYPE_UNSPECIFIED: FunctionType
 FUNCTION_TYPE_PROXIMITY: FunctionType
 FUNCTION_TYPE_STATIONARY: FunctionType
@@ -64,6 +66,8 @@ FUNCTION_TYPE_OR: FunctionType
 FUNCTION_TYPE_NOT: FunctionType
 FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT: FunctionType
 FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT: FunctionType
+FUNCTION_TYPE_ROBOT_ANCHOR: FunctionType
+FUNCTION_TYPE_ROBOT_STATE: FunctionType
 
 class FunctionMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "function_definition_id", "config_id", "provenance")
@@ -90,18 +94,20 @@ class FunctionMessages(_message.Message):
     def __init__(self, items: _Optional[_Iterable[_Union[FunctionMessage, _Mapping]]] = ...) -> None: ...
 
 class FunctionAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "function_definition_id")
+    __slots__ = ("config_id", "name", "icon", "description", "function_definition_id", "robot_property_id")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     FUNCTION_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_PROPERTY_ID_FIELD_NUMBER: _ClassVar[int]
     config_id: str
     name: str
     icon: str
     description: str
     function_definition_id: str
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., function_definition_id: _Optional[str] = ...) -> None: ...
+    robot_property_id: str
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., function_definition_id: _Optional[str] = ..., robot_property_id: _Optional[str] = ...) -> None: ...
 
 class FunctionUpdateMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description")

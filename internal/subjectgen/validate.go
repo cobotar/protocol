@@ -14,10 +14,13 @@ var (
 )
 
 func Validate(catalog *Catalog, messageTypes map[string]struct{}) error {
-	if catalog.Version != 1 {
-		return fmt.Errorf("catalog version must be 1")
+	if catalog.Version != 2 {
+		return fmt.Errorf("catalog version must be 2")
 	}
 	if err := validateConformance("catalog", catalog.Conformance); err != nil {
+		return err
+	}
+	if err := expandRouteFamilies(catalog, messageTypes); err != nil {
 		return err
 	}
 
@@ -35,11 +38,26 @@ func Validate(catalog *Catalog, messageTypes map[string]struct{}) error {
 		return fmt.Errorf("catalog must declare at least one component")
 	}
 
-	ids := make(map[string]struct{}, len(catalog.Routes))
-	patterns := make(map[string]string, len(catalog.Routes))
-	names := make(map[string]string, len(catalog.Routes))
+	routeCount := len(catalog.Routes) + len(catalog.expandedRoutes)
+	ids := make(map[string]struct{}, routeCount)
+	patterns := make(map[string]string, routeCount)
+	names := make(map[string]string, routeCount+len(catalog.RouteFamilies))
+	for index := range catalog.RouteFamilies {
+		family := &catalog.RouteFamilies[index]
+		generatedName := pascalName(family.ID)
+		if previous, duplicate := names[generatedName]; duplicate {
+			return fmt.Errorf("route families %q and %q generate the same helper name %q", previous, family.ID, generatedName)
+		}
+		names[generatedName] = family.ID
+	}
+	routes := make([]*Route, 0, routeCount)
 	for index := range catalog.Routes {
-		route := &catalog.Routes[index]
+		routes = append(routes, &catalog.Routes[index])
+	}
+	for index := range catalog.expandedRoutes {
+		routes = append(routes, &catalog.expandedRoutes[index])
+	}
+	for _, route := range routes {
 		if err := validateRoute(route, components, messageTypes); err != nil {
 			return fmt.Errorf("route %q: %w", route.ID, err)
 		}
@@ -57,7 +75,7 @@ func Validate(catalog *Catalog, messageTypes map[string]struct{}) error {
 		}
 		names[generatedName] = route.ID
 	}
-	for _, route := range catalog.Routes {
+	for _, route := range routes {
 		if route.Lifecycle == "deprecated" {
 			if _, ok := ids[route.Replacement]; !ok {
 				return fmt.Errorf("route %q replacement %q does not exist", route.ID, route.Replacement)
@@ -66,6 +84,9 @@ func Validate(catalog *Catalog, messageTypes map[string]struct{}) error {
 	}
 
 	sort.Slice(catalog.Routes, func(i, j int) bool { return catalog.Routes[i].ID < catalog.Routes[j].ID })
+	sort.Slice(catalog.expandedRoutes, func(i, j int) bool { return catalog.expandedRoutes[i].ID < catalog.expandedRoutes[j].ID })
+	sort.Slice(catalog.RouteFamilies, func(i, j int) bool { return catalog.RouteFamilies[i].ID < catalog.RouteFamilies[j].ID })
+	sort.Slice(catalog.Entities, func(i, j int) bool { return catalog.Entities[i].Name < catalog.Entities[j].Name })
 	return nil
 }
 

@@ -18,7 +18,9 @@ NATS subjects are defined in [`subjects/catalog.yaml`](subjects/catalog.yaml). T
 catalog records each subject pattern, protobuf payload or request/reply types,
 lifecycle, conformance state, intended publishers, and consumers. Generated Go,
 C#, TypeScript, and Python helpers reject invalid concrete subject tokens and
-provide explicit wildcard builders for subscriptions.
+provide explicit wildcard builders for subscriptions. Entity route families
+generate both concrete message-aware routes and generic helpers whose entity
+argument uses the shared generated `EntityName` contract.
 
 See the generated [subject catalog and naming rules](documentation/subjects.md).
 Run `go run ./cmd/subjectgen check` to validate the catalog and verify that all

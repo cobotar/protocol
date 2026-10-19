@@ -35,42 +35,45 @@ namespace Messages.AR.V1 {
             "yAEBUghjb25maWdJZBJCCgpwcm92ZW5hbmNlGAcgASgLMhouYXIudjEuQVJD",
             "b250ZW50UHJvdmVuYW5jZUIGukgDyAEBUgpwcm92ZW5hbmNlIkAKEEZ1bmN0",
             "aW9uTWVzc2FnZXMSLAoFaXRlbXMYASADKAsyFi5hci52MS5GdW5jdGlvbk1l",
-            "c3NhZ2VSBWl0ZW1zItgBChJGdW5jdGlvbkFkZE1lc3NhZ2USKQoJY29uZmln",
+            "c3NhZ2VSBWl0ZW1zIo8CChJGdW5jdGlvbkFkZE1lc3NhZ2USKQoJY29uZmln",
             "X2lkGAEgASgJQgy6SAlyBJDxBAHIAQFSCGNvbmZpZ0lkEh0KBG5hbWUYAiAB",
             "KAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rl",
             "c2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhJCChZmdW5jdGlvbl9kZWZp",
             "bml0aW9uX2lkGAUgASgJQgy6SAlyBPjzBAHIAQFSFGZ1bmN0aW9uRGVmaW5p",
-            "dGlvbklkIocBChVGdW5jdGlvblVwZGF0ZU1lc3NhZ2USGQoCaWQYASABKAlC",
-            "CbpIBnIE0PMEAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
-            "EhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rl",
-            "c2NyaXB0aW9uKr4GCgxGdW5jdGlvblR5cGUSHQoZRlVOQ1RJT05fVFlQRV9V",
-            "TlNQRUNJRklFRBAAEhsKF0ZVTkNUSU9OX1RZUEVfUFJPWElNSVRZEAoSHAoY",
-            "RlVOQ1RJT05fVFlQRV9TVEFUSU9OQVJZEAsSFwoTRlVOQ1RJT05fVFlQRV9U",
-            "SU1FUhAVEhcKE0ZVTkNUSU9OX1RZUEVfREVMQVkQFhIZChVGVU5DVElPTl9U",
-            "WVBFX1RJTUVPVVQQFxIaChZGVU5DVElPTl9UWVBFX0RFQk9VTkNFEBgSHgoa",
-            "RlVOQ1RJT05fVFlQRV9FTEFQU0VEX1RJTUUQGRIaChZGVU5DVElPTl9UWVBF",
-            "X1NDSEVEVUxFEBoSHwobRlVOQ1RJT05fVFlQRV9QQVJUX0ZPUl9UQVNLECgS",
-            "IQodRlVOQ1RJT05fVFlQRV9JU19QQVJUX09GX1RZUEUQMhInCiNGVU5DVElP",
-            "Tl9UWVBFX0NMT1NFU1RfV09SS0FCTEVfVEFTSxAzEiEKHUZVTkNUSU9OX1RZ",
-            "UEVfU1RSSU5HX0ZPUk1BVF8xEDwSIQodRlVOQ1RJT05fVFlQRV9TVFJJTkdf",
-            "Rk9STUFUXzIQPRIeChpGVU5DVElPTl9UWVBFX1NUUklOR19FTVBUWRA+EhwK",
-            "GEZVTkNUSU9OX1RZUEVfSU5UX0ZPUk1BVBBGEh0KGUZVTkNUSU9OX1RZUEVf",
-            "SU5UX0NPTVBBUkUQRxIeChpGVU5DVElPTl9UWVBFX0ZMT0FUX0ZPUk1BVBBQ",
-            "Eh8KG0ZVTkNUSU9OX1RZUEVfRkxPQVRfQ09NUEFSRRBREh8KG0ZVTkNUSU9O",
-            "X1RZUEVfRE9VQkxFX0ZPUk1BVBBaEiAKHEZVTkNUSU9OX1RZUEVfRE9VQkxF",
-            "X0NPTVBBUkUQWxIVChFGVU5DVElPTl9UWVBFX0FORBBkEhQKEEZVTkNUSU9O",
-            "X1RZUEVfT1IQZRIVChFGVU5DVElPTl9UWVBFX05PVBBmEioKJkZVTkNUSU9O",
-            "X1RZUEVfUk9CT1RfQ09ORklHVVJBQkxFX0lOUFVUEHgSKwonRlVOQ1RJT05f",
-            "VFlQRV9ST0JPVF9DT05GSUdVUkFCTEVfT1VUUFVUEHlCiQEKCWNvbS5hci52",
-            "MUINRnVuY3Rpb25Qcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
-            "b2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYx",
-            "ygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "dGlvbklkEjUKEXJvYm90X3Byb3BlcnR5X2lkGAYgASgJQgm6SAZyBJjxBAFS",
+            "D3JvYm90UHJvcGVydHlJZCKHAQoVRnVuY3Rpb25VcGRhdGVNZXNzYWdlEhkK",
+            "AmlkGAEgASgJQgm6SAZyBNDzBAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIE",
+            "gPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9u",
+            "GAQgASgJUgtkZXNjcmlwdGlvbir9BgoMRnVuY3Rpb25UeXBlEh0KGUZVTkNU",
+            "SU9OX1RZUEVfVU5TUEVDSUZJRUQQABIbChdGVU5DVElPTl9UWVBFX1BST1hJ",
+            "TUlUWRAKEhwKGEZVTkNUSU9OX1RZUEVfU1RBVElPTkFSWRALEhcKE0ZVTkNU",
+            "SU9OX1RZUEVfVElNRVIQFRIXChNGVU5DVElPTl9UWVBFX0RFTEFZEBYSGQoV",
+            "RlVOQ1RJT05fVFlQRV9USU1FT1VUEBcSGgoWRlVOQ1RJT05fVFlQRV9ERUJP",
+            "VU5DRRAYEh4KGkZVTkNUSU9OX1RZUEVfRUxBUFNFRF9USU1FEBkSGgoWRlVO",
+            "Q1RJT05fVFlQRV9TQ0hFRFVMRRAaEh8KG0ZVTkNUSU9OX1RZUEVfUEFSVF9G",
+            "T1JfVEFTSxAoEiEKHUZVTkNUSU9OX1RZUEVfSVNfUEFSVF9PRl9UWVBFEDIS",
+            "JwojRlVOQ1RJT05fVFlQRV9DTE9TRVNUX1dPUktBQkxFX1RBU0sQMxIhCh1G",
+            "VU5DVElPTl9UWVBFX1NUUklOR19GT1JNQVRfMRA8EiEKHUZVTkNUSU9OX1RZ",
+            "UEVfU1RSSU5HX0ZPUk1BVF8yED0SHgoaRlVOQ1RJT05fVFlQRV9TVFJJTkdf",
+            "RU1QVFkQPhIcChhGVU5DVElPTl9UWVBFX0lOVF9GT1JNQVQQRhIdChlGVU5D",
+            "VElPTl9UWVBFX0lOVF9DT01QQVJFEEcSHgoaRlVOQ1RJT05fVFlQRV9GTE9B",
+            "VF9GT1JNQVQQUBIfChtGVU5DVElPTl9UWVBFX0ZMT0FUX0NPTVBBUkUQURIf",
+            "ChtGVU5DVElPTl9UWVBFX0RPVUJMRV9GT1JNQVQQWhIgChxGVU5DVElPTl9U",
+            "WVBFX0RPVUJMRV9DT01QQVJFEFsSFQoRRlVOQ1RJT05fVFlQRV9BTkQQZBIU",
+            "ChBGVU5DVElPTl9UWVBFX09SEGUSFQoRRlVOQ1RJT05fVFlQRV9OT1QQZhIq",
+            "CiZGVU5DVElPTl9UWVBFX1JPQk9UX0NPTkZJR1VSQUJMRV9JTlBVVBB4EisK",
+            "J0ZVTkNUSU9OX1RZUEVfUk9CT1RfQ09ORklHVVJBQkxFX09VVFBVVBB5Eh4K",
+            "GkZVTkNUSU9OX1RZUEVfUk9CT1RfQU5DSE9SEHoSHQoZRlVOQ1RJT05fVFlQ",
+            "RV9ST0JPVF9TVEFURRB7QokBCgljb20uYXIudjFCDUZ1bmN0aW9uUHJvdG9Q",
+            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
+            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
+            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.ProvenanceReflection.Descriptor, global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.FunctionType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionMessage), global::Messages.AR.V1.FunctionMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "FunctionDefinitionId", "ConfigId", "Provenance" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionMessages), global::Messages.AR.V1.FunctionMessages.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionAddMessage), global::Messages.AR.V1.FunctionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "FunctionDefinitionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionAddMessage), global::Messages.AR.V1.FunctionAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "FunctionDefinitionId", "RobotPropertyId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.FunctionUpdateMessage), global::Messages.AR.V1.FunctionUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null)
           }));
     }
@@ -180,6 +183,15 @@ namespace Messages.AR.V1 {
     /// Reads a configured robot output.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT")] RobotConfigurableOutput = 121,
+    /// <summary>
+    /// Outputs the anchor of one of a robot's frames (e.g. its base, end effector or tool center point), following the
+    /// robot that its robot property resolves to.
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_ROBOT_ANCHOR")] RobotAnchor = 122,
+    /// <summary>
+    /// Outputs a robot's state (robot.v1.RobotState).
+    /// </summary>
+    [pbr::OriginalName("FUNCTION_TYPE_ROBOT_STATE")] RobotState = 123,
   }
 
   #endregion
@@ -841,6 +853,7 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       functionDefinitionId_ = other.functionDefinitionId_;
+      robotPropertyId_ = other.robotPropertyId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -910,6 +923,21 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "robot_property_id" field.</summary>
+    public const int RobotPropertyIdFieldNumber = 6;
+    private string robotPropertyId_ = "";
+    /// <summary>
+    /// If the function uses a robot, this should point to a property definition of type ROBOT, e.g. a robot input slot's property, which the function's robot property then mirrors
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RobotPropertyId {
+      get { return robotPropertyId_; }
+      set {
+        robotPropertyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -930,6 +958,7 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (FunctionDefinitionId != other.FunctionDefinitionId) return false;
+      if (RobotPropertyId != other.RobotPropertyId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -942,6 +971,7 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (FunctionDefinitionId.Length != 0) hash ^= FunctionDefinitionId.GetHashCode();
+      if (RobotPropertyId.Length != 0) hash ^= RobotPropertyId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -980,6 +1010,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(42);
         output.WriteString(FunctionDefinitionId);
       }
+      if (RobotPropertyId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(RobotPropertyId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1010,6 +1044,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(42);
         output.WriteString(FunctionDefinitionId);
       }
+      if (RobotPropertyId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(RobotPropertyId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1034,6 +1072,9 @@ namespace Messages.AR.V1 {
       }
       if (FunctionDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FunctionDefinitionId);
+      }
+      if (RobotPropertyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotPropertyId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1061,6 +1102,9 @@ namespace Messages.AR.V1 {
       }
       if (other.FunctionDefinitionId.Length != 0) {
         FunctionDefinitionId = other.FunctionDefinitionId;
+      }
+      if (other.RobotPropertyId.Length != 0) {
+        RobotPropertyId = other.RobotPropertyId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1101,6 +1145,10 @@ namespace Messages.AR.V1 {
             FunctionDefinitionId = input.ReadString();
             break;
           }
+          case 50: {
+            RobotPropertyId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1138,6 +1186,10 @@ namespace Messages.AR.V1 {
           }
           case 42: {
             FunctionDefinitionId = input.ReadString();
+            break;
+          }
+          case 50: {
+            RobotPropertyId = input.ReadString();
             break;
           }
         }

@@ -77,6 +77,11 @@ const (
 	FunctionType_FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT FunctionType = 120
 	// Reads a configured robot output.
 	FunctionType_FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT FunctionType = 121
+	// Outputs the anchor of one of a robot's frames (e.g. its base, end effector or tool center point), following the
+	// robot that its robot property resolves to.
+	FunctionType_FUNCTION_TYPE_ROBOT_ANCHOR FunctionType = 122
+	// Outputs a robot's state (robot.v1.RobotState).
+	FunctionType_FUNCTION_TYPE_ROBOT_STATE FunctionType = 123
 )
 
 // Enum value maps for FunctionType.
@@ -108,6 +113,8 @@ var (
 		102: "FUNCTION_TYPE_NOT",
 		120: "FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT",
 		121: "FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT",
+		122: "FUNCTION_TYPE_ROBOT_ANCHOR",
+		123: "FUNCTION_TYPE_ROBOT_STATE",
 	}
 	FunctionType_value = map[string]int32{
 		"FUNCTION_TYPE_UNSPECIFIED":               0,
@@ -136,6 +143,8 @@ var (
 		"FUNCTION_TYPE_NOT":                       102,
 		"FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT":  120,
 		"FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT": 121,
+		"FUNCTION_TYPE_ROBOT_ANCHOR":              122,
+		"FUNCTION_TYPE_ROBOT_STATE":               123,
 	}
 )
 
@@ -309,6 +318,7 @@ type FunctionAddMessage struct {
 	Icon                 string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
 	Description          string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	FunctionDefinitionId string                 `protobuf:"bytes,5,opt,name=function_definition_id,json=functionDefinitionId,proto3" json:"function_definition_id,omitempty"`
+	RobotPropertyId      string                 `protobuf:"bytes,6,opt,name=robot_property_id,json=robotPropertyId,proto3" json:"robot_property_id,omitempty"` // If the function uses a robot, this should point to a property definition of type ROBOT, e.g. a robot input slot's property, which the function's robot property then mirrors
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -374,6 +384,13 @@ func (x *FunctionAddMessage) GetDescription() string {
 func (x *FunctionAddMessage) GetFunctionDefinitionId() string {
 	if x != nil {
 		return x.FunctionDefinitionId
+	}
+	return ""
+}
+
+func (x *FunctionAddMessage) GetRobotPropertyId() string {
+	if x != nil {
+		return x.RobotPropertyId
 	}
 	return ""
 }
@@ -462,18 +479,19 @@ const file_ar_v1_function_proto_rawDesc = "" +
 	"provenance\x18\a \x01(\v2\x1a.ar.v1.ARContentProvenanceB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"provenance\"@\n" +
 	"\x10FunctionMessages\x12,\n" +
-	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\xd8\x01\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.ar.v1.FunctionMessageR\x05items\"\x8f\x02\n" +
 	"\x12FunctionAddMessage\x12)\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12B\n" +
-	"\x16function_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x14functionDefinitionId\"\x87\x01\n" +
+	"\x16function_definition_id\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x14functionDefinitionId\x125\n" +
+	"\x11robot_property_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x98\xf1\x04\x01R\x0frobotPropertyId\"\x87\x01\n" +
 	"\x15FunctionUpdateMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription*\xbe\x06\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription*\xfd\x06\n" +
 	"\fFunctionType\x12\x1d\n" +
 	"\x19FUNCTION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17FUNCTION_TYPE_PROXIMITY\x10\n" +
@@ -501,7 +519,9 @@ const file_ar_v1_function_proto_rawDesc = "" +
 	"\x10FUNCTION_TYPE_OR\x10e\x12\x15\n" +
 	"\x11FUNCTION_TYPE_NOT\x10f\x12*\n" +
 	"&FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10x\x12+\n" +
-	"'FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT\x10yB\x89\x01\n" +
+	"'FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT\x10y\x12\x1e\n" +
+	"\x1aFUNCTION_TYPE_ROBOT_ANCHOR\x10z\x12\x1d\n" +
+	"\x19FUNCTION_TYPE_ROBOT_STATE\x10{B\x89\x01\n" +
 	"\tcom.ar.v1B\rFunctionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

@@ -7,9 +7,76 @@ import (
 	"strings"
 )
 
+type EntityName string
+
+const (
+	EntityAction                 EntityName = "action"
+	EntityActionDefinition       EntityName = "action_definition"
+	EntityActorAvailability      EntityName = "actor_availability"
+	EntityActorSkill             EntityName = "actor_skill"
+	EntityArConfig               EntityName = "ar_config"
+	EntityArConfigBinding        EntityName = "ar_config_binding"
+	EntityAssetAdapterDefinition EntityName = "asset_adapter_definition"
+	EntityAssetDefinition        EntityName = "asset_definition"
+	EntityAssetInstance          EntityName = "asset_instance"
+	EntityCell                   EntityName = "cell"
+	EntityContainerDefinition    EntityName = "container_definition"
+	EntityContainerInstance      EntityName = "container_instance"
+	EntityDevice                 EntityName = "device"
+	EntityExecutionEvidence      EntityName = "execution_evidence"
+	EntityFeedback               EntityName = "feedback"
+	EntityFeedbackDefinition     EntityName = "feedback_definition"
+	EntityFunction               EntityName = "function"
+	EntityFunctionDefinition     EntityName = "function_definition"
+	EntityLine                   EntityName = "line"
+	EntityMarker                 EntityName = "marker"
+	EntityModel                  EntityName = "model"
+	EntityPartDefinition         EntityName = "part_definition"
+	EntityPartInstance           EntityName = "part_instance"
+	EntityPresentationStrategy   EntityName = "presentation_strategy"
+	EntityProcessRecipe          EntityName = "process_recipe"
+	EntityProcessRun             EntityName = "process_run"
+	EntityProcessRunDefinitions  EntityName = "process_run_definitions"
+	EntityProduct                EntityName = "product"
+	EntityPropertyDefinition     EntityName = "property_definition"
+	EntityPropertyInstance       EntityName = "property_instance"
+	EntityRobotAdapterDefinition EntityName = "robot_adapter_definition"
+	EntityRobotDefinition        EntityName = "robot_definition"
+	EntityRobotInstance          EntityName = "robot_instance"
+	EntitySequenceDefinition     EntityName = "sequence_definition"
+	EntitySequenceRun            EntityName = "sequence_run"
+	EntitySkill                  EntityName = "skill"
+	EntityStation                EntityName = "station"
+	EntityTaskDefinition         EntityName = "task_definition"
+	EntityTaskRun                EntityName = "task_run"
+	EntityToolDefinition         EntityName = "tool_definition"
+	EntityToolInstance           EntityName = "tool_instance"
+	EntityValidityPolicy         EntityName = "validity_policy"
+	EntityWorker                 EntityName = "worker"
+	EntityZone                   EntityName = "zone"
+)
+
+var EntitySets = map[string][]EntityName{
+	"creatable": {EntityAction, EntityActorSkill, EntityArConfig, EntityArConfigBinding, EntityAssetDefinition, EntityAssetInstance, EntityCell, EntityContainerDefinition, EntityContainerInstance, EntityDevice, EntityExecutionEvidence, EntityFeedback, EntityFunction, EntityLine, EntityMarker, EntityModel, EntityPartDefinition, EntityPartInstance, EntityPresentationStrategy, EntityProcessRecipe, EntityProduct, EntityPropertyDefinition, EntityPropertyInstance, EntityRobotDefinition, EntityRobotInstance, EntitySequenceDefinition, EntitySkill, EntityStation, EntityTaskDefinition, EntityToolDefinition, EntityToolInstance, EntityValidityPolicy, EntityWorker, EntityZone},
+	"evented":   {EntityAction, EntityActionDefinition, EntityActorAvailability, EntityActorSkill, EntityArConfig, EntityArConfigBinding, EntityAssetAdapterDefinition, EntityAssetDefinition, EntityAssetInstance, EntityCell, EntityContainerDefinition, EntityContainerInstance, EntityDevice, EntityExecutionEvidence, EntityFeedback, EntityFeedbackDefinition, EntityFunction, EntityFunctionDefinition, EntityLine, EntityMarker, EntityModel, EntityPartDefinition, EntityPartInstance, EntityPresentationStrategy, EntityProcessRecipe, EntityProcessRun, EntityProduct, EntityPropertyDefinition, EntityPropertyInstance, EntityRobotAdapterDefinition, EntityRobotDefinition, EntityRobotInstance, EntitySequenceDefinition, EntitySequenceRun, EntitySkill, EntityStation, EntityTaskDefinition, EntityTaskRun, EntityToolDefinition, EntityToolInstance, EntityValidityPolicy, EntityWorker, EntityZone},
+	"mutable":   {EntityAction, EntityActorSkill, EntityArConfig, EntityArConfigBinding, EntityAssetDefinition, EntityAssetInstance, EntityCell, EntityContainerDefinition, EntityContainerInstance, EntityDevice, EntityFeedback, EntityFunction, EntityLine, EntityMarker, EntityModel, EntityPartDefinition, EntityPartInstance, EntityPresentationStrategy, EntityProcessRecipe, EntityProduct, EntityPropertyDefinition, EntityPropertyInstance, EntityRobotDefinition, EntityRobotInstance, EntitySequenceDefinition, EntitySkill, EntityStation, EntityTaskDefinition, EntityToolDefinition, EntityToolInstance, EntityValidityPolicy, EntityWorker, EntityZone},
+	"readable":  {EntityAction, EntityActionDefinition, EntityActorAvailability, EntityActorSkill, EntityArConfig, EntityArConfigBinding, EntityAssetAdapterDefinition, EntityAssetDefinition, EntityAssetInstance, EntityCell, EntityContainerDefinition, EntityContainerInstance, EntityDevice, EntityExecutionEvidence, EntityFeedback, EntityFeedbackDefinition, EntityFunction, EntityFunctionDefinition, EntityLine, EntityMarker, EntityModel, EntityPartDefinition, EntityPartInstance, EntityPresentationStrategy, EntityProcessRecipe, EntityProcessRun, EntityProduct, EntityPropertyDefinition, EntityPropertyInstance, EntityRobotAdapterDefinition, EntityRobotDefinition, EntityRobotInstance, EntitySequenceDefinition, EntitySequenceRun, EntitySkill, EntityStation, EntityTaskDefinition, EntityTaskRun, EntityToolDefinition, EntityToolInstance, EntityValidityPolicy, EntityWorker, EntityZone},
+}
+
+func validateEntitySet(family, set string, entity EntityName) error {
+	for _, allowed := range EntitySets[set] {
+		if entity == allowed {
+			return nil
+		}
+	}
+	return fmt.Errorf("entity %q is not supported by route family %s", entity, family)
+}
+
 type Definition struct {
 	ID            string
 	Pattern       string
+	Family        string
+	Entity        string
 	Lifecycle     string
 	Conformance   string
 	Interaction   string
@@ -24,25 +91,409 @@ type Definition struct {
 }
 
 var Catalog = []Definition{
-	{ID: "command.robot.visibility", Pattern: "command.robot.visibility.{robot_instance_id}", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotVisibilityMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"web_cobotar"}, Consumers: []string{"holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "command.storage.clear", Pattern: "command.storage.clear", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "service.v1.StorageClearRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
-	{ID: "command.storage.dump", Pattern: "command.storage.dump", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "service.v1.StorageDumpRequest", EmptyRequest: false, SuccessReply: "service.v1.StorageDumpResult", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
-	{ID: "command.storage.load", Pattern: "command.storage.load", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "service.v1.StorageLoadRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
-	{ID: "command.task_run.progress", Pattern: "command.task_run.progress", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "runtime.v1.TaskProgressUpdate", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "edit.entity.reset", Pattern: "edit.{entity}.reset.{child}", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "edit.model.add", Pattern: "edit.model.add", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ModelArtifact", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"fusion360_exporter", "web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "edit.part_definition.add", Pattern: "edit.part_definition.add", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.PartDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"fusion360_exporter", "web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "edit.product.add", Pattern: "edit.product.add", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.ProductDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"fusion360_exporter", "web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "get.asset_adapter.info", Pattern: "get.asset_adapter.info.{asset_instance_id}", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.AssetAdapterInfoMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#65"},
-	{ID: "get.asset_adapter_definition.all", Pattern: "get.asset_adapter_definition.all", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.AssetAdapterDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#65"},
-	{ID: "get.asset_adapter_definition.one", Pattern: "get.asset_adapter_definition.one", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetAdapterDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#65"},
-	{ID: "get.robot_adapter.info", Pattern: "get.robot_adapter.info.{robot_instance_id}", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "robot.v1.RobotAdapterInfoMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#14"},
-	{ID: "get.robot_adapter_definition.all", Pattern: "get.robot_adapter_definition.all", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.RobotAdapterDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#49"},
-	{ID: "get.robot_adapter_definition.one", Pattern: "get.robot_adapter_definition.one", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotAdapterDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#49"},
-	{ID: "get.storage.info", Pattern: "get.storage.info", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "service.v1.StorageInfo", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
-	{ID: "plan.robot.path", Pattern: "plan.robot.path.{robot_instance_id}.{plan_id}", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.PathMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "telemetry.robot.controller_status", Pattern: "telemetry.robot.controller_status.{robot_instance_id}", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotControllerStatusMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
-	{ID: "telemetry.robot.end_effector", Pattern: "telemetry.robot.end_effector.{robot_instance_id}", Lifecycle: "planned", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.EndEffectorStateMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "command.robot.visibility", Pattern: "command.robot.visibility.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotVisibilityMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"web_cobotar"}, Consumers: []string{"holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "command.storage.clear", Pattern: "command.storage.clear", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "service.v1.StorageClearRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
+	{ID: "command.storage.dump", Pattern: "command.storage.dump", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "service.v1.StorageDumpRequest", EmptyRequest: false, SuccessReply: "service.v1.StorageDumpResult", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
+	{ID: "command.storage.load", Pattern: "command.storage.load", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "service.v1.StorageLoadRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
+	{ID: "command.task_run.progress", Pattern: "command.task_run.progress", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "runtime.v1.TaskProgressUpdate", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.entity.reset", Pattern: "edit.{entity}.reset.{child}", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_adapter.info", Pattern: "get.asset_adapter.info.{asset_instance_id}", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.AssetAdapterInfoMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#65"},
+	{ID: "get.robot_adapter.info", Pattern: "get.robot_adapter.info.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "robot.v1.RobotAdapterInfoMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#14"},
+	{ID: "get.storage.info", Pattern: "get.storage.info", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "service.v1.StorageInfo", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
+	{ID: "plan.robot.path", Pattern: "plan.robot.path.{robot_instance_id}.{plan_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.PathMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "telemetry.robot.controller_status", Pattern: "telemetry.robot.controller_status.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotControllerStatusMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "telemetry.robot.end_effector", Pattern: "telemetry.robot.end_effector.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.EndEffectorStateMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.action.add", Pattern: "edit.action.add", Family: "edit.entity.add", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.ActionAddMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.action.clone", Pattern: "edit.action.clone", Family: "edit.entity.clone", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.action.remove", Pattern: "edit.action.remove", Family: "edit.entity.remove", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.action.update", Pattern: "edit.action.update", Family: "edit.entity.update", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.ActionUpdateMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.actor_skill.add", Pattern: "edit.actor_skill.add", Family: "edit.entity.add", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "capability.v1.ActorSkill", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.actor_skill.clone", Pattern: "edit.actor_skill.clone", Family: "edit.entity.clone", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.actor_skill.remove", Pattern: "edit.actor_skill.remove", Family: "edit.entity.remove", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.actor_skill.update", Pattern: "edit.actor_skill.update", Family: "edit.entity.update", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "capability.v1.ActorSkill", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config.add", Pattern: "edit.ar_config.add", Family: "edit.entity.add", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.ARConfigAddMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config.clone", Pattern: "edit.ar_config.clone", Family: "edit.entity.clone", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config.remove", Pattern: "edit.ar_config.remove", Family: "edit.entity.remove", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config.update", Pattern: "edit.ar_config.update", Family: "edit.entity.update", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.ARConfigUpdateMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config_binding.add", Pattern: "edit.ar_config_binding.add", Family: "edit.entity.add", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.ARConfigBindingMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config_binding.clone", Pattern: "edit.ar_config_binding.clone", Family: "edit.entity.clone", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config_binding.remove", Pattern: "edit.ar_config_binding.remove", Family: "edit.entity.remove", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.ar_config_binding.update", Pattern: "edit.ar_config_binding.update", Family: "edit.entity.update", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.ARConfigBindingMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_definition.add", Pattern: "edit.asset_definition.add", Family: "edit.entity.add", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.AssetDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_definition.clone", Pattern: "edit.asset_definition.clone", Family: "edit.entity.clone", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_definition.remove", Pattern: "edit.asset_definition.remove", Family: "edit.entity.remove", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_definition.update", Pattern: "edit.asset_definition.update", Family: "edit.entity.update", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.AssetDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_instance.add", Pattern: "edit.asset_instance.add", Family: "edit.entity.add", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.AssetInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_instance.clone", Pattern: "edit.asset_instance.clone", Family: "edit.entity.clone", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_instance.remove", Pattern: "edit.asset_instance.remove", Family: "edit.entity.remove", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.asset_instance.update", Pattern: "edit.asset_instance.update", Family: "edit.entity.update", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.AssetInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.cell.add", Pattern: "edit.cell.add", Family: "edit.entity.add", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.CellDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.cell.clone", Pattern: "edit.cell.clone", Family: "edit.entity.clone", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.cell.remove", Pattern: "edit.cell.remove", Family: "edit.entity.remove", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.cell.update", Pattern: "edit.cell.update", Family: "edit.entity.update", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.CellDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_definition.add", Pattern: "edit.container_definition.add", Family: "edit.entity.add", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ContainerDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_definition.clone", Pattern: "edit.container_definition.clone", Family: "edit.entity.clone", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_definition.remove", Pattern: "edit.container_definition.remove", Family: "edit.entity.remove", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_definition.update", Pattern: "edit.container_definition.update", Family: "edit.entity.update", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ContainerDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_instance.add", Pattern: "edit.container_instance.add", Family: "edit.entity.add", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ContainerInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_instance.clone", Pattern: "edit.container_instance.clone", Family: "edit.entity.clone", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_instance.remove", Pattern: "edit.container_instance.remove", Family: "edit.entity.remove", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.container_instance.update", Pattern: "edit.container_instance.update", Family: "edit.entity.update", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ContainerInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.device.add", Pattern: "edit.device.add", Family: "edit.entity.add", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.DeviceMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.device.clone", Pattern: "edit.device.clone", Family: "edit.entity.clone", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.device.remove", Pattern: "edit.device.remove", Family: "edit.entity.remove", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.device.update", Pattern: "edit.device.update", Family: "edit.entity.update", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.DeviceMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.execution_evidence.add", Pattern: "edit.execution_evidence.add", Family: "edit.entity.add", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "runtime.v1.ExecutionEvidence", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.feedback.add", Pattern: "edit.feedback.add", Family: "edit.entity.add", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.FeedbackAddMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.feedback.clone", Pattern: "edit.feedback.clone", Family: "edit.entity.clone", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.feedback.remove", Pattern: "edit.feedback.remove", Family: "edit.entity.remove", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.feedback.update", Pattern: "edit.feedback.update", Family: "edit.entity.update", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.FeedbackUpdateMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.function.add", Pattern: "edit.function.add", Family: "edit.entity.add", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.FunctionAddMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.function.clone", Pattern: "edit.function.clone", Family: "edit.entity.clone", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.function.remove", Pattern: "edit.function.remove", Family: "edit.entity.remove", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.function.update", Pattern: "edit.function.update", Family: "edit.entity.update", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.FunctionUpdateMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.line.add", Pattern: "edit.line.add", Family: "edit.entity.add", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.LineDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.line.clone", Pattern: "edit.line.clone", Family: "edit.entity.clone", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.line.remove", Pattern: "edit.line.remove", Family: "edit.entity.remove", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.line.update", Pattern: "edit.line.update", Family: "edit.entity.update", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.LineDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.marker.add", Pattern: "edit.marker.add", Family: "edit.entity.add", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.MarkerInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.marker.clone", Pattern: "edit.marker.clone", Family: "edit.entity.clone", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.marker.remove", Pattern: "edit.marker.remove", Family: "edit.entity.remove", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.marker.update", Pattern: "edit.marker.update", Family: "edit.entity.update", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.MarkerInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.model.add", Pattern: "edit.model.add", Family: "edit.entity.add", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ModelArtifact", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"fusion360_exporter", "web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.model.clone", Pattern: "edit.model.clone", Family: "edit.entity.clone", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.model.remove", Pattern: "edit.model.remove", Family: "edit.entity.remove", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.model.update", Pattern: "edit.model.update", Family: "edit.entity.update", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ModelArtifact", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_definition.add", Pattern: "edit.part_definition.add", Family: "edit.entity.add", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.PartDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"fusion360_exporter", "web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_definition.clone", Pattern: "edit.part_definition.clone", Family: "edit.entity.clone", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_definition.remove", Pattern: "edit.part_definition.remove", Family: "edit.entity.remove", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_definition.update", Pattern: "edit.part_definition.update", Family: "edit.entity.update", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.PartDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_instance.add", Pattern: "edit.part_instance.add", Family: "edit.entity.add", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.PartInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_instance.clone", Pattern: "edit.part_instance.clone", Family: "edit.entity.clone", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_instance.remove", Pattern: "edit.part_instance.remove", Family: "edit.entity.remove", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.part_instance.update", Pattern: "edit.part_instance.update", Family: "edit.entity.update", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.PartInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.presentation_strategy.add", Pattern: "edit.presentation_strategy.add", Family: "edit.entity.add", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.PresentationStrategyAdd", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.presentation_strategy.clone", Pattern: "edit.presentation_strategy.clone", Family: "edit.entity.clone", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.presentation_strategy.remove", Pattern: "edit.presentation_strategy.remove", Family: "edit.entity.remove", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.presentation_strategy.update", Pattern: "edit.presentation_strategy.update", Family: "edit.entity.update", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "ar.v1.PresentationStrategy", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.process_recipe.add", Pattern: "edit.process_recipe.add", Family: "edit.entity.add", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "process.v1.CreateProcessRecipe", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.process_recipe.clone", Pattern: "edit.process_recipe.clone", Family: "edit.entity.clone", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.process_recipe.remove", Pattern: "edit.process_recipe.remove", Family: "edit.entity.remove", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.process_recipe.update", Pattern: "edit.process_recipe.update", Family: "edit.entity.update", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "process.v1.ProcessRecipe", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.product.add", Pattern: "edit.product.add", Family: "edit.entity.add", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.ProductDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"fusion360_exporter", "web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.product.clone", Pattern: "edit.product.clone", Family: "edit.entity.clone", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.product.remove", Pattern: "edit.product.remove", Family: "edit.entity.remove", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.product.update", Pattern: "edit.product.update", Family: "edit.entity.update", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "product.v1.ProductDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_definition.add", Pattern: "edit.property_definition.add", Family: "edit.entity.add", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CreatePropertyMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_definition.clone", Pattern: "edit.property_definition.clone", Family: "edit.entity.clone", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_definition.remove", Pattern: "edit.property_definition.remove", Family: "edit.entity.remove", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_definition.update", Pattern: "edit.property_definition.update", Family: "edit.entity.update", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.PropertyDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_instance.add", Pattern: "edit.property_instance.add", Family: "edit.entity.add", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.PropertyInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_instance.clone", Pattern: "edit.property_instance.clone", Family: "edit.entity.clone", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_instance.remove", Pattern: "edit.property_instance.remove", Family: "edit.entity.remove", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.property_instance.update", Pattern: "edit.property_instance.update", Family: "edit.entity.update", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.PropertyInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_definition.add", Pattern: "edit.robot_definition.add", Family: "edit.entity.add", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.RobotDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_definition.clone", Pattern: "edit.robot_definition.clone", Family: "edit.entity.clone", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_definition.remove", Pattern: "edit.robot_definition.remove", Family: "edit.entity.remove", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_definition.update", Pattern: "edit.robot_definition.update", Family: "edit.entity.update", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.RobotDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_instance.add", Pattern: "edit.robot_instance.add", Family: "edit.entity.add", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.RobotInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_instance.clone", Pattern: "edit.robot_instance.clone", Family: "edit.entity.clone", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_instance.remove", Pattern: "edit.robot_instance.remove", Family: "edit.entity.remove", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.robot_instance.update", Pattern: "edit.robot_instance.update", Family: "edit.entity.update", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.RobotInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.sequence_definition.add", Pattern: "edit.sequence_definition.add", Family: "edit.entity.add", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "process.v1.SequenceDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.sequence_definition.clone", Pattern: "edit.sequence_definition.clone", Family: "edit.entity.clone", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.sequence_definition.remove", Pattern: "edit.sequence_definition.remove", Family: "edit.entity.remove", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.sequence_definition.update", Pattern: "edit.sequence_definition.update", Family: "edit.entity.update", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "process.v1.SequenceDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.skill.add", Pattern: "edit.skill.add", Family: "edit.entity.add", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "capability.v1.SkillDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.skill.clone", Pattern: "edit.skill.clone", Family: "edit.entity.clone", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.skill.remove", Pattern: "edit.skill.remove", Family: "edit.entity.remove", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.skill.update", Pattern: "edit.skill.update", Family: "edit.entity.update", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "capability.v1.SkillDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.station.add", Pattern: "edit.station.add", Family: "edit.entity.add", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.StationDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.station.clone", Pattern: "edit.station.clone", Family: "edit.entity.clone", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.station.remove", Pattern: "edit.station.remove", Family: "edit.entity.remove", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.station.update", Pattern: "edit.station.update", Family: "edit.entity.update", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.StationDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.task_definition.add", Pattern: "edit.task_definition.add", Family: "edit.entity.add", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "process.v1.TaskDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.task_definition.clone", Pattern: "edit.task_definition.clone", Family: "edit.entity.clone", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.task_definition.remove", Pattern: "edit.task_definition.remove", Family: "edit.entity.remove", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.task_definition.update", Pattern: "edit.task_definition.update", Family: "edit.entity.update", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "process.v1.TaskDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_definition.add", Pattern: "edit.tool_definition.add", Family: "edit.entity.add", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ToolDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_definition.clone", Pattern: "edit.tool_definition.clone", Family: "edit.entity.clone", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_definition.remove", Pattern: "edit.tool_definition.remove", Family: "edit.entity.remove", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_definition.update", Pattern: "edit.tool_definition.update", Family: "edit.entity.update", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ToolDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_instance.add", Pattern: "edit.tool_instance.add", Family: "edit.entity.add", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ToolInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_instance.clone", Pattern: "edit.tool_instance.clone", Family: "edit.entity.clone", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_instance.remove", Pattern: "edit.tool_instance.remove", Family: "edit.entity.remove", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.tool_instance.update", Pattern: "edit.tool_instance.update", Family: "edit.entity.update", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.ToolInstance", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.validity_policy.add", Pattern: "edit.validity_policy.add", Family: "edit.entity.add", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "capability.v1.ValidityPolicy", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.validity_policy.clone", Pattern: "edit.validity_policy.clone", Family: "edit.entity.clone", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.validity_policy.remove", Pattern: "edit.validity_policy.remove", Family: "edit.entity.remove", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.validity_policy.update", Pattern: "edit.validity_policy.update", Family: "edit.entity.update", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "capability.v1.ValidityPolicy", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.worker.add", Pattern: "edit.worker.add", Family: "edit.entity.add", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.WorkerDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.worker.clone", Pattern: "edit.worker.clone", Family: "edit.entity.clone", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.worker.remove", Pattern: "edit.worker.remove", Family: "edit.entity.remove", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.worker.update", Pattern: "edit.worker.update", Family: "edit.entity.update", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "resources.v1.WorkerDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.zone.add", Pattern: "edit.zone.add", Family: "edit.entity.add", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "geometry.v1.ZoneDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.zone.clone", Pattern: "edit.zone.clone", Family: "edit.entity.clone", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.CloneMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.zone.remove", Pattern: "edit.zone.remove", Family: "edit.entity.remove", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.DeleteMessage", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "edit.zone.update", Pattern: "edit.zone.update", Family: "edit.entity.update", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "geometry.v1.ZoneDefinition", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.action.added", Pattern: "event.action.added.{entity_id}", Family: "event.entity.added", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ActionMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.action.removed", Pattern: "event.action.removed.{entity_id}", Family: "event.entity.removed", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ActionMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.action.updated", Pattern: "event.action.updated.{entity_id}", Family: "event.entity.updated", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ActionMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.action_definition.added", Pattern: "event.action_definition.added.{entity_id}", Family: "event.entity.added", Entity: "action_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ActionDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.action_definition.removed", Pattern: "event.action_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "action_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ActionDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.action_definition.updated", Pattern: "event.action_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "action_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ActionDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.actor_availability.added", Pattern: "event.actor_availability.added.{entity_id}", Family: "event.entity.added", Entity: "actor_availability", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ActorAvailability", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.actor_availability.removed", Pattern: "event.actor_availability.removed.{entity_id}", Family: "event.entity.removed", Entity: "actor_availability", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ActorAvailability", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.actor_availability.updated", Pattern: "event.actor_availability.updated.{entity_id}", Family: "event.entity.updated", Entity: "actor_availability", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ActorAvailability", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.actor_skill.added", Pattern: "event.actor_skill.added.{entity_id}", Family: "event.entity.added", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.ActorSkill", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.actor_skill.removed", Pattern: "event.actor_skill.removed.{entity_id}", Family: "event.entity.removed", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.ActorSkill", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.actor_skill.updated", Pattern: "event.actor_skill.updated.{entity_id}", Family: "event.entity.updated", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.ActorSkill", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.ar_config.added", Pattern: "event.ar_config.added.{entity_id}", Family: "event.entity.added", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ARConfigMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.ar_config.removed", Pattern: "event.ar_config.removed.{entity_id}", Family: "event.entity.removed", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ARConfigMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.ar_config.updated", Pattern: "event.ar_config.updated.{entity_id}", Family: "event.entity.updated", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ARConfigMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.ar_config_binding.added", Pattern: "event.ar_config_binding.added.{entity_id}", Family: "event.entity.added", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ARConfigBindingMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.ar_config_binding.removed", Pattern: "event.ar_config_binding.removed.{entity_id}", Family: "event.entity.removed", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ARConfigBindingMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.ar_config_binding.updated", Pattern: "event.ar_config_binding.updated.{entity_id}", Family: "event.entity.updated", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.ARConfigBindingMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_adapter_definition.added", Pattern: "event.asset_adapter_definition.added.{entity_id}", Family: "event.entity.added", Entity: "asset_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetAdapterDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_adapter_definition.removed", Pattern: "event.asset_adapter_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "asset_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetAdapterDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_adapter_definition.updated", Pattern: "event.asset_adapter_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "asset_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetAdapterDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_definition.added", Pattern: "event.asset_definition.added.{entity_id}", Family: "event.entity.added", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_definition.removed", Pattern: "event.asset_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_definition.updated", Pattern: "event.asset_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_instance.added", Pattern: "event.asset_instance.added.{entity_id}", Family: "event.entity.added", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_instance.removed", Pattern: "event.asset_instance.removed.{entity_id}", Family: "event.entity.removed", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.asset_instance.updated", Pattern: "event.asset_instance.updated.{entity_id}", Family: "event.entity.updated", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.cell.added", Pattern: "event.cell.added.{entity_id}", Family: "event.entity.added", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.CellDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.cell.removed", Pattern: "event.cell.removed.{entity_id}", Family: "event.entity.removed", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.CellDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.cell.updated", Pattern: "event.cell.updated.{entity_id}", Family: "event.entity.updated", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.CellDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.container_definition.added", Pattern: "event.container_definition.added.{entity_id}", Family: "event.entity.added", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ContainerDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.container_definition.removed", Pattern: "event.container_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ContainerDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.container_definition.updated", Pattern: "event.container_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ContainerDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.container_instance.added", Pattern: "event.container_instance.added.{entity_id}", Family: "event.entity.added", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ContainerInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.container_instance.removed", Pattern: "event.container_instance.removed.{entity_id}", Family: "event.entity.removed", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ContainerInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.container_instance.updated", Pattern: "event.container_instance.updated.{entity_id}", Family: "event.entity.updated", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ContainerInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.device.added", Pattern: "event.device.added.{entity_id}", Family: "event.entity.added", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.DeviceMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.device.removed", Pattern: "event.device.removed.{entity_id}", Family: "event.entity.removed", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.DeviceMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.device.updated", Pattern: "event.device.updated.{entity_id}", Family: "event.entity.updated", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.DeviceMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.execution_evidence.added", Pattern: "event.execution_evidence.added.{entity_id}", Family: "event.entity.added", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ExecutionEvidence", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.execution_evidence.removed", Pattern: "event.execution_evidence.removed.{entity_id}", Family: "event.entity.removed", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ExecutionEvidence", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.execution_evidence.updated", Pattern: "event.execution_evidence.updated.{entity_id}", Family: "event.entity.updated", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ExecutionEvidence", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.feedback.added", Pattern: "event.feedback.added.{entity_id}", Family: "event.entity.added", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FeedbackMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.feedback.removed", Pattern: "event.feedback.removed.{entity_id}", Family: "event.entity.removed", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FeedbackMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.feedback.updated", Pattern: "event.feedback.updated.{entity_id}", Family: "event.entity.updated", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FeedbackMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.feedback_definition.added", Pattern: "event.feedback_definition.added.{entity_id}", Family: "event.entity.added", Entity: "feedback_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FeedbackDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.feedback_definition.removed", Pattern: "event.feedback_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "feedback_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FeedbackDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.feedback_definition.updated", Pattern: "event.feedback_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "feedback_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FeedbackDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.function.added", Pattern: "event.function.added.{entity_id}", Family: "event.entity.added", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FunctionMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.function.removed", Pattern: "event.function.removed.{entity_id}", Family: "event.entity.removed", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FunctionMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.function.updated", Pattern: "event.function.updated.{entity_id}", Family: "event.entity.updated", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FunctionMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.function_definition.added", Pattern: "event.function_definition.added.{entity_id}", Family: "event.entity.added", Entity: "function_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FunctionDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.function_definition.removed", Pattern: "event.function_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "function_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FunctionDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.function_definition.updated", Pattern: "event.function_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "function_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.FunctionDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.line.added", Pattern: "event.line.added.{entity_id}", Family: "event.entity.added", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.LineDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.line.removed", Pattern: "event.line.removed.{entity_id}", Family: "event.entity.removed", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.LineDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.line.updated", Pattern: "event.line.updated.{entity_id}", Family: "event.entity.updated", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.LineDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.marker.added", Pattern: "event.marker.added.{entity_id}", Family: "event.entity.added", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.MarkerInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.marker.removed", Pattern: "event.marker.removed.{entity_id}", Family: "event.entity.removed", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.MarkerInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.marker.updated", Pattern: "event.marker.updated.{entity_id}", Family: "event.entity.updated", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.MarkerInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.model.added", Pattern: "event.model.added.{entity_id}", Family: "event.entity.added", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ModelArtifact", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.model.removed", Pattern: "event.model.removed.{entity_id}", Family: "event.entity.removed", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ModelArtifact", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.model.updated", Pattern: "event.model.updated.{entity_id}", Family: "event.entity.updated", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ModelArtifact", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.part_definition.added", Pattern: "event.part_definition.added.{entity_id}", Family: "event.entity.added", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.PartDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.part_definition.removed", Pattern: "event.part_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.PartDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.part_definition.updated", Pattern: "event.part_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.PartDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.part_instance.added", Pattern: "event.part_instance.added.{entity_id}", Family: "event.entity.added", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.PartInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.part_instance.removed", Pattern: "event.part_instance.removed.{entity_id}", Family: "event.entity.removed", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.PartInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.part_instance.updated", Pattern: "event.part_instance.updated.{entity_id}", Family: "event.entity.updated", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.PartInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.presentation_strategy.added", Pattern: "event.presentation_strategy.added.{entity_id}", Family: "event.entity.added", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.PresentationStrategy", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.presentation_strategy.removed", Pattern: "event.presentation_strategy.removed.{entity_id}", Family: "event.entity.removed", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.PresentationStrategy", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.presentation_strategy.updated", Pattern: "event.presentation_strategy.updated.{entity_id}", Family: "event.entity.updated", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "ar.v1.PresentationStrategy", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.process_recipe.added", Pattern: "event.process_recipe.added.{entity_id}", Family: "event.entity.added", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.ProcessRecipe", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.process_recipe.removed", Pattern: "event.process_recipe.removed.{entity_id}", Family: "event.entity.removed", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.ProcessRecipe", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.process_recipe.updated", Pattern: "event.process_recipe.updated.{entity_id}", Family: "event.entity.updated", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.ProcessRecipe", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.process_run.added", Pattern: "event.process_run.added.{entity_id}", Family: "event.entity.added", Entity: "process_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ProcessRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.process_run.removed", Pattern: "event.process_run.removed.{entity_id}", Family: "event.entity.removed", Entity: "process_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ProcessRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.process_run.updated", Pattern: "event.process_run.updated.{entity_id}", Family: "event.entity.updated", Entity: "process_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.ProcessRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.product.added", Pattern: "event.product.added.{entity_id}", Family: "event.entity.added", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.ProductDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.product.removed", Pattern: "event.product.removed.{entity_id}", Family: "event.entity.removed", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.ProductDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.product.updated", Pattern: "event.product.updated.{entity_id}", Family: "event.entity.updated", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "product.v1.ProductDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.property_definition.added", Pattern: "event.property_definition.added.{entity_id}", Family: "event.entity.added", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "common.v1.PropertyDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.property_definition.removed", Pattern: "event.property_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "common.v1.PropertyDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.property_definition.updated", Pattern: "event.property_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "common.v1.PropertyDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.property_instance.added", Pattern: "event.property_instance.added.{entity_id}", Family: "event.entity.added", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "common.v1.PropertyInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.property_instance.removed", Pattern: "event.property_instance.removed.{entity_id}", Family: "event.entity.removed", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "common.v1.PropertyInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.property_instance.updated", Pattern: "event.property_instance.updated.{entity_id}", Family: "event.entity.updated", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "common.v1.PropertyInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_adapter_definition.added", Pattern: "event.robot_adapter_definition.added.{entity_id}", Family: "event.entity.added", Entity: "robot_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotAdapterDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_adapter_definition.removed", Pattern: "event.robot_adapter_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "robot_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotAdapterDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_adapter_definition.updated", Pattern: "event.robot_adapter_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "robot_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotAdapterDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_definition.added", Pattern: "event.robot_definition.added.{entity_id}", Family: "event.entity.added", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_definition.removed", Pattern: "event.robot_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_definition.updated", Pattern: "event.robot_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_instance.added", Pattern: "event.robot_instance.added.{entity_id}", Family: "event.entity.added", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_instance.removed", Pattern: "event.robot_instance.removed.{entity_id}", Family: "event.entity.removed", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.robot_instance.updated", Pattern: "event.robot_instance.updated.{entity_id}", Family: "event.entity.updated", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.RobotInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.sequence_definition.added", Pattern: "event.sequence_definition.added.{entity_id}", Family: "event.entity.added", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.SequenceDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.sequence_definition.removed", Pattern: "event.sequence_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.SequenceDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.sequence_definition.updated", Pattern: "event.sequence_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.SequenceDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.sequence_run.added", Pattern: "event.sequence_run.added.{entity_id}", Family: "event.entity.added", Entity: "sequence_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.SequenceRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.sequence_run.removed", Pattern: "event.sequence_run.removed.{entity_id}", Family: "event.entity.removed", Entity: "sequence_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.SequenceRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.sequence_run.updated", Pattern: "event.sequence_run.updated.{entity_id}", Family: "event.entity.updated", Entity: "sequence_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.SequenceRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.skill.added", Pattern: "event.skill.added.{entity_id}", Family: "event.entity.added", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.SkillDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.skill.removed", Pattern: "event.skill.removed.{entity_id}", Family: "event.entity.removed", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.SkillDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.skill.updated", Pattern: "event.skill.updated.{entity_id}", Family: "event.entity.updated", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.SkillDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.station.added", Pattern: "event.station.added.{entity_id}", Family: "event.entity.added", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.StationDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.station.removed", Pattern: "event.station.removed.{entity_id}", Family: "event.entity.removed", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.StationDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.station.updated", Pattern: "event.station.updated.{entity_id}", Family: "event.entity.updated", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.StationDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.task_definition.added", Pattern: "event.task_definition.added.{entity_id}", Family: "event.entity.added", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.TaskDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.task_definition.removed", Pattern: "event.task_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.TaskDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.task_definition.updated", Pattern: "event.task_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "process.v1.TaskDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.task_run.added", Pattern: "event.task_run.added.{entity_id}", Family: "event.entity.added", Entity: "task_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.TaskRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.task_run.removed", Pattern: "event.task_run.removed.{entity_id}", Family: "event.entity.removed", Entity: "task_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.TaskRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.task_run.updated", Pattern: "event.task_run.updated.{entity_id}", Family: "event.entity.updated", Entity: "task_run", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "runtime.v1.TaskRun", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.tool_definition.added", Pattern: "event.tool_definition.added.{entity_id}", Family: "event.entity.added", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ToolDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.tool_definition.removed", Pattern: "event.tool_definition.removed.{entity_id}", Family: "event.entity.removed", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ToolDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.tool_definition.updated", Pattern: "event.tool_definition.updated.{entity_id}", Family: "event.entity.updated", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ToolDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.tool_instance.added", Pattern: "event.tool_instance.added.{entity_id}", Family: "event.entity.added", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ToolInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.tool_instance.removed", Pattern: "event.tool_instance.removed.{entity_id}", Family: "event.entity.removed", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ToolInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.tool_instance.updated", Pattern: "event.tool_instance.updated.{entity_id}", Family: "event.entity.updated", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.ToolInstance", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.validity_policy.added", Pattern: "event.validity_policy.added.{entity_id}", Family: "event.entity.added", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.ValidityPolicy", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.validity_policy.removed", Pattern: "event.validity_policy.removed.{entity_id}", Family: "event.entity.removed", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.ValidityPolicy", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.validity_policy.updated", Pattern: "event.validity_policy.updated.{entity_id}", Family: "event.entity.updated", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "capability.v1.ValidityPolicy", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.worker.added", Pattern: "event.worker.added.{entity_id}", Family: "event.entity.added", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.WorkerDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.worker.removed", Pattern: "event.worker.removed.{entity_id}", Family: "event.entity.removed", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.WorkerDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.worker.updated", Pattern: "event.worker.updated.{entity_id}", Family: "event.entity.updated", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.WorkerDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.zone.added", Pattern: "event.zone.added.{entity_id}", Family: "event.entity.added", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "geometry.v1.ZoneDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.zone.removed", Pattern: "event.zone.removed.{entity_id}", Family: "event.entity.removed", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "geometry.v1.ZoneDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "event.zone.updated", Pattern: "event.zone.updated.{entity_id}", Family: "event.entity.updated", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "geometry.v1.ZoneDefinition", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.action.all", Pattern: "get.action.all", Family: "get.entity.all", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.ActionMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.action.one", Pattern: "get.action.one", Family: "get.entity.one", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.ActionMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.action.some", Pattern: "get.action.some", Family: "get.entity.some", Entity: "action", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.ActionMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.action_definition.all", Pattern: "get.action_definition.all", Family: "get.entity.all", Entity: "action_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.ActionDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.action_definition.one", Pattern: "get.action_definition.one", Family: "get.entity.one", Entity: "action_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.ActionDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.action_definition.some", Pattern: "get.action_definition.some", Family: "get.entity.some", Entity: "action_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.ActionDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.actor_availability.all", Pattern: "get.actor_availability.all", Family: "get.entity.all", Entity: "actor_availability", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "runtime.v1.ActorAvailabilities", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.actor_availability.one", Pattern: "get.actor_availability.one", Family: "get.entity.one", Entity: "actor_availability", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "runtime.v1.ActorAvailability", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.actor_availability.some", Pattern: "get.actor_availability.some", Family: "get.entity.some", Entity: "actor_availability", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "runtime.v1.ActorAvailabilities", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.actor_skill.all", Pattern: "get.actor_skill.all", Family: "get.entity.all", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "capability.v1.ActorSkills", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.actor_skill.one", Pattern: "get.actor_skill.one", Family: "get.entity.one", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "capability.v1.ActorSkill", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.actor_skill.some", Pattern: "get.actor_skill.some", Family: "get.entity.some", Entity: "actor_skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "capability.v1.ActorSkills", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.ar_config.all", Pattern: "get.ar_config.all", Family: "get.entity.all", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.ARConfigMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.ar_config.one", Pattern: "get.ar_config.one", Family: "get.entity.one", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.ARConfigMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.ar_config.some", Pattern: "get.ar_config.some", Family: "get.entity.some", Entity: "ar_config", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.ARConfigMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.ar_config_binding.all", Pattern: "get.ar_config_binding.all", Family: "get.entity.all", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.ARConfigBindingMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.ar_config_binding.one", Pattern: "get.ar_config_binding.one", Family: "get.entity.one", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.ARConfigBindingMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.ar_config_binding.some", Pattern: "get.ar_config_binding.some", Family: "get.entity.some", Entity: "ar_config_binding", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.ARConfigBindingMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_adapter_definition.all", Pattern: "get.asset_adapter_definition.all", Family: "get.entity.all", Entity: "asset_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.AssetAdapterDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_adapter_definition.one", Pattern: "get.asset_adapter_definition.one", Family: "get.entity.one", Entity: "asset_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetAdapterDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_adapter_definition.some", Pattern: "get.asset_adapter_definition.some", Family: "get.entity.some", Entity: "asset_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetAdapterDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_definition.all", Pattern: "get.asset_definition.all", Family: "get.entity.all", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.AssetDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_definition.one", Pattern: "get.asset_definition.one", Family: "get.entity.one", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_definition.some", Pattern: "get.asset_definition.some", Family: "get.entity.some", Entity: "asset_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_instance.all", Pattern: "get.asset_instance.all", Family: "get.entity.all", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.AssetInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_instance.one", Pattern: "get.asset_instance.one", Family: "get.entity.one", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.asset_instance.some", Pattern: "get.asset_instance.some", Family: "get.entity.some", Entity: "asset_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.AssetInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.cell.all", Pattern: "get.cell.all", Family: "get.entity.all", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.CellDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.cell.one", Pattern: "get.cell.one", Family: "get.entity.one", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.CellDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.cell.some", Pattern: "get.cell.some", Family: "get.entity.some", Entity: "cell", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.CellDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.container_definition.all", Pattern: "get.container_definition.all", Family: "get.entity.all", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.ContainerDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.container_definition.one", Pattern: "get.container_definition.one", Family: "get.entity.one", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.ContainerDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.container_definition.some", Pattern: "get.container_definition.some", Family: "get.entity.some", Entity: "container_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.ContainerDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.container_instance.all", Pattern: "get.container_instance.all", Family: "get.entity.all", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.ContainerInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.container_instance.one", Pattern: "get.container_instance.one", Family: "get.entity.one", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.ContainerInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.container_instance.some", Pattern: "get.container_instance.some", Family: "get.entity.some", Entity: "container_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.ContainerInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.device.all", Pattern: "get.device.all", Family: "get.entity.all", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.DeviceMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.device.one", Pattern: "get.device.one", Family: "get.entity.one", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.DeviceMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.device.some", Pattern: "get.device.some", Family: "get.entity.some", Entity: "device", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.DeviceMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.execution_evidence.all", Pattern: "get.execution_evidence.all", Family: "get.entity.all", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "runtime.v1.ExecutionEvidences", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.execution_evidence.one", Pattern: "get.execution_evidence.one", Family: "get.entity.one", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "runtime.v1.ExecutionEvidence", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.execution_evidence.some", Pattern: "get.execution_evidence.some", Family: "get.entity.some", Entity: "execution_evidence", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "runtime.v1.ExecutionEvidences", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.feedback.all", Pattern: "get.feedback.all", Family: "get.entity.all", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.FeedbackMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.feedback.one", Pattern: "get.feedback.one", Family: "get.entity.one", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.FeedbackMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.feedback.some", Pattern: "get.feedback.some", Family: "get.entity.some", Entity: "feedback", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.FeedbackMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.feedback_definition.all", Pattern: "get.feedback_definition.all", Family: "get.entity.all", Entity: "feedback_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.FeedbackDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.feedback_definition.one", Pattern: "get.feedback_definition.one", Family: "get.entity.one", Entity: "feedback_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.FeedbackDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.feedback_definition.some", Pattern: "get.feedback_definition.some", Family: "get.entity.some", Entity: "feedback_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.FeedbackDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.function.all", Pattern: "get.function.all", Family: "get.entity.all", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.FunctionMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.function.one", Pattern: "get.function.one", Family: "get.entity.one", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.FunctionMessage", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.function.some", Pattern: "get.function.some", Family: "get.entity.some", Entity: "function", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.FunctionMessages", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.function_definition.all", Pattern: "get.function_definition.all", Family: "get.entity.all", Entity: "function_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.FunctionDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.function_definition.one", Pattern: "get.function_definition.one", Family: "get.entity.one", Entity: "function_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.FunctionDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.function_definition.some", Pattern: "get.function_definition.some", Family: "get.entity.some", Entity: "function_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.FunctionDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.line.all", Pattern: "get.line.all", Family: "get.entity.all", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.LineDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.line.one", Pattern: "get.line.one", Family: "get.entity.one", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.LineDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.line.some", Pattern: "get.line.some", Family: "get.entity.some", Entity: "line", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.LineDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.marker.all", Pattern: "get.marker.all", Family: "get.entity.all", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.MarkerInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.marker.one", Pattern: "get.marker.one", Family: "get.entity.one", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.MarkerInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.marker.some", Pattern: "get.marker.some", Family: "get.entity.some", Entity: "marker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.MarkerInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.model.all", Pattern: "get.model.all", Family: "get.entity.all", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.ModelArtifacts", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.model.one", Pattern: "get.model.one", Family: "get.entity.one", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.ModelArtifact", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.model.some", Pattern: "get.model.some", Family: "get.entity.some", Entity: "model", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.ModelArtifacts", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.part_definition.all", Pattern: "get.part_definition.all", Family: "get.entity.all", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "product.v1.PartDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.part_definition.one", Pattern: "get.part_definition.one", Family: "get.entity.one", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "product.v1.PartDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.part_definition.some", Pattern: "get.part_definition.some", Family: "get.entity.some", Entity: "part_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "product.v1.PartDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.part_instance.all", Pattern: "get.part_instance.all", Family: "get.entity.all", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "product.v1.PartInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.part_instance.one", Pattern: "get.part_instance.one", Family: "get.entity.one", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "product.v1.PartInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.part_instance.some", Pattern: "get.part_instance.some", Family: "get.entity.some", Entity: "part_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "product.v1.PartInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.presentation_strategy.all", Pattern: "get.presentation_strategy.all", Family: "get.entity.all", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "ar.v1.PresentationStrategies", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.presentation_strategy.one", Pattern: "get.presentation_strategy.one", Family: "get.entity.one", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "ar.v1.PresentationStrategy", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.presentation_strategy.some", Pattern: "get.presentation_strategy.some", Family: "get.entity.some", Entity: "presentation_strategy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "ar.v1.PresentationStrategies", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.process_recipe.all", Pattern: "get.process_recipe.all", Family: "get.entity.all", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "process.v1.ProcessRecipes", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.process_recipe.one", Pattern: "get.process_recipe.one", Family: "get.entity.one", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "process.v1.ProcessRecipe", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.process_recipe.some", Pattern: "get.process_recipe.some", Family: "get.entity.some", Entity: "process_recipe", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "process.v1.ProcessRecipes", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.process_run.all", Pattern: "get.process_run.all", Family: "get.entity.all", Entity: "process_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "runtime.v1.ProcessRuns", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.process_run.one", Pattern: "get.process_run.one", Family: "get.entity.one", Entity: "process_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "runtime.v1.ProcessRun", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.process_run.some", Pattern: "get.process_run.some", Family: "get.entity.some", Entity: "process_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "runtime.v1.ProcessRuns", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.product.all", Pattern: "get.product.all", Family: "get.entity.all", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "product.v1.ProductDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.product.one", Pattern: "get.product.one", Family: "get.entity.one", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "product.v1.ProductDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.product.some", Pattern: "get.product.some", Family: "get.entity.some", Entity: "product", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "product.v1.ProductDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.property_definition.all", Pattern: "get.property_definition.all", Family: "get.entity.all", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "common.v1.PropertyDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.property_definition.one", Pattern: "get.property_definition.one", Family: "get.entity.one", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "common.v1.PropertyDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.property_definition.some", Pattern: "get.property_definition.some", Family: "get.entity.some", Entity: "property_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "common.v1.PropertyDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.property_instance.all", Pattern: "get.property_instance.all", Family: "get.entity.all", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "common.v1.PropertyInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.property_instance.one", Pattern: "get.property_instance.one", Family: "get.entity.one", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "common.v1.PropertyInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.property_instance.some", Pattern: "get.property_instance.some", Family: "get.entity.some", Entity: "property_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "common.v1.PropertyInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_adapter_definition.all", Pattern: "get.robot_adapter_definition.all", Family: "get.entity.all", Entity: "robot_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.RobotAdapterDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_adapter_definition.one", Pattern: "get.robot_adapter_definition.one", Family: "get.entity.one", Entity: "robot_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotAdapterDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_adapter_definition.some", Pattern: "get.robot_adapter_definition.some", Family: "get.entity.some", Entity: "robot_adapter_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotAdapterDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_definition.all", Pattern: "get.robot_definition.all", Family: "get.entity.all", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.RobotDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_definition.one", Pattern: "get.robot_definition.one", Family: "get.entity.one", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_definition.some", Pattern: "get.robot_definition.some", Family: "get.entity.some", Entity: "robot_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_instance.all", Pattern: "get.robot_instance.all", Family: "get.entity.all", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.RobotInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_instance.one", Pattern: "get.robot_instance.one", Family: "get.entity.one", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.robot_instance.some", Pattern: "get.robot_instance.some", Family: "get.entity.some", Entity: "robot_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.RobotInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.sequence_definition.all", Pattern: "get.sequence_definition.all", Family: "get.entity.all", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "process.v1.SequenceDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.sequence_definition.one", Pattern: "get.sequence_definition.one", Family: "get.entity.one", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "process.v1.SequenceDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.sequence_definition.some", Pattern: "get.sequence_definition.some", Family: "get.entity.some", Entity: "sequence_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "process.v1.SequenceDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.sequence_run.all", Pattern: "get.sequence_run.all", Family: "get.entity.all", Entity: "sequence_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "runtime.v1.SequenceRuns", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.sequence_run.one", Pattern: "get.sequence_run.one", Family: "get.entity.one", Entity: "sequence_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "runtime.v1.SequenceRun", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.sequence_run.some", Pattern: "get.sequence_run.some", Family: "get.entity.some", Entity: "sequence_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "runtime.v1.SequenceRuns", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.skill.all", Pattern: "get.skill.all", Family: "get.entity.all", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "capability.v1.SkillDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.skill.one", Pattern: "get.skill.one", Family: "get.entity.one", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "capability.v1.SkillDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.skill.some", Pattern: "get.skill.some", Family: "get.entity.some", Entity: "skill", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "capability.v1.SkillDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.station.all", Pattern: "get.station.all", Family: "get.entity.all", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.StationDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.station.one", Pattern: "get.station.one", Family: "get.entity.one", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.StationDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.station.some", Pattern: "get.station.some", Family: "get.entity.some", Entity: "station", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.StationDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.task_definition.all", Pattern: "get.task_definition.all", Family: "get.entity.all", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "process.v1.TaskDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.task_definition.one", Pattern: "get.task_definition.one", Family: "get.entity.one", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "process.v1.TaskDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.task_definition.some", Pattern: "get.task_definition.some", Family: "get.entity.some", Entity: "task_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "process.v1.TaskDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.task_run.all", Pattern: "get.task_run.all", Family: "get.entity.all", Entity: "task_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "runtime.v1.TaskRuns", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.task_run.one", Pattern: "get.task_run.one", Family: "get.entity.one", Entity: "task_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "runtime.v1.TaskRun", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.task_run.some", Pattern: "get.task_run.some", Family: "get.entity.some", Entity: "task_run", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "runtime.v1.TaskRuns", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.tool_definition.all", Pattern: "get.tool_definition.all", Family: "get.entity.all", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.ToolDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.tool_definition.one", Pattern: "get.tool_definition.one", Family: "get.entity.one", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.ToolDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.tool_definition.some", Pattern: "get.tool_definition.some", Family: "get.entity.some", Entity: "tool_definition", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.ToolDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.tool_instance.all", Pattern: "get.tool_instance.all", Family: "get.entity.all", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.ToolInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.tool_instance.one", Pattern: "get.tool_instance.one", Family: "get.entity.one", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.ToolInstance", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.tool_instance.some", Pattern: "get.tool_instance.some", Family: "get.entity.some", Entity: "tool_instance", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.ToolInstances", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.validity_policy.all", Pattern: "get.validity_policy.all", Family: "get.entity.all", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "capability.v1.ValidityPolicies", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.validity_policy.one", Pattern: "get.validity_policy.one", Family: "get.entity.one", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "capability.v1.ValidityPolicy", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.validity_policy.some", Pattern: "get.validity_policy.some", Family: "get.entity.some", Entity: "validity_policy", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "capability.v1.ValidityPolicies", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.worker.all", Pattern: "get.worker.all", Family: "get.entity.all", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "resources.v1.WorkerDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.worker.one", Pattern: "get.worker.one", Family: "get.entity.one", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "resources.v1.WorkerDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.worker.some", Pattern: "get.worker.some", Family: "get.entity.some", Entity: "worker", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "resources.v1.WorkerDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.zone.all", Pattern: "get.zone.all", Family: "get.entity.all", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "geometry.v1.ZoneDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.zone.one", Pattern: "get.zone.one", Family: "get.entity.one", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetMessage", EmptyRequest: false, SuccessReply: "geometry.v1.ZoneDefinition", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "get.zone.some", Pattern: "get.zone.some", Family: "get.entity.some", Entity: "zone", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByIdMessage", EmptyRequest: false, SuccessReply: "geometry.v1.ZoneDefinitions", FailureReply: "service.v1.Response", Publishers: []string{"authoring", "web_cobotar", "holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#11"},
 }
 
 func buildSubject(pattern string, values map[string]string) (string, error) {
@@ -114,18 +565,6 @@ func MustEditEntityReset(entity string, child string) string {
 
 func SubscribeEditEntityResetAny() string { return "edit.*.reset.*" }
 
-// EditModelAdd builds edit.model.add.
-// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
-const EditModelAdd = "edit.model.add"
-
-// EditPartDefinitionAdd builds edit.part_definition.add.
-// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
-const EditPartDefinitionAdd = "edit.part_definition.add"
-
-// EditProductAdd builds edit.product.add.
-// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
-const EditProductAdd = "edit.product.add"
-
 // GetAssetAdapterInfo builds get.asset_adapter.info.{asset_instance_id}.
 // Experimental: lifecycle=planned, conformance=staged; see cobotar/Authoring#65.
 func GetAssetAdapterInfo(assetInstanceId string) (string, error) {
@@ -142,14 +581,6 @@ func MustGetAssetAdapterInfo(assetInstanceId string) string {
 
 func SubscribeGetAssetAdapterInfoAny() string { return "get.asset_adapter.info.*" }
 
-// GetAssetAdapterDefinitionAll builds get.asset_adapter_definition.all.
-// Experimental: lifecycle=planned, conformance=staged; see cobotar/Authoring#65.
-const GetAssetAdapterDefinitionAll = "get.asset_adapter_definition.all"
-
-// GetAssetAdapterDefinitionOne builds get.asset_adapter_definition.one.
-// Experimental: lifecycle=planned, conformance=staged; see cobotar/Authoring#65.
-const GetAssetAdapterDefinitionOne = "get.asset_adapter_definition.one"
-
 // GetRobotAdapterInfo builds get.robot_adapter.info.{robot_instance_id}.
 // Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#14.
 func GetRobotAdapterInfo(robotInstanceId string) (string, error) {
@@ -165,14 +596,6 @@ func MustGetRobotAdapterInfo(robotInstanceId string) string {
 }
 
 func SubscribeGetRobotAdapterInfoAny() string { return "get.robot_adapter.info.*" }
-
-// GetRobotAdapterDefinitionAll builds get.robot_adapter_definition.all.
-// Experimental: lifecycle=planned, conformance=staged; see cobotar/Authoring#49.
-const GetRobotAdapterDefinitionAll = "get.robot_adapter_definition.all"
-
-// GetRobotAdapterDefinitionOne builds get.robot_adapter_definition.one.
-// Experimental: lifecycle=planned, conformance=staged; see cobotar/Authoring#49.
-const GetRobotAdapterDefinitionOne = "get.robot_adapter_definition.one"
 
 // GetStorageInfo builds get.storage.info.
 // Experimental: lifecycle=planned, conformance=staged; see cobotar/protocol#21.
@@ -231,3 +654,3364 @@ func MustTelemetryRobotEndEffector(robotInstanceId string) string {
 }
 
 func SubscribeTelemetryRobotEndEffectorAny() string { return "telemetry.robot.end_effector.*" }
+
+// EditActionAdd builds edit.action.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActionAdd = "edit.action.add"
+
+// EditActionClone builds edit.action.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActionClone = "edit.action.clone"
+
+// EditActionRemove builds edit.action.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActionRemove = "edit.action.remove"
+
+// EditActionUpdate builds edit.action.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActionUpdate = "edit.action.update"
+
+// EditActorSkillAdd builds edit.actor_skill.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActorSkillAdd = "edit.actor_skill.add"
+
+// EditActorSkillClone builds edit.actor_skill.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActorSkillClone = "edit.actor_skill.clone"
+
+// EditActorSkillRemove builds edit.actor_skill.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActorSkillRemove = "edit.actor_skill.remove"
+
+// EditActorSkillUpdate builds edit.actor_skill.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditActorSkillUpdate = "edit.actor_skill.update"
+
+// EditArConfigAdd builds edit.ar_config.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigAdd = "edit.ar_config.add"
+
+// EditArConfigClone builds edit.ar_config.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigClone = "edit.ar_config.clone"
+
+// EditArConfigRemove builds edit.ar_config.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigRemove = "edit.ar_config.remove"
+
+// EditArConfigUpdate builds edit.ar_config.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigUpdate = "edit.ar_config.update"
+
+// EditArConfigBindingAdd builds edit.ar_config_binding.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigBindingAdd = "edit.ar_config_binding.add"
+
+// EditArConfigBindingClone builds edit.ar_config_binding.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigBindingClone = "edit.ar_config_binding.clone"
+
+// EditArConfigBindingRemove builds edit.ar_config_binding.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigBindingRemove = "edit.ar_config_binding.remove"
+
+// EditArConfigBindingUpdate builds edit.ar_config_binding.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditArConfigBindingUpdate = "edit.ar_config_binding.update"
+
+// EditAssetDefinitionAdd builds edit.asset_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetDefinitionAdd = "edit.asset_definition.add"
+
+// EditAssetDefinitionClone builds edit.asset_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetDefinitionClone = "edit.asset_definition.clone"
+
+// EditAssetDefinitionRemove builds edit.asset_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetDefinitionRemove = "edit.asset_definition.remove"
+
+// EditAssetDefinitionUpdate builds edit.asset_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetDefinitionUpdate = "edit.asset_definition.update"
+
+// EditAssetInstanceAdd builds edit.asset_instance.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetInstanceAdd = "edit.asset_instance.add"
+
+// EditAssetInstanceClone builds edit.asset_instance.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetInstanceClone = "edit.asset_instance.clone"
+
+// EditAssetInstanceRemove builds edit.asset_instance.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetInstanceRemove = "edit.asset_instance.remove"
+
+// EditAssetInstanceUpdate builds edit.asset_instance.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditAssetInstanceUpdate = "edit.asset_instance.update"
+
+// EditCellAdd builds edit.cell.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditCellAdd = "edit.cell.add"
+
+// EditCellClone builds edit.cell.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditCellClone = "edit.cell.clone"
+
+// EditCellRemove builds edit.cell.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditCellRemove = "edit.cell.remove"
+
+// EditCellUpdate builds edit.cell.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditCellUpdate = "edit.cell.update"
+
+// EditContainerDefinitionAdd builds edit.container_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerDefinitionAdd = "edit.container_definition.add"
+
+// EditContainerDefinitionClone builds edit.container_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerDefinitionClone = "edit.container_definition.clone"
+
+// EditContainerDefinitionRemove builds edit.container_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerDefinitionRemove = "edit.container_definition.remove"
+
+// EditContainerDefinitionUpdate builds edit.container_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerDefinitionUpdate = "edit.container_definition.update"
+
+// EditContainerInstanceAdd builds edit.container_instance.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerInstanceAdd = "edit.container_instance.add"
+
+// EditContainerInstanceClone builds edit.container_instance.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerInstanceClone = "edit.container_instance.clone"
+
+// EditContainerInstanceRemove builds edit.container_instance.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerInstanceRemove = "edit.container_instance.remove"
+
+// EditContainerInstanceUpdate builds edit.container_instance.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditContainerInstanceUpdate = "edit.container_instance.update"
+
+// EditDeviceAdd builds edit.device.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditDeviceAdd = "edit.device.add"
+
+// EditDeviceClone builds edit.device.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditDeviceClone = "edit.device.clone"
+
+// EditDeviceRemove builds edit.device.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditDeviceRemove = "edit.device.remove"
+
+// EditDeviceUpdate builds edit.device.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditDeviceUpdate = "edit.device.update"
+
+// EditExecutionEvidenceAdd builds edit.execution_evidence.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditExecutionEvidenceAdd = "edit.execution_evidence.add"
+
+// EditFeedbackAdd builds edit.feedback.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFeedbackAdd = "edit.feedback.add"
+
+// EditFeedbackClone builds edit.feedback.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFeedbackClone = "edit.feedback.clone"
+
+// EditFeedbackRemove builds edit.feedback.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFeedbackRemove = "edit.feedback.remove"
+
+// EditFeedbackUpdate builds edit.feedback.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFeedbackUpdate = "edit.feedback.update"
+
+// EditFunctionAdd builds edit.function.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFunctionAdd = "edit.function.add"
+
+// EditFunctionClone builds edit.function.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFunctionClone = "edit.function.clone"
+
+// EditFunctionRemove builds edit.function.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFunctionRemove = "edit.function.remove"
+
+// EditFunctionUpdate builds edit.function.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditFunctionUpdate = "edit.function.update"
+
+// EditLineAdd builds edit.line.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditLineAdd = "edit.line.add"
+
+// EditLineClone builds edit.line.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditLineClone = "edit.line.clone"
+
+// EditLineRemove builds edit.line.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditLineRemove = "edit.line.remove"
+
+// EditLineUpdate builds edit.line.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditLineUpdate = "edit.line.update"
+
+// EditMarkerAdd builds edit.marker.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditMarkerAdd = "edit.marker.add"
+
+// EditMarkerClone builds edit.marker.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditMarkerClone = "edit.marker.clone"
+
+// EditMarkerRemove builds edit.marker.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditMarkerRemove = "edit.marker.remove"
+
+// EditMarkerUpdate builds edit.marker.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditMarkerUpdate = "edit.marker.update"
+
+// EditModelAdd builds edit.model.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditModelAdd = "edit.model.add"
+
+// EditModelClone builds edit.model.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditModelClone = "edit.model.clone"
+
+// EditModelRemove builds edit.model.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditModelRemove = "edit.model.remove"
+
+// EditModelUpdate builds edit.model.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditModelUpdate = "edit.model.update"
+
+// EditPartDefinitionAdd builds edit.part_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartDefinitionAdd = "edit.part_definition.add"
+
+// EditPartDefinitionClone builds edit.part_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartDefinitionClone = "edit.part_definition.clone"
+
+// EditPartDefinitionRemove builds edit.part_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartDefinitionRemove = "edit.part_definition.remove"
+
+// EditPartDefinitionUpdate builds edit.part_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartDefinitionUpdate = "edit.part_definition.update"
+
+// EditPartInstanceAdd builds edit.part_instance.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartInstanceAdd = "edit.part_instance.add"
+
+// EditPartInstanceClone builds edit.part_instance.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartInstanceClone = "edit.part_instance.clone"
+
+// EditPartInstanceRemove builds edit.part_instance.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartInstanceRemove = "edit.part_instance.remove"
+
+// EditPartInstanceUpdate builds edit.part_instance.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPartInstanceUpdate = "edit.part_instance.update"
+
+// EditPresentationStrategyAdd builds edit.presentation_strategy.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPresentationStrategyAdd = "edit.presentation_strategy.add"
+
+// EditPresentationStrategyClone builds edit.presentation_strategy.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPresentationStrategyClone = "edit.presentation_strategy.clone"
+
+// EditPresentationStrategyRemove builds edit.presentation_strategy.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPresentationStrategyRemove = "edit.presentation_strategy.remove"
+
+// EditPresentationStrategyUpdate builds edit.presentation_strategy.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPresentationStrategyUpdate = "edit.presentation_strategy.update"
+
+// EditProcessRecipeAdd builds edit.process_recipe.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProcessRecipeAdd = "edit.process_recipe.add"
+
+// EditProcessRecipeClone builds edit.process_recipe.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProcessRecipeClone = "edit.process_recipe.clone"
+
+// EditProcessRecipeRemove builds edit.process_recipe.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProcessRecipeRemove = "edit.process_recipe.remove"
+
+// EditProcessRecipeUpdate builds edit.process_recipe.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProcessRecipeUpdate = "edit.process_recipe.update"
+
+// EditProductAdd builds edit.product.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProductAdd = "edit.product.add"
+
+// EditProductClone builds edit.product.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProductClone = "edit.product.clone"
+
+// EditProductRemove builds edit.product.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProductRemove = "edit.product.remove"
+
+// EditProductUpdate builds edit.product.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditProductUpdate = "edit.product.update"
+
+// EditPropertyDefinitionAdd builds edit.property_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyDefinitionAdd = "edit.property_definition.add"
+
+// EditPropertyDefinitionClone builds edit.property_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyDefinitionClone = "edit.property_definition.clone"
+
+// EditPropertyDefinitionRemove builds edit.property_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyDefinitionRemove = "edit.property_definition.remove"
+
+// EditPropertyDefinitionUpdate builds edit.property_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyDefinitionUpdate = "edit.property_definition.update"
+
+// EditPropertyInstanceAdd builds edit.property_instance.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyInstanceAdd = "edit.property_instance.add"
+
+// EditPropertyInstanceClone builds edit.property_instance.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyInstanceClone = "edit.property_instance.clone"
+
+// EditPropertyInstanceRemove builds edit.property_instance.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyInstanceRemove = "edit.property_instance.remove"
+
+// EditPropertyInstanceUpdate builds edit.property_instance.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditPropertyInstanceUpdate = "edit.property_instance.update"
+
+// EditRobotDefinitionAdd builds edit.robot_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotDefinitionAdd = "edit.robot_definition.add"
+
+// EditRobotDefinitionClone builds edit.robot_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotDefinitionClone = "edit.robot_definition.clone"
+
+// EditRobotDefinitionRemove builds edit.robot_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotDefinitionRemove = "edit.robot_definition.remove"
+
+// EditRobotDefinitionUpdate builds edit.robot_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotDefinitionUpdate = "edit.robot_definition.update"
+
+// EditRobotInstanceAdd builds edit.robot_instance.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotInstanceAdd = "edit.robot_instance.add"
+
+// EditRobotInstanceClone builds edit.robot_instance.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotInstanceClone = "edit.robot_instance.clone"
+
+// EditRobotInstanceRemove builds edit.robot_instance.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotInstanceRemove = "edit.robot_instance.remove"
+
+// EditRobotInstanceUpdate builds edit.robot_instance.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditRobotInstanceUpdate = "edit.robot_instance.update"
+
+// EditSequenceDefinitionAdd builds edit.sequence_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSequenceDefinitionAdd = "edit.sequence_definition.add"
+
+// EditSequenceDefinitionClone builds edit.sequence_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSequenceDefinitionClone = "edit.sequence_definition.clone"
+
+// EditSequenceDefinitionRemove builds edit.sequence_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSequenceDefinitionRemove = "edit.sequence_definition.remove"
+
+// EditSequenceDefinitionUpdate builds edit.sequence_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSequenceDefinitionUpdate = "edit.sequence_definition.update"
+
+// EditSkillAdd builds edit.skill.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSkillAdd = "edit.skill.add"
+
+// EditSkillClone builds edit.skill.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSkillClone = "edit.skill.clone"
+
+// EditSkillRemove builds edit.skill.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSkillRemove = "edit.skill.remove"
+
+// EditSkillUpdate builds edit.skill.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditSkillUpdate = "edit.skill.update"
+
+// EditStationAdd builds edit.station.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditStationAdd = "edit.station.add"
+
+// EditStationClone builds edit.station.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditStationClone = "edit.station.clone"
+
+// EditStationRemove builds edit.station.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditStationRemove = "edit.station.remove"
+
+// EditStationUpdate builds edit.station.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditStationUpdate = "edit.station.update"
+
+// EditTaskDefinitionAdd builds edit.task_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditTaskDefinitionAdd = "edit.task_definition.add"
+
+// EditTaskDefinitionClone builds edit.task_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditTaskDefinitionClone = "edit.task_definition.clone"
+
+// EditTaskDefinitionRemove builds edit.task_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditTaskDefinitionRemove = "edit.task_definition.remove"
+
+// EditTaskDefinitionUpdate builds edit.task_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditTaskDefinitionUpdate = "edit.task_definition.update"
+
+// EditToolDefinitionAdd builds edit.tool_definition.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolDefinitionAdd = "edit.tool_definition.add"
+
+// EditToolDefinitionClone builds edit.tool_definition.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolDefinitionClone = "edit.tool_definition.clone"
+
+// EditToolDefinitionRemove builds edit.tool_definition.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolDefinitionRemove = "edit.tool_definition.remove"
+
+// EditToolDefinitionUpdate builds edit.tool_definition.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolDefinitionUpdate = "edit.tool_definition.update"
+
+// EditToolInstanceAdd builds edit.tool_instance.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolInstanceAdd = "edit.tool_instance.add"
+
+// EditToolInstanceClone builds edit.tool_instance.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolInstanceClone = "edit.tool_instance.clone"
+
+// EditToolInstanceRemove builds edit.tool_instance.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolInstanceRemove = "edit.tool_instance.remove"
+
+// EditToolInstanceUpdate builds edit.tool_instance.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditToolInstanceUpdate = "edit.tool_instance.update"
+
+// EditValidityPolicyAdd builds edit.validity_policy.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditValidityPolicyAdd = "edit.validity_policy.add"
+
+// EditValidityPolicyClone builds edit.validity_policy.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditValidityPolicyClone = "edit.validity_policy.clone"
+
+// EditValidityPolicyRemove builds edit.validity_policy.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditValidityPolicyRemove = "edit.validity_policy.remove"
+
+// EditValidityPolicyUpdate builds edit.validity_policy.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditValidityPolicyUpdate = "edit.validity_policy.update"
+
+// EditWorkerAdd builds edit.worker.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditWorkerAdd = "edit.worker.add"
+
+// EditWorkerClone builds edit.worker.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditWorkerClone = "edit.worker.clone"
+
+// EditWorkerRemove builds edit.worker.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditWorkerRemove = "edit.worker.remove"
+
+// EditWorkerUpdate builds edit.worker.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditWorkerUpdate = "edit.worker.update"
+
+// EditZoneAdd builds edit.zone.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditZoneAdd = "edit.zone.add"
+
+// EditZoneClone builds edit.zone.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditZoneClone = "edit.zone.clone"
+
+// EditZoneRemove builds edit.zone.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditZoneRemove = "edit.zone.remove"
+
+// EditZoneUpdate builds edit.zone.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const EditZoneUpdate = "edit.zone.update"
+
+// EventActionAdded builds event.action.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActionAdded(entityId string) (string, error) {
+	return buildSubject("event.action.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActionAdded(entityId string) string {
+	subject, err := EventActionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActionAddedAny() string { return "event.action.added.*" }
+
+// EventActionRemoved builds event.action.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActionRemoved(entityId string) (string, error) {
+	return buildSubject("event.action.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActionRemoved(entityId string) string {
+	subject, err := EventActionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActionRemovedAny() string { return "event.action.removed.*" }
+
+// EventActionUpdated builds event.action.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActionUpdated(entityId string) (string, error) {
+	return buildSubject("event.action.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActionUpdated(entityId string) string {
+	subject, err := EventActionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActionUpdatedAny() string { return "event.action.updated.*" }
+
+// EventActionDefinitionAdded builds event.action_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActionDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.action_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActionDefinitionAdded(entityId string) string {
+	subject, err := EventActionDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActionDefinitionAddedAny() string { return "event.action_definition.added.*" }
+
+// EventActionDefinitionRemoved builds event.action_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActionDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.action_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActionDefinitionRemoved(entityId string) string {
+	subject, err := EventActionDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActionDefinitionRemovedAny() string { return "event.action_definition.removed.*" }
+
+// EventActionDefinitionUpdated builds event.action_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActionDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.action_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActionDefinitionUpdated(entityId string) string {
+	subject, err := EventActionDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActionDefinitionUpdatedAny() string { return "event.action_definition.updated.*" }
+
+// EventActorAvailabilityAdded builds event.actor_availability.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActorAvailabilityAdded(entityId string) (string, error) {
+	return buildSubject("event.actor_availability.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActorAvailabilityAdded(entityId string) string {
+	subject, err := EventActorAvailabilityAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActorAvailabilityAddedAny() string { return "event.actor_availability.added.*" }
+
+// EventActorAvailabilityRemoved builds event.actor_availability.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActorAvailabilityRemoved(entityId string) (string, error) {
+	return buildSubject("event.actor_availability.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActorAvailabilityRemoved(entityId string) string {
+	subject, err := EventActorAvailabilityRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActorAvailabilityRemovedAny() string { return "event.actor_availability.removed.*" }
+
+// EventActorAvailabilityUpdated builds event.actor_availability.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActorAvailabilityUpdated(entityId string) (string, error) {
+	return buildSubject("event.actor_availability.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActorAvailabilityUpdated(entityId string) string {
+	subject, err := EventActorAvailabilityUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActorAvailabilityUpdatedAny() string { return "event.actor_availability.updated.*" }
+
+// EventActorSkillAdded builds event.actor_skill.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActorSkillAdded(entityId string) (string, error) {
+	return buildSubject("event.actor_skill.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActorSkillAdded(entityId string) string {
+	subject, err := EventActorSkillAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActorSkillAddedAny() string { return "event.actor_skill.added.*" }
+
+// EventActorSkillRemoved builds event.actor_skill.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActorSkillRemoved(entityId string) (string, error) {
+	return buildSubject("event.actor_skill.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActorSkillRemoved(entityId string) string {
+	subject, err := EventActorSkillRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActorSkillRemovedAny() string { return "event.actor_skill.removed.*" }
+
+// EventActorSkillUpdated builds event.actor_skill.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventActorSkillUpdated(entityId string) (string, error) {
+	return buildSubject("event.actor_skill.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventActorSkillUpdated(entityId string) string {
+	subject, err := EventActorSkillUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventActorSkillUpdatedAny() string { return "event.actor_skill.updated.*" }
+
+// EventArConfigAdded builds event.ar_config.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventArConfigAdded(entityId string) (string, error) {
+	return buildSubject("event.ar_config.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventArConfigAdded(entityId string) string {
+	subject, err := EventArConfigAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventArConfigAddedAny() string { return "event.ar_config.added.*" }
+
+// EventArConfigRemoved builds event.ar_config.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventArConfigRemoved(entityId string) (string, error) {
+	return buildSubject("event.ar_config.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventArConfigRemoved(entityId string) string {
+	subject, err := EventArConfigRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventArConfigRemovedAny() string { return "event.ar_config.removed.*" }
+
+// EventArConfigUpdated builds event.ar_config.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventArConfigUpdated(entityId string) (string, error) {
+	return buildSubject("event.ar_config.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventArConfigUpdated(entityId string) string {
+	subject, err := EventArConfigUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventArConfigUpdatedAny() string { return "event.ar_config.updated.*" }
+
+// EventArConfigBindingAdded builds event.ar_config_binding.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventArConfigBindingAdded(entityId string) (string, error) {
+	return buildSubject("event.ar_config_binding.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventArConfigBindingAdded(entityId string) string {
+	subject, err := EventArConfigBindingAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventArConfigBindingAddedAny() string { return "event.ar_config_binding.added.*" }
+
+// EventArConfigBindingRemoved builds event.ar_config_binding.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventArConfigBindingRemoved(entityId string) (string, error) {
+	return buildSubject("event.ar_config_binding.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventArConfigBindingRemoved(entityId string) string {
+	subject, err := EventArConfigBindingRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventArConfigBindingRemovedAny() string { return "event.ar_config_binding.removed.*" }
+
+// EventArConfigBindingUpdated builds event.ar_config_binding.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventArConfigBindingUpdated(entityId string) (string, error) {
+	return buildSubject("event.ar_config_binding.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventArConfigBindingUpdated(entityId string) string {
+	subject, err := EventArConfigBindingUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventArConfigBindingUpdatedAny() string { return "event.ar_config_binding.updated.*" }
+
+// EventAssetAdapterDefinitionAdded builds event.asset_adapter_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetAdapterDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.asset_adapter_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetAdapterDefinitionAdded(entityId string) string {
+	subject, err := EventAssetAdapterDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetAdapterDefinitionAddedAny() string {
+	return "event.asset_adapter_definition.added.*"
+}
+
+// EventAssetAdapterDefinitionRemoved builds event.asset_adapter_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetAdapterDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.asset_adapter_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetAdapterDefinitionRemoved(entityId string) string {
+	subject, err := EventAssetAdapterDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetAdapterDefinitionRemovedAny() string {
+	return "event.asset_adapter_definition.removed.*"
+}
+
+// EventAssetAdapterDefinitionUpdated builds event.asset_adapter_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetAdapterDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.asset_adapter_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetAdapterDefinitionUpdated(entityId string) string {
+	subject, err := EventAssetAdapterDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetAdapterDefinitionUpdatedAny() string {
+	return "event.asset_adapter_definition.updated.*"
+}
+
+// EventAssetDefinitionAdded builds event.asset_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.asset_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetDefinitionAdded(entityId string) string {
+	subject, err := EventAssetDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetDefinitionAddedAny() string { return "event.asset_definition.added.*" }
+
+// EventAssetDefinitionRemoved builds event.asset_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.asset_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetDefinitionRemoved(entityId string) string {
+	subject, err := EventAssetDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetDefinitionRemovedAny() string { return "event.asset_definition.removed.*" }
+
+// EventAssetDefinitionUpdated builds event.asset_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.asset_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetDefinitionUpdated(entityId string) string {
+	subject, err := EventAssetDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetDefinitionUpdatedAny() string { return "event.asset_definition.updated.*" }
+
+// EventAssetInstanceAdded builds event.asset_instance.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetInstanceAdded(entityId string) (string, error) {
+	return buildSubject("event.asset_instance.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetInstanceAdded(entityId string) string {
+	subject, err := EventAssetInstanceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetInstanceAddedAny() string { return "event.asset_instance.added.*" }
+
+// EventAssetInstanceRemoved builds event.asset_instance.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetInstanceRemoved(entityId string) (string, error) {
+	return buildSubject("event.asset_instance.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetInstanceRemoved(entityId string) string {
+	subject, err := EventAssetInstanceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetInstanceRemovedAny() string { return "event.asset_instance.removed.*" }
+
+// EventAssetInstanceUpdated builds event.asset_instance.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventAssetInstanceUpdated(entityId string) (string, error) {
+	return buildSubject("event.asset_instance.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventAssetInstanceUpdated(entityId string) string {
+	subject, err := EventAssetInstanceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventAssetInstanceUpdatedAny() string { return "event.asset_instance.updated.*" }
+
+// EventCellAdded builds event.cell.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventCellAdded(entityId string) (string, error) {
+	return buildSubject("event.cell.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventCellAdded(entityId string) string {
+	subject, err := EventCellAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventCellAddedAny() string { return "event.cell.added.*" }
+
+// EventCellRemoved builds event.cell.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventCellRemoved(entityId string) (string, error) {
+	return buildSubject("event.cell.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventCellRemoved(entityId string) string {
+	subject, err := EventCellRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventCellRemovedAny() string { return "event.cell.removed.*" }
+
+// EventCellUpdated builds event.cell.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventCellUpdated(entityId string) (string, error) {
+	return buildSubject("event.cell.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventCellUpdated(entityId string) string {
+	subject, err := EventCellUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventCellUpdatedAny() string { return "event.cell.updated.*" }
+
+// EventContainerDefinitionAdded builds event.container_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventContainerDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.container_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventContainerDefinitionAdded(entityId string) string {
+	subject, err := EventContainerDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventContainerDefinitionAddedAny() string { return "event.container_definition.added.*" }
+
+// EventContainerDefinitionRemoved builds event.container_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventContainerDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.container_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventContainerDefinitionRemoved(entityId string) string {
+	subject, err := EventContainerDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventContainerDefinitionRemovedAny() string {
+	return "event.container_definition.removed.*"
+}
+
+// EventContainerDefinitionUpdated builds event.container_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventContainerDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.container_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventContainerDefinitionUpdated(entityId string) string {
+	subject, err := EventContainerDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventContainerDefinitionUpdatedAny() string {
+	return "event.container_definition.updated.*"
+}
+
+// EventContainerInstanceAdded builds event.container_instance.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventContainerInstanceAdded(entityId string) (string, error) {
+	return buildSubject("event.container_instance.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventContainerInstanceAdded(entityId string) string {
+	subject, err := EventContainerInstanceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventContainerInstanceAddedAny() string { return "event.container_instance.added.*" }
+
+// EventContainerInstanceRemoved builds event.container_instance.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventContainerInstanceRemoved(entityId string) (string, error) {
+	return buildSubject("event.container_instance.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventContainerInstanceRemoved(entityId string) string {
+	subject, err := EventContainerInstanceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventContainerInstanceRemovedAny() string { return "event.container_instance.removed.*" }
+
+// EventContainerInstanceUpdated builds event.container_instance.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventContainerInstanceUpdated(entityId string) (string, error) {
+	return buildSubject("event.container_instance.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventContainerInstanceUpdated(entityId string) string {
+	subject, err := EventContainerInstanceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventContainerInstanceUpdatedAny() string { return "event.container_instance.updated.*" }
+
+// EventDeviceAdded builds event.device.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventDeviceAdded(entityId string) (string, error) {
+	return buildSubject("event.device.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventDeviceAdded(entityId string) string {
+	subject, err := EventDeviceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventDeviceAddedAny() string { return "event.device.added.*" }
+
+// EventDeviceRemoved builds event.device.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventDeviceRemoved(entityId string) (string, error) {
+	return buildSubject("event.device.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventDeviceRemoved(entityId string) string {
+	subject, err := EventDeviceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventDeviceRemovedAny() string { return "event.device.removed.*" }
+
+// EventDeviceUpdated builds event.device.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventDeviceUpdated(entityId string) (string, error) {
+	return buildSubject("event.device.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventDeviceUpdated(entityId string) string {
+	subject, err := EventDeviceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventDeviceUpdatedAny() string { return "event.device.updated.*" }
+
+// EventExecutionEvidenceAdded builds event.execution_evidence.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventExecutionEvidenceAdded(entityId string) (string, error) {
+	return buildSubject("event.execution_evidence.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventExecutionEvidenceAdded(entityId string) string {
+	subject, err := EventExecutionEvidenceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventExecutionEvidenceAddedAny() string { return "event.execution_evidence.added.*" }
+
+// EventExecutionEvidenceRemoved builds event.execution_evidence.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventExecutionEvidenceRemoved(entityId string) (string, error) {
+	return buildSubject("event.execution_evidence.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventExecutionEvidenceRemoved(entityId string) string {
+	subject, err := EventExecutionEvidenceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventExecutionEvidenceRemovedAny() string { return "event.execution_evidence.removed.*" }
+
+// EventExecutionEvidenceUpdated builds event.execution_evidence.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventExecutionEvidenceUpdated(entityId string) (string, error) {
+	return buildSubject("event.execution_evidence.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventExecutionEvidenceUpdated(entityId string) string {
+	subject, err := EventExecutionEvidenceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventExecutionEvidenceUpdatedAny() string { return "event.execution_evidence.updated.*" }
+
+// EventFeedbackAdded builds event.feedback.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFeedbackAdded(entityId string) (string, error) {
+	return buildSubject("event.feedback.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFeedbackAdded(entityId string) string {
+	subject, err := EventFeedbackAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFeedbackAddedAny() string { return "event.feedback.added.*" }
+
+// EventFeedbackRemoved builds event.feedback.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFeedbackRemoved(entityId string) (string, error) {
+	return buildSubject("event.feedback.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFeedbackRemoved(entityId string) string {
+	subject, err := EventFeedbackRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFeedbackRemovedAny() string { return "event.feedback.removed.*" }
+
+// EventFeedbackUpdated builds event.feedback.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFeedbackUpdated(entityId string) (string, error) {
+	return buildSubject("event.feedback.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFeedbackUpdated(entityId string) string {
+	subject, err := EventFeedbackUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFeedbackUpdatedAny() string { return "event.feedback.updated.*" }
+
+// EventFeedbackDefinitionAdded builds event.feedback_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFeedbackDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.feedback_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFeedbackDefinitionAdded(entityId string) string {
+	subject, err := EventFeedbackDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFeedbackDefinitionAddedAny() string { return "event.feedback_definition.added.*" }
+
+// EventFeedbackDefinitionRemoved builds event.feedback_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFeedbackDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.feedback_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFeedbackDefinitionRemoved(entityId string) string {
+	subject, err := EventFeedbackDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFeedbackDefinitionRemovedAny() string {
+	return "event.feedback_definition.removed.*"
+}
+
+// EventFeedbackDefinitionUpdated builds event.feedback_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFeedbackDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.feedback_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFeedbackDefinitionUpdated(entityId string) string {
+	subject, err := EventFeedbackDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFeedbackDefinitionUpdatedAny() string {
+	return "event.feedback_definition.updated.*"
+}
+
+// EventFunctionAdded builds event.function.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFunctionAdded(entityId string) (string, error) {
+	return buildSubject("event.function.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFunctionAdded(entityId string) string {
+	subject, err := EventFunctionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFunctionAddedAny() string { return "event.function.added.*" }
+
+// EventFunctionRemoved builds event.function.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFunctionRemoved(entityId string) (string, error) {
+	return buildSubject("event.function.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFunctionRemoved(entityId string) string {
+	subject, err := EventFunctionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFunctionRemovedAny() string { return "event.function.removed.*" }
+
+// EventFunctionUpdated builds event.function.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFunctionUpdated(entityId string) (string, error) {
+	return buildSubject("event.function.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFunctionUpdated(entityId string) string {
+	subject, err := EventFunctionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFunctionUpdatedAny() string { return "event.function.updated.*" }
+
+// EventFunctionDefinitionAdded builds event.function_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFunctionDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.function_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFunctionDefinitionAdded(entityId string) string {
+	subject, err := EventFunctionDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFunctionDefinitionAddedAny() string { return "event.function_definition.added.*" }
+
+// EventFunctionDefinitionRemoved builds event.function_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFunctionDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.function_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFunctionDefinitionRemoved(entityId string) string {
+	subject, err := EventFunctionDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFunctionDefinitionRemovedAny() string {
+	return "event.function_definition.removed.*"
+}
+
+// EventFunctionDefinitionUpdated builds event.function_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventFunctionDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.function_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventFunctionDefinitionUpdated(entityId string) string {
+	subject, err := EventFunctionDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventFunctionDefinitionUpdatedAny() string {
+	return "event.function_definition.updated.*"
+}
+
+// EventLineAdded builds event.line.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventLineAdded(entityId string) (string, error) {
+	return buildSubject("event.line.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventLineAdded(entityId string) string {
+	subject, err := EventLineAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventLineAddedAny() string { return "event.line.added.*" }
+
+// EventLineRemoved builds event.line.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventLineRemoved(entityId string) (string, error) {
+	return buildSubject("event.line.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventLineRemoved(entityId string) string {
+	subject, err := EventLineRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventLineRemovedAny() string { return "event.line.removed.*" }
+
+// EventLineUpdated builds event.line.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventLineUpdated(entityId string) (string, error) {
+	return buildSubject("event.line.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventLineUpdated(entityId string) string {
+	subject, err := EventLineUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventLineUpdatedAny() string { return "event.line.updated.*" }
+
+// EventMarkerAdded builds event.marker.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventMarkerAdded(entityId string) (string, error) {
+	return buildSubject("event.marker.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventMarkerAdded(entityId string) string {
+	subject, err := EventMarkerAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventMarkerAddedAny() string { return "event.marker.added.*" }
+
+// EventMarkerRemoved builds event.marker.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventMarkerRemoved(entityId string) (string, error) {
+	return buildSubject("event.marker.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventMarkerRemoved(entityId string) string {
+	subject, err := EventMarkerRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventMarkerRemovedAny() string { return "event.marker.removed.*" }
+
+// EventMarkerUpdated builds event.marker.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventMarkerUpdated(entityId string) (string, error) {
+	return buildSubject("event.marker.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventMarkerUpdated(entityId string) string {
+	subject, err := EventMarkerUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventMarkerUpdatedAny() string { return "event.marker.updated.*" }
+
+// EventModelAdded builds event.model.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventModelAdded(entityId string) (string, error) {
+	return buildSubject("event.model.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventModelAdded(entityId string) string {
+	subject, err := EventModelAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventModelAddedAny() string { return "event.model.added.*" }
+
+// EventModelRemoved builds event.model.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventModelRemoved(entityId string) (string, error) {
+	return buildSubject("event.model.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventModelRemoved(entityId string) string {
+	subject, err := EventModelRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventModelRemovedAny() string { return "event.model.removed.*" }
+
+// EventModelUpdated builds event.model.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventModelUpdated(entityId string) (string, error) {
+	return buildSubject("event.model.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventModelUpdated(entityId string) string {
+	subject, err := EventModelUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventModelUpdatedAny() string { return "event.model.updated.*" }
+
+// EventPartDefinitionAdded builds event.part_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPartDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.part_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPartDefinitionAdded(entityId string) string {
+	subject, err := EventPartDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPartDefinitionAddedAny() string { return "event.part_definition.added.*" }
+
+// EventPartDefinitionRemoved builds event.part_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPartDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.part_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPartDefinitionRemoved(entityId string) string {
+	subject, err := EventPartDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPartDefinitionRemovedAny() string { return "event.part_definition.removed.*" }
+
+// EventPartDefinitionUpdated builds event.part_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPartDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.part_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPartDefinitionUpdated(entityId string) string {
+	subject, err := EventPartDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPartDefinitionUpdatedAny() string { return "event.part_definition.updated.*" }
+
+// EventPartInstanceAdded builds event.part_instance.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPartInstanceAdded(entityId string) (string, error) {
+	return buildSubject("event.part_instance.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPartInstanceAdded(entityId string) string {
+	subject, err := EventPartInstanceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPartInstanceAddedAny() string { return "event.part_instance.added.*" }
+
+// EventPartInstanceRemoved builds event.part_instance.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPartInstanceRemoved(entityId string) (string, error) {
+	return buildSubject("event.part_instance.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPartInstanceRemoved(entityId string) string {
+	subject, err := EventPartInstanceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPartInstanceRemovedAny() string { return "event.part_instance.removed.*" }
+
+// EventPartInstanceUpdated builds event.part_instance.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPartInstanceUpdated(entityId string) (string, error) {
+	return buildSubject("event.part_instance.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPartInstanceUpdated(entityId string) string {
+	subject, err := EventPartInstanceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPartInstanceUpdatedAny() string { return "event.part_instance.updated.*" }
+
+// EventPresentationStrategyAdded builds event.presentation_strategy.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPresentationStrategyAdded(entityId string) (string, error) {
+	return buildSubject("event.presentation_strategy.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPresentationStrategyAdded(entityId string) string {
+	subject, err := EventPresentationStrategyAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPresentationStrategyAddedAny() string {
+	return "event.presentation_strategy.added.*"
+}
+
+// EventPresentationStrategyRemoved builds event.presentation_strategy.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPresentationStrategyRemoved(entityId string) (string, error) {
+	return buildSubject("event.presentation_strategy.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPresentationStrategyRemoved(entityId string) string {
+	subject, err := EventPresentationStrategyRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPresentationStrategyRemovedAny() string {
+	return "event.presentation_strategy.removed.*"
+}
+
+// EventPresentationStrategyUpdated builds event.presentation_strategy.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPresentationStrategyUpdated(entityId string) (string, error) {
+	return buildSubject("event.presentation_strategy.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPresentationStrategyUpdated(entityId string) string {
+	subject, err := EventPresentationStrategyUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPresentationStrategyUpdatedAny() string {
+	return "event.presentation_strategy.updated.*"
+}
+
+// EventProcessRecipeAdded builds event.process_recipe.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProcessRecipeAdded(entityId string) (string, error) {
+	return buildSubject("event.process_recipe.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProcessRecipeAdded(entityId string) string {
+	subject, err := EventProcessRecipeAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProcessRecipeAddedAny() string { return "event.process_recipe.added.*" }
+
+// EventProcessRecipeRemoved builds event.process_recipe.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProcessRecipeRemoved(entityId string) (string, error) {
+	return buildSubject("event.process_recipe.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProcessRecipeRemoved(entityId string) string {
+	subject, err := EventProcessRecipeRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProcessRecipeRemovedAny() string { return "event.process_recipe.removed.*" }
+
+// EventProcessRecipeUpdated builds event.process_recipe.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProcessRecipeUpdated(entityId string) (string, error) {
+	return buildSubject("event.process_recipe.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProcessRecipeUpdated(entityId string) string {
+	subject, err := EventProcessRecipeUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProcessRecipeUpdatedAny() string { return "event.process_recipe.updated.*" }
+
+// EventProcessRunAdded builds event.process_run.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProcessRunAdded(entityId string) (string, error) {
+	return buildSubject("event.process_run.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProcessRunAdded(entityId string) string {
+	subject, err := EventProcessRunAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProcessRunAddedAny() string { return "event.process_run.added.*" }
+
+// EventProcessRunRemoved builds event.process_run.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProcessRunRemoved(entityId string) (string, error) {
+	return buildSubject("event.process_run.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProcessRunRemoved(entityId string) string {
+	subject, err := EventProcessRunRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProcessRunRemovedAny() string { return "event.process_run.removed.*" }
+
+// EventProcessRunUpdated builds event.process_run.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProcessRunUpdated(entityId string) (string, error) {
+	return buildSubject("event.process_run.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProcessRunUpdated(entityId string) string {
+	subject, err := EventProcessRunUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProcessRunUpdatedAny() string { return "event.process_run.updated.*" }
+
+// EventProductAdded builds event.product.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProductAdded(entityId string) (string, error) {
+	return buildSubject("event.product.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProductAdded(entityId string) string {
+	subject, err := EventProductAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProductAddedAny() string { return "event.product.added.*" }
+
+// EventProductRemoved builds event.product.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProductRemoved(entityId string) (string, error) {
+	return buildSubject("event.product.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProductRemoved(entityId string) string {
+	subject, err := EventProductRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProductRemovedAny() string { return "event.product.removed.*" }
+
+// EventProductUpdated builds event.product.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventProductUpdated(entityId string) (string, error) {
+	return buildSubject("event.product.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventProductUpdated(entityId string) string {
+	subject, err := EventProductUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventProductUpdatedAny() string { return "event.product.updated.*" }
+
+// EventPropertyDefinitionAdded builds event.property_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPropertyDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.property_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPropertyDefinitionAdded(entityId string) string {
+	subject, err := EventPropertyDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPropertyDefinitionAddedAny() string { return "event.property_definition.added.*" }
+
+// EventPropertyDefinitionRemoved builds event.property_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPropertyDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.property_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPropertyDefinitionRemoved(entityId string) string {
+	subject, err := EventPropertyDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPropertyDefinitionRemovedAny() string {
+	return "event.property_definition.removed.*"
+}
+
+// EventPropertyDefinitionUpdated builds event.property_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPropertyDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.property_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPropertyDefinitionUpdated(entityId string) string {
+	subject, err := EventPropertyDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPropertyDefinitionUpdatedAny() string {
+	return "event.property_definition.updated.*"
+}
+
+// EventPropertyInstanceAdded builds event.property_instance.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPropertyInstanceAdded(entityId string) (string, error) {
+	return buildSubject("event.property_instance.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPropertyInstanceAdded(entityId string) string {
+	subject, err := EventPropertyInstanceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPropertyInstanceAddedAny() string { return "event.property_instance.added.*" }
+
+// EventPropertyInstanceRemoved builds event.property_instance.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPropertyInstanceRemoved(entityId string) (string, error) {
+	return buildSubject("event.property_instance.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPropertyInstanceRemoved(entityId string) string {
+	subject, err := EventPropertyInstanceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPropertyInstanceRemovedAny() string { return "event.property_instance.removed.*" }
+
+// EventPropertyInstanceUpdated builds event.property_instance.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventPropertyInstanceUpdated(entityId string) (string, error) {
+	return buildSubject("event.property_instance.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventPropertyInstanceUpdated(entityId string) string {
+	subject, err := EventPropertyInstanceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventPropertyInstanceUpdatedAny() string { return "event.property_instance.updated.*" }
+
+// EventRobotAdapterDefinitionAdded builds event.robot_adapter_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotAdapterDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.robot_adapter_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotAdapterDefinitionAdded(entityId string) string {
+	subject, err := EventRobotAdapterDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotAdapterDefinitionAddedAny() string {
+	return "event.robot_adapter_definition.added.*"
+}
+
+// EventRobotAdapterDefinitionRemoved builds event.robot_adapter_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotAdapterDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.robot_adapter_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotAdapterDefinitionRemoved(entityId string) string {
+	subject, err := EventRobotAdapterDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotAdapterDefinitionRemovedAny() string {
+	return "event.robot_adapter_definition.removed.*"
+}
+
+// EventRobotAdapterDefinitionUpdated builds event.robot_adapter_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotAdapterDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.robot_adapter_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotAdapterDefinitionUpdated(entityId string) string {
+	subject, err := EventRobotAdapterDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotAdapterDefinitionUpdatedAny() string {
+	return "event.robot_adapter_definition.updated.*"
+}
+
+// EventRobotDefinitionAdded builds event.robot_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.robot_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotDefinitionAdded(entityId string) string {
+	subject, err := EventRobotDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotDefinitionAddedAny() string { return "event.robot_definition.added.*" }
+
+// EventRobotDefinitionRemoved builds event.robot_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.robot_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotDefinitionRemoved(entityId string) string {
+	subject, err := EventRobotDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotDefinitionRemovedAny() string { return "event.robot_definition.removed.*" }
+
+// EventRobotDefinitionUpdated builds event.robot_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.robot_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotDefinitionUpdated(entityId string) string {
+	subject, err := EventRobotDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotDefinitionUpdatedAny() string { return "event.robot_definition.updated.*" }
+
+// EventRobotInstanceAdded builds event.robot_instance.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotInstanceAdded(entityId string) (string, error) {
+	return buildSubject("event.robot_instance.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotInstanceAdded(entityId string) string {
+	subject, err := EventRobotInstanceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotInstanceAddedAny() string { return "event.robot_instance.added.*" }
+
+// EventRobotInstanceRemoved builds event.robot_instance.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotInstanceRemoved(entityId string) (string, error) {
+	return buildSubject("event.robot_instance.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotInstanceRemoved(entityId string) string {
+	subject, err := EventRobotInstanceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotInstanceRemovedAny() string { return "event.robot_instance.removed.*" }
+
+// EventRobotInstanceUpdated builds event.robot_instance.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventRobotInstanceUpdated(entityId string) (string, error) {
+	return buildSubject("event.robot_instance.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventRobotInstanceUpdated(entityId string) string {
+	subject, err := EventRobotInstanceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventRobotInstanceUpdatedAny() string { return "event.robot_instance.updated.*" }
+
+// EventSequenceDefinitionAdded builds event.sequence_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSequenceDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.sequence_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSequenceDefinitionAdded(entityId string) string {
+	subject, err := EventSequenceDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSequenceDefinitionAddedAny() string { return "event.sequence_definition.added.*" }
+
+// EventSequenceDefinitionRemoved builds event.sequence_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSequenceDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.sequence_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSequenceDefinitionRemoved(entityId string) string {
+	subject, err := EventSequenceDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSequenceDefinitionRemovedAny() string {
+	return "event.sequence_definition.removed.*"
+}
+
+// EventSequenceDefinitionUpdated builds event.sequence_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSequenceDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.sequence_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSequenceDefinitionUpdated(entityId string) string {
+	subject, err := EventSequenceDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSequenceDefinitionUpdatedAny() string {
+	return "event.sequence_definition.updated.*"
+}
+
+// EventSequenceRunAdded builds event.sequence_run.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSequenceRunAdded(entityId string) (string, error) {
+	return buildSubject("event.sequence_run.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSequenceRunAdded(entityId string) string {
+	subject, err := EventSequenceRunAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSequenceRunAddedAny() string { return "event.sequence_run.added.*" }
+
+// EventSequenceRunRemoved builds event.sequence_run.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSequenceRunRemoved(entityId string) (string, error) {
+	return buildSubject("event.sequence_run.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSequenceRunRemoved(entityId string) string {
+	subject, err := EventSequenceRunRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSequenceRunRemovedAny() string { return "event.sequence_run.removed.*" }
+
+// EventSequenceRunUpdated builds event.sequence_run.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSequenceRunUpdated(entityId string) (string, error) {
+	return buildSubject("event.sequence_run.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSequenceRunUpdated(entityId string) string {
+	subject, err := EventSequenceRunUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSequenceRunUpdatedAny() string { return "event.sequence_run.updated.*" }
+
+// EventSkillAdded builds event.skill.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSkillAdded(entityId string) (string, error) {
+	return buildSubject("event.skill.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSkillAdded(entityId string) string {
+	subject, err := EventSkillAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSkillAddedAny() string { return "event.skill.added.*" }
+
+// EventSkillRemoved builds event.skill.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSkillRemoved(entityId string) (string, error) {
+	return buildSubject("event.skill.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSkillRemoved(entityId string) string {
+	subject, err := EventSkillRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSkillRemovedAny() string { return "event.skill.removed.*" }
+
+// EventSkillUpdated builds event.skill.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventSkillUpdated(entityId string) (string, error) {
+	return buildSubject("event.skill.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventSkillUpdated(entityId string) string {
+	subject, err := EventSkillUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventSkillUpdatedAny() string { return "event.skill.updated.*" }
+
+// EventStationAdded builds event.station.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventStationAdded(entityId string) (string, error) {
+	return buildSubject("event.station.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventStationAdded(entityId string) string {
+	subject, err := EventStationAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventStationAddedAny() string { return "event.station.added.*" }
+
+// EventStationRemoved builds event.station.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventStationRemoved(entityId string) (string, error) {
+	return buildSubject("event.station.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventStationRemoved(entityId string) string {
+	subject, err := EventStationRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventStationRemovedAny() string { return "event.station.removed.*" }
+
+// EventStationUpdated builds event.station.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventStationUpdated(entityId string) (string, error) {
+	return buildSubject("event.station.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventStationUpdated(entityId string) string {
+	subject, err := EventStationUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventStationUpdatedAny() string { return "event.station.updated.*" }
+
+// EventTaskDefinitionAdded builds event.task_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventTaskDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.task_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventTaskDefinitionAdded(entityId string) string {
+	subject, err := EventTaskDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventTaskDefinitionAddedAny() string { return "event.task_definition.added.*" }
+
+// EventTaskDefinitionRemoved builds event.task_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventTaskDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.task_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventTaskDefinitionRemoved(entityId string) string {
+	subject, err := EventTaskDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventTaskDefinitionRemovedAny() string { return "event.task_definition.removed.*" }
+
+// EventTaskDefinitionUpdated builds event.task_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventTaskDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.task_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventTaskDefinitionUpdated(entityId string) string {
+	subject, err := EventTaskDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventTaskDefinitionUpdatedAny() string { return "event.task_definition.updated.*" }
+
+// EventTaskRunAdded builds event.task_run.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventTaskRunAdded(entityId string) (string, error) {
+	return buildSubject("event.task_run.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventTaskRunAdded(entityId string) string {
+	subject, err := EventTaskRunAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventTaskRunAddedAny() string { return "event.task_run.added.*" }
+
+// EventTaskRunRemoved builds event.task_run.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventTaskRunRemoved(entityId string) (string, error) {
+	return buildSubject("event.task_run.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventTaskRunRemoved(entityId string) string {
+	subject, err := EventTaskRunRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventTaskRunRemovedAny() string { return "event.task_run.removed.*" }
+
+// EventTaskRunUpdated builds event.task_run.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventTaskRunUpdated(entityId string) (string, error) {
+	return buildSubject("event.task_run.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventTaskRunUpdated(entityId string) string {
+	subject, err := EventTaskRunUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventTaskRunUpdatedAny() string { return "event.task_run.updated.*" }
+
+// EventToolDefinitionAdded builds event.tool_definition.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventToolDefinitionAdded(entityId string) (string, error) {
+	return buildSubject("event.tool_definition.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventToolDefinitionAdded(entityId string) string {
+	subject, err := EventToolDefinitionAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventToolDefinitionAddedAny() string { return "event.tool_definition.added.*" }
+
+// EventToolDefinitionRemoved builds event.tool_definition.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventToolDefinitionRemoved(entityId string) (string, error) {
+	return buildSubject("event.tool_definition.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventToolDefinitionRemoved(entityId string) string {
+	subject, err := EventToolDefinitionRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventToolDefinitionRemovedAny() string { return "event.tool_definition.removed.*" }
+
+// EventToolDefinitionUpdated builds event.tool_definition.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventToolDefinitionUpdated(entityId string) (string, error) {
+	return buildSubject("event.tool_definition.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventToolDefinitionUpdated(entityId string) string {
+	subject, err := EventToolDefinitionUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventToolDefinitionUpdatedAny() string { return "event.tool_definition.updated.*" }
+
+// EventToolInstanceAdded builds event.tool_instance.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventToolInstanceAdded(entityId string) (string, error) {
+	return buildSubject("event.tool_instance.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventToolInstanceAdded(entityId string) string {
+	subject, err := EventToolInstanceAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventToolInstanceAddedAny() string { return "event.tool_instance.added.*" }
+
+// EventToolInstanceRemoved builds event.tool_instance.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventToolInstanceRemoved(entityId string) (string, error) {
+	return buildSubject("event.tool_instance.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventToolInstanceRemoved(entityId string) string {
+	subject, err := EventToolInstanceRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventToolInstanceRemovedAny() string { return "event.tool_instance.removed.*" }
+
+// EventToolInstanceUpdated builds event.tool_instance.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventToolInstanceUpdated(entityId string) (string, error) {
+	return buildSubject("event.tool_instance.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventToolInstanceUpdated(entityId string) string {
+	subject, err := EventToolInstanceUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventToolInstanceUpdatedAny() string { return "event.tool_instance.updated.*" }
+
+// EventValidityPolicyAdded builds event.validity_policy.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventValidityPolicyAdded(entityId string) (string, error) {
+	return buildSubject("event.validity_policy.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventValidityPolicyAdded(entityId string) string {
+	subject, err := EventValidityPolicyAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventValidityPolicyAddedAny() string { return "event.validity_policy.added.*" }
+
+// EventValidityPolicyRemoved builds event.validity_policy.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventValidityPolicyRemoved(entityId string) (string, error) {
+	return buildSubject("event.validity_policy.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventValidityPolicyRemoved(entityId string) string {
+	subject, err := EventValidityPolicyRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventValidityPolicyRemovedAny() string { return "event.validity_policy.removed.*" }
+
+// EventValidityPolicyUpdated builds event.validity_policy.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventValidityPolicyUpdated(entityId string) (string, error) {
+	return buildSubject("event.validity_policy.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventValidityPolicyUpdated(entityId string) string {
+	subject, err := EventValidityPolicyUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventValidityPolicyUpdatedAny() string { return "event.validity_policy.updated.*" }
+
+// EventWorkerAdded builds event.worker.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventWorkerAdded(entityId string) (string, error) {
+	return buildSubject("event.worker.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventWorkerAdded(entityId string) string {
+	subject, err := EventWorkerAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventWorkerAddedAny() string { return "event.worker.added.*" }
+
+// EventWorkerRemoved builds event.worker.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventWorkerRemoved(entityId string) (string, error) {
+	return buildSubject("event.worker.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventWorkerRemoved(entityId string) string {
+	subject, err := EventWorkerRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventWorkerRemovedAny() string { return "event.worker.removed.*" }
+
+// EventWorkerUpdated builds event.worker.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventWorkerUpdated(entityId string) (string, error) {
+	return buildSubject("event.worker.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventWorkerUpdated(entityId string) string {
+	subject, err := EventWorkerUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventWorkerUpdatedAny() string { return "event.worker.updated.*" }
+
+// EventZoneAdded builds event.zone.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventZoneAdded(entityId string) (string, error) {
+	return buildSubject("event.zone.added.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventZoneAdded(entityId string) string {
+	subject, err := EventZoneAdded(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventZoneAddedAny() string { return "event.zone.added.*" }
+
+// EventZoneRemoved builds event.zone.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventZoneRemoved(entityId string) (string, error) {
+	return buildSubject("event.zone.removed.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventZoneRemoved(entityId string) string {
+	subject, err := EventZoneRemoved(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventZoneRemovedAny() string { return "event.zone.removed.*" }
+
+// EventZoneUpdated builds event.zone.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventZoneUpdated(entityId string) (string, error) {
+	return buildSubject("event.zone.updated.{entity_id}", map[string]string{"entity_id": entityId})
+}
+
+func MustEventZoneUpdated(entityId string) string {
+	subject, err := EventZoneUpdated(entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventZoneUpdatedAny() string { return "event.zone.updated.*" }
+
+// GetActionAll builds get.action.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActionAll = "get.action.all"
+
+// GetActionOne builds get.action.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActionOne = "get.action.one"
+
+// GetActionSome builds get.action.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActionSome = "get.action.some"
+
+// GetActionDefinitionAll builds get.action_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActionDefinitionAll = "get.action_definition.all"
+
+// GetActionDefinitionOne builds get.action_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActionDefinitionOne = "get.action_definition.one"
+
+// GetActionDefinitionSome builds get.action_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActionDefinitionSome = "get.action_definition.some"
+
+// GetActorAvailabilityAll builds get.actor_availability.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActorAvailabilityAll = "get.actor_availability.all"
+
+// GetActorAvailabilityOne builds get.actor_availability.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActorAvailabilityOne = "get.actor_availability.one"
+
+// GetActorAvailabilitySome builds get.actor_availability.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActorAvailabilitySome = "get.actor_availability.some"
+
+// GetActorSkillAll builds get.actor_skill.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActorSkillAll = "get.actor_skill.all"
+
+// GetActorSkillOne builds get.actor_skill.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActorSkillOne = "get.actor_skill.one"
+
+// GetActorSkillSome builds get.actor_skill.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetActorSkillSome = "get.actor_skill.some"
+
+// GetArConfigAll builds get.ar_config.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetArConfigAll = "get.ar_config.all"
+
+// GetArConfigOne builds get.ar_config.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetArConfigOne = "get.ar_config.one"
+
+// GetArConfigSome builds get.ar_config.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetArConfigSome = "get.ar_config.some"
+
+// GetArConfigBindingAll builds get.ar_config_binding.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetArConfigBindingAll = "get.ar_config_binding.all"
+
+// GetArConfigBindingOne builds get.ar_config_binding.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetArConfigBindingOne = "get.ar_config_binding.one"
+
+// GetArConfigBindingSome builds get.ar_config_binding.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetArConfigBindingSome = "get.ar_config_binding.some"
+
+// GetAssetAdapterDefinitionAll builds get.asset_adapter_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetAdapterDefinitionAll = "get.asset_adapter_definition.all"
+
+// GetAssetAdapterDefinitionOne builds get.asset_adapter_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetAdapterDefinitionOne = "get.asset_adapter_definition.one"
+
+// GetAssetAdapterDefinitionSome builds get.asset_adapter_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetAdapterDefinitionSome = "get.asset_adapter_definition.some"
+
+// GetAssetDefinitionAll builds get.asset_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetDefinitionAll = "get.asset_definition.all"
+
+// GetAssetDefinitionOne builds get.asset_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetDefinitionOne = "get.asset_definition.one"
+
+// GetAssetDefinitionSome builds get.asset_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetDefinitionSome = "get.asset_definition.some"
+
+// GetAssetInstanceAll builds get.asset_instance.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetInstanceAll = "get.asset_instance.all"
+
+// GetAssetInstanceOne builds get.asset_instance.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetInstanceOne = "get.asset_instance.one"
+
+// GetAssetInstanceSome builds get.asset_instance.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetAssetInstanceSome = "get.asset_instance.some"
+
+// GetCellAll builds get.cell.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetCellAll = "get.cell.all"
+
+// GetCellOne builds get.cell.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetCellOne = "get.cell.one"
+
+// GetCellSome builds get.cell.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetCellSome = "get.cell.some"
+
+// GetContainerDefinitionAll builds get.container_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetContainerDefinitionAll = "get.container_definition.all"
+
+// GetContainerDefinitionOne builds get.container_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetContainerDefinitionOne = "get.container_definition.one"
+
+// GetContainerDefinitionSome builds get.container_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetContainerDefinitionSome = "get.container_definition.some"
+
+// GetContainerInstanceAll builds get.container_instance.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetContainerInstanceAll = "get.container_instance.all"
+
+// GetContainerInstanceOne builds get.container_instance.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetContainerInstanceOne = "get.container_instance.one"
+
+// GetContainerInstanceSome builds get.container_instance.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetContainerInstanceSome = "get.container_instance.some"
+
+// GetDeviceAll builds get.device.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetDeviceAll = "get.device.all"
+
+// GetDeviceOne builds get.device.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetDeviceOne = "get.device.one"
+
+// GetDeviceSome builds get.device.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetDeviceSome = "get.device.some"
+
+// GetExecutionEvidenceAll builds get.execution_evidence.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetExecutionEvidenceAll = "get.execution_evidence.all"
+
+// GetExecutionEvidenceOne builds get.execution_evidence.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetExecutionEvidenceOne = "get.execution_evidence.one"
+
+// GetExecutionEvidenceSome builds get.execution_evidence.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetExecutionEvidenceSome = "get.execution_evidence.some"
+
+// GetFeedbackAll builds get.feedback.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFeedbackAll = "get.feedback.all"
+
+// GetFeedbackOne builds get.feedback.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFeedbackOne = "get.feedback.one"
+
+// GetFeedbackSome builds get.feedback.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFeedbackSome = "get.feedback.some"
+
+// GetFeedbackDefinitionAll builds get.feedback_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFeedbackDefinitionAll = "get.feedback_definition.all"
+
+// GetFeedbackDefinitionOne builds get.feedback_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFeedbackDefinitionOne = "get.feedback_definition.one"
+
+// GetFeedbackDefinitionSome builds get.feedback_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFeedbackDefinitionSome = "get.feedback_definition.some"
+
+// GetFunctionAll builds get.function.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFunctionAll = "get.function.all"
+
+// GetFunctionOne builds get.function.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFunctionOne = "get.function.one"
+
+// GetFunctionSome builds get.function.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFunctionSome = "get.function.some"
+
+// GetFunctionDefinitionAll builds get.function_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFunctionDefinitionAll = "get.function_definition.all"
+
+// GetFunctionDefinitionOne builds get.function_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFunctionDefinitionOne = "get.function_definition.one"
+
+// GetFunctionDefinitionSome builds get.function_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetFunctionDefinitionSome = "get.function_definition.some"
+
+// GetLineAll builds get.line.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetLineAll = "get.line.all"
+
+// GetLineOne builds get.line.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetLineOne = "get.line.one"
+
+// GetLineSome builds get.line.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetLineSome = "get.line.some"
+
+// GetMarkerAll builds get.marker.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetMarkerAll = "get.marker.all"
+
+// GetMarkerOne builds get.marker.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetMarkerOne = "get.marker.one"
+
+// GetMarkerSome builds get.marker.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetMarkerSome = "get.marker.some"
+
+// GetModelAll builds get.model.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetModelAll = "get.model.all"
+
+// GetModelOne builds get.model.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetModelOne = "get.model.one"
+
+// GetModelSome builds get.model.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetModelSome = "get.model.some"
+
+// GetPartDefinitionAll builds get.part_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPartDefinitionAll = "get.part_definition.all"
+
+// GetPartDefinitionOne builds get.part_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPartDefinitionOne = "get.part_definition.one"
+
+// GetPartDefinitionSome builds get.part_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPartDefinitionSome = "get.part_definition.some"
+
+// GetPartInstanceAll builds get.part_instance.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPartInstanceAll = "get.part_instance.all"
+
+// GetPartInstanceOne builds get.part_instance.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPartInstanceOne = "get.part_instance.one"
+
+// GetPartInstanceSome builds get.part_instance.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPartInstanceSome = "get.part_instance.some"
+
+// GetPresentationStrategyAll builds get.presentation_strategy.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPresentationStrategyAll = "get.presentation_strategy.all"
+
+// GetPresentationStrategyOne builds get.presentation_strategy.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPresentationStrategyOne = "get.presentation_strategy.one"
+
+// GetPresentationStrategySome builds get.presentation_strategy.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPresentationStrategySome = "get.presentation_strategy.some"
+
+// GetProcessRecipeAll builds get.process_recipe.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProcessRecipeAll = "get.process_recipe.all"
+
+// GetProcessRecipeOne builds get.process_recipe.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProcessRecipeOne = "get.process_recipe.one"
+
+// GetProcessRecipeSome builds get.process_recipe.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProcessRecipeSome = "get.process_recipe.some"
+
+// GetProcessRunAll builds get.process_run.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProcessRunAll = "get.process_run.all"
+
+// GetProcessRunOne builds get.process_run.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProcessRunOne = "get.process_run.one"
+
+// GetProcessRunSome builds get.process_run.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProcessRunSome = "get.process_run.some"
+
+// GetProductAll builds get.product.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProductAll = "get.product.all"
+
+// GetProductOne builds get.product.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProductOne = "get.product.one"
+
+// GetProductSome builds get.product.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetProductSome = "get.product.some"
+
+// GetPropertyDefinitionAll builds get.property_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPropertyDefinitionAll = "get.property_definition.all"
+
+// GetPropertyDefinitionOne builds get.property_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPropertyDefinitionOne = "get.property_definition.one"
+
+// GetPropertyDefinitionSome builds get.property_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPropertyDefinitionSome = "get.property_definition.some"
+
+// GetPropertyInstanceAll builds get.property_instance.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPropertyInstanceAll = "get.property_instance.all"
+
+// GetPropertyInstanceOne builds get.property_instance.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPropertyInstanceOne = "get.property_instance.one"
+
+// GetPropertyInstanceSome builds get.property_instance.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetPropertyInstanceSome = "get.property_instance.some"
+
+// GetRobotAdapterDefinitionAll builds get.robot_adapter_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotAdapterDefinitionAll = "get.robot_adapter_definition.all"
+
+// GetRobotAdapterDefinitionOne builds get.robot_adapter_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotAdapterDefinitionOne = "get.robot_adapter_definition.one"
+
+// GetRobotAdapterDefinitionSome builds get.robot_adapter_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotAdapterDefinitionSome = "get.robot_adapter_definition.some"
+
+// GetRobotDefinitionAll builds get.robot_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotDefinitionAll = "get.robot_definition.all"
+
+// GetRobotDefinitionOne builds get.robot_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotDefinitionOne = "get.robot_definition.one"
+
+// GetRobotDefinitionSome builds get.robot_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotDefinitionSome = "get.robot_definition.some"
+
+// GetRobotInstanceAll builds get.robot_instance.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotInstanceAll = "get.robot_instance.all"
+
+// GetRobotInstanceOne builds get.robot_instance.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotInstanceOne = "get.robot_instance.one"
+
+// GetRobotInstanceSome builds get.robot_instance.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetRobotInstanceSome = "get.robot_instance.some"
+
+// GetSequenceDefinitionAll builds get.sequence_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSequenceDefinitionAll = "get.sequence_definition.all"
+
+// GetSequenceDefinitionOne builds get.sequence_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSequenceDefinitionOne = "get.sequence_definition.one"
+
+// GetSequenceDefinitionSome builds get.sequence_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSequenceDefinitionSome = "get.sequence_definition.some"
+
+// GetSequenceRunAll builds get.sequence_run.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSequenceRunAll = "get.sequence_run.all"
+
+// GetSequenceRunOne builds get.sequence_run.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSequenceRunOne = "get.sequence_run.one"
+
+// GetSequenceRunSome builds get.sequence_run.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSequenceRunSome = "get.sequence_run.some"
+
+// GetSkillAll builds get.skill.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSkillAll = "get.skill.all"
+
+// GetSkillOne builds get.skill.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSkillOne = "get.skill.one"
+
+// GetSkillSome builds get.skill.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetSkillSome = "get.skill.some"
+
+// GetStationAll builds get.station.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetStationAll = "get.station.all"
+
+// GetStationOne builds get.station.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetStationOne = "get.station.one"
+
+// GetStationSome builds get.station.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetStationSome = "get.station.some"
+
+// GetTaskDefinitionAll builds get.task_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetTaskDefinitionAll = "get.task_definition.all"
+
+// GetTaskDefinitionOne builds get.task_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetTaskDefinitionOne = "get.task_definition.one"
+
+// GetTaskDefinitionSome builds get.task_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetTaskDefinitionSome = "get.task_definition.some"
+
+// GetTaskRunAll builds get.task_run.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetTaskRunAll = "get.task_run.all"
+
+// GetTaskRunOne builds get.task_run.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetTaskRunOne = "get.task_run.one"
+
+// GetTaskRunSome builds get.task_run.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetTaskRunSome = "get.task_run.some"
+
+// GetToolDefinitionAll builds get.tool_definition.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetToolDefinitionAll = "get.tool_definition.all"
+
+// GetToolDefinitionOne builds get.tool_definition.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetToolDefinitionOne = "get.tool_definition.one"
+
+// GetToolDefinitionSome builds get.tool_definition.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetToolDefinitionSome = "get.tool_definition.some"
+
+// GetToolInstanceAll builds get.tool_instance.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetToolInstanceAll = "get.tool_instance.all"
+
+// GetToolInstanceOne builds get.tool_instance.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetToolInstanceOne = "get.tool_instance.one"
+
+// GetToolInstanceSome builds get.tool_instance.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetToolInstanceSome = "get.tool_instance.some"
+
+// GetValidityPolicyAll builds get.validity_policy.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetValidityPolicyAll = "get.validity_policy.all"
+
+// GetValidityPolicyOne builds get.validity_policy.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetValidityPolicyOne = "get.validity_policy.one"
+
+// GetValidityPolicySome builds get.validity_policy.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetValidityPolicySome = "get.validity_policy.some"
+
+// GetWorkerAll builds get.worker.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetWorkerAll = "get.worker.all"
+
+// GetWorkerOne builds get.worker.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetWorkerOne = "get.worker.one"
+
+// GetWorkerSome builds get.worker.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetWorkerSome = "get.worker.some"
+
+// GetZoneAll builds get.zone.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetZoneAll = "get.zone.all"
+
+// GetZoneOne builds get.zone.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetZoneOne = "get.zone.one"
+
+// GetZoneSome builds get.zone.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+const GetZoneSome = "get.zone.some"
+
+// EditEntityAdd builds edit.{entity}.add.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EditEntityAdd(entity EntityName) (string, error) {
+	if err := validateEntitySet("edit.entity.add", "creatable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("edit.{entity}.add", map[string]string{"entity": string(entity)})
+}
+
+func MustEditEntityAdd(entity EntityName) string {
+	subject, err := EditEntityAdd(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEditEntityAddAny() string { return "edit.*.add" }
+
+// EditEntityClone builds edit.{entity}.clone.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EditEntityClone(entity EntityName) (string, error) {
+	if err := validateEntitySet("edit.entity.clone", "mutable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("edit.{entity}.clone", map[string]string{"entity": string(entity)})
+}
+
+func MustEditEntityClone(entity EntityName) string {
+	subject, err := EditEntityClone(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEditEntityCloneAny() string { return "edit.*.clone" }
+
+// EditEntityRemove builds edit.{entity}.remove.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EditEntityRemove(entity EntityName) (string, error) {
+	if err := validateEntitySet("edit.entity.remove", "mutable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("edit.{entity}.remove", map[string]string{"entity": string(entity)})
+}
+
+func MustEditEntityRemove(entity EntityName) string {
+	subject, err := EditEntityRemove(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEditEntityRemoveAny() string { return "edit.*.remove" }
+
+// EditEntityUpdate builds edit.{entity}.update.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EditEntityUpdate(entity EntityName) (string, error) {
+	if err := validateEntitySet("edit.entity.update", "mutable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("edit.{entity}.update", map[string]string{"entity": string(entity)})
+}
+
+func MustEditEntityUpdate(entity EntityName) string {
+	subject, err := EditEntityUpdate(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEditEntityUpdateAny() string { return "edit.*.update" }
+
+// EventEntityAdded builds event.{entity}.added.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventEntityAdded(entity EntityName, entityId string) (string, error) {
+	if err := validateEntitySet("event.entity.added", "evented", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("event.{entity}.added.{entity_id}", map[string]string{"entity": string(entity), "entity_id": entityId})
+}
+
+func MustEventEntityAdded(entity EntityName, entityId string) string {
+	subject, err := EventEntityAdded(entity, entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventEntityAddedAny() string { return "event.*.added.*" }
+
+func SubscribeEventEntityAddedForEntity(entity EntityName) (string, error) {
+	if err := validateEntitySet("event.entity.added", "evented", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("event.{entity}.added.*", map[string]string{"entity": string(entity)})
+}
+
+// EventEntityRemoved builds event.{entity}.removed.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventEntityRemoved(entity EntityName, entityId string) (string, error) {
+	if err := validateEntitySet("event.entity.removed", "evented", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("event.{entity}.removed.{entity_id}", map[string]string{"entity": string(entity), "entity_id": entityId})
+}
+
+func MustEventEntityRemoved(entity EntityName, entityId string) string {
+	subject, err := EventEntityRemoved(entity, entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventEntityRemovedAny() string { return "event.*.removed.*" }
+
+func SubscribeEventEntityRemovedForEntity(entity EntityName) (string, error) {
+	if err := validateEntitySet("event.entity.removed", "evented", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("event.{entity}.removed.*", map[string]string{"entity": string(entity)})
+}
+
+// EventEntityUpdated builds event.{entity}.updated.{entity_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func EventEntityUpdated(entity EntityName, entityId string) (string, error) {
+	if err := validateEntitySet("event.entity.updated", "evented", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("event.{entity}.updated.{entity_id}", map[string]string{"entity": string(entity), "entity_id": entityId})
+}
+
+func MustEventEntityUpdated(entity EntityName, entityId string) string {
+	subject, err := EventEntityUpdated(entity, entityId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeEventEntityUpdatedAny() string { return "event.*.updated.*" }
+
+func SubscribeEventEntityUpdatedForEntity(entity EntityName) (string, error) {
+	if err := validateEntitySet("event.entity.updated", "evented", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("event.{entity}.updated.*", map[string]string{"entity": string(entity)})
+}
+
+// GetEntityAll builds get.{entity}.all.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func GetEntityAll(entity EntityName) (string, error) {
+	if err := validateEntitySet("get.entity.all", "readable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("get.{entity}.all", map[string]string{"entity": string(entity)})
+}
+
+func MustGetEntityAll(entity EntityName) string {
+	subject, err := GetEntityAll(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeGetEntityAllAny() string { return "get.*.all" }
+
+// GetEntityOne builds get.{entity}.one.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func GetEntityOne(entity EntityName) (string, error) {
+	if err := validateEntitySet("get.entity.one", "readable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("get.{entity}.one", map[string]string{"entity": string(entity)})
+}
+
+func MustGetEntityOne(entity EntityName) string {
+	subject, err := GetEntityOne(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeGetEntityOneAny() string { return "get.*.one" }
+
+// GetEntitySome builds get.{entity}.some.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#11.
+func GetEntitySome(entity EntityName) (string, error) {
+	if err := validateEntitySet("get.entity.some", "readable", entity); err != nil {
+		return "", err
+	}
+	return buildSubject("get.{entity}.some", map[string]string{"entity": string(entity)})
+}
+
+func MustGetEntitySome(entity EntityName) string {
+	subject, err := GetEntitySome(entity)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeGetEntitySomeAny() string { return "get.*.some" }

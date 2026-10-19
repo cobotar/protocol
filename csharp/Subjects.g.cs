@@ -3,9 +3,126 @@ using System;
 using System.Collections.Generic;
 
 namespace Messages {
+    public enum EntityName {
+        Action,
+        ActionDefinition,
+        ActorAvailability,
+        ActorSkill,
+        ArConfig,
+        ArConfigBinding,
+        AssetAdapterDefinition,
+        AssetDefinition,
+        AssetInstance,
+        Cell,
+        ContainerDefinition,
+        ContainerInstance,
+        Device,
+        ExecutionEvidence,
+        Feedback,
+        FeedbackDefinition,
+        Function,
+        FunctionDefinition,
+        Line,
+        Marker,
+        Model,
+        PartDefinition,
+        PartInstance,
+        PresentationStrategy,
+        ProcessRecipe,
+        ProcessRun,
+        ProcessRunDefinitions,
+        Product,
+        PropertyDefinition,
+        PropertyInstance,
+        RobotAdapterDefinition,
+        RobotDefinition,
+        RobotInstance,
+        SequenceDefinition,
+        SequenceRun,
+        Skill,
+        Station,
+        TaskDefinition,
+        TaskRun,
+        ToolDefinition,
+        ToolInstance,
+        ValidityPolicy,
+        Worker,
+        Zone,
+    }
+
+    public static class EntityNames {
+        public static string Token(EntityName entity) {
+            switch (entity) {
+                case EntityName.Action: return "action";
+                case EntityName.ActionDefinition: return "action_definition";
+                case EntityName.ActorAvailability: return "actor_availability";
+                case EntityName.ActorSkill: return "actor_skill";
+                case EntityName.ArConfig: return "ar_config";
+                case EntityName.ArConfigBinding: return "ar_config_binding";
+                case EntityName.AssetAdapterDefinition: return "asset_adapter_definition";
+                case EntityName.AssetDefinition: return "asset_definition";
+                case EntityName.AssetInstance: return "asset_instance";
+                case EntityName.Cell: return "cell";
+                case EntityName.ContainerDefinition: return "container_definition";
+                case EntityName.ContainerInstance: return "container_instance";
+                case EntityName.Device: return "device";
+                case EntityName.ExecutionEvidence: return "execution_evidence";
+                case EntityName.Feedback: return "feedback";
+                case EntityName.FeedbackDefinition: return "feedback_definition";
+                case EntityName.Function: return "function";
+                case EntityName.FunctionDefinition: return "function_definition";
+                case EntityName.Line: return "line";
+                case EntityName.Marker: return "marker";
+                case EntityName.Model: return "model";
+                case EntityName.PartDefinition: return "part_definition";
+                case EntityName.PartInstance: return "part_instance";
+                case EntityName.PresentationStrategy: return "presentation_strategy";
+                case EntityName.ProcessRecipe: return "process_recipe";
+                case EntityName.ProcessRun: return "process_run";
+                case EntityName.ProcessRunDefinitions: return "process_run_definitions";
+                case EntityName.Product: return "product";
+                case EntityName.PropertyDefinition: return "property_definition";
+                case EntityName.PropertyInstance: return "property_instance";
+                case EntityName.RobotAdapterDefinition: return "robot_adapter_definition";
+                case EntityName.RobotDefinition: return "robot_definition";
+                case EntityName.RobotInstance: return "robot_instance";
+                case EntityName.SequenceDefinition: return "sequence_definition";
+                case EntityName.SequenceRun: return "sequence_run";
+                case EntityName.Skill: return "skill";
+                case EntityName.Station: return "station";
+                case EntityName.TaskDefinition: return "task_definition";
+                case EntityName.TaskRun: return "task_run";
+                case EntityName.ToolDefinition: return "tool_definition";
+                case EntityName.ToolInstance: return "tool_instance";
+                case EntityName.ValidityPolicy: return "validity_policy";
+                case EntityName.Worker: return "worker";
+                case EntityName.Zone: return "zone";
+                default: throw new ArgumentOutOfRangeException(nameof(entity), entity, null);
+            }
+        }
+    }
+
+    public static class EntitySets {
+        public static readonly IReadOnlyDictionary<string, IReadOnlyList<EntityName>> All = new Dictionary<string, IReadOnlyList<EntityName>> {
+            ["creatable"] = new[] { EntityName.Action, EntityName.ActorSkill, EntityName.ArConfig, EntityName.ArConfigBinding, EntityName.AssetDefinition, EntityName.AssetInstance, EntityName.Cell, EntityName.ContainerDefinition, EntityName.ContainerInstance, EntityName.Device, EntityName.ExecutionEvidence, EntityName.Feedback, EntityName.Function, EntityName.Line, EntityName.Marker, EntityName.Model, EntityName.PartDefinition, EntityName.PartInstance, EntityName.PresentationStrategy, EntityName.ProcessRecipe, EntityName.Product, EntityName.PropertyDefinition, EntityName.PropertyInstance, EntityName.RobotDefinition, EntityName.RobotInstance, EntityName.SequenceDefinition, EntityName.Skill, EntityName.Station, EntityName.TaskDefinition, EntityName.ToolDefinition, EntityName.ToolInstance, EntityName.ValidityPolicy, EntityName.Worker, EntityName.Zone },
+            ["evented"] = new[] { EntityName.Action, EntityName.ActionDefinition, EntityName.ActorAvailability, EntityName.ActorSkill, EntityName.ArConfig, EntityName.ArConfigBinding, EntityName.AssetAdapterDefinition, EntityName.AssetDefinition, EntityName.AssetInstance, EntityName.Cell, EntityName.ContainerDefinition, EntityName.ContainerInstance, EntityName.Device, EntityName.ExecutionEvidence, EntityName.Feedback, EntityName.FeedbackDefinition, EntityName.Function, EntityName.FunctionDefinition, EntityName.Line, EntityName.Marker, EntityName.Model, EntityName.PartDefinition, EntityName.PartInstance, EntityName.PresentationStrategy, EntityName.ProcessRecipe, EntityName.ProcessRun, EntityName.Product, EntityName.PropertyDefinition, EntityName.PropertyInstance, EntityName.RobotAdapterDefinition, EntityName.RobotDefinition, EntityName.RobotInstance, EntityName.SequenceDefinition, EntityName.SequenceRun, EntityName.Skill, EntityName.Station, EntityName.TaskDefinition, EntityName.TaskRun, EntityName.ToolDefinition, EntityName.ToolInstance, EntityName.ValidityPolicy, EntityName.Worker, EntityName.Zone },
+            ["mutable"] = new[] { EntityName.Action, EntityName.ActorSkill, EntityName.ArConfig, EntityName.ArConfigBinding, EntityName.AssetDefinition, EntityName.AssetInstance, EntityName.Cell, EntityName.ContainerDefinition, EntityName.ContainerInstance, EntityName.Device, EntityName.Feedback, EntityName.Function, EntityName.Line, EntityName.Marker, EntityName.Model, EntityName.PartDefinition, EntityName.PartInstance, EntityName.PresentationStrategy, EntityName.ProcessRecipe, EntityName.Product, EntityName.PropertyDefinition, EntityName.PropertyInstance, EntityName.RobotDefinition, EntityName.RobotInstance, EntityName.SequenceDefinition, EntityName.Skill, EntityName.Station, EntityName.TaskDefinition, EntityName.ToolDefinition, EntityName.ToolInstance, EntityName.ValidityPolicy, EntityName.Worker, EntityName.Zone },
+            ["readable"] = new[] { EntityName.Action, EntityName.ActionDefinition, EntityName.ActorAvailability, EntityName.ActorSkill, EntityName.ArConfig, EntityName.ArConfigBinding, EntityName.AssetAdapterDefinition, EntityName.AssetDefinition, EntityName.AssetInstance, EntityName.Cell, EntityName.ContainerDefinition, EntityName.ContainerInstance, EntityName.Device, EntityName.ExecutionEvidence, EntityName.Feedback, EntityName.FeedbackDefinition, EntityName.Function, EntityName.FunctionDefinition, EntityName.Line, EntityName.Marker, EntityName.Model, EntityName.PartDefinition, EntityName.PartInstance, EntityName.PresentationStrategy, EntityName.ProcessRecipe, EntityName.ProcessRun, EntityName.Product, EntityName.PropertyDefinition, EntityName.PropertyInstance, EntityName.RobotAdapterDefinition, EntityName.RobotDefinition, EntityName.RobotInstance, EntityName.SequenceDefinition, EntityName.SequenceRun, EntityName.Skill, EntityName.Station, EntityName.TaskDefinition, EntityName.TaskRun, EntityName.ToolDefinition, EntityName.ToolInstance, EntityName.ValidityPolicy, EntityName.Worker, EntityName.Zone },
+        };
+
+        public static void Validate(string family, string set, EntityName entity) {
+            foreach (var allowed in All[set]) {
+                if (allowed == entity) return;
+            }
+            throw new ArgumentException($"Entity {entity} is not supported by route family {family}.", nameof(entity));
+        }
+    }
+
     public sealed class SubjectDefinition {
         public string Id { get; set; }
         public string Pattern { get; set; }
+        public string Family { get; set; }
+        public string Entity { get; set; }
         public string Lifecycle { get; set; }
         public string Conformance { get; set; }
         public string Interaction { get; set; }
@@ -21,25 +138,409 @@ namespace Messages {
 
     public static class Subjects {
         public static readonly IReadOnlyList<SubjectDefinition> Catalog = new SubjectDefinition[] {
-            new SubjectDefinition { Id = "command.robot.visibility", Pattern = "command.robot.visibility.{robot_instance_id}", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.RobotVisibilityMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "command.storage.clear", Pattern = "command.storage.clear", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "service.v1.StorageClearRequest", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
-            new SubjectDefinition { Id = "command.storage.dump", Pattern = "command.storage.dump", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "service.v1.StorageDumpRequest", EmptyRequest = false, SuccessReply = "service.v1.StorageDumpResult", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
-            new SubjectDefinition { Id = "command.storage.load", Pattern = "command.storage.load", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "service.v1.StorageLoadRequest", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
-            new SubjectDefinition { Id = "command.task_run.progress", Pattern = "command.task_run.progress", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "runtime.v1.TaskProgressUpdate", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "edit.entity.reset", Pattern = "edit.{entity}.reset.{child}", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "edit.model.add", Pattern = "edit.model.add", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ModelArtifact", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "fusion360_exporter", "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "edit.part_definition.add", Pattern = "edit.part_definition.add", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.PartDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "fusion360_exporter", "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "edit.product.add", Pattern = "edit.product.add", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.ProductDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "fusion360_exporter", "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "get.asset_adapter.info", Pattern = "get.asset_adapter.info.{asset_instance_id}", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.AssetAdapterInfoMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/Authoring#65" },
-            new SubjectDefinition { Id = "get.asset_adapter_definition.all", Pattern = "get.asset_adapter_definition.all", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.AssetAdapterDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/Authoring#65" },
-            new SubjectDefinition { Id = "get.asset_adapter_definition.one", Pattern = "get.asset_adapter_definition.one", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetAdapterDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/Authoring#65" },
-            new SubjectDefinition { Id = "get.robot_adapter.info", Pattern = "get.robot_adapter.info.{robot_instance_id}", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "robot.v1.RobotAdapterInfoMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#14" },
-            new SubjectDefinition { Id = "get.robot_adapter_definition.all", Pattern = "get.robot_adapter_definition.all", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.RobotAdapterDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/Authoring#49" },
-            new SubjectDefinition { Id = "get.robot_adapter_definition.one", Pattern = "get.robot_adapter_definition.one", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotAdapterDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/Authoring#49" },
-            new SubjectDefinition { Id = "get.storage.info", Pattern = "get.storage.info", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "service.v1.StorageInfo", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
-            new SubjectDefinition { Id = "plan.robot.path", Pattern = "plan.robot.path.{robot_instance_id}.{plan_id}", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.PathMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "telemetry.robot.controller_status", Pattern = "telemetry.robot.controller_status.{robot_instance_id}", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.RobotControllerStatusMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
-            new SubjectDefinition { Id = "telemetry.robot.end_effector", Pattern = "telemetry.robot.end_effector.{robot_instance_id}", Lifecycle = "planned", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.EndEffectorStateMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "command.robot.visibility", Pattern = "command.robot.visibility.{robot_instance_id}", Family = "", Entity = "", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.RobotVisibilityMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "command.storage.clear", Pattern = "command.storage.clear", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "service.v1.StorageClearRequest", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
+            new SubjectDefinition { Id = "command.storage.dump", Pattern = "command.storage.dump", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "service.v1.StorageDumpRequest", EmptyRequest = false, SuccessReply = "service.v1.StorageDumpResult", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
+            new SubjectDefinition { Id = "command.storage.load", Pattern = "command.storage.load", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "service.v1.StorageLoadRequest", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
+            new SubjectDefinition { Id = "command.task_run.progress", Pattern = "command.task_run.progress", Family = "", Entity = "", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "runtime.v1.TaskProgressUpdate", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.entity.reset", Pattern = "edit.{entity}.reset.{child}", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_adapter.info", Pattern = "get.asset_adapter.info.{asset_instance_id}", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.AssetAdapterInfoMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/Authoring#65" },
+            new SubjectDefinition { Id = "get.robot_adapter.info", Pattern = "get.robot_adapter.info.{robot_instance_id}", Family = "", Entity = "", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "robot.v1.RobotAdapterInfoMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#14" },
+            new SubjectDefinition { Id = "get.storage.info", Pattern = "get.storage.info", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "service.v1.StorageInfo", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#21" },
+            new SubjectDefinition { Id = "plan.robot.path", Pattern = "plan.robot.path.{robot_instance_id}.{plan_id}", Family = "", Entity = "", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.PathMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "telemetry.robot.controller_status", Pattern = "telemetry.robot.controller_status.{robot_instance_id}", Family = "", Entity = "", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.RobotControllerStatusMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "telemetry.robot.end_effector", Pattern = "telemetry.robot.end_effector.{robot_instance_id}", Family = "", Entity = "", Lifecycle = "planned", Conformance = "staged", Interaction = "publish", Payload = "robot.v1.EndEffectorStateMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.action.add", Pattern = "edit.action.add", Family = "edit.entity.add", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.ActionAddMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.action.clone", Pattern = "edit.action.clone", Family = "edit.entity.clone", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.action.remove", Pattern = "edit.action.remove", Family = "edit.entity.remove", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.action.update", Pattern = "edit.action.update", Family = "edit.entity.update", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.ActionUpdateMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.actor_skill.add", Pattern = "edit.actor_skill.add", Family = "edit.entity.add", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "capability.v1.ActorSkill", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.actor_skill.clone", Pattern = "edit.actor_skill.clone", Family = "edit.entity.clone", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.actor_skill.remove", Pattern = "edit.actor_skill.remove", Family = "edit.entity.remove", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.actor_skill.update", Pattern = "edit.actor_skill.update", Family = "edit.entity.update", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "capability.v1.ActorSkill", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config.add", Pattern = "edit.ar_config.add", Family = "edit.entity.add", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.ARConfigAddMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config.clone", Pattern = "edit.ar_config.clone", Family = "edit.entity.clone", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config.remove", Pattern = "edit.ar_config.remove", Family = "edit.entity.remove", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config.update", Pattern = "edit.ar_config.update", Family = "edit.entity.update", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.ARConfigUpdateMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config_binding.add", Pattern = "edit.ar_config_binding.add", Family = "edit.entity.add", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.ARConfigBindingMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config_binding.clone", Pattern = "edit.ar_config_binding.clone", Family = "edit.entity.clone", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config_binding.remove", Pattern = "edit.ar_config_binding.remove", Family = "edit.entity.remove", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.ar_config_binding.update", Pattern = "edit.ar_config_binding.update", Family = "edit.entity.update", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.ARConfigBindingMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_definition.add", Pattern = "edit.asset_definition.add", Family = "edit.entity.add", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.AssetDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_definition.clone", Pattern = "edit.asset_definition.clone", Family = "edit.entity.clone", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_definition.remove", Pattern = "edit.asset_definition.remove", Family = "edit.entity.remove", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_definition.update", Pattern = "edit.asset_definition.update", Family = "edit.entity.update", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.AssetDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_instance.add", Pattern = "edit.asset_instance.add", Family = "edit.entity.add", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.AssetInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_instance.clone", Pattern = "edit.asset_instance.clone", Family = "edit.entity.clone", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_instance.remove", Pattern = "edit.asset_instance.remove", Family = "edit.entity.remove", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.asset_instance.update", Pattern = "edit.asset_instance.update", Family = "edit.entity.update", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.AssetInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.cell.add", Pattern = "edit.cell.add", Family = "edit.entity.add", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.CellDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.cell.clone", Pattern = "edit.cell.clone", Family = "edit.entity.clone", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.cell.remove", Pattern = "edit.cell.remove", Family = "edit.entity.remove", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.cell.update", Pattern = "edit.cell.update", Family = "edit.entity.update", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.CellDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_definition.add", Pattern = "edit.container_definition.add", Family = "edit.entity.add", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ContainerDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_definition.clone", Pattern = "edit.container_definition.clone", Family = "edit.entity.clone", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_definition.remove", Pattern = "edit.container_definition.remove", Family = "edit.entity.remove", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_definition.update", Pattern = "edit.container_definition.update", Family = "edit.entity.update", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ContainerDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_instance.add", Pattern = "edit.container_instance.add", Family = "edit.entity.add", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ContainerInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_instance.clone", Pattern = "edit.container_instance.clone", Family = "edit.entity.clone", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_instance.remove", Pattern = "edit.container_instance.remove", Family = "edit.entity.remove", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.container_instance.update", Pattern = "edit.container_instance.update", Family = "edit.entity.update", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ContainerInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.device.add", Pattern = "edit.device.add", Family = "edit.entity.add", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.DeviceMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.device.clone", Pattern = "edit.device.clone", Family = "edit.entity.clone", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.device.remove", Pattern = "edit.device.remove", Family = "edit.entity.remove", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.device.update", Pattern = "edit.device.update", Family = "edit.entity.update", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.DeviceMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.execution_evidence.add", Pattern = "edit.execution_evidence.add", Family = "edit.entity.add", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "runtime.v1.ExecutionEvidence", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.feedback.add", Pattern = "edit.feedback.add", Family = "edit.entity.add", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.FeedbackAddMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.feedback.clone", Pattern = "edit.feedback.clone", Family = "edit.entity.clone", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.feedback.remove", Pattern = "edit.feedback.remove", Family = "edit.entity.remove", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.feedback.update", Pattern = "edit.feedback.update", Family = "edit.entity.update", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.FeedbackUpdateMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.function.add", Pattern = "edit.function.add", Family = "edit.entity.add", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.FunctionAddMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.function.clone", Pattern = "edit.function.clone", Family = "edit.entity.clone", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.function.remove", Pattern = "edit.function.remove", Family = "edit.entity.remove", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.function.update", Pattern = "edit.function.update", Family = "edit.entity.update", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.FunctionUpdateMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.line.add", Pattern = "edit.line.add", Family = "edit.entity.add", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.LineDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.line.clone", Pattern = "edit.line.clone", Family = "edit.entity.clone", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.line.remove", Pattern = "edit.line.remove", Family = "edit.entity.remove", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.line.update", Pattern = "edit.line.update", Family = "edit.entity.update", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.LineDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.marker.add", Pattern = "edit.marker.add", Family = "edit.entity.add", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.MarkerInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.marker.clone", Pattern = "edit.marker.clone", Family = "edit.entity.clone", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.marker.remove", Pattern = "edit.marker.remove", Family = "edit.entity.remove", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.marker.update", Pattern = "edit.marker.update", Family = "edit.entity.update", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.MarkerInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.model.add", Pattern = "edit.model.add", Family = "edit.entity.add", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ModelArtifact", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "fusion360_exporter", "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.model.clone", Pattern = "edit.model.clone", Family = "edit.entity.clone", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.model.remove", Pattern = "edit.model.remove", Family = "edit.entity.remove", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.model.update", Pattern = "edit.model.update", Family = "edit.entity.update", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ModelArtifact", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_definition.add", Pattern = "edit.part_definition.add", Family = "edit.entity.add", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.PartDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "fusion360_exporter", "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_definition.clone", Pattern = "edit.part_definition.clone", Family = "edit.entity.clone", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_definition.remove", Pattern = "edit.part_definition.remove", Family = "edit.entity.remove", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_definition.update", Pattern = "edit.part_definition.update", Family = "edit.entity.update", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.PartDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_instance.add", Pattern = "edit.part_instance.add", Family = "edit.entity.add", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.PartInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_instance.clone", Pattern = "edit.part_instance.clone", Family = "edit.entity.clone", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_instance.remove", Pattern = "edit.part_instance.remove", Family = "edit.entity.remove", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.part_instance.update", Pattern = "edit.part_instance.update", Family = "edit.entity.update", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.PartInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.presentation_strategy.add", Pattern = "edit.presentation_strategy.add", Family = "edit.entity.add", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.PresentationStrategyAdd", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.presentation_strategy.clone", Pattern = "edit.presentation_strategy.clone", Family = "edit.entity.clone", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.presentation_strategy.remove", Pattern = "edit.presentation_strategy.remove", Family = "edit.entity.remove", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.presentation_strategy.update", Pattern = "edit.presentation_strategy.update", Family = "edit.entity.update", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "ar.v1.PresentationStrategy", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.process_recipe.add", Pattern = "edit.process_recipe.add", Family = "edit.entity.add", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "process.v1.CreateProcessRecipe", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.process_recipe.clone", Pattern = "edit.process_recipe.clone", Family = "edit.entity.clone", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.process_recipe.remove", Pattern = "edit.process_recipe.remove", Family = "edit.entity.remove", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.process_recipe.update", Pattern = "edit.process_recipe.update", Family = "edit.entity.update", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "process.v1.ProcessRecipe", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.product.add", Pattern = "edit.product.add", Family = "edit.entity.add", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.ProductDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "fusion360_exporter", "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.product.clone", Pattern = "edit.product.clone", Family = "edit.entity.clone", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.product.remove", Pattern = "edit.product.remove", Family = "edit.entity.remove", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.product.update", Pattern = "edit.product.update", Family = "edit.entity.update", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "product.v1.ProductDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_definition.add", Pattern = "edit.property_definition.add", Family = "edit.entity.add", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CreatePropertyMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_definition.clone", Pattern = "edit.property_definition.clone", Family = "edit.entity.clone", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_definition.remove", Pattern = "edit.property_definition.remove", Family = "edit.entity.remove", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_definition.update", Pattern = "edit.property_definition.update", Family = "edit.entity.update", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.PropertyDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_instance.add", Pattern = "edit.property_instance.add", Family = "edit.entity.add", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.PropertyInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_instance.clone", Pattern = "edit.property_instance.clone", Family = "edit.entity.clone", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_instance.remove", Pattern = "edit.property_instance.remove", Family = "edit.entity.remove", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.property_instance.update", Pattern = "edit.property_instance.update", Family = "edit.entity.update", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.PropertyInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_definition.add", Pattern = "edit.robot_definition.add", Family = "edit.entity.add", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.RobotDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_definition.clone", Pattern = "edit.robot_definition.clone", Family = "edit.entity.clone", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_definition.remove", Pattern = "edit.robot_definition.remove", Family = "edit.entity.remove", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_definition.update", Pattern = "edit.robot_definition.update", Family = "edit.entity.update", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.RobotDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_instance.add", Pattern = "edit.robot_instance.add", Family = "edit.entity.add", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.RobotInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_instance.clone", Pattern = "edit.robot_instance.clone", Family = "edit.entity.clone", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_instance.remove", Pattern = "edit.robot_instance.remove", Family = "edit.entity.remove", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.robot_instance.update", Pattern = "edit.robot_instance.update", Family = "edit.entity.update", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.RobotInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.sequence_definition.add", Pattern = "edit.sequence_definition.add", Family = "edit.entity.add", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "process.v1.SequenceDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.sequence_definition.clone", Pattern = "edit.sequence_definition.clone", Family = "edit.entity.clone", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.sequence_definition.remove", Pattern = "edit.sequence_definition.remove", Family = "edit.entity.remove", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.sequence_definition.update", Pattern = "edit.sequence_definition.update", Family = "edit.entity.update", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "process.v1.SequenceDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.skill.add", Pattern = "edit.skill.add", Family = "edit.entity.add", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "capability.v1.SkillDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.skill.clone", Pattern = "edit.skill.clone", Family = "edit.entity.clone", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.skill.remove", Pattern = "edit.skill.remove", Family = "edit.entity.remove", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.skill.update", Pattern = "edit.skill.update", Family = "edit.entity.update", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "capability.v1.SkillDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.station.add", Pattern = "edit.station.add", Family = "edit.entity.add", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.StationDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.station.clone", Pattern = "edit.station.clone", Family = "edit.entity.clone", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.station.remove", Pattern = "edit.station.remove", Family = "edit.entity.remove", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.station.update", Pattern = "edit.station.update", Family = "edit.entity.update", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.StationDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.task_definition.add", Pattern = "edit.task_definition.add", Family = "edit.entity.add", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "process.v1.TaskDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.task_definition.clone", Pattern = "edit.task_definition.clone", Family = "edit.entity.clone", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.task_definition.remove", Pattern = "edit.task_definition.remove", Family = "edit.entity.remove", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.task_definition.update", Pattern = "edit.task_definition.update", Family = "edit.entity.update", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "process.v1.TaskDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_definition.add", Pattern = "edit.tool_definition.add", Family = "edit.entity.add", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ToolDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_definition.clone", Pattern = "edit.tool_definition.clone", Family = "edit.entity.clone", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_definition.remove", Pattern = "edit.tool_definition.remove", Family = "edit.entity.remove", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_definition.update", Pattern = "edit.tool_definition.update", Family = "edit.entity.update", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ToolDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_instance.add", Pattern = "edit.tool_instance.add", Family = "edit.entity.add", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ToolInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_instance.clone", Pattern = "edit.tool_instance.clone", Family = "edit.entity.clone", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_instance.remove", Pattern = "edit.tool_instance.remove", Family = "edit.entity.remove", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.tool_instance.update", Pattern = "edit.tool_instance.update", Family = "edit.entity.update", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.ToolInstance", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.validity_policy.add", Pattern = "edit.validity_policy.add", Family = "edit.entity.add", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "capability.v1.ValidityPolicy", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.validity_policy.clone", Pattern = "edit.validity_policy.clone", Family = "edit.entity.clone", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.validity_policy.remove", Pattern = "edit.validity_policy.remove", Family = "edit.entity.remove", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.validity_policy.update", Pattern = "edit.validity_policy.update", Family = "edit.entity.update", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "capability.v1.ValidityPolicy", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.worker.add", Pattern = "edit.worker.add", Family = "edit.entity.add", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.WorkerDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.worker.clone", Pattern = "edit.worker.clone", Family = "edit.entity.clone", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.worker.remove", Pattern = "edit.worker.remove", Family = "edit.entity.remove", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.worker.update", Pattern = "edit.worker.update", Family = "edit.entity.update", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "resources.v1.WorkerDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.zone.add", Pattern = "edit.zone.add", Family = "edit.entity.add", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "geometry.v1.ZoneDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.zone.clone", Pattern = "edit.zone.clone", Family = "edit.entity.clone", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.CloneMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.zone.remove", Pattern = "edit.zone.remove", Family = "edit.entity.remove", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.DeleteMessage", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "edit.zone.update", Pattern = "edit.zone.update", Family = "edit.entity.update", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "geometry.v1.ZoneDefinition", EmptyRequest = false, SuccessReply = "service.v1.Response", FailureReply = "service.v1.Response", Publishers = new[] { "web_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.action.added", Pattern = "event.action.added.{entity_id}", Family = "event.entity.added", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ActionMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.action.removed", Pattern = "event.action.removed.{entity_id}", Family = "event.entity.removed", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ActionMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.action.updated", Pattern = "event.action.updated.{entity_id}", Family = "event.entity.updated", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ActionMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.action_definition.added", Pattern = "event.action_definition.added.{entity_id}", Family = "event.entity.added", Entity = "action_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ActionDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.action_definition.removed", Pattern = "event.action_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "action_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ActionDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.action_definition.updated", Pattern = "event.action_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "action_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ActionDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.actor_availability.added", Pattern = "event.actor_availability.added.{entity_id}", Family = "event.entity.added", Entity = "actor_availability", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ActorAvailability", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.actor_availability.removed", Pattern = "event.actor_availability.removed.{entity_id}", Family = "event.entity.removed", Entity = "actor_availability", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ActorAvailability", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.actor_availability.updated", Pattern = "event.actor_availability.updated.{entity_id}", Family = "event.entity.updated", Entity = "actor_availability", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ActorAvailability", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.actor_skill.added", Pattern = "event.actor_skill.added.{entity_id}", Family = "event.entity.added", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.ActorSkill", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.actor_skill.removed", Pattern = "event.actor_skill.removed.{entity_id}", Family = "event.entity.removed", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.ActorSkill", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.actor_skill.updated", Pattern = "event.actor_skill.updated.{entity_id}", Family = "event.entity.updated", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.ActorSkill", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.ar_config.added", Pattern = "event.ar_config.added.{entity_id}", Family = "event.entity.added", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ARConfigMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.ar_config.removed", Pattern = "event.ar_config.removed.{entity_id}", Family = "event.entity.removed", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ARConfigMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.ar_config.updated", Pattern = "event.ar_config.updated.{entity_id}", Family = "event.entity.updated", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ARConfigMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.ar_config_binding.added", Pattern = "event.ar_config_binding.added.{entity_id}", Family = "event.entity.added", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ARConfigBindingMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.ar_config_binding.removed", Pattern = "event.ar_config_binding.removed.{entity_id}", Family = "event.entity.removed", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ARConfigBindingMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.ar_config_binding.updated", Pattern = "event.ar_config_binding.updated.{entity_id}", Family = "event.entity.updated", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.ARConfigBindingMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_adapter_definition.added", Pattern = "event.asset_adapter_definition.added.{entity_id}", Family = "event.entity.added", Entity = "asset_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetAdapterDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_adapter_definition.removed", Pattern = "event.asset_adapter_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "asset_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetAdapterDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_adapter_definition.updated", Pattern = "event.asset_adapter_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "asset_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetAdapterDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_definition.added", Pattern = "event.asset_definition.added.{entity_id}", Family = "event.entity.added", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_definition.removed", Pattern = "event.asset_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_definition.updated", Pattern = "event.asset_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_instance.added", Pattern = "event.asset_instance.added.{entity_id}", Family = "event.entity.added", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_instance.removed", Pattern = "event.asset_instance.removed.{entity_id}", Family = "event.entity.removed", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.asset_instance.updated", Pattern = "event.asset_instance.updated.{entity_id}", Family = "event.entity.updated", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.AssetInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.cell.added", Pattern = "event.cell.added.{entity_id}", Family = "event.entity.added", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.CellDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.cell.removed", Pattern = "event.cell.removed.{entity_id}", Family = "event.entity.removed", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.CellDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.cell.updated", Pattern = "event.cell.updated.{entity_id}", Family = "event.entity.updated", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.CellDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.container_definition.added", Pattern = "event.container_definition.added.{entity_id}", Family = "event.entity.added", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ContainerDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.container_definition.removed", Pattern = "event.container_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ContainerDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.container_definition.updated", Pattern = "event.container_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ContainerDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.container_instance.added", Pattern = "event.container_instance.added.{entity_id}", Family = "event.entity.added", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ContainerInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.container_instance.removed", Pattern = "event.container_instance.removed.{entity_id}", Family = "event.entity.removed", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ContainerInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.container_instance.updated", Pattern = "event.container_instance.updated.{entity_id}", Family = "event.entity.updated", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ContainerInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.device.added", Pattern = "event.device.added.{entity_id}", Family = "event.entity.added", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.DeviceMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.device.removed", Pattern = "event.device.removed.{entity_id}", Family = "event.entity.removed", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.DeviceMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.device.updated", Pattern = "event.device.updated.{entity_id}", Family = "event.entity.updated", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.DeviceMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.execution_evidence.added", Pattern = "event.execution_evidence.added.{entity_id}", Family = "event.entity.added", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ExecutionEvidence", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.execution_evidence.removed", Pattern = "event.execution_evidence.removed.{entity_id}", Family = "event.entity.removed", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ExecutionEvidence", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.execution_evidence.updated", Pattern = "event.execution_evidence.updated.{entity_id}", Family = "event.entity.updated", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ExecutionEvidence", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.feedback.added", Pattern = "event.feedback.added.{entity_id}", Family = "event.entity.added", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FeedbackMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.feedback.removed", Pattern = "event.feedback.removed.{entity_id}", Family = "event.entity.removed", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FeedbackMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.feedback.updated", Pattern = "event.feedback.updated.{entity_id}", Family = "event.entity.updated", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FeedbackMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.feedback_definition.added", Pattern = "event.feedback_definition.added.{entity_id}", Family = "event.entity.added", Entity = "feedback_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FeedbackDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.feedback_definition.removed", Pattern = "event.feedback_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "feedback_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FeedbackDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.feedback_definition.updated", Pattern = "event.feedback_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "feedback_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FeedbackDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.function.added", Pattern = "event.function.added.{entity_id}", Family = "event.entity.added", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FunctionMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.function.removed", Pattern = "event.function.removed.{entity_id}", Family = "event.entity.removed", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FunctionMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.function.updated", Pattern = "event.function.updated.{entity_id}", Family = "event.entity.updated", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FunctionMessage", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.function_definition.added", Pattern = "event.function_definition.added.{entity_id}", Family = "event.entity.added", Entity = "function_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FunctionDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.function_definition.removed", Pattern = "event.function_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "function_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FunctionDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.function_definition.updated", Pattern = "event.function_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "function_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.FunctionDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.line.added", Pattern = "event.line.added.{entity_id}", Family = "event.entity.added", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.LineDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.line.removed", Pattern = "event.line.removed.{entity_id}", Family = "event.entity.removed", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.LineDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.line.updated", Pattern = "event.line.updated.{entity_id}", Family = "event.entity.updated", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.LineDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.marker.added", Pattern = "event.marker.added.{entity_id}", Family = "event.entity.added", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.MarkerInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.marker.removed", Pattern = "event.marker.removed.{entity_id}", Family = "event.entity.removed", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.MarkerInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.marker.updated", Pattern = "event.marker.updated.{entity_id}", Family = "event.entity.updated", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.MarkerInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.model.added", Pattern = "event.model.added.{entity_id}", Family = "event.entity.added", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ModelArtifact", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.model.removed", Pattern = "event.model.removed.{entity_id}", Family = "event.entity.removed", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ModelArtifact", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.model.updated", Pattern = "event.model.updated.{entity_id}", Family = "event.entity.updated", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ModelArtifact", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.part_definition.added", Pattern = "event.part_definition.added.{entity_id}", Family = "event.entity.added", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.PartDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.part_definition.removed", Pattern = "event.part_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.PartDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.part_definition.updated", Pattern = "event.part_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.PartDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.part_instance.added", Pattern = "event.part_instance.added.{entity_id}", Family = "event.entity.added", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.PartInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.part_instance.removed", Pattern = "event.part_instance.removed.{entity_id}", Family = "event.entity.removed", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.PartInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.part_instance.updated", Pattern = "event.part_instance.updated.{entity_id}", Family = "event.entity.updated", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.PartInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.presentation_strategy.added", Pattern = "event.presentation_strategy.added.{entity_id}", Family = "event.entity.added", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.PresentationStrategy", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.presentation_strategy.removed", Pattern = "event.presentation_strategy.removed.{entity_id}", Family = "event.entity.removed", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.PresentationStrategy", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.presentation_strategy.updated", Pattern = "event.presentation_strategy.updated.{entity_id}", Family = "event.entity.updated", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "ar.v1.PresentationStrategy", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.process_recipe.added", Pattern = "event.process_recipe.added.{entity_id}", Family = "event.entity.added", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.ProcessRecipe", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.process_recipe.removed", Pattern = "event.process_recipe.removed.{entity_id}", Family = "event.entity.removed", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.ProcessRecipe", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.process_recipe.updated", Pattern = "event.process_recipe.updated.{entity_id}", Family = "event.entity.updated", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.ProcessRecipe", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.process_run.added", Pattern = "event.process_run.added.{entity_id}", Family = "event.entity.added", Entity = "process_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ProcessRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.process_run.removed", Pattern = "event.process_run.removed.{entity_id}", Family = "event.entity.removed", Entity = "process_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ProcessRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.process_run.updated", Pattern = "event.process_run.updated.{entity_id}", Family = "event.entity.updated", Entity = "process_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.ProcessRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.product.added", Pattern = "event.product.added.{entity_id}", Family = "event.entity.added", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.ProductDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.product.removed", Pattern = "event.product.removed.{entity_id}", Family = "event.entity.removed", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.ProductDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.product.updated", Pattern = "event.product.updated.{entity_id}", Family = "event.entity.updated", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "product.v1.ProductDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.property_definition.added", Pattern = "event.property_definition.added.{entity_id}", Family = "event.entity.added", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "common.v1.PropertyDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.property_definition.removed", Pattern = "event.property_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "common.v1.PropertyDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.property_definition.updated", Pattern = "event.property_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "common.v1.PropertyDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.property_instance.added", Pattern = "event.property_instance.added.{entity_id}", Family = "event.entity.added", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "common.v1.PropertyInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.property_instance.removed", Pattern = "event.property_instance.removed.{entity_id}", Family = "event.entity.removed", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "common.v1.PropertyInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.property_instance.updated", Pattern = "event.property_instance.updated.{entity_id}", Family = "event.entity.updated", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "common.v1.PropertyInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_adapter_definition.added", Pattern = "event.robot_adapter_definition.added.{entity_id}", Family = "event.entity.added", Entity = "robot_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotAdapterDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_adapter_definition.removed", Pattern = "event.robot_adapter_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "robot_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotAdapterDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_adapter_definition.updated", Pattern = "event.robot_adapter_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "robot_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotAdapterDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_definition.added", Pattern = "event.robot_definition.added.{entity_id}", Family = "event.entity.added", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_definition.removed", Pattern = "event.robot_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_definition.updated", Pattern = "event.robot_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_instance.added", Pattern = "event.robot_instance.added.{entity_id}", Family = "event.entity.added", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_instance.removed", Pattern = "event.robot_instance.removed.{entity_id}", Family = "event.entity.removed", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.robot_instance.updated", Pattern = "event.robot_instance.updated.{entity_id}", Family = "event.entity.updated", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.RobotInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.sequence_definition.added", Pattern = "event.sequence_definition.added.{entity_id}", Family = "event.entity.added", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.SequenceDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.sequence_definition.removed", Pattern = "event.sequence_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.SequenceDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.sequence_definition.updated", Pattern = "event.sequence_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.SequenceDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.sequence_run.added", Pattern = "event.sequence_run.added.{entity_id}", Family = "event.entity.added", Entity = "sequence_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.SequenceRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.sequence_run.removed", Pattern = "event.sequence_run.removed.{entity_id}", Family = "event.entity.removed", Entity = "sequence_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.SequenceRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.sequence_run.updated", Pattern = "event.sequence_run.updated.{entity_id}", Family = "event.entity.updated", Entity = "sequence_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.SequenceRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.skill.added", Pattern = "event.skill.added.{entity_id}", Family = "event.entity.added", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.SkillDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.skill.removed", Pattern = "event.skill.removed.{entity_id}", Family = "event.entity.removed", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.SkillDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.skill.updated", Pattern = "event.skill.updated.{entity_id}", Family = "event.entity.updated", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.SkillDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.station.added", Pattern = "event.station.added.{entity_id}", Family = "event.entity.added", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.StationDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.station.removed", Pattern = "event.station.removed.{entity_id}", Family = "event.entity.removed", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.StationDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.station.updated", Pattern = "event.station.updated.{entity_id}", Family = "event.entity.updated", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.StationDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.task_definition.added", Pattern = "event.task_definition.added.{entity_id}", Family = "event.entity.added", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.TaskDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.task_definition.removed", Pattern = "event.task_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.TaskDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.task_definition.updated", Pattern = "event.task_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "process.v1.TaskDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.task_run.added", Pattern = "event.task_run.added.{entity_id}", Family = "event.entity.added", Entity = "task_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.TaskRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.task_run.removed", Pattern = "event.task_run.removed.{entity_id}", Family = "event.entity.removed", Entity = "task_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.TaskRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.task_run.updated", Pattern = "event.task_run.updated.{entity_id}", Family = "event.entity.updated", Entity = "task_run", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "runtime.v1.TaskRun", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.tool_definition.added", Pattern = "event.tool_definition.added.{entity_id}", Family = "event.entity.added", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ToolDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.tool_definition.removed", Pattern = "event.tool_definition.removed.{entity_id}", Family = "event.entity.removed", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ToolDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.tool_definition.updated", Pattern = "event.tool_definition.updated.{entity_id}", Family = "event.entity.updated", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ToolDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.tool_instance.added", Pattern = "event.tool_instance.added.{entity_id}", Family = "event.entity.added", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ToolInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.tool_instance.removed", Pattern = "event.tool_instance.removed.{entity_id}", Family = "event.entity.removed", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ToolInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.tool_instance.updated", Pattern = "event.tool_instance.updated.{entity_id}", Family = "event.entity.updated", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.ToolInstance", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.validity_policy.added", Pattern = "event.validity_policy.added.{entity_id}", Family = "event.entity.added", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.ValidityPolicy", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.validity_policy.removed", Pattern = "event.validity_policy.removed.{entity_id}", Family = "event.entity.removed", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.ValidityPolicy", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.validity_policy.updated", Pattern = "event.validity_policy.updated.{entity_id}", Family = "event.entity.updated", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "capability.v1.ValidityPolicy", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.worker.added", Pattern = "event.worker.added.{entity_id}", Family = "event.entity.added", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.WorkerDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.worker.removed", Pattern = "event.worker.removed.{entity_id}", Family = "event.entity.removed", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.WorkerDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.worker.updated", Pattern = "event.worker.updated.{entity_id}", Family = "event.entity.updated", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "resources.v1.WorkerDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.zone.added", Pattern = "event.zone.added.{entity_id}", Family = "event.entity.added", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "geometry.v1.ZoneDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.zone.removed", Pattern = "event.zone.removed.{entity_id}", Family = "event.entity.removed", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "geometry.v1.ZoneDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "event.zone.updated", Pattern = "event.zone.updated.{entity_id}", Family = "event.entity.updated", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "publish", Payload = "geometry.v1.ZoneDefinition", Request = "", EmptyRequest = false, SuccessReply = "", FailureReply = "", Publishers = new[] { "authoring" }, Consumers = new[] { "web_cobotar", "holo_cobotar" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.action.all", Pattern = "get.action.all", Family = "get.entity.all", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.ActionMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.action.one", Pattern = "get.action.one", Family = "get.entity.one", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.ActionMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.action.some", Pattern = "get.action.some", Family = "get.entity.some", Entity = "action", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.ActionMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.action_definition.all", Pattern = "get.action_definition.all", Family = "get.entity.all", Entity = "action_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.ActionDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.action_definition.one", Pattern = "get.action_definition.one", Family = "get.entity.one", Entity = "action_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.ActionDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.action_definition.some", Pattern = "get.action_definition.some", Family = "get.entity.some", Entity = "action_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.ActionDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.actor_availability.all", Pattern = "get.actor_availability.all", Family = "get.entity.all", Entity = "actor_availability", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "runtime.v1.ActorAvailabilities", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.actor_availability.one", Pattern = "get.actor_availability.one", Family = "get.entity.one", Entity = "actor_availability", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "runtime.v1.ActorAvailability", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.actor_availability.some", Pattern = "get.actor_availability.some", Family = "get.entity.some", Entity = "actor_availability", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "runtime.v1.ActorAvailabilities", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.actor_skill.all", Pattern = "get.actor_skill.all", Family = "get.entity.all", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "capability.v1.ActorSkills", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.actor_skill.one", Pattern = "get.actor_skill.one", Family = "get.entity.one", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "capability.v1.ActorSkill", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.actor_skill.some", Pattern = "get.actor_skill.some", Family = "get.entity.some", Entity = "actor_skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "capability.v1.ActorSkills", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.ar_config.all", Pattern = "get.ar_config.all", Family = "get.entity.all", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.ARConfigMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.ar_config.one", Pattern = "get.ar_config.one", Family = "get.entity.one", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.ARConfigMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.ar_config.some", Pattern = "get.ar_config.some", Family = "get.entity.some", Entity = "ar_config", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.ARConfigMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.ar_config_binding.all", Pattern = "get.ar_config_binding.all", Family = "get.entity.all", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.ARConfigBindingMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.ar_config_binding.one", Pattern = "get.ar_config_binding.one", Family = "get.entity.one", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.ARConfigBindingMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.ar_config_binding.some", Pattern = "get.ar_config_binding.some", Family = "get.entity.some", Entity = "ar_config_binding", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.ARConfigBindingMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_adapter_definition.all", Pattern = "get.asset_adapter_definition.all", Family = "get.entity.all", Entity = "asset_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.AssetAdapterDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_adapter_definition.one", Pattern = "get.asset_adapter_definition.one", Family = "get.entity.one", Entity = "asset_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetAdapterDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_adapter_definition.some", Pattern = "get.asset_adapter_definition.some", Family = "get.entity.some", Entity = "asset_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetAdapterDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_definition.all", Pattern = "get.asset_definition.all", Family = "get.entity.all", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.AssetDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_definition.one", Pattern = "get.asset_definition.one", Family = "get.entity.one", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_definition.some", Pattern = "get.asset_definition.some", Family = "get.entity.some", Entity = "asset_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_instance.all", Pattern = "get.asset_instance.all", Family = "get.entity.all", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.AssetInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_instance.one", Pattern = "get.asset_instance.one", Family = "get.entity.one", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.asset_instance.some", Pattern = "get.asset_instance.some", Family = "get.entity.some", Entity = "asset_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.AssetInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.cell.all", Pattern = "get.cell.all", Family = "get.entity.all", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.CellDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.cell.one", Pattern = "get.cell.one", Family = "get.entity.one", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.CellDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.cell.some", Pattern = "get.cell.some", Family = "get.entity.some", Entity = "cell", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.CellDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.container_definition.all", Pattern = "get.container_definition.all", Family = "get.entity.all", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.ContainerDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.container_definition.one", Pattern = "get.container_definition.one", Family = "get.entity.one", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.ContainerDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.container_definition.some", Pattern = "get.container_definition.some", Family = "get.entity.some", Entity = "container_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.ContainerDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.container_instance.all", Pattern = "get.container_instance.all", Family = "get.entity.all", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.ContainerInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.container_instance.one", Pattern = "get.container_instance.one", Family = "get.entity.one", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.ContainerInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.container_instance.some", Pattern = "get.container_instance.some", Family = "get.entity.some", Entity = "container_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.ContainerInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.device.all", Pattern = "get.device.all", Family = "get.entity.all", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.DeviceMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.device.one", Pattern = "get.device.one", Family = "get.entity.one", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.DeviceMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.device.some", Pattern = "get.device.some", Family = "get.entity.some", Entity = "device", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.DeviceMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.execution_evidence.all", Pattern = "get.execution_evidence.all", Family = "get.entity.all", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "runtime.v1.ExecutionEvidences", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.execution_evidence.one", Pattern = "get.execution_evidence.one", Family = "get.entity.one", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "runtime.v1.ExecutionEvidence", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.execution_evidence.some", Pattern = "get.execution_evidence.some", Family = "get.entity.some", Entity = "execution_evidence", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "runtime.v1.ExecutionEvidences", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.feedback.all", Pattern = "get.feedback.all", Family = "get.entity.all", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.FeedbackMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.feedback.one", Pattern = "get.feedback.one", Family = "get.entity.one", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.FeedbackMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.feedback.some", Pattern = "get.feedback.some", Family = "get.entity.some", Entity = "feedback", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.FeedbackMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.feedback_definition.all", Pattern = "get.feedback_definition.all", Family = "get.entity.all", Entity = "feedback_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.FeedbackDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.feedback_definition.one", Pattern = "get.feedback_definition.one", Family = "get.entity.one", Entity = "feedback_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.FeedbackDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.feedback_definition.some", Pattern = "get.feedback_definition.some", Family = "get.entity.some", Entity = "feedback_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.FeedbackDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.function.all", Pattern = "get.function.all", Family = "get.entity.all", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.FunctionMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.function.one", Pattern = "get.function.one", Family = "get.entity.one", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.FunctionMessage", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.function.some", Pattern = "get.function.some", Family = "get.entity.some", Entity = "function", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.FunctionMessages", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.function_definition.all", Pattern = "get.function_definition.all", Family = "get.entity.all", Entity = "function_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.FunctionDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.function_definition.one", Pattern = "get.function_definition.one", Family = "get.entity.one", Entity = "function_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.FunctionDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.function_definition.some", Pattern = "get.function_definition.some", Family = "get.entity.some", Entity = "function_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.FunctionDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.line.all", Pattern = "get.line.all", Family = "get.entity.all", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.LineDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.line.one", Pattern = "get.line.one", Family = "get.entity.one", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.LineDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.line.some", Pattern = "get.line.some", Family = "get.entity.some", Entity = "line", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.LineDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.marker.all", Pattern = "get.marker.all", Family = "get.entity.all", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.MarkerInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.marker.one", Pattern = "get.marker.one", Family = "get.entity.one", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.MarkerInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.marker.some", Pattern = "get.marker.some", Family = "get.entity.some", Entity = "marker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.MarkerInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.model.all", Pattern = "get.model.all", Family = "get.entity.all", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.ModelArtifacts", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.model.one", Pattern = "get.model.one", Family = "get.entity.one", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.ModelArtifact", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.model.some", Pattern = "get.model.some", Family = "get.entity.some", Entity = "model", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.ModelArtifacts", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.part_definition.all", Pattern = "get.part_definition.all", Family = "get.entity.all", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "product.v1.PartDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.part_definition.one", Pattern = "get.part_definition.one", Family = "get.entity.one", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "product.v1.PartDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.part_definition.some", Pattern = "get.part_definition.some", Family = "get.entity.some", Entity = "part_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "product.v1.PartDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.part_instance.all", Pattern = "get.part_instance.all", Family = "get.entity.all", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "product.v1.PartInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.part_instance.one", Pattern = "get.part_instance.one", Family = "get.entity.one", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "product.v1.PartInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.part_instance.some", Pattern = "get.part_instance.some", Family = "get.entity.some", Entity = "part_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "product.v1.PartInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.presentation_strategy.all", Pattern = "get.presentation_strategy.all", Family = "get.entity.all", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "ar.v1.PresentationStrategies", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.presentation_strategy.one", Pattern = "get.presentation_strategy.one", Family = "get.entity.one", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "ar.v1.PresentationStrategy", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.presentation_strategy.some", Pattern = "get.presentation_strategy.some", Family = "get.entity.some", Entity = "presentation_strategy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "ar.v1.PresentationStrategies", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.process_recipe.all", Pattern = "get.process_recipe.all", Family = "get.entity.all", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "process.v1.ProcessRecipes", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.process_recipe.one", Pattern = "get.process_recipe.one", Family = "get.entity.one", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "process.v1.ProcessRecipe", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.process_recipe.some", Pattern = "get.process_recipe.some", Family = "get.entity.some", Entity = "process_recipe", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "process.v1.ProcessRecipes", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.process_run.all", Pattern = "get.process_run.all", Family = "get.entity.all", Entity = "process_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "runtime.v1.ProcessRuns", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.process_run.one", Pattern = "get.process_run.one", Family = "get.entity.one", Entity = "process_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "runtime.v1.ProcessRun", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.process_run.some", Pattern = "get.process_run.some", Family = "get.entity.some", Entity = "process_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "runtime.v1.ProcessRuns", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.product.all", Pattern = "get.product.all", Family = "get.entity.all", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "product.v1.ProductDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.product.one", Pattern = "get.product.one", Family = "get.entity.one", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "product.v1.ProductDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.product.some", Pattern = "get.product.some", Family = "get.entity.some", Entity = "product", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "product.v1.ProductDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.property_definition.all", Pattern = "get.property_definition.all", Family = "get.entity.all", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "common.v1.PropertyDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.property_definition.one", Pattern = "get.property_definition.one", Family = "get.entity.one", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "common.v1.PropertyDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.property_definition.some", Pattern = "get.property_definition.some", Family = "get.entity.some", Entity = "property_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "common.v1.PropertyDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.property_instance.all", Pattern = "get.property_instance.all", Family = "get.entity.all", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "common.v1.PropertyInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.property_instance.one", Pattern = "get.property_instance.one", Family = "get.entity.one", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "common.v1.PropertyInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.property_instance.some", Pattern = "get.property_instance.some", Family = "get.entity.some", Entity = "property_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "common.v1.PropertyInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_adapter_definition.all", Pattern = "get.robot_adapter_definition.all", Family = "get.entity.all", Entity = "robot_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.RobotAdapterDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_adapter_definition.one", Pattern = "get.robot_adapter_definition.one", Family = "get.entity.one", Entity = "robot_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotAdapterDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_adapter_definition.some", Pattern = "get.robot_adapter_definition.some", Family = "get.entity.some", Entity = "robot_adapter_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotAdapterDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_definition.all", Pattern = "get.robot_definition.all", Family = "get.entity.all", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.RobotDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_definition.one", Pattern = "get.robot_definition.one", Family = "get.entity.one", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_definition.some", Pattern = "get.robot_definition.some", Family = "get.entity.some", Entity = "robot_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_instance.all", Pattern = "get.robot_instance.all", Family = "get.entity.all", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.RobotInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_instance.one", Pattern = "get.robot_instance.one", Family = "get.entity.one", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.robot_instance.some", Pattern = "get.robot_instance.some", Family = "get.entity.some", Entity = "robot_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.RobotInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.sequence_definition.all", Pattern = "get.sequence_definition.all", Family = "get.entity.all", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "process.v1.SequenceDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.sequence_definition.one", Pattern = "get.sequence_definition.one", Family = "get.entity.one", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "process.v1.SequenceDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.sequence_definition.some", Pattern = "get.sequence_definition.some", Family = "get.entity.some", Entity = "sequence_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "process.v1.SequenceDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.sequence_run.all", Pattern = "get.sequence_run.all", Family = "get.entity.all", Entity = "sequence_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "runtime.v1.SequenceRuns", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.sequence_run.one", Pattern = "get.sequence_run.one", Family = "get.entity.one", Entity = "sequence_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "runtime.v1.SequenceRun", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.sequence_run.some", Pattern = "get.sequence_run.some", Family = "get.entity.some", Entity = "sequence_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "runtime.v1.SequenceRuns", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.skill.all", Pattern = "get.skill.all", Family = "get.entity.all", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "capability.v1.SkillDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.skill.one", Pattern = "get.skill.one", Family = "get.entity.one", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "capability.v1.SkillDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.skill.some", Pattern = "get.skill.some", Family = "get.entity.some", Entity = "skill", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "capability.v1.SkillDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.station.all", Pattern = "get.station.all", Family = "get.entity.all", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.StationDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.station.one", Pattern = "get.station.one", Family = "get.entity.one", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.StationDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.station.some", Pattern = "get.station.some", Family = "get.entity.some", Entity = "station", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.StationDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.task_definition.all", Pattern = "get.task_definition.all", Family = "get.entity.all", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "process.v1.TaskDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.task_definition.one", Pattern = "get.task_definition.one", Family = "get.entity.one", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "process.v1.TaskDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.task_definition.some", Pattern = "get.task_definition.some", Family = "get.entity.some", Entity = "task_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "process.v1.TaskDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.task_run.all", Pattern = "get.task_run.all", Family = "get.entity.all", Entity = "task_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "runtime.v1.TaskRuns", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.task_run.one", Pattern = "get.task_run.one", Family = "get.entity.one", Entity = "task_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "runtime.v1.TaskRun", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.task_run.some", Pattern = "get.task_run.some", Family = "get.entity.some", Entity = "task_run", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "runtime.v1.TaskRuns", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.tool_definition.all", Pattern = "get.tool_definition.all", Family = "get.entity.all", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.ToolDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.tool_definition.one", Pattern = "get.tool_definition.one", Family = "get.entity.one", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.ToolDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.tool_definition.some", Pattern = "get.tool_definition.some", Family = "get.entity.some", Entity = "tool_definition", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.ToolDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.tool_instance.all", Pattern = "get.tool_instance.all", Family = "get.entity.all", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.ToolInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.tool_instance.one", Pattern = "get.tool_instance.one", Family = "get.entity.one", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.ToolInstance", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.tool_instance.some", Pattern = "get.tool_instance.some", Family = "get.entity.some", Entity = "tool_instance", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.ToolInstances", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.validity_policy.all", Pattern = "get.validity_policy.all", Family = "get.entity.all", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "capability.v1.ValidityPolicies", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.validity_policy.one", Pattern = "get.validity_policy.one", Family = "get.entity.one", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "capability.v1.ValidityPolicy", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.validity_policy.some", Pattern = "get.validity_policy.some", Family = "get.entity.some", Entity = "validity_policy", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "capability.v1.ValidityPolicies", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.worker.all", Pattern = "get.worker.all", Family = "get.entity.all", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "resources.v1.WorkerDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.worker.one", Pattern = "get.worker.one", Family = "get.entity.one", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "resources.v1.WorkerDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.worker.some", Pattern = "get.worker.some", Family = "get.entity.some", Entity = "worker", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "resources.v1.WorkerDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.zone.all", Pattern = "get.zone.all", Family = "get.entity.all", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "", EmptyRequest = true, SuccessReply = "geometry.v1.ZoneDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.zone.one", Pattern = "get.zone.one", Family = "get.entity.one", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetMessage", EmptyRequest = false, SuccessReply = "geometry.v1.ZoneDefinition", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
+            new SubjectDefinition { Id = "get.zone.some", Pattern = "get.zone.some", Family = "get.entity.some", Entity = "zone", Lifecycle = "active", Conformance = "staged", Interaction = "request_reply", Payload = "", Request = "common.v1.GetByIdMessage", EmptyRequest = false, SuccessReply = "geometry.v1.ZoneDefinitions", FailureReply = "service.v1.Response", Publishers = new[] { "authoring", "web_cobotar", "holo_cobotar" }, Consumers = new[] { "authoring" }, TrackingIssue = "cobotar/protocol#11" },
         };
 
         /// <summary>Builds command.robot.visibility.{robot_instance_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
@@ -62,34 +563,13 @@ namespace Messages {
         public static string EditEntityReset(string entity, string child) => BuildSubject("edit.{entity}.reset.{child}", "entity", entity, "child", child);
         public static string SubscribeEditEntityResetAny() => "edit.*.reset.*";
 
-        /// <summary>Builds edit.model.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
-        public const string EditModelAdd = "edit.model.add";
-
-        /// <summary>Builds edit.part_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
-        public const string EditPartDefinitionAdd = "edit.part_definition.add";
-
-        /// <summary>Builds edit.product.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
-        public const string EditProductAdd = "edit.product.add";
-
         /// <summary>Builds get.asset_adapter.info.{asset_instance_id}. Experimental: planned/staged; see cobotar/Authoring#65.</summary>
         public static string GetAssetAdapterInfo(string assetInstanceId) => BuildSubject("get.asset_adapter.info.{asset_instance_id}", "asset_instance_id", assetInstanceId);
         public static string SubscribeGetAssetAdapterInfoAny() => "get.asset_adapter.info.*";
 
-        /// <summary>Builds get.asset_adapter_definition.all. Experimental: planned/staged; see cobotar/Authoring#65.</summary>
-        public const string GetAssetAdapterDefinitionAll = "get.asset_adapter_definition.all";
-
-        /// <summary>Builds get.asset_adapter_definition.one. Experimental: planned/staged; see cobotar/Authoring#65.</summary>
-        public const string GetAssetAdapterDefinitionOne = "get.asset_adapter_definition.one";
-
         /// <summary>Builds get.robot_adapter.info.{robot_instance_id}. Experimental: active/staged; see cobotar/protocol#14.</summary>
         public static string GetRobotAdapterInfo(string robotInstanceId) => BuildSubject("get.robot_adapter.info.{robot_instance_id}", "robot_instance_id", robotInstanceId);
         public static string SubscribeGetRobotAdapterInfoAny() => "get.robot_adapter.info.*";
-
-        /// <summary>Builds get.robot_adapter_definition.all. Experimental: planned/staged; see cobotar/Authoring#49.</summary>
-        public const string GetRobotAdapterDefinitionAll = "get.robot_adapter_definition.all";
-
-        /// <summary>Builds get.robot_adapter_definition.one. Experimental: planned/staged; see cobotar/Authoring#49.</summary>
-        public const string GetRobotAdapterDefinitionOne = "get.robot_adapter_definition.one";
 
         /// <summary>Builds get.storage.info. Experimental: planned/staged; see cobotar/protocol#21.</summary>
         public const string GetStorageInfo = "get.storage.info";
@@ -107,6 +587,1354 @@ namespace Messages {
         /// <summary>Builds telemetry.robot.end_effector.{robot_instance_id}. Experimental: planned/staged; see cobotar/protocol#11.</summary>
         public static string TelemetryRobotEndEffector(string robotInstanceId) => BuildSubject("telemetry.robot.end_effector.{robot_instance_id}", "robot_instance_id", robotInstanceId);
         public static string SubscribeTelemetryRobotEndEffectorAny() => "telemetry.robot.end_effector.*";
+
+        /// <summary>Builds edit.action.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActionAdd = "edit.action.add";
+
+        /// <summary>Builds edit.action.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActionClone = "edit.action.clone";
+
+        /// <summary>Builds edit.action.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActionRemove = "edit.action.remove";
+
+        /// <summary>Builds edit.action.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActionUpdate = "edit.action.update";
+
+        /// <summary>Builds edit.actor_skill.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActorSkillAdd = "edit.actor_skill.add";
+
+        /// <summary>Builds edit.actor_skill.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActorSkillClone = "edit.actor_skill.clone";
+
+        /// <summary>Builds edit.actor_skill.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActorSkillRemove = "edit.actor_skill.remove";
+
+        /// <summary>Builds edit.actor_skill.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditActorSkillUpdate = "edit.actor_skill.update";
+
+        /// <summary>Builds edit.ar_config.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigAdd = "edit.ar_config.add";
+
+        /// <summary>Builds edit.ar_config.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigClone = "edit.ar_config.clone";
+
+        /// <summary>Builds edit.ar_config.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigRemove = "edit.ar_config.remove";
+
+        /// <summary>Builds edit.ar_config.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigUpdate = "edit.ar_config.update";
+
+        /// <summary>Builds edit.ar_config_binding.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigBindingAdd = "edit.ar_config_binding.add";
+
+        /// <summary>Builds edit.ar_config_binding.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigBindingClone = "edit.ar_config_binding.clone";
+
+        /// <summary>Builds edit.ar_config_binding.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigBindingRemove = "edit.ar_config_binding.remove";
+
+        /// <summary>Builds edit.ar_config_binding.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditArConfigBindingUpdate = "edit.ar_config_binding.update";
+
+        /// <summary>Builds edit.asset_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetDefinitionAdd = "edit.asset_definition.add";
+
+        /// <summary>Builds edit.asset_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetDefinitionClone = "edit.asset_definition.clone";
+
+        /// <summary>Builds edit.asset_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetDefinitionRemove = "edit.asset_definition.remove";
+
+        /// <summary>Builds edit.asset_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetDefinitionUpdate = "edit.asset_definition.update";
+
+        /// <summary>Builds edit.asset_instance.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetInstanceAdd = "edit.asset_instance.add";
+
+        /// <summary>Builds edit.asset_instance.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetInstanceClone = "edit.asset_instance.clone";
+
+        /// <summary>Builds edit.asset_instance.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetInstanceRemove = "edit.asset_instance.remove";
+
+        /// <summary>Builds edit.asset_instance.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditAssetInstanceUpdate = "edit.asset_instance.update";
+
+        /// <summary>Builds edit.cell.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditCellAdd = "edit.cell.add";
+
+        /// <summary>Builds edit.cell.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditCellClone = "edit.cell.clone";
+
+        /// <summary>Builds edit.cell.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditCellRemove = "edit.cell.remove";
+
+        /// <summary>Builds edit.cell.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditCellUpdate = "edit.cell.update";
+
+        /// <summary>Builds edit.container_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerDefinitionAdd = "edit.container_definition.add";
+
+        /// <summary>Builds edit.container_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerDefinitionClone = "edit.container_definition.clone";
+
+        /// <summary>Builds edit.container_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerDefinitionRemove = "edit.container_definition.remove";
+
+        /// <summary>Builds edit.container_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerDefinitionUpdate = "edit.container_definition.update";
+
+        /// <summary>Builds edit.container_instance.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerInstanceAdd = "edit.container_instance.add";
+
+        /// <summary>Builds edit.container_instance.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerInstanceClone = "edit.container_instance.clone";
+
+        /// <summary>Builds edit.container_instance.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerInstanceRemove = "edit.container_instance.remove";
+
+        /// <summary>Builds edit.container_instance.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditContainerInstanceUpdate = "edit.container_instance.update";
+
+        /// <summary>Builds edit.device.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditDeviceAdd = "edit.device.add";
+
+        /// <summary>Builds edit.device.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditDeviceClone = "edit.device.clone";
+
+        /// <summary>Builds edit.device.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditDeviceRemove = "edit.device.remove";
+
+        /// <summary>Builds edit.device.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditDeviceUpdate = "edit.device.update";
+
+        /// <summary>Builds edit.execution_evidence.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditExecutionEvidenceAdd = "edit.execution_evidence.add";
+
+        /// <summary>Builds edit.feedback.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFeedbackAdd = "edit.feedback.add";
+
+        /// <summary>Builds edit.feedback.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFeedbackClone = "edit.feedback.clone";
+
+        /// <summary>Builds edit.feedback.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFeedbackRemove = "edit.feedback.remove";
+
+        /// <summary>Builds edit.feedback.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFeedbackUpdate = "edit.feedback.update";
+
+        /// <summary>Builds edit.function.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFunctionAdd = "edit.function.add";
+
+        /// <summary>Builds edit.function.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFunctionClone = "edit.function.clone";
+
+        /// <summary>Builds edit.function.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFunctionRemove = "edit.function.remove";
+
+        /// <summary>Builds edit.function.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditFunctionUpdate = "edit.function.update";
+
+        /// <summary>Builds edit.line.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditLineAdd = "edit.line.add";
+
+        /// <summary>Builds edit.line.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditLineClone = "edit.line.clone";
+
+        /// <summary>Builds edit.line.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditLineRemove = "edit.line.remove";
+
+        /// <summary>Builds edit.line.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditLineUpdate = "edit.line.update";
+
+        /// <summary>Builds edit.marker.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditMarkerAdd = "edit.marker.add";
+
+        /// <summary>Builds edit.marker.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditMarkerClone = "edit.marker.clone";
+
+        /// <summary>Builds edit.marker.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditMarkerRemove = "edit.marker.remove";
+
+        /// <summary>Builds edit.marker.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditMarkerUpdate = "edit.marker.update";
+
+        /// <summary>Builds edit.model.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditModelAdd = "edit.model.add";
+
+        /// <summary>Builds edit.model.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditModelClone = "edit.model.clone";
+
+        /// <summary>Builds edit.model.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditModelRemove = "edit.model.remove";
+
+        /// <summary>Builds edit.model.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditModelUpdate = "edit.model.update";
+
+        /// <summary>Builds edit.part_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartDefinitionAdd = "edit.part_definition.add";
+
+        /// <summary>Builds edit.part_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartDefinitionClone = "edit.part_definition.clone";
+
+        /// <summary>Builds edit.part_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartDefinitionRemove = "edit.part_definition.remove";
+
+        /// <summary>Builds edit.part_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartDefinitionUpdate = "edit.part_definition.update";
+
+        /// <summary>Builds edit.part_instance.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartInstanceAdd = "edit.part_instance.add";
+
+        /// <summary>Builds edit.part_instance.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartInstanceClone = "edit.part_instance.clone";
+
+        /// <summary>Builds edit.part_instance.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartInstanceRemove = "edit.part_instance.remove";
+
+        /// <summary>Builds edit.part_instance.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPartInstanceUpdate = "edit.part_instance.update";
+
+        /// <summary>Builds edit.presentation_strategy.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPresentationStrategyAdd = "edit.presentation_strategy.add";
+
+        /// <summary>Builds edit.presentation_strategy.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPresentationStrategyClone = "edit.presentation_strategy.clone";
+
+        /// <summary>Builds edit.presentation_strategy.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPresentationStrategyRemove = "edit.presentation_strategy.remove";
+
+        /// <summary>Builds edit.presentation_strategy.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPresentationStrategyUpdate = "edit.presentation_strategy.update";
+
+        /// <summary>Builds edit.process_recipe.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProcessRecipeAdd = "edit.process_recipe.add";
+
+        /// <summary>Builds edit.process_recipe.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProcessRecipeClone = "edit.process_recipe.clone";
+
+        /// <summary>Builds edit.process_recipe.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProcessRecipeRemove = "edit.process_recipe.remove";
+
+        /// <summary>Builds edit.process_recipe.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProcessRecipeUpdate = "edit.process_recipe.update";
+
+        /// <summary>Builds edit.product.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProductAdd = "edit.product.add";
+
+        /// <summary>Builds edit.product.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProductClone = "edit.product.clone";
+
+        /// <summary>Builds edit.product.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProductRemove = "edit.product.remove";
+
+        /// <summary>Builds edit.product.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditProductUpdate = "edit.product.update";
+
+        /// <summary>Builds edit.property_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyDefinitionAdd = "edit.property_definition.add";
+
+        /// <summary>Builds edit.property_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyDefinitionClone = "edit.property_definition.clone";
+
+        /// <summary>Builds edit.property_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyDefinitionRemove = "edit.property_definition.remove";
+
+        /// <summary>Builds edit.property_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyDefinitionUpdate = "edit.property_definition.update";
+
+        /// <summary>Builds edit.property_instance.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyInstanceAdd = "edit.property_instance.add";
+
+        /// <summary>Builds edit.property_instance.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyInstanceClone = "edit.property_instance.clone";
+
+        /// <summary>Builds edit.property_instance.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyInstanceRemove = "edit.property_instance.remove";
+
+        /// <summary>Builds edit.property_instance.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditPropertyInstanceUpdate = "edit.property_instance.update";
+
+        /// <summary>Builds edit.robot_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotDefinitionAdd = "edit.robot_definition.add";
+
+        /// <summary>Builds edit.robot_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotDefinitionClone = "edit.robot_definition.clone";
+
+        /// <summary>Builds edit.robot_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotDefinitionRemove = "edit.robot_definition.remove";
+
+        /// <summary>Builds edit.robot_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotDefinitionUpdate = "edit.robot_definition.update";
+
+        /// <summary>Builds edit.robot_instance.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotInstanceAdd = "edit.robot_instance.add";
+
+        /// <summary>Builds edit.robot_instance.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotInstanceClone = "edit.robot_instance.clone";
+
+        /// <summary>Builds edit.robot_instance.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotInstanceRemove = "edit.robot_instance.remove";
+
+        /// <summary>Builds edit.robot_instance.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditRobotInstanceUpdate = "edit.robot_instance.update";
+
+        /// <summary>Builds edit.sequence_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSequenceDefinitionAdd = "edit.sequence_definition.add";
+
+        /// <summary>Builds edit.sequence_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSequenceDefinitionClone = "edit.sequence_definition.clone";
+
+        /// <summary>Builds edit.sequence_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSequenceDefinitionRemove = "edit.sequence_definition.remove";
+
+        /// <summary>Builds edit.sequence_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSequenceDefinitionUpdate = "edit.sequence_definition.update";
+
+        /// <summary>Builds edit.skill.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSkillAdd = "edit.skill.add";
+
+        /// <summary>Builds edit.skill.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSkillClone = "edit.skill.clone";
+
+        /// <summary>Builds edit.skill.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSkillRemove = "edit.skill.remove";
+
+        /// <summary>Builds edit.skill.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditSkillUpdate = "edit.skill.update";
+
+        /// <summary>Builds edit.station.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditStationAdd = "edit.station.add";
+
+        /// <summary>Builds edit.station.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditStationClone = "edit.station.clone";
+
+        /// <summary>Builds edit.station.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditStationRemove = "edit.station.remove";
+
+        /// <summary>Builds edit.station.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditStationUpdate = "edit.station.update";
+
+        /// <summary>Builds edit.task_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditTaskDefinitionAdd = "edit.task_definition.add";
+
+        /// <summary>Builds edit.task_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditTaskDefinitionClone = "edit.task_definition.clone";
+
+        /// <summary>Builds edit.task_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditTaskDefinitionRemove = "edit.task_definition.remove";
+
+        /// <summary>Builds edit.task_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditTaskDefinitionUpdate = "edit.task_definition.update";
+
+        /// <summary>Builds edit.tool_definition.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolDefinitionAdd = "edit.tool_definition.add";
+
+        /// <summary>Builds edit.tool_definition.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolDefinitionClone = "edit.tool_definition.clone";
+
+        /// <summary>Builds edit.tool_definition.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolDefinitionRemove = "edit.tool_definition.remove";
+
+        /// <summary>Builds edit.tool_definition.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolDefinitionUpdate = "edit.tool_definition.update";
+
+        /// <summary>Builds edit.tool_instance.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolInstanceAdd = "edit.tool_instance.add";
+
+        /// <summary>Builds edit.tool_instance.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolInstanceClone = "edit.tool_instance.clone";
+
+        /// <summary>Builds edit.tool_instance.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolInstanceRemove = "edit.tool_instance.remove";
+
+        /// <summary>Builds edit.tool_instance.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditToolInstanceUpdate = "edit.tool_instance.update";
+
+        /// <summary>Builds edit.validity_policy.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditValidityPolicyAdd = "edit.validity_policy.add";
+
+        /// <summary>Builds edit.validity_policy.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditValidityPolicyClone = "edit.validity_policy.clone";
+
+        /// <summary>Builds edit.validity_policy.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditValidityPolicyRemove = "edit.validity_policy.remove";
+
+        /// <summary>Builds edit.validity_policy.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditValidityPolicyUpdate = "edit.validity_policy.update";
+
+        /// <summary>Builds edit.worker.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditWorkerAdd = "edit.worker.add";
+
+        /// <summary>Builds edit.worker.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditWorkerClone = "edit.worker.clone";
+
+        /// <summary>Builds edit.worker.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditWorkerRemove = "edit.worker.remove";
+
+        /// <summary>Builds edit.worker.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditWorkerUpdate = "edit.worker.update";
+
+        /// <summary>Builds edit.zone.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditZoneAdd = "edit.zone.add";
+
+        /// <summary>Builds edit.zone.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditZoneClone = "edit.zone.clone";
+
+        /// <summary>Builds edit.zone.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditZoneRemove = "edit.zone.remove";
+
+        /// <summary>Builds edit.zone.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string EditZoneUpdate = "edit.zone.update";
+
+        /// <summary>Builds event.action.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActionAdded(string entityId) => BuildSubject("event.action.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActionAddedAny() => "event.action.added.*";
+
+        /// <summary>Builds event.action.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActionRemoved(string entityId) => BuildSubject("event.action.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActionRemovedAny() => "event.action.removed.*";
+
+        /// <summary>Builds event.action.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActionUpdated(string entityId) => BuildSubject("event.action.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActionUpdatedAny() => "event.action.updated.*";
+
+        /// <summary>Builds event.action_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActionDefinitionAdded(string entityId) => BuildSubject("event.action_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActionDefinitionAddedAny() => "event.action_definition.added.*";
+
+        /// <summary>Builds event.action_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActionDefinitionRemoved(string entityId) => BuildSubject("event.action_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActionDefinitionRemovedAny() => "event.action_definition.removed.*";
+
+        /// <summary>Builds event.action_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActionDefinitionUpdated(string entityId) => BuildSubject("event.action_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActionDefinitionUpdatedAny() => "event.action_definition.updated.*";
+
+        /// <summary>Builds event.actor_availability.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActorAvailabilityAdded(string entityId) => BuildSubject("event.actor_availability.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActorAvailabilityAddedAny() => "event.actor_availability.added.*";
+
+        /// <summary>Builds event.actor_availability.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActorAvailabilityRemoved(string entityId) => BuildSubject("event.actor_availability.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActorAvailabilityRemovedAny() => "event.actor_availability.removed.*";
+
+        /// <summary>Builds event.actor_availability.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActorAvailabilityUpdated(string entityId) => BuildSubject("event.actor_availability.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActorAvailabilityUpdatedAny() => "event.actor_availability.updated.*";
+
+        /// <summary>Builds event.actor_skill.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActorSkillAdded(string entityId) => BuildSubject("event.actor_skill.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActorSkillAddedAny() => "event.actor_skill.added.*";
+
+        /// <summary>Builds event.actor_skill.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActorSkillRemoved(string entityId) => BuildSubject("event.actor_skill.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActorSkillRemovedAny() => "event.actor_skill.removed.*";
+
+        /// <summary>Builds event.actor_skill.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventActorSkillUpdated(string entityId) => BuildSubject("event.actor_skill.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventActorSkillUpdatedAny() => "event.actor_skill.updated.*";
+
+        /// <summary>Builds event.ar_config.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventArConfigAdded(string entityId) => BuildSubject("event.ar_config.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventArConfigAddedAny() => "event.ar_config.added.*";
+
+        /// <summary>Builds event.ar_config.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventArConfigRemoved(string entityId) => BuildSubject("event.ar_config.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventArConfigRemovedAny() => "event.ar_config.removed.*";
+
+        /// <summary>Builds event.ar_config.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventArConfigUpdated(string entityId) => BuildSubject("event.ar_config.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventArConfigUpdatedAny() => "event.ar_config.updated.*";
+
+        /// <summary>Builds event.ar_config_binding.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventArConfigBindingAdded(string entityId) => BuildSubject("event.ar_config_binding.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventArConfigBindingAddedAny() => "event.ar_config_binding.added.*";
+
+        /// <summary>Builds event.ar_config_binding.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventArConfigBindingRemoved(string entityId) => BuildSubject("event.ar_config_binding.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventArConfigBindingRemovedAny() => "event.ar_config_binding.removed.*";
+
+        /// <summary>Builds event.ar_config_binding.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventArConfigBindingUpdated(string entityId) => BuildSubject("event.ar_config_binding.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventArConfigBindingUpdatedAny() => "event.ar_config_binding.updated.*";
+
+        /// <summary>Builds event.asset_adapter_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetAdapterDefinitionAdded(string entityId) => BuildSubject("event.asset_adapter_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetAdapterDefinitionAddedAny() => "event.asset_adapter_definition.added.*";
+
+        /// <summary>Builds event.asset_adapter_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetAdapterDefinitionRemoved(string entityId) => BuildSubject("event.asset_adapter_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetAdapterDefinitionRemovedAny() => "event.asset_adapter_definition.removed.*";
+
+        /// <summary>Builds event.asset_adapter_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetAdapterDefinitionUpdated(string entityId) => BuildSubject("event.asset_adapter_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetAdapterDefinitionUpdatedAny() => "event.asset_adapter_definition.updated.*";
+
+        /// <summary>Builds event.asset_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetDefinitionAdded(string entityId) => BuildSubject("event.asset_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetDefinitionAddedAny() => "event.asset_definition.added.*";
+
+        /// <summary>Builds event.asset_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetDefinitionRemoved(string entityId) => BuildSubject("event.asset_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetDefinitionRemovedAny() => "event.asset_definition.removed.*";
+
+        /// <summary>Builds event.asset_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetDefinitionUpdated(string entityId) => BuildSubject("event.asset_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetDefinitionUpdatedAny() => "event.asset_definition.updated.*";
+
+        /// <summary>Builds event.asset_instance.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetInstanceAdded(string entityId) => BuildSubject("event.asset_instance.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetInstanceAddedAny() => "event.asset_instance.added.*";
+
+        /// <summary>Builds event.asset_instance.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetInstanceRemoved(string entityId) => BuildSubject("event.asset_instance.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetInstanceRemovedAny() => "event.asset_instance.removed.*";
+
+        /// <summary>Builds event.asset_instance.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventAssetInstanceUpdated(string entityId) => BuildSubject("event.asset_instance.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventAssetInstanceUpdatedAny() => "event.asset_instance.updated.*";
+
+        /// <summary>Builds event.cell.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventCellAdded(string entityId) => BuildSubject("event.cell.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventCellAddedAny() => "event.cell.added.*";
+
+        /// <summary>Builds event.cell.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventCellRemoved(string entityId) => BuildSubject("event.cell.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventCellRemovedAny() => "event.cell.removed.*";
+
+        /// <summary>Builds event.cell.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventCellUpdated(string entityId) => BuildSubject("event.cell.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventCellUpdatedAny() => "event.cell.updated.*";
+
+        /// <summary>Builds event.container_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventContainerDefinitionAdded(string entityId) => BuildSubject("event.container_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventContainerDefinitionAddedAny() => "event.container_definition.added.*";
+
+        /// <summary>Builds event.container_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventContainerDefinitionRemoved(string entityId) => BuildSubject("event.container_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventContainerDefinitionRemovedAny() => "event.container_definition.removed.*";
+
+        /// <summary>Builds event.container_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventContainerDefinitionUpdated(string entityId) => BuildSubject("event.container_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventContainerDefinitionUpdatedAny() => "event.container_definition.updated.*";
+
+        /// <summary>Builds event.container_instance.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventContainerInstanceAdded(string entityId) => BuildSubject("event.container_instance.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventContainerInstanceAddedAny() => "event.container_instance.added.*";
+
+        /// <summary>Builds event.container_instance.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventContainerInstanceRemoved(string entityId) => BuildSubject("event.container_instance.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventContainerInstanceRemovedAny() => "event.container_instance.removed.*";
+
+        /// <summary>Builds event.container_instance.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventContainerInstanceUpdated(string entityId) => BuildSubject("event.container_instance.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventContainerInstanceUpdatedAny() => "event.container_instance.updated.*";
+
+        /// <summary>Builds event.device.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventDeviceAdded(string entityId) => BuildSubject("event.device.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventDeviceAddedAny() => "event.device.added.*";
+
+        /// <summary>Builds event.device.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventDeviceRemoved(string entityId) => BuildSubject("event.device.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventDeviceRemovedAny() => "event.device.removed.*";
+
+        /// <summary>Builds event.device.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventDeviceUpdated(string entityId) => BuildSubject("event.device.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventDeviceUpdatedAny() => "event.device.updated.*";
+
+        /// <summary>Builds event.execution_evidence.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventExecutionEvidenceAdded(string entityId) => BuildSubject("event.execution_evidence.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventExecutionEvidenceAddedAny() => "event.execution_evidence.added.*";
+
+        /// <summary>Builds event.execution_evidence.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventExecutionEvidenceRemoved(string entityId) => BuildSubject("event.execution_evidence.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventExecutionEvidenceRemovedAny() => "event.execution_evidence.removed.*";
+
+        /// <summary>Builds event.execution_evidence.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventExecutionEvidenceUpdated(string entityId) => BuildSubject("event.execution_evidence.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventExecutionEvidenceUpdatedAny() => "event.execution_evidence.updated.*";
+
+        /// <summary>Builds event.feedback.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFeedbackAdded(string entityId) => BuildSubject("event.feedback.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFeedbackAddedAny() => "event.feedback.added.*";
+
+        /// <summary>Builds event.feedback.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFeedbackRemoved(string entityId) => BuildSubject("event.feedback.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFeedbackRemovedAny() => "event.feedback.removed.*";
+
+        /// <summary>Builds event.feedback.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFeedbackUpdated(string entityId) => BuildSubject("event.feedback.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFeedbackUpdatedAny() => "event.feedback.updated.*";
+
+        /// <summary>Builds event.feedback_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFeedbackDefinitionAdded(string entityId) => BuildSubject("event.feedback_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFeedbackDefinitionAddedAny() => "event.feedback_definition.added.*";
+
+        /// <summary>Builds event.feedback_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFeedbackDefinitionRemoved(string entityId) => BuildSubject("event.feedback_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFeedbackDefinitionRemovedAny() => "event.feedback_definition.removed.*";
+
+        /// <summary>Builds event.feedback_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFeedbackDefinitionUpdated(string entityId) => BuildSubject("event.feedback_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFeedbackDefinitionUpdatedAny() => "event.feedback_definition.updated.*";
+
+        /// <summary>Builds event.function.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFunctionAdded(string entityId) => BuildSubject("event.function.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFunctionAddedAny() => "event.function.added.*";
+
+        /// <summary>Builds event.function.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFunctionRemoved(string entityId) => BuildSubject("event.function.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFunctionRemovedAny() => "event.function.removed.*";
+
+        /// <summary>Builds event.function.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFunctionUpdated(string entityId) => BuildSubject("event.function.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFunctionUpdatedAny() => "event.function.updated.*";
+
+        /// <summary>Builds event.function_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFunctionDefinitionAdded(string entityId) => BuildSubject("event.function_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFunctionDefinitionAddedAny() => "event.function_definition.added.*";
+
+        /// <summary>Builds event.function_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFunctionDefinitionRemoved(string entityId) => BuildSubject("event.function_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFunctionDefinitionRemovedAny() => "event.function_definition.removed.*";
+
+        /// <summary>Builds event.function_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventFunctionDefinitionUpdated(string entityId) => BuildSubject("event.function_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventFunctionDefinitionUpdatedAny() => "event.function_definition.updated.*";
+
+        /// <summary>Builds event.line.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventLineAdded(string entityId) => BuildSubject("event.line.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventLineAddedAny() => "event.line.added.*";
+
+        /// <summary>Builds event.line.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventLineRemoved(string entityId) => BuildSubject("event.line.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventLineRemovedAny() => "event.line.removed.*";
+
+        /// <summary>Builds event.line.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventLineUpdated(string entityId) => BuildSubject("event.line.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventLineUpdatedAny() => "event.line.updated.*";
+
+        /// <summary>Builds event.marker.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventMarkerAdded(string entityId) => BuildSubject("event.marker.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventMarkerAddedAny() => "event.marker.added.*";
+
+        /// <summary>Builds event.marker.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventMarkerRemoved(string entityId) => BuildSubject("event.marker.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventMarkerRemovedAny() => "event.marker.removed.*";
+
+        /// <summary>Builds event.marker.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventMarkerUpdated(string entityId) => BuildSubject("event.marker.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventMarkerUpdatedAny() => "event.marker.updated.*";
+
+        /// <summary>Builds event.model.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventModelAdded(string entityId) => BuildSubject("event.model.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventModelAddedAny() => "event.model.added.*";
+
+        /// <summary>Builds event.model.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventModelRemoved(string entityId) => BuildSubject("event.model.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventModelRemovedAny() => "event.model.removed.*";
+
+        /// <summary>Builds event.model.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventModelUpdated(string entityId) => BuildSubject("event.model.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventModelUpdatedAny() => "event.model.updated.*";
+
+        /// <summary>Builds event.part_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPartDefinitionAdded(string entityId) => BuildSubject("event.part_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPartDefinitionAddedAny() => "event.part_definition.added.*";
+
+        /// <summary>Builds event.part_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPartDefinitionRemoved(string entityId) => BuildSubject("event.part_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPartDefinitionRemovedAny() => "event.part_definition.removed.*";
+
+        /// <summary>Builds event.part_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPartDefinitionUpdated(string entityId) => BuildSubject("event.part_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPartDefinitionUpdatedAny() => "event.part_definition.updated.*";
+
+        /// <summary>Builds event.part_instance.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPartInstanceAdded(string entityId) => BuildSubject("event.part_instance.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPartInstanceAddedAny() => "event.part_instance.added.*";
+
+        /// <summary>Builds event.part_instance.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPartInstanceRemoved(string entityId) => BuildSubject("event.part_instance.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPartInstanceRemovedAny() => "event.part_instance.removed.*";
+
+        /// <summary>Builds event.part_instance.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPartInstanceUpdated(string entityId) => BuildSubject("event.part_instance.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPartInstanceUpdatedAny() => "event.part_instance.updated.*";
+
+        /// <summary>Builds event.presentation_strategy.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPresentationStrategyAdded(string entityId) => BuildSubject("event.presentation_strategy.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPresentationStrategyAddedAny() => "event.presentation_strategy.added.*";
+
+        /// <summary>Builds event.presentation_strategy.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPresentationStrategyRemoved(string entityId) => BuildSubject("event.presentation_strategy.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPresentationStrategyRemovedAny() => "event.presentation_strategy.removed.*";
+
+        /// <summary>Builds event.presentation_strategy.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPresentationStrategyUpdated(string entityId) => BuildSubject("event.presentation_strategy.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPresentationStrategyUpdatedAny() => "event.presentation_strategy.updated.*";
+
+        /// <summary>Builds event.process_recipe.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProcessRecipeAdded(string entityId) => BuildSubject("event.process_recipe.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProcessRecipeAddedAny() => "event.process_recipe.added.*";
+
+        /// <summary>Builds event.process_recipe.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProcessRecipeRemoved(string entityId) => BuildSubject("event.process_recipe.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProcessRecipeRemovedAny() => "event.process_recipe.removed.*";
+
+        /// <summary>Builds event.process_recipe.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProcessRecipeUpdated(string entityId) => BuildSubject("event.process_recipe.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProcessRecipeUpdatedAny() => "event.process_recipe.updated.*";
+
+        /// <summary>Builds event.process_run.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProcessRunAdded(string entityId) => BuildSubject("event.process_run.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProcessRunAddedAny() => "event.process_run.added.*";
+
+        /// <summary>Builds event.process_run.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProcessRunRemoved(string entityId) => BuildSubject("event.process_run.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProcessRunRemovedAny() => "event.process_run.removed.*";
+
+        /// <summary>Builds event.process_run.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProcessRunUpdated(string entityId) => BuildSubject("event.process_run.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProcessRunUpdatedAny() => "event.process_run.updated.*";
+
+        /// <summary>Builds event.product.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProductAdded(string entityId) => BuildSubject("event.product.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProductAddedAny() => "event.product.added.*";
+
+        /// <summary>Builds event.product.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProductRemoved(string entityId) => BuildSubject("event.product.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProductRemovedAny() => "event.product.removed.*";
+
+        /// <summary>Builds event.product.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventProductUpdated(string entityId) => BuildSubject("event.product.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventProductUpdatedAny() => "event.product.updated.*";
+
+        /// <summary>Builds event.property_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPropertyDefinitionAdded(string entityId) => BuildSubject("event.property_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPropertyDefinitionAddedAny() => "event.property_definition.added.*";
+
+        /// <summary>Builds event.property_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPropertyDefinitionRemoved(string entityId) => BuildSubject("event.property_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPropertyDefinitionRemovedAny() => "event.property_definition.removed.*";
+
+        /// <summary>Builds event.property_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPropertyDefinitionUpdated(string entityId) => BuildSubject("event.property_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPropertyDefinitionUpdatedAny() => "event.property_definition.updated.*";
+
+        /// <summary>Builds event.property_instance.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPropertyInstanceAdded(string entityId) => BuildSubject("event.property_instance.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPropertyInstanceAddedAny() => "event.property_instance.added.*";
+
+        /// <summary>Builds event.property_instance.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPropertyInstanceRemoved(string entityId) => BuildSubject("event.property_instance.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPropertyInstanceRemovedAny() => "event.property_instance.removed.*";
+
+        /// <summary>Builds event.property_instance.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventPropertyInstanceUpdated(string entityId) => BuildSubject("event.property_instance.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventPropertyInstanceUpdatedAny() => "event.property_instance.updated.*";
+
+        /// <summary>Builds event.robot_adapter_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotAdapterDefinitionAdded(string entityId) => BuildSubject("event.robot_adapter_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotAdapterDefinitionAddedAny() => "event.robot_adapter_definition.added.*";
+
+        /// <summary>Builds event.robot_adapter_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotAdapterDefinitionRemoved(string entityId) => BuildSubject("event.robot_adapter_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotAdapterDefinitionRemovedAny() => "event.robot_adapter_definition.removed.*";
+
+        /// <summary>Builds event.robot_adapter_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotAdapterDefinitionUpdated(string entityId) => BuildSubject("event.robot_adapter_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotAdapterDefinitionUpdatedAny() => "event.robot_adapter_definition.updated.*";
+
+        /// <summary>Builds event.robot_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotDefinitionAdded(string entityId) => BuildSubject("event.robot_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotDefinitionAddedAny() => "event.robot_definition.added.*";
+
+        /// <summary>Builds event.robot_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotDefinitionRemoved(string entityId) => BuildSubject("event.robot_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotDefinitionRemovedAny() => "event.robot_definition.removed.*";
+
+        /// <summary>Builds event.robot_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotDefinitionUpdated(string entityId) => BuildSubject("event.robot_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotDefinitionUpdatedAny() => "event.robot_definition.updated.*";
+
+        /// <summary>Builds event.robot_instance.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotInstanceAdded(string entityId) => BuildSubject("event.robot_instance.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotInstanceAddedAny() => "event.robot_instance.added.*";
+
+        /// <summary>Builds event.robot_instance.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotInstanceRemoved(string entityId) => BuildSubject("event.robot_instance.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotInstanceRemovedAny() => "event.robot_instance.removed.*";
+
+        /// <summary>Builds event.robot_instance.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventRobotInstanceUpdated(string entityId) => BuildSubject("event.robot_instance.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventRobotInstanceUpdatedAny() => "event.robot_instance.updated.*";
+
+        /// <summary>Builds event.sequence_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSequenceDefinitionAdded(string entityId) => BuildSubject("event.sequence_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSequenceDefinitionAddedAny() => "event.sequence_definition.added.*";
+
+        /// <summary>Builds event.sequence_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSequenceDefinitionRemoved(string entityId) => BuildSubject("event.sequence_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSequenceDefinitionRemovedAny() => "event.sequence_definition.removed.*";
+
+        /// <summary>Builds event.sequence_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSequenceDefinitionUpdated(string entityId) => BuildSubject("event.sequence_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSequenceDefinitionUpdatedAny() => "event.sequence_definition.updated.*";
+
+        /// <summary>Builds event.sequence_run.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSequenceRunAdded(string entityId) => BuildSubject("event.sequence_run.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSequenceRunAddedAny() => "event.sequence_run.added.*";
+
+        /// <summary>Builds event.sequence_run.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSequenceRunRemoved(string entityId) => BuildSubject("event.sequence_run.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSequenceRunRemovedAny() => "event.sequence_run.removed.*";
+
+        /// <summary>Builds event.sequence_run.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSequenceRunUpdated(string entityId) => BuildSubject("event.sequence_run.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSequenceRunUpdatedAny() => "event.sequence_run.updated.*";
+
+        /// <summary>Builds event.skill.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSkillAdded(string entityId) => BuildSubject("event.skill.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSkillAddedAny() => "event.skill.added.*";
+
+        /// <summary>Builds event.skill.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSkillRemoved(string entityId) => BuildSubject("event.skill.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSkillRemovedAny() => "event.skill.removed.*";
+
+        /// <summary>Builds event.skill.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventSkillUpdated(string entityId) => BuildSubject("event.skill.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventSkillUpdatedAny() => "event.skill.updated.*";
+
+        /// <summary>Builds event.station.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventStationAdded(string entityId) => BuildSubject("event.station.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventStationAddedAny() => "event.station.added.*";
+
+        /// <summary>Builds event.station.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventStationRemoved(string entityId) => BuildSubject("event.station.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventStationRemovedAny() => "event.station.removed.*";
+
+        /// <summary>Builds event.station.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventStationUpdated(string entityId) => BuildSubject("event.station.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventStationUpdatedAny() => "event.station.updated.*";
+
+        /// <summary>Builds event.task_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventTaskDefinitionAdded(string entityId) => BuildSubject("event.task_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventTaskDefinitionAddedAny() => "event.task_definition.added.*";
+
+        /// <summary>Builds event.task_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventTaskDefinitionRemoved(string entityId) => BuildSubject("event.task_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventTaskDefinitionRemovedAny() => "event.task_definition.removed.*";
+
+        /// <summary>Builds event.task_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventTaskDefinitionUpdated(string entityId) => BuildSubject("event.task_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventTaskDefinitionUpdatedAny() => "event.task_definition.updated.*";
+
+        /// <summary>Builds event.task_run.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventTaskRunAdded(string entityId) => BuildSubject("event.task_run.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventTaskRunAddedAny() => "event.task_run.added.*";
+
+        /// <summary>Builds event.task_run.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventTaskRunRemoved(string entityId) => BuildSubject("event.task_run.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventTaskRunRemovedAny() => "event.task_run.removed.*";
+
+        /// <summary>Builds event.task_run.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventTaskRunUpdated(string entityId) => BuildSubject("event.task_run.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventTaskRunUpdatedAny() => "event.task_run.updated.*";
+
+        /// <summary>Builds event.tool_definition.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventToolDefinitionAdded(string entityId) => BuildSubject("event.tool_definition.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventToolDefinitionAddedAny() => "event.tool_definition.added.*";
+
+        /// <summary>Builds event.tool_definition.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventToolDefinitionRemoved(string entityId) => BuildSubject("event.tool_definition.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventToolDefinitionRemovedAny() => "event.tool_definition.removed.*";
+
+        /// <summary>Builds event.tool_definition.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventToolDefinitionUpdated(string entityId) => BuildSubject("event.tool_definition.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventToolDefinitionUpdatedAny() => "event.tool_definition.updated.*";
+
+        /// <summary>Builds event.tool_instance.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventToolInstanceAdded(string entityId) => BuildSubject("event.tool_instance.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventToolInstanceAddedAny() => "event.tool_instance.added.*";
+
+        /// <summary>Builds event.tool_instance.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventToolInstanceRemoved(string entityId) => BuildSubject("event.tool_instance.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventToolInstanceRemovedAny() => "event.tool_instance.removed.*";
+
+        /// <summary>Builds event.tool_instance.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventToolInstanceUpdated(string entityId) => BuildSubject("event.tool_instance.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventToolInstanceUpdatedAny() => "event.tool_instance.updated.*";
+
+        /// <summary>Builds event.validity_policy.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventValidityPolicyAdded(string entityId) => BuildSubject("event.validity_policy.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventValidityPolicyAddedAny() => "event.validity_policy.added.*";
+
+        /// <summary>Builds event.validity_policy.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventValidityPolicyRemoved(string entityId) => BuildSubject("event.validity_policy.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventValidityPolicyRemovedAny() => "event.validity_policy.removed.*";
+
+        /// <summary>Builds event.validity_policy.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventValidityPolicyUpdated(string entityId) => BuildSubject("event.validity_policy.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventValidityPolicyUpdatedAny() => "event.validity_policy.updated.*";
+
+        /// <summary>Builds event.worker.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventWorkerAdded(string entityId) => BuildSubject("event.worker.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventWorkerAddedAny() => "event.worker.added.*";
+
+        /// <summary>Builds event.worker.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventWorkerRemoved(string entityId) => BuildSubject("event.worker.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventWorkerRemovedAny() => "event.worker.removed.*";
+
+        /// <summary>Builds event.worker.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventWorkerUpdated(string entityId) => BuildSubject("event.worker.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventWorkerUpdatedAny() => "event.worker.updated.*";
+
+        /// <summary>Builds event.zone.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventZoneAdded(string entityId) => BuildSubject("event.zone.added.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventZoneAddedAny() => "event.zone.added.*";
+
+        /// <summary>Builds event.zone.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventZoneRemoved(string entityId) => BuildSubject("event.zone.removed.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventZoneRemovedAny() => "event.zone.removed.*";
+
+        /// <summary>Builds event.zone.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventZoneUpdated(string entityId) => BuildSubject("event.zone.updated.{entity_id}", "entity_id", entityId);
+        public static string SubscribeEventZoneUpdatedAny() => "event.zone.updated.*";
+
+        /// <summary>Builds get.action.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActionAll = "get.action.all";
+
+        /// <summary>Builds get.action.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActionOne = "get.action.one";
+
+        /// <summary>Builds get.action.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActionSome = "get.action.some";
+
+        /// <summary>Builds get.action_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActionDefinitionAll = "get.action_definition.all";
+
+        /// <summary>Builds get.action_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActionDefinitionOne = "get.action_definition.one";
+
+        /// <summary>Builds get.action_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActionDefinitionSome = "get.action_definition.some";
+
+        /// <summary>Builds get.actor_availability.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActorAvailabilityAll = "get.actor_availability.all";
+
+        /// <summary>Builds get.actor_availability.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActorAvailabilityOne = "get.actor_availability.one";
+
+        /// <summary>Builds get.actor_availability.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActorAvailabilitySome = "get.actor_availability.some";
+
+        /// <summary>Builds get.actor_skill.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActorSkillAll = "get.actor_skill.all";
+
+        /// <summary>Builds get.actor_skill.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActorSkillOne = "get.actor_skill.one";
+
+        /// <summary>Builds get.actor_skill.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetActorSkillSome = "get.actor_skill.some";
+
+        /// <summary>Builds get.ar_config.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetArConfigAll = "get.ar_config.all";
+
+        /// <summary>Builds get.ar_config.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetArConfigOne = "get.ar_config.one";
+
+        /// <summary>Builds get.ar_config.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetArConfigSome = "get.ar_config.some";
+
+        /// <summary>Builds get.ar_config_binding.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetArConfigBindingAll = "get.ar_config_binding.all";
+
+        /// <summary>Builds get.ar_config_binding.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetArConfigBindingOne = "get.ar_config_binding.one";
+
+        /// <summary>Builds get.ar_config_binding.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetArConfigBindingSome = "get.ar_config_binding.some";
+
+        /// <summary>Builds get.asset_adapter_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetAdapterDefinitionAll = "get.asset_adapter_definition.all";
+
+        /// <summary>Builds get.asset_adapter_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetAdapterDefinitionOne = "get.asset_adapter_definition.one";
+
+        /// <summary>Builds get.asset_adapter_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetAdapterDefinitionSome = "get.asset_adapter_definition.some";
+
+        /// <summary>Builds get.asset_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetDefinitionAll = "get.asset_definition.all";
+
+        /// <summary>Builds get.asset_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetDefinitionOne = "get.asset_definition.one";
+
+        /// <summary>Builds get.asset_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetDefinitionSome = "get.asset_definition.some";
+
+        /// <summary>Builds get.asset_instance.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetInstanceAll = "get.asset_instance.all";
+
+        /// <summary>Builds get.asset_instance.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetInstanceOne = "get.asset_instance.one";
+
+        /// <summary>Builds get.asset_instance.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetAssetInstanceSome = "get.asset_instance.some";
+
+        /// <summary>Builds get.cell.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetCellAll = "get.cell.all";
+
+        /// <summary>Builds get.cell.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetCellOne = "get.cell.one";
+
+        /// <summary>Builds get.cell.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetCellSome = "get.cell.some";
+
+        /// <summary>Builds get.container_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetContainerDefinitionAll = "get.container_definition.all";
+
+        /// <summary>Builds get.container_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetContainerDefinitionOne = "get.container_definition.one";
+
+        /// <summary>Builds get.container_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetContainerDefinitionSome = "get.container_definition.some";
+
+        /// <summary>Builds get.container_instance.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetContainerInstanceAll = "get.container_instance.all";
+
+        /// <summary>Builds get.container_instance.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetContainerInstanceOne = "get.container_instance.one";
+
+        /// <summary>Builds get.container_instance.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetContainerInstanceSome = "get.container_instance.some";
+
+        /// <summary>Builds get.device.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetDeviceAll = "get.device.all";
+
+        /// <summary>Builds get.device.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetDeviceOne = "get.device.one";
+
+        /// <summary>Builds get.device.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetDeviceSome = "get.device.some";
+
+        /// <summary>Builds get.execution_evidence.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetExecutionEvidenceAll = "get.execution_evidence.all";
+
+        /// <summary>Builds get.execution_evidence.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetExecutionEvidenceOne = "get.execution_evidence.one";
+
+        /// <summary>Builds get.execution_evidence.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetExecutionEvidenceSome = "get.execution_evidence.some";
+
+        /// <summary>Builds get.feedback.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFeedbackAll = "get.feedback.all";
+
+        /// <summary>Builds get.feedback.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFeedbackOne = "get.feedback.one";
+
+        /// <summary>Builds get.feedback.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFeedbackSome = "get.feedback.some";
+
+        /// <summary>Builds get.feedback_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFeedbackDefinitionAll = "get.feedback_definition.all";
+
+        /// <summary>Builds get.feedback_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFeedbackDefinitionOne = "get.feedback_definition.one";
+
+        /// <summary>Builds get.feedback_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFeedbackDefinitionSome = "get.feedback_definition.some";
+
+        /// <summary>Builds get.function.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFunctionAll = "get.function.all";
+
+        /// <summary>Builds get.function.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFunctionOne = "get.function.one";
+
+        /// <summary>Builds get.function.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFunctionSome = "get.function.some";
+
+        /// <summary>Builds get.function_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFunctionDefinitionAll = "get.function_definition.all";
+
+        /// <summary>Builds get.function_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFunctionDefinitionOne = "get.function_definition.one";
+
+        /// <summary>Builds get.function_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetFunctionDefinitionSome = "get.function_definition.some";
+
+        /// <summary>Builds get.line.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetLineAll = "get.line.all";
+
+        /// <summary>Builds get.line.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetLineOne = "get.line.one";
+
+        /// <summary>Builds get.line.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetLineSome = "get.line.some";
+
+        /// <summary>Builds get.marker.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetMarkerAll = "get.marker.all";
+
+        /// <summary>Builds get.marker.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetMarkerOne = "get.marker.one";
+
+        /// <summary>Builds get.marker.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetMarkerSome = "get.marker.some";
+
+        /// <summary>Builds get.model.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetModelAll = "get.model.all";
+
+        /// <summary>Builds get.model.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetModelOne = "get.model.one";
+
+        /// <summary>Builds get.model.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetModelSome = "get.model.some";
+
+        /// <summary>Builds get.part_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPartDefinitionAll = "get.part_definition.all";
+
+        /// <summary>Builds get.part_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPartDefinitionOne = "get.part_definition.one";
+
+        /// <summary>Builds get.part_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPartDefinitionSome = "get.part_definition.some";
+
+        /// <summary>Builds get.part_instance.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPartInstanceAll = "get.part_instance.all";
+
+        /// <summary>Builds get.part_instance.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPartInstanceOne = "get.part_instance.one";
+
+        /// <summary>Builds get.part_instance.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPartInstanceSome = "get.part_instance.some";
+
+        /// <summary>Builds get.presentation_strategy.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPresentationStrategyAll = "get.presentation_strategy.all";
+
+        /// <summary>Builds get.presentation_strategy.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPresentationStrategyOne = "get.presentation_strategy.one";
+
+        /// <summary>Builds get.presentation_strategy.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPresentationStrategySome = "get.presentation_strategy.some";
+
+        /// <summary>Builds get.process_recipe.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProcessRecipeAll = "get.process_recipe.all";
+
+        /// <summary>Builds get.process_recipe.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProcessRecipeOne = "get.process_recipe.one";
+
+        /// <summary>Builds get.process_recipe.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProcessRecipeSome = "get.process_recipe.some";
+
+        /// <summary>Builds get.process_run.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProcessRunAll = "get.process_run.all";
+
+        /// <summary>Builds get.process_run.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProcessRunOne = "get.process_run.one";
+
+        /// <summary>Builds get.process_run.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProcessRunSome = "get.process_run.some";
+
+        /// <summary>Builds get.product.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProductAll = "get.product.all";
+
+        /// <summary>Builds get.product.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProductOne = "get.product.one";
+
+        /// <summary>Builds get.product.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetProductSome = "get.product.some";
+
+        /// <summary>Builds get.property_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPropertyDefinitionAll = "get.property_definition.all";
+
+        /// <summary>Builds get.property_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPropertyDefinitionOne = "get.property_definition.one";
+
+        /// <summary>Builds get.property_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPropertyDefinitionSome = "get.property_definition.some";
+
+        /// <summary>Builds get.property_instance.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPropertyInstanceAll = "get.property_instance.all";
+
+        /// <summary>Builds get.property_instance.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPropertyInstanceOne = "get.property_instance.one";
+
+        /// <summary>Builds get.property_instance.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetPropertyInstanceSome = "get.property_instance.some";
+
+        /// <summary>Builds get.robot_adapter_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotAdapterDefinitionAll = "get.robot_adapter_definition.all";
+
+        /// <summary>Builds get.robot_adapter_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotAdapterDefinitionOne = "get.robot_adapter_definition.one";
+
+        /// <summary>Builds get.robot_adapter_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotAdapterDefinitionSome = "get.robot_adapter_definition.some";
+
+        /// <summary>Builds get.robot_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotDefinitionAll = "get.robot_definition.all";
+
+        /// <summary>Builds get.robot_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotDefinitionOne = "get.robot_definition.one";
+
+        /// <summary>Builds get.robot_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotDefinitionSome = "get.robot_definition.some";
+
+        /// <summary>Builds get.robot_instance.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotInstanceAll = "get.robot_instance.all";
+
+        /// <summary>Builds get.robot_instance.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotInstanceOne = "get.robot_instance.one";
+
+        /// <summary>Builds get.robot_instance.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetRobotInstanceSome = "get.robot_instance.some";
+
+        /// <summary>Builds get.sequence_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSequenceDefinitionAll = "get.sequence_definition.all";
+
+        /// <summary>Builds get.sequence_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSequenceDefinitionOne = "get.sequence_definition.one";
+
+        /// <summary>Builds get.sequence_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSequenceDefinitionSome = "get.sequence_definition.some";
+
+        /// <summary>Builds get.sequence_run.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSequenceRunAll = "get.sequence_run.all";
+
+        /// <summary>Builds get.sequence_run.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSequenceRunOne = "get.sequence_run.one";
+
+        /// <summary>Builds get.sequence_run.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSequenceRunSome = "get.sequence_run.some";
+
+        /// <summary>Builds get.skill.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSkillAll = "get.skill.all";
+
+        /// <summary>Builds get.skill.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSkillOne = "get.skill.one";
+
+        /// <summary>Builds get.skill.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetSkillSome = "get.skill.some";
+
+        /// <summary>Builds get.station.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetStationAll = "get.station.all";
+
+        /// <summary>Builds get.station.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetStationOne = "get.station.one";
+
+        /// <summary>Builds get.station.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetStationSome = "get.station.some";
+
+        /// <summary>Builds get.task_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetTaskDefinitionAll = "get.task_definition.all";
+
+        /// <summary>Builds get.task_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetTaskDefinitionOne = "get.task_definition.one";
+
+        /// <summary>Builds get.task_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetTaskDefinitionSome = "get.task_definition.some";
+
+        /// <summary>Builds get.task_run.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetTaskRunAll = "get.task_run.all";
+
+        /// <summary>Builds get.task_run.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetTaskRunOne = "get.task_run.one";
+
+        /// <summary>Builds get.task_run.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetTaskRunSome = "get.task_run.some";
+
+        /// <summary>Builds get.tool_definition.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetToolDefinitionAll = "get.tool_definition.all";
+
+        /// <summary>Builds get.tool_definition.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetToolDefinitionOne = "get.tool_definition.one";
+
+        /// <summary>Builds get.tool_definition.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetToolDefinitionSome = "get.tool_definition.some";
+
+        /// <summary>Builds get.tool_instance.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetToolInstanceAll = "get.tool_instance.all";
+
+        /// <summary>Builds get.tool_instance.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetToolInstanceOne = "get.tool_instance.one";
+
+        /// <summary>Builds get.tool_instance.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetToolInstanceSome = "get.tool_instance.some";
+
+        /// <summary>Builds get.validity_policy.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetValidityPolicyAll = "get.validity_policy.all";
+
+        /// <summary>Builds get.validity_policy.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetValidityPolicyOne = "get.validity_policy.one";
+
+        /// <summary>Builds get.validity_policy.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetValidityPolicySome = "get.validity_policy.some";
+
+        /// <summary>Builds get.worker.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetWorkerAll = "get.worker.all";
+
+        /// <summary>Builds get.worker.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetWorkerOne = "get.worker.one";
+
+        /// <summary>Builds get.worker.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetWorkerSome = "get.worker.some";
+
+        /// <summary>Builds get.zone.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetZoneAll = "get.zone.all";
+
+        /// <summary>Builds get.zone.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetZoneOne = "get.zone.one";
+
+        /// <summary>Builds get.zone.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public const string GetZoneSome = "get.zone.some";
+
+        /// <summary>Builds edit.{entity}.add. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EditEntityAdd(EntityName entity) { EntitySets.Validate("edit.entity.add", "creatable", entity); return BuildSubject("edit.{entity}.add", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeEditEntityAddAny() => "edit.*.add";
+
+        /// <summary>Builds edit.{entity}.clone. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EditEntityClone(EntityName entity) { EntitySets.Validate("edit.entity.clone", "mutable", entity); return BuildSubject("edit.{entity}.clone", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeEditEntityCloneAny() => "edit.*.clone";
+
+        /// <summary>Builds edit.{entity}.remove. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EditEntityRemove(EntityName entity) { EntitySets.Validate("edit.entity.remove", "mutable", entity); return BuildSubject("edit.{entity}.remove", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeEditEntityRemoveAny() => "edit.*.remove";
+
+        /// <summary>Builds edit.{entity}.update. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EditEntityUpdate(EntityName entity) { EntitySets.Validate("edit.entity.update", "mutable", entity); return BuildSubject("edit.{entity}.update", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeEditEntityUpdateAny() => "edit.*.update";
+
+        /// <summary>Builds event.{entity}.added.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventEntityAdded(EntityName entity, string entityId) { EntitySets.Validate("event.entity.added", "evented", entity); return BuildSubject("event.{entity}.added.{entity_id}", "entity", EntityNames.Token(entity), "entity_id", entityId); }
+        public static string SubscribeEventEntityAddedAny() => "event.*.added.*";
+
+        public static string SubscribeEventEntityAddedForEntity(EntityName entity) { EntitySets.Validate("event.entity.added", "evented", entity); return BuildSubject("event.{entity}.added.*", "entity", EntityNames.Token(entity)); }
+
+        /// <summary>Builds event.{entity}.removed.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventEntityRemoved(EntityName entity, string entityId) { EntitySets.Validate("event.entity.removed", "evented", entity); return BuildSubject("event.{entity}.removed.{entity_id}", "entity", EntityNames.Token(entity), "entity_id", entityId); }
+        public static string SubscribeEventEntityRemovedAny() => "event.*.removed.*";
+
+        public static string SubscribeEventEntityRemovedForEntity(EntityName entity) { EntitySets.Validate("event.entity.removed", "evented", entity); return BuildSubject("event.{entity}.removed.*", "entity", EntityNames.Token(entity)); }
+
+        /// <summary>Builds event.{entity}.updated.{entity_id}. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string EventEntityUpdated(EntityName entity, string entityId) { EntitySets.Validate("event.entity.updated", "evented", entity); return BuildSubject("event.{entity}.updated.{entity_id}", "entity", EntityNames.Token(entity), "entity_id", entityId); }
+        public static string SubscribeEventEntityUpdatedAny() => "event.*.updated.*";
+
+        public static string SubscribeEventEntityUpdatedForEntity(EntityName entity) { EntitySets.Validate("event.entity.updated", "evented", entity); return BuildSubject("event.{entity}.updated.*", "entity", EntityNames.Token(entity)); }
+
+        /// <summary>Builds get.{entity}.all. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string GetEntityAll(EntityName entity) { EntitySets.Validate("get.entity.all", "readable", entity); return BuildSubject("get.{entity}.all", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeGetEntityAllAny() => "get.*.all";
+
+        /// <summary>Builds get.{entity}.one. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string GetEntityOne(EntityName entity) { EntitySets.Validate("get.entity.one", "readable", entity); return BuildSubject("get.{entity}.one", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeGetEntityOneAny() => "get.*.one";
+
+        /// <summary>Builds get.{entity}.some. Experimental: active/staged; see cobotar/protocol#11.</summary>
+        public static string GetEntitySome(EntityName entity) { EntitySets.Validate("get.entity.some", "readable", entity); return BuildSubject("get.{entity}.some", "entity", EntityNames.Token(entity)); }
+        public static string SubscribeGetEntitySomeAny() => "get.*.some";
 
         private static string BuildSubject(string pattern, params string[] namesAndValues) {
             var result = pattern;
