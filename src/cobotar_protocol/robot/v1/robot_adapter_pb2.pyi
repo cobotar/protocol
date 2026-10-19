@@ -1,10 +1,10 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from robot.v1 import robot_io_catalog_pb2 as _robot_io_catalog_pb2
-from google.protobuf.internal import containers as _containers
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from collections.abc import Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -65,16 +65,6 @@ class RobotAdapterTelemetryCapability(_message.Message):
     frequency_hz: float
     def __init__(self, type: _Optional[_Union[RobotAdapterTelemetryType, str]] = ..., frequency_hz: _Optional[float] = ...) -> None: ...
 
-class RobotAdapterCapabilities(_message.Message):
-    __slots__ = ("commands", "telemetry", "io_signals")
-    COMMANDS_FIELD_NUMBER: _ClassVar[int]
-    TELEMETRY_FIELD_NUMBER: _ClassVar[int]
-    IO_SIGNALS_FIELD_NUMBER: _ClassVar[int]
-    commands: _containers.RepeatedCompositeFieldContainer[RobotAdapterCommandCapability]
-    telemetry: _containers.RepeatedCompositeFieldContainer[RobotAdapterTelemetryCapability]
-    io_signals: _robot_io_catalog_pb2.RobotIOSignalCatalog
-    def __init__(self, commands: _Optional[_Iterable[_Union[RobotAdapterCommandCapability, _Mapping]]] = ..., telemetry: _Optional[_Iterable[_Union[RobotAdapterTelemetryCapability, _Mapping]]] = ..., io_signals: _Optional[_Union[_robot_io_catalog_pb2.RobotIOSignalCatalog, _Mapping]] = ...) -> None: ...
-
 class RobotControllerIdentity(_message.Message):
     __slots__ = ("manufacturer", "model", "serial_number", "controller_software_version")
     MANUFACTURER_FIELD_NUMBER: _ClassVar[int]
@@ -88,21 +78,17 @@ class RobotControllerIdentity(_message.Message):
     def __init__(self, manufacturer: _Optional[str] = ..., model: _Optional[str] = ..., serial_number: _Optional[str] = ..., controller_software_version: _Optional[str] = ...) -> None: ...
 
 class RobotAdapterInfoMessage(_message.Message):
-    __slots__ = ("robot_id", "robot_type", "identifier", "adapter_type", "adapter_version", "controller", "capabilities", "capabilities_revision")
+    __slots__ = ("robot_id", "adapter_version", "controller", "capabilities_revision", "adapter_definition_id", "io_signals")
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
-    ROBOT_TYPE_FIELD_NUMBER: _ClassVar[int]
-    IDENTIFIER_FIELD_NUMBER: _ClassVar[int]
-    ADAPTER_TYPE_FIELD_NUMBER: _ClassVar[int]
     ADAPTER_VERSION_FIELD_NUMBER: _ClassVar[int]
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
-    CAPABILITIES_FIELD_NUMBER: _ClassVar[int]
     CAPABILITIES_REVISION_FIELD_NUMBER: _ClassVar[int]
+    ADAPTER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
+    IO_SIGNALS_FIELD_NUMBER: _ClassVar[int]
     robot_id: str
-    robot_type: str
-    identifier: str
-    adapter_type: str
     adapter_version: str
     controller: RobotControllerIdentity
-    capabilities: RobotAdapterCapabilities
     capabilities_revision: str
-    def __init__(self, robot_id: _Optional[str] = ..., robot_type: _Optional[str] = ..., identifier: _Optional[str] = ..., adapter_type: _Optional[str] = ..., adapter_version: _Optional[str] = ..., controller: _Optional[_Union[RobotControllerIdentity, _Mapping]] = ..., capabilities: _Optional[_Union[RobotAdapterCapabilities, _Mapping]] = ..., capabilities_revision: _Optional[str] = ...) -> None: ...
+    adapter_definition_id: str
+    io_signals: _robot_io_catalog_pb2.RobotIOSignalCatalog
+    def __init__(self, robot_id: _Optional[str] = ..., adapter_version: _Optional[str] = ..., controller: _Optional[_Union[RobotControllerIdentity, _Mapping]] = ..., capabilities_revision: _Optional[str] = ..., adapter_definition_id: _Optional[str] = ..., io_signals: _Optional[_Union[_robot_io_catalog_pb2.RobotIOSignalCatalog, _Mapping]] = ...) -> None: ...

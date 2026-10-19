@@ -3,6 +3,7 @@ package robot.v1;
 
 import "buf/validate/validate.proto";
 import "robot/v1/robot_io_catalog.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Robot.V1";
 option go_package = "github.com/cobotar/protocol/messages/robot/v1";
@@ -49,17 +50,11 @@ message RobotAdapterTelemetryCapability {
     (buf.validate.field).enum.defined_only = true
   ];
 
-  // Actual configured publication rate, not the theoretical robot maximum.
+  // Publication rate guaranteed by the adapter definition.
   optional double frequency_hz = 2 [(buf.validate.field).double = {
     gt: 0
     finite: true
   }];
-}
-
-message RobotAdapterCapabilities {
-  repeated RobotAdapterCommandCapability commands = 1;
-  repeated RobotAdapterTelemetryCapability telemetry = 2;
-  robot.v1.RobotIOSignalCatalog io_signals = 3;
 }
 
 message RobotControllerIdentity {
@@ -70,23 +65,38 @@ message RobotControllerIdentity {
 }
 
 message RobotAdapterInfoMessage {
-  string robot_id = 1;
+  option (buf.validate.message).cel = {
+    id: "robot_adapter_info.io_signals_robot_id"
+    message: "the I/O catalog robot id must match the adapter info robot id"
+    expression: "this.io_signals.robot_id == this.robot_id"
+  };
 
-  // Existing fields can remain for wire compatibility.
-  string robot_type = 2 [deprecated = true];
-  string identifier = 3 [deprecated = true];
-
-  // Stable implementation name, e.g. "ur.rtde-dashboard".
-  string adapter_type = 4;
+  string robot_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.robot_instance_id_component) = true
+  ];
 
   // Version of the adapter implementation, not the Protobuf API.
-  string adapter_version = 5;
+  string adapter_version = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
 
   // Identity actually reported by the connected controller.
   RobotControllerIdentity controller = 6;
 
-  RobotAdapterCapabilities capabilities = 7;
+  // Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
+  string capabilities_revision = 8 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
 
-  // Deterministic fingerprint of the effective capabilities and I/O catalog.
-  string capabilities_revision = 8;
+  // Static adapter capabilities selected by the robot definition.
+  string adapter_definition_id = 9 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.robot_adapter_definition_id_component) = true
+  ];
+
+  // Signals configured for this connected robot instance.
+  RobotIOSignalCatalog io_signals = 10 [(buf.validate.field).required = true];
 }

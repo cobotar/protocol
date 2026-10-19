@@ -8,6 +8,7 @@ package robotv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -203,7 +204,7 @@ func (x *RobotAdapterCommandCapability) GetType() RobotAdapterCommandType {
 type RobotAdapterTelemetryCapability struct {
 	state protoimpl.MessageState    `protogen:"open.v1"`
 	Type  RobotAdapterTelemetryType `protobuf:"varint,1,opt,name=type,proto3,enum=robot.v1.RobotAdapterTelemetryType" json:"type,omitempty"`
-	// Actual configured publication rate, not the theoretical robot maximum.
+	// Publication rate guaranteed by the adapter definition.
 	FrequencyHz   *float64 `protobuf:"fixed64,2,opt,name=frequency_hz,json=frequencyHz,proto3,oneof" json:"frequency_hz,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -253,66 +254,6 @@ func (x *RobotAdapterTelemetryCapability) GetFrequencyHz() float64 {
 	return 0
 }
 
-type RobotAdapterCapabilities struct {
-	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Commands      []*RobotAdapterCommandCapability   `protobuf:"bytes,1,rep,name=commands,proto3" json:"commands,omitempty"`
-	Telemetry     []*RobotAdapterTelemetryCapability `protobuf:"bytes,2,rep,name=telemetry,proto3" json:"telemetry,omitempty"`
-	IoSignals     *RobotIOSignalCatalog              `protobuf:"bytes,3,opt,name=io_signals,json=ioSignals,proto3" json:"io_signals,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *RobotAdapterCapabilities) Reset() {
-	*x = RobotAdapterCapabilities{}
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *RobotAdapterCapabilities) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RobotAdapterCapabilities) ProtoMessage() {}
-
-func (x *RobotAdapterCapabilities) ProtoReflect() protoreflect.Message {
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RobotAdapterCapabilities.ProtoReflect.Descriptor instead.
-func (*RobotAdapterCapabilities) Descriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *RobotAdapterCapabilities) GetCommands() []*RobotAdapterCommandCapability {
-	if x != nil {
-		return x.Commands
-	}
-	return nil
-}
-
-func (x *RobotAdapterCapabilities) GetTelemetry() []*RobotAdapterTelemetryCapability {
-	if x != nil {
-		return x.Telemetry
-	}
-	return nil
-}
-
-func (x *RobotAdapterCapabilities) GetIoSignals() *RobotIOSignalCatalog {
-	if x != nil {
-		return x.IoSignals
-	}
-	return nil
-}
-
 type RobotControllerIdentity struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
 	Manufacturer              string                 `protobuf:"bytes,1,opt,name=manufacturer,proto3" json:"manufacturer,omitempty"`
@@ -325,7 +266,7 @@ type RobotControllerIdentity struct {
 
 func (x *RobotControllerIdentity) Reset() {
 	*x = RobotControllerIdentity{}
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -337,7 +278,7 @@ func (x *RobotControllerIdentity) String() string {
 func (*RobotControllerIdentity) ProtoMessage() {}
 
 func (x *RobotControllerIdentity) ProtoReflect() protoreflect.Message {
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -350,7 +291,7 @@ func (x *RobotControllerIdentity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotControllerIdentity.ProtoReflect.Descriptor instead.
 func (*RobotControllerIdentity) Descriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{3}
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RobotControllerIdentity) GetManufacturer() string {
@@ -384,28 +325,23 @@ func (x *RobotControllerIdentity) GetControllerSoftwareVersion() string {
 type RobotAdapterInfoMessage struct {
 	state   protoimpl.MessageState `protogen:"open.v1"`
 	RobotId string                 `protobuf:"bytes,1,opt,name=robot_id,json=robotId,proto3" json:"robot_id,omitempty"`
-	// Existing fields can remain for wire compatibility.
-	//
-	// Deprecated: Marked as deprecated in robot/v1/robot_adapter.proto.
-	RobotType string `protobuf:"bytes,2,opt,name=robot_type,json=robotType,proto3" json:"robot_type,omitempty"`
-	// Deprecated: Marked as deprecated in robot/v1/robot_adapter.proto.
-	Identifier string `protobuf:"bytes,3,opt,name=identifier,proto3" json:"identifier,omitempty"`
-	// Stable implementation name, e.g. "ur.rtde-dashboard".
-	AdapterType string `protobuf:"bytes,4,opt,name=adapter_type,json=adapterType,proto3" json:"adapter_type,omitempty"`
 	// Version of the adapter implementation, not the Protobuf API.
 	AdapterVersion string `protobuf:"bytes,5,opt,name=adapter_version,json=adapterVersion,proto3" json:"adapter_version,omitempty"`
 	// Identity actually reported by the connected controller.
-	Controller   *RobotControllerIdentity  `protobuf:"bytes,6,opt,name=controller,proto3" json:"controller,omitempty"`
-	Capabilities *RobotAdapterCapabilities `protobuf:"bytes,7,opt,name=capabilities,proto3" json:"capabilities,omitempty"`
-	// Deterministic fingerprint of the effective capabilities and I/O catalog.
+	Controller *RobotControllerIdentity `protobuf:"bytes,6,opt,name=controller,proto3" json:"controller,omitempty"`
+	// Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
 	CapabilitiesRevision string `protobuf:"bytes,8,opt,name=capabilities_revision,json=capabilitiesRevision,proto3" json:"capabilities_revision,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// Static adapter capabilities selected by the robot definition.
+	AdapterDefinitionId string `protobuf:"bytes,9,opt,name=adapter_definition_id,json=adapterDefinitionId,proto3" json:"adapter_definition_id,omitempty"`
+	// Signals configured for this connected robot instance.
+	IoSignals     *RobotIOSignalCatalog `protobuf:"bytes,10,opt,name=io_signals,json=ioSignals,proto3" json:"io_signals,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *RobotAdapterInfoMessage) Reset() {
 	*x = RobotAdapterInfoMessage{}
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[4]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -417,7 +353,7 @@ func (x *RobotAdapterInfoMessage) String() string {
 func (*RobotAdapterInfoMessage) ProtoMessage() {}
 
 func (x *RobotAdapterInfoMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[4]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -430,35 +366,12 @@ func (x *RobotAdapterInfoMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotAdapterInfoMessage.ProtoReflect.Descriptor instead.
 func (*RobotAdapterInfoMessage) Descriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{4}
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RobotAdapterInfoMessage) GetRobotId() string {
 	if x != nil {
 		return x.RobotId
-	}
-	return ""
-}
-
-// Deprecated: Marked as deprecated in robot/v1/robot_adapter.proto.
-func (x *RobotAdapterInfoMessage) GetRobotType() string {
-	if x != nil {
-		return x.RobotType
-	}
-	return ""
-}
-
-// Deprecated: Marked as deprecated in robot/v1/robot_adapter.proto.
-func (x *RobotAdapterInfoMessage) GetIdentifier() string {
-	if x != nil {
-		return x.Identifier
-	}
-	return ""
-}
-
-func (x *RobotAdapterInfoMessage) GetAdapterType() string {
-	if x != nil {
-		return x.AdapterType
 	}
 	return ""
 }
@@ -477,13 +390,6 @@ func (x *RobotAdapterInfoMessage) GetController() *RobotControllerIdentity {
 	return nil
 }
 
-func (x *RobotAdapterInfoMessage) GetCapabilities() *RobotAdapterCapabilities {
-	if x != nil {
-		return x.Capabilities
-	}
-	return nil
-}
-
 func (x *RobotAdapterInfoMessage) GetCapabilitiesRevision() string {
 	if x != nil {
 		return x.CapabilitiesRevision
@@ -491,41 +397,48 @@ func (x *RobotAdapterInfoMessage) GetCapabilitiesRevision() string {
 	return ""
 }
 
+func (x *RobotAdapterInfoMessage) GetAdapterDefinitionId() string {
+	if x != nil {
+		return x.AdapterDefinitionId
+	}
+	return ""
+}
+
+func (x *RobotAdapterInfoMessage) GetIoSignals() *RobotIOSignalCatalog {
+	if x != nil {
+		return x.IoSignals
+	}
+	return nil
+}
+
 var File_robot_v1_robot_adapter_proto protoreflect.FileDescriptor
 
 const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"\n" +
-	"\x1crobot/v1/robot_adapter.proto\x12\brobot.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1frobot/v1/robot_io_catalog.proto\"c\n" +
+	"\x1crobot/v1/robot_adapter.proto\x12\brobot.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"c\n" +
 	"\x1dRobotAdapterCommandCapability\x12B\n" +
 	"\x04type\x18\x01 \x01(\x0e2!.robot.v1.RobotAdapterCommandTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\xb2\x01\n" +
 	"\x1fRobotAdapterTelemetryCapability\x12D\n" +
 	"\x04type\x18\x01 \x01(\x0e2#.robot.v1.RobotAdapterTelemetryTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x128\n" +
 	"\ffrequency_hz\x18\x02 \x01(\x01B\x10\xbaH\r\x12\v@\x01!\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\vfrequencyHz\x88\x01\x01B\x0f\n" +
-	"\r_frequency_hz\"\xe7\x01\n" +
-	"\x18RobotAdapterCapabilities\x12C\n" +
-	"\bcommands\x18\x01 \x03(\v2'.robot.v1.RobotAdapterCommandCapabilityR\bcommands\x12G\n" +
-	"\ttelemetry\x18\x02 \x03(\v2).robot.v1.RobotAdapterTelemetryCapabilityR\ttelemetry\x12=\n" +
-	"\n" +
-	"io_signals\x18\x03 \x01(\v2\x1e.robot.v1.RobotIOSignalCatalogR\tioSignals\"\xb8\x01\n" +
+	"\r_frequency_hz\"\xb8\x01\n" +
 	"\x17RobotControllerIdentity\x12\"\n" +
 	"\fmanufacturer\x18\x01 \x01(\tR\fmanufacturer\x12\x14\n" +
 	"\x05model\x18\x02 \x01(\tR\x05model\x12#\n" +
 	"\rserial_number\x18\x03 \x01(\tR\fserialNumber\x12>\n" +
-	"\x1bcontroller_software_version\x18\x04 \x01(\tR\x19controllerSoftwareVersion\"\x87\x03\n" +
-	"\x17RobotAdapterInfoMessage\x12\x19\n" +
-	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12!\n" +
-	"\n" +
-	"robot_type\x18\x02 \x01(\tB\x02\x18\x01R\trobotType\x12\"\n" +
-	"\n" +
-	"identifier\x18\x03 \x01(\tB\x02\x18\x01R\n" +
-	"identifier\x12!\n" +
-	"\fadapter_type\x18\x04 \x01(\tR\vadapterType\x12'\n" +
-	"\x0fadapter_version\x18\x05 \x01(\tR\x0eadapterVersion\x12A\n" +
+	"\x1bcontroller_software_version\x18\x04 \x01(\tR\x19controllerSoftwareVersion\"\xa4\x04\n" +
+	"\x17RobotAdapterInfoMessage\x12'\n" +
+	"\brobot_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf1\x04\x01R\arobotId\x125\n" +
+	"\x0fadapter_version\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf4\x04\x01R\x0eadapterVersion\x12A\n" +
 	"\n" +
 	"controller\x18\x06 \x01(\v2!.robot.v1.RobotControllerIdentityR\n" +
-	"controller\x12F\n" +
-	"\fcapabilities\x18\a \x01(\v2\".robot.v1.RobotAdapterCapabilitiesR\fcapabilities\x123\n" +
-	"\x15capabilities_revision\x18\b \x01(\tR\x14capabilitiesRevision*\xaf\x04\n" +
+	"controller\x12A\n" +
+	"\x15capabilities_revision\x18\b \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf4\x04\x01R\x14capabilitiesRevision\x12@\n" +
+	"\x15adapter_definition_id\x18\t \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x13adapterDefinitionId\x12E\n" +
+	"\n" +
+	"io_signals\x18\n" +
+	" \x01(\v2\x1e.robot.v1.RobotIOSignalCatalogB\x06\xbaH\x03\xc8\x01\x01R\tioSignals:\x99\x01\xbaH\x95\x01\x1a\x92\x01\n" +
+	"&robot_adapter_info.io_signals_robot_id\x12=the I/O catalog robot id must match the adapter info robot id\x1a)this.io_signals.robot_id == this.robot_id*\xaf\x04\n" +
 	"\x17RobotAdapterCommandType\x12*\n" +
 	"&ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED\x10\x00\x12+\n" +
 	"'ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY\x10\x01\x12,\n" +
@@ -562,30 +475,26 @@ func file_robot_v1_robot_adapter_proto_rawDescGZIP() []byte {
 }
 
 var file_robot_v1_robot_adapter_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_robot_v1_robot_adapter_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_robot_v1_robot_adapter_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_robot_v1_robot_adapter_proto_goTypes = []any{
 	(RobotAdapterCommandType)(0),            // 0: robot.v1.RobotAdapterCommandType
 	(RobotAdapterTelemetryType)(0),          // 1: robot.v1.RobotAdapterTelemetryType
 	(*RobotAdapterCommandCapability)(nil),   // 2: robot.v1.RobotAdapterCommandCapability
 	(*RobotAdapterTelemetryCapability)(nil), // 3: robot.v1.RobotAdapterTelemetryCapability
-	(*RobotAdapterCapabilities)(nil),        // 4: robot.v1.RobotAdapterCapabilities
-	(*RobotControllerIdentity)(nil),         // 5: robot.v1.RobotControllerIdentity
-	(*RobotAdapterInfoMessage)(nil),         // 6: robot.v1.RobotAdapterInfoMessage
-	(*RobotIOSignalCatalog)(nil),            // 7: robot.v1.RobotIOSignalCatalog
+	(*RobotControllerIdentity)(nil),         // 4: robot.v1.RobotControllerIdentity
+	(*RobotAdapterInfoMessage)(nil),         // 5: robot.v1.RobotAdapterInfoMessage
+	(*RobotIOSignalCatalog)(nil),            // 6: robot.v1.RobotIOSignalCatalog
 }
 var file_robot_v1_robot_adapter_proto_depIdxs = []int32{
 	0, // 0: robot.v1.RobotAdapterCommandCapability.type:type_name -> robot.v1.RobotAdapterCommandType
 	1, // 1: robot.v1.RobotAdapterTelemetryCapability.type:type_name -> robot.v1.RobotAdapterTelemetryType
-	2, // 2: robot.v1.RobotAdapterCapabilities.commands:type_name -> robot.v1.RobotAdapterCommandCapability
-	3, // 3: robot.v1.RobotAdapterCapabilities.telemetry:type_name -> robot.v1.RobotAdapterTelemetryCapability
-	7, // 4: robot.v1.RobotAdapterCapabilities.io_signals:type_name -> robot.v1.RobotIOSignalCatalog
-	5, // 5: robot.v1.RobotAdapterInfoMessage.controller:type_name -> robot.v1.RobotControllerIdentity
-	4, // 6: robot.v1.RobotAdapterInfoMessage.capabilities:type_name -> robot.v1.RobotAdapterCapabilities
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	4, // 2: robot.v1.RobotAdapterInfoMessage.controller:type_name -> robot.v1.RobotControllerIdentity
+	6, // 3: robot.v1.RobotAdapterInfoMessage.io_signals:type_name -> robot.v1.RobotIOSignalCatalog
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_robot_v1_robot_adapter_proto_init() }
@@ -601,7 +510,7 @@ func file_robot_v1_robot_adapter_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_robot_v1_robot_adapter_proto_rawDesc), len(file_robot_v1_robot_adapter_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   5,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

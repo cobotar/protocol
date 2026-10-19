@@ -18,20 +18,11 @@ class RobotType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ROBOT_TYPE_UR5E: _ClassVar[RobotType]
     ROBOT_TYPE_UR10E: _ClassVar[RobotType]
     ROBOT_TYPE_KUKA_IIWA: _ClassVar[RobotType]
-
-class RobotDriverType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    ROBOT_DRIVER_TYPE_UNSPECIFIED: _ClassVar[RobotDriverType]
-    ROBOT_DRIVER_TYPE_UR: _ClassVar[RobotDriverType]
-    ROBOT_DRIVER_TYPE_GENERIC: _ClassVar[RobotDriverType]
 ROBOT_TYPE_UNSPECIFIED: RobotType
 ROBOT_TYPE_UR3E: RobotType
 ROBOT_TYPE_UR5E: RobotType
 ROBOT_TYPE_UR10E: RobotType
 ROBOT_TYPE_KUKA_IIWA: RobotType
-ROBOT_DRIVER_TYPE_UNSPECIFIED: RobotDriverType
-ROBOT_DRIVER_TYPE_UR: RobotDriverType
-ROBOT_DRIVER_TYPE_GENERIC: RobotDriverType
 
 class DefaultRobotSkill(_message.Message):
     __slots__ = ("skill_id", "level")
@@ -42,13 +33,12 @@ class DefaultRobotSkill(_message.Message):
     def __init__(self, skill_id: _Optional[str] = ..., level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ...) -> None: ...
 
 class RobotDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "default_skills")
+    __slots__ = ("id", "name", "icon", "description", "type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "default_skills", "robot_adapter_definition_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    DRIVER_TYPE_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     COUPLER_MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_TOOL_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -56,12 +46,12 @@ class RobotDefinition(_message.Message):
     TOOL_SLOTS_FIELD_NUMBER: _ClassVar[int]
     CAPABILITY_PROFILE_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_SKILLS_FIELD_NUMBER: _ClassVar[int]
+    ROBOT_ADAPTER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     type: RobotType
-    driver_type: RobotDriverType
     model_id: str
     coupler_model_id: str
     supported_tool_definition_ids: _containers.RepeatedScalarFieldContainer[str]
@@ -69,7 +59,8 @@ class RobotDefinition(_message.Message):
     tool_slots: int
     capability_profile: _capability_profile_pb2.CapabilityProfile
     default_skills: _containers.RepeatedCompositeFieldContainer[DefaultRobotSkill]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., driver_type: _Optional[_Union[RobotDriverType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., default_skills: _Optional[_Iterable[_Union[DefaultRobotSkill, _Mapping]]] = ...) -> None: ...
+    robot_adapter_definition_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., default_skills: _Optional[_Iterable[_Union[DefaultRobotSkill, _Mapping]]] = ..., robot_adapter_definition_id: _Optional[str] = ...) -> None: ...
 
 class RobotDefinitions(_message.Message):
     __slots__ = ("items",)

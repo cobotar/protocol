@@ -1,6 +1,9 @@
 syntax = "proto3";
 package robot.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.Robot.V1";
 option go_package = "github.com/cobotar/protocol/messages/robot/v1";
 
@@ -11,10 +14,40 @@ enum RobotIODataType {
   ROBOT_IO_DATA_TYPE_DOUBLE = 3;
 }
 
+// RobotIORegisterKind identifies an I/O family that an adapter can expose as
+// a configured, named signal. Direction follows controller terminology.
+enum RobotIORegisterKind {
+  ROBOT_IO_REGISTER_KIND_UNSPECIFIED = 0;
+
+  ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT = 1;
+  ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT = 2;
+  ROBOT_IO_REGISTER_KIND_ANALOG_INPUT = 3;
+  ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT = 4;
+
+  ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER = 10;
+  ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER = 11;
+  ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER = 12;
+  ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER = 20;
+  ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER = 21;
+  ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER = 22;
+}
+
 message RobotIOSignalDefinition {
-  string signal_id = 1;
-  string name = 2;
-  RobotIODataType data_type = 3;
+  option (buf.validate.message).cel = {
+    id: "robot_io_signal_definition.readable_or_writable"
+    message: "an I/O signal must be readable, writable, or both"
+    expression: "this.readable || this.writable"
+  };
+
+  string signal_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  RobotIODataType data_type = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
 
   // From the public API's perspective—not RTDE's terminology.
   bool readable = 4;
@@ -22,6 +55,13 @@ message RobotIOSignalDefinition {
 }
 
 message RobotIOSignalCatalog {
-  string robot_id = 1;
-  repeated RobotIOSignalDefinition signals = 2;
+  string robot_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.robot_instance_id_component) = true
+  ];
+  repeated RobotIOSignalDefinition signals = 2 [(buf.validate.field).cel = {
+    id: "robot_io_signal_catalog.signals.unique_ids"
+    message: "I/O signal ids must be unique"
+    expression: "this.map(signal, signal.signal_id).unique()"
+  }];
 }

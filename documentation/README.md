@@ -54,6 +54,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
   
 - [ar/v1/provenance.proto](#ar_v1_provenance-proto)
     - [ARContentProvenance](#ar-v1-ARContentProvenance)
@@ -516,8 +517,27 @@
     - [RobotDefinition](#resources-v1-RobotDefinition)
     - [RobotDefinitions](#resources-v1-RobotDefinitions)
   
-    - [RobotDriverType](#resources-v1-RobotDriverType)
     - [RobotType](#resources-v1-RobotType)
+  
+- [robot/v1/robot_io_catalog.proto](#robot_v1_robot_io_catalog-proto)
+    - [RobotIOSignalCatalog](#robot-v1-RobotIOSignalCatalog)
+    - [RobotIOSignalDefinition](#robot-v1-RobotIOSignalDefinition)
+  
+    - [RobotIODataType](#robot-v1-RobotIODataType)
+    - [RobotIORegisterKind](#robot-v1-RobotIORegisterKind)
+  
+- [robot/v1/robot_adapter.proto](#robot_v1_robot_adapter-proto)
+    - [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability)
+    - [RobotAdapterInfoMessage](#robot-v1-RobotAdapterInfoMessage)
+    - [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability)
+    - [RobotControllerIdentity](#robot-v1-RobotControllerIdentity)
+  
+    - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
+    - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
+  
+- [resources/v1/robot_adapter_definition.proto](#resources_v1_robot_adapter_definition-proto)
+    - [RobotAdapterDefinition](#resources-v1-RobotAdapterDefinition)
+    - [RobotAdapterDefinitions](#resources-v1-RobotAdapterDefinitions)
   
 - [resources/v1/robot_instance.proto](#resources_v1_robot_instance-proto)
     - [RobotInstance](#resources-v1-RobotInstance)
@@ -571,22 +591,6 @@
 - [robot/v1/program_state_request.proto](#robot_v1_program_state_request-proto)
     - [AcknowledgeRobot](#robot-v1-AcknowledgeRobot)
     - [ProgramStateRequest](#robot-v1-ProgramStateRequest)
-  
-- [robot/v1/robot_io_catalog.proto](#robot_v1_robot_io_catalog-proto)
-    - [RobotIOSignalCatalog](#robot-v1-RobotIOSignalCatalog)
-    - [RobotIOSignalDefinition](#robot-v1-RobotIOSignalDefinition)
-  
-    - [RobotIODataType](#robot-v1-RobotIODataType)
-  
-- [robot/v1/robot_adapter.proto](#robot_v1_robot_adapter-proto)
-    - [RobotAdapterCapabilities](#robot-v1-RobotAdapterCapabilities)
-    - [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability)
-    - [RobotAdapterInfoMessage](#robot-v1-RobotAdapterInfoMessage)
-    - [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability)
-    - [RobotControllerIdentity](#robot-v1-RobotControllerIdentity)
-  
-    - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
-    - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
   
 - [robot/v1/robot_controller_status.proto](#robot_v1_robot_controller_status-proto)
     - [RobotControllerStatusMessage](#robot-v1-RobotControllerStatusMessage)
@@ -805,6 +809,7 @@
 | product_id_component | bool | .buf.validate.StringRules | 100028 |  |
 | property_definition_id_component | bool | .buf.validate.StringRules | 10003 |  |
 | property_instance_id_component | bool | .buf.validate.StringRules | 10035 |  |
+| robot_adapter_definition_id_component | bool | .buf.validate.StringRules | 10050 |  |
 | robot_definition_id_component | bool | .buf.validate.StringRules | 10004 |  |
 | robot_instance_id_component | bool | .buf.validate.StringRules | 10005 |  |
 | sequence_definition_id_component | bool | .buf.validate.StringRules | 10021 |  |
@@ -7813,7 +7818,6 @@ content_type: &#34;model/gltf-binary&#34;
 | icon | [string](#string) |  | Optional icon representing the robot |
 | description | [string](#string) |  | Optional description of the robot |
 | type | [RobotType](#resources-v1-RobotType) |  | Required type of robot |
-| driver_type | [RobotDriverType](#resources-v1-RobotDriverType) |  | Required driver type for robot |
 | model_id | [string](#string) |  |  |
 | coupler_model_id | [string](#string) |  | Tool mounting capability |
 | supported_tool_definition_ids | [string](#string) | repeated |  |
@@ -7821,6 +7825,7 @@ content_type: &#34;model/gltf-binary&#34;
 | tool_slots | [int32](#int32) |  |  |
 | capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
 | default_skills | [DefaultRobotSkill](#resources-v1-DefaultRobotSkill) | repeated |  |
+| robot_adapter_definition_id | [string](#string) |  | Selects the static adapter implementation and capability contract used by every instance of this robot definition. |
 
 
 
@@ -7844,19 +7849,6 @@ content_type: &#34;model/gltf-binary&#34;
  
 
 
-<a name="resources-v1-RobotDriverType"></a>
-
-### RobotDriverType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_DRIVER_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_DRIVER_TYPE_UR | 1 |  |
-| ROBOT_DRIVER_TYPE_GENERIC | 2 |  |
-
-
-
 <a name="resources-v1-RobotType"></a>
 
 ### RobotType
@@ -7870,6 +7862,270 @@ content_type: &#34;model/gltf-binary&#34;
 | ROBOT_TYPE_UR10E | 12 |  |
 | ROBOT_TYPE_KUKA_IIWA | 20 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_robot_io_catalog-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/robot_io_catalog.proto
+
+
+
+<a name="robot-v1-RobotIOSignalCatalog"></a>
+
+### RobotIOSignalCatalog
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| signals | [RobotIOSignalDefinition](#robot-v1-RobotIOSignalDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="robot-v1-RobotIOSignalDefinition"></a>
+
+### RobotIOSignalDefinition
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| signal_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| data_type | [RobotIODataType](#robot-v1-RobotIODataType) |  |  |
+| readable | [bool](#bool) |  | From the public API&#39;s perspective—not RTDE&#39;s terminology. |
+| writable | [bool](#bool) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="robot-v1-RobotIODataType"></a>
+
+### RobotIODataType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_IO_DATA_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_IO_DATA_TYPE_BOOL | 1 |  |
+| ROBOT_IO_DATA_TYPE_INT32 | 2 |  |
+| ROBOT_IO_DATA_TYPE_DOUBLE | 3 |  |
+
+
+
+<a name="robot-v1-RobotIORegisterKind"></a>
+
+### RobotIORegisterKind
+RobotIORegisterKind identifies an I/O family that an adapter can expose as
+a configured, named signal. Direction follows controller terminology.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_IO_REGISTER_KIND_UNSPECIFIED | 0 |  |
+| ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT | 1 |  |
+| ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT | 2 |  |
+| ROBOT_IO_REGISTER_KIND_ANALOG_INPUT | 3 |  |
+| ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT | 4 |  |
+| ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER | 10 |  |
+| ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER | 11 |  |
+| ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER | 12 |  |
+| ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER | 20 |  |
+| ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER | 21 |  |
+| ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER | 22 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_robot_adapter-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/robot_adapter.proto
+
+
+
+<a name="robot-v1-RobotAdapterCommandCapability"></a>
+
+### RobotAdapterCommandCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType) |  |  |
+
+
+
+
+
+
+<a name="robot-v1-RobotAdapterInfoMessage"></a>
+
+### RobotAdapterInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| adapter_version | [string](#string) |  | Version of the adapter implementation, not the Protobuf API. |
+| controller | [RobotControllerIdentity](#robot-v1-RobotControllerIdentity) |  | Identity actually reported by the connected controller. |
+| capabilities_revision | [string](#string) |  | Deterministic fingerprint of adapter_definition_id and the configured I/O catalog. |
+| adapter_definition_id | [string](#string) |  | Static adapter capabilities selected by the robot definition. |
+| io_signals | [RobotIOSignalCatalog](#robot-v1-RobotIOSignalCatalog) |  | Signals configured for this connected robot instance. |
+
+
+
+
+
+
+<a name="robot-v1-RobotAdapterTelemetryCapability"></a>
+
+### RobotAdapterTelemetryCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType) |  |  |
+| frequency_hz | [double](#double) | optional | Publication rate guaranteed by the adapter definition. |
+
+
+
+
+
+
+<a name="robot-v1-RobotControllerIdentity"></a>
+
+### RobotControllerIdentity
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| manufacturer | [string](#string) |  |  |
+| model | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| controller_software_version | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="robot-v1-RobotAdapterCommandType"></a>
+
+### RobotAdapterCommandType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY | 1 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE | 2 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP | 3 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE | 10 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP | 11 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP | 12 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_PROGRAM | 20 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION | 21 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON | 30 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF | 31 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE | 32 |  |
+
+
+
+<a name="robot-v1-RobotAdapterTelemetryType"></a>
+
+### RobotAdapterTelemetryType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE | 1 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE | 2 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE | 3 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH | 4 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_robot_adapter_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/robot_adapter_definition.proto
+
+
+
+<a name="resources-v1-RobotAdapterDefinition"></a>
+
+### RobotAdapterDefinition
+RobotAdapterDefinition describes the capabilities supplied by one adapter
+implementation independently of any connected robot instance.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| adapter_type | [string](#string) |  | Stable implementation name reported by the adapter, e.g. &#34;ur.rtde-dashboard&#34;. |
+| supported_robot_types | [RobotType](#resources-v1-RobotType) | repeated |  |
+| commands | [robot.v1.RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability) | repeated |  |
+| telemetry | [robot.v1.RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability) | repeated |  |
+| configurable_io_register_kinds | [robot.v1.RobotIORegisterKind](#robot-v1-RobotIORegisterKind) | repeated | I/O register families that an adapter configuration may expose as named signals. |
+
+
+
+
+
+
+<a name="resources-v1-RobotAdapterDefinitions"></a>
+
+### RobotAdapterDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [RobotAdapterDefinition](#resources-v1-RobotAdapterDefinition) | repeated |  |
+
+
+
+
+
+ 
 
  
 
@@ -8576,213 +8832,6 @@ ar_edit_permission.
 
 
  
-
- 
-
- 
-
- 
-
-
-
-<a name="robot_v1_robot_io_catalog-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## robot/v1/robot_io_catalog.proto
-
-
-
-<a name="robot-v1-RobotIOSignalCatalog"></a>
-
-### RobotIOSignalCatalog
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| robot_id | [string](#string) |  |  |
-| signals | [RobotIOSignalDefinition](#robot-v1-RobotIOSignalDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="robot-v1-RobotIOSignalDefinition"></a>
-
-### RobotIOSignalDefinition
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| signal_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| data_type | [RobotIODataType](#robot-v1-RobotIODataType) |  |  |
-| readable | [bool](#bool) |  | From the public API&#39;s perspective—not RTDE&#39;s terminology. |
-| writable | [bool](#bool) |  |  |
-
-
-
-
-
- 
-
-
-<a name="robot-v1-RobotIODataType"></a>
-
-### RobotIODataType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_IO_DATA_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_IO_DATA_TYPE_BOOL | 1 |  |
-| ROBOT_IO_DATA_TYPE_INT32 | 2 |  |
-| ROBOT_IO_DATA_TYPE_DOUBLE | 3 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="robot_v1_robot_adapter-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## robot/v1/robot_adapter.proto
-
-
-
-<a name="robot-v1-RobotAdapterCapabilities"></a>
-
-### RobotAdapterCapabilities
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| commands | [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability) | repeated |  |
-| telemetry | [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability) | repeated |  |
-| io_signals | [RobotIOSignalCatalog](#robot-v1-RobotIOSignalCatalog) |  |  |
-
-
-
-
-
-
-<a name="robot-v1-RobotAdapterCommandCapability"></a>
-
-### RobotAdapterCommandCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType) |  |  |
-
-
-
-
-
-
-<a name="robot-v1-RobotAdapterInfoMessage"></a>
-
-### RobotAdapterInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| robot_id | [string](#string) |  |  |
-| robot_type | [string](#string) |  | **Deprecated.** Existing fields can remain for wire compatibility. |
-| identifier | [string](#string) |  | **Deprecated.**  |
-| adapter_type | [string](#string) |  | Stable implementation name, e.g. &#34;ur.rtde-dashboard&#34;. |
-| adapter_version | [string](#string) |  | Version of the adapter implementation, not the Protobuf API. |
-| controller | [RobotControllerIdentity](#robot-v1-RobotControllerIdentity) |  | Identity actually reported by the connected controller. |
-| capabilities | [RobotAdapterCapabilities](#robot-v1-RobotAdapterCapabilities) |  |  |
-| capabilities_revision | [string](#string) |  | Deterministic fingerprint of the effective capabilities and I/O catalog. |
-
-
-
-
-
-
-<a name="robot-v1-RobotAdapterTelemetryCapability"></a>
-
-### RobotAdapterTelemetryCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType) |  |  |
-| frequency_hz | [double](#double) | optional | Actual configured publication rate, not the theoretical robot maximum. |
-
-
-
-
-
-
-<a name="robot-v1-RobotControllerIdentity"></a>
-
-### RobotControllerIdentity
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| manufacturer | [string](#string) |  |  |
-| model | [string](#string) |  |  |
-| serial_number | [string](#string) |  |  |
-| controller_software_version | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="robot-v1-RobotAdapterCommandType"></a>
-
-### RobotAdapterCommandType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY | 1 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE | 2 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP | 3 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE | 10 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP | 11 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP | 12 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_PROGRAM | 20 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION | 21 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON | 30 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF | 31 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE | 32 |  |
-
-
-
-<a name="robot-v1-RobotAdapterTelemetryType"></a>
-
-### RobotAdapterTelemetryType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE | 1 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE | 2 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE | 3 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH | 4 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE | 5 |  |
-
 
  
 

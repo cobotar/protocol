@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/robot_definition.proto.
  */
 export const file_resources_v1_robot_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIloKEURlZmF1bHRSb2JvdFNraWxsEhsKCHNraWxsX2lkGAEgASgJQgm6SAZyBIDyBAESKAoFbGV2ZWwYAiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWwi7wMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucmVzb3VyY2VzLnYxLlJvYm90VHlwZUILukgIyAEBggECEAESPwoLZHJpdmVyX3R5cGUYBiABKA4yHS5yZXNvdXJjZXMudjEuUm9ib3REcml2ZXJUeXBlQgu6SAjIAQGCAQIQARIbCghtb2RlbF9pZBgHIAEoCUIJukgGcgSI8QQBEiMKEGNvdXBsZXJfbW9kZWxfaWQYCCABKAlCCbpIBnIEiPEEARIlCh1zdXBwb3J0ZWRfdG9vbF9kZWZpbml0aW9uX2lkcxgJIAMoCRIiChpkZWZhdWx0X3Rvb2xfZGVmaW5pdGlvbl9pZBgKIAEoCRIbCgp0b29sX3Nsb3RzGAsgASgFQge6SAQaAigAEjwKEmNhcGFiaWxpdHlfcHJvZmlsZRgMIAEoCzIgLmNhcGFiaWxpdHkudjEuQ2FwYWJpbGl0eVByb2ZpbGUSNwoOZGVmYXVsdF9za2lsbHMYDSADKAsyHy5yZXNvdXJjZXMudjEuRGVmYXVsdFJvYm90U2tpbGwiQAoQUm9ib3REZWZpbml0aW9ucxIsCgVpdGVtcxgBIAMoCzIdLnJlc291cmNlcy52MS5Sb2JvdERlZmluaXRpb24qgQEKCVJvYm90VHlwZRIaChZST0JPVF9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPUk9CT1RfVFlQRV9VUjNFEAoSEwoPUk9CT1RfVFlQRV9VUjVFEAsSFAoQUk9CT1RfVFlQRV9VUjEwRRAMEhgKFFJPQk9UX1RZUEVfS1VLQV9JSVdBEBQqbQoPUm9ib3REcml2ZXJUeXBlEiEKHVJPQk9UX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUUk9CT1RfRFJJVkVSX1RZUEVfVVIQARIdChlST0JPVF9EUklWRVJfVFlQRV9HRU5FUklDEAJCwQEKEGNvbS5yZXNvdXJjZXMudjFCFFJvYm90RGVmaW5pdGlvblByb3RvUAFaPWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_capability_v1_actor_skill, file_capability_v1_capability_profile, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIloKEURlZmF1bHRSb2JvdFNraWxsEhsKCHNraWxsX2lkGAEgASgJQgm6SAZyBIDyBAESKAoFbGV2ZWwYAiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWwi4QMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucmVzb3VyY2VzLnYxLlJvYm90VHlwZUILukgIyAEBggECEAESGwoIbW9kZWxfaWQYByABKAlCCbpIBnIEiPEEARIjChBjb3VwbGVyX21vZGVsX2lkGAggASgJQgm6SAZyBIjxBAESJQodc3VwcG9ydGVkX3Rvb2xfZGVmaW5pdGlvbl9pZHMYCSADKAkSIgoaZGVmYXVsdF90b29sX2RlZmluaXRpb25faWQYCiABKAkSGwoKdG9vbF9zbG90cxgLIAEoBUIHukgEGgIoABI8ChJjYXBhYmlsaXR5X3Byb2ZpbGUYDCABKAsyIC5jYXBhYmlsaXR5LnYxLkNhcGFiaWxpdHlQcm9maWxlEjcKDmRlZmF1bHRfc2tpbGxzGA0gAygLMh8ucmVzb3VyY2VzLnYxLkRlZmF1bHRSb2JvdFNraWxsEjEKG3JvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbl9pZBgOIAEoCUIMukgJyAEBcgSQ9AQBIkAKEFJvYm90RGVmaW5pdGlvbnMSLAoFaXRlbXMYASADKAsyHS5yZXNvdXJjZXMudjEuUm9ib3REZWZpbml0aW9uKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUQsEBChBjb20ucmVzb3VyY2VzLnYxQhRSb2JvdERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_actor_skill, file_capability_v1_capability_profile, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.DefaultRobotSkill
@@ -80,13 +80,6 @@ export type RobotDefinition = Message<"resources.v1.RobotDefinition"> & {
   type: RobotType;
 
   /**
-   * Required driver type for robot
-   *
-   * @generated from field: resources.v1.RobotDriverType driver_type = 6;
-   */
-  driverType: RobotDriverType;
-
-  /**
    * @generated from field: string model_id = 7;
    */
   modelId: string;
@@ -122,6 +115,14 @@ export type RobotDefinition = Message<"resources.v1.RobotDefinition"> & {
    * @generated from field: repeated resources.v1.DefaultRobotSkill default_skills = 13;
    */
   defaultSkills: DefaultRobotSkill[];
+
+  /**
+   * Selects the static adapter implementation and capability contract used by
+   * every instance of this robot definition.
+   *
+   * @generated from field: string robot_adapter_definition_id = 14;
+   */
+  robotAdapterDefinitionId: string;
 };
 
 /**
@@ -183,30 +184,4 @@ export enum RobotType {
  */
 export const RobotTypeSchema: GenEnum<RobotType> = /*@__PURE__*/
   enumDesc(file_resources_v1_robot_definition, 0);
-
-/**
- * @generated from enum resources.v1.RobotDriverType
- */
-export enum RobotDriverType {
-  /**
-   * @generated from enum value: ROBOT_DRIVER_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: ROBOT_DRIVER_TYPE_UR = 1;
-   */
-  UR = 1,
-
-  /**
-   * @generated from enum value: ROBOT_DRIVER_TYPE_GENERIC = 2;
-   */
-  GENERIC = 2,
-}
-
-/**
- * Describes the enum resources.v1.RobotDriverType.
- */
-export const RobotDriverTypeSchema: GenEnum<RobotDriverType> = /*@__PURE__*/
-  enumDesc(file_resources_v1_robot_definition, 1);
 

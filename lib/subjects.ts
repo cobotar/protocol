@@ -26,6 +26,9 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "edit.model.add", pattern: "edit.model.add", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "resources.v1.ModelArtifact", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["fusion360_exporter", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.part_definition.add", pattern: "edit.part_definition.add", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartDefinition", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["fusion360_exporter", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.product.add", pattern: "edit.product.add", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.ProductDefinition", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["fusion360_exporter", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
+  { id: "get.robot_adapter.info", pattern: "get.robot_adapter.info.{robot_instance_id}", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "robot.v1.RobotAdapterInfoMessage", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#14" },
+  { id: "get.robot_adapter_definition.all", pattern: "get.robot_adapter_definition.all", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "resources.v1.RobotAdapterDefinitions", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#49" },
+  { id: "get.robot_adapter_definition.one", pattern: "get.robot_adapter_definition.one", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "resources.v1.RobotAdapterDefinition", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#49" },
   { id: "get.storage.info", pattern: "get.storage.info", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "service.v1.StorageInfo", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
   { id: "plan.robot.path", pattern: "plan.robot.path.{robot_instance_id}.{plan_id}", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "robot.v1.PathMessage", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
   { id: "telemetry.robot.controller_status", pattern: "telemetry.robot.controller_status.{robot_instance_id}", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "robot.v1.RobotControllerStatusMessage", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
@@ -99,6 +102,25 @@ export const editPartDefinitionAdd = "edit.part_definition.add"
  * @experimental lifecycle=active, conformance=staged; see cobotar/protocol#11.
  */
 export const editProductAdd = "edit.product.add"
+
+/** Builds `get.robot_adapter.info.{robot_instance_id}`.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/protocol#14.
+ */
+export function getRobotAdapterInfo(robotInstanceId: string): string {
+  return buildSubject("get.robot_adapter.info.{robot_instance_id}", { robot_instance_id: robotInstanceId })
+}
+
+export function subscribeGetRobotAdapterInfoAny(): string { return "get.robot_adapter.info.*" }
+
+/** Builds `get.robot_adapter_definition.all`.
+ * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#49.
+ */
+export const getRobotAdapterDefinitionAll = "get.robot_adapter_definition.all"
+
+/** Builds `get.robot_adapter_definition.one`.
+ * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#49.
+ */
+export const getRobotAdapterDefinitionOne = "get.robot_adapter_definition.one"
 
 /** Builds `get.storage.info`.
  * @experimental lifecycle=planned, conformance=staged; see cobotar/protocol#21.

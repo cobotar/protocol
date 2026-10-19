@@ -26,62 +26,60 @@ namespace Messages.Robot.V1 {
           string.Concat(
             "Chxyb2JvdC92MS9yb2JvdF9hZGFwdGVyLnByb3RvEghyb2JvdC52MRobYnVm",
             "L3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGh9yb2JvdC92MS9yb2JvdF9pb19j",
-            "YXRhbG9nLnByb3RvImMKHVJvYm90QWRhcHRlckNvbW1hbmRDYXBhYmlsaXR5",
+            "YXRhbG9nLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5n",
+            "X3J1bGVzLnByb3RvImMKHVJvYm90QWRhcHRlckNvbW1hbmRDYXBhYmlsaXR5",
             "EkIKBHR5cGUYASABKA4yIS5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJDb21tYW5k",
             "VHlwZUILukgIggECEAHIAQFSBHR5cGUisgEKH1JvYm90QWRhcHRlclRlbGVt",
             "ZXRyeUNhcGFiaWxpdHkSRAoEdHlwZRgBIAEoDjIjLnJvYm90LnYxLlJvYm90",
             "QWRhcHRlclRlbGVtZXRyeVR5cGVCC7pICIIBAhAByAEBUgR0eXBlEjgKDGZy",
             "ZXF1ZW5jeV9oehgCIAEoAUIQukgNEgshAAAAAAAAAABAAUgAUgtmcmVxdWVu",
-            "Y3lIeogBAUIPCg1fZnJlcXVlbmN5X2h6IucBChhSb2JvdEFkYXB0ZXJDYXBh",
-            "YmlsaXRpZXMSQwoIY29tbWFuZHMYASADKAsyJy5yb2JvdC52MS5Sb2JvdEFk",
-            "YXB0ZXJDb21tYW5kQ2FwYWJpbGl0eVIIY29tbWFuZHMSRwoJdGVsZW1ldHJ5",
-            "GAIgAygLMikucm9ib3QudjEuUm9ib3RBZGFwdGVyVGVsZW1ldHJ5Q2FwYWJp",
-            "bGl0eVIJdGVsZW1ldHJ5Ej0KCmlvX3NpZ25hbHMYAyABKAsyHi5yb2JvdC52",
-            "MS5Sb2JvdElPU2lnbmFsQ2F0YWxvZ1IJaW9TaWduYWxzIrgBChdSb2JvdENv",
-            "bnRyb2xsZXJJZGVudGl0eRIiCgxtYW51ZmFjdHVyZXIYASABKAlSDG1hbnVm",
-            "YWN0dXJlchIUCgVtb2RlbBgCIAEoCVIFbW9kZWwSIwoNc2VyaWFsX251bWJl",
-            "chgDIAEoCVIMc2VyaWFsTnVtYmVyEj4KG2NvbnRyb2xsZXJfc29mdHdhcmVf",
-            "dmVyc2lvbhgEIAEoCVIZY29udHJvbGxlclNvZnR3YXJlVmVyc2lvbiKHAwoX",
-            "Um9ib3RBZGFwdGVySW5mb01lc3NhZ2USGQoIcm9ib3RfaWQYASABKAlSB3Jv",
-            "Ym90SWQSIQoKcm9ib3RfdHlwZRgCIAEoCUICGAFSCXJvYm90VHlwZRIiCgpp",
-            "ZGVudGlmaWVyGAMgASgJQgIYAVIKaWRlbnRpZmllchIhCgxhZGFwdGVyX3R5",
-            "cGUYBCABKAlSC2FkYXB0ZXJUeXBlEicKD2FkYXB0ZXJfdmVyc2lvbhgFIAEo",
-            "CVIOYWRhcHRlclZlcnNpb24SQQoKY29udHJvbGxlchgGIAEoCzIhLnJvYm90",
-            "LnYxLlJvYm90Q29udHJvbGxlcklkZW50aXR5Ugpjb250cm9sbGVyEkYKDGNh",
-            "cGFiaWxpdGllcxgHIAEoCzIiLnJvYm90LnYxLlJvYm90QWRhcHRlckNhcGFi",
-            "aWxpdGllc1IMY2FwYWJpbGl0aWVzEjMKFWNhcGFiaWxpdGllc19yZXZpc2lv",
-            "bhgIIAEoCVIUY2FwYWJpbGl0aWVzUmV2aXNpb24qrwQKF1JvYm90QWRhcHRl",
-            "ckNvbW1hbmRUeXBlEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1VO",
-            "U1BFQ0lGSUVEEAASKwonUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJP",
-            "R1JBTV9QTEFZEAESLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJP",
-            "R1JBTV9QQVVTRRACEisKJ1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BS",
-            "T0dSQU1fU1RPUBADEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0FD",
-            "S05PV0xFREdFEAoSKQolUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfU0hP",
-            "V19QT1BVUBALEikKJVJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0hJREVf",
-            "UE9QVVAQDBIrCidST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX1BS",
-            "T0dSQU0QFBIwCixST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX0lO",
-            "U1RBTExBVElPThAVEicKI1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BP",
-            "V0VSX09OEB4SKAokUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJf",
-            "T0ZGEB8SLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQlJBS0VfUkVM",
-            "RUFTRRAgKqgCChlSb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlEiwKKFJPQk9U",
-            "X0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIsCihST0JP",
-            "VF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEAESLAooUk9C",
-            "T1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9KT0lOVF9TVEFURRACEikKJVJP",
-            "Qk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVENQX1BPU0UQAxIrCidST0JP",
-            "VF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9XUkVOQ0gQBBIpCiVST0JP",
-            "VF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCogEKDGNvbS5y",
-            "b2JvdC52MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2Jv",
-            "dGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiq",
-            "AhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BC",
-            "TWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
+            "Y3lIeogBAUIPCg1fZnJlcXVlbmN5X2h6IrgBChdSb2JvdENvbnRyb2xsZXJJ",
+            "ZGVudGl0eRIiCgxtYW51ZmFjdHVyZXIYASABKAlSDG1hbnVmYWN0dXJlchIU",
+            "CgVtb2RlbBgCIAEoCVIFbW9kZWwSIwoNc2VyaWFsX251bWJlchgDIAEoCVIM",
+            "c2VyaWFsTnVtYmVyEj4KG2NvbnRyb2xsZXJfc29mdHdhcmVfdmVyc2lvbhgE",
+            "IAEoCVIZY29udHJvbGxlclNvZnR3YXJlVmVyc2lvbiKkBAoXUm9ib3RBZGFw",
+            "dGVySW5mb01lc3NhZ2USJwoIcm9ib3RfaWQYASABKAlCDLpICXIEqPEEAcgB",
+            "AVIHcm9ib3RJZBI1Cg9hZGFwdGVyX3ZlcnNpb24YBSABKAlCDLpICXIEiPQE",
+            "AcgBAVIOYWRhcHRlclZlcnNpb24SQQoKY29udHJvbGxlchgGIAEoCzIhLnJv",
+            "Ym90LnYxLlJvYm90Q29udHJvbGxlcklkZW50aXR5Ugpjb250cm9sbGVyEkEK",
+            "FWNhcGFiaWxpdGllc19yZXZpc2lvbhgIIAEoCUIMukgJcgSI9AQByAEBUhRj",
+            "YXBhYmlsaXRpZXNSZXZpc2lvbhJAChVhZGFwdGVyX2RlZmluaXRpb25faWQY",
+            "CSABKAlCDLpICXIEkPQEAcgBAVITYWRhcHRlckRlZmluaXRpb25JZBJFCgpp",
+            "b19zaWduYWxzGAogASgLMh4ucm9ib3QudjEuUm9ib3RJT1NpZ25hbENhdGFs",
+            "b2dCBrpIA8gBAVIJaW9TaWduYWxzOpkBukiVARqSAQomcm9ib3RfYWRhcHRl",
+            "cl9pbmZvLmlvX3NpZ25hbHNfcm9ib3RfaWQSPXRoZSBJL08gY2F0YWxvZyBy",
+            "b2JvdCBpZCBtdXN0IG1hdGNoIHRoZSBhZGFwdGVyIGluZm8gcm9ib3QgaWQa",
+            "KXRoaXMuaW9fc2lnbmFscy5yb2JvdF9pZCA9PSB0aGlzLnJvYm90X2lkKq8E",
+            "ChdSb2JvdEFkYXB0ZXJDb21tYW5kVHlwZRIqCiZST0JPVF9BREFQVEVSX0NP",
+            "TU1BTkRfVFlQRV9VTlNQRUNJRklFRBAAEisKJ1JPQk9UX0FEQVBURVJfQ09N",
+            "TUFORF9UWVBFX1BST0dSQU1fUExBWRABEiwKKFJPQk9UX0FEQVBURVJfQ09N",
+            "TUFORF9UWVBFX1BST0dSQU1fUEFVU0UQAhIrCidST0JPVF9BREFQVEVSX0NP",
+            "TU1BTkRfVFlQRV9QUk9HUkFNX1NUT1AQAxIqCiZST0JPVF9BREFQVEVSX0NP",
+            "TU1BTkRfVFlQRV9BQ0tOT1dMRURHRRAKEikKJVJPQk9UX0FEQVBURVJfQ09N",
+            "TUFORF9UWVBFX1NIT1dfUE9QVVAQCxIpCiVST0JPVF9BREFQVEVSX0NPTU1B",
+            "TkRfVFlQRV9ISURFX1BPUFVQEAwSKwonUk9CT1RfQURBUFRFUl9DT01NQU5E",
+            "X1RZUEVfTE9BRF9QUk9HUkFNEBQSMAosUk9CT1RfQURBUFRFUl9DT01NQU5E",
+            "X1RZUEVfTE9BRF9JTlNUQUxMQVRJT04QFRInCiNST0JPVF9BREFQVEVSX0NP",
+            "TU1BTkRfVFlQRV9QT1dFUl9PThAeEigKJFJPQk9UX0FEQVBURVJfQ09NTUFO",
+            "RF9UWVBFX1BPV0VSX09GRhAfEiwKKFJPQk9UX0FEQVBURVJfQ09NTUFORF9U",
+            "WVBFX0JSQUtFX1JFTEVBU0UQICqoAgoZUm9ib3RBZGFwdGVyVGVsZW1ldHJ5",
+            "VHlwZRIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1VOU1BFQ0lG",
+            "SUVEEAASLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9ST0JPVF9T",
+            "VEFURRABEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfSk9JTlRf",
+            "U1RBVEUQAhIpCiVST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9Q",
+            "T1NFEAMSKwonUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9UQ1BfV1JF",
+            "TkNIEAQSKQolUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9JT19TVEFU",
+            "RRAFQqIBCgxjb20ucm9ib3QudjFCEVJvYm90QWRhcHRlclByb3RvUAFaNWdp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTty",
+            "b2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeIC",
+            "FFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotAdapterCommandType), typeof(global::Messages.Robot.V1.RobotAdapterTelemetryType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterCommandCapability), global::Messages.Robot.V1.RobotAdapterCommandCapability.Parser, new[]{ "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterTelemetryCapability), global::Messages.Robot.V1.RobotAdapterTelemetryCapability.Parser, new[]{ "Type", "FrequencyHz" }, new[]{ "FrequencyHz" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterCapabilities), global::Messages.Robot.V1.RobotAdapterCapabilities.Parser, new[]{ "Commands", "Telemetry", "IoSignals" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotControllerIdentity), global::Messages.Robot.V1.RobotControllerIdentity.Parser, new[]{ "Manufacturer", "Model", "SerialNumber", "ControllerSoftwareVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterInfoMessage), global::Messages.Robot.V1.RobotAdapterInfoMessage.Parser, new[]{ "RobotId", "RobotType", "Identifier", "AdapterType", "AdapterVersion", "Controller", "Capabilities", "CapabilitiesRevision" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterInfoMessage), global::Messages.Robot.V1.RobotAdapterInfoMessage.Parser, new[]{ "RobotId", "AdapterVersion", "Controller", "CapabilitiesRevision", "AdapterDefinitionId", "IoSignals" }, null, null, null, null)
           }));
     }
     #endregion
@@ -379,7 +377,7 @@ namespace Messages.Robot.V1 {
 
     private double frequencyHz_;
     /// <summary>
-    /// Actual configured publication rate, not the theoretical robot maximum.
+    /// Publication rate guaranteed by the adapter definition.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -569,265 +567,6 @@ namespace Messages.Robot.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class RobotAdapterCapabilities : pb::IMessage<RobotAdapterCapabilities>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<RobotAdapterCapabilities> _parser = new pb::MessageParser<RobotAdapterCapabilities>(() => new RobotAdapterCapabilities());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<RobotAdapterCapabilities> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotAdapterCapabilities() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotAdapterCapabilities(RobotAdapterCapabilities other) : this() {
-      commands_ = other.commands_.Clone();
-      telemetry_ = other.telemetry_.Clone();
-      ioSignals_ = other.ioSignals_ != null ? other.ioSignals_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RobotAdapterCapabilities Clone() {
-      return new RobotAdapterCapabilities(this);
-    }
-
-    /// <summary>Field number for the "commands" field.</summary>
-    public const int CommandsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.Robot.V1.RobotAdapterCommandCapability> _repeated_commands_codec
-        = pb::FieldCodec.ForMessage(10, global::Messages.Robot.V1.RobotAdapterCommandCapability.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterCommandCapability> commands_ = new pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterCommandCapability>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterCommandCapability> Commands {
-      get { return commands_; }
-    }
-
-    /// <summary>Field number for the "telemetry" field.</summary>
-    public const int TelemetryFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Messages.Robot.V1.RobotAdapterTelemetryCapability> _repeated_telemetry_codec
-        = pb::FieldCodec.ForMessage(18, global::Messages.Robot.V1.RobotAdapterTelemetryCapability.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterTelemetryCapability> telemetry_ = new pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterTelemetryCapability>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterTelemetryCapability> Telemetry {
-      get { return telemetry_; }
-    }
-
-    /// <summary>Field number for the "io_signals" field.</summary>
-    public const int IoSignalsFieldNumber = 3;
-    private global::Messages.Robot.V1.RobotIOSignalCatalog ioSignals_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Robot.V1.RobotIOSignalCatalog IoSignals {
-      get { return ioSignals_; }
-      set {
-        ioSignals_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as RobotAdapterCapabilities);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(RobotAdapterCapabilities other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!commands_.Equals(other.commands_)) return false;
-      if(!telemetry_.Equals(other.telemetry_)) return false;
-      if (!object.Equals(IoSignals, other.IoSignals)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= commands_.GetHashCode();
-      hash ^= telemetry_.GetHashCode();
-      if (ioSignals_ != null) hash ^= IoSignals.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      commands_.WriteTo(output, _repeated_commands_codec);
-      telemetry_.WriteTo(output, _repeated_telemetry_codec);
-      if (ioSignals_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(IoSignals);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      commands_.WriteTo(ref output, _repeated_commands_codec);
-      telemetry_.WriteTo(ref output, _repeated_telemetry_codec);
-      if (ioSignals_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(IoSignals);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      size += commands_.CalculateSize(_repeated_commands_codec);
-      size += telemetry_.CalculateSize(_repeated_telemetry_codec);
-      if (ioSignals_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(IoSignals);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(RobotAdapterCapabilities other) {
-      if (other == null) {
-        return;
-      }
-      commands_.Add(other.commands_);
-      telemetry_.Add(other.telemetry_);
-      if (other.ioSignals_ != null) {
-        if (ioSignals_ == null) {
-          IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
-        }
-        IoSignals.MergeFrom(other.IoSignals);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            commands_.AddEntriesFrom(input, _repeated_commands_codec);
-            break;
-          }
-          case 18: {
-            telemetry_.AddEntriesFrom(input, _repeated_telemetry_codec);
-            break;
-          }
-          case 26: {
-            if (ioSignals_ == null) {
-              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
-            }
-            input.ReadMessage(IoSignals);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            commands_.AddEntriesFrom(ref input, _repeated_commands_codec);
-            break;
-          }
-          case 18: {
-            telemetry_.AddEntriesFrom(ref input, _repeated_telemetry_codec);
-            break;
-          }
-          case 26: {
-            if (ioSignals_ == null) {
-              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
-            }
-            input.ReadMessage(IoSignals);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class RobotControllerIdentity : pb::IMessage<RobotControllerIdentity>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -842,7 +581,7 @@ namespace Messages.Robot.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1151,7 +890,7 @@ namespace Messages.Robot.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1172,13 +911,11 @@ namespace Messages.Robot.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RobotAdapterInfoMessage(RobotAdapterInfoMessage other) : this() {
       robotId_ = other.robotId_;
-      robotType_ = other.robotType_;
-      identifier_ = other.identifier_;
-      adapterType_ = other.adapterType_;
       adapterVersion_ = other.adapterVersion_;
       controller_ = other.controller_ != null ? other.controller_.Clone() : null;
-      capabilities_ = other.capabilities_ != null ? other.capabilities_.Clone() : null;
       capabilitiesRevision_ = other.capabilitiesRevision_;
+      adapterDefinitionId_ = other.adapterDefinitionId_;
+      ioSignals_ = other.ioSignals_ != null ? other.ioSignals_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1197,50 +934,6 @@ namespace Messages.Robot.V1 {
       get { return robotId_; }
       set {
         robotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "robot_type" field.</summary>
-    public const int RobotTypeFieldNumber = 2;
-    private string robotType_ = "";
-    /// <summary>
-    /// Existing fields can remain for wire compatibility.
-    /// </summary>
-    [global::System.ObsoleteAttribute]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string RobotType {
-      get { return robotType_; }
-      set {
-        robotType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "identifier" field.</summary>
-    public const int IdentifierFieldNumber = 3;
-    private string identifier_ = "";
-    [global::System.ObsoleteAttribute]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Identifier {
-      get { return identifier_; }
-      set {
-        identifier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "adapter_type" field.</summary>
-    public const int AdapterTypeFieldNumber = 4;
-    private string adapterType_ = "";
-    /// <summary>
-    /// Stable implementation name, e.g. "ur.rtde-dashboard".
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AdapterType {
-      get { return adapterType_; }
-      set {
-        adapterType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1274,23 +967,11 @@ namespace Messages.Robot.V1 {
       }
     }
 
-    /// <summary>Field number for the "capabilities" field.</summary>
-    public const int CapabilitiesFieldNumber = 7;
-    private global::Messages.Robot.V1.RobotAdapterCapabilities capabilities_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Robot.V1.RobotAdapterCapabilities Capabilities {
-      get { return capabilities_; }
-      set {
-        capabilities_ = value;
-      }
-    }
-
     /// <summary>Field number for the "capabilities_revision" field.</summary>
     public const int CapabilitiesRevisionFieldNumber = 8;
     private string capabilitiesRevision_ = "";
     /// <summary>
-    /// Deterministic fingerprint of the effective capabilities and I/O catalog.
+    /// Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1298,6 +979,36 @@ namespace Messages.Robot.V1 {
       get { return capabilitiesRevision_; }
       set {
         capabilitiesRevision_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "adapter_definition_id" field.</summary>
+    public const int AdapterDefinitionIdFieldNumber = 9;
+    private string adapterDefinitionId_ = "";
+    /// <summary>
+    /// Static adapter capabilities selected by the robot definition.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AdapterDefinitionId {
+      get { return adapterDefinitionId_; }
+      set {
+        adapterDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "io_signals" field.</summary>
+    public const int IoSignalsFieldNumber = 10;
+    private global::Messages.Robot.V1.RobotIOSignalCatalog ioSignals_;
+    /// <summary>
+    /// Signals configured for this connected robot instance.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Robot.V1.RobotIOSignalCatalog IoSignals {
+      get { return ioSignals_; }
+      set {
+        ioSignals_ = value;
       }
     }
 
@@ -1317,13 +1028,11 @@ namespace Messages.Robot.V1 {
         return true;
       }
       if (RobotId != other.RobotId) return false;
-      if (RobotType != other.RobotType) return false;
-      if (Identifier != other.Identifier) return false;
-      if (AdapterType != other.AdapterType) return false;
       if (AdapterVersion != other.AdapterVersion) return false;
       if (!object.Equals(Controller, other.Controller)) return false;
-      if (!object.Equals(Capabilities, other.Capabilities)) return false;
       if (CapabilitiesRevision != other.CapabilitiesRevision) return false;
+      if (AdapterDefinitionId != other.AdapterDefinitionId) return false;
+      if (!object.Equals(IoSignals, other.IoSignals)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1332,13 +1041,11 @@ namespace Messages.Robot.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
-      if (RobotType.Length != 0) hash ^= RobotType.GetHashCode();
-      if (Identifier.Length != 0) hash ^= Identifier.GetHashCode();
-      if (AdapterType.Length != 0) hash ^= AdapterType.GetHashCode();
       if (AdapterVersion.Length != 0) hash ^= AdapterVersion.GetHashCode();
       if (controller_ != null) hash ^= Controller.GetHashCode();
-      if (capabilities_ != null) hash ^= Capabilities.GetHashCode();
       if (CapabilitiesRevision.Length != 0) hash ^= CapabilitiesRevision.GetHashCode();
+      if (AdapterDefinitionId.Length != 0) hash ^= AdapterDefinitionId.GetHashCode();
+      if (ioSignals_ != null) hash ^= IoSignals.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1361,18 +1068,6 @@ namespace Messages.Robot.V1 {
         output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
-      if (RobotType.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(RobotType);
-      }
-      if (Identifier.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Identifier);
-      }
-      if (AdapterType.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(AdapterType);
-      }
       if (AdapterVersion.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(AdapterVersion);
@@ -1381,13 +1076,17 @@ namespace Messages.Robot.V1 {
         output.WriteRawTag(50);
         output.WriteMessage(Controller);
       }
-      if (capabilities_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Capabilities);
-      }
       if (CapabilitiesRevision.Length != 0) {
         output.WriteRawTag(66);
         output.WriteString(CapabilitiesRevision);
+      }
+      if (AdapterDefinitionId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AdapterDefinitionId);
+      }
+      if (ioSignals_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(IoSignals);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1403,18 +1102,6 @@ namespace Messages.Robot.V1 {
         output.WriteRawTag(10);
         output.WriteString(RobotId);
       }
-      if (RobotType.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(RobotType);
-      }
-      if (Identifier.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Identifier);
-      }
-      if (AdapterType.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(AdapterType);
-      }
       if (AdapterVersion.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(AdapterVersion);
@@ -1423,13 +1110,17 @@ namespace Messages.Robot.V1 {
         output.WriteRawTag(50);
         output.WriteMessage(Controller);
       }
-      if (capabilities_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Capabilities);
-      }
       if (CapabilitiesRevision.Length != 0) {
         output.WriteRawTag(66);
         output.WriteString(CapabilitiesRevision);
+      }
+      if (AdapterDefinitionId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AdapterDefinitionId);
+      }
+      if (ioSignals_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(IoSignals);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1444,26 +1135,20 @@ namespace Messages.Robot.V1 {
       if (RobotId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
       }
-      if (RobotType.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotType);
-      }
-      if (Identifier.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Identifier);
-      }
-      if (AdapterType.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AdapterType);
-      }
       if (AdapterVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AdapterVersion);
       }
       if (controller_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Controller);
       }
-      if (capabilities_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Capabilities);
-      }
       if (CapabilitiesRevision.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CapabilitiesRevision);
+      }
+      if (AdapterDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AdapterDefinitionId);
+      }
+      if (ioSignals_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(IoSignals);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1480,15 +1165,6 @@ namespace Messages.Robot.V1 {
       if (other.RobotId.Length != 0) {
         RobotId = other.RobotId;
       }
-      if (other.RobotType.Length != 0) {
-        RobotType = other.RobotType;
-      }
-      if (other.Identifier.Length != 0) {
-        Identifier = other.Identifier;
-      }
-      if (other.AdapterType.Length != 0) {
-        AdapterType = other.AdapterType;
-      }
       if (other.AdapterVersion.Length != 0) {
         AdapterVersion = other.AdapterVersion;
       }
@@ -1498,14 +1174,17 @@ namespace Messages.Robot.V1 {
         }
         Controller.MergeFrom(other.Controller);
       }
-      if (other.capabilities_ != null) {
-        if (capabilities_ == null) {
-          Capabilities = new global::Messages.Robot.V1.RobotAdapterCapabilities();
-        }
-        Capabilities.MergeFrom(other.Capabilities);
-      }
       if (other.CapabilitiesRevision.Length != 0) {
         CapabilitiesRevision = other.CapabilitiesRevision;
+      }
+      if (other.AdapterDefinitionId.Length != 0) {
+        AdapterDefinitionId = other.AdapterDefinitionId;
+      }
+      if (other.ioSignals_ != null) {
+        if (ioSignals_ == null) {
+          IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
+        }
+        IoSignals.MergeFrom(other.IoSignals);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1530,18 +1209,6 @@ namespace Messages.Robot.V1 {
             RobotId = input.ReadString();
             break;
           }
-          case 18: {
-            RobotType = input.ReadString();
-            break;
-          }
-          case 26: {
-            Identifier = input.ReadString();
-            break;
-          }
-          case 34: {
-            AdapterType = input.ReadString();
-            break;
-          }
           case 42: {
             AdapterVersion = input.ReadString();
             break;
@@ -1553,15 +1220,19 @@ namespace Messages.Robot.V1 {
             input.ReadMessage(Controller);
             break;
           }
-          case 58: {
-            if (capabilities_ == null) {
-              Capabilities = new global::Messages.Robot.V1.RobotAdapterCapabilities();
-            }
-            input.ReadMessage(Capabilities);
-            break;
-          }
           case 66: {
             CapabilitiesRevision = input.ReadString();
+            break;
+          }
+          case 74: {
+            AdapterDefinitionId = input.ReadString();
+            break;
+          }
+          case 82: {
+            if (ioSignals_ == null) {
+              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
+            }
+            input.ReadMessage(IoSignals);
             break;
           }
         }
@@ -1587,18 +1258,6 @@ namespace Messages.Robot.V1 {
             RobotId = input.ReadString();
             break;
           }
-          case 18: {
-            RobotType = input.ReadString();
-            break;
-          }
-          case 26: {
-            Identifier = input.ReadString();
-            break;
-          }
-          case 34: {
-            AdapterType = input.ReadString();
-            break;
-          }
           case 42: {
             AdapterVersion = input.ReadString();
             break;
@@ -1610,15 +1269,19 @@ namespace Messages.Robot.V1 {
             input.ReadMessage(Controller);
             break;
           }
-          case 58: {
-            if (capabilities_ == null) {
-              Capabilities = new global::Messages.Robot.V1.RobotAdapterCapabilities();
-            }
-            input.ReadMessage(Capabilities);
-            break;
-          }
           case 66: {
             CapabilitiesRevision = input.ReadString();
+            break;
+          }
+          case 74: {
+            AdapterDefinitionId = input.ReadString();
+            break;
+          }
+          case 82: {
+            if (ioSignals_ == null) {
+              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
+            }
+            input.ReadMessage(IoSignals);
             break;
           }
         }

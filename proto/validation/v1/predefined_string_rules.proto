@@ -303,4 +303,10 @@ extend buf.validate.StringRules {
     message: "value must contain at least one non-whitespace character"
     expression: "!rule || this.trim().size() > 0"
   }];
+
+  optional bool robot_adapter_definition_id_component = 10050 [(buf.validate.predefined).cel = {
+    id: "string.robot_adapter_definition_id_component"
+    message: "this does not seem to be a robot adapter definition id"
+    expression: "(this == '' || this.startsWith('robot_adapter_definition-'))"
+  }];
 }

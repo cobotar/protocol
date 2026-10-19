@@ -34,35 +34,32 @@ namespace Messages.Resources.V1 {
             "dERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpI",
             "BnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
             "aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI4CgR0eXBlGAUgASgOMhcucmVzb3Vy",
-            "Y2VzLnYxLlJvYm90VHlwZUILukgIggECEAHIAQFSBHR5cGUSSwoLZHJpdmVy",
-            "X3R5cGUYBiABKA4yHS5yZXNvdXJjZXMudjEuUm9ib3REcml2ZXJUeXBlQgu6",
-            "SAiCAQIQAcgBAVIKZHJpdmVyVHlwZRIkCghtb2RlbF9pZBgHIAEoCUIJukgG",
-            "cgSI8QQBUgdtb2RlbElkEjMKEGNvdXBsZXJfbW9kZWxfaWQYCCABKAlCCbpI",
-            "BnIEiPEEAVIOY291cGxlck1vZGVsSWQSQQodc3VwcG9ydGVkX3Rvb2xfZGVm",
-            "aW5pdGlvbl9pZHMYCSADKAlSGnN1cHBvcnRlZFRvb2xEZWZpbml0aW9uSWRz",
-            "EjsKGmRlZmF1bHRfdG9vbF9kZWZpbml0aW9uX2lkGAogASgJUhdkZWZhdWx0",
-            "VG9vbERlZmluaXRpb25JZBImCgp0b29sX3Nsb3RzGAsgASgFQge6SAQaAigA",
-            "Ugl0b29sU2xvdHMSTwoSY2FwYWJpbGl0eV9wcm9maWxlGAwgASgLMiAuY2Fw",
-            "YWJpbGl0eS52MS5DYXBhYmlsaXR5UHJvZmlsZVIRY2FwYWJpbGl0eVByb2Zp",
-            "bGUSRgoOZGVmYXVsdF9za2lsbHMYDSADKAsyHy5yZXNvdXJjZXMudjEuRGVm",
-            "YXVsdFJvYm90U2tpbGxSDWRlZmF1bHRTa2lsbHMiRwoQUm9ib3REZWZpbml0",
+            "Y2VzLnYxLlJvYm90VHlwZUILukgIggECEAHIAQFSBHR5cGUSJAoIbW9kZWxf",
+            "aWQYByABKAlCCbpIBnIEiPEEAVIHbW9kZWxJZBIzChBjb3VwbGVyX21vZGVs",
+            "X2lkGAggASgJQgm6SAZyBIjxBAFSDmNvdXBsZXJNb2RlbElkEkEKHXN1cHBv",
+            "cnRlZF90b29sX2RlZmluaXRpb25faWRzGAkgAygJUhpzdXBwb3J0ZWRUb29s",
+            "RGVmaW5pdGlvbklkcxI7ChpkZWZhdWx0X3Rvb2xfZGVmaW5pdGlvbl9pZBgK",
+            "IAEoCVIXZGVmYXVsdFRvb2xEZWZpbml0aW9uSWQSJgoKdG9vbF9zbG90cxgL",
+            "IAEoBUIHukgEGgIoAFIJdG9vbFNsb3RzEk8KEmNhcGFiaWxpdHlfcHJvZmls",
+            "ZRgMIAEoCzIgLmNhcGFiaWxpdHkudjEuQ2FwYWJpbGl0eVByb2ZpbGVSEWNh",
+            "cGFiaWxpdHlQcm9maWxlEkYKDmRlZmF1bHRfc2tpbGxzGA0gAygLMh8ucmVz",
+            "b3VyY2VzLnYxLkRlZmF1bHRSb2JvdFNraWxsUg1kZWZhdWx0U2tpbGxzEksK",
+            "G3JvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbl9pZBgOIAEoCUIMukgJcgSQ9AQB",
+            "yAEBUhhyb2JvdEFkYXB0ZXJEZWZpbml0aW9uSWQiRwoQUm9ib3REZWZpbml0",
             "aW9ucxIzCgVpdGVtcxgBIAMoCzIdLnJlc291cmNlcy52MS5Sb2JvdERlZmlu",
             "aXRpb25SBWl0ZW1zKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQ",
             "RUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVf",
             "VVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tV",
-            "S0FfSUlXQRAUKm0KD1JvYm90RHJpdmVyVHlwZRIhCh1ST0JPVF9EUklWRVJf",
-            "VFlQRV9VTlNQRUNJRklFRBAAEhgKFFJPQk9UX0RSSVZFUl9UWVBFX1VSEAES",
-            "HQoZUk9CT1RfRFJJVkVSX1RZUEVfR0VORVJJQxACQsEBChBjb20ucmVzb3Vy",
-            "Y2VzLnYxQhRSb2JvdERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2Nv",
-            "Ym90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNl",
-            "c3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2Vz",
-            "XFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpW",
-            "MWIGcHJvdG8z"));
+            "S0FfSUlXQRAUQsEBChBjb20ucmVzb3VyY2VzLnYxQhRSb2JvdERlZmluaXRp",
+            "b25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
+            "ZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMu",
+            "UmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQ",
+            "Qk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.CapabilityProfileReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.RobotType), typeof(global::Messages.Resources.V1.RobotDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.RobotType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.DefaultRobotSkill), global::Messages.Resources.V1.DefaultRobotSkill.Parser, new[]{ "SkillId", "Level" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotDefinition), global::Messages.Resources.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile", "DefaultSkills" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotDefinition), global::Messages.Resources.V1.RobotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ModelId", "CouplerModelId", "SupportedToolDefinitionIds", "DefaultToolDefinitionId", "ToolSlots", "CapabilityProfile", "DefaultSkills", "RobotAdapterDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotDefinitions), global::Messages.Resources.V1.RobotDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -76,12 +73,6 @@ namespace Messages.Resources.V1 {
     [pbr::OriginalName("ROBOT_TYPE_UR5E")] Ur5E = 11,
     [pbr::OriginalName("ROBOT_TYPE_UR10E")] Ur10E = 12,
     [pbr::OriginalName("ROBOT_TYPE_KUKA_IIWA")] KukaIiwa = 20,
-  }
-
-  public enum RobotDriverType {
-    [pbr::OriginalName("ROBOT_DRIVER_TYPE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("ROBOT_DRIVER_TYPE_UR")] Ur = 1,
-    [pbr::OriginalName("ROBOT_DRIVER_TYPE_GENERIC")] Generic = 2,
   }
 
   #endregion
@@ -362,7 +353,6 @@ namespace Messages.Resources.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
-      driverType_ = other.driverType_;
       modelId_ = other.modelId_;
       couplerModelId_ = other.couplerModelId_;
       supportedToolDefinitionIds_ = other.supportedToolDefinitionIds_.Clone();
@@ -370,6 +360,7 @@ namespace Messages.Resources.V1 {
       toolSlots_ = other.toolSlots_;
       capabilityProfile_ = other.capabilityProfile_ != null ? other.capabilityProfile_.Clone() : null;
       defaultSkills_ = other.defaultSkills_.Clone();
+      robotAdapterDefinitionId_ = other.robotAdapterDefinitionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -451,21 +442,6 @@ namespace Messages.Resources.V1 {
       get { return type_; }
       set {
         type_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "driver_type" field.</summary>
-    public const int DriverTypeFieldNumber = 6;
-    private global::Messages.Resources.V1.RobotDriverType driverType_ = global::Messages.Resources.V1.RobotDriverType.Unspecified;
-    /// <summary>
-    /// Required driver type for robot
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Resources.V1.RobotDriverType DriverType {
-      get { return driverType_; }
-      set {
-        driverType_ = value;
       }
     }
 
@@ -554,6 +530,22 @@ namespace Messages.Resources.V1 {
       get { return defaultSkills_; }
     }
 
+    /// <summary>Field number for the "robot_adapter_definition_id" field.</summary>
+    public const int RobotAdapterDefinitionIdFieldNumber = 14;
+    private string robotAdapterDefinitionId_ = "";
+    /// <summary>
+    /// Selects the static adapter implementation and capability contract used by
+    /// every instance of this robot definition.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RobotAdapterDefinitionId {
+      get { return robotAdapterDefinitionId_; }
+      set {
+        robotAdapterDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -574,7 +566,6 @@ namespace Messages.Resources.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
-      if (DriverType != other.DriverType) return false;
       if (ModelId != other.ModelId) return false;
       if (CouplerModelId != other.CouplerModelId) return false;
       if(!supportedToolDefinitionIds_.Equals(other.supportedToolDefinitionIds_)) return false;
@@ -582,6 +573,7 @@ namespace Messages.Resources.V1 {
       if (ToolSlots != other.ToolSlots) return false;
       if (!object.Equals(CapabilityProfile, other.CapabilityProfile)) return false;
       if(!defaultSkills_.Equals(other.defaultSkills_)) return false;
+      if (RobotAdapterDefinitionId != other.RobotAdapterDefinitionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -594,7 +586,6 @@ namespace Messages.Resources.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Resources.V1.RobotType.Unspecified) hash ^= Type.GetHashCode();
-      if (DriverType != global::Messages.Resources.V1.RobotDriverType.Unspecified) hash ^= DriverType.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       if (CouplerModelId.Length != 0) hash ^= CouplerModelId.GetHashCode();
       hash ^= supportedToolDefinitionIds_.GetHashCode();
@@ -602,6 +593,7 @@ namespace Messages.Resources.V1 {
       if (ToolSlots != 0) hash ^= ToolSlots.GetHashCode();
       if (capabilityProfile_ != null) hash ^= CapabilityProfile.GetHashCode();
       hash ^= defaultSkills_.GetHashCode();
+      if (RobotAdapterDefinitionId.Length != 0) hash ^= RobotAdapterDefinitionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -640,10 +632,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (DriverType != global::Messages.Resources.V1.RobotDriverType.Unspecified) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DriverType);
-      }
       if (ModelId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(ModelId);
@@ -666,6 +654,10 @@ namespace Messages.Resources.V1 {
         output.WriteMessage(CapabilityProfile);
       }
       defaultSkills_.WriteTo(output, _repeated_defaultSkills_codec);
+      if (RobotAdapterDefinitionId.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(RobotAdapterDefinitionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -696,10 +688,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (DriverType != global::Messages.Resources.V1.RobotDriverType.Unspecified) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DriverType);
-      }
       if (ModelId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(ModelId);
@@ -722,6 +710,10 @@ namespace Messages.Resources.V1 {
         output.WriteMessage(CapabilityProfile);
       }
       defaultSkills_.WriteTo(ref output, _repeated_defaultSkills_codec);
+      if (RobotAdapterDefinitionId.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(RobotAdapterDefinitionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -747,9 +739,6 @@ namespace Messages.Resources.V1 {
       if (Type != global::Messages.Resources.V1.RobotType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (DriverType != global::Messages.Resources.V1.RobotDriverType.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DriverType);
-      }
       if (ModelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelId);
       }
@@ -767,6 +756,9 @@ namespace Messages.Resources.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CapabilityProfile);
       }
       size += defaultSkills_.CalculateSize(_repeated_defaultSkills_codec);
+      if (RobotAdapterDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotAdapterDefinitionId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -794,9 +786,6 @@ namespace Messages.Resources.V1 {
       if (other.Type != global::Messages.Resources.V1.RobotType.Unspecified) {
         Type = other.Type;
       }
-      if (other.DriverType != global::Messages.Resources.V1.RobotDriverType.Unspecified) {
-        DriverType = other.DriverType;
-      }
       if (other.ModelId.Length != 0) {
         ModelId = other.ModelId;
       }
@@ -817,6 +806,9 @@ namespace Messages.Resources.V1 {
         CapabilityProfile.MergeFrom(other.CapabilityProfile);
       }
       defaultSkills_.Add(other.defaultSkills_);
+      if (other.RobotAdapterDefinitionId.Length != 0) {
+        RobotAdapterDefinitionId = other.RobotAdapterDefinitionId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -856,10 +848,6 @@ namespace Messages.Resources.V1 {
             Type = (global::Messages.Resources.V1.RobotType) input.ReadEnum();
             break;
           }
-          case 48: {
-            DriverType = (global::Messages.Resources.V1.RobotDriverType) input.ReadEnum();
-            break;
-          }
           case 58: {
             ModelId = input.ReadString();
             break;
@@ -889,6 +877,10 @@ namespace Messages.Resources.V1 {
           }
           case 106: {
             defaultSkills_.AddEntriesFrom(input, _repeated_defaultSkills_codec);
+            break;
+          }
+          case 114: {
+            RobotAdapterDefinitionId = input.ReadString();
             break;
           }
         }
@@ -930,10 +922,6 @@ namespace Messages.Resources.V1 {
             Type = (global::Messages.Resources.V1.RobotType) input.ReadEnum();
             break;
           }
-          case 48: {
-            DriverType = (global::Messages.Resources.V1.RobotDriverType) input.ReadEnum();
-            break;
-          }
           case 58: {
             ModelId = input.ReadString();
             break;
@@ -963,6 +951,10 @@ namespace Messages.Resources.V1 {
           }
           case 106: {
             defaultSkills_.AddEntriesFrom(ref input, _repeated_defaultSkills_codec);
+            break;
+          }
+          case 114: {
+            RobotAdapterDefinitionId = input.ReadString();
             break;
           }
         }

@@ -24,24 +24,45 @@ namespace Messages.Robot.V1 {
     static RobotIoCatalogReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9yb2JvdC92MS9yb2JvdF9pb19jYXRhbG9nLnByb3RvEghyb2JvdC52MSK6",
-            "AQoXUm9ib3RJT1NpZ25hbERlZmluaXRpb24SGwoJc2lnbmFsX2lkGAEgASgJ",
-            "UghzaWduYWxJZBISCgRuYW1lGAIgASgJUgRuYW1lEjYKCWRhdGFfdHlwZRgD",
-            "IAEoDjIZLnJvYm90LnYxLlJvYm90SU9EYXRhVHlwZVIIZGF0YVR5cGUSGgoI",
-            "cmVhZGFibGUYBCABKAhSCHJlYWRhYmxlEhoKCHdyaXRhYmxlGAUgASgIUgh3",
-            "cml0YWJsZSJuChRSb2JvdElPU2lnbmFsQ2F0YWxvZxIZCghyb2JvdF9pZBgB",
-            "IAEoCVIHcm9ib3RJZBI7CgdzaWduYWxzGAIgAygLMiEucm9ib3QudjEuUm9i",
-            "b3RJT1NpZ25hbERlZmluaXRpb25SB3NpZ25hbHMqjwEKD1JvYm90SU9EYXRh",
-            "VHlwZRIiCh5ST0JPVF9JT19EQVRBX1RZUEVfVU5TUEVDSUZJRUQQABIbChdS",
-            "T0JPVF9JT19EQVRBX1RZUEVfQk9PTBABEhwKGFJPQk9UX0lPX0RBVEFfVFlQ",
-            "RV9JTlQzMhACEh0KGVJPQk9UX0lPX0RBVEFfVFlQRV9ET1VCTEUQA0KkAQoM",
-            "Y29tLnJvYm90LnYxQhNSb2JvdElvQ2F0YWxvZ1Byb3RvUAFaNWdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYx",
-            "ogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeICFFJvYm90",
-            "XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
+            "Ch9yb2JvdC92MS9yb2JvdF9pb19jYXRhbG9nLnByb3RvEghyb2JvdC52MRob",
+            "YnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3YxL3By",
+            "ZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIu4CChdSb2JvdElPU2lnbmFs",
+            "RGVmaW5pdGlvbhIpCglzaWduYWxfaWQYASABKAlCDLpICXIE4PMEAcgBAVII",
+            "c2lnbmFsSWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEkMKCWRh",
+            "dGFfdHlwZRgDIAEoDjIZLnJvYm90LnYxLlJvYm90SU9EYXRhVHlwZUILukgI",
+            "ggECEAHIAQFSCGRhdGFUeXBlEhoKCHJlYWRhYmxlGAQgASgIUghyZWFkYWJs",
+            "ZRIaCgh3cml0YWJsZRgFIAEoCFIId3JpdGFibGU6iwG6SIcBGoQBCi9yb2Jv",
+            "dF9pb19zaWduYWxfZGVmaW5pdGlvbi5yZWFkYWJsZV9vcl93cml0YWJsZRIx",
+            "YW4gSS9PIHNpZ25hbCBtdXN0IGJlIHJlYWRhYmxlLCB3cml0YWJsZSwgb3Ig",
+            "Ym90aBoedGhpcy5yZWFkYWJsZSB8fCB0aGlzLndyaXRhYmxlIv0BChRSb2Jv",
+            "dElPU2lnbmFsQ2F0YWxvZxInCghyb2JvdF9pZBgBIAEoCUIMukgJcgSo8QQB",
+            "yAEBUgdyb2JvdElkErsBCgdzaWduYWxzGAIgAygLMiEucm9ib3QudjEuUm9i",
+            "b3RJT1NpZ25hbERlZmluaXRpb25CfrpIe7oBeAoqcm9ib3RfaW9fc2lnbmFs",
+            "X2NhdGFsb2cuc2lnbmFscy51bmlxdWVfaWRzEh1JL08gc2lnbmFsIGlkcyBt",
+            "dXN0IGJlIHVuaXF1ZRordGhpcy5tYXAoc2lnbmFsLCBzaWduYWwuc2lnbmFs",
+            "X2lkKS51bmlxdWUoKVIHc2lnbmFscyqPAQoPUm9ib3RJT0RhdGFUeXBlEiIK",
+            "HlJPQk9UX0lPX0RBVEFfVFlQRV9VTlNQRUNJRklFRBAAEhsKF1JPQk9UX0lP",
+            "X0RBVEFfVFlQRV9CT09MEAESHAoYUk9CT1RfSU9fREFUQV9UWVBFX0lOVDMy",
+            "EAISHQoZUk9CT1RfSU9fREFUQV9UWVBFX0RPVUJMRRADKowEChNSb2JvdElP",
+            "UmVnaXN0ZXJLaW5kEiYKIlJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfVU5TUEVD",
+            "SUZJRUQQABIoCiRST0JPVF9JT19SRUdJU1RFUl9LSU5EX0RJR0lUQUxfSU5Q",
+            "VVQQARIpCiVST0JPVF9JT19SRUdJU1RFUl9LSU5EX0RJR0lUQUxfT1VUUFVU",
+            "EAISJwojUk9CT1RfSU9fUkVHSVNURVJfS0lORF9BTkFMT0dfSU5QVVQQAxIo",
+            "CiRST0JPVF9JT19SRUdJU1RFUl9LSU5EX0FOQUxPR19PVVRQVVQQBBItCilS",
+            "T0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0JJVF9SRUdJU1RFUhAKEi8K",
+            "K1JPQk9UX0lPX1JFR0lTVEVSX0tJTkRfSU5QVVRfSU5UMzJfUkVHSVNURVIQ",
+            "CxIwCixST0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0RPVUJMRV9SRUdJ",
+            "U1RFUhAMEi4KKlJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0JJVF9S",
+            "RUdJU1RFUhAUEjAKLFJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0lO",
+            "VDMyX1JFR0lTVEVSEBUSMQotUk9CT1RfSU9fUkVHSVNURVJfS0lORF9PVVRQ",
+            "VVRfRE9VQkxFX1JFR0lTVEVSEBZCpAEKDGNvbS5yb2JvdC52MUITUm9ib3RJ",
+            "b0NhdGFsb2dQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
+            "bWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEU1lc3NhZ2VzLlJv",
+            "Ym90LlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJv",
+            "Ym90OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotIODataType), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotIODataType), typeof(global::Messages.Robot.V1.RobotIORegisterKind), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotIOSignalDefinition), global::Messages.Robot.V1.RobotIOSignalDefinition.Parser, new[]{ "SignalId", "Name", "DataType", "Readable", "Writable" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotIOSignalCatalog), global::Messages.Robot.V1.RobotIOSignalCatalog.Parser, new[]{ "RobotId", "Signals" }, null, null, null, null)
           }));
@@ -55,6 +76,24 @@ namespace Messages.Robot.V1 {
     [pbr::OriginalName("ROBOT_IO_DATA_TYPE_BOOL")] Bool = 1,
     [pbr::OriginalName("ROBOT_IO_DATA_TYPE_INT32")] Int32 = 2,
     [pbr::OriginalName("ROBOT_IO_DATA_TYPE_DOUBLE")] Double = 3,
+  }
+
+  /// <summary>
+  /// RobotIORegisterKind identifies an I/O family that an adapter can expose as
+  /// a configured, named signal. Direction follows controller terminology.
+  /// </summary>
+  public enum RobotIORegisterKind {
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT")] DigitalInput = 1,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT")] DigitalOutput = 2,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_ANALOG_INPUT")] AnalogInput = 3,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT")] AnalogOutput = 4,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER")] InputBitRegister = 10,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER")] InputInt32Register = 11,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER")] InputDoubleRegister = 12,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER")] OutputBitRegister = 20,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER")] OutputInt32Register = 21,
+    [pbr::OriginalName("ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER")] OutputDoubleRegister = 22,
   }
 
   #endregion

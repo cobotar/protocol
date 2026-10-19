@@ -7,13 +7,14 @@ import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { RobotIOSignalCatalog } from "./robot_io_catalog_pb.ts";
 import { file_robot_v1_robot_io_catalog } from "./robot_io_catalog_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file robot/v1/robot_adapter.proto.
  */
 export const file_robot_v1_robot_adapter: GenFile = /*@__PURE__*/
-  fileDesc("Chxyb2JvdC92MS9yb2JvdF9hZGFwdGVyLnByb3RvEghyb2JvdC52MSJdCh1Sb2JvdEFkYXB0ZXJDb21tYW5kQ2FwYWJpbGl0eRI8CgR0eXBlGAEgASgOMiEucm9ib3QudjEuUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGVCC7pICMgBAYIBAhABIp8BCh9Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlDYXBhYmlsaXR5Ej4KBHR5cGUYASABKA4yIy5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlQgu6SAjIAQGCAQIQARIrCgxmcmVxdWVuY3lfaHoYAiABKAFCELpIDRILQAEhAAAAAAAAAABIAIgBAUIPCg1fZnJlcXVlbmN5X2h6IscBChhSb2JvdEFkYXB0ZXJDYXBhYmlsaXRpZXMSOQoIY29tbWFuZHMYASADKAsyJy5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJDb21tYW5kQ2FwYWJpbGl0eRI8Cgl0ZWxlbWV0cnkYAiADKAsyKS5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlDYXBhYmlsaXR5EjIKCmlvX3NpZ25hbHMYAyABKAsyHi5yb2JvdC52MS5Sb2JvdElPU2lnbmFsQ2F0YWxvZyJ6ChdSb2JvdENvbnRyb2xsZXJJZGVudGl0eRIUCgxtYW51ZmFjdHVyZXIYASABKAkSDQoFbW9kZWwYAiABKAkSFQoNc2VyaWFsX251bWJlchgDIAEoCRIjChtjb250cm9sbGVyX3NvZnR3YXJlX3ZlcnNpb24YBCABKAkimgIKF1JvYm90QWRhcHRlckluZm9NZXNzYWdlEhAKCHJvYm90X2lkGAEgASgJEhYKCnJvYm90X3R5cGUYAiABKAlCAhgBEhYKCmlkZW50aWZpZXIYAyABKAlCAhgBEhQKDGFkYXB0ZXJfdHlwZRgEIAEoCRIXCg9hZGFwdGVyX3ZlcnNpb24YBSABKAkSNQoKY29udHJvbGxlchgGIAEoCzIhLnJvYm90LnYxLlJvYm90Q29udHJvbGxlcklkZW50aXR5EjgKDGNhcGFiaWxpdGllcxgHIAEoCzIiLnJvYm90LnYxLlJvYm90QWRhcHRlckNhcGFiaWxpdGllcxIdChVjYXBhYmlsaXRpZXNfcmV2aXNpb24YCCABKAkqrwQKF1JvYm90QWRhcHRlckNvbW1hbmRUeXBlEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1VOU1BFQ0lGSUVEEAASKwonUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9QTEFZEAESLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9QQVVTRRACEisKJ1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BST0dSQU1fU1RPUBADEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0FDS05PV0xFREdFEAoSKQolUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfU0hPV19QT1BVUBALEikKJVJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0hJREVfUE9QVVAQDBIrCidST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX1BST0dSQU0QFBIwCixST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX0lOU1RBTExBVElPThAVEicKI1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BPV0VSX09OEB4SKAokUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJfT0ZGEB8SLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQlJBS0VfUkVMRUFTRRAgKqgCChlSb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEAESLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9KT0lOVF9TVEFURRACEikKJVJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVENQX1BPU0UQAxIrCidST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9XUkVOQ0gQBBIpCiVST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCogEKDGNvbS5yb2JvdC52MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_robot_v1_robot_io_catalog]);
+  fileDesc("Chxyb2JvdC92MS9yb2JvdF9hZGFwdGVyLnByb3RvEghyb2JvdC52MSJdCh1Sb2JvdEFkYXB0ZXJDb21tYW5kQ2FwYWJpbGl0eRI8CgR0eXBlGAEgASgOMiEucm9ib3QudjEuUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGVCC7pICMgBAYIBAhABIp8BCh9Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlDYXBhYmlsaXR5Ej4KBHR5cGUYASABKA4yIy5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlQgu6SAjIAQGCAQIQARIrCgxmcmVxdWVuY3lfaHoYAiABKAFCELpIDRILQAEhAAAAAAAAAABIAIgBAUIPCg1fZnJlcXVlbmN5X2h6InoKF1JvYm90Q29udHJvbGxlcklkZW50aXR5EhQKDG1hbnVmYWN0dXJlchgBIAEoCRINCgVtb2RlbBgCIAEoCRIVCg1zZXJpYWxfbnVtYmVyGAMgASgJEiMKG2NvbnRyb2xsZXJfc29mdHdhcmVfdmVyc2lvbhgEIAEoCSLJAwoXUm9ib3RBZGFwdGVySW5mb01lc3NhZ2USHgoIcm9ib3RfaWQYASABKAlCDLpICcgBAXIEqPEEARIlCg9hZGFwdGVyX3ZlcnNpb24YBSABKAlCDLpICcgBAXIEiPQEARI1Cgpjb250cm9sbGVyGAYgASgLMiEucm9ib3QudjEuUm9ib3RDb250cm9sbGVySWRlbnRpdHkSKwoVY2FwYWJpbGl0aWVzX3JldmlzaW9uGAggASgJQgy6SAnIAQFyBIj0BAESKwoVYWRhcHRlcl9kZWZpbml0aW9uX2lkGAkgASgJQgy6SAnIAQFyBJD0BAESOgoKaW9fc2lnbmFscxgKIAEoCzIeLnJvYm90LnYxLlJvYm90SU9TaWduYWxDYXRhbG9nQga6SAPIAQE6mQG6SJUBGpIBCiZyb2JvdF9hZGFwdGVyX2luZm8uaW9fc2lnbmFsc19yb2JvdF9pZBI9dGhlIEkvTyBjYXRhbG9nIHJvYm90IGlkIG11c3QgbWF0Y2ggdGhlIGFkYXB0ZXIgaW5mbyByb2JvdCBpZBopdGhpcy5pb19zaWduYWxzLnJvYm90X2lkID09IHRoaXMucm9ib3RfaWQqrwQKF1JvYm90QWRhcHRlckNvbW1hbmRUeXBlEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1VOU1BFQ0lGSUVEEAASKwonUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9QTEFZEAESLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9QQVVTRRACEisKJ1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BST0dSQU1fU1RPUBADEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0FDS05PV0xFREdFEAoSKQolUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfU0hPV19QT1BVUBALEikKJVJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0hJREVfUE9QVVAQDBIrCidST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX1BST0dSQU0QFBIwCixST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX0lOU1RBTExBVElPThAVEicKI1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BPV0VSX09OEB4SKAokUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJfT0ZGEB8SLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQlJBS0VfUkVMRUFTRRAgKqgCChlSb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEAESLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9KT0lOVF9TVEFURRACEikKJVJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVENQX1BPU0UQAxIrCidST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9XUkVOQ0gQBBIpCiVST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCogEKDGNvbS5yb2JvdC52MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_robot_v1_robot_io_catalog, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message robot.v1.RobotAdapterCommandCapability
@@ -42,7 +43,7 @@ export type RobotAdapterTelemetryCapability = Message<"robot.v1.RobotAdapterTele
   type: RobotAdapterTelemetryType;
 
   /**
-   * Actual configured publication rate, not the theoretical robot maximum.
+   * Publication rate guaranteed by the adapter definition.
    *
    * @generated from field: optional double frequency_hz = 2;
    */
@@ -55,33 +56,6 @@ export type RobotAdapterTelemetryCapability = Message<"robot.v1.RobotAdapterTele
  */
 export const RobotAdapterTelemetryCapabilitySchema: GenMessage<RobotAdapterTelemetryCapability> = /*@__PURE__*/
   messageDesc(file_robot_v1_robot_adapter, 1);
-
-/**
- * @generated from message robot.v1.RobotAdapterCapabilities
- */
-export type RobotAdapterCapabilities = Message<"robot.v1.RobotAdapterCapabilities"> & {
-  /**
-   * @generated from field: repeated robot.v1.RobotAdapterCommandCapability commands = 1;
-   */
-  commands: RobotAdapterCommandCapability[];
-
-  /**
-   * @generated from field: repeated robot.v1.RobotAdapterTelemetryCapability telemetry = 2;
-   */
-  telemetry: RobotAdapterTelemetryCapability[];
-
-  /**
-   * @generated from field: robot.v1.RobotIOSignalCatalog io_signals = 3;
-   */
-  ioSignals?: RobotIOSignalCatalog;
-};
-
-/**
- * Describes the message robot.v1.RobotAdapterCapabilities.
- * Use `create(RobotAdapterCapabilitiesSchema)` to create a new message.
- */
-export const RobotAdapterCapabilitiesSchema: GenMessage<RobotAdapterCapabilities> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_adapter, 2);
 
 /**
  * @generated from message robot.v1.RobotControllerIdentity
@@ -113,7 +87,7 @@ export type RobotControllerIdentity = Message<"robot.v1.RobotControllerIdentity"
  * Use `create(RobotControllerIdentitySchema)` to create a new message.
  */
 export const RobotControllerIdentitySchema: GenMessage<RobotControllerIdentity> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_adapter, 3);
+  messageDesc(file_robot_v1_robot_adapter, 2);
 
 /**
  * @generated from message robot.v1.RobotAdapterInfoMessage
@@ -123,27 +97,6 @@ export type RobotAdapterInfoMessage = Message<"robot.v1.RobotAdapterInfoMessage"
    * @generated from field: string robot_id = 1;
    */
   robotId: string;
-
-  /**
-   * Existing fields can remain for wire compatibility.
-   *
-   * @generated from field: string robot_type = 2 [deprecated = true];
-   * @deprecated
-   */
-  robotType: string;
-
-  /**
-   * @generated from field: string identifier = 3 [deprecated = true];
-   * @deprecated
-   */
-  identifier: string;
-
-  /**
-   * Stable implementation name, e.g. "ur.rtde-dashboard".
-   *
-   * @generated from field: string adapter_type = 4;
-   */
-  adapterType: string;
 
   /**
    * Version of the adapter implementation, not the Protobuf API.
@@ -160,16 +113,25 @@ export type RobotAdapterInfoMessage = Message<"robot.v1.RobotAdapterInfoMessage"
   controller?: RobotControllerIdentity;
 
   /**
-   * @generated from field: robot.v1.RobotAdapterCapabilities capabilities = 7;
-   */
-  capabilities?: RobotAdapterCapabilities;
-
-  /**
-   * Deterministic fingerprint of the effective capabilities and I/O catalog.
+   * Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
    *
    * @generated from field: string capabilities_revision = 8;
    */
   capabilitiesRevision: string;
+
+  /**
+   * Static adapter capabilities selected by the robot definition.
+   *
+   * @generated from field: string adapter_definition_id = 9;
+   */
+  adapterDefinitionId: string;
+
+  /**
+   * Signals configured for this connected robot instance.
+   *
+   * @generated from field: robot.v1.RobotIOSignalCatalog io_signals = 10;
+   */
+  ioSignals?: RobotIOSignalCatalog;
 };
 
 /**
@@ -177,7 +139,7 @@ export type RobotAdapterInfoMessage = Message<"robot.v1.RobotAdapterInfoMessage"
  * Use `create(RobotAdapterInfoMessageSchema)` to create a new message.
  */
 export const RobotAdapterInfoMessageSchema: GenMessage<RobotAdapterInfoMessage> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_adapter, 4);
+  messageDesc(file_robot_v1_robot_adapter, 3);
 
 /**
  * @generated from enum robot.v1.RobotAdapterCommandType

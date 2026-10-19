@@ -422,6 +422,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10049,opt,name=not_blank",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10050,
+		Name:          "validation.v1.robot_adapter_definition_id_component",
+		Tag:           "varint,10050,opt,name=robot_adapter_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -526,6 +534,8 @@ var (
 	E_ExecutionEvidenceIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[48]
 	// optional bool not_blank = 10049;
 	E_NotBlank = &file_validation_v1_predefined_string_rules_proto_extTypes[49]
+	// optional bool robot_adapter_definition_id_component = 10050;
+	E_RobotAdapterDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[50]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -682,7 +692,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"&string.execution_evidence_id_component\x120this does not seem to be a execution evidence id\x1a6(this == '' || this.startsWith('execution_evidence-'))R\x1cexecutionEvidenceIdComponent:\xab\x01\n" +
 	"\tnot_blank\x12\x19.buf.validate.StringRules\x18\xc1N \x01(\bBr\xc2Ho\n" +
 	"m\n" +
-	"\x10string.not_blank\x128value must contain at least one non-whitespace character\x1a\x1f!rule || this.trim().size() > 0R\bnotBlankB\xb5\x01\n" +
+	"\x10string.not_blank\x128value must contain at least one non-whitespace character\x1a\x1f!rule || this.trim().size() > 0R\bnotBlank:\x9a\x02\n" +
+	"%robot_adapter_definition_id_component\x12\x19.buf.validate.StringRules\x18\xc2N \x01(\bB\xab\x01\xc2H\xa7\x01\n" +
+	"\xa4\x01\n" +
+	",string.robot_adapter_definition_id_component\x126this does not seem to be a robot adapter definition id\x1a<(this == '' || this.startsWith('robot_adapter_definition-'))R!robotAdapterDefinitionIdComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -739,10 +752,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 47: validation.v1.function_definition_id_component:extendee -> buf.validate.StringRules
 	0,  // 48: validation.v1.execution_evidence_id_component:extendee -> buf.validate.StringRules
 	0,  // 49: validation.v1.not_blank:extendee -> buf.validate.StringRules
-	50, // [50:50] is the sub-list for method output_type
-	50, // [50:50] is the sub-list for method input_type
-	50, // [50:50] is the sub-list for extension type_name
-	0,  // [0:50] is the sub-list for extension extendee
+	0,  // 50: validation.v1.robot_adapter_definition_id_component:extendee -> buf.validate.StringRules
+	51, // [51:51] is the sub-list for method output_type
+	51, // [51:51] is the sub-list for method input_type
+	51, // [51:51] is the sub-list for extension type_name
+	0,  // [0:51] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -758,7 +772,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 50,
+			NumExtensions: 51,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

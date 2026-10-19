@@ -4,13 +4,15 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file robot/v1/robot_io_catalog.proto.
  */
 export const file_robot_v1_robot_io_catalog: GenFile = /*@__PURE__*/
-  fileDesc("Ch9yb2JvdC92MS9yb2JvdF9pb19jYXRhbG9nLnByb3RvEghyb2JvdC52MSKMAQoXUm9ib3RJT1NpZ25hbERlZmluaXRpb24SEQoJc2lnbmFsX2lkGAEgASgJEgwKBG5hbWUYAiABKAkSLAoJZGF0YV90eXBlGAMgASgOMhkucm9ib3QudjEuUm9ib3RJT0RhdGFUeXBlEhAKCHJlYWRhYmxlGAQgASgIEhAKCHdyaXRhYmxlGAUgASgIIlwKFFJvYm90SU9TaWduYWxDYXRhbG9nEhAKCHJvYm90X2lkGAEgASgJEjIKB3NpZ25hbHMYAiADKAsyIS5yb2JvdC52MS5Sb2JvdElPU2lnbmFsRGVmaW5pdGlvbiqPAQoPUm9ib3RJT0RhdGFUeXBlEiIKHlJPQk9UX0lPX0RBVEFfVFlQRV9VTlNQRUNJRklFRBAAEhsKF1JPQk9UX0lPX0RBVEFfVFlQRV9CT09MEAESHAoYUk9CT1RfSU9fREFUQV9UWVBFX0lOVDMyEAISHQoZUk9CT1RfSU9fREFUQV9UWVBFX0RPVUJMRRADQqQBCgxjb20ucm9ib3QudjFCE1JvYm90SW9DYXRhbG9nUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw");
+  fileDesc("Ch9yb2JvdC92MS9yb2JvdF9pb19jYXRhbG9nLnByb3RvEghyb2JvdC52MSLAAgoXUm9ib3RJT1NpZ25hbERlZmluaXRpb24SHwoJc2lnbmFsX2lkGAEgASgJQgy6SAnIAQFyBODzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEjkKCWRhdGFfdHlwZRgDIAEoDjIZLnJvYm90LnYxLlJvYm90SU9EYXRhVHlwZUILukgIyAEBggECEAESEAoIcmVhZGFibGUYBCABKAgSEAoId3JpdGFibGUYBSABKAg6iwG6SIcBGoQBCi9yb2JvdF9pb19zaWduYWxfZGVmaW5pdGlvbi5yZWFkYWJsZV9vcl93cml0YWJsZRIxYW4gSS9PIHNpZ25hbCBtdXN0IGJlIHJlYWRhYmxlLCB3cml0YWJsZSwgb3IgYm90aBoedGhpcy5yZWFkYWJsZSB8fCB0aGlzLndyaXRhYmxlIusBChRSb2JvdElPU2lnbmFsQ2F0YWxvZxIeCghyb2JvdF9pZBgBIAEoCUIMukgJyAEBcgSo8QQBErIBCgdzaWduYWxzGAIgAygLMiEucm9ib3QudjEuUm9ib3RJT1NpZ25hbERlZmluaXRpb25CfrpIe7oBeAoqcm9ib3RfaW9fc2lnbmFsX2NhdGFsb2cuc2lnbmFscy51bmlxdWVfaWRzEh1JL08gc2lnbmFsIGlkcyBtdXN0IGJlIHVuaXF1ZRordGhpcy5tYXAoc2lnbmFsLCBzaWduYWwuc2lnbmFsX2lkKS51bmlxdWUoKSqPAQoPUm9ib3RJT0RhdGFUeXBlEiIKHlJPQk9UX0lPX0RBVEFfVFlQRV9VTlNQRUNJRklFRBAAEhsKF1JPQk9UX0lPX0RBVEFfVFlQRV9CT09MEAESHAoYUk9CT1RfSU9fREFUQV9UWVBFX0lOVDMyEAISHQoZUk9CT1RfSU9fREFUQV9UWVBFX0RPVUJMRRADKowEChNSb2JvdElPUmVnaXN0ZXJLaW5kEiYKIlJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfVU5TUEVDSUZJRUQQABIoCiRST0JPVF9JT19SRUdJU1RFUl9LSU5EX0RJR0lUQUxfSU5QVVQQARIpCiVST0JPVF9JT19SRUdJU1RFUl9LSU5EX0RJR0lUQUxfT1VUUFVUEAISJwojUk9CT1RfSU9fUkVHSVNURVJfS0lORF9BTkFMT0dfSU5QVVQQAxIoCiRST0JPVF9JT19SRUdJU1RFUl9LSU5EX0FOQUxPR19PVVRQVVQQBBItCilST0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0JJVF9SRUdJU1RFUhAKEi8KK1JPQk9UX0lPX1JFR0lTVEVSX0tJTkRfSU5QVVRfSU5UMzJfUkVHSVNURVIQCxIwCixST0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0RPVUJMRV9SRUdJU1RFUhAMEi4KKlJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0JJVF9SRUdJU1RFUhAUEjAKLFJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0lOVDMyX1JFR0lTVEVSEBUSMQotUk9CT1RfSU9fUkVHSVNURVJfS0lORF9PVVRQVVRfRE9VQkxFX1JFR0lTVEVSEBZCpAEKDGNvbS5yb2JvdC52MUITUm9ib3RJb0NhdGFsb2dQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEU1lc3NhZ2VzLlJvYm90LlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message robot.v1.RobotIOSignalDefinition
@@ -103,4 +105,73 @@ export enum RobotIODataType {
  */
 export const RobotIODataTypeSchema: GenEnum<RobotIODataType> = /*@__PURE__*/
   enumDesc(file_robot_v1_robot_io_catalog, 0);
+
+/**
+ * RobotIORegisterKind identifies an I/O family that an adapter can expose as
+ * a configured, named signal. Direction follows controller terminology.
+ *
+ * @generated from enum robot.v1.RobotIORegisterKind
+ */
+export enum RobotIORegisterKind {
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_UNSPECIFIED = 0;
+   */
+  ROBOT_IO_REGISTER_KIND_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT = 1;
+   */
+  ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT = 1,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT = 2;
+   */
+  ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT = 2,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_ANALOG_INPUT = 3;
+   */
+  ROBOT_IO_REGISTER_KIND_ANALOG_INPUT = 3,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT = 4;
+   */
+  ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT = 4,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER = 10;
+   */
+  ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER = 10,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER = 11;
+   */
+  ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER = 11,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER = 12;
+   */
+  ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER = 12,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER = 20;
+   */
+  ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER = 20,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER = 21;
+   */
+  ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER = 21,
+
+  /**
+   * @generated from enum value: ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER = 22;
+   */
+  ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER = 22,
+}
+
+/**
+ * Describes the enum robot.v1.RobotIORegisterKind.
+ */
+export const RobotIORegisterKindSchema: GenEnum<RobotIORegisterKind> = /*@__PURE__*/
+  enumDesc(file_robot_v1_robot_io_catalog, 1);
 

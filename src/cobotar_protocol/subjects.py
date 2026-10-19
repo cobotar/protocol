@@ -12,6 +12,9 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "edit.model.add", "pattern": "edit.model.add", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "resources.v1.ModelArtifact", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("fusion360_exporter", "web_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "edit.part_definition.add", "pattern": "edit.part_definition.add", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "product.v1.PartDefinition", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("fusion360_exporter", "web_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "edit.product.add", "pattern": "edit.product.add", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "product.v1.ProductDefinition", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("fusion360_exporter", "web_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.robot_adapter.info", "pattern": "get.robot_adapter.info.{robot_instance_id}", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "robot.v1.RobotAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#14"},
+    {"id": "get.robot_adapter_definition.all", "pattern": "get.robot_adapter_definition.all", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.RobotAdapterDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#49"},
+    {"id": "get.robot_adapter_definition.one", "pattern": "get.robot_adapter_definition.one", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "resources.v1.RobotAdapterDefinition", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#49"},
     {"id": "get.storage.info", "pattern": "get.storage.info", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "service.v1.StorageInfo", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
     {"id": "plan.robot.path", "pattern": "plan.robot.path.{robot_instance_id}.{plan_id}", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.PathMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "telemetry.robot.controller_status", "pattern": "telemetry.robot.controller_status.{robot_instance_id}", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotControllerStatusMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
@@ -58,6 +61,18 @@ EDIT_MODEL_ADD = "edit.model.add"
 EDIT_PART_DEFINITION_ADD = "edit.part_definition.add"
 
 EDIT_PRODUCT_ADD = "edit.product.add"
+
+def get_robot_adapter_info(robot_instance_id: str) -> str:
+    """Build `get.robot_adapter.info.{robot_instance_id}`. Experimental: active/staged; see cobotar/protocol#14."""
+    return _build_subject("get.robot_adapter.info.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_get_robot_adapter_info_any() -> str:
+    """Subscribe to every concrete `get.robot_adapter.info` subject."""
+    return "get.robot_adapter.info.*"
+
+GET_ROBOT_ADAPTER_DEFINITION_ALL = "get.robot_adapter_definition.all"
+
+GET_ROBOT_ADAPTER_DEFINITION_ONE = "get.robot_adapter_definition.one"
 
 GET_STORAGE_INFO = "get.storage.info"
 

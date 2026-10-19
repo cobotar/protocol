@@ -144,6 +144,54 @@ routes:
     publishers: [fusion360_exporter, web_cobotar]
     consumers: [authoring]
 
+  - id: get.robot_adapter.info
+    pattern: get.robot_adapter.info.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/protocol#14
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: robot.v1.RobotAdapterInfoMessage
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Request the connected adapter information for one robot instance.
+
+  - id: get.robot_adapter_definition.all
+    pattern: get.robot_adapter_definition.all
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#49
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: resources.v1.RobotAdapterDefinitions
+      failure: service.v1.Response
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Request every built-in robot adapter definition.
+
+  - id: get.robot_adapter_definition.one
+    pattern: get.robot_adapter_definition.one
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#49
+    interaction: request_reply
+    request: common.v1.GetMessage
+    replies:
+      success: resources.v1.RobotAdapterDefinition
+      failure: service.v1.Response
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Request one built-in robot adapter definition by id.
+
   - id: get.storage.info
     pattern: get.storage.info
     lifecycle: planned

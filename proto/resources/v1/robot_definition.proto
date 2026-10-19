@@ -17,12 +17,6 @@ enum RobotType {
   ROBOT_TYPE_KUKA_IIWA = 20;
 }
 
-enum RobotDriverType {
-  ROBOT_DRIVER_TYPE_UNSPECIFIED = 0;
-  ROBOT_DRIVER_TYPE_UR = 1;
-  ROBOT_DRIVER_TYPE_GENERIC = 2;
-}
-
 message DefaultRobotSkill {
   string skill_id = 1 [(buf.validate.field).string.(validation.v1.skill_id_component) = true];
   capability.v1.SkillLevel level = 2;
@@ -37,10 +31,6 @@ message RobotDefinition {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ]; // Required type of robot
-  RobotDriverType driver_type = 6 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ]; // Required driver type for robot
   string model_id = 7 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
 
   // Tool mounting capability
@@ -52,6 +42,13 @@ message RobotDefinition {
   capability.v1.CapabilityProfile capability_profile = 12;
 
   repeated DefaultRobotSkill default_skills = 13;
+
+  // Selects the static adapter implementation and capability contract used by
+  // every instance of this robot definition.
+  string robot_adapter_definition_id = 14 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.robot_adapter_definition_id_component) = true
+  ];
 }
 
 message RobotDefinitions {

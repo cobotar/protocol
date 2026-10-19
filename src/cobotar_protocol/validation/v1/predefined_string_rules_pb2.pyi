@@ -103,3 +103,5 @@ EXECUTION_EVIDENCE_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 execution_evidence_id_component: _descriptor.FieldDescriptor
 NOT_BLANK_FIELD_NUMBER: _ClassVar[int]
 not_blank: _descriptor.FieldDescriptor
+ROBOT_ADAPTER_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+robot_adapter_definition_id_component: _descriptor.FieldDescriptor
