@@ -1,0 +1,104 @@
+syntax = "proto3";
+package service.v1;
+
+import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Service.V1";
+option go_package = "github.com/cobotar/protocol/messages/service/v1";
+
+// StorageSeedRecord identifies the configured seed composition most recently
+// applied to the stored data. It is absent when no seed composition has been
+// applied or when its provenance is unknown (for example after loading an old
+// dump that did not record it).
+message StorageSeedRecord {
+  string fingerprint = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.pattern = "^[a-f0-9]{64}$"
+  ];
+  google.protobuf.Timestamp applied_at = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).timestamp.lt_now = true
+  ];
+}
+
+// StorageDumpRequest asks Authoring to write a logical dump to the `dumps`
+// object-store bucket. object_name is the name within that bucket, not a path
+// on the Authoring host.
+message StorageDumpRequest {
+  string object_name = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.max_len = 1024,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+}
+
+// StorageDumpResult describes a dump successfully stored in the `dumps`
+// object-store bucket. A failed dump returns Response instead.
+message StorageDumpResult {
+  string object_name = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.max_len = 1024,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+  uint64 size_bytes = 2 [(buf.validate.field).uint64.gt = 0];
+  map<string, uint64> entity_counts = 3 [
+    (buf.validate.field).map.keys.string = {
+      min_len: 1
+      max_len: 256
+    },
+    (buf.validate.field).map.keys.string.(validation.v1.not_blank) = true
+  ];
+  google.protobuf.Timestamp created_at = 4 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).timestamp.lt_now = true
+  ];
+}
+
+// StorageLoadRequest asks Authoring to replace its stored data with the dump
+// identified by object_name in the `dumps` object-store bucket.
+message StorageLoadRequest {
+  string object_name = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.max_len = 1024,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+}
+
+// StorageClearRequest asks Authoring to remove all stored data. The caller
+// must copy the current ServerInfo.instance_id into confirmation_instance_id;
+// this prevents a stale confirmation from clearing a restarted backend.
+message StorageClearRequest {
+  optional bool apply_configured_seeds = 1;
+  string confirmation_instance_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.uuid = true
+  ];
+}
+
+// StorageInfo describes the current Authoring store. backend identifies the
+// storage implementation, for example "sqlite" or "postgresql". instance_id
+// is the value a caller must repeat when sending StorageClearRequest.
+message StorageInfo {
+  string backend = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.max_len = 64,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+  string instance_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.uuid = true
+  ];
+  uint64 size_bytes = 3;
+  map<string, uint64> entity_counts = 4 [
+    (buf.validate.field).map.keys.string = {
+      min_len: 1
+      max_len: 256
+    },
+    (buf.validate.field).map.keys.string.(validation.v1.not_blank) = true
+  ];
+  StorageSeedRecord seed_record = 5;
+  bool experimenter_mode = 6;
+  google.protobuf.Timestamp last_dump_at = 7 [(buf.validate.field).timestamp.lt_now = true];
+}

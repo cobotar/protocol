@@ -738,6 +738,16 @@
   
     - [Status](#service-v1-Status)
   
+- [service/v1/storage.proto](#service_v1_storage-proto)
+    - [StorageClearRequest](#service-v1-StorageClearRequest)
+    - [StorageDumpRequest](#service-v1-StorageDumpRequest)
+    - [StorageDumpResult](#service-v1-StorageDumpResult)
+    - [StorageDumpResult.EntityCountsEntry](#service-v1-StorageDumpResult-EntityCountsEntry)
+    - [StorageInfo](#service-v1-StorageInfo)
+    - [StorageInfo.EntityCountsEntry](#service-v1-StorageInfo-EntityCountsEntry)
+    - [StorageLoadRequest](#service-v1-StorageLoadRequest)
+    - [StorageSeedRecord](#service-v1-StorageSeedRecord)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -10878,6 +10888,166 @@ Concrete runtime/deployment bindings resolved for this task run.
 | STATUS_OFFLINE | 1 |  |
 | STATUS_ONLINE | 2 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="service_v1_storage-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## service/v1/storage.proto
+
+
+
+<a name="service-v1-StorageClearRequest"></a>
+
+### StorageClearRequest
+StorageClearRequest asks Authoring to remove all stored data. The caller
+must copy the current ServerInfo.instance_id into confirmation_instance_id;
+this prevents a stale confirmation from clearing a restarted backend.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| apply_configured_seeds | [bool](#bool) | optional |  |
+| confirmation_instance_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageDumpRequest"></a>
+
+### StorageDumpRequest
+StorageDumpRequest asks Authoring to write a logical dump to the `dumps`
+object-store bucket. object_name is the name within that bucket, not a path
+on the Authoring host.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageDumpResult"></a>
+
+### StorageDumpResult
+StorageDumpResult describes a dump successfully stored in the `dumps`
+object-store bucket. A failed dump returns Response instead.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_name | [string](#string) |  |  |
+| size_bytes | [uint64](#uint64) |  |  |
+| entity_counts | [StorageDumpResult.EntityCountsEntry](#service-v1-StorageDumpResult-EntityCountsEntry) | repeated |  |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageDumpResult-EntityCountsEntry"></a>
+
+### StorageDumpResult.EntityCountsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageInfo"></a>
+
+### StorageInfo
+StorageInfo describes the current Authoring store. backend identifies the
+storage implementation, for example &#34;sqlite&#34; or &#34;postgresql&#34;. instance_id
+is the value a caller must repeat when sending StorageClearRequest.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| backend | [string](#string) |  |  |
+| instance_id | [string](#string) |  |  |
+| size_bytes | [uint64](#uint64) |  |  |
+| entity_counts | [StorageInfo.EntityCountsEntry](#service-v1-StorageInfo-EntityCountsEntry) | repeated |  |
+| seed_record | [StorageSeedRecord](#service-v1-StorageSeedRecord) |  |  |
+| experimenter_mode | [bool](#bool) |  |  |
+| last_dump_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageInfo-EntityCountsEntry"></a>
+
+### StorageInfo.EntityCountsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageLoadRequest"></a>
+
+### StorageLoadRequest
+StorageLoadRequest asks Authoring to replace its stored data with the dump
+identified by object_name in the `dumps` object-store bucket.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| object_name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageSeedRecord"></a>
+
+### StorageSeedRecord
+StorageSeedRecord identifies the configured seed composition most recently
+applied to the stored data. It is absent when no seed composition has been
+applied or when its provenance is unknown (for example after loading an old
+dump that did not record it).
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fingerprint | [string](#string) |  |  |
+| applied_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+ 
 
  
 
