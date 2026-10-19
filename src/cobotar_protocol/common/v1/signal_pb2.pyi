@@ -30,6 +30,7 @@ class SignalSemantic(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE: _ClassVar[SignalSemantic]
     SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY: _ClassVar[SignalSemantic]
     SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY: _ClassVar[SignalSemantic]
+    SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE: _ClassVar[SignalSemantic]
 SIGNAL_DATA_TYPE_UNSPECIFIED: SignalDataType
 SIGNAL_DATA_TYPE_BOOL: SignalDataType
 SIGNAL_DATA_TYPE_INT32: SignalDataType
@@ -46,6 +47,7 @@ SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED: SignalSemantic
 SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE: SignalSemantic
 SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY: SignalSemantic
 SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY: SignalSemantic
+SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE: SignalSemantic
 
 class SignalDefinition(_message.Message):
     __slots__ = ("signal_id", "name", "data_type", "readable", "writable", "semantic")

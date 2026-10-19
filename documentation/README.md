@@ -2556,6 +2556,7 @@ the adapter-specific signal id. Unspecified is valid for non-standard signals.
 | SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE | 50 | Whether an HMI is currently showing work instructions. |
 | SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY | 60 | Part-feeder availability states. |
 | SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY | 61 |  |
+| SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE | 100 | Robot input that the robot program waits on to continue, e.g. after a worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command, so it is readable but not writable by clients. |
 
 
  

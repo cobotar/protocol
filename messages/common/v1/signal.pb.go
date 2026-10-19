@@ -101,22 +101,27 @@ const (
 	// Part-feeder availability states.
 	SignalSemantic_SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY SignalSemantic = 60
 	SignalSemantic_SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY SignalSemantic = 61
+	// Robot input that the robot program waits on to continue, e.g. after a
+	// worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command,
+	// so it is readable but not writable by clients.
+	SignalSemantic_SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE SignalSemantic = 100
 )
 
 // Enum value maps for SignalSemantic.
 var (
 	SignalSemantic_name = map[int32]string{
-		0:  "SIGNAL_SEMANTIC_UNSPECIFIED",
-		10: "SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE",
-		11: "SIGNAL_SEMANTIC_ASSET_CAMERA_ERROR_DETECTED",
-		20: "SIGNAL_SEMANTIC_ASSET_LIGHT_RED",
-		21: "SIGNAL_SEMANTIC_ASSET_LIGHT_YELLOW",
-		22: "SIGNAL_SEMANTIC_ASSET_LIGHT_GREEN",
-		30: "SIGNAL_SEMANTIC_ASSET_CONVEYOR_MOVING",
-		40: "SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED",
-		50: "SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE",
-		60: "SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY",
-		61: "SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY",
+		0:   "SIGNAL_SEMANTIC_UNSPECIFIED",
+		10:  "SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE",
+		11:  "SIGNAL_SEMANTIC_ASSET_CAMERA_ERROR_DETECTED",
+		20:  "SIGNAL_SEMANTIC_ASSET_LIGHT_RED",
+		21:  "SIGNAL_SEMANTIC_ASSET_LIGHT_YELLOW",
+		22:  "SIGNAL_SEMANTIC_ASSET_LIGHT_GREEN",
+		30:  "SIGNAL_SEMANTIC_ASSET_CONVEYOR_MOVING",
+		40:  "SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED",
+		50:  "SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE",
+		60:  "SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY",
+		61:  "SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY",
+		100: "SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE",
 	}
 	SignalSemantic_value = map[string]int32{
 		"SIGNAL_SEMANTIC_UNSPECIFIED":                    0,
@@ -130,6 +135,7 @@ var (
 		"SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE": 50,
 		"SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY":        60,
 		"SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY":        61,
+		"SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE":              100,
 	}
 )
 
@@ -303,16 +309,16 @@ var File_common_v1_signal_proto protoreflect.FileDescriptor
 
 const file_common_v1_signal_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/signal.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x93\x05\n" +
+	"\x16common/v1/signal.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8d\x05\n" +
 	"\x10SignalDefinition\x12)\n" +
 	"\tsignal_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\bsignalId\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12C\n" +
 	"\tdata_type\x18\x03 \x01(\x0e2\x19.common.v1.SignalDataTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\bdataType\x12\x1a\n" +
 	"\breadable\x18\x04 \x01(\bR\breadable\x12\x1a\n" +
 	"\bwritable\x18\x05 \x01(\bR\bwritable\x12?\n" +
-	"\bsemantic\x18\x06 \x01(\x0e2\x19.common.v1.SignalSemanticB\b\xbaH\x05\x82\x01\x02\x10\x01R\bsemantic:\xf6\x02\xbaH\xf2\x02\x1av\n" +
-	"&signal_definition.readable_or_writable\x12,a signal must be readable, writable, or both\x1a\x1ethis.readable || this.writable\x1a\xf7\x01\n" +
-	"-signal_definition.standard_semantic_data_type\x12:standard asset signal semantics require the bool data type\x1a\x89\x01this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL\"\x94\x03\n" +
+	"\bsemantic\x18\x06 \x01(\x0e2\x19.common.v1.SignalSemanticB\b\xbaH\x05\x82\x01\x02\x10\x01R\bsemantic:\xf0\x02\xbaH\xec\x02\x1av\n" +
+	"&signal_definition.readable_or_writable\x12,a signal must be readable, writable, or both\x1a\x1ethis.readable || this.writable\x1a\xf1\x01\n" +
+	"-signal_definition.standard_semantic_data_type\x124standard signal semantics require the bool data type\x1a\x89\x01this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL\"\x94\x03\n" +
 	"\rSignalCatalog\x12-\n" +
 	"\vresource_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf4\x04\x01R\n" +
 	"resourceId\x12\xd3\x02\n" +
@@ -324,7 +330,7 @@ const file_common_v1_signal_proto_rawDesc = "" +
 	"\x15SIGNAL_DATA_TYPE_BOOL\x10\x01\x12\x1a\n" +
 	"\x16SIGNAL_DATA_TYPE_INT32\x10\x02\x12\x1b\n" +
 	"\x17SIGNAL_DATA_TYPE_DOUBLE\x10\x03\x12\x1b\n" +
-	"\x17SIGNAL_DATA_TYPE_STRING\x10\x04*\xe4\x03\n" +
+	"\x17SIGNAL_DATA_TYPE_STRING\x10\x04*\x8b\x04\n" +
 	"\x0eSignalSemantic\x12\x1f\n" +
 	"\x1bSIGNAL_SEMANTIC_UNSPECIFIED\x10\x00\x12'\n" +
 	"#SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE\x10\n" +
@@ -337,7 +343,8 @@ const file_common_v1_signal_proto_rawDesc = "" +
 	"&SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED\x10(\x122\n" +
 	".SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE\x102\x12+\n" +
 	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY\x10<\x12+\n" +
-	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY\x10=B\xa3\x01\n" +
+	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY\x10=\x12%\n" +
+	"!SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE\x10dB\xa3\x01\n" +
 	"\rcom.common.v1B\vSignalProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 

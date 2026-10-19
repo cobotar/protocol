@@ -83,7 +83,7 @@ message ResourceSignalRequirement {
   };
   option (buf.validate.message).cel = {
     id: "resource_signal_requirement.standard_semantic_data_type"
-    message: "standard asset signal semantics require the bool data type"
+    message: "standard signal semantics require the bool data type"
     expression:
       "this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || "
       "this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL"

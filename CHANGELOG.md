@@ -4,6 +4,7 @@
 
 ### Added
 
+- `common.v1.SignalSemantic.SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE` for the robot input that an adapter pulses for the `ACKNOWLEDGE` command, so whether a connected robot can acknowledge shows in its signal catalog (cobotar/protocol#22).
 - Resource capability requirements for feedback, action and function definitions; explicit AR input-slot constraints; and per-resource binding status with unmet requirements and affected consumers (cobotar/protocol#16).
 - `resources.v1.AssetAdapterDefinition` and `resources.v1.AssetAdapterInfoMessage`, describing static asset commands, telemetry and standard signals separately from instance-specific identity and effective signals (cobotar/protocol#15).
 - A shared `common.v1.SignalCatalog` for typed, readable and writable robot and asset signals, plus standard signal semantics for cameras, stack lights, conveyors, sensors, HMIs and part feeders (cobotar/protocol#15).

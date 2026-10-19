@@ -522,7 +522,7 @@ const file_resources_v1_resource_requirement_proto_rawDesc = "" +
 	"\x14minimum_frequency_hz\x18\x03 \x01(\x01B\x10\xbaH\r\x12\v@\x01!\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\x12minimumFrequencyHz\x88\x01\x01:)\xbaH&\"$\n" +
 	"\x0frobot_telemetry\n" +
 	"\x0fasset_telemetry\x10\x01B\x17\n" +
-	"\x15_minimum_frequency_hz\"\x90\x06\n" +
+	"\x15_minimum_frequency_hz\"\x8a\x06\n" +
 	"\x19ResourceSignalRequirement\x12B\n" +
 	"\tdata_type\x18\x01 \x01(\x0e2\x19.common.v1.SignalDataTypeB\n" +
 	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\bdataType\x12\x1a\n" +
@@ -531,9 +531,9 @@ const file_resources_v1_resource_requirement_proto_rawDesc = "" +
 	"\tsignal_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\bsignalId\x12A\n" +
 	"\bsemantic\x18\x05 \x01(\x0e2\x19.common.v1.SignalSemanticB\n" +
 	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\bsemantic\x12>\n" +
-	"\x16signal_id_property_key\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x13signalIdPropertyKey:\xcb\x03\xbaH\xc7\x03\x1a\x91\x01\n" +
-	"0resource_signal_requirement.readable_or_writable\x12=a signal requirement must require readable, writable, or both\x1a\x1ethis.readable || this.writable\x1a\x81\x02\n" +
-	"7resource_signal_requirement.standard_semantic_data_type\x12:standard asset signal semantics require the bool data type\x1a\x89\x01this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL\"-\n" +
+	"\x16signal_id_property_key\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x13signalIdPropertyKey:\xc5\x03\xbaH\xc1\x03\x1a\x91\x01\n" +
+	"0resource_signal_requirement.readable_or_writable\x12=a signal requirement must require readable, writable, or both\x1a\x1ethis.readable || this.writable\x1a\xfb\x01\n" +
+	"7resource_signal_requirement.standard_semantic_data_type\x124standard signal semantics require the bool data type\x1a\x89\x01this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL\"-\n" +
 	"\tsignal_id\n" +
 	"\bsemantic\n" +
 	"\x16signal_id_property_key\"W\n" +

@@ -42,6 +42,11 @@ enum SignalSemantic {
   // Part-feeder availability states.
   SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY = 60;
   SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY = 61;
+
+  // Robot input that the robot program waits on to continue, e.g. after a
+  // worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command,
+  // so it is readable but not writable by clients.
+  SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE = 100;
 }
 
 // SignalDefinition describes one stable, adapter-facing signal independently
@@ -54,7 +59,7 @@ message SignalDefinition {
   };
   option (buf.validate.message).cel = {
     id: "signal_definition.standard_semantic_data_type"
-    message: "standard asset signal semantics require the bool data type"
+    message: "standard signal semantics require the bool data type"
     expression:
       "this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || "
       "this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL"
