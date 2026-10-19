@@ -9,6 +9,7 @@ package arv1
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v11 "github.com/cobotar/protocol/messages/resources/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -115,12 +116,13 @@ type FunctionDefinition struct {
 	Type        FunctionType  `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.FunctionType" json:"type,omitempty"`
 	Group       FunctionGroup `protobuf:"varint,7,opt,name=group,proto3,enum=ar.v1.FunctionGroup" json:"group,omitempty"`
 	// Monotonic revision of the externally visible definition contract.
-	Revision      uint64                 `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
-	Status        DefinitionStatus       `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
-	Properties    []*v1.PropertyTemplate `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
-	Execution     *ExecutionContract     `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Revision             uint64                             `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
+	Status               DefinitionStatus                   `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
+	Properties           []*v1.PropertyTemplate             `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
+	Execution            *ExecutionContract                 `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
+	ResourceRequirements []*v11.ConsumerResourceRequirement `protobuf:"bytes,14,rep,name=resource_requirements,json=resourceRequirements,proto3" json:"resource_requirements,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *FunctionDefinition) Reset() {
@@ -230,6 +232,13 @@ func (x *FunctionDefinition) GetExecution() *ExecutionContract {
 	return nil
 }
 
+func (x *FunctionDefinition) GetResourceRequirements() []*v11.ConsumerResourceRequirement {
+	if x != nil {
+		return x.ResourceRequirements
+	}
+	return nil
+}
+
 // The catalog service additionally enforces that revisions sharing a key also
 // share a type, and that at most one revision per key/type is ACTIVE.
 type FunctionDefinitions struct {
@@ -280,7 +289,7 @@ var File_ar_v1_function_definition_proto protoreflect.FileDescriptor
 
 const file_ar_v1_function_definition_proto_rawDesc = "" +
 	"\n" +
-	"\x1far/v1/function_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/function.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8b\x05\n" +
+	"\x1far/v1/function_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/function.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc5\x0f\n" +
 	"\x12FunctionDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x02id\x12\x1e\n" +
 	"\x03key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
@@ -296,7 +305,10 @@ const file_ar_v1_function_definition_proto_rawDesc = "" +
 	" \x03(\v2\x1b.common.v1.PropertyTemplateB\x85\x01\xbaH\x81\x01\xba\x01~\n" +
 	"*function_definition.properties.unique_keys\x12%property template keys must be unique\x1a)this.map(property, property.key).unique()R\n" +
 	"properties\x12>\n" +
-	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecutionJ\x04\b\v\x10\fJ\x04\b\f\x10\r\"\xc7\x03\n" +
+	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecution\x12^\n" +
+	"\x15resource_requirements\x18\x0e \x03(\v2).resources.v1.ConsumerResourceRequirementR\x14resourceRequirements:\xd7\t\xbaH\xd3\t\x1a\x90\x06\n" +
+	"Gfunction_definition.resource_requirements.reference_resource_properties\x12Rresource requirements must reference a compatible ROBOT or ASSET property template\x1a\xf0\x04this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && ((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || (property.type == 14 && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))\x1a\xbd\x03\n" +
+	"Cfunction_definition.signal_requirements.reference_signal_properties\x12Isignal id property keys must reference a STRING or ENUM property template\x1a\xaa\x02this.resource_requirements.all(requirement, !has(requirement.requirement.signal) || !has(requirement.requirement.signal.signal_id_property_key) || this.properties.exists(property, property.key == requirement.requirement.signal.signal_id_property_key && (property.type == 5 || property.type == 11)))J\x04\b\v\x10\fJ\x04\b\f\x10\r\"\xc7\x03\n" +
 	"\x13FunctionDefinitions\x12\xaf\x03\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.ar.v1.FunctionDefinitionB\xfd\x02\xbaH\xf9\x02\xba\x01}\n" +
 	"%function_definitions.items.unique_ids\x12&function definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xf5\x01\n" +
@@ -329,13 +341,14 @@ func file_ar_v1_function_definition_proto_rawDescGZIP() []byte {
 var file_ar_v1_function_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ar_v1_function_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_function_definition_proto_goTypes = []any{
-	(FunctionGroup)(0),          // 0: ar.v1.FunctionGroup
-	(*FunctionDefinition)(nil),  // 1: ar.v1.FunctionDefinition
-	(*FunctionDefinitions)(nil), // 2: ar.v1.FunctionDefinitions
-	(FunctionType)(0),           // 3: ar.v1.FunctionType
-	(DefinitionStatus)(0),       // 4: ar.v1.DefinitionStatus
-	(*v1.PropertyTemplate)(nil), // 5: common.v1.PropertyTemplate
-	(*ExecutionContract)(nil),   // 6: ar.v1.ExecutionContract
+	(FunctionGroup)(0),                      // 0: ar.v1.FunctionGroup
+	(*FunctionDefinition)(nil),              // 1: ar.v1.FunctionDefinition
+	(*FunctionDefinitions)(nil),             // 2: ar.v1.FunctionDefinitions
+	(FunctionType)(0),                       // 3: ar.v1.FunctionType
+	(DefinitionStatus)(0),                   // 4: ar.v1.DefinitionStatus
+	(*v1.PropertyTemplate)(nil),             // 5: common.v1.PropertyTemplate
+	(*ExecutionContract)(nil),               // 6: ar.v1.ExecutionContract
+	(*v11.ConsumerResourceRequirement)(nil), // 7: resources.v1.ConsumerResourceRequirement
 }
 var file_ar_v1_function_definition_proto_depIdxs = []int32{
 	3, // 0: ar.v1.FunctionDefinition.type:type_name -> ar.v1.FunctionType
@@ -343,12 +356,13 @@ var file_ar_v1_function_definition_proto_depIdxs = []int32{
 	4, // 2: ar.v1.FunctionDefinition.status:type_name -> ar.v1.DefinitionStatus
 	5, // 3: ar.v1.FunctionDefinition.properties:type_name -> common.v1.PropertyTemplate
 	6, // 4: ar.v1.FunctionDefinition.execution:type_name -> ar.v1.ExecutionContract
-	1, // 5: ar.v1.FunctionDefinitions.items:type_name -> ar.v1.FunctionDefinition
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	7, // 5: ar.v1.FunctionDefinition.resource_requirements:type_name -> resources.v1.ConsumerResourceRequirement
+	1, // 6: ar.v1.FunctionDefinitions.items:type_name -> ar.v1.FunctionDefinition
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_function_definition_proto_init() }

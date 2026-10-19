@@ -3,10 +3,57 @@ package ar.v1;
 
 import "buf/validate/validate.proto";
 import "common/v1/property.proto";
+import "resources/v1/resource_requirement.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
 option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// ARResourceBindingStatus is the result of evaluating a concrete resource
+// against a slot's explicit and consumer-derived requirements.
+enum ARResourceBindingStatus {
+  AR_RESOURCE_BINDING_STATUS_UNSPECIFIED = 0;
+  AR_RESOURCE_BINDING_STATUS_SATISFIED = 1;
+  AR_RESOURCE_BINDING_STATUS_DEGRADED = 2;
+  AR_RESOURCE_BINDING_STATUS_UNSATISFIED = 3;
+  // Transient status while an existing binding is being re-evaluated. A new
+  // binding must still be rejected when the adapter has never reported.
+  AR_RESOURCE_BINDING_STATUS_UNVERIFIED = 4;
+}
+
+// ARResourceRequirementConsumer identifies the config entity affected by an
+// unmet requirement. An input slot is the consumer for an explicit constraint.
+message ARResourceRequirementConsumer {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "input_slot_id",
+      "feedback_id",
+      "action_id",
+      "function_id"
+    ]
+    required: true
+  };
+
+  string input_slot_id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true];
+  string feedback_id = 2 [(buf.validate.field).string.(validation.v1.feedback_id_component) = true];
+  string action_id = 3 [(buf.validate.field).string.(validation.v1.action_id_component) = true];
+  string function_id = 4 [(buf.validate.field).string.(validation.v1.function_id_component) = true];
+}
+
+// ARUnmetResourceRequirement reports one unmet requirement and every consumer
+// affected by it. Clients can group these entries by consumer to determine
+// which optional features must degrade.
+message ARUnmetResourceRequirement {
+  resources.v1.ResourceRequirement requirement = 1 [(buf.validate.field).required = true];
+  repeated ARResourceRequirementConsumer consumers = 2 [
+    (buf.validate.field).repeated.min_items = 1,
+    (buf.validate.field).cel = {
+      id: "ar_unmet_resource_requirement.consumers.unique_ids"
+      message: "affected consumer ids must be unique"
+      expression: "this.map(consumer, consumer.input_slot_id + consumer.feedback_id + consumer.action_id + consumer.function_id).unique()"
+    }
+  ];
+}
 
 // ARResourceBinding binds a config-declared slot to a concrete resource
 // instance owned by the target station or cell.
@@ -19,9 +66,25 @@ message ARResourceBinding {
     required: true
   };
 
-  string slot_id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Config-declared slot to satisfy.
+  option (buf.validate.message).cel = {
+    id: "ar_resource_binding.status_matches_unmet_requirements"
+    message: "binding status must agree with its unmet requirements"
+    expression:
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSPECIFIED && this.unmet_requirements.size() == 0) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_SATISFIED && this.unmet_requirements.size() == 0) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_DEGRADED && this.unmet_requirements.size() > 0 && this.unmet_requirements.all(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_OPTIONAL)) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSATISFIED && this.unmet_requirements.exists(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED)) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0)"
+  };
+
+  string slot_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true
+  ]; // Config-declared slot to satisfy.
   string robot_instance_id = 2 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true]; // Concrete robot instance selected for the slot.
   string asset_instance_id = 3 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true]; // Concrete asset instance selected for the slot.
+  ARResourceBindingStatus status = 4 [(buf.validate.field).enum.defined_only = true]; // Server-evaluated status; UNSPECIFIED is accepted only before evaluation.
+  repeated ARUnmetResourceRequirement unmet_requirements = 5; // Missing capabilities grouped with every affected consumer.
 }
 
 // ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
@@ -58,7 +121,11 @@ message ARConfigBindingMessage {
   bool disabled = 8; // If true, the binding should be ignored by resolution.
   bool standalone = 9; // If true, only standalone bindings with the highest priority should be shown.
   int32 priority = 10; // Higher values should be resolved before lower values.
-  repeated ARResourceBinding resource_bindings = 11; // Concrete resource assignments for config-declared slots.
+  repeated ARResourceBinding resource_bindings = 11 [(buf.validate.field).cel = {
+    id: "ar_config_binding.resource_bindings.unique_slot_ids"
+    message: "resource bindings must target unique input slots"
+    expression: "this.map(binding, binding.slot_id).unique()"
+  }]; // Concrete resource assignments for config-declared slots.
   repeated common.v1.PropertyInstanceUpdate property_overrides = 12; // Station/cell-local values applied to config properties before runtime values.
 }
 

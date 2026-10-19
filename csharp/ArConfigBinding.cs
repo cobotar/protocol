@@ -26,34 +26,86 @@ namespace Messages.AR.V1 {
           string.Concat(
             "Ch1hci92MS9hcl9jb25maWdfYmluZGluZy5wcm90bxIFYXIudjEaG2J1Zi92",
             "YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoYY29tbW9uL3YxL3Byb3BlcnR5LnBy",
-            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvItQBChFBUlJlc291cmNlQmluZGluZxIiCgdzbG90X2lkGAEgASgJQgm6",
-            "SAZyBPjrMAFSBnNsb3RJZBI1ChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCUIJ",
-            "ukgGcgSo8QQBUg9yb2JvdEluc3RhbmNlSWQSNQoRYXNzZXRfaW5zdGFuY2Vf",
-            "aWQYAyABKAlCCbpIBnIEuPEEAVIPYXNzZXRJbnN0YW5jZUlkOi26SCoiKAoR",
-            "cm9ib3RfaW5zdGFuY2VfaWQKEWFzc2V0X2luc3RhbmNlX2lkEAEilQQKFkFS",
-            "Q29uZmlnQmluZGluZ01lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIE6OswAVIC",
-            "aWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YAyAB",
-            "KAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEigK",
-            "CnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEAVIJc3RhdGlvbklkEiIKB2Nl",
-            "bGxfaWQYBiABKAlCCbpIBnIEuPIEAVIGY2VsbElkEi4KDGFyX2NvbmZpZ19p",
-            "ZBgHIAEoCUIMukgJcgSQ8QQByAEBUgphckNvbmZpZ0lkEhoKCGRpc2FibGVk",
-            "GAggASgIUghkaXNhYmxlZBIeCgpzdGFuZGFsb25lGAkgASgIUgpzdGFuZGFs",
-            "b25lEhoKCHByaW9yaXR5GAogASgFUghwcmlvcml0eRJFChFyZXNvdXJjZV9i",
-            "aW5kaW5ncxgLIAMoCzIYLmFyLnYxLkFSUmVzb3VyY2VCaW5kaW5nUhByZXNv",
-            "dXJjZUJpbmRpbmdzElAKEnByb3BlcnR5X292ZXJyaWRlcxgMIAMoCzIhLmNv",
-            "bW1vbi52MS5Qcm9wZXJ0eUluc3RhbmNlVXBkYXRlUhFwcm9wZXJ0eU92ZXJy",
-            "aWRlczocukgZIhcKCnN0YXRpb25faWQKB2NlbGxfaWQQASJUChdBUkNvbmZp",
-            "Z0JpbmRpbmdNZXNzYWdlcxI5CghiaW5kaW5ncxgBIAMoCzIdLmFyLnYxLkFS",
-            "Q29uZmlnQmluZGluZ01lc3NhZ2VSCGJpbmRpbmdzQpABCgljb20uYXIudjFC",
-            "FEFyQ29uZmlnQmluZGluZ1Byb3RvUAFaL2dpdGh1Yi5jb20vY29ib3Rhci9w",
-            "cm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYxogIDQVhYqgIOTWVzc2FnZXMu",
-            "QVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1ldGFkYXRh6gIGQXI6OlYxYgZw",
-            "cm90bzM="));
+            "b3RvGidyZXNvdXJjZXMvdjEvcmVzb3VyY2VfcmVxdWlyZW1lbnQucHJvdG8a",
+            "K3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8i",
+            "iwIKHUFSUmVzb3VyY2VSZXF1aXJlbWVudENvbnN1bWVyEi0KDWlucHV0X3Ns",
+            "b3RfaWQYASABKAlCCbpIBnIE+OswAVILaW5wdXRTbG90SWQSKgoLZmVlZGJh",
+            "Y2tfaWQYAiABKAlCCbpIBnIEwPMEAVIKZmVlZGJhY2tJZBImCglhY3Rpb25f",
+            "aWQYAyABKAlCCbpIBnIEyPMEAVIIYWN0aW9uSWQSKgoLZnVuY3Rpb25faWQY",
+            "BCABKAlCCbpIBnIE0PMEAVIKZnVuY3Rpb25JZDo7ukg4IjYKDWlucHV0X3Ns",
+            "b3RfaWQKC2ZlZWRiYWNrX2lkCglhY3Rpb25faWQKC2Z1bmN0aW9uX2lkEAEi",
+            "kAMKGkFSVW5tZXRSZXNvdXJjZVJlcXVpcmVtZW50EksKC3JlcXVpcmVtZW50",
+            "GAEgASgLMiEucmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWlyZW1lbnRCBrpI",
+            "A8gBAVILcmVxdWlyZW1lbnQSpAIKCWNvbnN1bWVycxgCIAMoCzIkLmFyLnYx",
+            "LkFSUmVzb3VyY2VSZXF1aXJlbWVudENvbnN1bWVyQt8BukjbAZIBAggBugHS",
+            "AQoyYXJfdW5tZXRfcmVzb3VyY2VfcmVxdWlyZW1lbnQuY29uc3VtZXJzLnVu",
+            "aXF1ZV9pZHMSJGFmZmVjdGVkIGNvbnN1bWVyIGlkcyBtdXN0IGJlIHVuaXF1",
+            "ZRp2dGhpcy5tYXAoY29uc3VtZXIsIGNvbnN1bWVyLmlucHV0X3Nsb3RfaWQg",
+            "KyBjb25zdW1lci5mZWVkYmFja19pZCArIGNvbnN1bWVyLmFjdGlvbl9pZCAr",
+            "IGNvbnN1bWVyLmZ1bmN0aW9uX2lkKS51bmlxdWUoKVIJY29uc3VtZXJzIsoK",
+            "ChFBUlJlc291cmNlQmluZGluZxIlCgdzbG90X2lkGAEgASgJQgy6SAlyBPjr",
+            "MAHIAQFSBnNsb3RJZBI1ChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCUIJukgG",
+            "cgSo8QQBUg9yb2JvdEluc3RhbmNlSWQSNQoRYXNzZXRfaW5zdGFuY2VfaWQY",
+            "AyABKAlCCbpIBnIEuPEEAVIPYXNzZXRJbnN0YW5jZUlkEkAKBnN0YXR1cxgE",
+            "IAEoDjIeLmFyLnYxLkFSUmVzb3VyY2VCaW5kaW5nU3RhdHVzQgi6SAWCAQIQ",
+            "AVIGc3RhdHVzElAKEnVubWV0X3JlcXVpcmVtZW50cxgFIAMoCzIhLmFyLnYx",
+            "LkFSVW5tZXRSZXNvdXJjZVJlcXVpcmVtZW50UhF1bm1ldFJlcXVpcmVtZW50",
+            "czqLCLpIhwga2gcKNWFyX3Jlc291cmNlX2JpbmRpbmcuc3RhdHVzX21hdGNo",
+            "ZXNfdW5tZXRfcmVxdWlyZW1lbnRzEjViaW5kaW5nIHN0YXR1cyBtdXN0IGFn",
+            "cmVlIHdpdGggaXRzIHVubWV0IHJlcXVpcmVtZW50cxrpBih0aGlzLnN0YXR1",
+            "cyA9PSBhci52MS5BUlJlc291cmNlQmluZGluZ1N0YXR1cy5BUl9SRVNPVVJD",
+            "RV9CSU5ESU5HX1NUQVRVU19VTlNQRUNJRklFRCAmJiB0aGlzLnVubWV0X3Jl",
+            "cXVpcmVtZW50cy5zaXplKCkgPT0gMCkgfHwgKHRoaXMuc3RhdHVzID09IGFy",
+            "LnYxLkFSUmVzb3VyY2VCaW5kaW5nU3RhdHVzLkFSX1JFU09VUkNFX0JJTkRJ",
+            "TkdfU1RBVFVTX1NBVElTRklFRCAmJiB0aGlzLnVubWV0X3JlcXVpcmVtZW50",
+            "cy5zaXplKCkgPT0gMCkgfHwgKHRoaXMuc3RhdHVzID09IGFyLnYxLkFSUmVz",
+            "b3VyY2VCaW5kaW5nU3RhdHVzLkFSX1JFU09VUkNFX0JJTkRJTkdfU1RBVFVT",
+            "X0RFR1JBREVEICYmIHRoaXMudW5tZXRfcmVxdWlyZW1lbnRzLnNpemUoKSA+",
+            "IDAgJiYgdGhpcy51bm1ldF9yZXF1aXJlbWVudHMuYWxsKHVubWV0LCB1bm1l",
+            "dC5yZXF1aXJlbWVudC5sZXZlbCA9PSByZXNvdXJjZXMudjEuUmVzb3VyY2VS",
+            "ZXF1aXJlbWVudExldmVsLlJFU09VUkNFX1JFUVVJUkVNRU5UX0xFVkVMX09Q",
+            "VElPTkFMKSkgfHwgKHRoaXMuc3RhdHVzID09IGFyLnYxLkFSUmVzb3VyY2VC",
+            "aW5kaW5nU3RhdHVzLkFSX1JFU09VUkNFX0JJTkRJTkdfU1RBVFVTX1VOU0FU",
+            "SVNGSUVEICYmIHRoaXMudW5tZXRfcmVxdWlyZW1lbnRzLmV4aXN0cyh1bm1l",
+            "dCwgdW5tZXQucmVxdWlyZW1lbnQubGV2ZWwgPT0gcmVzb3VyY2VzLnYxLlJl",
+            "c291cmNlUmVxdWlyZW1lbnRMZXZlbC5SRVNPVVJDRV9SRVFVSVJFTUVOVF9M",
+            "RVZFTF9SRVFVSVJFRCkpIHx8ICh0aGlzLnN0YXR1cyA9PSBhci52MS5BUlJl",
+            "c291cmNlQmluZGluZ1N0YXR1cy5BUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRV",
+            "U19VTlZFUklGSUVEICYmIHRoaXMudW5tZXRfcmVxdWlyZW1lbnRzLnNpemUo",
+            "KSA9PSAwKSIoChFyb2JvdF9pbnN0YW5jZV9pZAoRYXNzZXRfaW5zdGFuY2Vf",
+            "aWQQASK1BQoWQVJDb25maWdCaW5kaW5nTWVzc2FnZRIZCgJpZBgBIAEoCUIJ",
+            "ukgGcgTo6zABUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUS",
+            "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
+            "Y3JpcHRpb24SKAoKc3RhdGlvbl9pZBgFIAEoCUIJukgGcgT48QQBUglzdGF0",
+            "aW9uSWQSIgoHY2VsbF9pZBgGIAEoCUIJukgGcgS48gQBUgZjZWxsSWQSLgoM",
+            "YXJfY29uZmlnX2lkGAcgASgJQgy6SAlyBJDxBAHIAQFSCmFyQ29uZmlnSWQS",
+            "GgoIZGlzYWJsZWQYCCABKAhSCGRpc2FibGVkEh4KCnN0YW5kYWxvbmUYCSAB",
+            "KAhSCnN0YW5kYWxvbmUSGgoIcHJpb3JpdHkYCiABKAVSCHByaW9yaXR5EuQB",
+            "ChFyZXNvdXJjZV9iaW5kaW5ncxgLIAMoCzIYLmFyLnYxLkFSUmVzb3VyY2VC",
+            "aW5kaW5nQpwBukiYAboBlAEKM2FyX2NvbmZpZ19iaW5kaW5nLnJlc291cmNl",
+            "X2JpbmRpbmdzLnVuaXF1ZV9zbG90X2lkcxIwcmVzb3VyY2UgYmluZGluZ3Mg",
+            "bXVzdCB0YXJnZXQgdW5pcXVlIGlucHV0IHNsb3RzGit0aGlzLm1hcChiaW5k",
+            "aW5nLCBiaW5kaW5nLnNsb3RfaWQpLnVuaXF1ZSgpUhByZXNvdXJjZUJpbmRp",
+            "bmdzElAKEnByb3BlcnR5X292ZXJyaWRlcxgMIAMoCzIhLmNvbW1vbi52MS5Q",
+            "cm9wZXJ0eUluc3RhbmNlVXBkYXRlUhFwcm9wZXJ0eU92ZXJyaWRlczocukgZ",
+            "IhcKCnN0YXRpb25faWQKB2NlbGxfaWQQASJUChdBUkNvbmZpZ0JpbmRpbmdN",
+            "ZXNzYWdlcxI5CghiaW5kaW5ncxgBIAMoCzIdLmFyLnYxLkFSQ29uZmlnQmlu",
+            "ZGluZ01lc3NhZ2VSCGJpbmRpbmdzKu8BChdBUlJlc291cmNlQmluZGluZ1N0",
+            "YXR1cxIqCiZBUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19VTlNQRUNJRklF",
+            "RBAAEigKJEFSX1JFU09VUkNFX0JJTkRJTkdfU1RBVFVTX1NBVElTRklFRBAB",
+            "EicKI0FSX1JFU09VUkNFX0JJTkRJTkdfU1RBVFVTX0RFR1JBREVEEAISKgom",
+            "QVJfUkVTT1VSQ0VfQklORElOR19TVEFUVVNfVU5TQVRJU0ZJRUQQAxIpCiVB",
+            "Ul9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19VTlZFUklGSUVEEARCkAEKCWNv",
+            "bS5hci52MUIUQXJDb25maWdCaW5kaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9j",
+            "b2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5N",
+            "ZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZB",
+            "cjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceBinding), global::Messages.AR.V1.ARResourceBinding.Parser, new[]{ "SlotId", "RobotInstanceId", "AssetInstanceId" }, null, null, null, null),
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.PropertyReflection.Descriptor, global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceBindingStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceRequirementConsumer), global::Messages.AR.V1.ARResourceRequirementConsumer.Parser, new[]{ "InputSlotId", "FeedbackId", "ActionId", "FunctionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARUnmetResourceRequirement), global::Messages.AR.V1.ARUnmetResourceRequirement.Parser, new[]{ "Requirement", "Consumers" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARResourceBinding), global::Messages.AR.V1.ARResourceBinding.Parser, new[]{ "SlotId", "RobotInstanceId", "AssetInstanceId", "Status", "UnmetRequirements" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessage), global::Messages.AR.V1.ARConfigBindingMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "StationId", "CellId", "ArConfigId", "Disabled", "Standalone", "Priority", "ResourceBindings", "PropertyOverrides" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARConfigBindingMessages), global::Messages.AR.V1.ARConfigBindingMessages.Parser, new[]{ "Bindings" }, null, null, null, null)
           }));
@@ -61,7 +113,577 @@ namespace Messages.AR.V1 {
     #endregion
 
   }
+  #region Enums
+  /// <summary>
+  /// ARResourceBindingStatus is the result of evaluating a concrete resource
+  /// against a slot's explicit and consumer-derived requirements.
+  /// </summary>
+  public enum ARResourceBindingStatus {
+    [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_SATISFIED")] Satisfied = 1,
+    [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_DEGRADED")] Degraded = 2,
+    [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_UNSATISFIED")] Unsatisfied = 3,
+    /// <summary>
+    /// Transient status while an existing binding is being re-evaluated. A new
+    /// binding must still be rejected when the adapter has never reported.
+    /// </summary>
+    [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_UNVERIFIED")] Unverified = 4,
+  }
+
+  #endregion
+
   #region Messages
+  /// <summary>
+  /// ARResourceRequirementConsumer identifies the config entity affected by an
+  /// unmet requirement. An input slot is the consumer for an explicit constraint.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ARResourceRequirementConsumer : pb::IMessage<ARResourceRequirementConsumer>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ARResourceRequirementConsumer> _parser = new pb::MessageParser<ARResourceRequirementConsumer>(() => new ARResourceRequirementConsumer());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ARResourceRequirementConsumer> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARResourceRequirementConsumer() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARResourceRequirementConsumer(ARResourceRequirementConsumer other) : this() {
+      inputSlotId_ = other.inputSlotId_;
+      feedbackId_ = other.feedbackId_;
+      actionId_ = other.actionId_;
+      functionId_ = other.functionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARResourceRequirementConsumer Clone() {
+      return new ARResourceRequirementConsumer(this);
+    }
+
+    /// <summary>Field number for the "input_slot_id" field.</summary>
+    public const int InputSlotIdFieldNumber = 1;
+    private string inputSlotId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InputSlotId {
+      get { return inputSlotId_; }
+      set {
+        inputSlotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "feedback_id" field.</summary>
+    public const int FeedbackIdFieldNumber = 2;
+    private string feedbackId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FeedbackId {
+      get { return feedbackId_; }
+      set {
+        feedbackId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "action_id" field.</summary>
+    public const int ActionIdFieldNumber = 3;
+    private string actionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ActionId {
+      get { return actionId_; }
+      set {
+        actionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "function_id" field.</summary>
+    public const int FunctionIdFieldNumber = 4;
+    private string functionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FunctionId {
+      get { return functionId_; }
+      set {
+        functionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ARResourceRequirementConsumer);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ARResourceRequirementConsumer other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (InputSlotId != other.InputSlotId) return false;
+      if (FeedbackId != other.FeedbackId) return false;
+      if (ActionId != other.ActionId) return false;
+      if (FunctionId != other.FunctionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (InputSlotId.Length != 0) hash ^= InputSlotId.GetHashCode();
+      if (FeedbackId.Length != 0) hash ^= FeedbackId.GetHashCode();
+      if (ActionId.Length != 0) hash ^= ActionId.GetHashCode();
+      if (FunctionId.Length != 0) hash ^= FunctionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (InputSlotId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(InputSlotId);
+      }
+      if (FeedbackId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FeedbackId);
+      }
+      if (ActionId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ActionId);
+      }
+      if (FunctionId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(FunctionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (InputSlotId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(InputSlotId);
+      }
+      if (FeedbackId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FeedbackId);
+      }
+      if (ActionId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ActionId);
+      }
+      if (FunctionId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(FunctionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (InputSlotId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InputSlotId);
+      }
+      if (FeedbackId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FeedbackId);
+      }
+      if (ActionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ActionId);
+      }
+      if (FunctionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FunctionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ARResourceRequirementConsumer other) {
+      if (other == null) {
+        return;
+      }
+      if (other.InputSlotId.Length != 0) {
+        InputSlotId = other.InputSlotId;
+      }
+      if (other.FeedbackId.Length != 0) {
+        FeedbackId = other.FeedbackId;
+      }
+      if (other.ActionId.Length != 0) {
+        ActionId = other.ActionId;
+      }
+      if (other.FunctionId.Length != 0) {
+        FunctionId = other.FunctionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            InputSlotId = input.ReadString();
+            break;
+          }
+          case 18: {
+            FeedbackId = input.ReadString();
+            break;
+          }
+          case 26: {
+            ActionId = input.ReadString();
+            break;
+          }
+          case 34: {
+            FunctionId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            InputSlotId = input.ReadString();
+            break;
+          }
+          case 18: {
+            FeedbackId = input.ReadString();
+            break;
+          }
+          case 26: {
+            ActionId = input.ReadString();
+            break;
+          }
+          case 34: {
+            FunctionId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// ARUnmetResourceRequirement reports one unmet requirement and every consumer
+  /// affected by it. Clients can group these entries by consumer to determine
+  /// which optional features must degrade.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ARUnmetResourceRequirement : pb::IMessage<ARUnmetResourceRequirement>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ARUnmetResourceRequirement> _parser = new pb::MessageParser<ARUnmetResourceRequirement>(() => new ARUnmetResourceRequirement());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ARUnmetResourceRequirement> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARUnmetResourceRequirement() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARUnmetResourceRequirement(ARUnmetResourceRequirement other) : this() {
+      requirement_ = other.requirement_ != null ? other.requirement_.Clone() : null;
+      consumers_ = other.consumers_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ARUnmetResourceRequirement Clone() {
+      return new ARUnmetResourceRequirement(this);
+    }
+
+    /// <summary>Field number for the "requirement" field.</summary>
+    public const int RequirementFieldNumber = 1;
+    private global::Messages.Resources.V1.ResourceRequirement requirement_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.ResourceRequirement Requirement {
+      get { return requirement_; }
+      set {
+        requirement_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "consumers" field.</summary>
+    public const int ConsumersFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARResourceRequirementConsumer> _repeated_consumers_codec
+        = pb::FieldCodec.ForMessage(18, global::Messages.AR.V1.ARResourceRequirementConsumer.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARResourceRequirementConsumer> consumers_ = new pbc::RepeatedField<global::Messages.AR.V1.ARResourceRequirementConsumer>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.ARResourceRequirementConsumer> Consumers {
+      get { return consumers_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ARUnmetResourceRequirement);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ARUnmetResourceRequirement other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Requirement, other.Requirement)) return false;
+      if(!consumers_.Equals(other.consumers_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (requirement_ != null) hash ^= Requirement.GetHashCode();
+      hash ^= consumers_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (requirement_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Requirement);
+      }
+      consumers_.WriteTo(output, _repeated_consumers_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (requirement_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Requirement);
+      }
+      consumers_.WriteTo(ref output, _repeated_consumers_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (requirement_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Requirement);
+      }
+      size += consumers_.CalculateSize(_repeated_consumers_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ARUnmetResourceRequirement other) {
+      if (other == null) {
+        return;
+      }
+      if (other.requirement_ != null) {
+        if (requirement_ == null) {
+          Requirement = new global::Messages.Resources.V1.ResourceRequirement();
+        }
+        Requirement.MergeFrom(other.Requirement);
+      }
+      consumers_.Add(other.consumers_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (requirement_ == null) {
+              Requirement = new global::Messages.Resources.V1.ResourceRequirement();
+            }
+            input.ReadMessage(Requirement);
+            break;
+          }
+          case 18: {
+            consumers_.AddEntriesFrom(input, _repeated_consumers_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (requirement_ == null) {
+              Requirement = new global::Messages.Resources.V1.ResourceRequirement();
+            }
+            input.ReadMessage(Requirement);
+            break;
+          }
+          case 18: {
+            consumers_.AddEntriesFrom(ref input, _repeated_consumers_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// ARResourceBinding binds a config-declared slot to a concrete resource
   /// instance owned by the target station or cell.
@@ -81,7 +703,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,6 +726,8 @@ namespace Messages.AR.V1 {
       slotId_ = other.slotId_;
       robotInstanceId_ = other.robotInstanceId_;
       assetInstanceId_ = other.assetInstanceId_;
+      status_ = other.status_;
+      unmetRequirements_ = other.unmetRequirements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -158,6 +782,35 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 4;
+    private global::Messages.AR.V1.ARResourceBindingStatus status_ = global::Messages.AR.V1.ARResourceBindingStatus.Unspecified;
+    /// <summary>
+    /// Server-evaluated status; UNSPECIFIED is accepted only before evaluation.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.AR.V1.ARResourceBindingStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unmet_requirements" field.</summary>
+    public const int UnmetRequirementsFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Messages.AR.V1.ARUnmetResourceRequirement> _repeated_unmetRequirements_codec
+        = pb::FieldCodec.ForMessage(42, global::Messages.AR.V1.ARUnmetResourceRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.AR.V1.ARUnmetResourceRequirement> unmetRequirements_ = new pbc::RepeatedField<global::Messages.AR.V1.ARUnmetResourceRequirement>();
+    /// <summary>
+    /// Missing capabilities grouped with every affected consumer.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.AR.V1.ARUnmetResourceRequirement> UnmetRequirements {
+      get { return unmetRequirements_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -176,6 +829,8 @@ namespace Messages.AR.V1 {
       if (SlotId != other.SlotId) return false;
       if (RobotInstanceId != other.RobotInstanceId) return false;
       if (AssetInstanceId != other.AssetInstanceId) return false;
+      if (Status != other.Status) return false;
+      if(!unmetRequirements_.Equals(other.unmetRequirements_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -186,6 +841,8 @@ namespace Messages.AR.V1 {
       if (SlotId.Length != 0) hash ^= SlotId.GetHashCode();
       if (RobotInstanceId.Length != 0) hash ^= RobotInstanceId.GetHashCode();
       if (AssetInstanceId.Length != 0) hash ^= AssetInstanceId.GetHashCode();
+      if (Status != global::Messages.AR.V1.ARResourceBindingStatus.Unspecified) hash ^= Status.GetHashCode();
+      hash ^= unmetRequirements_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -216,6 +873,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(26);
         output.WriteString(AssetInstanceId);
       }
+      if (Status != global::Messages.AR.V1.ARResourceBindingStatus.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
+      unmetRequirements_.WriteTo(output, _repeated_unmetRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -238,6 +900,11 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(26);
         output.WriteString(AssetInstanceId);
       }
+      if (Status != global::Messages.AR.V1.ARResourceBindingStatus.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
+      unmetRequirements_.WriteTo(ref output, _repeated_unmetRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -257,6 +924,10 @@ namespace Messages.AR.V1 {
       if (AssetInstanceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetInstanceId);
       }
+      if (Status != global::Messages.AR.V1.ARResourceBindingStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      size += unmetRequirements_.CalculateSize(_repeated_unmetRequirements_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -278,6 +949,10 @@ namespace Messages.AR.V1 {
       if (other.AssetInstanceId.Length != 0) {
         AssetInstanceId = other.AssetInstanceId;
       }
+      if (other.Status != global::Messages.AR.V1.ARResourceBindingStatus.Unspecified) {
+        Status = other.Status;
+      }
+      unmetRequirements_.Add(other.unmetRequirements_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -309,6 +984,14 @@ namespace Messages.AR.V1 {
             AssetInstanceId = input.ReadString();
             break;
           }
+          case 32: {
+            Status = (global::Messages.AR.V1.ARResourceBindingStatus) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            unmetRequirements_.AddEntriesFrom(input, _repeated_unmetRequirements_codec);
+            break;
+          }
         }
       }
     #endif
@@ -338,6 +1021,14 @@ namespace Messages.AR.V1 {
           }
           case 26: {
             AssetInstanceId = input.ReadString();
+            break;
+          }
+          case 32: {
+            Status = (global::Messages.AR.V1.ARResourceBindingStatus) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            unmetRequirements_.AddEntriesFrom(ref input, _repeated_unmetRequirements_codec);
             break;
           }
         }
@@ -376,7 +1067,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -986,7 +1677,7 @@ namespace Messages.AR.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.AR.V1.ArConfigBindingReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

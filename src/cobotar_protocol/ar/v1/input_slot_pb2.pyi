@@ -1,4 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
+from resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -69,7 +70,7 @@ class ARRunContextSelector(_message.Message):
     def __init__(self, selection: _Optional[_Union[ARRunSelection, str]] = ..., actor: _Optional[_Union[ARActorSelector, _Mapping]] = ...) -> None: ...
 
 class ARInputSlotMessage(_message.Message):
-    __slots__ = ("id", "config_id", "name", "icon", "description", "generated_property_id", "resource_type", "context_type", "run_selector")
+    __slots__ = ("id", "config_id", "name", "icon", "description", "generated_property_id", "resource_type", "context_type", "run_selector", "explicit_requirements")
     ID_FIELD_NUMBER: _ClassVar[int]
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -79,6 +80,7 @@ class ARInputSlotMessage(_message.Message):
     RESOURCE_TYPE_FIELD_NUMBER: _ClassVar[int]
     CONTEXT_TYPE_FIELD_NUMBER: _ClassVar[int]
     RUN_SELECTOR_FIELD_NUMBER: _ClassVar[int]
+    EXPLICIT_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     config_id: str
     name: str
@@ -88,7 +90,8 @@ class ARInputSlotMessage(_message.Message):
     resource_type: ARResourceSlotType
     context_type: ARContextSlotType
     run_selector: ARRunContextSelector
-    def __init__(self, id: _Optional[str] = ..., config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., generated_property_id: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
+    explicit_requirements: _containers.RepeatedCompositeFieldContainer[_resource_requirement_pb2.ResourceRequirement]
+    def __init__(self, id: _Optional[str] = ..., config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., generated_property_id: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ..., explicit_requirements: _Optional[_Iterable[_Union[_resource_requirement_pb2.ResourceRequirement, _Mapping]]] = ...) -> None: ...
 
 class ARInputSlotMessages(_message.Message):
     __slots__ = ("slots",)
@@ -97,7 +100,7 @@ class ARInputSlotMessages(_message.Message):
     def __init__(self, slots: _Optional[_Iterable[_Union[ARInputSlotMessage, _Mapping]]] = ...) -> None: ...
 
 class ARInputSlotAddMessage(_message.Message):
-    __slots__ = ("config_id", "name", "icon", "description", "resource_type", "context_type", "run_selector")
+    __slots__ = ("config_id", "name", "icon", "description", "resource_type", "context_type", "run_selector", "explicit_requirements")
     CONFIG_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -105,6 +108,7 @@ class ARInputSlotAddMessage(_message.Message):
     RESOURCE_TYPE_FIELD_NUMBER: _ClassVar[int]
     CONTEXT_TYPE_FIELD_NUMBER: _ClassVar[int]
     RUN_SELECTOR_FIELD_NUMBER: _ClassVar[int]
+    EXPLICIT_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     config_id: str
     name: str
     icon: str
@@ -112,21 +116,24 @@ class ARInputSlotAddMessage(_message.Message):
     resource_type: ARResourceSlotType
     context_type: ARContextSlotType
     run_selector: ARRunContextSelector
-    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
+    explicit_requirements: _containers.RepeatedCompositeFieldContainer[_resource_requirement_pb2.ResourceRequirement]
+    def __init__(self, config_id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., resource_type: _Optional[_Union[ARResourceSlotType, str]] = ..., context_type: _Optional[_Union[ARContextSlotType, str]] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ..., explicit_requirements: _Optional[_Iterable[_Union[_resource_requirement_pb2.ResourceRequirement, _Mapping]]] = ...) -> None: ...
 
 class ARInputSlotUpdateMessage(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "run_selector")
+    __slots__ = ("id", "name", "icon", "description", "run_selector", "explicit_requirements")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     RUN_SELECTOR_FIELD_NUMBER: _ClassVar[int]
+    EXPLICIT_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     run_selector: ARRunContextSelector
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ...) -> None: ...
+    explicit_requirements: _resource_requirement_pb2.ResourceRequirements
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., run_selector: _Optional[_Union[ARRunContextSelector, _Mapping]] = ..., explicit_requirements: _Optional[_Union[_resource_requirement_pb2.ResourceRequirements, _Mapping]] = ...) -> None: ...
 
 class ARInputSlotDeleteMessage(_message.Message):
     __slots__ = ("id",)

@@ -1,7 +1,9 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import property_pb2 as _property_pb2
+from resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -9,15 +11,52 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ARResourceBindingStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    AR_RESOURCE_BINDING_STATUS_UNSPECIFIED: _ClassVar[ARResourceBindingStatus]
+    AR_RESOURCE_BINDING_STATUS_SATISFIED: _ClassVar[ARResourceBindingStatus]
+    AR_RESOURCE_BINDING_STATUS_DEGRADED: _ClassVar[ARResourceBindingStatus]
+    AR_RESOURCE_BINDING_STATUS_UNSATISFIED: _ClassVar[ARResourceBindingStatus]
+    AR_RESOURCE_BINDING_STATUS_UNVERIFIED: _ClassVar[ARResourceBindingStatus]
+AR_RESOURCE_BINDING_STATUS_UNSPECIFIED: ARResourceBindingStatus
+AR_RESOURCE_BINDING_STATUS_SATISFIED: ARResourceBindingStatus
+AR_RESOURCE_BINDING_STATUS_DEGRADED: ARResourceBindingStatus
+AR_RESOURCE_BINDING_STATUS_UNSATISFIED: ARResourceBindingStatus
+AR_RESOURCE_BINDING_STATUS_UNVERIFIED: ARResourceBindingStatus
+
+class ARResourceRequirementConsumer(_message.Message):
+    __slots__ = ("input_slot_id", "feedback_id", "action_id", "function_id")
+    INPUT_SLOT_ID_FIELD_NUMBER: _ClassVar[int]
+    FEEDBACK_ID_FIELD_NUMBER: _ClassVar[int]
+    ACTION_ID_FIELD_NUMBER: _ClassVar[int]
+    FUNCTION_ID_FIELD_NUMBER: _ClassVar[int]
+    input_slot_id: str
+    feedback_id: str
+    action_id: str
+    function_id: str
+    def __init__(self, input_slot_id: _Optional[str] = ..., feedback_id: _Optional[str] = ..., action_id: _Optional[str] = ..., function_id: _Optional[str] = ...) -> None: ...
+
+class ARUnmetResourceRequirement(_message.Message):
+    __slots__ = ("requirement", "consumers")
+    REQUIREMENT_FIELD_NUMBER: _ClassVar[int]
+    CONSUMERS_FIELD_NUMBER: _ClassVar[int]
+    requirement: _resource_requirement_pb2.ResourceRequirement
+    consumers: _containers.RepeatedCompositeFieldContainer[ARResourceRequirementConsumer]
+    def __init__(self, requirement: _Optional[_Union[_resource_requirement_pb2.ResourceRequirement, _Mapping]] = ..., consumers: _Optional[_Iterable[_Union[ARResourceRequirementConsumer, _Mapping]]] = ...) -> None: ...
+
 class ARResourceBinding(_message.Message):
-    __slots__ = ("slot_id", "robot_instance_id", "asset_instance_id")
+    __slots__ = ("slot_id", "robot_instance_id", "asset_instance_id", "status", "unmet_requirements")
     SLOT_ID_FIELD_NUMBER: _ClassVar[int]
     ROBOT_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
     ASSET_INSTANCE_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    UNMET_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     slot_id: str
     robot_instance_id: str
     asset_instance_id: str
-    def __init__(self, slot_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., asset_instance_id: _Optional[str] = ...) -> None: ...
+    status: ARResourceBindingStatus
+    unmet_requirements: _containers.RepeatedCompositeFieldContainer[ARUnmetResourceRequirement]
+    def __init__(self, slot_id: _Optional[str] = ..., robot_instance_id: _Optional[str] = ..., asset_instance_id: _Optional[str] = ..., status: _Optional[_Union[ARResourceBindingStatus, str]] = ..., unmet_requirements: _Optional[_Iterable[_Union[ARUnmetResourceRequirement, _Mapping]]] = ...) -> None: ...
 
 class ARConfigBindingMessage(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "station_id", "cell_id", "ar_config_id", "disabled", "standalone", "priority", "resource_bindings", "property_overrides")

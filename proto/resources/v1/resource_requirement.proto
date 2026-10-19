@@ -1,0 +1,155 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/signal.proto";
+import "resources/v1/asset_adapter.proto";
+import "resources/v1/asset_definition.proto";
+import "robot/v1/robot_adapter.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+// ResourceRequirementLevel says whether a consumer can still operate when a
+// resource capability is unavailable.
+enum ResourceRequirementLevel {
+  RESOURCE_REQUIREMENT_LEVEL_UNSPECIFIED = 0;
+  RESOURCE_REQUIREMENT_LEVEL_REQUIRED = 1;
+  RESOURCE_REQUIREMENT_LEVEL_OPTIONAL = 2;
+}
+
+message ResourceCommandRequirement {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "robot_command",
+      "asset_command"
+    ]
+    required: true
+  };
+
+  robot.v1.RobotAdapterCommandType robot_command = 1 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+  AssetAdapterCommandType asset_command = 2 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+}
+
+message ResourceTelemetryRequirement {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "robot_telemetry",
+      "asset_telemetry"
+    ]
+    required: true
+  };
+
+  robot.v1.RobotAdapterTelemetryType robot_telemetry = 1 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+  AssetAdapterTelemetryType asset_telemetry = 2 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+
+  // Minimum publication frequency needed by the consumer. When omitted, any
+  // frequency supplied by the adapter satisfies the requirement.
+  optional double minimum_frequency_hz = 3 [(buf.validate.field).double = {
+    gt: 0
+    finite: true
+  }];
+}
+
+// ResourceSignalRequirement selects a signal by stable id, common semantic,
+// or a property containing the configured signal id. With no selector, any
+// signal matching the data type and direction satisfies the requirement.
+message ResourceSignalRequirement {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "signal_id",
+      "semantic",
+      "signal_id_property_key"
+    ]
+  };
+
+  option (buf.validate.message).cel = {
+    id: "resource_signal_requirement.readable_or_writable"
+    message: "a signal requirement must require readable, writable, or both"
+    expression: "this.readable || this.writable"
+  };
+  option (buf.validate.message).cel = {
+    id: "resource_signal_requirement.standard_semantic_data_type"
+    message: "standard asset signal semantics require the bool data type"
+    expression:
+      "this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || "
+      "this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL"
+  };
+
+  common.v1.SignalDataType data_type = 1 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+  bool readable = 2;
+  bool writable = 3;
+
+  string signal_id = 4 [(buf.validate.field).string.(validation.v1.key_component) = true];
+  common.v1.SignalSemantic semantic = 5 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+
+  // PropertyTemplate.key whose configured STRING or ENUM value selects the
+  // signal for a concrete feedback, action, or function instance. Binding
+  // diagnostics resolve this selector to signal_id before reporting it.
+  string signal_id_property_key = 6 [(buf.validate.field).string.(validation.v1.key_component) = true];
+}
+
+message ResourceAssetTypeRequirement {
+  AssetType type = 1 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+}
+
+// ResourceRequirement describes one capability that a resource must provide.
+message ResourceRequirement {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "command",
+      "telemetry",
+      "signal",
+      "asset_type"
+    ]
+    required: true
+  };
+
+  ResourceRequirementLevel level = 1 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+  ResourceCommandRequirement command = 2;
+  ResourceTelemetryRequirement telemetry = 3;
+  ResourceSignalRequirement signal = 4;
+  ResourceAssetTypeRequirement asset_type = 5;
+}
+
+// ResourceRequirements provides presence semantics when a repeated requirement
+// list is replaced by an update request. A present message with no items clears
+// the list; an absent message leaves it unchanged.
+message ResourceRequirements {
+  repeated ResourceRequirement items = 1;
+}
+
+// ConsumerResourceRequirement attaches a capability requirement to the
+// consumer property that resolves to a robot or asset input slot.
+message ConsumerResourceRequirement {
+  string resource_property_key = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  ResourceRequirement requirement = 2 [(buf.validate.field).required = true];
+}

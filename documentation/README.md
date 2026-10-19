@@ -160,6 +160,50 @@
     - [PropertySemanticRole](#common-v1-PropertySemanticRole)
     - [PropertyType](#common-v1-PropertyType)
   
+- [common/v1/signal.proto](#common_v1_signal-proto)
+    - [SignalCatalog](#common-v1-SignalCatalog)
+    - [SignalDefinition](#common-v1-SignalDefinition)
+  
+    - [SignalDataType](#common-v1-SignalDataType)
+    - [SignalSemantic](#common-v1-SignalSemantic)
+  
+- [resources/v1/asset_adapter.proto](#resources_v1_asset_adapter-proto)
+    - [AssetAdapterCommandCapability](#resources-v1-AssetAdapterCommandCapability)
+    - [AssetAdapterInfoMessage](#resources-v1-AssetAdapterInfoMessage)
+    - [AssetAdapterTelemetryCapability](#resources-v1-AssetAdapterTelemetryCapability)
+    - [AssetControllerIdentity](#resources-v1-AssetControllerIdentity)
+  
+    - [AssetAdapterCommandType](#resources-v1-AssetAdapterCommandType)
+    - [AssetAdapterTelemetryType](#resources-v1-AssetAdapterTelemetryType)
+  
+- [resources/v1/asset_definition.proto](#resources_v1_asset_definition-proto)
+    - [AssetDefinition](#resources-v1-AssetDefinition)
+    - [AssetDefinitions](#resources-v1-AssetDefinitions)
+    - [VisionCapability](#resources-v1-VisionCapability)
+  
+    - [AssetType](#resources-v1-AssetType)
+    - [ValidationMode](#resources-v1-ValidationMode)
+  
+- [robot/v1/robot_adapter.proto](#robot_v1_robot_adapter-proto)
+    - [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability)
+    - [RobotAdapterInfoMessage](#robot-v1-RobotAdapterInfoMessage)
+    - [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability)
+    - [RobotControllerIdentity](#robot-v1-RobotControllerIdentity)
+  
+    - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
+    - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
+  
+- [resources/v1/resource_requirement.proto](#resources_v1_resource_requirement-proto)
+    - [ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement)
+    - [ResourceAssetTypeRequirement](#resources-v1-ResourceAssetTypeRequirement)
+    - [ResourceCommandRequirement](#resources-v1-ResourceCommandRequirement)
+    - [ResourceRequirement](#resources-v1-ResourceRequirement)
+    - [ResourceRequirements](#resources-v1-ResourceRequirements)
+    - [ResourceSignalRequirement](#resources-v1-ResourceSignalRequirement)
+    - [ResourceTelemetryRequirement](#resources-v1-ResourceTelemetryRequirement)
+  
+    - [ResourceRequirementLevel](#resources-v1-ResourceRequirementLevel)
+  
 - [ar/v1/action_definition.proto](#ar_v1_action_definition-proto)
     - [ActionDefinition](#ar-v1-ActionDefinition)
     - [ActionDefinitions](#ar-v1-ActionDefinitions)
@@ -198,6 +242,10 @@
     - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
     - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
     - [ARResourceBinding](#ar-v1-ARResourceBinding)
+    - [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer)
+    - [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement)
+  
+    - [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus)
   
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
     - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
@@ -321,13 +369,6 @@
     - [NamedRef](#common-v1-NamedRef)
     - [Ref](#common-v1-Ref)
   
-- [common/v1/signal.proto](#common_v1_signal-proto)
-    - [SignalCatalog](#common-v1-SignalCatalog)
-    - [SignalDefinition](#common-v1-SignalDefinition)
-  
-    - [SignalDataType](#common-v1-SignalDataType)
-    - [SignalSemantic](#common-v1-SignalSemantic)
-  
 - [common/v1/time.proto](#common_v1_time-proto)
     - [EstimatedDuration](#common-v1-EstimatedDuration)
     - [TimeWindow](#common-v1-TimeWindow)
@@ -351,14 +392,6 @@
     - [SequenceDefinitions](#process-v1-SequenceDefinitions)
   
     - [SequenceOperator](#process-v1-SequenceOperator)
-  
-- [resources/v1/asset_definition.proto](#resources_v1_asset_definition-proto)
-    - [AssetDefinition](#resources-v1-AssetDefinition)
-    - [AssetDefinitions](#resources-v1-AssetDefinitions)
-    - [VisionCapability](#resources-v1-VisionCapability)
-  
-    - [AssetType](#resources-v1-AssetType)
-    - [ValidationMode](#resources-v1-ValidationMode)
   
 - [resources/v1/container_definition.proto](#resources_v1_container_definition-proto)
     - [ContainerDefinition](#resources-v1-ContainerDefinition)
@@ -460,15 +493,6 @@
     - [ProductDefinition](#product-v1-ProductDefinition)
     - [ProductDefinitions](#product-v1-ProductDefinitions)
   
-- [resources/v1/asset_adapter.proto](#resources_v1_asset_adapter-proto)
-    - [AssetAdapterCommandCapability](#resources-v1-AssetAdapterCommandCapability)
-    - [AssetAdapterInfoMessage](#resources-v1-AssetAdapterInfoMessage)
-    - [AssetAdapterTelemetryCapability](#resources-v1-AssetAdapterTelemetryCapability)
-    - [AssetControllerIdentity](#resources-v1-AssetControllerIdentity)
-  
-    - [AssetAdapterCommandType](#resources-v1-AssetAdapterCommandType)
-    - [AssetAdapterTelemetryType](#resources-v1-AssetAdapterTelemetryType)
-  
 - [resources/v1/asset_adapter_definition.proto](#resources_v1_asset_adapter_definition-proto)
     - [AssetAdapterDefinition](#resources-v1-AssetAdapterDefinition)
     - [AssetAdapterDefinitions](#resources-v1-AssetAdapterDefinitions)
@@ -539,15 +563,6 @@
     - [RobotDefinitions](#resources-v1-RobotDefinitions)
   
     - [RobotType](#resources-v1-RobotType)
-  
-- [robot/v1/robot_adapter.proto](#robot_v1_robot_adapter-proto)
-    - [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability)
-    - [RobotAdapterInfoMessage](#robot-v1-RobotAdapterInfoMessage)
-    - [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability)
-    - [RobotControllerIdentity](#robot-v1-RobotControllerIdentity)
-  
-    - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
-    - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
   
 - [robot/v1/robot_io_catalog.proto](#robot_v1_robot_io_catalog-proto)
     - [RobotIORegisterKind](#robot-v1-RobotIORegisterKind)
@@ -2461,6 +2476,592 @@ Used to specify the type of a property
 
 
 
+<a name="common_v1_signal-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/signal.proto
+
+
+
+<a name="common-v1-SignalCatalog"></a>
+
+### SignalCatalog
+SignalCatalog contains the effective signals exposed by one resource instance.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| resource_id | [string](#string) |  |  |
+| signals | [SignalDefinition](#common-v1-SignalDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="common-v1-SignalDefinition"></a>
+
+### SignalDefinition
+SignalDefinition describes one stable, adapter-facing signal independently
+of the transport or controller register that implements it.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| signal_id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| data_type | [SignalDataType](#common-v1-SignalDataType) |  |  |
+| readable | [bool](#bool) |  |  |
+| writable | [bool](#bool) |  |  |
+| semantic | [SignalSemantic](#common-v1-SignalSemantic) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="common-v1-SignalDataType"></a>
+
+### SignalDataType
+SignalDataType is the value type exposed by a readable or writable signal.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SIGNAL_DATA_TYPE_UNSPECIFIED | 0 |  |
+| SIGNAL_DATA_TYPE_BOOL | 1 |  |
+| SIGNAL_DATA_TYPE_INT32 | 2 |  |
+| SIGNAL_DATA_TYPE_DOUBLE | 3 |  |
+| SIGNAL_DATA_TYPE_STRING | 4 |  |
+
+
+
+<a name="common-v1-SignalSemantic"></a>
+
+### SignalSemantic
+SignalSemantic gives common resource signals a stable meaning independent of
+the adapter-specific signal id. Unspecified is valid for non-standard signals.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SIGNAL_SEMANTIC_UNSPECIFIED | 0 |  |
+| SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE | 10 | Camera state formerly exposed as &#34;active&#34; and &#34;error_detected&#34; properties. |
+| SIGNAL_SEMANTIC_ASSET_CAMERA_ERROR_DETECTED | 11 |  |
+| SIGNAL_SEMANTIC_ASSET_LIGHT_RED | 20 | Stack-light outputs formerly exposed as &#34;red&#34;, &#34;yellow&#34;, and &#34;green&#34; properties. |
+| SIGNAL_SEMANTIC_ASSET_LIGHT_YELLOW | 21 |  |
+| SIGNAL_SEMANTIC_ASSET_LIGHT_GREEN | 22 |  |
+| SIGNAL_SEMANTIC_ASSET_CONVEYOR_MOVING | 30 | Conveyor state formerly exposed as the &#34;moving&#34; property. |
+| SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED | 40 | Generic sensor activation or detection state. |
+| SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE | 50 | Whether an HMI is currently showing work instructions. |
+| SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY | 60 | Part-feeder availability states. |
+| SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY | 61 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_asset_adapter-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/asset_adapter.proto
+
+
+
+<a name="resources-v1-AssetAdapterCommandCapability"></a>
+
+### AssetAdapterCommandCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [AssetAdapterCommandType](#resources-v1-AssetAdapterCommandType) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-AssetAdapterInfoMessage"></a>
+
+### AssetAdapterInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_id | [string](#string) |  |  |
+| adapter_version | [string](#string) |  | Version of the adapter implementation, not the Protobuf API. |
+| controller | [AssetControllerIdentity](#resources-v1-AssetControllerIdentity) |  | Identity actually reported by the connected asset controller. |
+| capabilities_revision | [string](#string) |  | Deterministic fingerprint of adapter_definition_id and the effective signal catalog. |
+| adapter_definition_id | [string](#string) |  | Static adapter capabilities selected by the asset definition. |
+| signal_catalog | [common.v1.SignalCatalog](#common-v1-SignalCatalog) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-AssetAdapterTelemetryCapability"></a>
+
+### AssetAdapterTelemetryCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [AssetAdapterTelemetryType](#resources-v1-AssetAdapterTelemetryType) |  |  |
+| frequency_hz | [double](#double) | optional | Publication rate guaranteed by the adapter definition. |
+
+
+
+
+
+
+<a name="resources-v1-AssetControllerIdentity"></a>
+
+### AssetControllerIdentity
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| manufacturer | [string](#string) |  |  |
+| model | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| controller_software_version | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-AssetAdapterCommandType"></a>
+
+### AssetAdapterCommandType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_ADAPTER_COMMAND_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_ADAPTER_COMMAND_TYPE_WRITE_SIGNALS | 1 |  |
+| ASSET_ADAPTER_COMMAND_TYPE_TRIGGER | 2 |  |
+| ASSET_ADAPTER_COMMAND_TYPE_START | 3 |  |
+| ASSET_ADAPTER_COMMAND_TYPE_STOP | 4 |  |
+| ASSET_ADAPTER_COMMAND_TYPE_RESET | 5 |  |
+| ASSET_ADAPTER_COMMAND_TYPE_SET_SPEED | 6 |  |
+
+
+
+<a name="resources-v1-AssetAdapterTelemetryType"></a>
+
+### AssetAdapterTelemetryType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_ADAPTER_TELEMETRY_TYPE_STATE | 1 |  |
+| ASSET_ADAPTER_TELEMETRY_TYPE_SIGNAL_STATE | 2 |  |
+| ASSET_ADAPTER_TELEMETRY_TYPE_FAULT | 3 |  |
+| ASSET_ADAPTER_TELEMETRY_TYPE_RESULT | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_asset_definition-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/asset_definition.proto
+
+
+
+<a name="resources-v1-AssetDefinition"></a>
+
+### AssetDefinition
+TODO: add ToolRole or similar way to express capabilities?
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  | Name of the asset |
+| icon | [string](#string) |  | Optional icon representing the asset |
+| description | [string](#string) |  | Optional description of the asset |
+| type | [AssetType](#resources-v1-AssetType) |  |  |
+| model_id | [string](#string) |  |  |
+| vision | [VisionCapability](#resources-v1-VisionCapability) |  |  |
+| asset_adapter_definition_id | [string](#string) |  | Selects the static adapter implementation and capability contract used by every instance of this asset definition. |
+
+
+
+
+
+
+<a name="resources-v1-AssetDefinitions"></a>
+
+### AssetDefinitions
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [AssetDefinition](#resources-v1-AssetDefinition) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-VisionCapability"></a>
+
+### VisionCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| supported_validation_modes | [ValidationMode](#resources-v1-ValidationMode) | repeated |  |
+| supported_part_definition_ids | [string](#string) | repeated |  |
+| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-AssetType"></a>
+
+### AssetType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ASSET_TYPE_UNSPECIFIED | 0 |  |
+| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
+| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
+| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
+| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
+| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
+| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
+
+
+
+<a name="resources-v1-ValidationMode"></a>
+
+### ValidationMode
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VALIDATION_MODE_UNSPECIFIED | 0 |  |
+| VALIDATION_MODE_PRESENCE_CHECK | 1 |  |
+| VALIDATION_MODE_POSE_CHECK | 2 |  |
+| VALIDATION_MODE_FASTENER_CHECK | 3 |  |
+| VALIDATION_MODE_LABEL_CHECK | 4 |  |
+| VALIDATION_MODE_SURFACE_CHECK | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="robot_v1_robot_adapter-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## robot/v1/robot_adapter.proto
+
+
+
+<a name="robot-v1-RobotAdapterCommandCapability"></a>
+
+### RobotAdapterCommandCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType) |  |  |
+
+
+
+
+
+
+<a name="robot-v1-RobotAdapterInfoMessage"></a>
+
+### RobotAdapterInfoMessage
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| adapter_version | [string](#string) |  | Version of the adapter implementation, not the Protobuf API. |
+| controller | [RobotControllerIdentity](#robot-v1-RobotControllerIdentity) |  | Identity actually reported by the connected controller. |
+| capabilities_revision | [string](#string) |  | Deterministic fingerprint of adapter_definition_id and the effective signal catalog. |
+| adapter_definition_id | [string](#string) |  | Static adapter capabilities selected by the robot definition. |
+| signal_catalog | [common.v1.SignalCatalog](#common-v1-SignalCatalog) |  | Signals configured for this connected robot instance. |
+
+
+
+
+
+
+<a name="robot-v1-RobotAdapterTelemetryCapability"></a>
+
+### RobotAdapterTelemetryCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType) |  |  |
+| frequency_hz | [double](#double) | optional | Publication rate guaranteed by the adapter definition. |
+
+
+
+
+
+
+<a name="robot-v1-RobotControllerIdentity"></a>
+
+### RobotControllerIdentity
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| manufacturer | [string](#string) |  |  |
+| model | [string](#string) |  |  |
+| serial_number | [string](#string) |  |  |
+| controller_software_version | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+
+<a name="robot-v1-RobotAdapterCommandType"></a>
+
+### RobotAdapterCommandType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY | 1 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE | 2 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP | 3 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE | 10 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP | 11 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP | 12 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_PROGRAM | 20 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION | 21 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON | 30 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF | 31 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE | 32 |  |
+
+
+
+<a name="robot-v1-RobotAdapterTelemetryType"></a>
+
+### RobotAdapterTelemetryType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE | 1 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE | 2 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE | 3 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH | 4 |  |
+| ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE | 5 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_resource_requirement-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/resource_requirement.proto
+
+
+
+<a name="resources-v1-ConsumerResourceRequirement"></a>
+
+### ConsumerResourceRequirement
+ConsumerResourceRequirement attaches a capability requirement to the
+consumer property that resolves to a robot or asset input slot.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| resource_property_key | [string](#string) |  |  |
+| requirement | [ResourceRequirement](#resources-v1-ResourceRequirement) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ResourceAssetTypeRequirement"></a>
+
+### ResourceAssetTypeRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [AssetType](#resources-v1-AssetType) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ResourceCommandRequirement"></a>
+
+### ResourceCommandRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_command | [robot.v1.RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType) |  |  |
+| asset_command | [AssetAdapterCommandType](#resources-v1-AssetAdapterCommandType) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ResourceRequirement"></a>
+
+### ResourceRequirement
+ResourceRequirement describes one capability that a resource must provide.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| level | [ResourceRequirementLevel](#resources-v1-ResourceRequirementLevel) |  |  |
+| command | [ResourceCommandRequirement](#resources-v1-ResourceCommandRequirement) |  |  |
+| telemetry | [ResourceTelemetryRequirement](#resources-v1-ResourceTelemetryRequirement) |  |  |
+| signal | [ResourceSignalRequirement](#resources-v1-ResourceSignalRequirement) |  |  |
+| asset_type | [ResourceAssetTypeRequirement](#resources-v1-ResourceAssetTypeRequirement) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ResourceRequirements"></a>
+
+### ResourceRequirements
+ResourceRequirements provides presence semantics when a repeated requirement
+list is replaced by an update request. A present message with no items clears
+the list; an absent message leaves it unchanged.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ResourceRequirement](#resources-v1-ResourceRequirement) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-ResourceSignalRequirement"></a>
+
+### ResourceSignalRequirement
+ResourceSignalRequirement selects a signal by stable id, common semantic,
+or a property containing the configured signal id. With no selector, any
+signal matching the data type and direction satisfies the requirement.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| data_type | [common.v1.SignalDataType](#common-v1-SignalDataType) |  |  |
+| readable | [bool](#bool) |  |  |
+| writable | [bool](#bool) |  |  |
+| signal_id | [string](#string) |  |  |
+| semantic | [common.v1.SignalSemantic](#common-v1-SignalSemantic) |  |  |
+| signal_id_property_key | [string](#string) |  | PropertyTemplate.key whose configured STRING or ENUM value selects the signal for a concrete feedback, action, or function instance. Binding diagnostics resolve this selector to signal_id before reporting it. |
+
+
+
+
+
+
+<a name="resources-v1-ResourceTelemetryRequirement"></a>
+
+### ResourceTelemetryRequirement
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_telemetry | [robot.v1.RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType) |  |  |
+| asset_telemetry | [AssetAdapterTelemetryType](#resources-v1-AssetAdapterTelemetryType) |  |  |
+| minimum_frequency_hz | [double](#double) | optional | Minimum publication frequency needed by the consumer. When omitted, any frequency supplied by the adapter satisfies the requirement. |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-ResourceRequirementLevel"></a>
+
+### ResourceRequirementLevel
+ResourceRequirementLevel says whether a consumer can still operate when a
+resource capability is unavailable.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| RESOURCE_REQUIREMENT_LEVEL_UNSPECIFIED | 0 |  |
+| RESOURCE_REQUIREMENT_LEVEL_REQUIRED | 1 |  |
+| RESOURCE_REQUIREMENT_LEVEL_OPTIONAL | 2 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_action_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -2487,6 +3088,7 @@ Used to specify the type of a property
 | status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
 | properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
 | execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
+| resource_requirements | [resources.v1.ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement) | repeated |  |
 
 
 
@@ -2576,6 +3178,7 @@ Resource slots are always required; context slots are always optional.
 | resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Use for slots that should be bound to a resource instance. |
 | context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Use for slots that should be populated from runtime context. |
 | run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
+| explicit_requirements | [resources.v1.ResourceRequirement](#resources-v1-ResourceRequirement) | repeated | Initial author-authored resource constraints. |
 
 
 
@@ -2623,6 +3226,7 @@ generated property empty when the requested context cannot be resolved.
 | resource_type | [ARResourceSlotType](#ar-v1-ARResourceSlotType) |  | Selected when this slot expects a concrete resource binding. |
 | context_type | [ARContextSlotType](#ar-v1-ARContextSlotType) |  | Selected when this slot expects a runtime context value. |
 | run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Required resolution policy for process, sequence, and task run context slots. |
+| explicit_requirements | [resources.v1.ResourceRequirement](#resources-v1-ResourceRequirement) | repeated | Author-authored constraints in addition to requirements derived from consumers. |
 
 
 
@@ -2662,6 +3266,7 @@ be updated because it changes resolution policy without changing value type.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | run_selector | [ARRunContextSelector](#ar-v1-ARRunContextSelector) |  | Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type. |
+| explicit_requirements | [resources.v1.ResourceRequirements](#resources-v1-ResourceRequirements) |  | When present, replaces the explicit constraints of an existing resource slot. The backend must load the slot and enforce the same signal/asset-type compatibility rules as ARInputSlotMessage. |
 
 
 
@@ -3077,12 +3682,67 @@ instance owned by the target station or cell.
 | slot_id | [string](#string) |  | Config-declared slot to satisfy. |
 | robot_instance_id | [string](#string) |  | Concrete robot instance selected for the slot. |
 | asset_instance_id | [string](#string) |  | Concrete asset instance selected for the slot. |
+| status | [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus) |  | Server-evaluated status; UNSPECIFIED is accepted only before evaluation. |
+| unmet_requirements | [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement) | repeated | Missing capabilities grouped with every affected consumer. |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceRequirementConsumer"></a>
+
+### ARResourceRequirementConsumer
+ARResourceRequirementConsumer identifies the config entity affected by an
+unmet requirement. An input slot is the consumer for an explicit constraint.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| input_slot_id | [string](#string) |  |  |
+| feedback_id | [string](#string) |  |  |
+| action_id | [string](#string) |  |  |
+| function_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARUnmetResourceRequirement"></a>
+
+### ARUnmetResourceRequirement
+ARUnmetResourceRequirement reports one unmet requirement and every consumer
+affected by it. Clients can group these entries by consumer to determine
+which optional features must degrade.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| requirement | [resources.v1.ResourceRequirement](#resources-v1-ResourceRequirement) |  |  |
+| consumers | [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer) | repeated |  |
 
 
 
 
 
  
+
+
+<a name="ar-v1-ARResourceBindingStatus"></a>
+
+### ARResourceBindingStatus
+ARResourceBindingStatus is the result of evaluating a concrete resource
+against a slot&#39;s explicit and consumer-derived requirements.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RESOURCE_BINDING_STATUS_UNSPECIFIED | 0 |  |
+| AR_RESOURCE_BINDING_STATUS_SATISFIED | 1 |  |
+| AR_RESOURCE_BINDING_STATUS_DEGRADED | 2 |  |
+| AR_RESOURCE_BINDING_STATUS_UNSATISFIED | 3 |  |
+| AR_RESOURCE_BINDING_STATUS_UNVERIFIED | 4 | Transient status while an existing binding is being re-evaluated. A new binding must still be rejected when the adapter has never reported. |
+
 
  
 
@@ -3549,6 +4209,7 @@ Feature says what behavior/configuration the implementation exposes.
 | features | [FeedbackFeature](#ar-v1-FeedbackFeature) | repeated | Implementation/configuration features |
 | capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Assistance semantics |
 | execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
+| resource_requirements | [resources.v1.ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement) | repeated |  |
 
 
 
@@ -3749,6 +4410,7 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
 | properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
 | execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
+| resource_requirements | [resources.v1.ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement) | repeated |  |
 
 
 
@@ -4849,96 +5511,6 @@ importance or process-run issue severity.
 
 
 
-<a name="common_v1_signal-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## common/v1/signal.proto
-
-
-
-<a name="common-v1-SignalCatalog"></a>
-
-### SignalCatalog
-SignalCatalog contains the effective signals exposed by one resource instance.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| resource_id | [string](#string) |  |  |
-| signals | [SignalDefinition](#common-v1-SignalDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="common-v1-SignalDefinition"></a>
-
-### SignalDefinition
-SignalDefinition describes one stable, adapter-facing signal independently
-of the transport or controller register that implements it.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| signal_id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| data_type | [SignalDataType](#common-v1-SignalDataType) |  |  |
-| readable | [bool](#bool) |  |  |
-| writable | [bool](#bool) |  |  |
-| semantic | [SignalSemantic](#common-v1-SignalSemantic) |  |  |
-
-
-
-
-
- 
-
-
-<a name="common-v1-SignalDataType"></a>
-
-### SignalDataType
-SignalDataType is the value type exposed by a readable or writable signal.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SIGNAL_DATA_TYPE_UNSPECIFIED | 0 |  |
-| SIGNAL_DATA_TYPE_BOOL | 1 |  |
-| SIGNAL_DATA_TYPE_INT32 | 2 |  |
-| SIGNAL_DATA_TYPE_DOUBLE | 3 |  |
-| SIGNAL_DATA_TYPE_STRING | 4 |  |
-
-
-
-<a name="common-v1-SignalSemantic"></a>
-
-### SignalSemantic
-SignalSemantic gives common resource signals a stable meaning independent of
-the adapter-specific signal id. Unspecified is valid for non-standard signals.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SIGNAL_SEMANTIC_UNSPECIFIED | 0 |  |
-| SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE | 10 | Camera state formerly exposed as &#34;active&#34; and &#34;error_detected&#34; properties. |
-| SIGNAL_SEMANTIC_ASSET_CAMERA_ERROR_DETECTED | 11 |  |
-| SIGNAL_SEMANTIC_ASSET_LIGHT_RED | 20 | Stack-light outputs formerly exposed as &#34;red&#34;, &#34;yellow&#34;, and &#34;green&#34; properties. |
-| SIGNAL_SEMANTIC_ASSET_LIGHT_YELLOW | 21 |  |
-| SIGNAL_SEMANTIC_ASSET_LIGHT_GREEN | 22 |  |
-| SIGNAL_SEMANTIC_ASSET_CONVEYOR_MOVING | 30 | Conveyor state formerly exposed as the &#34;moving&#34; property. |
-| SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED | 40 | Generic sensor activation or detection state. |
-| SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE | 50 | Whether an HMI is currently showing work instructions. |
-| SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY | 60 | Part-feeder availability states. |
-| SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY | 61 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="common_v1_time-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -5254,109 +5826,6 @@ The runtime evaluates each child independently and may execute any subset of the
 The sequence completes when all selected children have completed.
 
 Example: Optional inspections: - Visual inspection - Torque verification - Leak test |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="resources_v1_asset_definition-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## resources/v1/asset_definition.proto
-
-
-
-<a name="resources-v1-AssetDefinition"></a>
-
-### AssetDefinition
-TODO: add ToolRole or similar way to express capabilities?
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  | Name of the asset |
-| icon | [string](#string) |  | Optional icon representing the asset |
-| description | [string](#string) |  | Optional description of the asset |
-| type | [AssetType](#resources-v1-AssetType) |  |  |
-| model_id | [string](#string) |  |  |
-| vision | [VisionCapability](#resources-v1-VisionCapability) |  |  |
-| asset_adapter_definition_id | [string](#string) |  | Selects the static adapter implementation and capability contract used by every instance of this asset definition. |
-
-
-
-
-
-
-<a name="resources-v1-AssetDefinitions"></a>
-
-### AssetDefinitions
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [AssetDefinition](#resources-v1-AssetDefinition) | repeated |  |
-
-
-
-
-
-
-<a name="resources-v1-VisionCapability"></a>
-
-### VisionCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| supported_validation_modes | [ValidationMode](#resources-v1-ValidationMode) | repeated |  |
-| supported_part_definition_ids | [string](#string) | repeated |  |
-| constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="resources-v1-AssetType"></a>
-
-### AssetType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_TYPE_CAMERA | 1 | Vision device used for inspection, guidance, or detection. |
-| ASSET_TYPE_LIGHT | 2 | Lighting device such as ring light, spot light, or backlight. |
-| ASSET_TYPE_CONVEYOR | 3 | Conveying device used to move workpieces or pallets between areas. |
-| ASSET_TYPE_SENSOR | 4 | Generic sensor asset such as prox sensor, load cell, scanner, or IO sensor. |
-| ASSET_TYPE_HMI | 5 | Human-machine interface such as touch panel, button box, or stack-light UI endpoint. |
-| ASSET_TYPE_PART_FEEDER | 8 | Feeder/presentation device used to supply parts in a controlled way. |
-
-
-
-<a name="resources-v1-ValidationMode"></a>
-
-### ValidationMode
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| VALIDATION_MODE_UNSPECIFIED | 0 |  |
-| VALIDATION_MODE_PRESENCE_CHECK | 1 |  |
-| VALIDATION_MODE_POSE_CHECK | 2 |  |
-| VALIDATION_MODE_FASTENER_CHECK | 3 |  |
-| VALIDATION_MODE_LABEL_CHECK | 4 |  |
-| VALIDATION_MODE_SURFACE_CHECK | 5 |  |
 
 
  
@@ -6973,123 +7442,6 @@ TODO: add validation for: root_node_id, nodes
 
 
 
-<a name="resources_v1_asset_adapter-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## resources/v1/asset_adapter.proto
-
-
-
-<a name="resources-v1-AssetAdapterCommandCapability"></a>
-
-### AssetAdapterCommandCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [AssetAdapterCommandType](#resources-v1-AssetAdapterCommandType) |  |  |
-
-
-
-
-
-
-<a name="resources-v1-AssetAdapterInfoMessage"></a>
-
-### AssetAdapterInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_id | [string](#string) |  |  |
-| adapter_version | [string](#string) |  | Version of the adapter implementation, not the Protobuf API. |
-| controller | [AssetControllerIdentity](#resources-v1-AssetControllerIdentity) |  | Identity actually reported by the connected asset controller. |
-| capabilities_revision | [string](#string) |  | Deterministic fingerprint of adapter_definition_id and the effective signal catalog. |
-| adapter_definition_id | [string](#string) |  | Static adapter capabilities selected by the asset definition. |
-| signal_catalog | [common.v1.SignalCatalog](#common-v1-SignalCatalog) |  |  |
-
-
-
-
-
-
-<a name="resources-v1-AssetAdapterTelemetryCapability"></a>
-
-### AssetAdapterTelemetryCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [AssetAdapterTelemetryType](#resources-v1-AssetAdapterTelemetryType) |  |  |
-| frequency_hz | [double](#double) | optional | Publication rate guaranteed by the adapter definition. |
-
-
-
-
-
-
-<a name="resources-v1-AssetControllerIdentity"></a>
-
-### AssetControllerIdentity
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| manufacturer | [string](#string) |  |  |
-| model | [string](#string) |  |  |
-| serial_number | [string](#string) |  |  |
-| controller_software_version | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="resources-v1-AssetAdapterCommandType"></a>
-
-### AssetAdapterCommandType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_ADAPTER_COMMAND_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_ADAPTER_COMMAND_TYPE_WRITE_SIGNALS | 1 |  |
-| ASSET_ADAPTER_COMMAND_TYPE_TRIGGER | 2 |  |
-| ASSET_ADAPTER_COMMAND_TYPE_START | 3 |  |
-| ASSET_ADAPTER_COMMAND_TYPE_STOP | 4 |  |
-| ASSET_ADAPTER_COMMAND_TYPE_RESET | 5 |  |
-| ASSET_ADAPTER_COMMAND_TYPE_SET_SPEED | 6 |  |
-
-
-
-<a name="resources-v1-AssetAdapterTelemetryType"></a>
-
-### AssetAdapterTelemetryType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ASSET_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
-| ASSET_ADAPTER_TELEMETRY_TYPE_STATE | 1 |  |
-| ASSET_ADAPTER_TELEMETRY_TYPE_SIGNAL_STATE | 2 |  |
-| ASSET_ADAPTER_TELEMETRY_TYPE_FAULT | 3 |  |
-| ASSET_ADAPTER_TELEMETRY_TYPE_RESULT | 4 |  |
-
-
- 
-
- 
-
- 
-
-
-
 <a name="resources_v1_asset_adapter_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -8129,129 +8481,6 @@ content_type: &#34;model/gltf-binary&#34;
 | ROBOT_TYPE_UR5E | 11 |  |
 | ROBOT_TYPE_UR10E | 12 |  |
 | ROBOT_TYPE_KUKA_IIWA | 20 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="robot_v1_robot_adapter-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## robot/v1/robot_adapter.proto
-
-
-
-<a name="robot-v1-RobotAdapterCommandCapability"></a>
-
-### RobotAdapterCommandCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType) |  |  |
-
-
-
-
-
-
-<a name="robot-v1-RobotAdapterInfoMessage"></a>
-
-### RobotAdapterInfoMessage
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| robot_id | [string](#string) |  |  |
-| adapter_version | [string](#string) |  | Version of the adapter implementation, not the Protobuf API. |
-| controller | [RobotControllerIdentity](#robot-v1-RobotControllerIdentity) |  | Identity actually reported by the connected controller. |
-| capabilities_revision | [string](#string) |  | Deterministic fingerprint of adapter_definition_id and the effective signal catalog. |
-| adapter_definition_id | [string](#string) |  | Static adapter capabilities selected by the robot definition. |
-| signal_catalog | [common.v1.SignalCatalog](#common-v1-SignalCatalog) |  | Signals configured for this connected robot instance. |
-
-
-
-
-
-
-<a name="robot-v1-RobotAdapterTelemetryCapability"></a>
-
-### RobotAdapterTelemetryCapability
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType) |  |  |
-| frequency_hz | [double](#double) | optional | Publication rate guaranteed by the adapter definition. |
-
-
-
-
-
-
-<a name="robot-v1-RobotControllerIdentity"></a>
-
-### RobotControllerIdentity
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| manufacturer | [string](#string) |  |  |
-| model | [string](#string) |  |  |
-| serial_number | [string](#string) |  |  |
-| controller_software_version | [string](#string) |  |  |
-
-
-
-
-
- 
-
-
-<a name="robot-v1-RobotAdapterCommandType"></a>
-
-### RobotAdapterCommandType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY | 1 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE | 2 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP | 3 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE | 10 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP | 11 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP | 12 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_PROGRAM | 20 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION | 21 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON | 30 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF | 31 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE | 32 |  |
-
-
-
-<a name="robot-v1-RobotAdapterTelemetryType"></a>
-
-### RobotAdapterTelemetryType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED | 0 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE | 1 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE | 2 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE | 3 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH | 4 |  |
-| ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE | 5 |  |
 
 
  

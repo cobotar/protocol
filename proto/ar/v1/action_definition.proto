@@ -6,6 +6,7 @@ import "ar/v1/definition_status.proto";
 import "ar/v1/execution_contract.proto";
 import "buf/validate/validate.proto";
 import "common/v1/property.proto";
+import "resources/v1/resource_requirement.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -19,6 +20,20 @@ enum ActionGroup {
 }
 
 message ActionDefinition {
+  option (buf.validate.message).cel = {
+    id: "action_definition.resource_requirements.reference_resource_properties"
+    message: "resource requirements must reference a compatible ROBOT or ASSET property template"
+    expression:
+      "this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && "
+      "((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || "
+      "(property.type == 14 && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "action_definition.signal_requirements.reference_signal_properties"
+    message: "signal id property keys must reference a STRING or ENUM property template"
+    expression: "this.resource_requirements.all(requirement, !has(requirement.requirement.signal) || !has(requirement.requirement.signal.signal_id_property_key) || this.properties.exists(property, property.key == requirement.requirement.signal.signal_id_property_key && (property.type == 5 || property.type == 11)))"
+  };
+
   // Stable identity of this immutable built-in definition revision.
   string id = 1 [
     (buf.validate.field).required = true,
@@ -53,6 +68,7 @@ message ActionDefinition {
   }];
   reserved 11, 12;
   ExecutionContract execution = 13 [(buf.validate.field).required = true];
+  repeated resources.v1.ConsumerResourceRequirement resource_requirements = 14;
 }
 
 // The catalog service additionally enforces that revisions sharing a key also

@@ -2,11 +2,13 @@
 // @generated from file ar/v1/ar_config_binding.proto (package ar.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { PropertyInstanceUpdate } from "../../common/v1/property_pb.ts";
 import { file_common_v1_property } from "../../common/v1/property_pb.ts";
+import type { ResourceRequirement } from "../../resources/v1/resource_requirement_pb.ts";
+import { file_resources_v1_resource_requirement } from "../../resources/v1/resource_requirement_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -14,7 +16,68 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file ar/v1/ar_config_binding.proto.
  */
 export const file_ar_v1_ar_config_binding: GenFile = /*@__PURE__*/
-  fileDesc("Ch1hci92MS9hcl9jb25maWdfYmluZGluZy5wcm90bxIFYXIudjEiqgEKEUFSUmVzb3VyY2VCaW5kaW5nEhoKB3Nsb3RfaWQYASABKAlCCbpIBnIE+OswARIkChFyb2JvdF9pbnN0YW5jZV9pZBgCIAEoCUIJukgGcgSo8QQBEiQKEWFzc2V0X2luc3RhbmNlX2lkGAMgASgJQgm6SAZyBLjxBAE6LbpIKiIoChFyb2JvdF9pbnN0YW5jZV9pZAoRYXNzZXRfaW5zdGFuY2VfaWQQASKUAwoWQVJDb25maWdCaW5kaW5nTWVzc2FnZRIVCgJpZBgBIAEoCUIJukgGcgTo6zABEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh0KCnN0YXRpb25faWQYBSABKAlCCbpIBnIE+PEEARIaCgdjZWxsX2lkGAYgASgJQgm6SAZyBLjyBAESIgoMYXJfY29uZmlnX2lkGAcgASgJQgy6SAnIAQFyBJDxBAESEAoIZGlzYWJsZWQYCCABKAgSEgoKc3RhbmRhbG9uZRgJIAEoCBIQCghwcmlvcml0eRgKIAEoBRIzChFyZXNvdXJjZV9iaW5kaW5ncxgLIAMoCzIYLmFyLnYxLkFSUmVzb3VyY2VCaW5kaW5nEj0KEnByb3BlcnR5X292ZXJyaWRlcxgMIAMoCzIhLmNvbW1vbi52MS5Qcm9wZXJ0eUluc3RhbmNlVXBkYXRlOhy6SBkiFwoKc3RhdGlvbl9pZAoHY2VsbF9pZBABIkoKF0FSQ29uZmlnQmluZGluZ01lc3NhZ2VzEi8KCGJpbmRpbmdzGAEgAygLMh0uYXIudjEuQVJDb25maWdCaW5kaW5nTWVzc2FnZUKQAQoJY29tLmFyLnYxQhRBckNvbmZpZ0JpbmRpbmdQcm90b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_property, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch1hci92MS9hcl9jb25maWdfYmluZGluZy5wcm90bxIFYXIudjEi3AEKHUFSUmVzb3VyY2VSZXF1aXJlbWVudENvbnN1bWVyEiAKDWlucHV0X3Nsb3RfaWQYASABKAlCCbpIBnIE+OswARIeCgtmZWVkYmFja19pZBgCIAEoCUIJukgGcgTA8wQBEhwKCWFjdGlvbl9pZBgDIAEoCUIJukgGcgTI8wQBEh4KC2Z1bmN0aW9uX2lkGAQgASgJQgm6SAZyBNDzBAE6O7pIOCI2Cg1pbnB1dF9zbG90X2lkCgtmZWVkYmFja19pZAoJYWN0aW9uX2lkCgtmdW5jdGlvbl9pZBABIvgCChpBUlVubWV0UmVzb3VyY2VSZXF1aXJlbWVudBI+CgtyZXF1aXJlbWVudBgBIAEoCzIhLnJlc291cmNlcy52MS5SZXNvdXJjZVJlcXVpcmVtZW50Qga6SAPIAQESmQIKCWNvbnN1bWVycxgCIAMoCzIkLmFyLnYxLkFSUmVzb3VyY2VSZXF1aXJlbWVudENvbnN1bWVyQt8BukjbAboB0gEKMmFyX3VubWV0X3Jlc291cmNlX3JlcXVpcmVtZW50LmNvbnN1bWVycy51bmlxdWVfaWRzEiRhZmZlY3RlZCBjb25zdW1lciBpZHMgbXVzdCBiZSB1bmlxdWUadnRoaXMubWFwKGNvbnN1bWVyLCBjb25zdW1lci5pbnB1dF9zbG90X2lkICsgY29uc3VtZXIuZmVlZGJhY2tfaWQgKyBjb25zdW1lci5hY3Rpb25faWQgKyBjb25zdW1lci5mdW5jdGlvbl9pZCkudW5pcXVlKCmSAQIIASKFCgoRQVJSZXNvdXJjZUJpbmRpbmcSHQoHc2xvdF9pZBgBIAEoCUIMukgJyAEBcgT46zABEiQKEXJvYm90X2luc3RhbmNlX2lkGAIgASgJQgm6SAZyBKjxBAESJAoRYXNzZXRfaW5zdGFuY2VfaWQYAyABKAlCCbpIBnIEuPEEARI4CgZzdGF0dXMYBCABKA4yHi5hci52MS5BUlJlc291cmNlQmluZGluZ1N0YXR1c0IIukgFggECEAESPQoSdW5tZXRfcmVxdWlyZW1lbnRzGAUgAygLMiEuYXIudjEuQVJVbm1ldFJlc291cmNlUmVxdWlyZW1lbnQ6iwi6SIcIGtoHCjVhcl9yZXNvdXJjZV9iaW5kaW5nLnN0YXR1c19tYXRjaGVzX3VubWV0X3JlcXVpcmVtZW50cxI1YmluZGluZyBzdGF0dXMgbXVzdCBhZ3JlZSB3aXRoIGl0cyB1bm1ldCByZXF1aXJlbWVudHMa6QYodGhpcy5zdGF0dXMgPT0gYXIudjEuQVJSZXNvdXJjZUJpbmRpbmdTdGF0dXMuQVJfUkVTT1VSQ0VfQklORElOR19TVEFUVVNfVU5TUEVDSUZJRUQgJiYgdGhpcy51bm1ldF9yZXF1aXJlbWVudHMuc2l6ZSgpID09IDApIHx8ICh0aGlzLnN0YXR1cyA9PSBhci52MS5BUlJlc291cmNlQmluZGluZ1N0YXR1cy5BUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19TQVRJU0ZJRUQgJiYgdGhpcy51bm1ldF9yZXF1aXJlbWVudHMuc2l6ZSgpID09IDApIHx8ICh0aGlzLnN0YXR1cyA9PSBhci52MS5BUlJlc291cmNlQmluZGluZ1N0YXR1cy5BUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19ERUdSQURFRCAmJiB0aGlzLnVubWV0X3JlcXVpcmVtZW50cy5zaXplKCkgPiAwICYmIHRoaXMudW5tZXRfcmVxdWlyZW1lbnRzLmFsbCh1bm1ldCwgdW5tZXQucmVxdWlyZW1lbnQubGV2ZWwgPT0gcmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWlyZW1lbnRMZXZlbC5SRVNPVVJDRV9SRVFVSVJFTUVOVF9MRVZFTF9PUFRJT05BTCkpIHx8ICh0aGlzLnN0YXR1cyA9PSBhci52MS5BUlJlc291cmNlQmluZGluZ1N0YXR1cy5BUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19VTlNBVElTRklFRCAmJiB0aGlzLnVubWV0X3JlcXVpcmVtZW50cy5leGlzdHModW5tZXQsIHVubWV0LnJlcXVpcmVtZW50LmxldmVsID09IHJlc291cmNlcy52MS5SZXNvdXJjZVJlcXVpcmVtZW50TGV2ZWwuUkVTT1VSQ0VfUkVRVUlSRU1FTlRfTEVWRUxfUkVRVUlSRUQpKSB8fCAodGhpcy5zdGF0dXMgPT0gYXIudjEuQVJSZXNvdXJjZUJpbmRpbmdTdGF0dXMuQVJfUkVTT1VSQ0VfQklORElOR19TVEFUVVNfVU5WRVJJRklFRCAmJiB0aGlzLnVubWV0X3JlcXVpcmVtZW50cy5zaXplKCkgPT0gMCkiKAoRcm9ib3RfaW5zdGFuY2VfaWQKEWFzc2V0X2luc3RhbmNlX2lkEAEitAQKFkFSQ29uZmlnQmluZGluZ01lc3NhZ2USFQoCaWQYASABKAlCCbpIBnIE6OswARIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIdCgpzdGF0aW9uX2lkGAUgASgJQgm6SAZyBPjxBAESGgoHY2VsbF9pZBgGIAEoCUIJukgGcgS48gQBEiIKDGFyX2NvbmZpZ19pZBgHIAEoCUIMukgJyAEBcgSQ8QQBEhAKCGRpc2FibGVkGAggASgIEhIKCnN0YW5kYWxvbmUYCSABKAgSEAoIcHJpb3JpdHkYCiABKAUS0gEKEXJlc291cmNlX2JpbmRpbmdzGAsgAygLMhguYXIudjEuQVJSZXNvdXJjZUJpbmRpbmdCnAG6SJgBugGUAQozYXJfY29uZmlnX2JpbmRpbmcucmVzb3VyY2VfYmluZGluZ3MudW5pcXVlX3Nsb3RfaWRzEjByZXNvdXJjZSBiaW5kaW5ncyBtdXN0IHRhcmdldCB1bmlxdWUgaW5wdXQgc2xvdHMaK3RoaXMubWFwKGJpbmRpbmcsIGJpbmRpbmcuc2xvdF9pZCkudW5pcXVlKCkSPQoScHJvcGVydHlfb3ZlcnJpZGVzGAwgAygLMiEuY29tbW9uLnYxLlByb3BlcnR5SW5zdGFuY2VVcGRhdGU6HLpIGSIXCgpzdGF0aW9uX2lkCgdjZWxsX2lkEAEiSgoXQVJDb25maWdCaW5kaW5nTWVzc2FnZXMSLwoIYmluZGluZ3MYASADKAsyHS5hci52MS5BUkNvbmZpZ0JpbmRpbmdNZXNzYWdlKu8BChdBUlJlc291cmNlQmluZGluZ1N0YXR1cxIqCiZBUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19VTlNQRUNJRklFRBAAEigKJEFSX1JFU09VUkNFX0JJTkRJTkdfU1RBVFVTX1NBVElTRklFRBABEicKI0FSX1JFU09VUkNFX0JJTkRJTkdfU1RBVFVTX0RFR1JBREVEEAISKgomQVJfUkVTT1VSQ0VfQklORElOR19TVEFUVVNfVU5TQVRJU0ZJRUQQAxIpCiVBUl9SRVNPVVJDRV9CSU5ESU5HX1NUQVRVU19VTlZFUklGSUVEEARCkAEKCWNvbS5hci52MUIUQXJDb25maWdCaW5kaW5nUHJvdG9QAVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_property, file_resources_v1_resource_requirement, file_validation_v1_predefined_string_rules]);
+
+/**
+ * ARResourceRequirementConsumer identifies the config entity affected by an
+ * unmet requirement. An input slot is the consumer for an explicit constraint.
+ *
+ * @generated from message ar.v1.ARResourceRequirementConsumer
+ */
+export type ARResourceRequirementConsumer = Message<"ar.v1.ARResourceRequirementConsumer"> & {
+  /**
+   * @generated from field: string input_slot_id = 1;
+   */
+  inputSlotId: string;
+
+  /**
+   * @generated from field: string feedback_id = 2;
+   */
+  feedbackId: string;
+
+  /**
+   * @generated from field: string action_id = 3;
+   */
+  actionId: string;
+
+  /**
+   * @generated from field: string function_id = 4;
+   */
+  functionId: string;
+};
+
+/**
+ * Describes the message ar.v1.ARResourceRequirementConsumer.
+ * Use `create(ARResourceRequirementConsumerSchema)` to create a new message.
+ */
+export const ARResourceRequirementConsumerSchema: GenMessage<ARResourceRequirementConsumer> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config_binding, 0);
+
+/**
+ * ARUnmetResourceRequirement reports one unmet requirement and every consumer
+ * affected by it. Clients can group these entries by consumer to determine
+ * which optional features must degrade.
+ *
+ * @generated from message ar.v1.ARUnmetResourceRequirement
+ */
+export type ARUnmetResourceRequirement = Message<"ar.v1.ARUnmetResourceRequirement"> & {
+  /**
+   * @generated from field: resources.v1.ResourceRequirement requirement = 1;
+   */
+  requirement?: ResourceRequirement;
+
+  /**
+   * @generated from field: repeated ar.v1.ARResourceRequirementConsumer consumers = 2;
+   */
+  consumers: ARResourceRequirementConsumer[];
+};
+
+/**
+ * Describes the message ar.v1.ARUnmetResourceRequirement.
+ * Use `create(ARUnmetResourceRequirementSchema)` to create a new message.
+ */
+export const ARUnmetResourceRequirementSchema: GenMessage<ARUnmetResourceRequirement> = /*@__PURE__*/
+  messageDesc(file_ar_v1_ar_config_binding, 1);
 
 /**
  * ARResourceBinding binds a config-declared slot to a concrete resource
@@ -43,6 +106,20 @@ export type ARResourceBinding = Message<"ar.v1.ARResourceBinding"> & {
    * @generated from field: string asset_instance_id = 3;
    */
   assetInstanceId: string;
+
+  /**
+   * Server-evaluated status; UNSPECIFIED is accepted only before evaluation.
+   *
+   * @generated from field: ar.v1.ARResourceBindingStatus status = 4;
+   */
+  status: ARResourceBindingStatus;
+
+  /**
+   * Missing capabilities grouped with every affected consumer.
+   *
+   * @generated from field: repeated ar.v1.ARUnmetResourceRequirement unmet_requirements = 5;
+   */
+  unmetRequirements: ARUnmetResourceRequirement[];
 };
 
 /**
@@ -50,7 +127,7 @@ export type ARResourceBinding = Message<"ar.v1.ARResourceBinding"> & {
  * Use `create(ARResourceBindingSchema)` to create a new message.
  */
 export const ARResourceBindingSchema: GenMessage<ARResourceBinding> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 0);
+  messageDesc(file_ar_v1_ar_config_binding, 2);
 
 /**
  * ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
@@ -153,7 +230,7 @@ export type ARConfigBindingMessage = Message<"ar.v1.ARConfigBindingMessage"> & {
  * Use `create(ARConfigBindingMessageSchema)` to create a new message.
  */
 export const ARConfigBindingMessageSchema: GenMessage<ARConfigBindingMessage> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 1);
+  messageDesc(file_ar_v1_ar_config_binding, 3);
 
 /**
  * @generated from message ar.v1.ARConfigBindingMessages
@@ -172,5 +249,47 @@ export type ARConfigBindingMessages = Message<"ar.v1.ARConfigBindingMessages"> &
  * Use `create(ARConfigBindingMessagesSchema)` to create a new message.
  */
 export const ARConfigBindingMessagesSchema: GenMessage<ARConfigBindingMessages> = /*@__PURE__*/
-  messageDesc(file_ar_v1_ar_config_binding, 2);
+  messageDesc(file_ar_v1_ar_config_binding, 4);
+
+/**
+ * ARResourceBindingStatus is the result of evaluating a concrete resource
+ * against a slot's explicit and consumer-derived requirements.
+ *
+ * @generated from enum ar.v1.ARResourceBindingStatus
+ */
+export enum ARResourceBindingStatus {
+  /**
+   * @generated from enum value: AR_RESOURCE_BINDING_STATUS_UNSPECIFIED = 0;
+   */
+  AR_RESOURCE_BINDING_STATUS_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: AR_RESOURCE_BINDING_STATUS_SATISFIED = 1;
+   */
+  AR_RESOURCE_BINDING_STATUS_SATISFIED = 1,
+
+  /**
+   * @generated from enum value: AR_RESOURCE_BINDING_STATUS_DEGRADED = 2;
+   */
+  AR_RESOURCE_BINDING_STATUS_DEGRADED = 2,
+
+  /**
+   * @generated from enum value: AR_RESOURCE_BINDING_STATUS_UNSATISFIED = 3;
+   */
+  AR_RESOURCE_BINDING_STATUS_UNSATISFIED = 3,
+
+  /**
+   * Transient status while an existing binding is being re-evaluated. A new
+   * binding must still be rejected when the adapter has never reported.
+   *
+   * @generated from enum value: AR_RESOURCE_BINDING_STATUS_UNVERIFIED = 4;
+   */
+  AR_RESOURCE_BINDING_STATUS_UNVERIFIED = 4,
+}
+
+/**
+ * Describes the enum ar.v1.ARResourceBindingStatus.
+ */
+export const ARResourceBindingStatusSchema: GenEnum<ARResourceBindingStatus> = /*@__PURE__*/
+  enumDesc(file_ar_v1_ar_config_binding, 0);
 

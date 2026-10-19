@@ -2,6 +2,7 @@ syntax = "proto3";
 package ar.v1;
 
 import "buf/validate/validate.proto";
+import "resources/v1/resource_requirement.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
@@ -172,6 +173,18 @@ message ARInputSlotMessage {
     expression: "(this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID) == has(this.run_selector)"
   };
 
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot.explicit_requirements_match_resource_type"
+    message: "explicit constraints must select a signal or an asset type compatible with the slot"
+    expression:
+      "this.explicit_requirements.all(requirement, "
+      "this.resource_type == ar.v1.ARResourceSlotType.AR_RESOURCE_SLOT_TYPE_ROBOT "
+      "? has(requirement.signal) && (has(requirement.signal.signal_id) || has(requirement.signal.semantic)) "
+      ": this.resource_type == ar.v1.ARResourceSlotType.AR_RESOURCE_SLOT_TYPE_ASSET "
+      "? has(requirement.asset_type) || (has(requirement.signal) && (has(requirement.signal.signal_id) || has(requirement.signal.semantic))) "
+      ": false)"
+  };
+
   string id = 1 [(buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true]; // Stable slot identifier used by configs and runtime resolution.
   string config_id = 2 [
     (buf.validate.field).required = true,
@@ -187,6 +200,7 @@ message ARInputSlotMessage {
   ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a concrete resource binding.
   ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Selected when this slot expects a runtime context value.
   ARRunContextSelector run_selector = 10; // Required resolution policy for process, sequence, and task run context slots.
+  repeated resources.v1.ResourceRequirement explicit_requirements = 11; // Author-authored constraints in addition to requirements derived from consumers.
 }
 
 message ARInputSlotMessages {
@@ -220,6 +234,18 @@ message ARInputSlotAddMessage {
     expression: "(this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID || this.context_type == ar.v1.ARContextSlotType.AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID) == has(this.run_selector)"
   };
 
+  option (buf.validate.message).cel = {
+    id: "ar_input_slot.explicit_requirements_match_resource_type"
+    message: "explicit constraints must select a signal or an asset type compatible with the slot"
+    expression:
+      "this.explicit_requirements.all(requirement, "
+      "this.resource_type == ar.v1.ARResourceSlotType.AR_RESOURCE_SLOT_TYPE_ROBOT "
+      "? has(requirement.signal) && (has(requirement.signal.signal_id) || has(requirement.signal.semantic)) "
+      ": this.resource_type == ar.v1.ARResourceSlotType.AR_RESOURCE_SLOT_TYPE_ASSET "
+      "? has(requirement.asset_type) || (has(requirement.signal) && (has(requirement.signal.signal_id) || has(requirement.signal.semantic))) "
+      ": false)"
+  };
+
   string config_id = 1 [
     (buf.validate.field).string.(validation.v1.ar_config_id_component) = true,
     (buf.validate.field).required = true
@@ -230,6 +256,7 @@ message ARInputSlotAddMessage {
   ARResourceSlotType resource_type = 8 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be bound to a resource instance.
   ARContextSlotType context_type = 9 [(buf.validate.field).enum.defined_only = true]; // Use for slots that should be populated from runtime context.
   ARRunContextSelector run_selector = 10; // Required resolution policy for process, sequence, and task run context slots.
+  repeated resources.v1.ResourceRequirement explicit_requirements = 11; // Initial author-authored resource constraints.
 }
 
 // ARInputSlotUpdateMessage updates the editable fields and resolution policy of
@@ -244,6 +271,7 @@ message ARInputSlotUpdateMessage {
   string icon = 3;
   string description = 4;
   ARRunContextSelector run_selector = 6; // Optional replacement policy; valid only for an existing run-context slot. The backend must load the existing slot and verify that the selector matches its immutable context_type.
+  resources.v1.ResourceRequirements explicit_requirements = 7; // When present, replaces the explicit constraints of an existing resource slot. The backend must load the slot and enforce the same signal/asset-type compatibility rules as ARInputSlotMessage.
 }
 
 message ARInputSlotDeleteMessage {

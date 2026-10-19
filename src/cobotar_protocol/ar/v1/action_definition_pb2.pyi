@@ -3,6 +3,7 @@ from ar.v1 import definition_status_pb2 as _definition_status_pb2
 from ar.v1 import execution_contract_pb2 as _execution_contract_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from common.v1 import property_pb2 as _property_pb2
+from resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -25,7 +26,7 @@ ACTION_GROUP_ROBOT: ActionGroup
 ACTION_GROUP_TASK: ActionGroup
 
 class ActionDefinition(_message.Message):
-    __slots__ = ("id", "key", "name", "icon", "description", "type", "group", "revision", "status", "properties", "execution")
+    __slots__ = ("id", "key", "name", "icon", "description", "type", "group", "revision", "status", "properties", "execution", "resource_requirements")
     ID_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -37,6 +38,7 @@ class ActionDefinition(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     EXECUTION_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_REQUIREMENTS_FIELD_NUMBER: _ClassVar[int]
     id: str
     key: str
     name: str
@@ -48,7 +50,8 @@ class ActionDefinition(_message.Message):
     status: _definition_status_pb2.DefinitionStatus
     properties: _containers.RepeatedCompositeFieldContainer[_property_pb2.PropertyTemplate]
     execution: _execution_contract_pb2.ExecutionContract
-    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_action_pb2.ActionType, str]] = ..., group: _Optional[_Union[ActionGroup, str]] = ..., revision: _Optional[int] = ..., status: _Optional[_Union[_definition_status_pb2.DefinitionStatus, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.PropertyTemplate, _Mapping]]] = ..., execution: _Optional[_Union[_execution_contract_pb2.ExecutionContract, _Mapping]] = ...) -> None: ...
+    resource_requirements: _containers.RepeatedCompositeFieldContainer[_resource_requirement_pb2.ConsumerResourceRequirement]
+    def __init__(self, id: _Optional[str] = ..., key: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[_action_pb2.ActionType, str]] = ..., group: _Optional[_Union[ActionGroup, str]] = ..., revision: _Optional[int] = ..., status: _Optional[_Union[_definition_status_pb2.DefinitionStatus, str]] = ..., properties: _Optional[_Iterable[_Union[_property_pb2.PropertyTemplate, _Mapping]]] = ..., execution: _Optional[_Union[_execution_contract_pb2.ExecutionContract, _Mapping]] = ..., resource_requirements: _Optional[_Iterable[_Union[_resource_requirement_pb2.ConsumerResourceRequirement, _Mapping]]] = ...) -> None: ...
 
 class ActionDefinitions(_message.Message):
     __slots__ = ("items",)

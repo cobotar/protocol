@@ -8,7 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v11 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/messages/resources/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -24,20 +25,206 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// ARResourceBindingStatus is the result of evaluating a concrete resource
+// against a slot's explicit and consumer-derived requirements.
+type ARResourceBindingStatus int32
+
+const (
+	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNSPECIFIED ARResourceBindingStatus = 0
+	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_SATISFIED   ARResourceBindingStatus = 1
+	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_DEGRADED    ARResourceBindingStatus = 2
+	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNSATISFIED ARResourceBindingStatus = 3
+	// Transient status while an existing binding is being re-evaluated. A new
+	// binding must still be rejected when the adapter has never reported.
+	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNVERIFIED ARResourceBindingStatus = 4
+)
+
+// Enum value maps for ARResourceBindingStatus.
+var (
+	ARResourceBindingStatus_name = map[int32]string{
+		0: "AR_RESOURCE_BINDING_STATUS_UNSPECIFIED",
+		1: "AR_RESOURCE_BINDING_STATUS_SATISFIED",
+		2: "AR_RESOURCE_BINDING_STATUS_DEGRADED",
+		3: "AR_RESOURCE_BINDING_STATUS_UNSATISFIED",
+		4: "AR_RESOURCE_BINDING_STATUS_UNVERIFIED",
+	}
+	ARResourceBindingStatus_value = map[string]int32{
+		"AR_RESOURCE_BINDING_STATUS_UNSPECIFIED": 0,
+		"AR_RESOURCE_BINDING_STATUS_SATISFIED":   1,
+		"AR_RESOURCE_BINDING_STATUS_DEGRADED":    2,
+		"AR_RESOURCE_BINDING_STATUS_UNSATISFIED": 3,
+		"AR_RESOURCE_BINDING_STATUS_UNVERIFIED":  4,
+	}
+)
+
+func (x ARResourceBindingStatus) Enum() *ARResourceBindingStatus {
+	p := new(ARResourceBindingStatus)
+	*p = x
+	return p
+}
+
+func (x ARResourceBindingStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ARResourceBindingStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_ar_v1_ar_config_binding_proto_enumTypes[0].Descriptor()
+}
+
+func (ARResourceBindingStatus) Type() protoreflect.EnumType {
+	return &file_ar_v1_ar_config_binding_proto_enumTypes[0]
+}
+
+func (x ARResourceBindingStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ARResourceBindingStatus.Descriptor instead.
+func (ARResourceBindingStatus) EnumDescriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{0}
+}
+
+// ARResourceRequirementConsumer identifies the config entity affected by an
+// unmet requirement. An input slot is the consumer for an explicit constraint.
+type ARResourceRequirementConsumer struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	InputSlotId   string                 `protobuf:"bytes,1,opt,name=input_slot_id,json=inputSlotId,proto3" json:"input_slot_id,omitempty"`
+	FeedbackId    string                 `protobuf:"bytes,2,opt,name=feedback_id,json=feedbackId,proto3" json:"feedback_id,omitempty"`
+	ActionId      string                 `protobuf:"bytes,3,opt,name=action_id,json=actionId,proto3" json:"action_id,omitempty"`
+	FunctionId    string                 `protobuf:"bytes,4,opt,name=function_id,json=functionId,proto3" json:"function_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ARResourceRequirementConsumer) Reset() {
+	*x = ARResourceRequirementConsumer{}
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ARResourceRequirementConsumer) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ARResourceRequirementConsumer) ProtoMessage() {}
+
+func (x *ARResourceRequirementConsumer) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ARResourceRequirementConsumer.ProtoReflect.Descriptor instead.
+func (*ARResourceRequirementConsumer) Descriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ARResourceRequirementConsumer) GetInputSlotId() string {
+	if x != nil {
+		return x.InputSlotId
+	}
+	return ""
+}
+
+func (x *ARResourceRequirementConsumer) GetFeedbackId() string {
+	if x != nil {
+		return x.FeedbackId
+	}
+	return ""
+}
+
+func (x *ARResourceRequirementConsumer) GetActionId() string {
+	if x != nil {
+		return x.ActionId
+	}
+	return ""
+}
+
+func (x *ARResourceRequirementConsumer) GetFunctionId() string {
+	if x != nil {
+		return x.FunctionId
+	}
+	return ""
+}
+
+// ARUnmetResourceRequirement reports one unmet requirement and every consumer
+// affected by it. Clients can group these entries by consumer to determine
+// which optional features must degrade.
+type ARUnmetResourceRequirement struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Requirement   *v1.ResourceRequirement          `protobuf:"bytes,1,opt,name=requirement,proto3" json:"requirement,omitempty"`
+	Consumers     []*ARResourceRequirementConsumer `protobuf:"bytes,2,rep,name=consumers,proto3" json:"consumers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ARUnmetResourceRequirement) Reset() {
+	*x = ARUnmetResourceRequirement{}
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ARUnmetResourceRequirement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ARUnmetResourceRequirement) ProtoMessage() {}
+
+func (x *ARUnmetResourceRequirement) ProtoReflect() protoreflect.Message {
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ARUnmetResourceRequirement.ProtoReflect.Descriptor instead.
+func (*ARUnmetResourceRequirement) Descriptor() ([]byte, []int) {
+	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ARUnmetResourceRequirement) GetRequirement() *v1.ResourceRequirement {
+	if x != nil {
+		return x.Requirement
+	}
+	return nil
+}
+
+func (x *ARUnmetResourceRequirement) GetConsumers() []*ARResourceRequirementConsumer {
+	if x != nil {
+		return x.Consumers
+	}
+	return nil
+}
+
 // ARResourceBinding binds a config-declared slot to a concrete resource
 // instance owned by the target station or cell.
 type ARResourceBinding struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	SlotId          string                 `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                              // Config-declared slot to satisfy.
-	RobotInstanceId string                 `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"` // Concrete robot instance selected for the slot.
-	AssetInstanceId string                 `protobuf:"bytes,3,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"` // Concrete asset instance selected for the slot.
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state             protoimpl.MessageState        `protogen:"open.v1"`
+	SlotId            string                        `protobuf:"bytes,1,opt,name=slot_id,json=slotId,proto3" json:"slot_id,omitempty"`                                  // Config-declared slot to satisfy.
+	RobotInstanceId   string                        `protobuf:"bytes,2,opt,name=robot_instance_id,json=robotInstanceId,proto3" json:"robot_instance_id,omitempty"`     // Concrete robot instance selected for the slot.
+	AssetInstanceId   string                        `protobuf:"bytes,3,opt,name=asset_instance_id,json=assetInstanceId,proto3" json:"asset_instance_id,omitempty"`     // Concrete asset instance selected for the slot.
+	Status            ARResourceBindingStatus       `protobuf:"varint,4,opt,name=status,proto3,enum=ar.v1.ARResourceBindingStatus" json:"status,omitempty"`            // Server-evaluated status; UNSPECIFIED is accepted only before evaluation.
+	UnmetRequirements []*ARUnmetResourceRequirement `protobuf:"bytes,5,rep,name=unmet_requirements,json=unmetRequirements,proto3" json:"unmet_requirements,omitempty"` // Missing capabilities grouped with every affected consumer.
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ARResourceBinding) Reset() {
 	*x = ARResourceBinding{}
-	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[0]
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49,7 +236,7 @@ func (x *ARResourceBinding) String() string {
 func (*ARResourceBinding) ProtoMessage() {}
 
 func (x *ARResourceBinding) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[0]
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +249,7 @@ func (x *ARResourceBinding) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ARResourceBinding.ProtoReflect.Descriptor instead.
 func (*ARResourceBinding) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{0}
+	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ARResourceBinding) GetSlotId() string {
@@ -86,6 +273,20 @@ func (x *ARResourceBinding) GetAssetInstanceId() string {
 	return ""
 }
 
+func (x *ARResourceBinding) GetStatus() ARResourceBindingStatus {
+	if x != nil {
+		return x.Status
+	}
+	return ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNSPECIFIED
+}
+
+func (x *ARResourceBinding) GetUnmetRequirements() []*ARUnmetResourceRequirement {
+	if x != nil {
+		return x.UnmetRequirements
+	}
+	return nil
+}
+
 // ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
 // workspace.
 //
@@ -99,26 +300,26 @@ func (x *ARResourceBinding) GetAssetInstanceId() string {
 // This keeps ARConfig authoring reusable while making station/cell-specific
 // resource wiring explicit and safe.
 type ARConfigBindingMessage struct {
-	state             protoimpl.MessageState       `protogen:"open.v1"`
-	Id                string                       `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable binding identifier.
-	Name              string                       `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon              string                       `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description       string                       `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	StationId         string                       `protobuf:"bytes,5,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                          // Station this binding targets directly.
-	CellId            string                       `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                                   // Cell this binding targets directly.
-	ArConfigId        string                       `protobuf:"bytes,7,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`                     // Reusable AR config template to bind.
-	Disabled          bool                         `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"`                                            // If true, the binding should be ignored by resolution.
-	Standalone        bool                         `protobuf:"varint,9,opt,name=standalone,proto3" json:"standalone,omitempty"`                                        // If true, only standalone bindings with the highest priority should be shown.
-	Priority          int32                        `protobuf:"varint,10,opt,name=priority,proto3" json:"priority,omitempty"`                                           // Higher values should be resolved before lower values.
-	ResourceBindings  []*ARResourceBinding         `protobuf:"bytes,11,rep,name=resource_bindings,json=resourceBindings,proto3" json:"resource_bindings,omitempty"`    // Concrete resource assignments for config-declared slots.
-	PropertyOverrides []*v1.PropertyInstanceUpdate `protobuf:"bytes,12,rep,name=property_overrides,json=propertyOverrides,proto3" json:"property_overrides,omitempty"` // Station/cell-local values applied to config properties before runtime values.
+	state             protoimpl.MessageState        `protogen:"open.v1"`
+	Id                string                        `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // Stable binding identifier.
+	Name              string                        `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon              string                        `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description       string                        `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	StationId         string                        `protobuf:"bytes,5,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`                          // Station this binding targets directly.
+	CellId            string                        `protobuf:"bytes,6,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                                   // Cell this binding targets directly.
+	ArConfigId        string                        `protobuf:"bytes,7,opt,name=ar_config_id,json=arConfigId,proto3" json:"ar_config_id,omitempty"`                     // Reusable AR config template to bind.
+	Disabled          bool                          `protobuf:"varint,8,opt,name=disabled,proto3" json:"disabled,omitempty"`                                            // If true, the binding should be ignored by resolution.
+	Standalone        bool                          `protobuf:"varint,9,opt,name=standalone,proto3" json:"standalone,omitempty"`                                        // If true, only standalone bindings with the highest priority should be shown.
+	Priority          int32                         `protobuf:"varint,10,opt,name=priority,proto3" json:"priority,omitempty"`                                           // Higher values should be resolved before lower values.
+	ResourceBindings  []*ARResourceBinding          `protobuf:"bytes,11,rep,name=resource_bindings,json=resourceBindings,proto3" json:"resource_bindings,omitempty"`    // Concrete resource assignments for config-declared slots.
+	PropertyOverrides []*v11.PropertyInstanceUpdate `protobuf:"bytes,12,rep,name=property_overrides,json=propertyOverrides,proto3" json:"property_overrides,omitempty"` // Station/cell-local values applied to config properties before runtime values.
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ARConfigBindingMessage) Reset() {
 	*x = ARConfigBindingMessage{}
-	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[1]
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +331,7 @@ func (x *ARConfigBindingMessage) String() string {
 func (*ARConfigBindingMessage) ProtoMessage() {}
 
 func (x *ARConfigBindingMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[1]
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +344,7 @@ func (x *ARConfigBindingMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ARConfigBindingMessage.ProtoReflect.Descriptor instead.
 func (*ARConfigBindingMessage) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{1}
+	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ARConfigBindingMessage) GetId() string {
@@ -223,7 +424,7 @@ func (x *ARConfigBindingMessage) GetResourceBindings() []*ARResourceBinding {
 	return nil
 }
 
-func (x *ARConfigBindingMessage) GetPropertyOverrides() []*v1.PropertyInstanceUpdate {
+func (x *ARConfigBindingMessage) GetPropertyOverrides() []*v11.PropertyInstanceUpdate {
 	if x != nil {
 		return x.PropertyOverrides
 	}
@@ -239,7 +440,7 @@ type ARConfigBindingMessages struct {
 
 func (x *ARConfigBindingMessages) Reset() {
 	*x = ARConfigBindingMessages{}
-	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[2]
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +452,7 @@ func (x *ARConfigBindingMessages) String() string {
 func (*ARConfigBindingMessages) ProtoMessage() {}
 
 func (x *ARConfigBindingMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[2]
+	mi := &file_ar_v1_ar_config_binding_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +465,7 @@ func (x *ARConfigBindingMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ARConfigBindingMessages.ProtoReflect.Descriptor instead.
 func (*ARConfigBindingMessages) Descriptor() ([]byte, []int) {
-	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{2}
+	return file_ar_v1_ar_config_binding_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ARConfigBindingMessages) GetBindings() []*ARConfigBindingMessage {
@@ -278,13 +479,32 @@ var File_ar_v1_ar_config_binding_proto protoreflect.FileDescriptor
 
 const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"\n" +
-	"\x1dar/v1/ar_config_binding.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd4\x01\n" +
-	"\x11ARResourceBinding\x12\"\n" +
-	"\aslot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x06slotId\x125\n" +
+	"\x1dar/v1/ar_config_binding.proto\x12\x05ar.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8b\x02\n" +
+	"\x1dARResourceRequirementConsumer\x12-\n" +
+	"\rinput_slot_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\vinputSlotId\x12*\n" +
+	"\vfeedback_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc0\xf3\x04\x01R\n" +
+	"feedbackId\x12&\n" +
+	"\taction_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\bactionId\x12*\n" +
+	"\vfunction_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xd0\xf3\x04\x01R\n" +
+	"functionId:;\xbaH8\"6\n" +
+	"\rinput_slot_id\n" +
+	"\vfeedback_id\n" +
+	"\taction_id\n" +
+	"\vfunction_id\x10\x01\"\x90\x03\n" +
+	"\x1aARUnmetResourceRequirement\x12K\n" +
+	"\vrequirement\x18\x01 \x01(\v2!.resources.v1.ResourceRequirementB\x06\xbaH\x03\xc8\x01\x01R\vrequirement\x12\xa4\x02\n" +
+	"\tconsumers\x18\x02 \x03(\v2$.ar.v1.ARResourceRequirementConsumerB\xdf\x01\xbaH\xdb\x01\xba\x01\xd2\x01\n" +
+	"2ar_unmet_resource_requirement.consumers.unique_ids\x12$affected consumer ids must be unique\x1avthis.map(consumer, consumer.input_slot_id + consumer.feedback_id + consumer.action_id + consumer.function_id).unique()\x92\x01\x02\b\x01R\tconsumers\"\xca\n" +
+	"\n" +
+	"\x11ARResourceBinding\x12%\n" +
+	"\aslot_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xeb0\x01R\x06slotId\x125\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\x125\n" +
-	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId:-\xbaH*\"(\n" +
+	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId\x12@\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x1e.ar.v1.ARResourceBindingStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12P\n" +
+	"\x12unmet_requirements\x18\x05 \x03(\v2!.ar.v1.ARUnmetResourceRequirementR\x11unmetRequirements:\x8b\b\xbaH\x87\b\x1a\xda\a\n" +
+	"5ar_resource_binding.status_matches_unmet_requirements\x125binding status must agree with its unmet requirements\x1a\xe9\x06(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSPECIFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_SATISFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_DEGRADED && this.unmet_requirements.size() > 0 && this.unmet_requirements.all(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_OPTIONAL)) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSATISFIED && this.unmet_requirements.exists(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED)) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0)\"(\n" +
 	"\x11robot_instance_id\n" +
-	"\x11asset_instance_id\x10\x01\"\x95\x04\n" +
+	"\x11asset_instance_id\x10\x01\"\xb5\x05\n" +
 	"\x16ARConfigBindingMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe8\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -300,14 +520,21 @@ const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"standalone\x18\t \x01(\bR\n" +
 	"standalone\x12\x1a\n" +
 	"\bpriority\x18\n" +
-	" \x01(\x05R\bpriority\x12E\n" +
-	"\x11resource_bindings\x18\v \x03(\v2\x18.ar.v1.ARResourceBindingR\x10resourceBindings\x12P\n" +
+	" \x01(\x05R\bpriority\x12\xe4\x01\n" +
+	"\x11resource_bindings\x18\v \x03(\v2\x18.ar.v1.ARResourceBindingB\x9c\x01\xbaH\x98\x01\xba\x01\x94\x01\n" +
+	"3ar_config_binding.resource_bindings.unique_slot_ids\x120resource bindings must target unique input slots\x1a+this.map(binding, binding.slot_id).unique()R\x10resourceBindings\x12P\n" +
 	"\x12property_overrides\x18\f \x03(\v2!.common.v1.PropertyInstanceUpdateR\x11propertyOverrides:\x1c\xbaH\x19\"\x17\n" +
 	"\n" +
 	"station_id\n" +
 	"\acell_id\x10\x01\"T\n" +
 	"\x17ARConfigBindingMessages\x129\n" +
-	"\bbindings\x18\x01 \x03(\v2\x1d.ar.v1.ARConfigBindingMessageR\bbindingsB\x90\x01\n" +
+	"\bbindings\x18\x01 \x03(\v2\x1d.ar.v1.ARConfigBindingMessageR\bbindings*\xef\x01\n" +
+	"\x17ARResourceBindingStatus\x12*\n" +
+	"&AR_RESOURCE_BINDING_STATUS_UNSPECIFIED\x10\x00\x12(\n" +
+	"$AR_RESOURCE_BINDING_STATUS_SATISFIED\x10\x01\x12'\n" +
+	"#AR_RESOURCE_BINDING_STATUS_DEGRADED\x10\x02\x12*\n" +
+	"&AR_RESOURCE_BINDING_STATUS_UNSATISFIED\x10\x03\x12)\n" +
+	"%AR_RESOURCE_BINDING_STATUS_UNVERIFIED\x10\x04B\x90\x01\n" +
 	"\tcom.ar.v1B\x14ArConfigBindingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
@@ -322,22 +549,31 @@ func file_ar_v1_ar_config_binding_proto_rawDescGZIP() []byte {
 	return file_ar_v1_ar_config_binding_proto_rawDescData
 }
 
-var file_ar_v1_ar_config_binding_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_ar_v1_ar_config_binding_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_ar_v1_ar_config_binding_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_ar_v1_ar_config_binding_proto_goTypes = []any{
-	(*ARResourceBinding)(nil),         // 0: ar.v1.ARResourceBinding
-	(*ARConfigBindingMessage)(nil),    // 1: ar.v1.ARConfigBindingMessage
-	(*ARConfigBindingMessages)(nil),   // 2: ar.v1.ARConfigBindingMessages
-	(*v1.PropertyInstanceUpdate)(nil), // 3: common.v1.PropertyInstanceUpdate
+	(ARResourceBindingStatus)(0),          // 0: ar.v1.ARResourceBindingStatus
+	(*ARResourceRequirementConsumer)(nil), // 1: ar.v1.ARResourceRequirementConsumer
+	(*ARUnmetResourceRequirement)(nil),    // 2: ar.v1.ARUnmetResourceRequirement
+	(*ARResourceBinding)(nil),             // 3: ar.v1.ARResourceBinding
+	(*ARConfigBindingMessage)(nil),        // 4: ar.v1.ARConfigBindingMessage
+	(*ARConfigBindingMessages)(nil),       // 5: ar.v1.ARConfigBindingMessages
+	(*v1.ResourceRequirement)(nil),        // 6: resources.v1.ResourceRequirement
+	(*v11.PropertyInstanceUpdate)(nil),    // 7: common.v1.PropertyInstanceUpdate
 }
 var file_ar_v1_ar_config_binding_proto_depIdxs = []int32{
-	0, // 0: ar.v1.ARConfigBindingMessage.resource_bindings:type_name -> ar.v1.ARResourceBinding
-	3, // 1: ar.v1.ARConfigBindingMessage.property_overrides:type_name -> common.v1.PropertyInstanceUpdate
-	1, // 2: ar.v1.ARConfigBindingMessages.bindings:type_name -> ar.v1.ARConfigBindingMessage
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	6, // 0: ar.v1.ARUnmetResourceRequirement.requirement:type_name -> resources.v1.ResourceRequirement
+	1, // 1: ar.v1.ARUnmetResourceRequirement.consumers:type_name -> ar.v1.ARResourceRequirementConsumer
+	0, // 2: ar.v1.ARResourceBinding.status:type_name -> ar.v1.ARResourceBindingStatus
+	2, // 3: ar.v1.ARResourceBinding.unmet_requirements:type_name -> ar.v1.ARUnmetResourceRequirement
+	3, // 4: ar.v1.ARConfigBindingMessage.resource_bindings:type_name -> ar.v1.ARResourceBinding
+	7, // 5: ar.v1.ARConfigBindingMessage.property_overrides:type_name -> common.v1.PropertyInstanceUpdate
+	4, // 6: ar.v1.ARConfigBindingMessages.bindings:type_name -> ar.v1.ARConfigBindingMessage
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_ar_config_binding_proto_init() }
@@ -350,13 +586,14 @@ func file_ar_v1_ar_config_binding_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ar_v1_ar_config_binding_proto_rawDesc), len(file_ar_v1_ar_config_binding_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   3,
+			NumEnums:      1,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_ar_v1_ar_config_binding_proto_goTypes,
 		DependencyIndexes: file_ar_v1_ar_config_binding_proto_depIdxs,
+		EnumInfos:         file_ar_v1_ar_config_binding_proto_enumTypes,
 		MessageInfos:      file_ar_v1_ar_config_binding_proto_msgTypes,
 	}.Build()
 	File_ar_v1_ar_config_binding_proto = out.File

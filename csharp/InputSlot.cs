@@ -25,100 +25,133 @@ namespace Messages.AR.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZhci92MS9pbnB1dF9zbG90LnByb3RvEgVhci52MRobYnVmL3ZhbGlkYXRl",
-            "L3ZhbGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3Ry",
-            "aW5nX3J1bGVzLnByb3RvIpgBCg9BUkFjdG9yU2VsZWN0b3ISJQoOY3VycmVu",
-            "dF93b3JrZXIYASABKAhSDWN1cnJlbnRXb3JrZXISMwoQcmVzb3VyY2Vfc2xv",
-            "dF9pZBgCIAEoCUIJukgGcgT46zABUg5yZXNvdXJjZVNsb3RJZDopukgmIiQK",
-            "DmN1cnJlbnRfd29ya2VyChByZXNvdXJjZV9zbG90X2lkEAEijgEKFEFSUnVu",
-            "Q29udGV4dFNlbGVjdG9yEkAKCXNlbGVjdGlvbhgBIAEoDjIVLmFyLnYxLkFS",
-            "UnVuU2VsZWN0aW9uQgu6SAiCAQIQAcgBAVIJc2VsZWN0aW9uEjQKBWFjdG9y",
-            "GAIgASgLMhYuYXIudjEuQVJBY3RvclNlbGVjdG9yQga6SAPIAQFSBWFjdG9y",
-            "IpwJChJBUklucHV0U2xvdE1lc3NhZ2USGQoCaWQYASABKAlCCbpIBnIE+Osw",
-            "AVICaWQSKQoJY29uZmlnX2lkGAIgASgJQgy6SAlyBJDxBAHIAQFSCGNvbmZp",
-            "Z0lkEh0KBG5hbWUYAyABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAQg",
-            "ASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAUgASgJUgtkZXNjcmlwdGlvbhJA",
-            "ChVnZW5lcmF0ZWRfcHJvcGVydHlfaWQYByABKAlCDLpICXIEmPEEAcgBAVIT",
-            "Z2VuZXJhdGVkUHJvcGVydHlJZBJICg1yZXNvdXJjZV90eXBlGAggASgOMhku",
-            "YXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVzb3VyY2VU",
-            "eXBlEkUKDGNvbnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNs",
-            "b3RUeXBlQgi6SAWCAQIQAVILY29udGV4dFR5cGUSPgoMcnVuX3NlbGVjdG9y",
-            "GAogASgLMhsuYXIudjEuQVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1blNlbGVj",
-            "dG9yOtcFukjTBRqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25f",
-            "cmVxdWlyZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBm",
-            "b3IgVEFTS19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0",
-            "aGlzLnJ1bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxl",
-            "Y3Rpb24uQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlz",
-            "LmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9D",
-            "T05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xv",
-            "dC5ydW5fc2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxl",
-            "Y3RvciBpcyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHBy",
-            "b2hpYml0ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFy",
-            "LnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BS",
-            "T0NFU1NfUlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFS",
-            "Q29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNF",
-            "X1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRl",
-            "eHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkg",
-            "PT0gaGFzKHRoaXMucnVuX3NlbGVjdG9yKSIfCg1yZXNvdXJjZV90eXBlCgxj",
-            "b250ZXh0X3R5cGUQASJGChNBUklucHV0U2xvdE1lc3NhZ2VzEi8KBXNsb3Rz",
-            "GAEgAygLMhkuYXIudjEuQVJJbnB1dFNsb3RNZXNzYWdlUgVzbG90cyLCCAoV",
-            "QVJJbnB1dFNsb3RBZGRNZXNzYWdlEikKCWNvbmZpZ19pZBgBIAEoCUIMukgJ",
-            "cgSQ8QQByAEBUghjb25maWdJZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFS",
-            "BG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEo",
-            "CVILZGVzY3JpcHRpb24SSAoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYx",
-            "LkFSUmVzb3VyY2VTbG90VHlwZUIIukgFggECEAFSDHJlc291cmNlVHlwZRJF",
-            "Cgxjb250ZXh0X3R5cGUYCSABKA4yGC5hci52MS5BUkNvbnRleHRTbG90VHlw",
-            "ZUIIukgFggECEAFSC2NvbnRleHRUeXBlEj4KDHJ1bl9zZWxlY3RvchgKIAEo",
-            "CzIbLmFyLnYxLkFSUnVuQ29udGV4dFNlbGVjdG9yUgtydW5TZWxlY3RvcjrX",
-            "BbpI0wUanQIKK2FyX2lucHV0X3Nsb3QuZXJyb3Jfc2VsZWN0aW9uX3JlcXVp",
-            "cmVzX3Rhc2sSLEZJUlNUX0lOX0VSUk9SIGlzIG9ubHkgdmFsaWQgZm9yIFRB",
-            "U0tfUlVOX0lEGr8BIWhhcyh0aGlzLnJ1bl9zZWxlY3RvcikgfHwgdGhpcy5y",
-            "dW5fc2VsZWN0b3Iuc2VsZWN0aW9uICE9IGFyLnYxLkFSUnVuU2VsZWN0aW9u",
-            "LkFSX1JVTl9TRUxFQ1RJT05fRklSU1RfSU5fRVJST1IgfHwgdGhpcy5jb250",
-            "ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09OVEVY",
-            "VF9TTE9UX1RZUEVfVEFTS19SVU5fSUQajwMKL2FyX2lucHV0X3Nsb3QucnVu",
-            "X3NlbGVjdG9yX21hdGNoZXNfY29udGV4dF90eXBlEkdydW5fc2VsZWN0b3Ig",
-            "aXMgcmVxdWlyZWQgZm9yIHJ1biBjb250ZXh0IHNsb3RzIGFuZCBwcm9oaWJp",
-            "dGVkIG90aGVyd2lzZRqSAih0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5B",
-            "UkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9QUk9DRVNT",
-            "X1JVTl9JRCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRl",
-            "eHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5f",
-            "SUQgfHwgdGhpcy5jb250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xv",
-            "dFR5cGUuQVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQpID09IGhh",
-            "cyh0aGlzLnJ1bl9zZWxlY3RvcikiHwoNcmVzb3VyY2VfdHlwZQoMY29udGV4",
-            "dF90eXBlEAEiygEKGEFSSW5wdXRTbG90VXBkYXRlTWVzc2FnZRIZCgJpZBgB",
-            "IAEoCUIJukgGcgT46zABUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFS",
-            "BG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEo",
-            "CVILZGVzY3JpcHRpb24SPgoMcnVuX3NlbGVjdG9yGAYgASgLMhsuYXIudjEu",
-            "QVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1blNlbGVjdG9yIjgKGEFSSW5wdXRT",
-            "bG90RGVsZXRlTWVzc2FnZRIcCgJpZBgBIAEoCUIMukgJcgT46zAByAEBUgJp",
-            "ZCp9ChJBUlJlc291cmNlU2xvdFR5cGUSJQohQVJfUkVTT1VSQ0VfU0xPVF9U",
-            "WVBFX1VOU1BFQ0lGSUVEEAASHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX1JP",
-            "Qk9UEAESHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FTU0VUEAIqvwIKEUFS",
-            "Q29udGV4dFNsb3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xPVF9UWVBFX1VOU1BF",
-            "Q0lGSUVEEAASIAocQVJfQ09OVEVYVF9TTE9UX1RZUEVfTElORV9JRBABEiAK",
-            "HEFSX0NPTlRFWFRfU0xPVF9UWVBFX0NFTExfSUQQAhIjCh9BUl9DT05URVhU",
-            "X1NMT1RfVFlQRV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09OVEVYVF9TTE9UX1RZ",
-            "UEVfV09SS0VSX0lEEAQSJwojQVJfQ09OVEVYVF9TTE9UX1RZUEVfUFJPQ0VT",
-            "U19SVU5fSUQQBRIoCiRBUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9S",
-            "VU5fSUQQBhIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBAH",
-            "KuwBCg5BUlJ1blNlbGVjdGlvbhIgChxBUl9SVU5fU0VMRUNUSU9OX1VOU1BF",
-            "Q0lGSUVEEAASIwofQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9XT1JLQUJMRRAB",
-            "EiUKIUFSX1JVTl9TRUxFQ1RJT05fQ1VSUkVOVF9BU1NJR05FRBACEiIKHkFS",
-            "X1JVTl9TRUxFQ1RJT05fTkVYVF9FWFBFQ1RFRBADEiMKH0FSX1JVTl9TRUxF",
-            "Q1RJT05fTEFTVF9DT01QTEVURUQQBBIjCh9BUl9SVU5fU0VMRUNUSU9OX0ZJ",
-            "UlNUX0lOX0VSUk9SEAVCigEKCWNvbS5hci52MUIOSW5wdXRTbG90UHJvdG9Q",
-            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
-            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
-            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "L3ZhbGlkYXRlLnByb3RvGidyZXNvdXJjZXMvdjEvcmVzb3VyY2VfcmVxdWly",
+            "ZW1lbnQucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdf",
+            "cnVsZXMucHJvdG8imAEKD0FSQWN0b3JTZWxlY3RvchIlCg5jdXJyZW50X3dv",
+            "cmtlchgBIAEoCFINY3VycmVudFdvcmtlchIzChByZXNvdXJjZV9zbG90X2lk",
+            "GAIgASgJQgm6SAZyBPjrMAFSDnJlc291cmNlU2xvdElkOim6SCYiJAoOY3Vy",
+            "cmVudF93b3JrZXIKEHJlc291cmNlX3Nsb3RfaWQQASKOAQoUQVJSdW5Db250",
+            "ZXh0U2VsZWN0b3ISQAoJc2VsZWN0aW9uGAEgASgOMhUuYXIudjEuQVJSdW5T",
+            "ZWxlY3Rpb25CC7pICIIBAhAByAEBUglzZWxlY3Rpb24SNAoFYWN0b3IYAiAB",
+            "KAsyFi5hci52MS5BUkFjdG9yU2VsZWN0b3JCBrpIA8gBAVIFYWN0b3Iivw4K",
+            "EkFSSW5wdXRTbG90TWVzc2FnZRIZCgJpZBgBIAEoCUIJukgGcgT46zABUgJp",
+            "ZBIpCgljb25maWdfaWQYAiABKAlCDLpICXIEkPEEAcgBAVIIY29uZmlnSWQS",
+            "HQoEbmFtZRgDIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YBCABKAlS",
+            "BGljb24SIAoLZGVzY3JpcHRpb24YBSABKAlSC2Rlc2NyaXB0aW9uEkAKFWdl",
+            "bmVyYXRlZF9wcm9wZXJ0eV9pZBgHIAEoCUIMukgJcgSY8QQByAEBUhNnZW5l",
+            "cmF0ZWRQcm9wZXJ0eUlkEkgKDXJlc291cmNlX3R5cGUYCCABKA4yGS5hci52",
+            "MS5BUlJlc291cmNlU2xvdFR5cGVCCLpIBYIBAhABUgxyZXNvdXJjZVR5cGUS",
+            "RQoMY29udGV4dF90eXBlGAkgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5",
+            "cGVCCLpIBYIBAhABUgtjb250ZXh0VHlwZRI+CgxydW5fc2VsZWN0b3IYCiAB",
+            "KAsyGy5hci52MS5BUlJ1bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3IS",
+            "VgoVZXhwbGljaXRfcmVxdWlyZW1lbnRzGAsgAygLMiEucmVzb3VyY2VzLnYx",
+            "LlJlc291cmNlUmVxdWlyZW1lbnRSFGV4cGxpY2l0UmVxdWlyZW1lbnRzOqIK",
+            "ukieChqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25fcmVxdWly",
+            "ZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBmb3IgVEFT",
+            "S19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0aGlzLnJ1",
+            "bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxlY3Rpb24u",
+            "QVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlzLmNvbnRl",
+            "eHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhU",
+            "X1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xvdC5ydW5f",
+            "c2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxlY3RvciBp",
+            "cyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHByb2hpYml0",
+            "ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFS",
+            "Q29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1Nf",
+            "UlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4",
+            "dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNFX1JVTl9J",
+            "RCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90",
+            "VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkgPT0gaGFz",
+            "KHRoaXMucnVuX3NlbGVjdG9yKRrIBAo3YXJfaW5wdXRfc2xvdC5leHBsaWNp",
+            "dF9yZXF1aXJlbWVudHNfbWF0Y2hfcmVzb3VyY2VfdHlwZRJTZXhwbGljaXQg",
+            "Y29uc3RyYWludHMgbXVzdCBzZWxlY3QgYSBzaWduYWwgb3IgYW4gYXNzZXQg",
+            "dHlwZSBjb21wYXRpYmxlIHdpdGggdGhlIHNsb3QatwN0aGlzLmV4cGxpY2l0",
+            "X3JlcXVpcmVtZW50cy5hbGwocmVxdWlyZW1lbnQsIHRoaXMucmVzb3VyY2Vf",
+            "dHlwZSA9PSBhci52MS5BUlJlc291cmNlU2xvdFR5cGUuQVJfUkVTT1VSQ0Vf",
+            "U0xPVF9UWVBFX1JPQk9UID8gaGFzKHJlcXVpcmVtZW50LnNpZ25hbCkgJiYg",
+            "KGhhcyhyZXF1aXJlbWVudC5zaWduYWwuc2lnbmFsX2lkKSB8fCBoYXMocmVx",
+            "dWlyZW1lbnQuc2lnbmFsLnNlbWFudGljKSkgOiB0aGlzLnJlc291cmNlX3R5",
+            "cGUgPT0gYXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlLkFSX1JFU09VUkNFX1NM",
+            "T1RfVFlQRV9BU1NFVCA/IGhhcyhyZXF1aXJlbWVudC5hc3NldF90eXBlKSB8",
+            "fCAoaGFzKHJlcXVpcmVtZW50LnNpZ25hbCkgJiYgKGhhcyhyZXF1aXJlbWVu",
+            "dC5zaWduYWwuc2lnbmFsX2lkKSB8fCBoYXMocmVxdWlyZW1lbnQuc2lnbmFs",
+            "LnNlbWFudGljKSkpIDogZmFsc2UpIh8KDXJlc291cmNlX3R5cGUKDGNvbnRl",
+            "eHRfdHlwZRABIkYKE0FSSW5wdXRTbG90TWVzc2FnZXMSLwoFc2xvdHMYASAD",
+            "KAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2VSBXNsb3RzIuUNChVBUklu",
+            "cHV0U2xvdEFkZE1lc3NhZ2USKQoJY29uZmlnX2lkGAEgASgJQgy6SAlyBJDx",
+            "BAHIAQFSCGNvbmZpZ0lkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFt",
+            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
+            "ZXNjcmlwdGlvbhJICg1yZXNvdXJjZV90eXBlGAggASgOMhkuYXIudjEuQVJS",
+            "ZXNvdXJjZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVzb3VyY2VUeXBlEkUKDGNv",
+            "bnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNsb3RUeXBlQgi6",
+            "SAWCAQIQAVILY29udGV4dFR5cGUSPgoMcnVuX3NlbGVjdG9yGAogASgLMhsu",
+            "YXIudjEuQVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1blNlbGVjdG9yElYKFWV4",
+            "cGxpY2l0X3JlcXVpcmVtZW50cxgLIAMoCzIhLnJlc291cmNlcy52MS5SZXNv",
+            "dXJjZVJlcXVpcmVtZW50UhRleHBsaWNpdFJlcXVpcmVtZW50czqiCrpIngoa",
+            "nQIKK2FyX2lucHV0X3Nsb3QuZXJyb3Jfc2VsZWN0aW9uX3JlcXVpcmVzX3Rh",
+            "c2sSLEZJUlNUX0lOX0VSUk9SIGlzIG9ubHkgdmFsaWQgZm9yIFRBU0tfUlVO",
+            "X0lEGr8BIWhhcyh0aGlzLnJ1bl9zZWxlY3RvcikgfHwgdGhpcy5ydW5fc2Vs",
+            "ZWN0b3Iuc2VsZWN0aW9uICE9IGFyLnYxLkFSUnVuU2VsZWN0aW9uLkFSX1JV",
+            "Tl9TRUxFQ1RJT05fRklSU1RfSU5fRVJST1IgfHwgdGhpcy5jb250ZXh0X3R5",
+            "cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09OVEVYVF9TTE9U",
+            "X1RZUEVfVEFTS19SVU5fSUQajwMKL2FyX2lucHV0X3Nsb3QucnVuX3NlbGVj",
+            "dG9yX21hdGNoZXNfY29udGV4dF90eXBlEkdydW5fc2VsZWN0b3IgaXMgcmVx",
+            "dWlyZWQgZm9yIHJ1biBjb250ZXh0IHNsb3RzIGFuZCBwcm9oaWJpdGVkIG90",
+            "aGVyd2lzZRqSAih0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRl",
+            "eHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9QUk9DRVNTX1JVTl9J",
+            "RCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90",
+            "VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5fSUQgfHwg",
+            "dGhpcy5jb250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUu",
+            "QVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQpID09IGhhcyh0aGlz",
+            "LnJ1bl9zZWxlY3RvcikayAQKN2FyX2lucHV0X3Nsb3QuZXhwbGljaXRfcmVx",
+            "dWlyZW1lbnRzX21hdGNoX3Jlc291cmNlX3R5cGUSU2V4cGxpY2l0IGNvbnN0",
+            "cmFpbnRzIG11c3Qgc2VsZWN0IGEgc2lnbmFsIG9yIGFuIGFzc2V0IHR5cGUg",
+            "Y29tcGF0aWJsZSB3aXRoIHRoZSBzbG90GrcDdGhpcy5leHBsaWNpdF9yZXF1",
+            "aXJlbWVudHMuYWxsKHJlcXVpcmVtZW50LCB0aGlzLnJlc291cmNlX3R5cGUg",
+            "PT0gYXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlLkFSX1JFU09VUkNFX1NMT1Rf",
+            "VFlQRV9ST0JPVCA/IGhhcyhyZXF1aXJlbWVudC5zaWduYWwpICYmIChoYXMo",
+            "cmVxdWlyZW1lbnQuc2lnbmFsLnNpZ25hbF9pZCkgfHwgaGFzKHJlcXVpcmVt",
+            "ZW50LnNpZ25hbC5zZW1hbnRpYykpIDogdGhpcy5yZXNvdXJjZV90eXBlID09",
+            "IGFyLnYxLkFSUmVzb3VyY2VTbG90VHlwZS5BUl9SRVNPVVJDRV9TTE9UX1RZ",
+            "UEVfQVNTRVQgPyBoYXMocmVxdWlyZW1lbnQuYXNzZXRfdHlwZSkgfHwgKGhh",
+            "cyhyZXF1aXJlbWVudC5zaWduYWwpICYmIChoYXMocmVxdWlyZW1lbnQuc2ln",
+            "bmFsLnNpZ25hbF9pZCkgfHwgaGFzKHJlcXVpcmVtZW50LnNpZ25hbC5zZW1h",
+            "bnRpYykpKSA6IGZhbHNlKSIfCg1yZXNvdXJjZV90eXBlCgxjb250ZXh0X3R5",
+            "cGUQASKjAgoYQVJJbnB1dFNsb3RVcGRhdGVNZXNzYWdlEhkKAmlkGAEgASgJ",
+            "Qgm6SAZyBPjrMAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFt",
+            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
+            "ZXNjcmlwdGlvbhI+CgxydW5fc2VsZWN0b3IYBiABKAsyGy5hci52MS5BUlJ1",
+            "bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3ISVwoVZXhwbGljaXRfcmVx",
+            "dWlyZW1lbnRzGAcgASgLMiIucmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWly",
+            "ZW1lbnRzUhRleHBsaWNpdFJlcXVpcmVtZW50cyI4ChhBUklucHV0U2xvdERl",
+            "bGV0ZU1lc3NhZ2USHAoCaWQYASABKAlCDLpICXIE+OswAcgBAVICaWQqfQoS",
+            "QVJSZXNvdXJjZVNsb3RUeXBlEiUKIUFSX1JFU09VUkNFX1NMT1RfVFlQRV9V",
+            "TlNQRUNJRklFRBAAEh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9ST0JPVBAB",
+            "Eh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9BU1NFVBACKr8CChFBUkNvbnRl",
+            "eHRTbG90VHlwZRIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0xJTkVfSUQQARIgChxBUl9D",
+            "T05URVhUX1NMT1RfVFlQRV9DRUxMX0lEEAISIwofQVJfQ09OVEVYVF9TTE9U",
+            "X1RZUEVfU1RBVElPTl9JRBADEiIKHkFSX0NPTlRFWFRfU0xPVF9UWVBFX1dP",
+            "UktFUl9JRBAEEicKI0FSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVO",
+            "X0lEEAUSKAokQVJfQ09OVEVYVF9TTE9UX1RZUEVfU0VRVUVOQ0VfUlVOX0lE",
+            "EAYSJAogQVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQQByrsAQoO",
+            "QVJSdW5TZWxlY3Rpb24SIAocQVJfUlVOX1NFTEVDVElPTl9VTlNQRUNJRklF",
+            "RBAAEiMKH0FSX1JVTl9TRUxFQ1RJT05fRklSU1RfV09SS0FCTEUQARIlCiFB",
+            "Ul9SVU5fU0VMRUNUSU9OX0NVUlJFTlRfQVNTSUdORUQQAhIiCh5BUl9SVU5f",
+            "U0VMRUNUSU9OX05FWFRfRVhQRUNURUQQAxIjCh9BUl9SVU5fU0VMRUNUSU9O",
+            "X0xBU1RfQ09NUExFVEVEEAQSIwofQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9J",
+            "Tl9FUlJPUhAFQooBCgljb20uYXIudjFCDklucHV0U2xvdFByb3RvUAFaL2dp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYx",
+            "ogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1l",
+            "dGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), typeof(global::Messages.AR.V1.ARRunSelection), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARActorSelector), global::Messages.AR.V1.ARActorSelector.Parser, new[]{ "CurrentWorker", "ResourceSlotId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARRunContextSelector), global::Messages.AR.V1.ARRunContextSelector.Parser, new[]{ "Selection", "Actor" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessage), global::Messages.AR.V1.ARInputSlotMessage.Parser, new[]{ "Id", "ConfigId", "Name", "Icon", "Description", "GeneratedPropertyId", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessage), global::Messages.AR.V1.ARInputSlotMessage.Parser, new[]{ "Id", "ConfigId", "Name", "Icon", "Description", "GeneratedPropertyId", "ResourceType", "ContextType", "RunSelector", "ExplicitRequirements" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotMessages), global::Messages.AR.V1.ARInputSlotMessages.Parser, new[]{ "Slots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotAddMessage), global::Messages.AR.V1.ARInputSlotAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "ResourceType", "ContextType", "RunSelector" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotUpdateMessage), global::Messages.AR.V1.ARInputSlotUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "RunSelector" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotAddMessage), global::Messages.AR.V1.ARInputSlotAddMessage.Parser, new[]{ "ConfigId", "Name", "Icon", "Description", "ResourceType", "ContextType", "RunSelector", "ExplicitRequirements" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotUpdateMessage), global::Messages.AR.V1.ARInputSlotUpdateMessage.Parser, new[]{ "Id", "Name", "Icon", "Description", "RunSelector", "ExplicitRequirements" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.AR.V1.ARInputSlotDeleteMessage), global::Messages.AR.V1.ARInputSlotDeleteMessage.Parser, new[]{ "Id" }, null, null, null, null)
           }));
     }
@@ -819,6 +852,7 @@ namespace Messages.AR.V1 {
       resourceType_ = other.resourceType_;
       contextType_ = other.contextType_;
       runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
+      explicitRequirements_ = other.explicitRequirements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -954,6 +988,20 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "explicit_requirements" field.</summary>
+    public const int ExplicitRequirementsFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.ResourceRequirement> _repeated_explicitRequirements_codec
+        = pb::FieldCodec.ForMessage(90, global::Messages.Resources.V1.ResourceRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.ResourceRequirement> explicitRequirements_ = new pbc::RepeatedField<global::Messages.Resources.V1.ResourceRequirement>();
+    /// <summary>
+    /// Author-authored constraints in addition to requirements derived from consumers.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Resources.V1.ResourceRequirement> ExplicitRequirements {
+      get { return explicitRequirements_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -978,6 +1026,7 @@ namespace Messages.AR.V1 {
       if (ResourceType != other.ResourceType) return false;
       if (ContextType != other.ContextType) return false;
       if (!object.Equals(RunSelector, other.RunSelector)) return false;
+      if(!explicitRequirements_.Equals(other.explicitRequirements_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -994,6 +1043,7 @@ namespace Messages.AR.V1 {
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) hash ^= ResourceType.GetHashCode();
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) hash ^= ContextType.GetHashCode();
       if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
+      hash ^= explicitRequirements_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1048,6 +1098,7 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(82);
         output.WriteMessage(RunSelector);
       }
+      explicitRequirements_.WriteTo(output, _repeated_explicitRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1094,6 +1145,7 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(82);
         output.WriteMessage(RunSelector);
       }
+      explicitRequirements_.WriteTo(ref output, _repeated_explicitRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1131,6 +1183,7 @@ namespace Messages.AR.V1 {
       if (runSelector_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
       }
+      size += explicitRequirements_.CalculateSize(_repeated_explicitRequirements_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1173,6 +1226,7 @@ namespace Messages.AR.V1 {
         }
         RunSelector.MergeFrom(other.RunSelector);
       }
+      explicitRequirements_.Add(other.explicitRequirements_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1231,6 +1285,10 @@ namespace Messages.AR.V1 {
             input.ReadMessage(RunSelector);
             break;
           }
+          case 90: {
+            explicitRequirements_.AddEntriesFrom(input, _repeated_explicitRequirements_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1287,6 +1345,10 @@ namespace Messages.AR.V1 {
               RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
             }
             input.ReadMessage(RunSelector);
+            break;
+          }
+          case 90: {
+            explicitRequirements_.AddEntriesFrom(ref input, _repeated_explicitRequirements_codec);
             break;
           }
         }
@@ -1536,6 +1598,7 @@ namespace Messages.AR.V1 {
       resourceType_ = other.resourceType_;
       contextType_ = other.contextType_;
       runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
+      explicitRequirements_ = other.explicitRequirements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1641,6 +1704,20 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "explicit_requirements" field.</summary>
+    public const int ExplicitRequirementsFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Messages.Resources.V1.ResourceRequirement> _repeated_explicitRequirements_codec
+        = pb::FieldCodec.ForMessage(90, global::Messages.Resources.V1.ResourceRequirement.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Resources.V1.ResourceRequirement> explicitRequirements_ = new pbc::RepeatedField<global::Messages.Resources.V1.ResourceRequirement>();
+    /// <summary>
+    /// Initial author-authored resource constraints.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Resources.V1.ResourceRequirement> ExplicitRequirements {
+      get { return explicitRequirements_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1663,6 +1740,7 @@ namespace Messages.AR.V1 {
       if (ResourceType != other.ResourceType) return false;
       if (ContextType != other.ContextType) return false;
       if (!object.Equals(RunSelector, other.RunSelector)) return false;
+      if(!explicitRequirements_.Equals(other.explicitRequirements_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1677,6 +1755,7 @@ namespace Messages.AR.V1 {
       if (ResourceType != global::Messages.AR.V1.ARResourceSlotType.Unspecified) hash ^= ResourceType.GetHashCode();
       if (ContextType != global::Messages.AR.V1.ARContextSlotType.Unspecified) hash ^= ContextType.GetHashCode();
       if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
+      hash ^= explicitRequirements_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1723,6 +1802,7 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(82);
         output.WriteMessage(RunSelector);
       }
+      explicitRequirements_.WriteTo(output, _repeated_explicitRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1761,6 +1841,7 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(82);
         output.WriteMessage(RunSelector);
       }
+      explicitRequirements_.WriteTo(ref output, _repeated_explicitRequirements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1792,6 +1873,7 @@ namespace Messages.AR.V1 {
       if (runSelector_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
       }
+      size += explicitRequirements_.CalculateSize(_repeated_explicitRequirements_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1828,6 +1910,7 @@ namespace Messages.AR.V1 {
         }
         RunSelector.MergeFrom(other.RunSelector);
       }
+      explicitRequirements_.Add(other.explicitRequirements_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1878,6 +1961,10 @@ namespace Messages.AR.V1 {
             input.ReadMessage(RunSelector);
             break;
           }
+          case 90: {
+            explicitRequirements_.AddEntriesFrom(input, _repeated_explicitRequirements_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1926,6 +2013,10 @@ namespace Messages.AR.V1 {
               RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
             }
             input.ReadMessage(RunSelector);
+            break;
+          }
+          case 90: {
+            explicitRequirements_.AddEntriesFrom(ref input, _repeated_explicitRequirements_codec);
             break;
           }
         }
@@ -1983,6 +2074,7 @@ namespace Messages.AR.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       runSelector_ = other.runSelector_ != null ? other.runSelector_.Clone() : null;
+      explicitRequirements_ = other.explicitRequirements_ != null ? other.explicitRequirements_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2058,6 +2150,21 @@ namespace Messages.AR.V1 {
       }
     }
 
+    /// <summary>Field number for the "explicit_requirements" field.</summary>
+    public const int ExplicitRequirementsFieldNumber = 7;
+    private global::Messages.Resources.V1.ResourceRequirements explicitRequirements_;
+    /// <summary>
+    /// When present, replaces the explicit constraints of an existing resource slot. The backend must load the slot and enforce the same signal/asset-type compatibility rules as ARInputSlotMessage.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.ResourceRequirements ExplicitRequirements {
+      get { return explicitRequirements_; }
+      set {
+        explicitRequirements_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2078,6 +2185,7 @@ namespace Messages.AR.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (!object.Equals(RunSelector, other.RunSelector)) return false;
+      if (!object.Equals(ExplicitRequirements, other.ExplicitRequirements)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2090,6 +2198,7 @@ namespace Messages.AR.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (runSelector_ != null) hash ^= RunSelector.GetHashCode();
+      if (explicitRequirements_ != null) hash ^= ExplicitRequirements.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2128,6 +2237,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(50);
         output.WriteMessage(RunSelector);
       }
+      if (explicitRequirements_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(ExplicitRequirements);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2158,6 +2271,10 @@ namespace Messages.AR.V1 {
         output.WriteRawTag(50);
         output.WriteMessage(RunSelector);
       }
+      if (explicitRequirements_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(ExplicitRequirements);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2182,6 +2299,9 @@ namespace Messages.AR.V1 {
       }
       if (runSelector_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunSelector);
+      }
+      if (explicitRequirements_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExplicitRequirements);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2212,6 +2332,12 @@ namespace Messages.AR.V1 {
           RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
         }
         RunSelector.MergeFrom(other.RunSelector);
+      }
+      if (other.explicitRequirements_ != null) {
+        if (explicitRequirements_ == null) {
+          ExplicitRequirements = new global::Messages.Resources.V1.ResourceRequirements();
+        }
+        ExplicitRequirements.MergeFrom(other.ExplicitRequirements);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2255,6 +2381,13 @@ namespace Messages.AR.V1 {
             input.ReadMessage(RunSelector);
             break;
           }
+          case 58: {
+            if (explicitRequirements_ == null) {
+              ExplicitRequirements = new global::Messages.Resources.V1.ResourceRequirements();
+            }
+            input.ReadMessage(ExplicitRequirements);
+            break;
+          }
         }
       }
     #endif
@@ -2295,6 +2428,13 @@ namespace Messages.AR.V1 {
               RunSelector = new global::Messages.AR.V1.ARRunContextSelector();
             }
             input.ReadMessage(RunSelector);
+            break;
+          }
+          case 58: {
+            if (explicitRequirements_ == null) {
+              ExplicitRequirements = new global::Messages.Resources.V1.ResourceRequirements();
+            }
+            input.ReadMessage(ExplicitRequirements);
             break;
           }
         }

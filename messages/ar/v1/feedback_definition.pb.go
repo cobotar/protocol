@@ -9,6 +9,7 @@ package arv1
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v11 "github.com/cobotar/protocol/messages/resources/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -107,14 +108,15 @@ type FeedbackDefinition struct {
 	Type        FeedbackType  `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.FeedbackType" json:"type,omitempty"`
 	Group       FeedbackGroup `protobuf:"varint,7,opt,name=group,proto3,enum=ar.v1.FeedbackGroup" json:"group,omitempty"`
 	// Monotonic revision of the externally visible definition contract.
-	Revision      uint64                 `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
-	Status        DefinitionStatus       `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
-	Properties    []*v1.PropertyTemplate `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
-	Features      []*FeedbackFeature     `protobuf:"bytes,11,rep,name=features,proto3" json:"features,omitempty"`         // Implementation/configuration features
-	Capabilities  []*FeedbackCapability  `protobuf:"bytes,12,rep,name=capabilities,proto3" json:"capabilities,omitempty"` // Assistance semantics
-	Execution     *ExecutionContract     `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Revision             uint64                             `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
+	Status               DefinitionStatus                   `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
+	Properties           []*v1.PropertyTemplate             `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
+	Features             []*FeedbackFeature                 `protobuf:"bytes,11,rep,name=features,proto3" json:"features,omitempty"`         // Implementation/configuration features
+	Capabilities         []*FeedbackCapability              `protobuf:"bytes,12,rep,name=capabilities,proto3" json:"capabilities,omitempty"` // Assistance semantics
+	Execution            *ExecutionContract                 `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
+	ResourceRequirements []*v11.ConsumerResourceRequirement `protobuf:"bytes,14,rep,name=resource_requirements,json=resourceRequirements,proto3" json:"resource_requirements,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *FeedbackDefinition) Reset() {
@@ -238,6 +240,13 @@ func (x *FeedbackDefinition) GetExecution() *ExecutionContract {
 	return nil
 }
 
+func (x *FeedbackDefinition) GetResourceRequirements() []*v11.ConsumerResourceRequirement {
+	if x != nil {
+		return x.ResourceRequirements
+	}
+	return nil
+}
+
 // The catalog service additionally enforces that revisions sharing a key also
 // share a type, and that at most one revision per key/type is ACTIVE.
 type FeedbackDefinitions struct {
@@ -288,7 +297,7 @@ var File_ar_v1_feedback_definition_proto protoreflect.FileDescriptor
 
 const file_ar_v1_feedback_definition_proto_rawDesc = "" +
 	"\n" +
-	"\x1far/v1/feedback_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/feedback.proto\x1a\x1far/v1/feedback_capability.proto\x1a\x1dar/v1/feedback_features.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a+validation/v1/predefined_string_rules.proto\"\x83\b\n" +
+	"\x1far/v1/feedback_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/feedback.proto\x1a\x1far/v1/feedback_capability.proto\x1a\x1dar/v1/feedback_features.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xbd\x12\n" +
 	"\x12FeedbackDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf0\xf3\x04\x01R\x02id\x12\x1e\n" +
 	"\x03key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
@@ -308,7 +317,10 @@ const file_ar_v1_feedback_definition_proto_rawDesc = "" +
 	"(feedback_definition.features.unique_keys\x12\x1bfeature keys must be unique\x1a'this.map(feature, feature.key).unique()R\bfeatures\x12\xd4\x01\n" +
 	"\fcapabilities\x18\f \x03(\v2\x19.ar.v1.FeedbackCapabilityB\x94\x01\xbaH\x90\x01\xba\x01\x8c\x01\n" +
 	"1feedback_definition.capabilities.unique_semantics\x12#capability semantics must be unique\x1a2this.map(capability, capability.semantic).unique()R\fcapabilities\x12>\n" +
-	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecution\"\xc7\x03\n" +
+	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecution\x12^\n" +
+	"\x15resource_requirements\x18\x0e \x03(\v2).resources.v1.ConsumerResourceRequirementR\x14resourceRequirements:\xd7\t\xbaH\xd3\t\x1a\x90\x06\n" +
+	"Gfeedback_definition.resource_requirements.reference_resource_properties\x12Rresource requirements must reference a compatible ROBOT or ASSET property template\x1a\xf0\x04this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && ((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || (property.type == 14 && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))\x1a\xbd\x03\n" +
+	"Cfeedback_definition.signal_requirements.reference_signal_properties\x12Isignal id property keys must reference a STRING or ENUM property template\x1a\xaa\x02this.resource_requirements.all(requirement, !has(requirement.requirement.signal) || !has(requirement.requirement.signal.signal_id_property_key) || this.properties.exists(property, property.key == requirement.requirement.signal.signal_id_property_key && (property.type == 5 || property.type == 11)))\"\xc7\x03\n" +
 	"\x13FeedbackDefinitions\x12\xaf\x03\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.ar.v1.FeedbackDefinitionB\xfd\x02\xbaH\xf9\x02\xba\x01}\n" +
 	"%feedback_definitions.items.unique_ids\x12&feedback definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xf5\x01\n" +
@@ -339,15 +351,16 @@ func file_ar_v1_feedback_definition_proto_rawDescGZIP() []byte {
 var file_ar_v1_feedback_definition_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_ar_v1_feedback_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_ar_v1_feedback_definition_proto_goTypes = []any{
-	(FeedbackGroup)(0),          // 0: ar.v1.FeedbackGroup
-	(*FeedbackDefinition)(nil),  // 1: ar.v1.FeedbackDefinition
-	(*FeedbackDefinitions)(nil), // 2: ar.v1.FeedbackDefinitions
-	(FeedbackType)(0),           // 3: ar.v1.FeedbackType
-	(DefinitionStatus)(0),       // 4: ar.v1.DefinitionStatus
-	(*v1.PropertyTemplate)(nil), // 5: common.v1.PropertyTemplate
-	(*FeedbackFeature)(nil),     // 6: ar.v1.FeedbackFeature
-	(*FeedbackCapability)(nil),  // 7: ar.v1.FeedbackCapability
-	(*ExecutionContract)(nil),   // 8: ar.v1.ExecutionContract
+	(FeedbackGroup)(0),                      // 0: ar.v1.FeedbackGroup
+	(*FeedbackDefinition)(nil),              // 1: ar.v1.FeedbackDefinition
+	(*FeedbackDefinitions)(nil),             // 2: ar.v1.FeedbackDefinitions
+	(FeedbackType)(0),                       // 3: ar.v1.FeedbackType
+	(DefinitionStatus)(0),                   // 4: ar.v1.DefinitionStatus
+	(*v1.PropertyTemplate)(nil),             // 5: common.v1.PropertyTemplate
+	(*FeedbackFeature)(nil),                 // 6: ar.v1.FeedbackFeature
+	(*FeedbackCapability)(nil),              // 7: ar.v1.FeedbackCapability
+	(*ExecutionContract)(nil),               // 8: ar.v1.ExecutionContract
+	(*v11.ConsumerResourceRequirement)(nil), // 9: resources.v1.ConsumerResourceRequirement
 }
 var file_ar_v1_feedback_definition_proto_depIdxs = []int32{
 	3, // 0: ar.v1.FeedbackDefinition.type:type_name -> ar.v1.FeedbackType
@@ -357,12 +370,13 @@ var file_ar_v1_feedback_definition_proto_depIdxs = []int32{
 	6, // 4: ar.v1.FeedbackDefinition.features:type_name -> ar.v1.FeedbackFeature
 	7, // 5: ar.v1.FeedbackDefinition.capabilities:type_name -> ar.v1.FeedbackCapability
 	8, // 6: ar.v1.FeedbackDefinition.execution:type_name -> ar.v1.ExecutionContract
-	1, // 7: ar.v1.FeedbackDefinitions.items:type_name -> ar.v1.FeedbackDefinition
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	9, // 7: ar.v1.FeedbackDefinition.resource_requirements:type_name -> resources.v1.ConsumerResourceRequirement
+	1, // 8: ar.v1.FeedbackDefinitions.items:type_name -> ar.v1.FeedbackDefinition
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_ar_v1_feedback_definition_proto_init() }
