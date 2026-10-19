@@ -26,6 +26,9 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "edit.model.add", pattern: "edit.model.add", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "resources.v1.ModelArtifact", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["fusion360_exporter", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.part_definition.add", pattern: "edit.part_definition.add", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartDefinition", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["fusion360_exporter", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.product.add", pattern: "edit.product.add", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.ProductDefinition", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["fusion360_exporter", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
+  { id: "get.asset_adapter.info", pattern: "get.asset_adapter.info.{asset_instance_id}", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "resources.v1.AssetAdapterInfoMessage", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#65" },
+  { id: "get.asset_adapter_definition.all", pattern: "get.asset_adapter_definition.all", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "resources.v1.AssetAdapterDefinitions", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#65" },
+  { id: "get.asset_adapter_definition.one", pattern: "get.asset_adapter_definition.one", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "resources.v1.AssetAdapterDefinition", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#65" },
   { id: "get.robot_adapter.info", pattern: "get.robot_adapter.info.{robot_instance_id}", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "robot.v1.RobotAdapterInfoMessage", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#14" },
   { id: "get.robot_adapter_definition.all", pattern: "get.robot_adapter_definition.all", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "resources.v1.RobotAdapterDefinitions", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#49" },
   { id: "get.robot_adapter_definition.one", pattern: "get.robot_adapter_definition.one", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "resources.v1.RobotAdapterDefinition", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#49" },
@@ -102,6 +105,25 @@ export const editPartDefinitionAdd = "edit.part_definition.add"
  * @experimental lifecycle=active, conformance=staged; see cobotar/protocol#11.
  */
 export const editProductAdd = "edit.product.add"
+
+/** Builds `get.asset_adapter.info.{asset_instance_id}`.
+ * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#65.
+ */
+export function getAssetAdapterInfo(assetInstanceId: string): string {
+  return buildSubject("get.asset_adapter.info.{asset_instance_id}", { asset_instance_id: assetInstanceId })
+}
+
+export function subscribeGetAssetAdapterInfoAny(): string { return "get.asset_adapter.info.*" }
+
+/** Builds `get.asset_adapter_definition.all`.
+ * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#65.
+ */
+export const getAssetAdapterDefinitionAll = "get.asset_adapter_definition.all"
+
+/** Builds `get.asset_adapter_definition.one`.
+ * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#65.
+ */
+export const getAssetAdapterDefinitionOne = "get.asset_adapter_definition.one"
 
 /** Builds `get.robot_adapter.info.{robot_instance_id}`.
  * @experimental lifecycle=active, conformance=staged; see cobotar/protocol#14.

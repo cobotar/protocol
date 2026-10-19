@@ -1,5 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from robot.v1 import robot_io_catalog_pb2 as _robot_io_catalog_pb2
+from common.v1 import signal_pb2 as _signal_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -78,17 +78,17 @@ class RobotControllerIdentity(_message.Message):
     def __init__(self, manufacturer: _Optional[str] = ..., model: _Optional[str] = ..., serial_number: _Optional[str] = ..., controller_software_version: _Optional[str] = ...) -> None: ...
 
 class RobotAdapterInfoMessage(_message.Message):
-    __slots__ = ("robot_id", "adapter_version", "controller", "capabilities_revision", "adapter_definition_id", "io_signals")
+    __slots__ = ("robot_id", "adapter_version", "controller", "capabilities_revision", "adapter_definition_id", "signal_catalog")
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
     ADAPTER_VERSION_FIELD_NUMBER: _ClassVar[int]
     CONTROLLER_FIELD_NUMBER: _ClassVar[int]
     CAPABILITIES_REVISION_FIELD_NUMBER: _ClassVar[int]
     ADAPTER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
-    IO_SIGNALS_FIELD_NUMBER: _ClassVar[int]
+    SIGNAL_CATALOG_FIELD_NUMBER: _ClassVar[int]
     robot_id: str
     adapter_version: str
     controller: RobotControllerIdentity
     capabilities_revision: str
     adapter_definition_id: str
-    io_signals: _robot_io_catalog_pb2.RobotIOSignalCatalog
-    def __init__(self, robot_id: _Optional[str] = ..., adapter_version: _Optional[str] = ..., controller: _Optional[_Union[RobotControllerIdentity, _Mapping]] = ..., capabilities_revision: _Optional[str] = ..., adapter_definition_id: _Optional[str] = ..., io_signals: _Optional[_Union[_robot_io_catalog_pb2.RobotIOSignalCatalog, _Mapping]] = ...) -> None: ...
+    signal_catalog: _signal_pb2.SignalCatalog
+    def __init__(self, robot_id: _Optional[str] = ..., adapter_version: _Optional[str] = ..., controller: _Optional[_Union[RobotControllerIdentity, _Mapping]] = ..., capabilities_revision: _Optional[str] = ..., adapter_definition_id: _Optional[str] = ..., signal_catalog: _Optional[_Union[_signal_pb2.SignalCatalog, _Mapping]] = ...) -> None: ...

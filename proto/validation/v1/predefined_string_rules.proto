@@ -309,4 +309,16 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a robot adapter definition id"
     expression: "(this == '' || this.startsWith('robot_adapter_definition-'))"
   }];
+
+  optional bool asset_adapter_definition_id_component = 10051 [(buf.validate.predefined).cel = {
+    id: "string.asset_adapter_definition_id_component"
+    message: "this does not seem to be an asset adapter definition id"
+    expression: "(this == '' || this.startsWith('asset_adapter_definition-'))"
+  }];
+
+  optional bool adapter_type_component = 10052 [(buf.validate.predefined).cel = {
+    id: "string.adapter_type_component"
+    message: "adapter type must be 1 to 128 lowercase characters separated by dots, underscores, or hyphens"
+    expression: "this.size() >= 1 && this.size() <= 128 && this.matches('^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$')"
+  }];
 }

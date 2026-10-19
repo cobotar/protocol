@@ -1,0 +1,95 @@
+syntax = "proto3";
+package common.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/messages/common/v1";
+
+// SignalDataType is the value type exposed by a readable or writable signal.
+enum SignalDataType {
+  SIGNAL_DATA_TYPE_UNSPECIFIED = 0;
+  SIGNAL_DATA_TYPE_BOOL = 1;
+  SIGNAL_DATA_TYPE_INT32 = 2;
+  SIGNAL_DATA_TYPE_DOUBLE = 3;
+  SIGNAL_DATA_TYPE_STRING = 4;
+}
+
+// SignalSemantic gives common resource signals a stable meaning independent of
+// the adapter-specific signal id. Unspecified is valid for non-standard signals.
+enum SignalSemantic {
+  SIGNAL_SEMANTIC_UNSPECIFIED = 0;
+
+  // Camera state formerly exposed as "active" and "error_detected" properties.
+  SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE = 10;
+  SIGNAL_SEMANTIC_ASSET_CAMERA_ERROR_DETECTED = 11;
+
+  // Stack-light outputs formerly exposed as "red", "yellow", and "green" properties.
+  SIGNAL_SEMANTIC_ASSET_LIGHT_RED = 20;
+  SIGNAL_SEMANTIC_ASSET_LIGHT_YELLOW = 21;
+  SIGNAL_SEMANTIC_ASSET_LIGHT_GREEN = 22;
+
+  // Conveyor state formerly exposed as the "moving" property.
+  SIGNAL_SEMANTIC_ASSET_CONVEYOR_MOVING = 30;
+
+  // Generic sensor activation or detection state.
+  SIGNAL_SEMANTIC_ASSET_SENSOR_TRIGGERED = 40;
+
+  // Whether an HMI is currently showing work instructions.
+  SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE = 50;
+
+  // Part-feeder availability states.
+  SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY = 60;
+  SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY = 61;
+}
+
+// SignalDefinition describes one stable, adapter-facing signal independently
+// of the transport or controller register that implements it.
+message SignalDefinition {
+  option (buf.validate.message).cel = {
+    id: "signal_definition.readable_or_writable"
+    message: "a signal must be readable, writable, or both"
+    expression: "this.readable || this.writable"
+  };
+  option (buf.validate.message).cel = {
+    id: "signal_definition.standard_semantic_data_type"
+    message: "standard asset signal semantics require the bool data type"
+    expression:
+      "this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || "
+      "this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL"
+  };
+
+  string signal_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  SignalDataType data_type = 3 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  bool readable = 4;
+  bool writable = 5;
+  SignalSemantic semantic = 6 [(buf.validate.field).enum.defined_only = true];
+}
+
+// SignalCatalog contains the effective signals exposed by one resource instance.
+message SignalCatalog {
+  string resource_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+  repeated SignalDefinition signals = 2 [
+    (buf.validate.field).cel = {
+      id: "signal_catalog.signals.unique_ids"
+      message: "signal ids must be unique"
+      expression: "this.map(signal, signal.signal_id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "signal_catalog.signals.unique_semantics"
+      message: "specified signal semantics must be unique"
+      expression: "this.filter(signal, signal.semantic != 0).map(signal, signal.semantic).unique()"
+    }
+  ];
+}

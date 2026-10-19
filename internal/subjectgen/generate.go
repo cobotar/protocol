@@ -2,7 +2,6 @@ package subjectgen
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
 	"go/format"
 	"sort"
@@ -11,19 +10,12 @@ import (
 )
 
 func Generate(catalog *Catalog) ([]Output, error) {
-	jsonData, err := json.MarshalIndent(catalog, "", "  ")
-	if err != nil {
-		return nil, fmt.Errorf("generate JSON catalog: %w", err)
-	}
-	jsonData = append(jsonData, '\n')
-
 	goData, err := generateGo(catalog)
 	if err != nil {
 		return nil, err
 	}
 
 	return []Output{
-		{Path: "subjects/catalog.json", Content: jsonData},
 		{Path: "subjects/subjects.gen.go", Content: goData},
 		{Path: "csharp/Subjects.g.cs", Content: generateCSharp(catalog)},
 		{Path: "lib/subjects.ts", Content: generateTypeScript(catalog)},

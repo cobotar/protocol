@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/asset_definition.proto.
  */
 export const file_resources_v1_asset_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiNyZXNvdXJjZXMvdjEvYXNzZXRfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIq8BChBWaXNpb25DYXBhYmlsaXR5EkAKGnN1cHBvcnRlZF92YWxpZGF0aW9uX21vZGVzGAEgAygOMhwucmVzb3VyY2VzLnYxLlZhbGlkYXRpb25Nb2RlEiUKHXN1cHBvcnRlZF9wYXJ0X2RlZmluaXRpb25faWRzGAIgAygJEjIKC2NvbnN0cmFpbnRzGAMgAygLMh0uY29tbW9uLnYxLktleVZhbHVlQ29uc3RyYWludCKsAwoPQXNzZXREZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjQKBHR5cGUYBSABKA4yFy5yZXNvdXJjZXMudjEuQXNzZXRUeXBlQg26SArIAQGCAQQQASgBEj8KC2RyaXZlcl90eXBlGAYgASgOMh0ucmVzb3VyY2VzLnYxLkFzc2V0RHJpdmVyVHlwZUILukgIyAEBggECEAESGwoIbW9kZWxfaWQYByABKAlCCbpIBnIEiPEEARIuCgZ2aXNpb24YCCABKAsyHi5yZXNvdXJjZXMudjEuVmlzaW9uQ2FwYWJpbGl0eTqMAbpIiAEahQEKLGFzc2V0X3R5cGVfY2FtZXJhX3JlcXVpcmVzX3Zpc2lvbl9jYXBhYmlsaXR5EjF2aXNpb24gY2FwYWJpbGl0eSBtdXN0IGJlIHNldCB3aGVuIHR5cGUgaXMgY2FtZXJhGiJ0aGlzLnR5cGUgIT0gMSB8fCBoYXModGhpcy52aXNpb24pIkAKEEFzc2V0RGVmaW5pdGlvbnMSLAoFaXRlbXMYASADKAsyHS5yZXNvdXJjZXMudjEuQXNzZXREZWZpbml0aW9uKt0BCg5WYWxpZGF0aW9uTW9kZRIfChtWQUxJREFUSU9OX01PREVfVU5TUEVDSUZJRUQQABIiCh5WQUxJREFUSU9OX01PREVfUFJFU0VOQ0VfQ0hFQ0sQARIeChpWQUxJREFUSU9OX01PREVfUE9TRV9DSEVDSxACEiIKHlZBTElEQVRJT05fTU9ERV9GQVNURU5FUl9DSEVDSxADEh8KG1ZBTElEQVRJT05fTU9ERV9MQUJFTF9DSEVDSxAEEiEKHVZBTElEQVRJT05fTU9ERV9TVVJGQUNFX0NIRUNLEAUqtAEKCUFzc2V0VHlwZRIaChZBU1NFVF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRQVNTRVRfVFlQRV9DQU1FUkEQARIUChBBU1NFVF9UWVBFX0xJR0hUEAISFwoTQVNTRVRfVFlQRV9DT05WRVlPUhADEhUKEUFTU0VUX1RZUEVfU0VOU09SEAQSEgoOQVNTRVRfVFlQRV9ITUkQBRIaChZBU1NFVF9UWVBFX1BBUlRfRkVFREVSEAgqUwoPQXNzZXREcml2ZXJUeXBlEiEKHUFTU0VUX0RSSVZFUl9UWVBFX1VOU1BFQ0lGSUVEEAASHQoZQVNTRVRfRFJJVkVSX1RZUEVfREVGQVVMVBABQsEBChBjb20ucmVzb3VyY2VzLnYxQhRBc3NldERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_key_value_constraint, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiNyZXNvdXJjZXMvdjEvYXNzZXRfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIq8BChBWaXNpb25DYXBhYmlsaXR5EkAKGnN1cHBvcnRlZF92YWxpZGF0aW9uX21vZGVzGAEgAygOMhwucmVzb3VyY2VzLnYxLlZhbGlkYXRpb25Nb2RlEiUKHXN1cHBvcnRlZF9wYXJ0X2RlZmluaXRpb25faWRzGAIgAygJEjIKC2NvbnN0cmFpbnRzGAMgAygLMh0uY29tbW9uLnYxLktleVZhbHVlQ29uc3RyYWludCKkAwoPQXNzZXREZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEjQKBHR5cGUYBSABKA4yFy5yZXNvdXJjZXMudjEuQXNzZXRUeXBlQg26SArIAQGCAQQQASgBEhsKCG1vZGVsX2lkGAcgASgJQgm6SAZyBIjxBAESLgoGdmlzaW9uGAggASgLMh4ucmVzb3VyY2VzLnYxLlZpc2lvbkNhcGFiaWxpdHkSMQobYXNzZXRfYWRhcHRlcl9kZWZpbml0aW9uX2lkGAkgASgJQgy6SAnIAQFyBJj0BAE6kgG6SI4BGosBCjJhc3NldF9kZWZpbml0aW9uLmNhbWVyYV9yZXF1aXJlc192aXNpb25fY2FwYWJpbGl0eRIxdmlzaW9uIGNhcGFiaWxpdHkgbXVzdCBiZSBzZXQgd2hlbiB0eXBlIGlzIGNhbWVyYRoidGhpcy50eXBlICE9IDEgfHwgaGFzKHRoaXMudmlzaW9uKSJAChBBc3NldERlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0ucmVzb3VyY2VzLnYxLkFzc2V0RGVmaW5pdGlvbirdAQoOVmFsaWRhdGlvbk1vZGUSHwobVkFMSURBVElPTl9NT0RFX1VOU1BFQ0lGSUVEEAASIgoeVkFMSURBVElPTl9NT0RFX1BSRVNFTkNFX0NIRUNLEAESHgoaVkFMSURBVElPTl9NT0RFX1BPU0VfQ0hFQ0sQAhIiCh5WQUxJREFUSU9OX01PREVfRkFTVEVORVJfQ0hFQ0sQAxIfChtWQUxJREFUSU9OX01PREVfTEFCRUxfQ0hFQ0sQBBIhCh1WQUxJREFUSU9OX01PREVfU1VSRkFDRV9DSEVDSxAFKrQBCglBc3NldFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09OVkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVfSE1JEAUSGgoWQVNTRVRfVFlQRV9QQVJUX0ZFRURFUhAIQsEBChBjb20ucmVzb3VyY2VzLnYxQhRBc3NldERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_key_value_constraint, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.VisionCapability
@@ -44,6 +44,8 @@ export const VisionCapabilitySchema: GenMessage<VisionCapability> = /*@__PURE__*
   messageDesc(file_resources_v1_asset_definition, 0);
 
 /**
+ * TODO: add ToolRole or similar way to express capabilities?
+ *
  * @generated from message resources.v1.AssetDefinition
  */
 export type AssetDefinition = Message<"resources.v1.AssetDefinition"> & {
@@ -79,21 +81,22 @@ export type AssetDefinition = Message<"resources.v1.AssetDefinition"> & {
   type: AssetType;
 
   /**
-   * @generated from field: resources.v1.AssetDriverType driver_type = 6;
-   */
-  driverType: AssetDriverType;
-
-  /**
    * @generated from field: string model_id = 7;
    */
   modelId: string;
 
   /**
-   * TODO: add ToolRole or similar way to express capabilities?
-   *
    * @generated from field: resources.v1.VisionCapability vision = 8;
    */
   vision?: VisionCapability;
+
+  /**
+   * Selects the static adapter implementation and capability contract used by
+   * every instance of this asset definition.
+   *
+   * @generated from field: string asset_adapter_definition_id = 9;
+   */
+  assetAdapterDefinitionId: string;
 };
 
 /**
@@ -218,25 +221,4 @@ export enum AssetType {
  */
 export const AssetTypeSchema: GenEnum<AssetType> = /*@__PURE__*/
   enumDesc(file_resources_v1_asset_definition, 1);
-
-/**
- * @generated from enum resources.v1.AssetDriverType
- */
-export enum AssetDriverType {
-  /**
-   * @generated from enum value: ASSET_DRIVER_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: ASSET_DRIVER_TYPE_DEFAULT = 1;
-   */
-  DEFAULT = 1,
-}
-
-/**
- * Describes the enum resources.v1.AssetDriverType.
- */
-export const AssetDriverTypeSchema: GenEnum<AssetDriverType> = /*@__PURE__*/
-  enumDesc(file_resources_v1_asset_definition, 2);
 

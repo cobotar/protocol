@@ -25,61 +25,62 @@ namespace Messages.Robot.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chxyb2JvdC92MS9yb2JvdF9hZGFwdGVyLnByb3RvEghyb2JvdC52MRobYnVm",
-            "L3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGh9yb2JvdC92MS9yb2JvdF9pb19j",
-            "YXRhbG9nLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5n",
-            "X3J1bGVzLnByb3RvImMKHVJvYm90QWRhcHRlckNvbW1hbmRDYXBhYmlsaXR5",
-            "EkIKBHR5cGUYASABKA4yIS5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJDb21tYW5k",
-            "VHlwZUILukgIggECEAHIAQFSBHR5cGUisgEKH1JvYm90QWRhcHRlclRlbGVt",
-            "ZXRyeUNhcGFiaWxpdHkSRAoEdHlwZRgBIAEoDjIjLnJvYm90LnYxLlJvYm90",
-            "QWRhcHRlclRlbGVtZXRyeVR5cGVCC7pICIIBAhAByAEBUgR0eXBlEjgKDGZy",
-            "ZXF1ZW5jeV9oehgCIAEoAUIQukgNEgshAAAAAAAAAABAAUgAUgtmcmVxdWVu",
-            "Y3lIeogBAUIPCg1fZnJlcXVlbmN5X2h6IrgBChdSb2JvdENvbnRyb2xsZXJJ",
-            "ZGVudGl0eRIiCgxtYW51ZmFjdHVyZXIYASABKAlSDG1hbnVmYWN0dXJlchIU",
-            "CgVtb2RlbBgCIAEoCVIFbW9kZWwSIwoNc2VyaWFsX251bWJlchgDIAEoCVIM",
-            "c2VyaWFsTnVtYmVyEj4KG2NvbnRyb2xsZXJfc29mdHdhcmVfdmVyc2lvbhgE",
-            "IAEoCVIZY29udHJvbGxlclNvZnR3YXJlVmVyc2lvbiKkBAoXUm9ib3RBZGFw",
-            "dGVySW5mb01lc3NhZ2USJwoIcm9ib3RfaWQYASABKAlCDLpICXIEqPEEAcgB",
-            "AVIHcm9ib3RJZBI1Cg9hZGFwdGVyX3ZlcnNpb24YBSABKAlCDLpICXIEiPQE",
-            "AcgBAVIOYWRhcHRlclZlcnNpb24SQQoKY29udHJvbGxlchgGIAEoCzIhLnJv",
-            "Ym90LnYxLlJvYm90Q29udHJvbGxlcklkZW50aXR5Ugpjb250cm9sbGVyEkEK",
-            "FWNhcGFiaWxpdGllc19yZXZpc2lvbhgIIAEoCUIMukgJcgSI9AQByAEBUhRj",
-            "YXBhYmlsaXRpZXNSZXZpc2lvbhJAChVhZGFwdGVyX2RlZmluaXRpb25faWQY",
-            "CSABKAlCDLpICXIEkPQEAcgBAVITYWRhcHRlckRlZmluaXRpb25JZBJFCgpp",
-            "b19zaWduYWxzGAogASgLMh4ucm9ib3QudjEuUm9ib3RJT1NpZ25hbENhdGFs",
-            "b2dCBrpIA8gBAVIJaW9TaWduYWxzOpkBukiVARqSAQomcm9ib3RfYWRhcHRl",
-            "cl9pbmZvLmlvX3NpZ25hbHNfcm9ib3RfaWQSPXRoZSBJL08gY2F0YWxvZyBy",
-            "b2JvdCBpZCBtdXN0IG1hdGNoIHRoZSBhZGFwdGVyIGluZm8gcm9ib3QgaWQa",
-            "KXRoaXMuaW9fc2lnbmFscy5yb2JvdF9pZCA9PSB0aGlzLnJvYm90X2lkKq8E",
-            "ChdSb2JvdEFkYXB0ZXJDb21tYW5kVHlwZRIqCiZST0JPVF9BREFQVEVSX0NP",
-            "TU1BTkRfVFlQRV9VTlNQRUNJRklFRBAAEisKJ1JPQk9UX0FEQVBURVJfQ09N",
-            "TUFORF9UWVBFX1BST0dSQU1fUExBWRABEiwKKFJPQk9UX0FEQVBURVJfQ09N",
-            "TUFORF9UWVBFX1BST0dSQU1fUEFVU0UQAhIrCidST0JPVF9BREFQVEVSX0NP",
-            "TU1BTkRfVFlQRV9QUk9HUkFNX1NUT1AQAxIqCiZST0JPVF9BREFQVEVSX0NP",
-            "TU1BTkRfVFlQRV9BQ0tOT1dMRURHRRAKEikKJVJPQk9UX0FEQVBURVJfQ09N",
-            "TUFORF9UWVBFX1NIT1dfUE9QVVAQCxIpCiVST0JPVF9BREFQVEVSX0NPTU1B",
-            "TkRfVFlQRV9ISURFX1BPUFVQEAwSKwonUk9CT1RfQURBUFRFUl9DT01NQU5E",
-            "X1RZUEVfTE9BRF9QUk9HUkFNEBQSMAosUk9CT1RfQURBUFRFUl9DT01NQU5E",
-            "X1RZUEVfTE9BRF9JTlNUQUxMQVRJT04QFRInCiNST0JPVF9BREFQVEVSX0NP",
-            "TU1BTkRfVFlQRV9QT1dFUl9PThAeEigKJFJPQk9UX0FEQVBURVJfQ09NTUFO",
-            "RF9UWVBFX1BPV0VSX09GRhAfEiwKKFJPQk9UX0FEQVBURVJfQ09NTUFORF9U",
-            "WVBFX0JSQUtFX1JFTEVBU0UQICqoAgoZUm9ib3RBZGFwdGVyVGVsZW1ldHJ5",
-            "VHlwZRIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1VOU1BFQ0lG",
-            "SUVEEAASLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9ST0JPVF9T",
-            "VEFURRABEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfSk9JTlRf",
-            "U1RBVEUQAhIpCiVST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9Q",
-            "T1NFEAMSKwonUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9UQ1BfV1JF",
-            "TkNIEAQSKQolUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9JT19TVEFU",
-            "RRAFQqIBCgxjb20ucm9ib3QudjFCEVJvYm90QWRhcHRlclByb3RvUAFaNWdp",
-            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTty",
-            "b2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeIC",
-            "FFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
+            "L3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGhZjb21tb24vdjEvc2lnbmFsLnBy",
+            "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
+            "b3RvImMKHVJvYm90QWRhcHRlckNvbW1hbmRDYXBhYmlsaXR5EkIKBHR5cGUY",
+            "ASABKA4yIS5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJDb21tYW5kVHlwZUILukgI",
+            "ggECEAHIAQFSBHR5cGUisgEKH1JvYm90QWRhcHRlclRlbGVtZXRyeUNhcGFi",
+            "aWxpdHkSRAoEdHlwZRgBIAEoDjIjLnJvYm90LnYxLlJvYm90QWRhcHRlclRl",
+            "bGVtZXRyeVR5cGVCC7pICIIBAhAByAEBUgR0eXBlEjgKDGZyZXF1ZW5jeV9o",
+            "ehgCIAEoAUIQukgNEgshAAAAAAAAAABAAUgAUgtmcmVxdWVuY3lIeogBAUIP",
+            "Cg1fZnJlcXVlbmN5X2h6IrgBChdSb2JvdENvbnRyb2xsZXJJZGVudGl0eRIi",
+            "CgxtYW51ZmFjdHVyZXIYASABKAlSDG1hbnVmYWN0dXJlchIUCgVtb2RlbBgC",
+            "IAEoCVIFbW9kZWwSIwoNc2VyaWFsX251bWJlchgDIAEoCVIMc2VyaWFsTnVt",
+            "YmVyEj4KG2NvbnRyb2xsZXJfc29mdHdhcmVfdmVyc2lvbhgEIAEoCVIZY29u",
+            "dHJvbGxlclNvZnR3YXJlVmVyc2lvbiK6BAoXUm9ib3RBZGFwdGVySW5mb01l",
+            "c3NhZ2USJwoIcm9ib3RfaWQYASABKAlCDLpICXIEqPEEAcgBAVIHcm9ib3RJ",
+            "ZBI1Cg9hZGFwdGVyX3ZlcnNpb24YBSABKAlCDLpICXIEiPQEAcgBAVIOYWRh",
+            "cHRlclZlcnNpb24SQQoKY29udHJvbGxlchgGIAEoCzIhLnJvYm90LnYxLlJv",
+            "Ym90Q29udHJvbGxlcklkZW50aXR5Ugpjb250cm9sbGVyEkEKFWNhcGFiaWxp",
+            "dGllc19yZXZpc2lvbhgIIAEoCUIMukgJcgSI9AQByAEBUhRjYXBhYmlsaXRp",
+            "ZXNSZXZpc2lvbhJAChVhZGFwdGVyX2RlZmluaXRpb25faWQYCSABKAlCDLpI",
+            "CXIEkPQEAcgBAVITYWRhcHRlckRlZmluaXRpb25JZBJHCg5zaWduYWxfY2F0",
+            "YWxvZxgKIAEoCzIYLmNvbW1vbi52MS5TaWduYWxDYXRhbG9nQga6SAPIAQFS",
+            "DXNpZ25hbENhdGFsb2c6rQG6SKkBGqYBCi1yb2JvdF9hZGFwdGVyX2luZm8u",
+            "c2lnbmFsX2NhdGFsb2dfcmVzb3VyY2VfaWQSQ3RoZSBzaWduYWwgY2F0YWxv",
+            "ZyByZXNvdXJjZSBpZCBtdXN0IG1hdGNoIHRoZSBhZGFwdGVyIGluZm8gcm9i",
+            "b3QgaWQaMHRoaXMuc2lnbmFsX2NhdGFsb2cucmVzb3VyY2VfaWQgPT0gdGhp",
+            "cy5yb2JvdF9pZCqvBAoXUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGUSKgomUk9C",
+            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfVU5TUEVDSUZJRUQQABIrCidST0JP",
+            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1BMQVkQARIsCihST0JP",
+            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1BBVVNFEAISKwonUk9C",
+            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9TVE9QEAMSKgomUk9C",
+            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQUNLTk9XTEVER0UQChIpCiVST0JP",
+            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9TSE9XX1BPUFVQEAsSKQolUk9CT1Rf",
+            "QURBUFRFUl9DT01NQU5EX1RZUEVfSElERV9QT1BVUBAMEisKJ1JPQk9UX0FE",
+            "QVBURVJfQ09NTUFORF9UWVBFX0xPQURfUFJPR1JBTRAUEjAKLFJPQk9UX0FE",
+            "QVBURVJfQ09NTUFORF9UWVBFX0xPQURfSU5TVEFMTEFUSU9OEBUSJwojUk9C",
+            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJfT04QHhIoCiRST0JPVF9B",
+            "REFQVEVSX0NPTU1BTkRfVFlQRV9QT1dFUl9PRkYQHxIsCihST0JPVF9BREFQ",
+            "VEVSX0NPTU1BTkRfVFlQRV9CUkFLRV9SRUxFQVNFECAqqAIKGVJvYm90QWRh",
+            "cHRlclRlbGVtZXRyeVR5cGUSLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllf",
+            "VFlQRV9VTlNQRUNJRklFRBAAEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZ",
+            "X1RZUEVfUk9CT1RfU1RBVEUQARIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRS",
+            "WV9UWVBFX0pPSU5UX1NUQVRFEAISKQolUk9CT1RfQURBUFRFUl9URUxFTUVU",
+            "UllfVFlQRV9UQ1BfUE9TRRADEisKJ1JPQk9UX0FEQVBURVJfVEVMRU1FVFJZ",
+            "X1RZUEVfVENQX1dSRU5DSBAEEikKJVJPQk9UX0FEQVBURVJfVEVMRU1FVFJZ",
+            "X1RZUEVfSU9fU1RBVEUQBUKiAQoMY29tLnJvYm90LnYxQhFSb2JvdEFkYXB0",
+            "ZXJQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
+            "ZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEU1lc3NhZ2VzLlJvYm90LlYx",
+            "ygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpW",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.SignalReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotAdapterCommandType), typeof(global::Messages.Robot.V1.RobotAdapterTelemetryType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterCommandCapability), global::Messages.Robot.V1.RobotAdapterCommandCapability.Parser, new[]{ "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterTelemetryCapability), global::Messages.Robot.V1.RobotAdapterTelemetryCapability.Parser, new[]{ "Type", "FrequencyHz" }, new[]{ "FrequencyHz" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotControllerIdentity), global::Messages.Robot.V1.RobotControllerIdentity.Parser, new[]{ "Manufacturer", "Model", "SerialNumber", "ControllerSoftwareVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterInfoMessage), global::Messages.Robot.V1.RobotAdapterInfoMessage.Parser, new[]{ "RobotId", "AdapterVersion", "Controller", "CapabilitiesRevision", "AdapterDefinitionId", "IoSignals" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterInfoMessage), global::Messages.Robot.V1.RobotAdapterInfoMessage.Parser, new[]{ "RobotId", "AdapterVersion", "Controller", "CapabilitiesRevision", "AdapterDefinitionId", "SignalCatalog" }, null, null, null, null)
           }));
     }
     #endregion
@@ -915,7 +916,7 @@ namespace Messages.Robot.V1 {
       controller_ = other.controller_ != null ? other.controller_.Clone() : null;
       capabilitiesRevision_ = other.capabilitiesRevision_;
       adapterDefinitionId_ = other.adapterDefinitionId_;
-      ioSignals_ = other.ioSignals_ != null ? other.ioSignals_.Clone() : null;
+      signalCatalog_ = other.signalCatalog_ != null ? other.signalCatalog_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -971,7 +972,7 @@ namespace Messages.Robot.V1 {
     public const int CapabilitiesRevisionFieldNumber = 8;
     private string capabilitiesRevision_ = "";
     /// <summary>
-    /// Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
+    /// Deterministic fingerprint of adapter_definition_id and the effective signal catalog.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -997,18 +998,18 @@ namespace Messages.Robot.V1 {
       }
     }
 
-    /// <summary>Field number for the "io_signals" field.</summary>
-    public const int IoSignalsFieldNumber = 10;
-    private global::Messages.Robot.V1.RobotIOSignalCatalog ioSignals_;
+    /// <summary>Field number for the "signal_catalog" field.</summary>
+    public const int SignalCatalogFieldNumber = 10;
+    private global::Messages.Common.V1.SignalCatalog signalCatalog_;
     /// <summary>
     /// Signals configured for this connected robot instance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Robot.V1.RobotIOSignalCatalog IoSignals {
-      get { return ioSignals_; }
+    public global::Messages.Common.V1.SignalCatalog SignalCatalog {
+      get { return signalCatalog_; }
       set {
-        ioSignals_ = value;
+        signalCatalog_ = value;
       }
     }
 
@@ -1032,7 +1033,7 @@ namespace Messages.Robot.V1 {
       if (!object.Equals(Controller, other.Controller)) return false;
       if (CapabilitiesRevision != other.CapabilitiesRevision) return false;
       if (AdapterDefinitionId != other.AdapterDefinitionId) return false;
-      if (!object.Equals(IoSignals, other.IoSignals)) return false;
+      if (!object.Equals(SignalCatalog, other.SignalCatalog)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1045,7 +1046,7 @@ namespace Messages.Robot.V1 {
       if (controller_ != null) hash ^= Controller.GetHashCode();
       if (CapabilitiesRevision.Length != 0) hash ^= CapabilitiesRevision.GetHashCode();
       if (AdapterDefinitionId.Length != 0) hash ^= AdapterDefinitionId.GetHashCode();
-      if (ioSignals_ != null) hash ^= IoSignals.GetHashCode();
+      if (signalCatalog_ != null) hash ^= SignalCatalog.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1084,9 +1085,9 @@ namespace Messages.Robot.V1 {
         output.WriteRawTag(74);
         output.WriteString(AdapterDefinitionId);
       }
-      if (ioSignals_ != null) {
+      if (signalCatalog_ != null) {
         output.WriteRawTag(82);
-        output.WriteMessage(IoSignals);
+        output.WriteMessage(SignalCatalog);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1118,9 +1119,9 @@ namespace Messages.Robot.V1 {
         output.WriteRawTag(74);
         output.WriteString(AdapterDefinitionId);
       }
-      if (ioSignals_ != null) {
+      if (signalCatalog_ != null) {
         output.WriteRawTag(82);
-        output.WriteMessage(IoSignals);
+        output.WriteMessage(SignalCatalog);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1147,8 +1148,8 @@ namespace Messages.Robot.V1 {
       if (AdapterDefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AdapterDefinitionId);
       }
-      if (ioSignals_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(IoSignals);
+      if (signalCatalog_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SignalCatalog);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1180,11 +1181,11 @@ namespace Messages.Robot.V1 {
       if (other.AdapterDefinitionId.Length != 0) {
         AdapterDefinitionId = other.AdapterDefinitionId;
       }
-      if (other.ioSignals_ != null) {
-        if (ioSignals_ == null) {
-          IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
+      if (other.signalCatalog_ != null) {
+        if (signalCatalog_ == null) {
+          SignalCatalog = new global::Messages.Common.V1.SignalCatalog();
         }
-        IoSignals.MergeFrom(other.IoSignals);
+        SignalCatalog.MergeFrom(other.SignalCatalog);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1229,10 +1230,10 @@ namespace Messages.Robot.V1 {
             break;
           }
           case 82: {
-            if (ioSignals_ == null) {
-              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
+            if (signalCatalog_ == null) {
+              SignalCatalog = new global::Messages.Common.V1.SignalCatalog();
             }
-            input.ReadMessage(IoSignals);
+            input.ReadMessage(SignalCatalog);
             break;
           }
         }
@@ -1278,10 +1279,10 @@ namespace Messages.Robot.V1 {
             break;
           }
           case 82: {
-            if (ioSignals_ == null) {
-              IoSignals = new global::Messages.Robot.V1.RobotIOSignalCatalog();
+            if (signalCatalog_ == null) {
+              SignalCatalog = new global::Messages.Common.V1.SignalCatalog();
             }
-            input.ReadMessage(IoSignals);
+            input.ReadMessage(SignalCatalog);
             break;
           }
         }

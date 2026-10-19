@@ -21,6 +21,9 @@ Catalog conformance: **staged** ([cobotar/protocol#11](https://github.com/cobota
 | `edit.model.add` | `edit.model.add` | active | staged | resources.v1.ModelArtifact → service.v1.Response / service.v1.Response | fusion360_exporter, web_cobotar | authoring |
 | `edit.part_definition.add` | `edit.part_definition.add` | active | staged | product.v1.PartDefinition → service.v1.Response / service.v1.Response | fusion360_exporter, web_cobotar | authoring |
 | `edit.product.add` | `edit.product.add` | active | staged | product.v1.ProductDefinition → service.v1.Response / service.v1.Response | fusion360_exporter, web_cobotar | authoring |
+| `get.asset_adapter.info` | `get.asset_adapter.info.{asset_instance_id}` | planned | staged | (empty) → resources.v1.AssetAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.asset_adapter_definition.all` | `get.asset_adapter_definition.all` | planned | staged | (empty) → resources.v1.AssetAdapterDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.asset_adapter_definition.one` | `get.asset_adapter_definition.one` | planned | staged | common.v1.GetMessage → resources.v1.AssetAdapterDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.robot_adapter.info` | `get.robot_adapter.info.{robot_instance_id}` | active | staged | (empty) → robot.v1.RobotAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.robot_adapter_definition.all` | `get.robot_adapter_definition.all` | planned | staged | (empty) → resources.v1.RobotAdapterDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.robot_adapter_definition.one` | `get.robot_adapter_definition.one` | planned | staged | common.v1.GetMessage → resources.v1.RobotAdapterDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |

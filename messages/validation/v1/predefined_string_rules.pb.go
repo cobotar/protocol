@@ -430,6 +430,22 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10050,opt,name=robot_adapter_definition_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10051,
+		Name:          "validation.v1.asset_adapter_definition_id_component",
+		Tag:           "varint,10051,opt,name=asset_adapter_definition_id_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10052,
+		Name:          "validation.v1.adapter_type_component",
+		Tag:           "varint,10052,opt,name=adapter_type_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -536,6 +552,10 @@ var (
 	E_NotBlank = &file_validation_v1_predefined_string_rules_proto_extTypes[49]
 	// optional bool robot_adapter_definition_id_component = 10050;
 	E_RobotAdapterDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[50]
+	// optional bool asset_adapter_definition_id_component = 10051;
+	E_AssetAdapterDefinitionIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[51]
+	// optional bool adapter_type_component = 10052;
+	E_AdapterTypeComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[52]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -695,7 +715,13 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x10string.not_blank\x128value must contain at least one non-whitespace character\x1a\x1f!rule || this.trim().size() > 0R\bnotBlank:\x9a\x02\n" +
 	"%robot_adapter_definition_id_component\x12\x19.buf.validate.StringRules\x18\xc2N \x01(\bB\xab\x01\xc2H\xa7\x01\n" +
 	"\xa4\x01\n" +
-	",string.robot_adapter_definition_id_component\x126this does not seem to be a robot adapter definition id\x1a<(this == '' || this.startsWith('robot_adapter_definition-'))R!robotAdapterDefinitionIdComponentB\xb5\x01\n" +
+	",string.robot_adapter_definition_id_component\x126this does not seem to be a robot adapter definition id\x1a<(this == '' || this.startsWith('robot_adapter_definition-'))R!robotAdapterDefinitionIdComponent:\x9b\x02\n" +
+	"%asset_adapter_definition_id_component\x12\x19.buf.validate.StringRules\x18\xc3N \x01(\bB\xac\x01\xc2H\xa8\x01\n" +
+	"\xa5\x01\n" +
+	",string.asset_adapter_definition_id_component\x127this does not seem to be an asset adapter definition id\x1a<(this == '' || this.startsWith('asset_adapter_definition-'))R!assetAdapterDefinitionIdComponent:\xb7\x02\n" +
+	"\x16adapter_type_component\x12\x19.buf.validate.StringRules\x18\xc4N \x01(\bB\xe4\x01\xc2H\xe0\x01\n" +
+	"\xdd\x01\n" +
+	"\x1dstring.adapter_type_component\x12]adapter type must be 1 to 128 lowercase characters separated by dots, underscores, or hyphens\x1a]this.size() >= 1 && this.size() <= 128 && this.matches('^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$')R\x14adapterTypeComponentB\xb5\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -753,10 +779,12 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 48: validation.v1.execution_evidence_id_component:extendee -> buf.validate.StringRules
 	0,  // 49: validation.v1.not_blank:extendee -> buf.validate.StringRules
 	0,  // 50: validation.v1.robot_adapter_definition_id_component:extendee -> buf.validate.StringRules
-	51, // [51:51] is the sub-list for method output_type
-	51, // [51:51] is the sub-list for method input_type
-	51, // [51:51] is the sub-list for extension type_name
-	0,  // [0:51] is the sub-list for extension extendee
+	0,  // 51: validation.v1.asset_adapter_definition_id_component:extendee -> buf.validate.StringRules
+	0,  // 52: validation.v1.adapter_type_component:extendee -> buf.validate.StringRules
+	53, // [53:53] is the sub-list for method output_type
+	53, // [53:53] is the sub-list for method input_type
+	53, // [53:53] is the sub-list for extension type_name
+	0,  // [0:53] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -772,7 +800,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 51,
+			NumExtensions: 53,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

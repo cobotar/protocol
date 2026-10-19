@@ -176,12 +176,12 @@ var File_resources_v1_robot_adapter_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_robot_adapter_definition_proto_rawDesc = "" +
 	"\n" +
-	"+resources/v1/robot_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#resources/v1/robot_definition.proto\x1a\x1crobot/v1/robot_adapter.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb8\x06\n" +
+	"+resources/v1/robot_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#resources/v1/robot_definition.proto\x1a\x1crobot/v1/robot_adapter.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8f\x06\n" +
 	"\x16RobotAdapterDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescription\x12U\n" +
-	"\fadapter_type\x18\x04 \x01(\tB2\xbaH/\xc8\x01\x01r*\x10\x01\x18\x80\x012#^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$R\vadapterType\x12`\n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12,\n" +
+	"\fadapter_type\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xa0\xf4\x04\x01R\vadapterType\x12`\n" +
 	"\x15supported_robot_types\x18\x05 \x03(\x0e2\x17.resources.v1.RobotTypeB\x13\xbaH\x10\x92\x01\r\b\x01\x18\x01\"\a\x82\x01\x04\x10\x01 \x00R\x13supportedRobotTypes\x12\xc3\x01\n" +
 	"\bcommands\x18\x06 \x03(\v2'.robot.v1.RobotAdapterCommandCapabilityB~\xbaH{\xba\x01x\n" +
 	".robot_adapter_definition.commands.unique_types\x12\x1ccommand types must be unique\x1a(this.map(command, command.type).unique()R\bcommands\x12\xc8\x01\n" +

@@ -33,14 +33,10 @@ enum AssetType {
   ASSET_TYPE_PART_FEEDER = 8; // Feeder/presentation device used to supply parts in a controlled way.
 }
 
-enum AssetDriverType {
-  ASSET_DRIVER_TYPE_UNSPECIFIED = 0;
-  ASSET_DRIVER_TYPE_DEFAULT = 1;
-}
-
+// TODO: add ToolRole or similar way to express capabilities?
 message AssetDefinition {
   option (buf.validate.message).cel = {
-    id: "asset_type_camera_requires_vision_capability"
+    id: "asset_definition.camera_requires_vision_capability"
     message: "vision capability must be set when type is camera"
     expression: "this.type != 1 || has(this.vision)"
   };
@@ -54,13 +50,15 @@ message AssetDefinition {
     (buf.validate.field).enum.defined_only = true,
     (buf.validate.field).enum.example = 1 // ASSET_TYPE_CAMERA
   ];
-  AssetDriverType driver_type = 6 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).enum.defined_only = true
-  ];
   string model_id = 7 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
   VisionCapability vision = 8;
-  // TODO: add ToolRole or similar way to express capabilities?
+
+  // Selects the static adapter implementation and capability contract used by
+  // every instance of this asset definition.
+  string asset_adapter_definition_id = 9 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.asset_adapter_definition_id_component) = true
+  ];
 }
 
 message AssetDefinitions {

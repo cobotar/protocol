@@ -8,6 +8,7 @@ package robotv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v1 "github.com/cobotar/protocol/messages/common/v1"
 	_ "github.com/cobotar/protocol/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -329,12 +330,12 @@ type RobotAdapterInfoMessage struct {
 	AdapterVersion string `protobuf:"bytes,5,opt,name=adapter_version,json=adapterVersion,proto3" json:"adapter_version,omitempty"`
 	// Identity actually reported by the connected controller.
 	Controller *RobotControllerIdentity `protobuf:"bytes,6,opt,name=controller,proto3" json:"controller,omitempty"`
-	// Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
+	// Deterministic fingerprint of adapter_definition_id and the effective signal catalog.
 	CapabilitiesRevision string `protobuf:"bytes,8,opt,name=capabilities_revision,json=capabilitiesRevision,proto3" json:"capabilities_revision,omitempty"`
 	// Static adapter capabilities selected by the robot definition.
 	AdapterDefinitionId string `protobuf:"bytes,9,opt,name=adapter_definition_id,json=adapterDefinitionId,proto3" json:"adapter_definition_id,omitempty"`
 	// Signals configured for this connected robot instance.
-	IoSignals     *RobotIOSignalCatalog `protobuf:"bytes,10,opt,name=io_signals,json=ioSignals,proto3" json:"io_signals,omitempty"`
+	SignalCatalog *v1.SignalCatalog `protobuf:"bytes,10,opt,name=signal_catalog,json=signalCatalog,proto3" json:"signal_catalog,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -404,9 +405,9 @@ func (x *RobotAdapterInfoMessage) GetAdapterDefinitionId() string {
 	return ""
 }
 
-func (x *RobotAdapterInfoMessage) GetIoSignals() *RobotIOSignalCatalog {
+func (x *RobotAdapterInfoMessage) GetSignalCatalog() *v1.SignalCatalog {
 	if x != nil {
-		return x.IoSignals
+		return x.SignalCatalog
 	}
 	return nil
 }
@@ -415,7 +416,7 @@ var File_robot_v1_robot_adapter_proto protoreflect.FileDescriptor
 
 const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"\n" +
-	"\x1crobot/v1/robot_adapter.proto\x12\brobot.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"c\n" +
+	"\x1crobot/v1/robot_adapter.proto\x12\brobot.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16common/v1/signal.proto\x1a+validation/v1/predefined_string_rules.proto\"c\n" +
 	"\x1dRobotAdapterCommandCapability\x12B\n" +
 	"\x04type\x18\x01 \x01(\x0e2!.robot.v1.RobotAdapterCommandTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\xb2\x01\n" +
 	"\x1fRobotAdapterTelemetryCapability\x12D\n" +
@@ -426,7 +427,7 @@ const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"\fmanufacturer\x18\x01 \x01(\tR\fmanufacturer\x12\x14\n" +
 	"\x05model\x18\x02 \x01(\tR\x05model\x12#\n" +
 	"\rserial_number\x18\x03 \x01(\tR\fserialNumber\x12>\n" +
-	"\x1bcontroller_software_version\x18\x04 \x01(\tR\x19controllerSoftwareVersion\"\xa4\x04\n" +
+	"\x1bcontroller_software_version\x18\x04 \x01(\tR\x19controllerSoftwareVersion\"\xba\x04\n" +
 	"\x17RobotAdapterInfoMessage\x12'\n" +
 	"\brobot_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa8\xf1\x04\x01R\arobotId\x125\n" +
 	"\x0fadapter_version\x18\x05 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf4\x04\x01R\x0eadapterVersion\x12A\n" +
@@ -434,11 +435,10 @@ const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"controller\x18\x06 \x01(\v2!.robot.v1.RobotControllerIdentityR\n" +
 	"controller\x12A\n" +
 	"\x15capabilities_revision\x18\b \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x88\xf4\x04\x01R\x14capabilitiesRevision\x12@\n" +
-	"\x15adapter_definition_id\x18\t \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x13adapterDefinitionId\x12E\n" +
-	"\n" +
-	"io_signals\x18\n" +
-	" \x01(\v2\x1e.robot.v1.RobotIOSignalCatalogB\x06\xbaH\x03\xc8\x01\x01R\tioSignals:\x99\x01\xbaH\x95\x01\x1a\x92\x01\n" +
-	"&robot_adapter_info.io_signals_robot_id\x12=the I/O catalog robot id must match the adapter info robot id\x1a)this.io_signals.robot_id == this.robot_id*\xaf\x04\n" +
+	"\x15adapter_definition_id\x18\t \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x13adapterDefinitionId\x12G\n" +
+	"\x0esignal_catalog\x18\n" +
+	" \x01(\v2\x18.common.v1.SignalCatalogB\x06\xbaH\x03\xc8\x01\x01R\rsignalCatalog:\xad\x01\xbaH\xa9\x01\x1a\xa6\x01\n" +
+	"-robot_adapter_info.signal_catalog_resource_id\x12Cthe signal catalog resource id must match the adapter info robot id\x1a0this.signal_catalog.resource_id == this.robot_id*\xaf\x04\n" +
 	"\x17RobotAdapterCommandType\x12*\n" +
 	"&ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED\x10\x00\x12+\n" +
 	"'ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY\x10\x01\x12,\n" +
@@ -483,13 +483,13 @@ var file_robot_v1_robot_adapter_proto_goTypes = []any{
 	(*RobotAdapterTelemetryCapability)(nil), // 3: robot.v1.RobotAdapterTelemetryCapability
 	(*RobotControllerIdentity)(nil),         // 4: robot.v1.RobotControllerIdentity
 	(*RobotAdapterInfoMessage)(nil),         // 5: robot.v1.RobotAdapterInfoMessage
-	(*RobotIOSignalCatalog)(nil),            // 6: robot.v1.RobotIOSignalCatalog
+	(*v1.SignalCatalog)(nil),                // 6: common.v1.SignalCatalog
 }
 var file_robot_v1_robot_adapter_proto_depIdxs = []int32{
 	0, // 0: robot.v1.RobotAdapterCommandCapability.type:type_name -> robot.v1.RobotAdapterCommandType
 	1, // 1: robot.v1.RobotAdapterTelemetryCapability.type:type_name -> robot.v1.RobotAdapterTelemetryType
 	4, // 2: robot.v1.RobotAdapterInfoMessage.controller:type_name -> robot.v1.RobotControllerIdentity
-	6, // 3: robot.v1.RobotAdapterInfoMessage.io_signals:type_name -> robot.v1.RobotIOSignalCatalog
+	6, // 3: robot.v1.RobotAdapterInfoMessage.signal_catalog:type_name -> common.v1.SignalCatalog
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
@@ -502,7 +502,6 @@ func file_robot_v1_robot_adapter_proto_init() {
 	if File_robot_v1_robot_adapter_proto != nil {
 		return
 	}
-	file_robot_v1_robot_io_catalog_proto_init()
 	file_robot_v1_robot_adapter_proto_msgTypes[1].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

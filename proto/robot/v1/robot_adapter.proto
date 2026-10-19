@@ -2,7 +2,7 @@ syntax = "proto3";
 package robot.v1;
 
 import "buf/validate/validate.proto";
-import "robot/v1/robot_io_catalog.proto";
+import "common/v1/signal.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Robot.V1";
@@ -66,9 +66,9 @@ message RobotControllerIdentity {
 
 message RobotAdapterInfoMessage {
   option (buf.validate.message).cel = {
-    id: "robot_adapter_info.io_signals_robot_id"
-    message: "the I/O catalog robot id must match the adapter info robot id"
-    expression: "this.io_signals.robot_id == this.robot_id"
+    id: "robot_adapter_info.signal_catalog_resource_id"
+    message: "the signal catalog resource id must match the adapter info robot id"
+    expression: "this.signal_catalog.resource_id == this.robot_id"
   };
 
   string robot_id = 1 [
@@ -85,7 +85,7 @@ message RobotAdapterInfoMessage {
   // Identity actually reported by the connected controller.
   RobotControllerIdentity controller = 6;
 
-  // Deterministic fingerprint of adapter_definition_id and the configured I/O catalog.
+  // Deterministic fingerprint of adapter_definition_id and the effective signal catalog.
   string capabilities_revision = 8 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.not_blank) = true
@@ -98,5 +98,5 @@ message RobotAdapterInfoMessage {
   ];
 
   // Signals configured for this connected robot instance.
-  RobotIOSignalCatalog io_signals = 10 [(buf.validate.field).required = true];
+  common.v1.SignalCatalog signal_catalog = 10 [(buf.validate.field).required = true];
 }

@@ -1,0 +1,90 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/signal.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+enum AssetAdapterCommandType {
+  ASSET_ADAPTER_COMMAND_TYPE_UNSPECIFIED = 0;
+  ASSET_ADAPTER_COMMAND_TYPE_WRITE_SIGNALS = 1;
+  ASSET_ADAPTER_COMMAND_TYPE_TRIGGER = 2;
+  ASSET_ADAPTER_COMMAND_TYPE_START = 3;
+  ASSET_ADAPTER_COMMAND_TYPE_STOP = 4;
+  ASSET_ADAPTER_COMMAND_TYPE_RESET = 5;
+  ASSET_ADAPTER_COMMAND_TYPE_SET_SPEED = 6;
+}
+
+enum AssetAdapterTelemetryType {
+  ASSET_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED = 0;
+  ASSET_ADAPTER_TELEMETRY_TYPE_STATE = 1;
+  ASSET_ADAPTER_TELEMETRY_TYPE_SIGNAL_STATE = 2;
+  ASSET_ADAPTER_TELEMETRY_TYPE_FAULT = 3;
+  ASSET_ADAPTER_TELEMETRY_TYPE_RESULT = 4;
+}
+
+message AssetAdapterCommandCapability {
+  AssetAdapterCommandType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+}
+
+message AssetAdapterTelemetryCapability {
+  AssetAdapterTelemetryType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+
+  // Publication rate guaranteed by the adapter definition.
+  optional double frequency_hz = 2 [(buf.validate.field).double = {
+    gt: 0
+    finite: true
+  }];
+}
+
+message AssetControllerIdentity {
+  string manufacturer = 1;
+  string model = 2;
+  string serial_number = 3;
+  string controller_software_version = 4;
+}
+
+message AssetAdapterInfoMessage {
+  option (buf.validate.message).cel = {
+    id: "asset_adapter_info.signal_catalog_resource_id"
+    message: "the signal catalog resource id must match the adapter info asset id"
+    expression: "this.signal_catalog.resource_id == this.asset_id"
+  };
+
+  string asset_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.asset_instance_id_component) = true
+  ];
+
+  // Version of the adapter implementation, not the Protobuf API.
+  string adapter_version = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+
+  // Identity actually reported by the connected asset controller.
+  AssetControllerIdentity controller = 3;
+
+  // Deterministic fingerprint of adapter_definition_id and the effective signal catalog.
+  string capabilities_revision = 4 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.not_blank) = true
+  ];
+
+  // Static adapter capabilities selected by the asset definition.
+  string adapter_definition_id = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.asset_adapter_definition_id_component) = true
+  ];
+
+  common.v1.SignalCatalog signal_catalog = 6 [(buf.validate.field).required = true];
+}

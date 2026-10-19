@@ -2,113 +2,18 @@
 // @generated from file robot/v1/robot_io_catalog.proto (package robot.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
-import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
-import type { Message } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc } from "@bufbuild/protobuf/codegenv2";
 
 /**
  * Describes the file robot/v1/robot_io_catalog.proto.
  */
 export const file_robot_v1_robot_io_catalog: GenFile = /*@__PURE__*/
-  fileDesc("Ch9yb2JvdC92MS9yb2JvdF9pb19jYXRhbG9nLnByb3RvEghyb2JvdC52MSLAAgoXUm9ib3RJT1NpZ25hbERlZmluaXRpb24SHwoJc2lnbmFsX2lkGAEgASgJQgy6SAnIAQFyBODzBAESFwoEbmFtZRgCIAEoCUIJukgGcgSA8QQBEjkKCWRhdGFfdHlwZRgDIAEoDjIZLnJvYm90LnYxLlJvYm90SU9EYXRhVHlwZUILukgIyAEBggECEAESEAoIcmVhZGFibGUYBCABKAgSEAoId3JpdGFibGUYBSABKAg6iwG6SIcBGoQBCi9yb2JvdF9pb19zaWduYWxfZGVmaW5pdGlvbi5yZWFkYWJsZV9vcl93cml0YWJsZRIxYW4gSS9PIHNpZ25hbCBtdXN0IGJlIHJlYWRhYmxlLCB3cml0YWJsZSwgb3IgYm90aBoedGhpcy5yZWFkYWJsZSB8fCB0aGlzLndyaXRhYmxlIusBChRSb2JvdElPU2lnbmFsQ2F0YWxvZxIeCghyb2JvdF9pZBgBIAEoCUIMukgJyAEBcgSo8QQBErIBCgdzaWduYWxzGAIgAygLMiEucm9ib3QudjEuUm9ib3RJT1NpZ25hbERlZmluaXRpb25CfrpIe7oBeAoqcm9ib3RfaW9fc2lnbmFsX2NhdGFsb2cuc2lnbmFscy51bmlxdWVfaWRzEh1JL08gc2lnbmFsIGlkcyBtdXN0IGJlIHVuaXF1ZRordGhpcy5tYXAoc2lnbmFsLCBzaWduYWwuc2lnbmFsX2lkKS51bmlxdWUoKSqPAQoPUm9ib3RJT0RhdGFUeXBlEiIKHlJPQk9UX0lPX0RBVEFfVFlQRV9VTlNQRUNJRklFRBAAEhsKF1JPQk9UX0lPX0RBVEFfVFlQRV9CT09MEAESHAoYUk9CT1RfSU9fREFUQV9UWVBFX0lOVDMyEAISHQoZUk9CT1RfSU9fREFUQV9UWVBFX0RPVUJMRRADKowEChNSb2JvdElPUmVnaXN0ZXJLaW5kEiYKIlJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfVU5TUEVDSUZJRUQQABIoCiRST0JPVF9JT19SRUdJU1RFUl9LSU5EX0RJR0lUQUxfSU5QVVQQARIpCiVST0JPVF9JT19SRUdJU1RFUl9LSU5EX0RJR0lUQUxfT1VUUFVUEAISJwojUk9CT1RfSU9fUkVHSVNURVJfS0lORF9BTkFMT0dfSU5QVVQQAxIoCiRST0JPVF9JT19SRUdJU1RFUl9LSU5EX0FOQUxPR19PVVRQVVQQBBItCilST0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0JJVF9SRUdJU1RFUhAKEi8KK1JPQk9UX0lPX1JFR0lTVEVSX0tJTkRfSU5QVVRfSU5UMzJfUkVHSVNURVIQCxIwCixST0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0RPVUJMRV9SRUdJU1RFUhAMEi4KKlJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0JJVF9SRUdJU1RFUhAUEjAKLFJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0lOVDMyX1JFR0lTVEVSEBUSMQotUk9CT1RfSU9fUkVHSVNURVJfS0lORF9PVVRQVVRfRE9VQkxFX1JFR0lTVEVSEBZCpAEKDGNvbS5yb2JvdC52MUITUm9ib3RJb0NhdGFsb2dQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEU1lc3NhZ2VzLlJvYm90LlYxygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9yb2JvdC92MS9yb2JvdF9pb19jYXRhbG9nLnByb3RvEghyb2JvdC52MSqMBAoTUm9ib3RJT1JlZ2lzdGVyS2luZBImCiJST0JPVF9JT19SRUdJU1RFUl9LSU5EX1VOU1BFQ0lGSUVEEAASKAokUk9CT1RfSU9fUkVHSVNURVJfS0lORF9ESUdJVEFMX0lOUFVUEAESKQolUk9CT1RfSU9fUkVHSVNURVJfS0lORF9ESUdJVEFMX09VVFBVVBACEicKI1JPQk9UX0lPX1JFR0lTVEVSX0tJTkRfQU5BTE9HX0lOUFVUEAMSKAokUk9CT1RfSU9fUkVHSVNURVJfS0lORF9BTkFMT0dfT1VUUFVUEAQSLQopUk9CT1RfSU9fUkVHSVNURVJfS0lORF9JTlBVVF9CSVRfUkVHSVNURVIQChIvCitST0JPVF9JT19SRUdJU1RFUl9LSU5EX0lOUFVUX0lOVDMyX1JFR0lTVEVSEAsSMAosUk9CT1RfSU9fUkVHSVNURVJfS0lORF9JTlBVVF9ET1VCTEVfUkVHSVNURVIQDBIuCipST0JPVF9JT19SRUdJU1RFUl9LSU5EX09VVFBVVF9CSVRfUkVHSVNURVIQFBIwCixST0JPVF9JT19SRUdJU1RFUl9LSU5EX09VVFBVVF9JTlQzMl9SRUdJU1RFUhAVEjEKLVJPQk9UX0lPX1JFR0lTVEVSX0tJTkRfT1VUUFVUX0RPVUJMRV9SRUdJU1RFUhAWQqQBCgxjb20ucm9ib3QudjFCE1JvYm90SW9DYXRhbG9nUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw");
 
 /**
- * @generated from message robot.v1.RobotIOSignalDefinition
- */
-export type RobotIOSignalDefinition = Message<"robot.v1.RobotIOSignalDefinition"> & {
-  /**
-   * @generated from field: string signal_id = 1;
-   */
-  signalId: string;
-
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
-
-  /**
-   * @generated from field: robot.v1.RobotIODataType data_type = 3;
-   */
-  dataType: RobotIODataType;
-
-  /**
-   * From the public API's perspective—not RTDE's terminology.
-   *
-   * @generated from field: bool readable = 4;
-   */
-  readable: boolean;
-
-  /**
-   * @generated from field: bool writable = 5;
-   */
-  writable: boolean;
-};
-
-/**
- * Describes the message robot.v1.RobotIOSignalDefinition.
- * Use `create(RobotIOSignalDefinitionSchema)` to create a new message.
- */
-export const RobotIOSignalDefinitionSchema: GenMessage<RobotIOSignalDefinition> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_io_catalog, 0);
-
-/**
- * @generated from message robot.v1.RobotIOSignalCatalog
- */
-export type RobotIOSignalCatalog = Message<"robot.v1.RobotIOSignalCatalog"> & {
-  /**
-   * @generated from field: string robot_id = 1;
-   */
-  robotId: string;
-
-  /**
-   * @generated from field: repeated robot.v1.RobotIOSignalDefinition signals = 2;
-   */
-  signals: RobotIOSignalDefinition[];
-};
-
-/**
- * Describes the message robot.v1.RobotIOSignalCatalog.
- * Use `create(RobotIOSignalCatalogSchema)` to create a new message.
- */
-export const RobotIOSignalCatalogSchema: GenMessage<RobotIOSignalCatalog> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_io_catalog, 1);
-
-/**
- * @generated from enum robot.v1.RobotIODataType
- */
-export enum RobotIODataType {
-  /**
-   * @generated from enum value: ROBOT_IO_DATA_TYPE_UNSPECIFIED = 0;
-   */
-  ROBOT_IO_DATA_TYPE_UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: ROBOT_IO_DATA_TYPE_BOOL = 1;
-   */
-  ROBOT_IO_DATA_TYPE_BOOL = 1,
-
-  /**
-   * @generated from enum value: ROBOT_IO_DATA_TYPE_INT32 = 2;
-   */
-  ROBOT_IO_DATA_TYPE_INT32 = 2,
-
-  /**
-   * @generated from enum value: ROBOT_IO_DATA_TYPE_DOUBLE = 3;
-   */
-  ROBOT_IO_DATA_TYPE_DOUBLE = 3,
-}
-
-/**
- * Describes the enum robot.v1.RobotIODataType.
- */
-export const RobotIODataTypeSchema: GenEnum<RobotIODataType> = /*@__PURE__*/
-  enumDesc(file_robot_v1_robot_io_catalog, 0);
-
-/**
- * RobotIORegisterKind identifies an I/O family that an adapter can expose as
- * a configured, named signal. Direction follows controller terminology.
+ * RobotIORegisterKind identifies an I/O family that a robot adapter can expose
+ * as a configured, named signal. Direction follows controller terminology.
  *
  * @generated from enum robot.v1.RobotIORegisterKind
  */
@@ -173,5 +78,5 @@ export enum RobotIORegisterKind {
  * Describes the enum robot.v1.RobotIORegisterKind.
  */
 export const RobotIORegisterKindSchema: GenEnum<RobotIORegisterKind> = /*@__PURE__*/
-  enumDesc(file_robot_v1_robot_io_catalog, 1);
+  enumDesc(file_robot_v1_robot_io_catalog, 0);
 

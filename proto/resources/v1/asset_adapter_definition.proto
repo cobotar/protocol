@@ -1,0 +1,83 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/signal.proto";
+import "resources/v1/asset_adapter.proto";
+import "resources/v1/asset_definition.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+
+// AssetAdapterDefinition describes the capabilities supplied by one adapter
+// implementation independently of any connected asset instance.
+message AssetAdapterDefinition {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.asset_adapter_definition_id_component) = true
+  ];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string description = 3;
+
+  // Stable implementation name reported by the adapter, e.g. "camera.opencv".
+  string adapter_type = 4 [(buf.validate.field).string.(validation.v1.adapter_type_component) = true];
+
+  repeated AssetType supported_asset_types = 5 [(buf.validate.field).repeated = {
+    min_items: 1
+    unique: true
+    items: {
+      enum: {
+        defined_only: true
+        not_in: [0]
+      }
+    }
+  }];
+
+  repeated resources.v1.AssetAdapterCommandCapability commands = 6 [(buf.validate.field).cel = {
+    id: "asset_adapter_definition.commands.unique_types"
+    message: "command types must be unique"
+    expression: "this.map(command, command.type).unique()"
+  }];
+
+  repeated resources.v1.AssetAdapterTelemetryCapability telemetry = 7 [(buf.validate.field).cel = {
+    id: "asset_adapter_definition.telemetry.unique_types"
+    message: "telemetry types must be unique"
+    expression: "this.map(stream, stream.type).unique()"
+  }];
+
+  // Signals known before an asset instance connects. Standard signals use a
+  // common semantic; adapter-specific signals leave semantic unspecified.
+  repeated common.v1.SignalDefinition signals = 8 [
+    (buf.validate.field).cel = {
+      id: "asset_adapter_definition.signals.unique_ids"
+      message: "signal ids must be unique"
+      expression: "this.map(signal, signal.signal_id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "asset_adapter_definition.signals.unique_semantics"
+      message: "specified signal semantics must be unique"
+      expression: "this.filter(signal, signal.semantic != 0).map(signal, signal.semantic).unique()"
+    }
+  ];
+}
+
+message AssetAdapterDefinitions {
+  repeated AssetAdapterDefinition items = 1 [
+    (buf.validate.field).cel = {
+      id: "asset_adapter_definitions.items.unique_ids"
+      message: "asset adapter definition ids must be unique"
+      expression: "this.map(definition, definition.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "asset_adapter_definitions.items.unique_names"
+      message: "asset adapter definition names must be unique, ignoring case and surrounding whitespace"
+      expression: "this.map(definition, definition.name.trim().lowerAscii()).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "asset_adapter_definitions.items.unique_adapter_types"
+      message: "asset adapter types must be unique"
+      expression: "this.map(definition, definition.adapter_type).unique()"
+    }
+  ];
+}

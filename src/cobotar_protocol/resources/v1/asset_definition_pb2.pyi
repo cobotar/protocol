@@ -28,11 +28,6 @@ class AssetType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ASSET_TYPE_SENSOR: _ClassVar[AssetType]
     ASSET_TYPE_HMI: _ClassVar[AssetType]
     ASSET_TYPE_PART_FEEDER: _ClassVar[AssetType]
-
-class AssetDriverType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    ASSET_DRIVER_TYPE_UNSPECIFIED: _ClassVar[AssetDriverType]
-    ASSET_DRIVER_TYPE_DEFAULT: _ClassVar[AssetDriverType]
 VALIDATION_MODE_UNSPECIFIED: ValidationMode
 VALIDATION_MODE_PRESENCE_CHECK: ValidationMode
 VALIDATION_MODE_POSE_CHECK: ValidationMode
@@ -46,8 +41,6 @@ ASSET_TYPE_CONVEYOR: AssetType
 ASSET_TYPE_SENSOR: AssetType
 ASSET_TYPE_HMI: AssetType
 ASSET_TYPE_PART_FEEDER: AssetType
-ASSET_DRIVER_TYPE_UNSPECIFIED: AssetDriverType
-ASSET_DRIVER_TYPE_DEFAULT: AssetDriverType
 
 class VisionCapability(_message.Message):
     __slots__ = ("supported_validation_modes", "supported_part_definition_ids", "constraints")
@@ -60,24 +53,24 @@ class VisionCapability(_message.Message):
     def __init__(self, supported_validation_modes: _Optional[_Iterable[_Union[ValidationMode, str]]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
 
 class AssetDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "driver_type", "model_id", "vision")
+    __slots__ = ("id", "name", "icon", "description", "type", "model_id", "vision", "asset_adapter_definition_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    DRIVER_TYPE_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     VISION_FIELD_NUMBER: _ClassVar[int]
+    ASSET_ADAPTER_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
     description: str
     type: AssetType
-    driver_type: AssetDriverType
     model_id: str
     vision: VisionCapability
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., driver_type: _Optional[_Union[AssetDriverType, str]] = ..., model_id: _Optional[str] = ..., vision: _Optional[_Union[VisionCapability, _Mapping]] = ...) -> None: ...
+    asset_adapter_definition_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[AssetType, str]] = ..., model_id: _Optional[str] = ..., vision: _Optional[_Union[VisionCapability, _Mapping]] = ..., asset_adapter_definition_id: _Optional[str] = ...) -> None: ...
 
 class AssetDefinitions(_message.Message):
     __slots__ = ("items",)

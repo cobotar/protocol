@@ -196,7 +196,6 @@ func TestGenerateIncludesAllLanguageTargets(t *testing.T) {
 		"csharp/Subjects.g.cs":             false,
 		"lib/subjects.ts":                  false,
 		"src/cobotar_protocol/subjects.py": false,
-		"subjects/catalog.json":            false,
 		"documentation/subjects.md":        false,
 	}
 	for _, output := range outputs {

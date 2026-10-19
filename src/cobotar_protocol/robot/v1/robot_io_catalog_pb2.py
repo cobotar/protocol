@@ -22,11 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_io_catalog.proto\x12\x08robot.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xee\x02\n\x17RobotIOSignalDefinition\x12)\n\tsignal_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x08signalId\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x43\n\tdata_type\x18\x03 \x01(\x0e\x32\x19.robot.v1.RobotIODataTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x08\x64\x61taType\x12\x1a\n\x08readable\x18\x04 \x01(\x08R\x08readable\x12\x1a\n\x08writable\x18\x05 \x01(\x08R\x08writable:\x8b\x01\xbaH\x87\x01\x1a\x84\x01\n/robot_io_signal_definition.readable_or_writable\x12\x31\x61n I/O signal must be readable, writable, or both\x1a\x1ethis.readable || this.writable\"\xfd\x01\n\x14RobotIOSignalCatalog\x12\'\n\x08robot_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xa8\xf1\x04\x01\xc8\x01\x01R\x07robotId\x12\xbb\x01\n\x07signals\x18\x02 \x03(\x0b\x32!.robot.v1.RobotIOSignalDefinitionB~\xbaH{\xba\x01x\n*robot_io_signal_catalog.signals.unique_ids\x12\x1dI/O signal ids must be unique\x1a+this.map(signal, signal.signal_id).unique()R\x07signals*\x8f\x01\n\x0fRobotIODataType\x12\"\n\x1eROBOT_IO_DATA_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17ROBOT_IO_DATA_TYPE_BOOL\x10\x01\x12\x1c\n\x18ROBOT_IO_DATA_TYPE_INT32\x10\x02\x12\x1d\n\x19ROBOT_IO_DATA_TYPE_DOUBLE\x10\x03*\x8c\x04\n\x13RobotIORegisterKind\x12&\n\"ROBOT_IO_REGISTER_KIND_UNSPECIFIED\x10\x00\x12(\n$ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT\x10\x01\x12)\n%ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT\x10\x02\x12\'\n#ROBOT_IO_REGISTER_KIND_ANALOG_INPUT\x10\x03\x12(\n$ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT\x10\x04\x12-\n)ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER\x10\n\x12/\n+ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER\x10\x0b\x12\x30\n,ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER\x10\x0c\x12.\n*ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER\x10\x14\x12\x30\n,ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER\x10\x15\x12\x31\n-ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER\x10\x16\x42\xa4\x01\n\x0c\x63om.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_io_catalog.proto\x12\x08robot.v1*\x8c\x04\n\x13RobotIORegisterKind\x12&\n\"ROBOT_IO_REGISTER_KIND_UNSPECIFIED\x10\x00\x12(\n$ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT\x10\x01\x12)\n%ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT\x10\x02\x12\'\n#ROBOT_IO_REGISTER_KIND_ANALOG_INPUT\x10\x03\x12(\n$ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT\x10\x04\x12-\n)ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER\x10\n\x12/\n+ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER\x10\x0b\x12\x30\n,ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER\x10\x0c\x12.\n*ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER\x10\x14\x12\x30\n,ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER\x10\x15\x12\x31\n-ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER\x10\x16\x42\xa4\x01\n\x0c\x63om.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,24 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'robot.v1.robot_io_catalog_p
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\023RobotIoCatalogProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\021Messages.Robot.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
-  _globals['_ROBOTIOSIGNALDEFINITION'].fields_by_name['signal_id']._loaded_options = None
-  _globals['_ROBOTIOSIGNALDEFINITION'].fields_by_name['signal_id']._serialized_options = b'\272H\tr\004\340\363\004\001\310\001\001'
-  _globals['_ROBOTIOSIGNALDEFINITION'].fields_by_name['name']._loaded_options = None
-  _globals['_ROBOTIOSIGNALDEFINITION'].fields_by_name['name']._serialized_options = b'\272H\006r\004\200\361\004\001'
-  _globals['_ROBOTIOSIGNALDEFINITION'].fields_by_name['data_type']._loaded_options = None
-  _globals['_ROBOTIOSIGNALDEFINITION'].fields_by_name['data_type']._serialized_options = b'\272H\010\202\001\002\020\001\310\001\001'
-  _globals['_ROBOTIOSIGNALDEFINITION']._loaded_options = None
-  _globals['_ROBOTIOSIGNALDEFINITION']._serialized_options = b'\272H\207\001\032\204\001\n/robot_io_signal_definition.readable_or_writable\0221an I/O signal must be readable, writable, or both\032\036this.readable || this.writable'
-  _globals['_ROBOTIOSIGNALCATALOG'].fields_by_name['robot_id']._loaded_options = None
-  _globals['_ROBOTIOSIGNALCATALOG'].fields_by_name['robot_id']._serialized_options = b'\272H\tr\004\250\361\004\001\310\001\001'
-  _globals['_ROBOTIOSIGNALCATALOG'].fields_by_name['signals']._loaded_options = None
-  _globals['_ROBOTIOSIGNALCATALOG'].fields_by_name['signals']._serialized_options = b'\272H{\272\001x\n*robot_io_signal_catalog.signals.unique_ids\022\035I/O signal ids must be unique\032+this.map(signal, signal.signal_id).unique()'
-  _globals['_ROBOTIODATATYPE']._serialized_start=745
-  _globals['_ROBOTIODATATYPE']._serialized_end=888
-  _globals['_ROBOTIOREGISTERKIND']._serialized_start=891
-  _globals['_ROBOTIOREGISTERKIND']._serialized_end=1415
-  _globals['_ROBOTIOSIGNALDEFINITION']._serialized_start=120
-  _globals['_ROBOTIOSIGNALDEFINITION']._serialized_end=486
-  _globals['_ROBOTIOSIGNALCATALOG']._serialized_start=489
-  _globals['_ROBOTIOSIGNALCATALOG']._serialized_end=742
+  _globals['_ROBOTIOREGISTERKIND']._serialized_start=46
+  _globals['_ROBOTIOREGISTERKIND']._serialized_end=570
 # @@protoc_insertion_point(module_scope)

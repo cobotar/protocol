@@ -33,40 +33,38 @@ namespace Messages.Resources.V1 {
             "bk1vZGVzEkEKHXN1cHBvcnRlZF9wYXJ0X2RlZmluaXRpb25faWRzGAIgAygJ",
             "UhpzdXBwb3J0ZWRQYXJ0RGVmaW5pdGlvbklkcxI/Cgtjb25zdHJhaW50cxgD",
             "IAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFp",
-            "bnRzIuwDCg9Bc3NldERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
+            "bnRzIvIDCg9Bc3NldERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
             "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
             "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI6CgR0eXBlGAUg",
             "ASgOMhcucmVzb3VyY2VzLnYxLkFzc2V0VHlwZUINukgKggEEEAEoAcgBAVIE",
-            "dHlwZRJLCgtkcml2ZXJfdHlwZRgGIAEoDjIdLnJlc291cmNlcy52MS5Bc3Nl",
-            "dERyaXZlclR5cGVCC7pICIIBAhAByAEBUgpkcml2ZXJUeXBlEiQKCG1vZGVs",
-            "X2lkGAcgASgJQgm6SAZyBIjxBAFSB21vZGVsSWQSNgoGdmlzaW9uGAggASgL",
-            "Mh4ucmVzb3VyY2VzLnYxLlZpc2lvbkNhcGFiaWxpdHlSBnZpc2lvbjqMAbpI",
-            "iAEahQEKLGFzc2V0X3R5cGVfY2FtZXJhX3JlcXVpcmVzX3Zpc2lvbl9jYXBh",
-            "YmlsaXR5EjF2aXNpb24gY2FwYWJpbGl0eSBtdXN0IGJlIHNldCB3aGVuIHR5",
-            "cGUgaXMgY2FtZXJhGiJ0aGlzLnR5cGUgIT0gMSB8fCBoYXModGhpcy52aXNp",
-            "b24pIkcKEEFzc2V0RGVmaW5pdGlvbnMSMwoFaXRlbXMYASADKAsyHS5yZXNv",
-            "dXJjZXMudjEuQXNzZXREZWZpbml0aW9uUgVpdGVtcyrdAQoOVmFsaWRhdGlv",
-            "bk1vZGUSHwobVkFMSURBVElPTl9NT0RFX1VOU1BFQ0lGSUVEEAASIgoeVkFM",
-            "SURBVElPTl9NT0RFX1BSRVNFTkNFX0NIRUNLEAESHgoaVkFMSURBVElPTl9N",
-            "T0RFX1BPU0VfQ0hFQ0sQAhIiCh5WQUxJREFUSU9OX01PREVfRkFTVEVORVJf",
-            "Q0hFQ0sQAxIfChtWQUxJREFUSU9OX01PREVfTEFCRUxfQ0hFQ0sQBBIhCh1W",
-            "QUxJREFUSU9OX01PREVfU1VSRkFDRV9DSEVDSxAFKrQBCglBc3NldFR5cGUS",
-            "GgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZUEVfQ0FN",
-            "RVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZUEVfQ09O",
-            "VkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VUX1RZUEVf",
-            "SE1JEAUSGgoWQVNTRVRfVFlQRV9QQVJUX0ZFRURFUhAIKlMKD0Fzc2V0RHJp",
-            "dmVyVHlwZRIhCh1BU1NFVF9EUklWRVJfVFlQRV9VTlNQRUNJRklFRBAAEh0K",
-            "GUFTU0VUX0RSSVZFUl9UWVBFX0RFRkFVTFQQAULBAQoQY29tLnJlc291cmNl",
-            "cy52MUIUQXNzZXREZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2Jv",
-            "dGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2",
-            "MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xW",
-            "MeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFi",
-            "BnByb3RvMw=="));
+            "dHlwZRIkCghtb2RlbF9pZBgHIAEoCUIJukgGcgSI8QQBUgdtb2RlbElkEjYK",
+            "BnZpc2lvbhgIIAEoCzIeLnJlc291cmNlcy52MS5WaXNpb25DYXBhYmlsaXR5",
+            "UgZ2aXNpb24SSwobYXNzZXRfYWRhcHRlcl9kZWZpbml0aW9uX2lkGAkgASgJ",
+            "Qgy6SAlyBJj0BAHIAQFSGGFzc2V0QWRhcHRlckRlZmluaXRpb25JZDqSAbpI",
+            "jgEaiwEKMmFzc2V0X2RlZmluaXRpb24uY2FtZXJhX3JlcXVpcmVzX3Zpc2lv",
+            "bl9jYXBhYmlsaXR5EjF2aXNpb24gY2FwYWJpbGl0eSBtdXN0IGJlIHNldCB3",
+            "aGVuIHR5cGUgaXMgY2FtZXJhGiJ0aGlzLnR5cGUgIT0gMSB8fCBoYXModGhp",
+            "cy52aXNpb24pIkcKEEFzc2V0RGVmaW5pdGlvbnMSMwoFaXRlbXMYASADKAsy",
+            "HS5yZXNvdXJjZXMudjEuQXNzZXREZWZpbml0aW9uUgVpdGVtcyrdAQoOVmFs",
+            "aWRhdGlvbk1vZGUSHwobVkFMSURBVElPTl9NT0RFX1VOU1BFQ0lGSUVEEAAS",
+            "IgoeVkFMSURBVElPTl9NT0RFX1BSRVNFTkNFX0NIRUNLEAESHgoaVkFMSURB",
+            "VElPTl9NT0RFX1BPU0VfQ0hFQ0sQAhIiCh5WQUxJREFUSU9OX01PREVfRkFT",
+            "VEVORVJfQ0hFQ0sQAxIfChtWQUxJREFUSU9OX01PREVfTEFCRUxfQ0hFQ0sQ",
+            "BBIhCh1WQUxJREFUSU9OX01PREVfU1VSRkFDRV9DSEVDSxAFKrQBCglBc3Nl",
+            "dFR5cGUSGgoWQVNTRVRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUFTU0VUX1RZ",
+            "UEVfQ0FNRVJBEAESFAoQQVNTRVRfVFlQRV9MSUdIVBACEhcKE0FTU0VUX1RZ",
+            "UEVfQ09OVkVZT1IQAxIVChFBU1NFVF9UWVBFX1NFTlNPUhAEEhIKDkFTU0VU",
+            "X1RZUEVfSE1JEAUSGgoWQVNTRVRfVFlQRV9QQVJUX0ZFRURFUhAIQsEBChBj",
+            "b20ucmVzb3VyY2VzLnYxQhRBc3NldERlZmluaXRpb25Qcm90b1ABWj1naXRo",
+            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3Yx",
+            "O3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIM",
+            "UmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVz",
+            "b3VyY2VzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ValidationMode), typeof(global::Messages.Resources.V1.AssetType), typeof(global::Messages.Resources.V1.AssetDriverType), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ValidationMode), typeof(global::Messages.Resources.V1.AssetType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.VisionCapability), global::Messages.Resources.V1.VisionCapability.Parser, new[]{ "SupportedValidationModes", "SupportedPartDefinitionIds", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetDefinition), global::Messages.Resources.V1.AssetDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "DriverType", "ModelId", "Vision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetDefinition), global::Messages.Resources.V1.AssetDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ModelId", "Vision", "AssetAdapterDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.AssetDefinitions), global::Messages.Resources.V1.AssetDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -109,11 +107,6 @@ namespace Messages.Resources.V1 {
     /// Feeder/presentation device used to supply parts in a controlled way.
     /// </summary>
     [pbr::OriginalName("ASSET_TYPE_PART_FEEDER")] PartFeeder = 8,
-  }
-
-  public enum AssetDriverType {
-    [pbr::OriginalName("ASSET_DRIVER_TYPE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("ASSET_DRIVER_TYPE_DEFAULT")] Default = 1,
   }
 
   #endregion
@@ -360,6 +353,9 @@ namespace Messages.Resources.V1 {
 
   }
 
+  /// <summary>
+  /// TODO: add ToolRole or similar way to express capabilities?
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class AssetDefinition : pb::IMessage<AssetDefinition>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -400,9 +396,9 @@ namespace Messages.Resources.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       type_ = other.type_;
-      driverType_ = other.driverType_;
       modelId_ = other.modelId_;
       vision_ = other.vision_ != null ? other.vision_.Clone() : null;
+      assetAdapterDefinitionId_ = other.assetAdapterDefinitionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -481,18 +477,6 @@ namespace Messages.Resources.V1 {
       }
     }
 
-    /// <summary>Field number for the "driver_type" field.</summary>
-    public const int DriverTypeFieldNumber = 6;
-    private global::Messages.Resources.V1.AssetDriverType driverType_ = global::Messages.Resources.V1.AssetDriverType.Unspecified;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Messages.Resources.V1.AssetDriverType DriverType {
-      get { return driverType_; }
-      set {
-        driverType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "model_id" field.</summary>
     public const int ModelIdFieldNumber = 7;
     private string modelId_ = "";
@@ -508,15 +492,28 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "vision" field.</summary>
     public const int VisionFieldNumber = 8;
     private global::Messages.Resources.V1.VisionCapability vision_;
-    /// <summary>
-    /// TODO: add ToolRole or similar way to express capabilities?
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Resources.V1.VisionCapability Vision {
       get { return vision_; }
       set {
         vision_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "asset_adapter_definition_id" field.</summary>
+    public const int AssetAdapterDefinitionIdFieldNumber = 9;
+    private string assetAdapterDefinitionId_ = "";
+    /// <summary>
+    /// Selects the static adapter implementation and capability contract used by
+    /// every instance of this asset definition.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AssetAdapterDefinitionId {
+      get { return assetAdapterDefinitionId_; }
+      set {
+        assetAdapterDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -540,9 +537,9 @@ namespace Messages.Resources.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if (Type != other.Type) return false;
-      if (DriverType != other.DriverType) return false;
       if (ModelId != other.ModelId) return false;
       if (!object.Equals(Vision, other.Vision)) return false;
+      if (AssetAdapterDefinitionId != other.AssetAdapterDefinitionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -555,9 +552,9 @@ namespace Messages.Resources.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Type != global::Messages.Resources.V1.AssetType.Unspecified) hash ^= Type.GetHashCode();
-      if (DriverType != global::Messages.Resources.V1.AssetDriverType.Unspecified) hash ^= DriverType.GetHashCode();
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       if (vision_ != null) hash ^= Vision.GetHashCode();
+      if (AssetAdapterDefinitionId.Length != 0) hash ^= AssetAdapterDefinitionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -596,10 +593,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (DriverType != global::Messages.Resources.V1.AssetDriverType.Unspecified) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DriverType);
-      }
       if (ModelId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(ModelId);
@@ -607,6 +600,10 @@ namespace Messages.Resources.V1 {
       if (vision_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(Vision);
+      }
+      if (AssetAdapterDefinitionId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AssetAdapterDefinitionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -638,10 +635,6 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
-      if (DriverType != global::Messages.Resources.V1.AssetDriverType.Unspecified) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DriverType);
-      }
       if (ModelId.Length != 0) {
         output.WriteRawTag(58);
         output.WriteString(ModelId);
@@ -649,6 +642,10 @@ namespace Messages.Resources.V1 {
       if (vision_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(Vision);
+      }
+      if (AssetAdapterDefinitionId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AssetAdapterDefinitionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -675,14 +672,14 @@ namespace Messages.Resources.V1 {
       if (Type != global::Messages.Resources.V1.AssetType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (DriverType != global::Messages.Resources.V1.AssetDriverType.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DriverType);
-      }
       if (ModelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelId);
       }
       if (vision_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Vision);
+      }
+      if (AssetAdapterDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AssetAdapterDefinitionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -711,9 +708,6 @@ namespace Messages.Resources.V1 {
       if (other.Type != global::Messages.Resources.V1.AssetType.Unspecified) {
         Type = other.Type;
       }
-      if (other.DriverType != global::Messages.Resources.V1.AssetDriverType.Unspecified) {
-        DriverType = other.DriverType;
-      }
       if (other.ModelId.Length != 0) {
         ModelId = other.ModelId;
       }
@@ -722,6 +716,9 @@ namespace Messages.Resources.V1 {
           Vision = new global::Messages.Resources.V1.VisionCapability();
         }
         Vision.MergeFrom(other.Vision);
+      }
+      if (other.AssetAdapterDefinitionId.Length != 0) {
+        AssetAdapterDefinitionId = other.AssetAdapterDefinitionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -762,10 +759,6 @@ namespace Messages.Resources.V1 {
             Type = (global::Messages.Resources.V1.AssetType) input.ReadEnum();
             break;
           }
-          case 48: {
-            DriverType = (global::Messages.Resources.V1.AssetDriverType) input.ReadEnum();
-            break;
-          }
           case 58: {
             ModelId = input.ReadString();
             break;
@@ -775,6 +768,10 @@ namespace Messages.Resources.V1 {
               Vision = new global::Messages.Resources.V1.VisionCapability();
             }
             input.ReadMessage(Vision);
+            break;
+          }
+          case 74: {
+            AssetAdapterDefinitionId = input.ReadString();
             break;
           }
         }
@@ -816,10 +813,6 @@ namespace Messages.Resources.V1 {
             Type = (global::Messages.Resources.V1.AssetType) input.ReadEnum();
             break;
           }
-          case 48: {
-            DriverType = (global::Messages.Resources.V1.AssetDriverType) input.ReadEnum();
-            break;
-          }
           case 58: {
             ModelId = input.ReadString();
             break;
@@ -829,6 +822,10 @@ namespace Messages.Resources.V1 {
               Vision = new global::Messages.Resources.V1.VisionCapability();
             }
             input.ReadMessage(Vision);
+            break;
+          }
+          case 74: {
+            AssetAdapterDefinitionId = input.ReadString();
             break;
           }
         }

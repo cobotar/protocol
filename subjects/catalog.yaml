@@ -144,6 +144,54 @@ routes:
     publishers: [fusion360_exporter, web_cobotar]
     consumers: [authoring]
 
+  - id: get.asset_adapter.info
+    pattern: get.asset_adapter.info.{asset_instance_id}
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#65
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: resources.v1.AssetAdapterInfoMessage
+      failure: service.v1.Response
+    parameters:
+      asset_instance_id:
+        type: subject_token
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Request the connected adapter information for one asset instance.
+
+  - id: get.asset_adapter_definition.all
+    pattern: get.asset_adapter_definition.all
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#65
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: resources.v1.AssetAdapterDefinitions
+      failure: service.v1.Response
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Request every built-in asset adapter definition.
+
+  - id: get.asset_adapter_definition.one
+    pattern: get.asset_adapter_definition.one
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#65
+    interaction: request_reply
+    request: common.v1.GetMessage
+    replies:
+      success: resources.v1.AssetAdapterDefinition
+      failure: service.v1.Response
+    publishers: [authoring, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Request one built-in asset adapter definition by id.
+
   - id: get.robot_adapter.info
     pattern: get.robot_adapter.info.{robot_instance_id}
     lifecycle: active

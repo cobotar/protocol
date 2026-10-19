@@ -21,14 +21,7 @@ message RobotAdapterDefinition {
   string description = 3;
 
   // Stable implementation name reported by the adapter, e.g. "ur.rtde-dashboard".
-  string adapter_type = 4 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).string = {
-      min_len: 1
-      max_len: 128
-      pattern: "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
-    }
-  ];
+  string adapter_type = 4 [(buf.validate.field).string.(validation.v1.adapter_type_component) = true];
 
   repeated RobotType supported_robot_types = 5 [(buf.validate.field).repeated = {
     min_items: 1
