@@ -29,3 +29,4 @@ When you are asked to track, plan or pick up work:
 - When a TODO needs tracking, reference the issue: `// TODO(#42): ...` or `// TODO(cobotar/protocol#7): ...`. Don't add bare TODOs for anything larger than a local cleanup.
 - Commit messages: Conventional Commits (`feat(scope): ...`, `fix(scope): ...`, `!` for breaking). Put `Fixes cobotar/<repo>#<n>` in the body when the commit resolves an issue.
 - Protocol changes: never edit generated code; change `proto/`, then regenerate, bump the version and update the CHANGELOG.
+- Stored data: Authoring stores entities as binary protobuf (cobotar/Authoring#72). Adding fields, or removing one and reserving its number and name, keeps stored data readable. A change that renumbers, retypes or gives a field another meaning, or moves a message to another package or name, breaks it: say so in the CHANGELOG entry ("Stored data: breaks; Authoring needs a reset"), so Authoring bumps its data version when it moves to the release.
