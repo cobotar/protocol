@@ -84,6 +84,11 @@ message CellDefinition {
   repeated MarkerPlacement markers = 12; // Markers shared for this cell for localization, AR anchoring, or identification.
 
   geometry.v1.LocalizedPose frame = 13; // Cell-local reference frame or zone anchor.
+
+  // Revision of the cell, set by the backend: it increases with every change. An update has to carry the revision of
+  // the cell it was based on, and is refused if the cell changed since, so no edit is lost silently. Ignored on create
+  // (cobotar/Authoring#67).
+  uint64 revision = 14;
 }
 
 message CellDefinitions {

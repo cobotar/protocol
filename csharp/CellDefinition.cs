@@ -27,7 +27,7 @@ namespace Messages.Resources.V1 {
             "CiJyZXNvdXJjZXMvdjEvY2VsbF9kZWZpbml0aW9uLnByb3RvEgxyZXNvdXJj",
             "ZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoWZ2VvbWV0cnkv",
             "djEvcG9zZS5wcm90bxoccmVzb3VyY2VzL3YxL3BsYWNlbWVudC5wcm90bxor",
-            "dmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLR",
+            "dmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byLt",
             "BAoOQ2VsbERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5hbWUYAiAB",
             "KAlCCbpIBnIEgPEEAVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVz",
             "Y3JpcHRpb24SEgoEaWNvbhgEIAEoCVIEaWNvbhI6CgZzdGF0dXMYBSABKA4y",
@@ -41,20 +41,20 @@ namespace Messages.Resources.V1 {
             "HC5yZXNvdXJjZXMudjEuQXNzZXRQbGFjZW1lbnRSBmFzc2V0cxI3CgdtYXJr",
             "ZXJzGAwgAygLMh0ucmVzb3VyY2VzLnYxLk1hcmtlclBsYWNlbWVudFIHbWFy",
             "a2VycxIwCgVmcmFtZRgNIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBv",
-            "c2VSBWZyYW1lIkUKD0NlbGxEZWZpbml0aW9ucxIyCgVpdGVtcxgBIAMoCzIc",
-            "LnJlc291cmNlcy52MS5DZWxsRGVmaW5pdGlvblIFaXRlbXMqhgEKCkNlbGxT",
-            "dGF0dXMSGwoXQ0VMTF9TVEFUVVNfVU5TUEVDSUZJRUQQABIUChBDRUxMX1NU",
-            "QVRVU19PUEVOEAESFAoQQ0VMTF9TVEFUVVNfQlVTWRACEhYKEkNFTExfU1RB",
-            "VFVTX0NMT1NFRBADEhcKE0NFTExfU1RBVFVTX0JMT0NLRUQQBELAAQoQY29t",
-            "LnJlc291cmNlcy52MUITQ2VsbERlZmluaXRpb25Qcm90b1ABWj1naXRodWIu",
-            "Y29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jl",
-            "c291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVz",
-            "b3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3Vy",
-            "Y2VzOjpWMWIGcHJvdG8z"));
+            "c2VSBWZyYW1lEhoKCHJldmlzaW9uGA4gASgEUghyZXZpc2lvbiJFCg9DZWxs",
+            "RGVmaW5pdGlvbnMSMgoFaXRlbXMYASADKAsyHC5yZXNvdXJjZXMudjEuQ2Vs",
+            "bERlZmluaXRpb25SBWl0ZW1zKoYBCgpDZWxsU3RhdHVzEhsKF0NFTExfU1RB",
+            "VFVTX1VOU1BFQ0lGSUVEEAASFAoQQ0VMTF9TVEFUVVNfT1BFThABEhQKEENF",
+            "TExfU1RBVFVTX0JVU1kQAhIWChJDRUxMX1NUQVRVU19DTE9TRUQQAxIXChND",
+            "RUxMX1NUQVRVU19CTE9DS0VEEARCwAEKEGNvbS5yZXNvdXJjZXMudjFCE0Nl",
+            "bGxEZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
+            "Y29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoC",
+            "FU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291",
+            "cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.CellStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinition), global::Messages.Resources.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "StationIds", "Tools", "Robots", "Assets", "Markers", "Frame" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinition), global::Messages.Resources.V1.CellDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "StationIds", "Tools", "Robots", "Assets", "Markers", "Frame", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.CellDefinitions), global::Messages.Resources.V1.CellDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -178,6 +178,7 @@ namespace Messages.Resources.V1 {
       assets_ = other.assets_.Clone();
       markers_ = other.markers_.Clone();
       frame_ = other.frame_ != null ? other.frame_.Clone() : null;
+      revision_ = other.revision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -365,6 +366,23 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "revision" field.</summary>
+    public const int RevisionFieldNumber = 14;
+    private ulong revision_;
+    /// <summary>
+    /// Revision of the cell, set by the backend: it increases with every change. An update has to carry the revision of
+    /// the cell it was based on, and is refused if the cell changed since, so no edit is lost silently. Ignored on create
+    /// (cobotar/Authoring#67).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Revision {
+      get { return revision_; }
+      set {
+        revision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -393,6 +411,7 @@ namespace Messages.Resources.V1 {
       if(!assets_.Equals(other.assets_)) return false;
       if(!markers_.Equals(other.markers_)) return false;
       if (!object.Equals(Frame, other.Frame)) return false;
+      if (Revision != other.Revision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -413,6 +432,7 @@ namespace Messages.Resources.V1 {
       hash ^= assets_.GetHashCode();
       hash ^= markers_.GetHashCode();
       if (frame_ != null) hash ^= Frame.GetHashCode();
+      if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -468,6 +488,10 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
+      if (Revision != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -515,6 +539,10 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
+      if (Revision != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -553,6 +581,9 @@ namespace Messages.Resources.V1 {
       size += markers_.CalculateSize(_repeated_markers_codec);
       if (frame_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Frame);
+      }
+      if (Revision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -597,6 +628,9 @@ namespace Messages.Resources.V1 {
           Frame = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Frame.MergeFrom(other.Frame);
+      }
+      if (other.Revision != 0UL) {
+        Revision = other.Revision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -672,6 +706,10 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(Frame);
             break;
           }
+          case 112: {
+            Revision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -744,6 +782,10 @@ namespace Messages.Resources.V1 {
               Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
+            break;
+          }
+          case 112: {
+            Revision = input.ReadUInt64();
             break;
           }
         }

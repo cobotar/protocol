@@ -89,6 +89,11 @@ message StationDefinition {
   repeated MarkerPlacement markers = 12; // Markers used specifically at this station for localization, AR anchoring, or identification.
 
   geometry.v1.LocalizedPose frame = 13; // Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
+
+  // Revision of the station, set by the backend: it increases with every change. An update has to carry the revision of
+  // the station it was based on, and is refused if the station changed since, so no edit is lost silently. Ignored on create
+  // (cobotar/Authoring#67).
+  uint64 revision = 14;
 }
 
 message StationDefinitions {

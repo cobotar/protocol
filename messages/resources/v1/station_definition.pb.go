@@ -192,8 +192,12 @@ type StationDefinition struct {
 	Assets                 []*AssetPlacement      `protobuf:"bytes,11,rep,name=assets,proto3" json:"assets,omitempty"`                                                                 // Station-local assets such as cameras, HMIs, feeders, or sensors.
 	Markers                []*MarkerPlacement     `protobuf:"bytes,12,rep,name=markers,proto3" json:"markers,omitempty"`                                                               // Markers used specifically at this station for localization, AR anchoring, or identification.
 	Frame                  *v1.LocalizedPose      `protobuf:"bytes,13,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry.
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	// Revision of the station, set by the backend: it increases with every change. An update has to carry the revision of
+	// the station it was based on, and is refused if the station changed since, so no edit is lost silently. Ignored on create
+	// (cobotar/Authoring#67).
+	Revision      uint64 `protobuf:"varint,14,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *StationDefinition) Reset() {
@@ -317,6 +321,13 @@ func (x *StationDefinition) GetFrame() *v1.LocalizedPose {
 	return nil
 }
 
+func (x *StationDefinition) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
 type StationDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*StationDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -365,7 +376,7 @@ var File_resources_v1_station_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_station_definition_proto_rawDesc = "" +
 	"\n" +
-	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xef\x04\n" +
+	"%resources/v1/station_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8b\x05\n" +
 	"\x11StationDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -380,7 +391,8 @@ const file_resources_v1_station_definition_proto_rawDesc = "" +
 	" \x03(\v2\x1c.resources.v1.RobotPlacementR\x06robots\x124\n" +
 	"\x06assets\x18\v \x03(\v2\x1c.resources.v1.AssetPlacementR\x06assets\x127\n" +
 	"\amarkers\x18\f \x03(\v2\x1d.resources.v1.MarkerPlacementR\amarkers\x120\n" +
-	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\"K\n" +
+	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12\x1a\n" +
+	"\brevision\x18\x0e \x01(\x04R\brevision\"K\n" +
 	"\x12StationDefinitions\x125\n" +
 	"\x05items\x18\x01 \x03(\v2\x1f.resources.v1.StationDefinitionR\x05items*\xab\x01\n" +
 	"\vStationType\x12\x1c\n" +

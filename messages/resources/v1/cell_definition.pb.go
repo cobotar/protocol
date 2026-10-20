@@ -139,8 +139,12 @@ type CellDefinition struct {
 	Assets                 []*AssetPlacement      `protobuf:"bytes,11,rep,name=assets,proto3" json:"assets,omitempty"`                                                                 // Shared assets such as cameras, HMIs, or feeders serving several stations.
 	Markers                []*MarkerPlacement     `protobuf:"bytes,12,rep,name=markers,proto3" json:"markers,omitempty"`                                                               // Markers shared for this cell for localization, AR anchoring, or identification.
 	Frame                  *v1.LocalizedPose      `protobuf:"bytes,13,opt,name=frame,proto3" json:"frame,omitempty"`                                                                   // Cell-local reference frame or zone anchor.
-	unknownFields          protoimpl.UnknownFields
-	sizeCache              protoimpl.SizeCache
+	// Revision of the cell, set by the backend: it increases with every change. An update has to carry the revision of
+	// the cell it was based on, and is refused if the cell changed since, so no edit is lost silently. Ignored on create
+	// (cobotar/Authoring#67).
+	Revision      uint64 `protobuf:"varint,14,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CellDefinition) Reset() {
@@ -264,6 +268,13 @@ func (x *CellDefinition) GetFrame() *v1.LocalizedPose {
 	return nil
 }
 
+func (x *CellDefinition) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
 type CellDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*CellDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -312,7 +323,7 @@ var File_resources_v1_cell_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	"\n" +
-	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xd1\x04\n" +
+	"\"resources/v1/cell_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1cresources/v1/placement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xed\x04\n" +
 	"\x0eCellDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -328,7 +339,8 @@ const file_resources_v1_cell_definition_proto_rawDesc = "" +
 	" \x03(\v2\x1c.resources.v1.RobotPlacementR\x06robots\x124\n" +
 	"\x06assets\x18\v \x03(\v2\x1c.resources.v1.AssetPlacementR\x06assets\x127\n" +
 	"\amarkers\x18\f \x03(\v2\x1d.resources.v1.MarkerPlacementR\amarkers\x120\n" +
-	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\"E\n" +
+	"\x05frame\x18\r \x01(\v2\x1a.geometry.v1.LocalizedPoseR\x05frame\x12\x1a\n" +
+	"\brevision\x18\x0e \x01(\x04R\brevision\"E\n" +
 	"\x0fCellDefinitions\x122\n" +
 	"\x05items\x18\x01 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05items*\x86\x01\n" +
 	"\n" +

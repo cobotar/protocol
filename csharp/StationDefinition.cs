@@ -28,7 +28,7 @@ namespace Messages.Resources.V1 {
             "dXJjZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoWZ2VvbWV0",
             "cnkvdjEvcG9zZS5wcm90bxoccmVzb3VyY2VzL3YxL3BsYWNlbWVudC5wcm90",
             "bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90",
-            "byLvBAoRU3RhdGlvbkRlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
+            "byKLBQoRU3RhdGlvbkRlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
             "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEo",
             "CVILZGVzY3JpcHRpb24SEgoEaWNvbhgEIAEoCVIEaWNvbhI3CgR0eXBlGAUg",
             "ASgOMhkucmVzb3VyY2VzLnYxLlN0YXRpb25UeXBlQgi6SAWCAQIQAVIEdHlw",
@@ -41,25 +41,26 @@ namespace Messages.Resources.V1 {
             "bGFjZW1lbnRSBnJvYm90cxI0CgZhc3NldHMYCyADKAsyHC5yZXNvdXJjZXMu",
             "djEuQXNzZXRQbGFjZW1lbnRSBmFzc2V0cxI3CgdtYXJrZXJzGAwgAygLMh0u",
             "cmVzb3VyY2VzLnYxLk1hcmtlclBsYWNlbWVudFIHbWFya2VycxIwCgVmcmFt",
-            "ZRgNIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZyYW1lIksK",
-            "ElN0YXRpb25EZWZpbml0aW9ucxI1CgVpdGVtcxgBIAMoCzIfLnJlc291cmNl",
-            "cy52MS5TdGF0aW9uRGVmaW5pdGlvblIFaXRlbXMqqwEKC1N0YXRpb25UeXBl",
-            "EhwKGFNUQVRJT05fVFlQRV9VTlNQRUNJRklFRBAAEhgKFFNUQVRJT05fVFlQ",
-            "RV9TVE9SQUdFEAESHwobU1RBVElPTl9UWVBFX01BTlVBTF9TVEFUSU9OEAIS",
-            "IgoeU1RBVElPTl9UWVBFX0FVVE9NQVRJQ19TVEFUSU9OEAMSHwobU1RBVElP",
-            "Tl9UWVBFX0hZQlJJRF9TVEFUSU9OEAQqmAEKDVN0YXRpb25TdGF0dXMSHgoa",
-            "U1RBVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABIXChNTVEFUSU9OX1NUQVRV",
-            "U19PUEVOEAESFwoTU1RBVElPTl9TVEFUVVNfQlVTWRACEhkKFVNUQVRJT05f",
-            "U1RBVFVTX0NMT1NFRBADEhoKFlNUQVRJT05fU1RBVFVTX0JMT0NLRUQQBELD",
-            "AQoQY29tLnJlc291cmNlcy52MUIWU3RhdGlvbkRlZmluaXRpb25Qcm90b1AB",
-            "Wj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3Vy",
-            "Y2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2Vz",
-            "LlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh",
-            "6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
+            "ZRgNIAEoCzIaLmdlb21ldHJ5LnYxLkxvY2FsaXplZFBvc2VSBWZyYW1lEhoK",
+            "CHJldmlzaW9uGA4gASgEUghyZXZpc2lvbiJLChJTdGF0aW9uRGVmaW5pdGlv",
+            "bnMSNQoFaXRlbXMYASADKAsyHy5yZXNvdXJjZXMudjEuU3RhdGlvbkRlZmlu",
+            "aXRpb25SBWl0ZW1zKqsBCgtTdGF0aW9uVHlwZRIcChhTVEFUSU9OX1RZUEVf",
+            "VU5TUEVDSUZJRUQQABIYChRTVEFUSU9OX1RZUEVfU1RPUkFHRRABEh8KG1NU",
+            "QVRJT05fVFlQRV9NQU5VQUxfU1RBVElPThACEiIKHlNUQVRJT05fVFlQRV9B",
+            "VVRPTUFUSUNfU1RBVElPThADEh8KG1NUQVRJT05fVFlQRV9IWUJSSURfU1RB",
+            "VElPThAEKpgBCg1TdGF0aW9uU3RhdHVzEh4KGlNUQVRJT05fU1RBVFVTX1VO",
+            "U1BFQ0lGSUVEEAASFwoTU1RBVElPTl9TVEFUVVNfT1BFThABEhcKE1NUQVRJ",
+            "T05fU1RBVFVTX0JVU1kQAhIZChVTVEFUSU9OX1NUQVRVU19DTE9TRUQQAxIa",
+            "ChZTVEFUSU9OX1NUQVRVU19CTE9DS0VEEARCwwEKEGNvbS5yZXNvdXJjZXMu",
+            "djFCFlN0YXRpb25EZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2Jv",
+            "dGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2",
+            "MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xW",
+            "MeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Resources.V1.PlacementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.StationType), typeof(global::Messages.Resources.V1.StationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinition), global::Messages.Resources.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "Tools", "Robots", "Assets", "Markers", "Frame" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinition), global::Messages.Resources.V1.StationDefinition.Parser, new[]{ "Id", "Name", "Description", "Icon", "Type", "Status", "MaxConcurrentProcesses", "AllowQueuedProcess", "Tools", "Robots", "Assets", "Markers", "Frame", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.StationDefinitions), global::Messages.Resources.V1.StationDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -189,6 +190,7 @@ namespace Messages.Resources.V1 {
       assets_ = other.assets_.Clone();
       markers_ = other.markers_.Clone();
       frame_ = other.frame_ != null ? other.frame_.Clone() : null;
+      revision_ = other.revision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -377,6 +379,23 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "revision" field.</summary>
+    public const int RevisionFieldNumber = 14;
+    private ulong revision_;
+    /// <summary>
+    /// Revision of the station, set by the backend: it increases with every change. An update has to carry the revision of
+    /// the station it was based on, and is refused if the station changed since, so no edit is lost silently. Ignored on create
+    /// (cobotar/Authoring#67).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Revision {
+      get { return revision_; }
+      set {
+        revision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -405,6 +424,7 @@ namespace Messages.Resources.V1 {
       if(!assets_.Equals(other.assets_)) return false;
       if(!markers_.Equals(other.markers_)) return false;
       if (!object.Equals(Frame, other.Frame)) return false;
+      if (Revision != other.Revision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -425,6 +445,7 @@ namespace Messages.Resources.V1 {
       hash ^= assets_.GetHashCode();
       hash ^= markers_.GetHashCode();
       if (frame_ != null) hash ^= Frame.GetHashCode();
+      if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -483,6 +504,10 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
+      if (Revision != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -533,6 +558,10 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(106);
         output.WriteMessage(Frame);
       }
+      if (Revision != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -573,6 +602,9 @@ namespace Messages.Resources.V1 {
       size += markers_.CalculateSize(_repeated_markers_codec);
       if (frame_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Frame);
+      }
+      if (Revision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -619,6 +651,9 @@ namespace Messages.Resources.V1 {
           Frame = new global::Messages.Geometry.V1.LocalizedPose();
         }
         Frame.MergeFrom(other.Frame);
+      }
+      if (other.Revision != 0UL) {
+        Revision = other.Revision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -694,6 +729,10 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(Frame);
             break;
           }
+          case 112: {
+            Revision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -766,6 +805,10 @@ namespace Messages.Resources.V1 {
               Frame = new global::Messages.Geometry.V1.LocalizedPose();
             }
             input.ReadMessage(Frame);
+            break;
+          }
+          case 112: {
+            Revision = input.ReadUInt64();
             break;
           }
         }

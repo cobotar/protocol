@@ -25,7 +25,7 @@ CELL_STATUS_CLOSED: CellStatus
 CELL_STATUS_BLOCKED: CellStatus
 
 class CellDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "icon", "status", "max_concurrent_processes", "allow_queued_process", "station_ids", "tools", "robots", "assets", "markers", "frame")
+    __slots__ = ("id", "name", "description", "icon", "status", "max_concurrent_processes", "allow_queued_process", "station_ids", "tools", "robots", "assets", "markers", "frame", "revision")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -39,6 +39,7 @@ class CellDefinition(_message.Message):
     ASSETS_FIELD_NUMBER: _ClassVar[int]
     MARKERS_FIELD_NUMBER: _ClassVar[int]
     FRAME_FIELD_NUMBER: _ClassVar[int]
+    REVISION_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     description: str
@@ -52,7 +53,8 @@ class CellDefinition(_message.Message):
     assets: _containers.RepeatedCompositeFieldContainer[_placement_pb2.AssetPlacement]
     markers: _containers.RepeatedCompositeFieldContainer[_placement_pb2.MarkerPlacement]
     frame: _pose_pb2.LocalizedPose
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., status: _Optional[_Union[CellStatus, str]] = ..., max_concurrent_processes: _Optional[int] = ..., allow_queued_process: bool = ..., station_ids: _Optional[_Iterable[str]] = ..., tools: _Optional[_Iterable[_Union[_placement_pb2.ToolPlacement, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[_placement_pb2.RobotPlacement, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[_placement_pb2.AssetPlacement, _Mapping]]] = ..., markers: _Optional[_Iterable[_Union[_placement_pb2.MarkerPlacement, _Mapping]]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ...) -> None: ...
+    revision: int
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., icon: _Optional[str] = ..., status: _Optional[_Union[CellStatus, str]] = ..., max_concurrent_processes: _Optional[int] = ..., allow_queued_process: bool = ..., station_ids: _Optional[_Iterable[str]] = ..., tools: _Optional[_Iterable[_Union[_placement_pb2.ToolPlacement, _Mapping]]] = ..., robots: _Optional[_Iterable[_Union[_placement_pb2.RobotPlacement, _Mapping]]] = ..., assets: _Optional[_Iterable[_Union[_placement_pb2.AssetPlacement, _Mapping]]] = ..., markers: _Optional[_Iterable[_Union[_placement_pb2.MarkerPlacement, _Mapping]]] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., revision: _Optional[int] = ...) -> None: ...
 
 class CellDefinitions(_message.Message):
     __slots__ = ("items",)

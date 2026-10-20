@@ -7836,6 +7836,7 @@ current location because they move independently through the system.
 | assets | [AssetPlacement](#resources-v1-AssetPlacement) | repeated | Shared assets such as cameras, HMIs, or feeders serving several stations. |
 | markers | [MarkerPlacement](#resources-v1-MarkerPlacement) | repeated | Markers shared for this cell for localization, AR anchoring, or identification. |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Cell-local reference frame or zone anchor. |
+| revision | [uint64](#uint64) |  | Revision of the cell, set by the backend: it increases with every change. An update has to carry the revision of the cell it was based on, and is refused if the cell changed since, so no edit is lost silently. Ignored on create (cobotar/Authoring#67). |
 
 
 
@@ -8843,6 +8844,7 @@ current location because they move independently through the system.
 | assets | [AssetPlacement](#resources-v1-AssetPlacement) | repeated | Station-local assets such as cameras, HMIs, feeders, or sensors. |
 | markers | [MarkerPlacement](#resources-v1-MarkerPlacement) | repeated | Markers used specifically at this station for localization, AR anchoring, or identification. |
 | frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | Station-local reference frame used for runtime bindings, AR anchoring, and execution geometry. |
+| revision | [uint64](#uint64) |  | Revision of the station, set by the backend: it increases with every change. An update has to carry the revision of the station it was based on, and is refused if the station changed since, so no edit is lost silently. Ignored on create (cobotar/Authoring#67). |
 
 
 
