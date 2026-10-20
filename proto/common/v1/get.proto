@@ -8,6 +8,14 @@ option go_package = "github.com/cobotar/protocol/messages/common/v1";
 
 message GetMessage {
   string id = 1;
+  // The revision to get, for entities with revisions (cobotar/protocol#19):
+  // process recipes and part definitions at that revision, and sequence and
+  // task definitions at that revision of their recipe. Without it, the current
+  // version is returned. The backend keeps the current revision and the
+  // revisions that runs use (see ProcessRunDefinitions); a request for another
+  // revision fails, and clients then fall back to the current version. Entities
+  // without revisions refuse it.
+  optional uint64 revision = 2;
 }
 
 message GetByIdMessage {

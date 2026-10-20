@@ -58,7 +58,7 @@ namespace Messages.Product.V1 {
             "dF9pZBgHIAEoCVIVcG9zdEx1YnJpY2F0aW9uUGFydElkEicKD3JlcXVpcmVz",
             "X3dpcGluZxgIIAEoCFIOcmVxdWlyZXNXaXBpbmcSPwoLY29uc3RyYWludHMY",
             "CSADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJh",
-            "aW50cyLqBAoOUGFydERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
+            "aW50cyKGBQoOUGFydERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
             "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
             "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIyCgR0eXBlGAUg",
             "ASgOMhQucHJvZHVjdC52MS5QYXJ0VHlwZUIIukgFggECEAFSBHR5cGUSGAoH",
@@ -71,30 +71,31 @@ namespace Messages.Product.V1 {
             "bGVSCGhhbmRsaW5nEjgKB3Byb2Nlc3MYDCABKAsyHi5wcm9kdWN0LnYxLlBh",
             "cnRQcm9jZXNzUHJvZmlsZVIHcHJvY2VzcxJNChNleHRlcm5hbF9yZWZlcmVu",
             "Y2VzGA0gAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRl",
-            "cm5hbFJlZmVyZW5jZXMSGAoHdmVyc2lvbhgPIAEoCVIHdmVyc2lvbiJDCg9Q",
-            "YXJ0RGVmaW5pdGlvbnMSMAoFaXRlbXMYASADKAsyGi5wcm9kdWN0LnYxLlBh",
-            "cnREZWZpbml0aW9uUgVpdGVtcyroAgoIUGFydFR5cGUSGQoVUEFSVF9UWVBF",
-            "X1VOU1BFQ0lGSUVEEAASFwoTUEFSVF9UWVBFX0NPTVBPTkVOVBABEhYKElBB",
-            "UlRfVFlQRV9GQVNURU5FUhACEhgKFFBBUlRfVFlQRV9DT05TVU1BQkxFEAQS",
-            "EwoPUEFSVF9UWVBFX0xBQkVMEAUSFwoTUEFSVF9UWVBFX1BBQ0tBR0lORxAG",
-            "EhEKDVBBUlRfVFlQRV9QQ0IQBxIiCh5QQVJUX1RZUEVfRUxFQ1RST05JQ19D",
-            "T01QT05FTlQQCBIiCh5QQVJUX1RZUEVfRUxFQ1RSSUNBTF9DT01QT05FTlQQ",
-            "CRITCg9QQVJUX1RZUEVfQ0FCTEUQChIgChxQQVJUX1RZUEVfRElTUEVOU0VE",
-            "X01BVEVSSUFMEAsSGwoXUEFSVF9UWVBFX0ZJTkFMX1BST0RVQ1QQFBIZChVQ",
-            "QVJUX1RZUEVfU1VCQVNTRU1CTFkQFSqRAwoQTWF0ZXJpYWxDYXRlZ29yeRIh",
-            "Ch1NQVRFUklBTF9DQVRFR09SWV9VTlNQRUNJRklFRBAAEhsKF01BVEVSSUFM",
-            "X0NBVEVHT1JZX01FVEFMEAESHQoZTUFURVJJQUxfQ0FURUdPUllfUE9MWU1F",
-            "UhACEh8KG01BVEVSSUFMX0NBVEVHT1JZX0VMQVNUT01FUhADEh8KG01BVEVS",
-            "SUFMX0NBVEVHT1JZX0NPTVBPU0lURRAEEh0KGU1BVEVSSUFMX0NBVEVHT1JZ",
-            "X0NFUkFNSUMQBRIbChdNQVRFUklBTF9DQVRFR09SWV9HTEFTUxAGEhoKFk1B",
-            "VEVSSUFMX0NBVEVHT1JZX1dPT0QQBxIaChZNQVRFUklBTF9DQVRFR09SWV9G",
-            "T0FNEAgSKwonTUFURVJJQUxfQ0FURUdPUllfRUxFQ1RST05JQ1NfU1VCU1RS",
-            "QVRFEAkSHgoaTUFURVJJQUxfQ0FURUdPUllfQ0hFTUlDQUwQChIbChdNQVRF",
-            "UklBTF9DQVRFR09SWV9PVEhFUhBjQrIBCg5jb20ucHJvZHVjdC52MUITUGFy",
-            "dERlZmluaXRpb25Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
-            "b2wvbWVzc2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNNZXNz",
-            "YWdlcy5Qcm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFcR1BC",
-            "TWV0YWRhdGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z"));
+            "cm5hbFJlZmVyZW5jZXMSGAoHdmVyc2lvbhgPIAEoCVIHdmVyc2lvbhIaCghy",
+            "ZXZpc2lvbhgQIAEoBFIIcmV2aXNpb24iQwoPUGFydERlZmluaXRpb25zEjAK",
+            "BWl0ZW1zGAEgAygLMhoucHJvZHVjdC52MS5QYXJ0RGVmaW5pdGlvblIFaXRl",
+            "bXMq6AIKCFBhcnRUeXBlEhkKFVBBUlRfVFlQRV9VTlNQRUNJRklFRBAAEhcK",
+            "E1BBUlRfVFlQRV9DT01QT05FTlQQARIWChJQQVJUX1RZUEVfRkFTVEVORVIQ",
+            "AhIYChRQQVJUX1RZUEVfQ09OU1VNQUJMRRAEEhMKD1BBUlRfVFlQRV9MQUJF",
+            "TBAFEhcKE1BBUlRfVFlQRV9QQUNLQUdJTkcQBhIRCg1QQVJUX1RZUEVfUENC",
+            "EAcSIgoeUEFSVF9UWVBFX0VMRUNUUk9OSUNfQ09NUE9ORU5UEAgSIgoeUEFS",
+            "VF9UWVBFX0VMRUNUUklDQUxfQ09NUE9ORU5UEAkSEwoPUEFSVF9UWVBFX0NB",
+            "QkxFEAoSIAocUEFSVF9UWVBFX0RJU1BFTlNFRF9NQVRFUklBTBALEhsKF1BB",
+            "UlRfVFlQRV9GSU5BTF9QUk9EVUNUEBQSGQoVUEFSVF9UWVBFX1NVQkFTU0VN",
+            "QkxZEBUqkQMKEE1hdGVyaWFsQ2F0ZWdvcnkSIQodTUFURVJJQUxfQ0FURUdP",
+            "UllfVU5TUEVDSUZJRUQQABIbChdNQVRFUklBTF9DQVRFR09SWV9NRVRBTBAB",
+            "Eh0KGU1BVEVSSUFMX0NBVEVHT1JZX1BPTFlNRVIQAhIfChtNQVRFUklBTF9D",
+            "QVRFR09SWV9FTEFTVE9NRVIQAxIfChtNQVRFUklBTF9DQVRFR09SWV9DT01Q",
+            "T1NJVEUQBBIdChlNQVRFUklBTF9DQVRFR09SWV9DRVJBTUlDEAUSGwoXTUFU",
+            "RVJJQUxfQ0FURUdPUllfR0xBU1MQBhIaChZNQVRFUklBTF9DQVRFR09SWV9X",
+            "T09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllfRk9BTRAIEisKJ01BVEVSSUFM",
+            "X0NBVEVHT1JZX0VMRUNUUk9OSUNTX1NVQlNUUkFURRAJEh4KGk1BVEVSSUFM",
+            "X0NBVEVHT1JZX0NIRU1JQ0FMEAoSGwoXTUFURVJJQUxfQ0FURUdPUllfT1RI",
+            "RVIQY0KyAQoOY29tLnByb2R1Y3QudjFCE1BhcnREZWZpbml0aW9uUHJvdG9Q",
+            "AVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1",
+            "Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoC",
+            "ClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVj",
+            "dDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.PartType), typeof(global::Messages.Product.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +103,7 @@ namespace Messages.Product.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.MaterialSpec), global::Messages.Product.V1.MaterialSpec.Parser, new[]{ "Category", "Name", "Grade" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartHandlingProfile), global::Messages.Product.V1.PartHandlingProfile.Parser, new[]{ "Fragile", "EsdSensitive", "RequiresTwoHandLift", "RequiresLiftingAssistance", "RequiresFixtureSupport", "DefaultGripForceN", "MaxGripForceN", "DefaultTorqueNm", "MaxTorqueNm", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartProcessProfile), global::Messages.Product.V1.PartProcessProfile.Parser, new[]{ "EstimatedHumanDuration", "EstimatedRobotDuration", "RequireFullGuidance", "InspectBeforeAssemble", "InspectAfterDisassemble", "PreLubricationPartId", "PostLubricationPartId", "RequiresWiping", "Constraints" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "Process", "ExternalReferences", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinition), global::Messages.Product.V1.PartDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "Subtype", "WeightG", "Dimensions", "Material", "DefaultModelId", "Handling", "Process", "ExternalReferences", "Version", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.PartDefinitions), global::Messages.Product.V1.PartDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -1914,6 +1915,7 @@ namespace Messages.Product.V1 {
       process_ = other.process_ != null ? other.process_.Clone() : null;
       externalReferences_ = other.externalReferences_.Clone();
       version_ = other.version_;
+      revision_ = other.revision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2102,6 +2104,26 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "revision" field.</summary>
+    public const int RevisionFieldNumber = 16;
+    private ulong revision_;
+    /// <summary>
+    /// Revision of the part definition, set by the backend: it increases with
+    /// every change (cobotar/protocol#19). It isn't the user-facing version.
+    /// Revisions are immutable: a part definition at a given (id, revision) never
+    /// changes, so clients may cache it. An update has to carry the revision of
+    /// the part definition it was based on, and is refused if it changed since.
+    /// Ignored on create.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Revision {
+      get { return revision_; }
+      set {
+        revision_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2131,6 +2153,7 @@ namespace Messages.Product.V1 {
       if (!object.Equals(Process, other.Process)) return false;
       if(!externalReferences_.Equals(other.externalReferences_)) return false;
       if (Version != other.Version) return false;
+      if (Revision != other.Revision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2152,6 +2175,7 @@ namespace Messages.Product.V1 {
       if (process_ != null) hash ^= Process.GetHashCode();
       hash ^= externalReferences_.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2223,6 +2247,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(122);
         output.WriteString(Version);
       }
+      if (Revision != 0UL) {
+        output.WriteRawTag(128, 1);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2286,6 +2314,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(122);
         output.WriteString(Version);
       }
+      if (Revision != 0UL) {
+        output.WriteRawTag(128, 1);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2335,6 +2367,9 @@ namespace Messages.Product.V1 {
       size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (Version.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      }
+      if (Revision != 0UL) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2399,6 +2434,9 @@ namespace Messages.Product.V1 {
       externalReferences_.Add(other.externalReferences_);
       if (other.Version.Length != 0) {
         Version = other.Version;
+      }
+      if (other.Revision != 0UL) {
+        Revision = other.Revision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2487,6 +2525,10 @@ namespace Messages.Product.V1 {
             Version = input.ReadString();
             break;
           }
+          case 128: {
+            Revision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -2572,6 +2614,10 @@ namespace Messages.Product.V1 {
           }
           case 122: {
             Version = input.ReadString();
+            break;
+          }
+          case 128: {
+            Revision = input.ReadUInt64();
             break;
           }
         }

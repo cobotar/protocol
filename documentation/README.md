@@ -690,6 +690,7 @@
   
 - [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
     - [ProcessRun](#runtime-v1-ProcessRun)
+    - [ProcessRun.PartDefinitionRevisionsEntry](#runtime-v1-ProcessRun-PartDefinitionRevisionsEntry)
     - [ProcessRuns](#runtime-v1-ProcessRuns)
     - [RunParameter](#runtime-v1-RunParameter)
   
@@ -5441,6 +5442,7 @@ Used to retrieve entities which have a field with the given value. The actual fi
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+| revision | [uint64](#uint64) | optional | The revision to get, for entities with revisions (cobotar/protocol#19): process recipes and part definitions at that revision, and sequence and task definitions at that revision of their recipe. Without it, the current version is returned. The backend keeps the current revision and the revisions that runs use (see ProcessRunDefinitions); a request for another revision fails, and clients then fall back to the current version. Entities without revisions refuse it. |
 
 
 
@@ -6582,6 +6584,7 @@ ProcessRecipe describes the following:
 | task_ids | [string](#string) | repeated |  |
 | supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| revision | [uint64](#uint64) |  | Revision of the recipe&#39;s whole tree, set by the backend: it increases with every change to the recipe or to one of its sequence or task definitions, which carry no revision of their own (cobotar/protocol#19). Revisions are immutable: a recipe tree at a given (id, revision) never changes, so clients may cache it. An update has to carry the revision of the recipe it was based on, and is refused if the recipe changed since. Ignored on create. |
 
 
 
@@ -6936,6 +6939,7 @@ name: TPU, grade: 70 Shore A
 | process | [PartProcessProfile](#product-v1-PartProcessProfile) |  |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | version | [string](#string) |  |  |
+| revision | [uint64](#uint64) |  | Revision of the part definition, set by the backend: it increases with every change (cobotar/protocol#19). It isn&#39;t the user-facing version. Revisions are immutable: a part definition at a given (id, revision) never changes, so clients may cache it. An update has to carry the revision of the part definition it was based on, and is refused if it changed since. Ignored on create. |
 
 
 
@@ -10240,6 +10244,24 @@ individual tasks to be reassigned, blocked, or suspended.
 | variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
 | parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
 | revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
+| process_recipe_revision | [uint64](#uint64) |  | The revision of the recipe (process_recipe_id) the run was loaded with. Its sequence and task runs refer to the sequence and task definitions of that recipe revision (cobotar/protocol#19). Set by the backend. |
+| part_definition_revisions | [ProcessRun.PartDefinitionRevisionsEntry](#runtime-v1-ProcessRun-PartDefinitionRevisionsEntry) | repeated | The revisions of the part definitions the run&#39;s tasks target, by part definition ID, as the run was loaded. Set by the backend. |
+
+
+
+
+
+
+<a name="runtime-v1-ProcessRun-PartDefinitionRevisionsEntry"></a>
+
+### ProcessRun.PartDefinitionRevisionsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [uint64](#uint64) |  |  |
 
 
 
@@ -10700,9 +10722,15 @@ AR content (AR configs, feedback, actions and functions) isn&#39;t pinned: it
 stays live, so guidance can be authored in-situ while a run is active. Live
 AR content reads its process data through the run&#39;s pinned definitions.
 
+The recipe and part definitions carry the revisions the run uses, the same
+as ProcessRun.process_recipe_revision and part_definition_revisions; the
+sequence and task definitions are those of the recipe revision. A client
+compares them with the current revisions to tell whether a definition has
+changed since the run was loaded.
+
 The pinned definitions are kept while the run is active and for a
 retention period after it is done or aborted (configured in the backend,
-two weeks by default). After that, source is LATEST.
+two weeks by default; 0 keeps them forever). After that, source is LATEST.
 
 Published as an added event when a run is loaded, with the process run ID
 as the entity ID, and fetched with ProcessRunDefinitionsRequest.

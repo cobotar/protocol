@@ -71,6 +71,14 @@ message ProcessRun {
   // Revision used to prevent concurrent state changes and reassignments from
   // overwriting one another. Starts at 1.
   uint64 revision = 19 [(buf.validate.field).uint64.gte = 1];
+
+  // The revision of the recipe (process_recipe_id) the run was loaded with.
+  // Its sequence and task runs refer to the sequence and task definitions of
+  // that recipe revision (cobotar/protocol#19). Set by the backend.
+  uint64 process_recipe_revision = 20;
+  // The revisions of the part definitions the run's tasks target, by part
+  // definition ID, as the run was loaded. Set by the backend.
+  map<string, uint64> part_definition_revisions = 21;
 }
 
 message ProcessRuns {

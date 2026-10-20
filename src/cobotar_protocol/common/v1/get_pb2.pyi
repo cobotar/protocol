@@ -8,10 +8,12 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetMessage(_message.Message):
-    __slots__ = ("id",)
+    __slots__ = ("id", "revision")
     ID_FIELD_NUMBER: _ClassVar[int]
+    REVISION_FIELD_NUMBER: _ClassVar[int]
     id: str
-    def __init__(self, id: _Optional[str] = ...) -> None: ...
+    revision: int
+    def __init__(self, id: _Optional[str] = ..., revision: _Optional[int] = ...) -> None: ...
 
 class GetByIdMessage(_message.Message):
     __slots__ = ("ids",)

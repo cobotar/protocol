@@ -163,9 +163,16 @@ type ProcessRun struct {
 	Parameters           []*RunParameter           `protobuf:"bytes,18,rep,name=parameters,proto3" json:"parameters,omitempty"`
 	// Revision used to prevent concurrent state changes and reassignments from
 	// overwriting one another. Starts at 1.
-	Revision      uint64 `protobuf:"varint,19,opt,name=revision,proto3" json:"revision,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Revision uint64 `protobuf:"varint,19,opt,name=revision,proto3" json:"revision,omitempty"`
+	// The revision of the recipe (process_recipe_id) the run was loaded with.
+	// Its sequence and task runs refer to the sequence and task definitions of
+	// that recipe revision (cobotar/protocol#19). Set by the backend.
+	ProcessRecipeRevision uint64 `protobuf:"varint,20,opt,name=process_recipe_revision,json=processRecipeRevision,proto3" json:"process_recipe_revision,omitempty"`
+	// The revisions of the part definitions the run's tasks target, by part
+	// definition ID, as the run was loaded. Set by the backend.
+	PartDefinitionRevisions map[string]uint64 `protobuf:"bytes,21,rep,name=part_definition_revisions,json=partDefinitionRevisions,proto3" json:"part_definition_revisions,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *ProcessRun) Reset() {
@@ -331,6 +338,20 @@ func (x *ProcessRun) GetRevision() uint64 {
 	return 0
 }
 
+func (x *ProcessRun) GetProcessRecipeRevision() uint64 {
+	if x != nil {
+		return x.ProcessRecipeRevision
+	}
+	return 0
+}
+
+func (x *ProcessRun) GetPartDefinitionRevisions() map[string]uint64 {
+	if x != nil {
+		return x.PartDefinitionRevisions
+	}
+	return nil
+}
+
 type ProcessRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProcessRun          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -383,7 +404,7 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\x94\a\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\x89\t\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -409,7 +430,12 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"\n" +
 	"parameters\x18\x12 \x03(\v2\x18.runtime.v1.RunParameterR\n" +
 	"parameters\x12#\n" +
-	"\brevision\x18\x13 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\";\n" +
+	"\brevision\x18\x13 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x126\n" +
+	"\x17process_recipe_revision\x18\x14 \x01(\x04R\x15processRecipeRevision\x12o\n" +
+	"\x19part_definition_revisions\x18\x15 \x03(\v23.runtime.v1.ProcessRun.PartDefinitionRevisionsEntryR\x17partDefinitionRevisions\x1aJ\n" +
+	"\x1cPartDefinitionRevisionsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01\";\n" +
 	"\vProcessRuns\x12,\n" +
 	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xcd\x01\n" +
 	"\x0fProcessRunState\x12!\n" +
@@ -435,31 +461,33 @@ func file_runtime_v1_process_run_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_process_run_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_runtime_v1_process_run_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_runtime_v1_process_run_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_runtime_v1_process_run_proto_goTypes = []any{
 	(ProcessRunState)(0),             // 0: runtime.v1.ProcessRunState
 	(*RunParameter)(nil),             // 1: runtime.v1.RunParameter
 	(*ProcessRun)(nil),               // 2: runtime.v1.ProcessRun
 	(*ProcessRuns)(nil),              // 3: runtime.v1.ProcessRuns
-	(*v1.LocalizedPose)(nil),         // 4: geometry.v1.LocalizedPose
-	(*timestamppb.Timestamp)(nil),    // 5: google.protobuf.Timestamp
-	(*ActorAssignment)(nil),          // 6: runtime.v1.ActorAssignment
-	(*v11.VariantConfiguration)(nil), // 7: variance.v1.VariantConfiguration
+	nil,                              // 4: runtime.v1.ProcessRun.PartDefinitionRevisionsEntry
+	(*v1.LocalizedPose)(nil),         // 5: geometry.v1.LocalizedPose
+	(*timestamppb.Timestamp)(nil),    // 6: google.protobuf.Timestamp
+	(*ActorAssignment)(nil),          // 7: runtime.v1.ActorAssignment
+	(*v11.VariantConfiguration)(nil), // 8: variance.v1.VariantConfiguration
 }
 var file_runtime_v1_process_run_proto_depIdxs = []int32{
-	4, // 0: runtime.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
+	5, // 0: runtime.v1.ProcessRun.frame:type_name -> geometry.v1.LocalizedPose
 	0, // 1: runtime.v1.ProcessRun.state:type_name -> runtime.v1.ProcessRunState
-	5, // 2: runtime.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
-	5, // 3: runtime.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
-	6, // 4: runtime.v1.ProcessRun.assignments:type_name -> runtime.v1.ActorAssignment
-	7, // 5: runtime.v1.ProcessRun.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	6, // 2: runtime.v1.ProcessRun.initiated_at:type_name -> google.protobuf.Timestamp
+	6, // 3: runtime.v1.ProcessRun.ended_at:type_name -> google.protobuf.Timestamp
+	7, // 4: runtime.v1.ProcessRun.assignments:type_name -> runtime.v1.ActorAssignment
+	8, // 5: runtime.v1.ProcessRun.variant_configuration:type_name -> variance.v1.VariantConfiguration
 	1, // 6: runtime.v1.ProcessRun.parameters:type_name -> runtime.v1.RunParameter
-	2, // 7: runtime.v1.ProcessRuns.items:type_name -> runtime.v1.ProcessRun
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	4, // 7: runtime.v1.ProcessRun.part_definition_revisions:type_name -> runtime.v1.ProcessRun.PartDefinitionRevisionsEntry
+	2, // 8: runtime.v1.ProcessRuns.items:type_name -> runtime.v1.ProcessRun
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_run_proto_init() }
@@ -474,7 +502,7 @@ func file_runtime_v1_process_run_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_run_proto_rawDesc), len(file_runtime_v1_process_run_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

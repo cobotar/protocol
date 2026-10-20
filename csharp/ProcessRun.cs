@@ -30,7 +30,7 @@ namespace Messages.Runtime.V1 {
             "bWUvdjEvYWN0b3JfYXNzaWdubWVudC5wcm90bxordmFsaWRhdGlvbi92MS9w",
             "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxondmFyaWFuY2UvdjEvdmFy",
             "aWFudF9jb25maWd1cmF0aW9uLnByb3RvIjYKDFJ1blBhcmFtZXRlchIQCgNr",
-            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUilAcKClByb2Nl",
+            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUiiQkKClByb2Nl",
             "c3NSdW4SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
             "aWNvbhgDIAEoCVIEaWNvbhI4ChFwcm9jZXNzX3JlY2lwZV9pZBgEIAEoCUIM",
             "ukgJcgSg8gQByAEBUg9wcm9jZXNzUmVjaXBlSWQSGQoIb3JkZXJfaWQYBSAB",
@@ -51,22 +51,27 @@ namespace Messages.Runtime.V1 {
             "bmNlLnYxLlZhcmlhbnRDb25maWd1cmF0aW9uUhR2YXJpYW50Q29uZmlndXJh",
             "dGlvbhI4CgpwYXJhbWV0ZXJzGBIgAygLMhgucnVudGltZS52MS5SdW5QYXJh",
             "bWV0ZXJSCnBhcmFtZXRlcnMSIwoIcmV2aXNpb24YEyABKARCB7pIBDICKAFS",
-            "CHJldmlzaW9uIjsKC1Byb2Nlc3NSdW5zEiwKBWl0ZW1zGAEgAygLMhYucnVu",
-            "dGltZS52MS5Qcm9jZXNzUnVuUgVpdGVtcyrNAQoPUHJvY2Vzc1J1blN0YXRl",
-            "EiEKHVBST0NFU1NfUlVOX1NUQVRFX1VOU1BFQ0lGSUVEEAASHAoYUFJPQ0VT",
-            "U19SVU5fU1RBVEVfUVVFVUVEEAESGwoXUFJPQ0VTU19SVU5fU1RBVEVfUkVB",
-            "RFkQAhIhCh1QUk9DRVNTX1JVTl9TVEFURV9JTl9QUk9HUkVTUxADEhoKFlBS",
-            "T0NFU1NfUlVOX1NUQVRFX0RPTkUQBBIdChlQUk9DRVNTX1JVTl9TVEFURV9B",
-            "Qk9SVEVEEAVCrgEKDmNvbS5ydW50aW1lLnYxQg9Qcm9jZXNzUnVuUHJvdG9Q",
-            "AVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRp",
-            "bWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoC",
-            "ClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGlt",
-            "ZTo6VjFiBnByb3RvMw=="));
+            "CHJldmlzaW9uEjYKF3Byb2Nlc3NfcmVjaXBlX3JldmlzaW9uGBQgASgEUhVw",
+            "cm9jZXNzUmVjaXBlUmV2aXNpb24SbwoZcGFydF9kZWZpbml0aW9uX3Jldmlz",
+            "aW9ucxgVIAMoCzIzLnJ1bnRpbWUudjEuUHJvY2Vzc1J1bi5QYXJ0RGVmaW5p",
+            "dGlvblJldmlzaW9uc0VudHJ5UhdwYXJ0RGVmaW5pdGlvblJldmlzaW9ucxpK",
+            "ChxQYXJ0RGVmaW5pdGlvblJldmlzaW9uc0VudHJ5EhAKA2tleRgBIAEoCVID",
+            "a2V5EhQKBXZhbHVlGAIgASgEUgV2YWx1ZToCOAEiOwoLUHJvY2Vzc1J1bnMS",
+            "LAoFaXRlbXMYASADKAsyFi5ydW50aW1lLnYxLlByb2Nlc3NSdW5SBWl0ZW1z",
+            "Ks0BCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5T",
+            "UEVDSUZJRUQQABIcChhQUk9DRVNTX1JVTl9TVEFURV9RVUVVRUQQARIbChdQ",
+            "Uk9DRVNTX1JVTl9TVEFURV9SRUFEWRACEiEKHVBST0NFU1NfUlVOX1NUQVRF",
+            "X0lOX1BST0dSRVNTEAMSGgoWUFJPQ0VTU19SVU5fU1RBVEVfRE9ORRAEEh0K",
+            "GVBST0NFU1NfUlVOX1NUQVRFX0FCT1JURUQQBUKuAQoOY29tLnJ1bnRpbWUu",
+            "djFCD1Byb2Nlc3NSdW5Qcm90b1ABWjlnaXRodWIuY29tL2NvYm90YXIvcHJv",
+            "dG9jb2wvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNN",
+            "ZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFc",
+            "R1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.RunParameter), global::Messages.Runtime.V1.RunParameter.Parser, new[]{ "Key", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "Name", "Icon", "ProcessRecipeId", "OrderId", "StationId", "CellId", "LineId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters", "Revision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "Name", "Icon", "ProcessRecipeId", "OrderId", "StationId", "CellId", "LineId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters", "Revision", "ProcessRecipeRevision", "PartDefinitionRevisions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRuns), global::Messages.Runtime.V1.ProcessRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -397,6 +402,8 @@ namespace Messages.Runtime.V1 {
       variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
       parameters_ = other.parameters_.Clone();
       revision_ = other.revision_;
+      processRecipeRevision_ = other.processRecipeRevision_;
+      partDefinitionRevisions_ = other.partDefinitionRevisions_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -637,6 +644,38 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "process_recipe_revision" field.</summary>
+    public const int ProcessRecipeRevisionFieldNumber = 20;
+    private ulong processRecipeRevision_;
+    /// <summary>
+    /// The revision of the recipe (process_recipe_id) the run was loaded with.
+    /// Its sequence and task runs refer to the sequence and task definitions of
+    /// that recipe revision (cobotar/protocol#19). Set by the backend.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ProcessRecipeRevision {
+      get { return processRecipeRevision_; }
+      set {
+        processRecipeRevision_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "part_definition_revisions" field.</summary>
+    public const int PartDefinitionRevisionsFieldNumber = 21;
+    private static readonly pbc::MapField<string, ulong>.Codec _map_partDefinitionRevisions_codec
+        = new pbc::MapField<string, ulong>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForUInt64(16, 0UL), 170);
+    private readonly pbc::MapField<string, ulong> partDefinitionRevisions_ = new pbc::MapField<string, ulong>();
+    /// <summary>
+    /// The revisions of the part definitions the run's tasks target, by part
+    /// definition ID, as the run was loaded. Set by the backend.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, ulong> PartDefinitionRevisions {
+      get { return partDefinitionRevisions_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -671,6 +710,8 @@ namespace Messages.Runtime.V1 {
       if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
       if(!parameters_.Equals(other.parameters_)) return false;
       if (Revision != other.Revision) return false;
+      if (ProcessRecipeRevision != other.ProcessRecipeRevision) return false;
+      if (!PartDefinitionRevisions.Equals(other.PartDefinitionRevisions)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -697,6 +738,8 @@ namespace Messages.Runtime.V1 {
       if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
       hash ^= parameters_.GetHashCode();
       if (Revision != 0UL) hash ^= Revision.GetHashCode();
+      if (ProcessRecipeRevision != 0UL) hash ^= ProcessRecipeRevision.GetHashCode();
+      hash ^= PartDefinitionRevisions.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -779,6 +822,11 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(152, 1);
         output.WriteUInt64(Revision);
       }
+      if (ProcessRecipeRevision != 0UL) {
+        output.WriteRawTag(160, 1);
+        output.WriteUInt64(ProcessRecipeRevision);
+      }
+      partDefinitionRevisions_.WriteTo(output, _map_partDefinitionRevisions_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -853,6 +901,11 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(152, 1);
         output.WriteUInt64(Revision);
       }
+      if (ProcessRecipeRevision != 0UL) {
+        output.WriteRawTag(160, 1);
+        output.WriteUInt64(ProcessRecipeRevision);
+      }
+      partDefinitionRevisions_.WriteTo(ref output, _map_partDefinitionRevisions_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -912,6 +965,10 @@ namespace Messages.Runtime.V1 {
       if (Revision != 0UL) {
         size += 2 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
       }
+      if (ProcessRecipeRevision != 0UL) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt64Size(ProcessRecipeRevision);
+      }
+      size += partDefinitionRevisions_.CalculateSize(_map_partDefinitionRevisions_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -985,6 +1042,10 @@ namespace Messages.Runtime.V1 {
       if (other.Revision != 0UL) {
         Revision = other.Revision;
       }
+      if (other.ProcessRecipeRevision != 0UL) {
+        ProcessRecipeRevision = other.ProcessRecipeRevision;
+      }
+      partDefinitionRevisions_.MergeFrom(other.partDefinitionRevisions_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1092,6 +1153,14 @@ namespace Messages.Runtime.V1 {
             Revision = input.ReadUInt64();
             break;
           }
+          case 160: {
+            ProcessRecipeRevision = input.ReadUInt64();
+            break;
+          }
+          case 170: {
+            partDefinitionRevisions_.AddEntriesFrom(input, _map_partDefinitionRevisions_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1197,6 +1266,14 @@ namespace Messages.Runtime.V1 {
           }
           case 152: {
             Revision = input.ReadUInt64();
+            break;
+          }
+          case 160: {
+            ProcessRecipeRevision = input.ReadUInt64();
+            break;
+          }
+          case 170: {
+            partDefinitionRevisions_.AddEntriesFrom(ref input, _map_partDefinitionRevisions_codec);
             break;
           }
         }

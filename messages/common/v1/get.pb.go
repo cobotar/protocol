@@ -23,8 +23,16 @@ const (
 )
 
 type GetMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// The revision to get, for entities with revisions (cobotar/protocol#19):
+	// process recipes and part definitions at that revision, and sequence and
+	// task definitions at that revision of their recipe. Without it, the current
+	// version is returned. The backend keeps the current revision and the
+	// revisions that runs use (see ProcessRunDefinitions); a request for another
+	// revision fails, and clients then fall back to the current version. Entities
+	// without revisions refuse it.
+	Revision      *uint64 `protobuf:"varint,2,opt,name=revision,proto3,oneof" json:"revision,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -64,6 +72,13 @@ func (x *GetMessage) GetId() string {
 		return x.Id
 	}
 	return ""
+}
+
+func (x *GetMessage) GetRevision() uint64 {
+	if x != nil && x.Revision != nil {
+		return *x.Revision
+	}
+	return 0
 }
 
 type GetByIdMessage struct {
@@ -159,10 +174,12 @@ var File_common_v1_get_proto protoreflect.FileDescriptor
 
 const file_common_v1_get_proto_rawDesc = "" +
 	"\n" +
-	"\x13common/v1/get.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"\x1c\n" +
+	"\x13common/v1/get.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"J\n" +
 	"\n" +
 	"GetMessage\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\".\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\brevision\x18\x02 \x01(\x04H\x00R\brevision\x88\x01\x01B\v\n" +
+	"\t_revision\".\n" +
 	"\x0eGetByIdMessage\x12\x1c\n" +
 	"\x03ids\x18\x01 \x03(\tB\n" +
 	"\xbaH\a\x92\x01\x04\b\x01\x18\x01R\x03ids\")\n" +
@@ -202,6 +219,7 @@ func file_common_v1_get_proto_init() {
 	if File_common_v1_get_proto != nil {
 		return
 	}
+	file_common_v1_get_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

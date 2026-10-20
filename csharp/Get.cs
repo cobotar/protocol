@@ -25,17 +25,18 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNjb21tb24vdjEvZ2V0LnByb3RvEgljb21tb24udjEaG2J1Zi92YWxpZGF0",
-            "ZS92YWxpZGF0ZS5wcm90byIcCgpHZXRNZXNzYWdlEg4KAmlkGAEgASgJUgJp",
-            "ZCIuCg5HZXRCeUlkTWVzc2FnZRIcCgNpZHMYASADKAlCCrpIB5IBBAgBGAFS",
-            "A2lkcyIpChFHZXRCeUZpZWxkTWVzc2FnZRIUCgV2YWx1ZRgBIAEoCVIFdmFs",
-            "dWVCoAEKDWNvbS5jb21tb24udjFCCEdldFByb3RvUAFaN2dpdGh1Yi5jb20v",
-            "Y29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9jb21tb24vdjE7Y29tbW9udjGi",
-            "AgNDWFiqAhJNZXNzYWdlcy5Db21tb24uVjHKAglDb21tb25cVjHiAhVDb21t",
-            "b25cVjFcR1BCTWV0YWRhdGHqAgpDb21tb246OlYxYgZwcm90bzM="));
+            "ZS92YWxpZGF0ZS5wcm90byJKCgpHZXRNZXNzYWdlEg4KAmlkGAEgASgJUgJp",
+            "ZBIfCghyZXZpc2lvbhgCIAEoBEgAUghyZXZpc2lvbogBAUILCglfcmV2aXNp",
+            "b24iLgoOR2V0QnlJZE1lc3NhZ2USHAoDaWRzGAEgAygJQgq6SAeSAQQIARgB",
+            "UgNpZHMiKQoRR2V0QnlGaWVsZE1lc3NhZ2USFAoFdmFsdWUYASABKAlSBXZh",
+            "bHVlQqABCg1jb20uY29tbW9uLnYxQghHZXRQcm90b1ABWjdnaXRodWIuY29t",
+            "L2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYx",
+            "ogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29t",
+            "bW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetMessage), global::Messages.Common.V1.GetMessage.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetMessage), global::Messages.Common.V1.GetMessage.Parser, new[]{ "Id", "Revision" }, new[]{ "Revision" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetByIdMessage), global::Messages.Common.V1.GetByIdMessage.Parser, new[]{ "Ids" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.GetByFieldMessage), global::Messages.Common.V1.GetByFieldMessage.Parser, new[]{ "Value" }, null, null, null, null)
           }));
@@ -52,6 +53,7 @@ namespace Messages.Common.V1 {
   {
     private static readonly pb::MessageParser<GetMessage> _parser = new pb::MessageParser<GetMessage>(() => new GetMessage());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GetMessage> Parser { get { return _parser; } }
@@ -79,7 +81,9 @@ namespace Messages.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetMessage(GetMessage other) : this() {
+      _hasBits0 = other._hasBits0;
       id_ = other.id_;
+      revision_ = other.revision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,6 +105,42 @@ namespace Messages.Common.V1 {
       }
     }
 
+    /// <summary>Field number for the "revision" field.</summary>
+    public const int RevisionFieldNumber = 2;
+    private readonly static ulong RevisionDefaultValue = 0UL;
+
+    private ulong revision_;
+    /// <summary>
+    /// The revision to get, for entities with revisions (cobotar/protocol#19):
+    /// process recipes and part definitions at that revision, and sequence and
+    /// task definitions at that revision of their recipe. Without it, the current
+    /// version is returned. The backend keeps the current revision and the
+    /// revisions that runs use (see ProcessRunDefinitions); a request for another
+    /// revision fails, and clients then fall back to the current version. Entities
+    /// without revisions refuse it.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Revision {
+      get { if ((_hasBits0 & 1) != 0) { return revision_; } else { return RevisionDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        revision_ = value;
+      }
+    }
+    /// <summary>Gets whether the "revision" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRevision {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "revision" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRevision() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -117,6 +157,7 @@ namespace Messages.Common.V1 {
         return true;
       }
       if (Id != other.Id) return false;
+      if (Revision != other.Revision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -125,6 +166,7 @@ namespace Messages.Common.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (HasRevision) hash ^= Revision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -147,6 +189,10 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
+      if (HasRevision) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -161,6 +207,10 @@ namespace Messages.Common.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
+      if (HasRevision) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Revision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -173,6 +223,9 @@ namespace Messages.Common.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (HasRevision) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -188,6 +241,9 @@ namespace Messages.Common.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
+      }
+      if (other.HasRevision) {
+        Revision = other.Revision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -212,6 +268,10 @@ namespace Messages.Common.V1 {
             Id = input.ReadString();
             break;
           }
+          case 16: {
+            Revision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -233,6 +293,10 @@ namespace Messages.Common.V1 {
             break;
           case 10: {
             Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Revision = input.ReadUInt64();
             break;
           }
         }

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Changed (breaking)
+
+- Process recipes and part definitions have revisions (cobotar/protocol#19, step 2 of cobotar/protocol#17): `process.v1.ProcessRecipe.revision`, which covers the recipe's whole tree, and `product.v1.PartDefinition.revision`, both set by the backend and increased with every change. A revision is immutable, so clients may cache definitions by `(id, revision)`. Updates of recipes and part definitions have to carry the revision they were based on, and a stale one is refused; sequence and task definitions carry none of their own.
+- `runtime.v1.ProcessRun.process_recipe_revision` and `part_definition_revisions` name the revisions a run was loaded with, and `ProcessRunDefinitions` holds definitions at those revisions.
+- `common.v1.GetMessage.revision` gets a recipe or part definition at a revision, and a sequence or task definition at a revision of its recipe. The backend keeps the current revision and those runs use, for the retention period after their last run (or forever, if configured); a request for another revision fails.
+- Stored data: Authoring stores revisions instead of per-run snapshots, and bumps its data version (cobotar/Authoring#53).
+
 ### Added
 
 - The storage subjects (`command.storage.dump`, `command.storage.load`, `command.storage.clear` and `get.storage.info`) are active, now that Authoring serves them (cobotar/Authoring#62). The dump format is documented on `service.v1.StorageDumpRequest`, and `ServerInfo.reset_reason` lists the reasons, including `storage_loaded` and `storage_cleared` after a load or clear (cobotar/protocol#21).

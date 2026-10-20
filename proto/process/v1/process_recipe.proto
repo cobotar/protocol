@@ -49,6 +49,14 @@ message ProcessRecipe {
   repeated string task_ids = 10;
   repeated string supported_container_definition_ids = 11; // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
   repeated common.v1.ExternalReference external_references = 12;
+
+  // Revision of the recipe's whole tree, set by the backend: it increases with
+  // every change to the recipe or to one of its sequence or task definitions,
+  // which carry no revision of their own (cobotar/protocol#19). Revisions are
+  // immutable: a recipe tree at a given (id, revision) never changes, so
+  // clients may cache it. An update has to carry the revision of the recipe it
+  // was based on, and is refused if the recipe changed since. Ignored on create.
+  uint64 revision = 13;
 }
 
 message ProcessRecipes {

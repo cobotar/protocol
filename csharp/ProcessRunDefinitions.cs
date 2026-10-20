@@ -101,9 +101,15 @@ namespace Messages.Runtime.V1 {
   /// stays live, so guidance can be authored in-situ while a run is active. Live
   /// AR content reads its process data through the run's pinned definitions.
   ///
+  /// The recipe and part definitions carry the revisions the run uses, the same
+  /// as ProcessRun.process_recipe_revision and part_definition_revisions; the
+  /// sequence and task definitions are those of the recipe revision. A client
+  /// compares them with the current revisions to tell whether a definition has
+  /// changed since the run was loaded.
+  ///
   /// The pinned definitions are kept while the run is active and for a
   /// retention period after it is done or aborted (configured in the backend,
-  /// two weeks by default). After that, source is LATEST.
+  /// two weeks by default; 0 keeps them forever). After that, source is LATEST.
   ///
   /// Published as an added event when a run is loaded, with the process run ID
   /// as the entity ID, and fetched with ProcessRunDefinitionsRequest.

@@ -39,7 +39,14 @@ class RunParameter(_message.Message):
     def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
 
 class ProcessRun(_message.Message):
-    __slots__ = ("id", "name", "icon", "process_recipe_id", "order_id", "station_id", "cell_id", "line_id", "frame", "root_sequence_run_id", "sequence_run_ids", "task_run_ids", "state", "initiated_at", "ended_at", "assignments", "variant_configuration", "parameters", "revision")
+    __slots__ = ("id", "name", "icon", "process_recipe_id", "order_id", "station_id", "cell_id", "line_id", "frame", "root_sequence_run_id", "sequence_run_ids", "task_run_ids", "state", "initiated_at", "ended_at", "assignments", "variant_configuration", "parameters", "revision", "process_recipe_revision", "part_definition_revisions")
+    class PartDefinitionRevisionsEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: int
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[int] = ...) -> None: ...
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -59,6 +66,8 @@ class ProcessRun(_message.Message):
     VARIANT_CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     REVISION_FIELD_NUMBER: _ClassVar[int]
+    PROCESS_RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
+    PART_DEFINITION_REVISIONS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -78,7 +87,9 @@ class ProcessRun(_message.Message):
     variant_configuration: _variant_configuration_pb2.VariantConfiguration
     parameters: _containers.RepeatedCompositeFieldContainer[RunParameter]
     revision: int
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., process_recipe_id: _Optional[str] = ..., order_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., line_id: _Optional[str] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_run_id: _Optional[str] = ..., sequence_run_ids: _Optional[_Iterable[str]] = ..., task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[ProcessRunState, str]] = ..., initiated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assignments: _Optional[_Iterable[_Union[_actor_assignment_pb2.ActorAssignment, _Mapping]]] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., parameters: _Optional[_Iterable[_Union[RunParameter, _Mapping]]] = ..., revision: _Optional[int] = ...) -> None: ...
+    process_recipe_revision: int
+    part_definition_revisions: _containers.ScalarMap[str, int]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., process_recipe_id: _Optional[str] = ..., order_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., line_id: _Optional[str] = ..., frame: _Optional[_Union[_pose_pb2.LocalizedPose, _Mapping]] = ..., root_sequence_run_id: _Optional[str] = ..., sequence_run_ids: _Optional[_Iterable[str]] = ..., task_run_ids: _Optional[_Iterable[str]] = ..., state: _Optional[_Union[ProcessRunState, str]] = ..., initiated_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., ended_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assignments: _Optional[_Iterable[_Union[_actor_assignment_pb2.ActorAssignment, _Mapping]]] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., parameters: _Optional[_Iterable[_Union[RunParameter, _Mapping]]] = ..., revision: _Optional[int] = ..., process_recipe_revision: _Optional[int] = ..., part_definition_revisions: _Optional[_Mapping[str, int]] = ...) -> None: ...
 
 class ProcessRuns(_message.Message):
     __slots__ = ("items",)

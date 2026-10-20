@@ -556,8 +556,15 @@ type PartDefinition struct {
 	Process            *PartProcessProfile     `protobuf:"bytes,12,opt,name=process,proto3" json:"process,omitempty"`
 	ExternalReferences []*v1.ExternalReference `protobuf:"bytes,13,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
 	Version            string                  `protobuf:"bytes,15,opt,name=version,proto3" json:"version,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// Revision of the part definition, set by the backend: it increases with
+	// every change (cobotar/protocol#19). It isn't the user-facing version.
+	// Revisions are immutable: a part definition at a given (id, revision) never
+	// changes, so clients may cache it. An update has to carry the revision of
+	// the part definition it was based on, and is refused if it changed since.
+	// Ignored on create.
+	Revision      uint64 `protobuf:"varint,16,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PartDefinition) Reset() {
@@ -688,6 +695,13 @@ func (x *PartDefinition) GetVersion() string {
 	return ""
 }
 
+func (x *PartDefinition) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
 type PartDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*PartDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -768,7 +782,7 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\x17pre_lubrication_part_id\x18\x06 \x01(\tR\x14preLubricationPartId\x127\n" +
 	"\x18post_lubrication_part_id\x18\a \x01(\tR\x15postLubricationPartId\x12'\n" +
 	"\x0frequires_wiping\x18\b \x01(\bR\x0erequiresWiping\x12?\n" +
-	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xea\x04\n" +
+	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x86\x05\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -786,7 +800,8 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\bhandling\x18\v \x01(\v2\x1f.product.v1.PartHandlingProfileR\bhandling\x128\n" +
 	"\aprocess\x18\f \x01(\v2\x1e.product.v1.PartProcessProfileR\aprocess\x12M\n" +
 	"\x13external_references\x18\r \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x12\x18\n" +
-	"\aversion\x18\x0f \x01(\tR\aversion\"C\n" +
+	"\aversion\x18\x0f \x01(\tR\aversion\x12\x1a\n" +
+	"\brevision\x18\x10 \x01(\x04R\brevision\"C\n" +
 	"\x0fPartDefinitions\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.product.v1.PartDefinitionR\x05items*\xe8\x02\n" +
 	"\bPartType\x12\x19\n" +

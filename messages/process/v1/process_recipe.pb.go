@@ -159,8 +159,15 @@ type ProcessRecipe struct {
 	TaskIds                         []string                 `protobuf:"bytes,10,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 	SupportedContainerDefinitionIds []string                 `protobuf:"bytes,11,rep,name=supported_container_definition_ids,json=supportedContainerDefinitionIds,proto3" json:"supported_container_definition_ids,omitempty"` // Containers (typically fixture/pallet definitions) that this recipe is intended to run with.
 	ExternalReferences              []*v11.ExternalReference `protobuf:"bytes,12,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	unknownFields                   protoimpl.UnknownFields
-	sizeCache                       protoimpl.SizeCache
+	// Revision of the recipe's whole tree, set by the backend: it increases with
+	// every change to the recipe or to one of its sequence or task definitions,
+	// which carry no revision of their own (cobotar/protocol#19). Revisions are
+	// immutable: a recipe tree at a given (id, revision) never changes, so
+	// clients may cache it. An update has to carry the revision of the recipe it
+	// was based on, and is refused if the recipe changed since. Ignored on create.
+	Revision      uint64 `protobuf:"varint,13,opt,name=revision,proto3" json:"revision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProcessRecipe) Reset() {
@@ -275,6 +282,13 @@ func (x *ProcessRecipe) GetExternalReferences() []*v11.ExternalReference {
 		return x.ExternalReferences
 	}
 	return nil
+}
+
+func (x *ProcessRecipe) GetRevision() uint64 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
 }
 
 type ProcessRecipes struct {
@@ -649,7 +663,7 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
 	"\x13RecipeApplicability\x122\n" +
 	"\ainclude\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\ainclude\x122\n" +
-	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xad\x04\n" +
+	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xc9\x04\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -663,7 +677,8 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\btask_ids\x18\n" +
 	" \x03(\tR\ataskIds\x12K\n" +
 	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n" +
-	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"A\n" +
+	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x12\x1a\n" +
+	"\brevision\x18\r \x01(\x04R\brevision\"A\n" +
 	"\x0eProcessRecipes\x12/\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.process.v1.ProcessRecipeR\x05items\"\xc0\x01\n" +
 	"\x13CreateProcessRecipe\x129\n" +
