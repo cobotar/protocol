@@ -2,11 +2,11 @@
 
 from typing import Dict, Literal, Tuple
 
-EntityName = Literal["action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "process_run_definitions", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"]
-ENTITY_NAMES: Tuple[EntityName, ...] = ("action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "process_run_definitions", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone")
+EntityName = Literal["action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_adapter_info", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "process_run_definitions", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_adapter_info", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"]
+ENTITY_NAMES: Tuple[EntityName, ...] = ("action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_adapter_info", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "process_run_definitions", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_adapter_info", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone")
 ENTITY_SETS: Dict[str, Tuple[EntityName, ...]] = {
     "creatable": ("action", "actor_skill", "ar_config", "ar_config_binding", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "function", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "product", "property_definition", "property_instance", "robot_definition", "robot_instance", "sequence_definition", "skill", "station", "task_definition", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"),
-    "evented": ("action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"),
+    "evented": ("action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_adapter_info", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_adapter_info", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"),
     "mutable": ("action", "actor_skill", "ar_config", "ar_config_binding", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "feedback", "function", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "product", "property_definition", "property_instance", "robot_definition", "robot_instance", "sequence_definition", "skill", "station", "task_definition", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"),
     "readable": ("action", "action_definition", "actor_availability", "actor_skill", "ar_config", "ar_config_binding", "asset_adapter_definition", "asset_definition", "asset_instance", "cell", "container_definition", "container_instance", "device", "execution_evidence", "feedback", "feedback_definition", "function", "function_definition", "line", "marker", "model", "part_definition", "part_instance", "presentation_strategy", "process_recipe", "process_run", "product", "property_definition", "property_instance", "robot_adapter_definition", "robot_definition", "robot_instance", "sequence_definition", "sequence_run", "skill", "station", "task_definition", "task_run", "tool_definition", "tool_instance", "validity_policy", "worker", "zone"),
 }
@@ -16,19 +16,84 @@ def _validate_entity_set(family: str, entity_set: str, entity: EntityName) -> No
         raise ValueError(f"entity {entity} is not supported by route family {family}")
 
 SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
+    {"id": "command.action.request_ownership", "pattern": "command.action.request_ownership", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.RequestActionOwnership", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.actor_availability.clear_override", "pattern": "command.actor_availability.clear_override", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.ActorAvailabilityOverrideClearRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.actor_availability.override", "pattern": "command.actor_availability.override", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.ActorAvailabilityOverrideRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.actor_availability.report", "pattern": "command.actor_availability.report", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.ActorAvailabilityReportRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.feedback.request_ownership", "pattern": "command.feedback.request_ownership", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.RequestFeedbackOwnership", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.popup.hide", "pattern": "command.popup.hide.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "robot.v1.RobotHidePopupRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.popup.show", "pattern": "command.popup.show.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "robot.v1.RobotShowPopupRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.process_run.abort", "pattern": "command.process_run.abort", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.ProcessAbortRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.process_run.load_request", "pattern": "command.process_run.load_request", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.ProcessLoadRequest", "empty_request": False, "success_reply": "runtime.v1.ProcessLoadResult", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
     {"id": "command.robot.visibility", "pattern": "command.robot.visibility.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotVisibilityMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("web_cobotar",), "consumers": ("holo_cobotar",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "command.robot_instance.acknowledge", "pattern": "command.robot_instance.acknowledge.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "robot.v1.AcknowledgeRobot", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.robot_instance.set_io", "pattern": "command.robot_instance.set_io.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "robot.v1.RobotIOCommand", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.robot_instance.state_change", "pattern": "command.robot_instance.state_change.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "robot.v1.ProgramStateRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.sequence_run.complete", "pattern": "command.sequence_run.complete", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.SequenceCompleteRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("holo_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.sequence_run.reassign", "pattern": "command.sequence_run.reassign", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.SequenceReassignRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
     {"id": "command.storage.clear", "pattern": "command.storage.clear", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "service.v1.StorageClearRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
     {"id": "command.storage.dump", "pattern": "command.storage.dump", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "service.v1.StorageDumpRequest", "empty_request": False, "success_reply": "service.v1.StorageDumpResult", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
     {"id": "command.storage.load", "pattern": "command.storage.load", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "service.v1.StorageLoadRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
-    {"id": "command.task_run.progress", "pattern": "command.task_run.progress", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.TaskProgressUpdate", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "edit.entity.reset", "pattern": "edit.{entity}.reset.{child}", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.ar_config_binding.candidates", "pattern": "get.ar_config_binding.candidates", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ARBindingCandidatesRequest", "empty_request": False, "success_reply": "ar.v1.ARBindingCandidatesResponse", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#74"},
-    {"id": "get.asset_adapter.info", "pattern": "get.asset_adapter.info.{asset_instance_id}", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.AssetAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#65"},
-    {"id": "get.robot_adapter.info", "pattern": "get.robot_adapter.info.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "robot.v1.RobotAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#14"},
+    {"id": "command.task_run.progress", "pattern": "command.task_run.progress", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.TaskProgressUpdate", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("robot_adapter", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "command.task_run.reassign", "pattern": "command.task_run.reassign", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.TaskReassignRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "command.task_run.state_change", "pattern": "command.task_run.state_change.{task_run_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.TaskStateChangeRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("robot_adapter", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.ar_config.add.ar_input_slot", "pattern": "edit.ar_config.add.ar_input_slot", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ARInputSlotAddMessage", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.ar_config.remove.ar_input_slot", "pattern": "edit.ar_config.remove.ar_input_slot", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ARInputSlotDeleteMessage", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.ar_config.reset.presentation_binding", "pattern": "edit.ar_config.reset.presentation_binding", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.PresentationBindingReset", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.ar_config.update.ar_input_slot", "pattern": "edit.ar_config.update.ar_input_slot", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ARInputSlotUpdateMessage", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.ar_config.update.presentation_binding", "pattern": "edit.ar_config.update.presentation_binding", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.PresentationBindingUpdate", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.part_instance.add_many", "pattern": "edit.part_instance.add_many", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "product.v1.BulkCreatePartInstancesRequest", "empty_request": False, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.process_recipe.add.root", "pattern": "edit.process_recipe.add.root", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.AddRootSequenceRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.process_recipe.add.sequence", "pattern": "edit.process_recipe.add.sequence", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.AddChildSequenceRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.process_recipe.add.task", "pattern": "edit.process_recipe.add.task", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.AddChildTaskRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.process_recipe.remove.sequence", "pattern": "edit.process_recipe.remove.sequence", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.RemoveSequenceRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.process_recipe.remove.task", "pattern": "edit.process_recipe.remove.task", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.RemoveTaskRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "edit.property_instance.update_value", "pattern": "edit.property_instance.update_value", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.PropertyInstanceUpdate", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.device.heartbeat", "pattern": "event.device.heartbeat.{device_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.DeviceHeartbeat", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("holo_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.log.error", "pattern": "event.log.error.{service}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "common.v1.LogRecord", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring", "robot_adapter", "holo_cobotar"), "consumers": ("web_cobotar",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.log.full", "pattern": "event.log.full.{service}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "common.v1.LogRecord", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring", "robot_adapter", "holo_cobotar"), "consumers": ("web_cobotar",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.process_run_definitions.added", "pattern": "event.process_run_definitions.added.{process_run_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "runtime.v1.ProcessRunDefinitions", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.server.heartbeat.backend", "pattern": "event.server.heartbeat.backend", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "service.v1.ServerHeartbeat", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.server.heartbeat.robot_adapter", "pattern": "event.server.heartbeat.robot_adapter.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "service.v1.ServerHeartbeat", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("authoring", "web_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.server.restarted.backend", "pattern": "event.server.restarted.backend", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "service.v1.ServerInfo", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "event.task_run.progress", "pattern": "event.task_run.progress.{task_run_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "runtime.v1.TaskProgressUpdate", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "generate.process_recipe.draft", "pattern": "generate.process_recipe.draft", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.DraftProcessRecipeGenerateRequest", "empty_request": False, "success_reply": "process.v1.DraftProcessRecipeGenerateResult", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "generate.process_recipe.draft.disassembly", "pattern": "generate.process_recipe.draft.disassembly", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.DraftDisassemblyProcessRecipeGenerateRequest", "empty_request": False, "success_reply": "process.v1.DraftProcessRecipeGenerateResult", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "generate.process_recipe.draft.kitting", "pattern": "generate.process_recipe.draft.kitting", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "process.v1.DraftKittingProcessRecipeGenerateRequest", "empty_request": False, "success_reply": "process.v1.DraftProcessRecipeGenerateResult", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.actor_availability.actor", "pattern": "get.actor_availability.actor", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.ActorRef", "empty_request": False, "success_reply": "runtime.v1.ActorAvailability", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.actor_skill.field.actor_id", "pattern": "get.actor_skill.field.actor_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "capability.v1.ActorSkills", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.actor_skill.field.skill_id", "pattern": "get.actor_skill.field.skill_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "capability.v1.ActorSkills", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.ar_config.info", "pattern": "get.ar_config.info", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "ar.v1.ARConfigInfoMessages", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.ar_config_binding.candidates", "pattern": "get.ar_config_binding.candidates", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ARBindingCandidatesRequest", "empty_request": False, "success_reply": "ar.v1.ARBindingCandidatesResponse", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#74"},
+    {"id": "get.asset_adapter.info", "pattern": "get.asset_adapter.info.{asset_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.AssetAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#65"},
+    {"id": "get.asset_instance.field.definition_id", "pattern": "get.asset_instance.field.definition_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.AssetInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.backend.info", "pattern": "get.backend.info", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "service.v1.ServerInfo", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.container_instance.field.cell_id", "pattern": "get.container_instance.field.cell_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.container_instance.field.definition_id", "pattern": "get.container_instance.field.definition_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.container_instance.field.line_id", "pattern": "get.container_instance.field.line_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.container_instance.field.station_id", "pattern": "get.container_instance.field.station_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.execution_evidence.field.task_run_id", "pattern": "get.execution_evidence.field.task_run_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "runtime.v1.ExecutionEvidences", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.part_instance.field.cell_id", "pattern": "get.part_instance.field.cell_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.part_instance.field.definition_id", "pattern": "get.part_instance.field.definition_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.part_instance.field.line_id", "pattern": "get.part_instance.field.line_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.part_instance.field.station_id", "pattern": "get.part_instance.field.station_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.process_run_definitions.one", "pattern": "get.process_run_definitions.one", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.ProcessRunDefinitionsRequest", "empty_request": False, "success_reply": "runtime.v1.ProcessRunDefinitions", "failure_reply": "service.v1.Response", "publishers": ("robot_adapter", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.robot_adapter.info", "pattern": "get.robot_adapter.info.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "robot.v1.RobotAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/protocol#14"},
+    {"id": "get.robot_instance.controller_status", "pattern": "get.robot_instance.controller_status.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "robot.v1.RobotControllerStatusMessage", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar", "holo_cobotar"), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.robot_instance.field.definition_id", "pattern": "get.robot_instance.field.definition_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.RobotInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "get.robot_instance.io", "pattern": "get.robot_instance.io.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "robot.v1.RobotIOState", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("robot_adapter",), "tracking_issue": "cobotar/Authoring#64"},
     {"id": "get.storage.info", "pattern": "get.storage.info", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "service.v1.StorageInfo", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
+    {"id": "get.tool_instance.field.definition_id", "pattern": "get.tool_instance.field.definition_id", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByFieldMessage", "empty_request": False, "success_reply": "resources.v1.ToolInstances", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#64"},
     {"id": "plan.robot.path", "pattern": "plan.robot.path.{robot_instance_id}.{plan_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.PathMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "telemetry.robot.controller_status", "pattern": "telemetry.robot.controller_status.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotControllerStatusMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "telemetry.robot.end_effector", "pattern": "telemetry.robot.end_effector.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.EndEffectorStateMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("holo_cobotar",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "report.asset_adapter.info", "pattern": "report.asset_adapter.info.{asset_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("asset_adapter",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#23"},
+    {"id": "report.robot_adapter.info", "pattern": "report.robot_adapter.info.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#23"},
+    {"id": "telemetry.robot.controller_status", "pattern": "telemetry.robot.controller_status.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotControllerStatusMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "telemetry.robot.end_effector", "pattern": "telemetry.robot.end_effector.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.EndEffectorStateMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("holo_cobotar",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "telemetry.robot.force_torque", "pattern": "telemetry.robot.force_torque.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "geometry.v1.Wrench", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("web_cobotar",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "telemetry.robot.io", "pattern": "telemetry.robot.io.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotIOState", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("web_cobotar",), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "telemetry.robot.joint_angles", "pattern": "telemetry.robot.joint_angles.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.JointStateMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "telemetry.robot.state", "pattern": "telemetry.robot.state.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotStateMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
+    {"id": "telemetry.robot.tcp", "pattern": "telemetry.robot.tcp.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.TcpMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("robot_adapter",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/Authoring#64"},
     {"id": "edit.action.add", "pattern": "edit.action.add", "family": "edit.entity.add", "entity": "action", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ActionAddMessage", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "edit.action.clone", "pattern": "edit.action.clone", "family": "edit.entity.clone", "entity": "action", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.CloneMessage", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "edit.action.remove", "pattern": "edit.action.remove", "family": "edit.entity.remove", "entity": "action", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.DeleteMessage", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
@@ -183,6 +248,9 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "event.asset_adapter_definition.added", "pattern": "event.asset_adapter_definition.added.{entity_id}", "family": "event.entity.added", "entity": "asset_adapter_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.asset_adapter_definition.removed", "pattern": "event.asset_adapter_definition.removed.{entity_id}", "family": "event.entity.removed", "entity": "asset_adapter_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.asset_adapter_definition.updated", "pattern": "event.asset_adapter_definition.updated.{entity_id}", "family": "event.entity.updated", "entity": "asset_adapter_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "event.asset_adapter_info.added", "pattern": "event.asset_adapter_info.added.{entity_id}", "family": "event.entity.added", "entity": "asset_adapter_info", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "event.asset_adapter_info.removed", "pattern": "event.asset_adapter_info.removed.{entity_id}", "family": "event.entity.removed", "entity": "asset_adapter_info", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "event.asset_adapter_info.updated", "pattern": "event.asset_adapter_info.updated.{entity_id}", "family": "event.entity.updated", "entity": "asset_adapter_info", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.asset_definition.added", "pattern": "event.asset_definition.added.{entity_id}", "family": "event.entity.added", "entity": "asset_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.asset_definition.removed", "pattern": "event.asset_definition.removed.{entity_id}", "family": "event.entity.removed", "entity": "asset_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.asset_definition.updated", "pattern": "event.asset_definition.updated.{entity_id}", "family": "event.entity.updated", "entity": "asset_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.AssetDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
@@ -252,6 +320,9 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "event.robot_adapter_definition.added", "pattern": "event.robot_adapter_definition.added.{entity_id}", "family": "event.entity.added", "entity": "robot_adapter_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.RobotAdapterDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.robot_adapter_definition.removed", "pattern": "event.robot_adapter_definition.removed.{entity_id}", "family": "event.entity.removed", "entity": "robot_adapter_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.RobotAdapterDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.robot_adapter_definition.updated", "pattern": "event.robot_adapter_definition.updated.{entity_id}", "family": "event.entity.updated", "entity": "robot_adapter_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.RobotAdapterDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "event.robot_adapter_info.added", "pattern": "event.robot_adapter_info.added.{entity_id}", "family": "event.entity.added", "entity": "robot_adapter_info", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "event.robot_adapter_info.removed", "pattern": "event.robot_adapter_info.removed.{entity_id}", "family": "event.entity.removed", "entity": "robot_adapter_info", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "event.robot_adapter_info.updated", "pattern": "event.robot_adapter_info.updated.{entity_id}", "family": "event.entity.updated", "entity": "robot_adapter_info", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "robot.v1.RobotAdapterInfoMessage", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.robot_definition.added", "pattern": "event.robot_definition.added.{entity_id}", "family": "event.entity.added", "entity": "robot_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.RobotDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.robot_definition.removed", "pattern": "event.robot_definition.removed.{entity_id}", "family": "event.entity.removed", "entity": "robot_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.RobotDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
     {"id": "event.robot_definition.updated", "pattern": "event.robot_definition.updated.{entity_id}", "family": "event.entity.updated", "entity": "robot_definition", "lifecycle": "active", "conformance": "staged", "interaction": "publish", "payload": "resources.v1.RobotDefinition", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("authoring",), "consumers": ("web_cobotar", "holo_cobotar"), "tracking_issue": "cobotar/protocol#11"},
@@ -321,10 +392,10 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "get.cell.all", "pattern": "get.cell.all", "family": "get.entity.all", "entity": "cell", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.CellDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.cell.one", "pattern": "get.cell.one", "family": "get.entity.one", "entity": "cell", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "resources.v1.CellDefinition", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.cell.some", "pattern": "get.cell.some", "family": "get.entity.some", "entity": "cell", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "resources.v1.CellDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.container_definition.all", "pattern": "get.container_definition.all", "family": "get.entity.all", "entity": "container_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.ContainerDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.container_definition.all", "pattern": "get.container_definition.all", "family": "get.entity.all", "entity": "container_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.ContainerDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar", "robot_adapter"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.container_definition.one", "pattern": "get.container_definition.one", "family": "get.entity.one", "entity": "container_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "resources.v1.ContainerDefinition", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.container_definition.some", "pattern": "get.container_definition.some", "family": "get.entity.some", "entity": "container_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "resources.v1.ContainerDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.container_instance.all", "pattern": "get.container_instance.all", "family": "get.entity.all", "entity": "container_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.container_instance.all", "pattern": "get.container_instance.all", "family": "get.entity.all", "entity": "container_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar", "robot_adapter"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.container_instance.one", "pattern": "get.container_instance.one", "family": "get.entity.one", "entity": "container_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "resources.v1.ContainerInstance", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.container_instance.some", "pattern": "get.container_instance.some", "family": "get.entity.some", "entity": "container_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "resources.v1.ContainerInstances", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.device.all", "pattern": "get.device.all", "family": "get.entity.all", "entity": "device", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.DeviceMessages", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
@@ -355,10 +426,10 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "get.model.one", "pattern": "get.model.one", "family": "get.entity.one", "entity": "model", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "resources.v1.ModelArtifact", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.model.some", "pattern": "get.model.some", "family": "get.entity.some", "entity": "model", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "resources.v1.ModelArtifacts", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.part_definition.all", "pattern": "get.part_definition.all", "family": "get.entity.all", "entity": "part_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "product.v1.PartDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.part_definition.one", "pattern": "get.part_definition.one", "family": "get.entity.one", "entity": "part_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "product.v1.PartDefinition", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.part_definition.one", "pattern": "get.part_definition.one", "family": "get.entity.one", "entity": "part_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "product.v1.PartDefinition", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar", "robot_adapter"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.part_definition.some", "pattern": "get.part_definition.some", "family": "get.entity.some", "entity": "part_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "product.v1.PartDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.part_instance.all", "pattern": "get.part_instance.all", "family": "get.entity.all", "entity": "part_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.part_instance.one", "pattern": "get.part_instance.one", "family": "get.entity.one", "entity": "part_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "product.v1.PartInstance", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.part_instance.one", "pattern": "get.part_instance.one", "family": "get.entity.one", "entity": "part_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "product.v1.PartInstance", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar", "robot_adapter"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.part_instance.some", "pattern": "get.part_instance.some", "family": "get.entity.some", "entity": "part_instance", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "product.v1.PartInstances", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.presentation_strategy.all", "pattern": "get.presentation_strategy.all", "family": "get.entity.all", "entity": "presentation_strategy", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "ar.v1.PresentationStrategies", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.presentation_strategy.one", "pattern": "get.presentation_strategy.one", "family": "get.entity.one", "entity": "presentation_strategy", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "ar.v1.PresentationStrategy", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
@@ -366,7 +437,7 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "get.process_recipe.all", "pattern": "get.process_recipe.all", "family": "get.entity.all", "entity": "process_recipe", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "process.v1.ProcessRecipes", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.process_recipe.one", "pattern": "get.process_recipe.one", "family": "get.entity.one", "entity": "process_recipe", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "process.v1.ProcessRecipe", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.process_recipe.some", "pattern": "get.process_recipe.some", "family": "get.entity.some", "entity": "process_recipe", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "process.v1.ProcessRecipes", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.process_run.all", "pattern": "get.process_run.all", "family": "get.entity.all", "entity": "process_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "runtime.v1.ProcessRuns", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.process_run.all", "pattern": "get.process_run.all", "family": "get.entity.all", "entity": "process_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "runtime.v1.ProcessRuns", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar", "robot_adapter"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.process_run.one", "pattern": "get.process_run.one", "family": "get.entity.one", "entity": "process_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "runtime.v1.ProcessRun", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.process_run.some", "pattern": "get.process_run.some", "family": "get.entity.some", "entity": "process_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "runtime.v1.ProcessRuns", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.product.all", "pattern": "get.product.all", "family": "get.entity.all", "entity": "product", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "product.v1.ProductDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
@@ -402,7 +473,7 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "get.task_definition.all", "pattern": "get.task_definition.all", "family": "get.entity.all", "entity": "task_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "process.v1.TaskDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.task_definition.one", "pattern": "get.task_definition.one", "family": "get.entity.one", "entity": "task_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "process.v1.TaskDefinition", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.task_definition.some", "pattern": "get.task_definition.some", "family": "get.entity.some", "entity": "task_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "process.v1.TaskDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
-    {"id": "get.task_run.all", "pattern": "get.task_run.all", "family": "get.entity.all", "entity": "task_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "runtime.v1.TaskRuns", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.task_run.all", "pattern": "get.task_run.all", "family": "get.entity.all", "entity": "task_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "runtime.v1.TaskRuns", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar", "robot_adapter"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.task_run.one", "pattern": "get.task_run.one", "family": "get.entity.one", "entity": "task_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetMessage", "empty_request": False, "success_reply": "runtime.v1.TaskRun", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.task_run.some", "pattern": "get.task_run.some", "family": "get.entity.some", "entity": "task_run", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "common.v1.GetByIdMessage", "empty_request": False, "success_reply": "runtime.v1.TaskRuns", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "get.tool_definition.all", "pattern": "get.tool_definition.all", "family": "get.entity.all", "entity": "tool_definition", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.ToolDefinitions", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
@@ -433,6 +504,43 @@ def _validate_subject_token(name: str, value: str) -> None:
     if not value or any(character in value for character in ".*> \t\r\n"):
         raise ValueError(f"subject parameter {name} is empty or contains a separator, wildcard, or whitespace")
 
+# Builds `command.action.request_ownership`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_ACTION_REQUEST_OWNERSHIP = "command.action.request_ownership"
+
+# Builds `command.actor_availability.clear_override`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_ACTOR_AVAILABILITY_CLEAR_OVERRIDE = "command.actor_availability.clear_override"
+
+# Builds `command.actor_availability.override`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_ACTOR_AVAILABILITY_OVERRIDE = "command.actor_availability.override"
+
+# Builds `command.actor_availability.report`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_ACTOR_AVAILABILITY_REPORT = "command.actor_availability.report"
+
+# Builds `command.feedback.request_ownership`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_FEEDBACK_REQUEST_OWNERSHIP = "command.feedback.request_ownership"
+
+def command_popup_hide(robot_instance_id: str) -> str:
+    """Build `command.popup.hide.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("command.popup.hide.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_command_popup_hide_any() -> str:
+    """Subscribe to every concrete `command.popup.hide` subject."""
+    return "command.popup.hide.*"
+
+def command_popup_show(robot_instance_id: str) -> str:
+    """Build `command.popup.show.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("command.popup.show.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_command_popup_show_any() -> str:
+    """Subscribe to every concrete `command.popup.show` subject."""
+    return "command.popup.show.*"
+
+# Builds `command.process_run.abort`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_PROCESS_RUN_ABORT = "command.process_run.abort"
+
+# Builds `command.process_run.load_request`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_PROCESS_RUN_LOAD_REQUEST = "command.process_run.load_request"
+
 def command_robot_visibility(robot_instance_id: str) -> str:
     """Build `command.robot.visibility.{robot_instance_id}`. Experimental: active/staged; see cobotar/protocol#11."""
     return _build_subject("command.robot.visibility.{robot_instance_id}", robot_instance_id=robot_instance_id)
@@ -440,6 +548,36 @@ def command_robot_visibility(robot_instance_id: str) -> str:
 def subscribe_command_robot_visibility_any() -> str:
     """Subscribe to every concrete `command.robot.visibility` subject."""
     return "command.robot.visibility.*"
+
+def command_robot_instance_acknowledge(robot_instance_id: str) -> str:
+    """Build `command.robot_instance.acknowledge.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("command.robot_instance.acknowledge.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_command_robot_instance_acknowledge_any() -> str:
+    """Subscribe to every concrete `command.robot_instance.acknowledge` subject."""
+    return "command.robot_instance.acknowledge.*"
+
+def command_robot_instance_set_io(robot_instance_id: str) -> str:
+    """Build `command.robot_instance.set_io.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("command.robot_instance.set_io.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_command_robot_instance_set_io_any() -> str:
+    """Subscribe to every concrete `command.robot_instance.set_io` subject."""
+    return "command.robot_instance.set_io.*"
+
+def command_robot_instance_state_change(robot_instance_id: str) -> str:
+    """Build `command.robot_instance.state_change.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("command.robot_instance.state_change.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_command_robot_instance_state_change_any() -> str:
+    """Subscribe to every concrete `command.robot_instance.state_change` subject."""
+    return "command.robot_instance.state_change.*"
+
+# Builds `command.sequence_run.complete`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_SEQUENCE_RUN_COMPLETE = "command.sequence_run.complete"
+
+# Builds `command.sequence_run.reassign`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_SEQUENCE_RUN_REASSIGN = "command.sequence_run.reassign"
 
 # Builds `command.storage.clear`. Experimental: planned/staged; see cobotar/protocol#21.
 COMMAND_STORAGE_CLEAR = "command.storage.clear"
@@ -453,24 +591,174 @@ COMMAND_STORAGE_LOAD = "command.storage.load"
 # Builds `command.task_run.progress`. Experimental: active/staged; see cobotar/protocol#11.
 COMMAND_TASK_RUN_PROGRESS = "command.task_run.progress"
 
-def edit_entity_reset(entity: str, child: str) -> str:
-    """Build `edit.{entity}.reset.{child}`. Experimental: planned/staged; see cobotar/protocol#11."""
-    return _build_subject("edit.{entity}.reset.{child}", entity=entity, child=child)
+# Builds `command.task_run.reassign`. Experimental: active/staged; see cobotar/Authoring#64.
+COMMAND_TASK_RUN_REASSIGN = "command.task_run.reassign"
 
-def subscribe_edit_entity_reset_any() -> str:
-    """Subscribe to every concrete `edit.entity.reset` subject."""
-    return "edit.*.reset.*"
+def command_task_run_state_change(task_run_id: str) -> str:
+    """Build `command.task_run.state_change.{task_run_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("command.task_run.state_change.{task_run_id}", task_run_id=task_run_id)
 
-# Builds `get.ar_config_binding.candidates`. Experimental: planned/staged; see cobotar/Authoring#74.
+def subscribe_command_task_run_state_change_any() -> str:
+    """Subscribe to every concrete `command.task_run.state_change` subject."""
+    return "command.task_run.state_change.*"
+
+# Builds `edit.ar_config.add.ar_input_slot`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_AR_CONFIG_ADD_AR_INPUT_SLOT = "edit.ar_config.add.ar_input_slot"
+
+# Builds `edit.ar_config.remove.ar_input_slot`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_AR_CONFIG_REMOVE_AR_INPUT_SLOT = "edit.ar_config.remove.ar_input_slot"
+
+# Builds `edit.ar_config.reset.presentation_binding`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_AR_CONFIG_RESET_PRESENTATION_BINDING = "edit.ar_config.reset.presentation_binding"
+
+# Builds `edit.ar_config.update.ar_input_slot`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_AR_CONFIG_UPDATE_AR_INPUT_SLOT = "edit.ar_config.update.ar_input_slot"
+
+# Builds `edit.ar_config.update.presentation_binding`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_AR_CONFIG_UPDATE_PRESENTATION_BINDING = "edit.ar_config.update.presentation_binding"
+
+# Builds `edit.part_instance.add_many`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PART_INSTANCE_ADD_MANY = "edit.part_instance.add_many"
+
+# Builds `edit.process_recipe.add.root`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PROCESS_RECIPE_ADD_ROOT = "edit.process_recipe.add.root"
+
+# Builds `edit.process_recipe.add.sequence`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PROCESS_RECIPE_ADD_SEQUENCE = "edit.process_recipe.add.sequence"
+
+# Builds `edit.process_recipe.add.task`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PROCESS_RECIPE_ADD_TASK = "edit.process_recipe.add.task"
+
+# Builds `edit.process_recipe.remove.sequence`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PROCESS_RECIPE_REMOVE_SEQUENCE = "edit.process_recipe.remove.sequence"
+
+# Builds `edit.process_recipe.remove.task`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PROCESS_RECIPE_REMOVE_TASK = "edit.process_recipe.remove.task"
+
+# Builds `edit.property_instance.update_value`. Experimental: active/staged; see cobotar/Authoring#64.
+EDIT_PROPERTY_INSTANCE_UPDATE_VALUE = "edit.property_instance.update_value"
+
+def event_device_heartbeat(device_id: str) -> str:
+    """Build `event.device.heartbeat.{device_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("event.device.heartbeat.{device_id}", device_id=device_id)
+
+def subscribe_event_device_heartbeat_any() -> str:
+    """Subscribe to every concrete `event.device.heartbeat` subject."""
+    return "event.device.heartbeat.*"
+
+def event_log_error(service: str) -> str:
+    """Build `event.log.error.{service}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("event.log.error.{service}", service=service)
+
+def subscribe_event_log_error_any() -> str:
+    """Subscribe to every concrete `event.log.error` subject."""
+    return "event.log.error.*"
+
+def event_log_full(service: str) -> str:
+    """Build `event.log.full.{service}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("event.log.full.{service}", service=service)
+
+def subscribe_event_log_full_any() -> str:
+    """Subscribe to every concrete `event.log.full` subject."""
+    return "event.log.full.*"
+
+def event_process_run_definitions_added(process_run_id: str) -> str:
+    """Build `event.process_run_definitions.added.{process_run_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("event.process_run_definitions.added.{process_run_id}", process_run_id=process_run_id)
+
+def subscribe_event_process_run_definitions_added_any() -> str:
+    """Subscribe to every concrete `event.process_run_definitions.added` subject."""
+    return "event.process_run_definitions.added.*"
+
+# Builds `event.server.heartbeat.backend`. Experimental: active/staged; see cobotar/Authoring#64.
+EVENT_SERVER_HEARTBEAT_BACKEND = "event.server.heartbeat.backend"
+
+def event_server_heartbeat_robot_adapter(robot_instance_id: str) -> str:
+    """Build `event.server.heartbeat.robot_adapter.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("event.server.heartbeat.robot_adapter.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_event_server_heartbeat_robot_adapter_any() -> str:
+    """Subscribe to every concrete `event.server.heartbeat.robot_adapter` subject."""
+    return "event.server.heartbeat.robot_adapter.*"
+
+# Builds `event.server.restarted.backend`. Experimental: active/staged; see cobotar/Authoring#64.
+EVENT_SERVER_RESTARTED_BACKEND = "event.server.restarted.backend"
+
+def event_task_run_progress(task_run_id: str) -> str:
+    """Build `event.task_run.progress.{task_run_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("event.task_run.progress.{task_run_id}", task_run_id=task_run_id)
+
+def subscribe_event_task_run_progress_any() -> str:
+    """Subscribe to every concrete `event.task_run.progress` subject."""
+    return "event.task_run.progress.*"
+
+# Builds `generate.process_recipe.draft`. Experimental: active/staged; see cobotar/Authoring#64.
+GENERATE_PROCESS_RECIPE_DRAFT = "generate.process_recipe.draft"
+
+# Builds `generate.process_recipe.draft.disassembly`. Experimental: active/staged; see cobotar/Authoring#64.
+GENERATE_PROCESS_RECIPE_DRAFT_DISASSEMBLY = "generate.process_recipe.draft.disassembly"
+
+# Builds `generate.process_recipe.draft.kitting`. Experimental: active/staged; see cobotar/Authoring#64.
+GENERATE_PROCESS_RECIPE_DRAFT_KITTING = "generate.process_recipe.draft.kitting"
+
+# Builds `get.actor_availability.actor`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_ACTOR_AVAILABILITY_ACTOR = "get.actor_availability.actor"
+
+# Builds `get.actor_skill.field.actor_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_ACTOR_SKILL_FIELD_ACTOR_ID = "get.actor_skill.field.actor_id"
+
+# Builds `get.actor_skill.field.skill_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_ACTOR_SKILL_FIELD_SKILL_ID = "get.actor_skill.field.skill_id"
+
+# Builds `get.ar_config.info`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_AR_CONFIG_INFO = "get.ar_config.info"
+
+# Builds `get.ar_config_binding.candidates`. Experimental: active/staged; see cobotar/Authoring#74.
 GET_AR_CONFIG_BINDING_CANDIDATES = "get.ar_config_binding.candidates"
 
 def get_asset_adapter_info(asset_instance_id: str) -> str:
-    """Build `get.asset_adapter.info.{asset_instance_id}`. Experimental: planned/staged; see cobotar/Authoring#65."""
+    """Build `get.asset_adapter.info.{asset_instance_id}`. Experimental: active/staged; see cobotar/Authoring#65."""
     return _build_subject("get.asset_adapter.info.{asset_instance_id}", asset_instance_id=asset_instance_id)
 
 def subscribe_get_asset_adapter_info_any() -> str:
     """Subscribe to every concrete `get.asset_adapter.info` subject."""
     return "get.asset_adapter.info.*"
+
+# Builds `get.asset_instance.field.definition_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_ASSET_INSTANCE_FIELD_DEFINITION_ID = "get.asset_instance.field.definition_id"
+
+# Builds `get.backend.info`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_BACKEND_INFO = "get.backend.info"
+
+# Builds `get.container_instance.field.cell_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_CONTAINER_INSTANCE_FIELD_CELL_ID = "get.container_instance.field.cell_id"
+
+# Builds `get.container_instance.field.definition_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_CONTAINER_INSTANCE_FIELD_DEFINITION_ID = "get.container_instance.field.definition_id"
+
+# Builds `get.container_instance.field.line_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_CONTAINER_INSTANCE_FIELD_LINE_ID = "get.container_instance.field.line_id"
+
+# Builds `get.container_instance.field.station_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_CONTAINER_INSTANCE_FIELD_STATION_ID = "get.container_instance.field.station_id"
+
+# Builds `get.execution_evidence.field.task_run_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_EXECUTION_EVIDENCE_FIELD_TASK_RUN_ID = "get.execution_evidence.field.task_run_id"
+
+# Builds `get.part_instance.field.cell_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_PART_INSTANCE_FIELD_CELL_ID = "get.part_instance.field.cell_id"
+
+# Builds `get.part_instance.field.definition_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_PART_INSTANCE_FIELD_DEFINITION_ID = "get.part_instance.field.definition_id"
+
+# Builds `get.part_instance.field.line_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_PART_INSTANCE_FIELD_LINE_ID = "get.part_instance.field.line_id"
+
+# Builds `get.part_instance.field.station_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_PART_INSTANCE_FIELD_STATION_ID = "get.part_instance.field.station_id"
+
+# Builds `get.process_run_definitions.one`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_PROCESS_RUN_DEFINITIONS_ONE = "get.process_run_definitions.one"
 
 def get_robot_adapter_info(robot_instance_id: str) -> str:
     """Build `get.robot_adapter.info.{robot_instance_id}`. Experimental: active/staged; see cobotar/protocol#14."""
@@ -480,8 +768,30 @@ def subscribe_get_robot_adapter_info_any() -> str:
     """Subscribe to every concrete `get.robot_adapter.info` subject."""
     return "get.robot_adapter.info.*"
 
+def get_robot_instance_controller_status(robot_instance_id: str) -> str:
+    """Build `get.robot_instance.controller_status.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("get.robot_instance.controller_status.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_get_robot_instance_controller_status_any() -> str:
+    """Subscribe to every concrete `get.robot_instance.controller_status` subject."""
+    return "get.robot_instance.controller_status.*"
+
+# Builds `get.robot_instance.field.definition_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_ROBOT_INSTANCE_FIELD_DEFINITION_ID = "get.robot_instance.field.definition_id"
+
+def get_robot_instance_io(robot_instance_id: str) -> str:
+    """Build `get.robot_instance.io.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("get.robot_instance.io.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_get_robot_instance_io_any() -> str:
+    """Subscribe to every concrete `get.robot_instance.io` subject."""
+    return "get.robot_instance.io.*"
+
 # Builds `get.storage.info`. Experimental: planned/staged; see cobotar/protocol#21.
 GET_STORAGE_INFO = "get.storage.info"
+
+# Builds `get.tool_instance.field.definition_id`. Experimental: active/staged; see cobotar/Authoring#64.
+GET_TOOL_INSTANCE_FIELD_DEFINITION_ID = "get.tool_instance.field.definition_id"
 
 def plan_robot_path(robot_instance_id: str, plan_id: str) -> str:
     """Build `plan.robot.path.{robot_instance_id}.{plan_id}`. Experimental: active/staged; see cobotar/protocol#11."""
@@ -494,6 +804,22 @@ def subscribe_plan_robot_path_any() -> str:
 def subscribe_plan_robot_path_for_robot(robot_instance_id: str) -> str:
     """Build the `for_robot` partial-wildcard subscription."""
     return _build_subject("plan.robot.path.{robot_instance_id}.*", robot_instance_id=robot_instance_id)
+
+def report_asset_adapter_info(asset_instance_id: str) -> str:
+    """Build `report.asset_adapter.info.{asset_instance_id}`. Experimental: active/staged; see cobotar/protocol#23."""
+    return _build_subject("report.asset_adapter.info.{asset_instance_id}", asset_instance_id=asset_instance_id)
+
+def subscribe_report_asset_adapter_info_any() -> str:
+    """Subscribe to every concrete `report.asset_adapter.info` subject."""
+    return "report.asset_adapter.info.*"
+
+def report_robot_adapter_info(robot_instance_id: str) -> str:
+    """Build `report.robot_adapter.info.{robot_instance_id}`. Experimental: active/staged; see cobotar/protocol#23."""
+    return _build_subject("report.robot_adapter.info.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_report_robot_adapter_info_any() -> str:
+    """Subscribe to every concrete `report.robot_adapter.info` subject."""
+    return "report.robot_adapter.info.*"
 
 def telemetry_robot_controller_status(robot_instance_id: str) -> str:
     """Build `telemetry.robot.controller_status.{robot_instance_id}`. Experimental: active/staged; see cobotar/protocol#11."""
@@ -510,6 +836,46 @@ def telemetry_robot_end_effector(robot_instance_id: str) -> str:
 def subscribe_telemetry_robot_end_effector_any() -> str:
     """Subscribe to every concrete `telemetry.robot.end_effector` subject."""
     return "telemetry.robot.end_effector.*"
+
+def telemetry_robot_force_torque(robot_instance_id: str) -> str:
+    """Build `telemetry.robot.force_torque.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("telemetry.robot.force_torque.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_telemetry_robot_force_torque_any() -> str:
+    """Subscribe to every concrete `telemetry.robot.force_torque` subject."""
+    return "telemetry.robot.force_torque.*"
+
+def telemetry_robot_io(robot_instance_id: str) -> str:
+    """Build `telemetry.robot.io.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("telemetry.robot.io.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_telemetry_robot_io_any() -> str:
+    """Subscribe to every concrete `telemetry.robot.io` subject."""
+    return "telemetry.robot.io.*"
+
+def telemetry_robot_joint_angles(robot_instance_id: str) -> str:
+    """Build `telemetry.robot.joint_angles.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("telemetry.robot.joint_angles.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_telemetry_robot_joint_angles_any() -> str:
+    """Subscribe to every concrete `telemetry.robot.joint_angles` subject."""
+    return "telemetry.robot.joint_angles.*"
+
+def telemetry_robot_state(robot_instance_id: str) -> str:
+    """Build `telemetry.robot.state.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("telemetry.robot.state.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_telemetry_robot_state_any() -> str:
+    """Subscribe to every concrete `telemetry.robot.state` subject."""
+    return "telemetry.robot.state.*"
+
+def telemetry_robot_tcp(robot_instance_id: str) -> str:
+    """Build `telemetry.robot.tcp.{robot_instance_id}`. Experimental: active/staged; see cobotar/Authoring#64."""
+    return _build_subject("telemetry.robot.tcp.{robot_instance_id}", robot_instance_id=robot_instance_id)
+
+def subscribe_telemetry_robot_tcp_any() -> str:
+    """Subscribe to every concrete `telemetry.robot.tcp` subject."""
+    return "telemetry.robot.tcp.*"
 
 # Builds `edit.action.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTION_ADD = "edit.action.add"
@@ -1078,6 +1444,30 @@ def subscribe_event_asset_adapter_definition_updated_any() -> str:
     """Subscribe to every concrete `event.asset_adapter_definition.updated` subject."""
     return "event.asset_adapter_definition.updated.*"
 
+def event_asset_adapter_info_added(entity_id: str) -> str:
+    """Build `event.asset_adapter_info.added.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
+    return _build_subject("event.asset_adapter_info.added.{entity_id}", entity_id=entity_id)
+
+def subscribe_event_asset_adapter_info_added_any() -> str:
+    """Subscribe to every concrete `event.asset_adapter_info.added` subject."""
+    return "event.asset_adapter_info.added.*"
+
+def event_asset_adapter_info_removed(entity_id: str) -> str:
+    """Build `event.asset_adapter_info.removed.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
+    return _build_subject("event.asset_adapter_info.removed.{entity_id}", entity_id=entity_id)
+
+def subscribe_event_asset_adapter_info_removed_any() -> str:
+    """Subscribe to every concrete `event.asset_adapter_info.removed` subject."""
+    return "event.asset_adapter_info.removed.*"
+
+def event_asset_adapter_info_updated(entity_id: str) -> str:
+    """Build `event.asset_adapter_info.updated.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
+    return _build_subject("event.asset_adapter_info.updated.{entity_id}", entity_id=entity_id)
+
+def subscribe_event_asset_adapter_info_updated_any() -> str:
+    """Subscribe to every concrete `event.asset_adapter_info.updated` subject."""
+    return "event.asset_adapter_info.updated.*"
+
 def event_asset_definition_added(entity_id: str) -> str:
     """Build `event.asset_definition.added.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
     return _build_subject("event.asset_definition.added.{entity_id}", entity_id=entity_id)
@@ -1629,6 +2019,30 @@ def event_robot_adapter_definition_updated(entity_id: str) -> str:
 def subscribe_event_robot_adapter_definition_updated_any() -> str:
     """Subscribe to every concrete `event.robot_adapter_definition.updated` subject."""
     return "event.robot_adapter_definition.updated.*"
+
+def event_robot_adapter_info_added(entity_id: str) -> str:
+    """Build `event.robot_adapter_info.added.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
+    return _build_subject("event.robot_adapter_info.added.{entity_id}", entity_id=entity_id)
+
+def subscribe_event_robot_adapter_info_added_any() -> str:
+    """Subscribe to every concrete `event.robot_adapter_info.added` subject."""
+    return "event.robot_adapter_info.added.*"
+
+def event_robot_adapter_info_removed(entity_id: str) -> str:
+    """Build `event.robot_adapter_info.removed.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
+    return _build_subject("event.robot_adapter_info.removed.{entity_id}", entity_id=entity_id)
+
+def subscribe_event_robot_adapter_info_removed_any() -> str:
+    """Subscribe to every concrete `event.robot_adapter_info.removed` subject."""
+    return "event.robot_adapter_info.removed.*"
+
+def event_robot_adapter_info_updated(entity_id: str) -> str:
+    """Build `event.robot_adapter_info.updated.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""
+    return _build_subject("event.robot_adapter_info.updated.{entity_id}", entity_id=entity_id)
+
+def subscribe_event_robot_adapter_info_updated_any() -> str:
+    """Subscribe to every concrete `event.robot_adapter_info.updated` subject."""
+    return "event.robot_adapter_info.updated.*"
 
 def event_robot_definition_added(entity_id: str) -> str:
     """Build `event.robot_definition.added.{entity_id}`. Experimental: active/staged; see cobotar/protocol#11."""

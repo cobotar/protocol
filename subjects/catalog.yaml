@@ -12,6 +12,10 @@ components:
   - web_cobotar
   - holo_cobotar
   - fusion360_exporter
+  # The adapters of robot instances (the UR adapter, cmd/ur_adapter in the Authoring repository) and of asset
+  # instances (cameras, sensors, ...), which run as processes of their own (cobotar/protocol#23).
+  - robot_adapter
+  - asset_adapter
 
 # Entity names are stable NATS subject tokens. Message roles let route-family
 # templates expand into concrete routes without losing per-entity protobuf
@@ -31,6 +35,8 @@ entities:
     messages: {entity: ar.v1.ARConfigBindingMessage, list: ar.v1.ARConfigBindingMessages, create: ar.v1.ARConfigBindingMessage, update: ar.v1.ARConfigBindingMessage}
   - name: asset_adapter_definition
     messages: {entity: resources.v1.AssetAdapterDefinition, list: resources.v1.AssetAdapterDefinitions}
+  - name: asset_adapter_info
+    messages: {entity: resources.v1.AssetAdapterInfoMessage}
   - name: asset_definition
     messages: {entity: resources.v1.AssetDefinition, list: resources.v1.AssetDefinitions, create: resources.v1.AssetDefinition, update: resources.v1.AssetDefinition}
   - name: asset_instance
@@ -79,6 +85,8 @@ entities:
     messages: {entity: common.v1.PropertyInstance, list: common.v1.PropertyInstances, create: common.v1.PropertyInstance, update: common.v1.PropertyInstance}
   - name: robot_adapter_definition
     messages: {entity: resources.v1.RobotAdapterDefinition, list: resources.v1.RobotAdapterDefinitions}
+  - name: robot_adapter_info
+    messages: {entity: robot.v1.RobotAdapterInfoMessage}
   - name: robot_definition
     messages: {entity: resources.v1.RobotDefinition, list: resources.v1.RobotDefinitions, create: resources.v1.RobotDefinition, update: resources.v1.RobotDefinition}
   - name: robot_instance
@@ -107,7 +115,7 @@ entities:
     messages: {entity: geometry.v1.ZoneDefinition, list: geometry.v1.ZoneDefinitions, create: geometry.v1.ZoneDefinition, update: geometry.v1.ZoneDefinition}
 
 entity_sets:
-  readable: &readable_entities
+  readable:
     [action, action_definition, actor_availability, actor_skill, ar_config, ar_config_binding,
      asset_adapter_definition, asset_definition, asset_instance, cell, container_definition,
      container_instance, device, execution_evidence, feedback, feedback_definition, function,
@@ -130,7 +138,17 @@ entity_sets:
      property_definition, property_instance, robot_definition, robot_instance,
      sequence_definition, skill, station, task_definition, tool_definition, tool_instance,
      validity_policy, worker, zone]
-  evented: *readable_entities
+  # Authoring publishes added, updated and removed events for the readable entities and for the last adapter info it
+  # keeps per robot and asset instance (cobotar/Authoring#49, #65).
+  evented:
+    [action, action_definition, actor_availability, actor_skill, ar_config, ar_config_binding,
+     asset_adapter_definition, asset_adapter_info, asset_definition, asset_instance, cell,
+     container_definition, container_instance, device, execution_evidence, feedback,
+     feedback_definition, function, function_definition, line, marker, model, part_definition,
+     part_instance, presentation_strategy, process_recipe, process_run, product,
+     property_definition, property_instance, robot_adapter_definition, robot_adapter_info,
+     robot_definition, robot_instance, sequence_definition, sequence_run, skill, station,
+     task_definition, task_run, tool_definition, tool_instance, validity_policy, worker, zone]
 
 route_families:
   - id: get.entity.all
@@ -143,6 +161,15 @@ route_families:
     replies: {success: $list, failure: service.v1.Response}
     publishers: [authoring, web_cobotar, holo_cobotar]
     consumers: [authoring]
+    entity_overrides:
+      container_definition:
+        publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
+      container_instance:
+        publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
+      process_run:
+        publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
+      task_run:
+        publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
 
   - id: get.entity.some
     pattern: get.{entity}.some
@@ -165,6 +192,11 @@ route_families:
     replies: {success: $entity, failure: service.v1.Response}
     publishers: [authoring, web_cobotar, holo_cobotar]
     consumers: [authoring]
+    entity_overrides:
+      part_definition:
+        publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
+      part_instance:
+        publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
 
   - id: edit.entity.add
     pattern: edit.{entity}.add
@@ -263,9 +295,973 @@ route_families:
     consumers: [web_cobotar, holo_cobotar]
 
 routes:
+  - id: command.action.request_ownership
+    pattern: command.action.request_ownership
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.RequestActionOwnership
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    description: Make an action managed by its author rather than by adaptive presentation.
+
+  - id: command.feedback.request_ownership
+    pattern: command.feedback.request_ownership
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.RequestFeedbackOwnership
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    description: Make feedback managed by its author rather than by adaptive presentation.
+
+  - id: command.actor_availability.report
+    pattern: command.actor_availability.report
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.ActorAvailabilityReportRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: command.actor_availability.override
+    pattern: command.actor_availability.override
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.ActorAvailabilityOverrideRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: command.actor_availability.clear_override
+    pattern: command.actor_availability.clear_override
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.ActorAvailabilityOverrideClearRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: command.process_run.load_request
+    pattern: command.process_run.load_request
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.ProcessLoadRequest
+    replies:
+      success: runtime.v1.ProcessLoadResult
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    description: Load a process recipe as a new process run.
+
+  - id: command.process_run.abort
+    pattern: command.process_run.abort
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.ProcessAbortRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [authoring]
+
+  - id: command.sequence_run.complete
+    pattern: command.sequence_run.complete
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.SequenceCompleteRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [holo_cobotar]
+    consumers: [authoring]
+
+  - id: command.sequence_run.reassign
+    pattern: command.sequence_run.reassign
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.SequenceReassignRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [authoring]
+
+  - id: command.task_run.reassign
+    pattern: command.task_run.reassign
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.TaskReassignRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [authoring]
+
+  - id: command.task_run.state_change
+    pattern: command.task_run.state_change.{task_run_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.TaskStateChangeRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      task_run_id:
+        type: subject_token
+    publishers: [robot_adapter, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Start, complete, undo or skip the task run in the subject; the UR adapter reports the tasks its robot program runs.
+
+  - id: edit.ar_config.add.ar_input_slot
+    pattern: edit.ar_config.add.ar_input_slot
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.ARInputSlotAddMessage
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.ar_config.update.ar_input_slot
+    pattern: edit.ar_config.update.ar_input_slot
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.ARInputSlotUpdateMessage
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.ar_config.remove.ar_input_slot
+    pattern: edit.ar_config.remove.ar_input_slot
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.ARInputSlotDeleteMessage
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.ar_config.update.presentation_binding
+    pattern: edit.ar_config.update.presentation_binding
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.PresentationBindingUpdate
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.ar_config.reset.presentation_binding
+    pattern: edit.ar_config.reset.presentation_binding
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: ar.v1.PresentationBindingReset
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    description: Reset a presentation binding of an AR config to the strategy's default.
+
+  - id: edit.part_instance.add_many
+    pattern: edit.part_instance.add_many
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: product.v1.BulkCreatePartInstancesRequest
+    replies:
+      success: product.v1.PartInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.process_recipe.add.root
+    pattern: edit.process_recipe.add.root
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.AddRootSequenceRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.process_recipe.add.sequence
+    pattern: edit.process_recipe.add.sequence
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.AddChildSequenceRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.process_recipe.add.task
+    pattern: edit.process_recipe.add.task
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.AddChildTaskRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.process_recipe.remove.sequence
+    pattern: edit.process_recipe.remove.sequence
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.RemoveSequenceRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.process_recipe.remove.task
+    pattern: edit.process_recipe.remove.task
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.RemoveTaskRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: edit.property_instance.update_value
+    pattern: edit.property_instance.update_value
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.PropertyInstanceUpdate
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: Change the value, origin or mirror of one property instance.
+
+  - id: generate.process_recipe.draft
+    pattern: generate.process_recipe.draft
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.DraftProcessRecipeGenerateRequest
+    replies:
+      success: process.v1.DraftProcessRecipeGenerateResult
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: generate.process_recipe.draft.disassembly
+    pattern: generate.process_recipe.draft.disassembly
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.DraftDisassemblyProcessRecipeGenerateRequest
+    replies:
+      success: process.v1.DraftProcessRecipeGenerateResult
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: generate.process_recipe.draft.kitting
+    pattern: generate.process_recipe.draft.kitting
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: process.v1.DraftKittingProcessRecipeGenerateRequest
+    replies:
+      success: process.v1.DraftProcessRecipeGenerateResult
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.actor_availability.actor
+    pattern: get.actor_availability.actor
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.ActorRef
+    replies:
+      success: runtime.v1.ActorAvailability
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.actor_skill.field.actor_id
+    pattern: get.actor_skill.field.actor_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: capability.v1.ActorSkills
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.actor_skill.field.skill_id
+    pattern: get.actor_skill.field.skill_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: capability.v1.ActorSkills
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.asset_instance.field.definition_id
+    pattern: get.asset_instance.field.definition_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.AssetInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.container_instance.field.cell_id
+    pattern: get.container_instance.field.cell_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.ContainerInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.container_instance.field.definition_id
+    pattern: get.container_instance.field.definition_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.ContainerInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.container_instance.field.line_id
+    pattern: get.container_instance.field.line_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.ContainerInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.container_instance.field.station_id
+    pattern: get.container_instance.field.station_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.ContainerInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.execution_evidence.field.task_run_id
+    pattern: get.execution_evidence.field.task_run_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: runtime.v1.ExecutionEvidences
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.part_instance.field.cell_id
+    pattern: get.part_instance.field.cell_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: product.v1.PartInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.part_instance.field.definition_id
+    pattern: get.part_instance.field.definition_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: product.v1.PartInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.part_instance.field.line_id
+    pattern: get.part_instance.field.line_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: product.v1.PartInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.part_instance.field.station_id
+    pattern: get.part_instance.field.station_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: product.v1.PartInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.robot_instance.field.definition_id
+    pattern: get.robot_instance.field.definition_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.RobotInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.tool_instance.field.definition_id
+    pattern: get.tool_instance.field.definition_id
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: common.v1.GetByFieldMessage
+    replies:
+      success: resources.v1.ToolInstances
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+
+  - id: get.ar_config.info
+    pattern: get.ar_config.info
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: ar.v1.ARConfigInfoMessages
+      failure: service.v1.Response
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: The name, icon and description of every AR config.
+
+  - id: get.process_run_definitions.one
+    pattern: get.process_run_definitions.one
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: runtime.v1.ProcessRunDefinitionsRequest
+    replies:
+      success: runtime.v1.ProcessRunDefinitions
+      failure: service.v1.Response
+    publishers: [robot_adapter, web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: The definitions a process run was loaded with.
+
+  - id: get.backend.info
+    pattern: get.backend.info
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: service.v1.ServerInfo
+      failure: service.v1.Response
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [authoring]
+    description: The backend's instance, epoch and whether it started on stored data.
+
+  - id: command.robot_instance.acknowledge
+    pattern: command.robot_instance.acknowledge.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: robot.v1.AcknowledgeRobot
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [robot_adapter]
+    description: Pulse the robot's acknowledge signal; served by the robot's adapter.
+
+  - id: command.robot_instance.set_io
+    pattern: command.robot_instance.set_io.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: robot.v1.RobotIOCommand
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [robot_adapter]
+    description: Write robot I/O signals; served by the robot's adapter.
+
+  - id: command.robot_instance.state_change
+    pattern: command.robot_instance.state_change.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: robot.v1.ProgramStateRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [robot_adapter]
+    description: Play, pause or stop the robot program; served by the robot's adapter.
+
+  - id: command.popup.show
+    pattern: command.popup.show.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: robot.v1.RobotShowPopupRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar]
+    consumers: [robot_adapter]
+    description: Show a popup on the robot's teach pendant; served by the robot's adapter.
+
+  - id: command.popup.hide
+    pattern: command.popup.hide.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    request: robot.v1.RobotHidePopupRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar]
+    consumers: [robot_adapter]
+    description: Hide the popup on the robot's teach pendant; served by the robot's adapter.
+
+  - id: get.robot_instance.controller_status
+    pattern: get.robot_instance.controller_status.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: robot.v1.RobotControllerStatusMessage
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [robot_adapter]
+    description: The robot controller's current status; served by the robot's adapter.
+
+  - id: get.robot_instance.io
+    pattern: get.robot_instance.io.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: request_reply
+    empty_request: true
+    replies:
+      success: robot.v1.RobotIOState
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar]
+    consumers: [robot_adapter]
+    description: The current values of the robot's I/O signals; served by the robot's adapter.
+
+  - id: event.task_run.progress
+    pattern: event.task_run.progress.{task_run_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: runtime.v1.TaskProgressUpdate
+    parameters:
+      task_run_id:
+        type: subject_token
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: event.process_run_definitions.added
+    pattern: event.process_run_definitions.added.{process_run_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: runtime.v1.ProcessRunDefinitions
+    parameters:
+      process_run_id:
+        type: subject_token
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
+    description: The definitions a process run was loaded with, published when the run is loaded.
+
+  - id: event.device.heartbeat
+    pattern: event.device.heartbeat.{device_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: resources.v1.DeviceHeartbeat
+    parameters:
+      device_id:
+        type: subject_token
+    publishers: [holo_cobotar]
+    consumers: [authoring]
+
+  - id: event.server.heartbeat.backend
+    pattern: event.server.heartbeat.backend
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: service.v1.ServerHeartbeat
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: event.server.heartbeat.robot_adapter
+    pattern: event.server.heartbeat.robot_adapter.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: service.v1.ServerHeartbeat
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [authoring, web_cobotar]
+    description: Heartbeat of a robot instance's adapter.
+
+  - id: event.server.restarted.backend
+    pattern: event.server.restarted.backend
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: service.v1.ServerInfo
+    publishers: [authoring]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: event.log.full
+    pattern: event.log.full.{service}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: common.v1.LogRecord
+    parameters:
+      service:
+        type: subject_token
+    publishers: [authoring, robot_adapter, holo_cobotar]
+    consumers: [web_cobotar]
+    description: Every log record of a service, e.g. backend or robot_adapter-<robot instance id>.
+
+  - id: event.log.error
+    pattern: event.log.error.{service}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: common.v1.LogRecord
+    parameters:
+      service:
+        type: subject_token
+    publishers: [authoring, robot_adapter, holo_cobotar]
+    consumers: [web_cobotar]
+    description: The error log records of a service.
+
+  - id: report.robot_adapter.info
+    pattern: report.robot_adapter.info.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/protocol#23
+    interaction: publish
+    payload: robot.v1.RobotAdapterInfoMessage
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [authoring]
+    description: A robot adapter announces its info when it starts and when it changes; Authoring keeps the last and reports changes as robot_adapter_info events.
+
+  - id: report.asset_adapter.info
+    pattern: report.asset_adapter.info.{asset_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/protocol#23
+    interaction: publish
+    payload: resources.v1.AssetAdapterInfoMessage
+    parameters:
+      asset_instance_id:
+        type: subject_token
+    publishers: [asset_adapter]
+    consumers: [authoring]
+    description: An asset adapter announces its info when it starts and when it changes; Authoring keeps the last and serves it on get.asset_adapter.info.
+
+  - id: telemetry.robot.tcp
+    pattern: telemetry.robot.tcp.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: robot.v1.TcpMessage
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: telemetry.robot.joint_angles
+    pattern: telemetry.robot.joint_angles.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: robot.v1.JointStateMessage
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: telemetry.robot.force_torque
+    pattern: telemetry.robot.force_torque.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: geometry.v1.Wrench
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [web_cobotar]
+
+  - id: telemetry.robot.state
+    pattern: telemetry.robot.state.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: robot.v1.RobotStateMessage
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [web_cobotar, holo_cobotar]
+
+  - id: telemetry.robot.io
+    pattern: telemetry.robot.io.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#64
+    interaction: publish
+    payload: robot.v1.RobotIOState
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [robot_adapter]
+    consumers: [web_cobotar]
+
   - id: get.ar_config_binding.candidates
     pattern: get.ar_config_binding.candidates
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
       tracking_issue: cobotar/Authoring#74
@@ -346,29 +1342,13 @@ routes:
     replies:
       success: service.v1.Response
       failure: service.v1.Response
-    publishers: [authoring, web_cobotar, holo_cobotar]
+    publishers: [robot_adapter, web_cobotar, holo_cobotar]
     consumers: [authoring]
     description: Report fine-grained progress for the task identified by the request payload.
 
-  - id: edit.entity.reset
-    pattern: edit.{entity}.reset.{child}
-    lifecycle: planned
-    conformance:
-      mode: staged
-      tracking_issue: cobotar/protocol#11
-    interaction: request_reply
-    parameters:
-      entity:
-        type: subject_token
-      child:
-        type: subject_token
-    publishers: [web_cobotar]
-    consumers: [authoring]
-    description: Reserved for the upcoming reset operation; request and reply types are not decided yet.
-
   - id: get.asset_adapter.info
     pattern: get.asset_adapter.info.{asset_instance_id}
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
       tracking_issue: cobotar/Authoring#65
@@ -399,7 +1379,7 @@ routes:
       robot_instance_id:
         type: subject_token
     publishers: [authoring, web_cobotar, holo_cobotar]
-    consumers: [authoring]
+    consumers: [robot_adapter]
     description: Request the connected adapter information for one robot instance.
 
   - id: get.storage.info
@@ -446,7 +1426,7 @@ routes:
     parameters:
       robot_instance_id:
         type: subject_token
-    publishers: [authoring]
+    publishers: [robot_adapter]
     consumers: [web_cobotar, holo_cobotar]
 
   - id: telemetry.robot.end_effector
@@ -460,6 +1440,6 @@ routes:
     parameters:
       robot_instance_id:
         type: subject_token
-    publishers: [authoring]
+    publishers: [robot_adapter]
     consumers: [holo_cobotar]
     description: Reserved for a future robot end-effector telemetry publisher.

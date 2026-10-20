@@ -4,6 +4,8 @@
 
 ### Added
 
+- Subject catalog routes for every subject Authoring serves, publishes, requests or subscribes to: the run, task, availability and ownership commands, AR config input slots and presentation bindings, process recipe structure edits, field lookups, process recipe draft generation, `get.ar_config.info`, `get.process_run_definitions.one`, `get.backend.info`, the robot adapter's commands and requests, robot telemetry, task progress, device and server heartbeats, server restarts and log records (cobotar/Authoring#64).
+- The adapter info subjects (cobotar/protocol#23): adapters announce their info on `report.robot_adapter.info.{robot_instance_id}` and `report.asset_adapter.info.{asset_instance_id}`, and Authoring reports changes as added, updated and removed events of the new `robot_adapter_info` and `asset_adapter_info` entities. The new `robot_adapter` and `asset_adapter` components stand for the adapters of robot instances (such as the UR adapter) and of asset instances, so the routes they serve, request and publish say so.
 - `ARBindingCandidatesRequest` and `ARBindingCandidatesResponse`, plus `get.ar_config_binding.candidates`, for evaluating which resources satisfy an AR config slot without creating or changing a binding (cobotar/protocol#26).
 - Entity-aware NATS route families, a generated `EntityName` API, and concrete CRUD/event subject contracts with per-entity protobuf metadata for Go, C#, TypeScript, and Python (cobotar/protocol#11).
 - `ar.v1.FunctionType.FUNCTION_TYPE_ROBOT_ANCHOR` and `FUNCTION_TYPE_ROBOT_STATE`, which output a robot frame's anchor and the robot's state, replacing the anchor, state and colour properties that a robot input slot used to generate; and `ar.v1.FunctionAddMessage.robot_property_id`, so a robot function is linked to a slot when it is created, like feedback and actions (cobotar/Authoring#51).
@@ -19,6 +21,9 @@
 
 ### Changed
 
+- `edit.property_instance.update-value` is now `edit.property_instance.update_value`, since subject tokens are lower_snake_case.
+- The reserved `edit.{entity}.reset.{child}` route is replaced by `edit.ar_config.reset.presentation_binding`, which takes an `ar.v1.PresentationBindingReset`.
+- `get.ar_config_binding.candidates` and `get.asset_adapter.info` are active, since Authoring serves them.
 - `resources.v1.ResourceSignalRequirement` now accepts an unspecified data type when `signal_id` or `signal_id_property_key` selects the concrete signal, allowing the selected signal to satisfy the requirement regardless of its type (cobotar/protocol#25).
 - `resources.v1.AssetDefinition` now selects an asset adapter definition. `AssetDriverType`, `driver_type` and the robot-specific signal catalog messages have been removed; robot adapter info now uses the shared signal catalog (cobotar/protocol#15).
 - `resources.v1.RobotDefinition` now selects a robot adapter definition, and `robot.v1.RobotAdapterInfoMessage` references that definition while reporting the connected controller identity, adapter version and configured I/O catalog. The former `RobotDriverType`, `driver_type`, legacy adapter identity fields and embedded `RobotAdapterCapabilities` have been removed (cobotar/protocol#14).

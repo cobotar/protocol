@@ -14,7 +14,7 @@ Catalog conformance: **staged** ([cobotar/protocol#11](https://github.com/cobota
 
 `EntityName` is generated from these stable subject tokens:
 
-`action`, `action_definition`, `actor_availability`, `actor_skill`, `ar_config`, `ar_config_binding`, `asset_adapter_definition`, `asset_definition`, `asset_instance`, `cell`, `container_definition`, `container_instance`, `device`, `execution_evidence`, `feedback`, `feedback_definition`, `function`, `function_definition`, `line`, `marker`, `model`, `part_definition`, `part_instance`, `presentation_strategy`, `process_recipe`, `process_run`, `process_run_definitions`, `product`, `property_definition`, `property_instance`, `robot_adapter_definition`, `robot_definition`, `robot_instance`, `sequence_definition`, `sequence_run`, `skill`, `station`, `task_definition`, `task_run`, `tool_definition`, `tool_instance`, `validity_policy`, `worker`, `zone`.
+`action`, `action_definition`, `actor_availability`, `actor_skill`, `ar_config`, `ar_config_binding`, `asset_adapter_definition`, `asset_adapter_info`, `asset_definition`, `asset_instance`, `cell`, `container_definition`, `container_instance`, `device`, `execution_evidence`, `feedback`, `feedback_definition`, `function`, `function_definition`, `line`, `marker`, `model`, `part_definition`, `part_instance`, `presentation_strategy`, `process_recipe`, `process_run`, `process_run_definitions`, `product`, `property_definition`, `property_instance`, `robot_adapter_definition`, `robot_adapter_info`, `robot_definition`, `robot_instance`, `sequence_definition`, `sequence_run`, `skill`, `station`, `task_definition`, `task_run`, `tool_definition`, `tool_instance`, `validity_policy`, `worker`, `zone`.
 
 Route families expand into concrete, message-aware catalog entries. Generic helpers validate their entity argument against the named set; concrete helpers remain available for consumers that prefer them.
 
@@ -35,19 +35,84 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 
 | ID | Pattern | Family | Lifecycle | Conformance | Messages | Publishers | Consumers |
 |---|---|---|---|---|---|---|---|
+| `command.action.request_ownership` | `command.action.request_ownership` | — | active | staged | ar.v1.RequestActionOwnership → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.actor_availability.clear_override` | `command.actor_availability.clear_override` | — | active | staged | runtime.v1.ActorAvailabilityOverrideClearRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.actor_availability.override` | `command.actor_availability.override` | — | active | staged | runtime.v1.ActorAvailabilityOverrideRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.actor_availability.report` | `command.actor_availability.report` | — | active | staged | runtime.v1.ActorAvailabilityReportRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.feedback.request_ownership` | `command.feedback.request_ownership` | — | active | staged | ar.v1.RequestFeedbackOwnership → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.popup.hide` | `command.popup.hide.{robot_instance_id}` | — | active | staged | robot.v1.RobotHidePopupRequest → service.v1.Response / service.v1.Response | web_cobotar | robot_adapter |
+| `command.popup.show` | `command.popup.show.{robot_instance_id}` | — | active | staged | robot.v1.RobotShowPopupRequest → service.v1.Response / service.v1.Response | web_cobotar | robot_adapter |
+| `command.process_run.abort` | `command.process_run.abort` | — | active | staged | runtime.v1.ProcessAbortRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
+| `command.process_run.load_request` | `command.process_run.load_request` | — | active | staged | runtime.v1.ProcessLoadRequest → runtime.v1.ProcessLoadResult / service.v1.Response | web_cobotar | authoring |
 | `command.robot.visibility` | `command.robot.visibility.{robot_instance_id}` | — | active | staged | robot.v1.RobotVisibilityMessage | web_cobotar | holo_cobotar |
+| `command.robot_instance.acknowledge` | `command.robot_instance.acknowledge.{robot_instance_id}` | — | active | staged | robot.v1.AcknowledgeRobot → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
+| `command.robot_instance.set_io` | `command.robot_instance.set_io.{robot_instance_id}` | — | active | staged | robot.v1.RobotIOCommand → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
+| `command.robot_instance.state_change` | `command.robot_instance.state_change.{robot_instance_id}` | — | active | staged | robot.v1.ProgramStateRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
+| `command.sequence_run.complete` | `command.sequence_run.complete` | — | active | staged | runtime.v1.SequenceCompleteRequest → service.v1.Response / service.v1.Response | holo_cobotar | authoring |
+| `command.sequence_run.reassign` | `command.sequence_run.reassign` | — | active | staged | runtime.v1.SequenceReassignRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
 | `command.storage.clear` | `command.storage.clear` | — | planned | staged | service.v1.StorageClearRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `command.storage.dump` | `command.storage.dump` | — | planned | staged | service.v1.StorageDumpRequest → service.v1.StorageDumpResult / service.v1.Response | web_cobotar | authoring |
 | `command.storage.load` | `command.storage.load` | — | planned | staged | service.v1.StorageLoadRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `command.task_run.progress` | `command.task_run.progress` | — | active | staged | runtime.v1.TaskProgressUpdate → service.v1.Response / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `edit.entity.reset` | `edit.{entity}.reset.{child}` | — | planned | staged | (TBD) → (TBD) / (TBD) | web_cobotar | authoring |
-| `get.ar_config_binding.candidates` | `get.ar_config_binding.candidates` | — | planned | staged | ar.v1.ARBindingCandidatesRequest → ar.v1.ARBindingCandidatesResponse / service.v1.Response | web_cobotar | authoring |
-| `get.asset_adapter.info` | `get.asset_adapter.info.{asset_instance_id}` | — | planned | staged | (empty) → resources.v1.AssetAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.robot_adapter.info` | `get.robot_adapter.info.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `command.task_run.progress` | `command.task_run.progress` | — | active | staged | runtime.v1.TaskProgressUpdate → service.v1.Response / service.v1.Response | robot_adapter, web_cobotar, holo_cobotar | authoring |
+| `command.task_run.reassign` | `command.task_run.reassign` | — | active | staged | runtime.v1.TaskReassignRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
+| `command.task_run.state_change` | `command.task_run.state_change.{task_run_id}` | — | active | staged | runtime.v1.TaskStateChangeRequest → service.v1.Response / service.v1.Response | robot_adapter, web_cobotar, holo_cobotar | authoring |
+| `edit.ar_config.add.ar_input_slot` | `edit.ar_config.add.ar_input_slot` | — | active | staged | ar.v1.ARInputSlotAddMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.ar_config.remove.ar_input_slot` | `edit.ar_config.remove.ar_input_slot` | — | active | staged | ar.v1.ARInputSlotDeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.ar_config.reset.presentation_binding` | `edit.ar_config.reset.presentation_binding` | — | active | staged | ar.v1.PresentationBindingReset → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.ar_config.update.ar_input_slot` | `edit.ar_config.update.ar_input_slot` | — | active | staged | ar.v1.ARInputSlotUpdateMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.ar_config.update.presentation_binding` | `edit.ar_config.update.presentation_binding` | — | active | staged | ar.v1.PresentationBindingUpdate → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.part_instance.add_many` | `edit.part_instance.add_many` | — | active | staged | product.v1.BulkCreatePartInstancesRequest → product.v1.PartInstances / service.v1.Response | web_cobotar | authoring |
+| `edit.process_recipe.add.root` | `edit.process_recipe.add.root` | — | active | staged | process.v1.AddRootSequenceRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.process_recipe.add.sequence` | `edit.process_recipe.add.sequence` | — | active | staged | process.v1.AddChildSequenceRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.process_recipe.add.task` | `edit.process_recipe.add.task` | — | active | staged | process.v1.AddChildTaskRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.process_recipe.remove.sequence` | `edit.process_recipe.remove.sequence` | — | active | staged | process.v1.RemoveSequenceRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.process_recipe.remove.task` | `edit.process_recipe.remove.task` | — | active | staged | process.v1.RemoveTaskRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.property_instance.update_value` | `edit.property_instance.update_value` | — | active | staged | common.v1.PropertyInstanceUpdate → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
+| `event.device.heartbeat` | `event.device.heartbeat.{device_id}` | — | active | staged | resources.v1.DeviceHeartbeat | holo_cobotar | authoring |
+| `event.log.error` | `event.log.error.{service}` | — | active | staged | common.v1.LogRecord | authoring, robot_adapter, holo_cobotar | web_cobotar |
+| `event.log.full` | `event.log.full.{service}` | — | active | staged | common.v1.LogRecord | authoring, robot_adapter, holo_cobotar | web_cobotar |
+| `event.process_run_definitions.added` | `event.process_run_definitions.added.{process_run_id}` | — | active | staged | runtime.v1.ProcessRunDefinitions | authoring | web_cobotar, holo_cobotar |
+| `event.server.heartbeat.backend` | `event.server.heartbeat.backend` | — | active | staged | service.v1.ServerHeartbeat | authoring | web_cobotar, holo_cobotar |
+| `event.server.heartbeat.robot_adapter` | `event.server.heartbeat.robot_adapter.{robot_instance_id}` | — | active | staged | service.v1.ServerHeartbeat | robot_adapter | authoring, web_cobotar |
+| `event.server.restarted.backend` | `event.server.restarted.backend` | — | active | staged | service.v1.ServerInfo | authoring | web_cobotar, holo_cobotar |
+| `event.task_run.progress` | `event.task_run.progress.{task_run_id}` | — | active | staged | runtime.v1.TaskProgressUpdate | authoring | web_cobotar, holo_cobotar |
+| `generate.process_recipe.draft` | `generate.process_recipe.draft` | — | active | staged | process.v1.DraftProcessRecipeGenerateRequest → process.v1.DraftProcessRecipeGenerateResult / service.v1.Response | web_cobotar | authoring |
+| `generate.process_recipe.draft.disassembly` | `generate.process_recipe.draft.disassembly` | — | active | staged | process.v1.DraftDisassemblyProcessRecipeGenerateRequest → process.v1.DraftProcessRecipeGenerateResult / service.v1.Response | web_cobotar | authoring |
+| `generate.process_recipe.draft.kitting` | `generate.process_recipe.draft.kitting` | — | active | staged | process.v1.DraftKittingProcessRecipeGenerateRequest → process.v1.DraftProcessRecipeGenerateResult / service.v1.Response | web_cobotar | authoring |
+| `get.actor_availability.actor` | `get.actor_availability.actor` | — | active | staged | common.v1.ActorRef → runtime.v1.ActorAvailability / service.v1.Response | web_cobotar | authoring |
+| `get.actor_skill.field.actor_id` | `get.actor_skill.field.actor_id` | — | active | staged | common.v1.GetByFieldMessage → capability.v1.ActorSkills / service.v1.Response | web_cobotar | authoring |
+| `get.actor_skill.field.skill_id` | `get.actor_skill.field.skill_id` | — | active | staged | common.v1.GetByFieldMessage → capability.v1.ActorSkills / service.v1.Response | web_cobotar | authoring |
+| `get.ar_config.info` | `get.ar_config.info` | — | active | staged | (empty) → ar.v1.ARConfigInfoMessages / service.v1.Response | web_cobotar, holo_cobotar | authoring |
+| `get.ar_config_binding.candidates` | `get.ar_config_binding.candidates` | — | active | staged | ar.v1.ARBindingCandidatesRequest → ar.v1.ARBindingCandidatesResponse / service.v1.Response | web_cobotar | authoring |
+| `get.asset_adapter.info` | `get.asset_adapter.info.{asset_instance_id}` | — | active | staged | (empty) → resources.v1.AssetAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.asset_instance.field.definition_id` | `get.asset_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.AssetInstances / service.v1.Response | web_cobotar | authoring |
+| `get.backend.info` | `get.backend.info` | — | active | staged | (empty) → service.v1.ServerInfo / service.v1.Response | web_cobotar, holo_cobotar | authoring |
+| `get.container_instance.field.cell_id` | `get.container_instance.field.cell_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ContainerInstances / service.v1.Response | web_cobotar | authoring |
+| `get.container_instance.field.definition_id` | `get.container_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ContainerInstances / service.v1.Response | web_cobotar | authoring |
+| `get.container_instance.field.line_id` | `get.container_instance.field.line_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ContainerInstances / service.v1.Response | web_cobotar | authoring |
+| `get.container_instance.field.station_id` | `get.container_instance.field.station_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ContainerInstances / service.v1.Response | web_cobotar | authoring |
+| `get.execution_evidence.field.task_run_id` | `get.execution_evidence.field.task_run_id` | — | active | staged | common.v1.GetByFieldMessage → runtime.v1.ExecutionEvidences / service.v1.Response | web_cobotar | authoring |
+| `get.part_instance.field.cell_id` | `get.part_instance.field.cell_id` | — | active | staged | common.v1.GetByFieldMessage → product.v1.PartInstances / service.v1.Response | web_cobotar | authoring |
+| `get.part_instance.field.definition_id` | `get.part_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → product.v1.PartInstances / service.v1.Response | web_cobotar | authoring |
+| `get.part_instance.field.line_id` | `get.part_instance.field.line_id` | — | active | staged | common.v1.GetByFieldMessage → product.v1.PartInstances / service.v1.Response | web_cobotar | authoring |
+| `get.part_instance.field.station_id` | `get.part_instance.field.station_id` | — | active | staged | common.v1.GetByFieldMessage → product.v1.PartInstances / service.v1.Response | web_cobotar | authoring |
+| `get.process_run_definitions.one` | `get.process_run_definitions.one` | — | active | staged | runtime.v1.ProcessRunDefinitionsRequest → runtime.v1.ProcessRunDefinitions / service.v1.Response | robot_adapter, web_cobotar, holo_cobotar | authoring |
+| `get.robot_adapter.info` | `get.robot_adapter.info.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | robot_adapter |
+| `get.robot_instance.controller_status` | `get.robot_instance.controller_status.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotControllerStatusMessage / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
+| `get.robot_instance.field.definition_id` | `get.robot_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.RobotInstances / service.v1.Response | web_cobotar | authoring |
+| `get.robot_instance.io` | `get.robot_instance.io.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotIOState / service.v1.Response | web_cobotar | robot_adapter |
 | `get.storage.info` | `get.storage.info` | — | planned | staged | (empty) → service.v1.StorageInfo / service.v1.Response | web_cobotar | authoring |
+| `get.tool_instance.field.definition_id` | `get.tool_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ToolInstances / service.v1.Response | web_cobotar | authoring |
 | `plan.robot.path` | `plan.robot.path.{robot_instance_id}.{plan_id}` | — | active | staged | robot.v1.PathMessage | authoring | web_cobotar, holo_cobotar |
-| `telemetry.robot.controller_status` | `telemetry.robot.controller_status.{robot_instance_id}` | — | active | staged | robot.v1.RobotControllerStatusMessage | authoring | web_cobotar, holo_cobotar |
-| `telemetry.robot.end_effector` | `telemetry.robot.end_effector.{robot_instance_id}` | — | planned | staged | robot.v1.EndEffectorStateMessage | authoring | holo_cobotar |
+| `report.asset_adapter.info` | `report.asset_adapter.info.{asset_instance_id}` | — | active | staged | resources.v1.AssetAdapterInfoMessage | asset_adapter | authoring |
+| `report.robot_adapter.info` | `report.robot_adapter.info.{robot_instance_id}` | — | active | staged | robot.v1.RobotAdapterInfoMessage | robot_adapter | authoring |
+| `telemetry.robot.controller_status` | `telemetry.robot.controller_status.{robot_instance_id}` | — | active | staged | robot.v1.RobotControllerStatusMessage | robot_adapter | web_cobotar, holo_cobotar |
+| `telemetry.robot.end_effector` | `telemetry.robot.end_effector.{robot_instance_id}` | — | planned | staged | robot.v1.EndEffectorStateMessage | robot_adapter | holo_cobotar |
+| `telemetry.robot.force_torque` | `telemetry.robot.force_torque.{robot_instance_id}` | — | active | staged | geometry.v1.Wrench | robot_adapter | web_cobotar |
+| `telemetry.robot.io` | `telemetry.robot.io.{robot_instance_id}` | — | active | staged | robot.v1.RobotIOState | robot_adapter | web_cobotar |
+| `telemetry.robot.joint_angles` | `telemetry.robot.joint_angles.{robot_instance_id}` | — | active | staged | robot.v1.JointStateMessage | robot_adapter | web_cobotar, holo_cobotar |
+| `telemetry.robot.state` | `telemetry.robot.state.{robot_instance_id}` | — | active | staged | robot.v1.RobotStateMessage | robot_adapter | web_cobotar, holo_cobotar |
+| `telemetry.robot.tcp` | `telemetry.robot.tcp.{robot_instance_id}` | — | active | staged | robot.v1.TcpMessage | robot_adapter | web_cobotar, holo_cobotar |
 | `edit.action.add` | `edit.action.add` | `edit.entity.add` | active | staged | ar.v1.ActionAddMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.action.clone` | `edit.action.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.action.remove` | `edit.action.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
@@ -202,6 +267,9 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `event.asset_adapter_definition.added` | `event.asset_adapter_definition.added.{entity_id}` | `event.entity.added` | active | staged | resources.v1.AssetAdapterDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.asset_adapter_definition.removed` | `event.asset_adapter_definition.removed.{entity_id}` | `event.entity.removed` | active | staged | resources.v1.AssetAdapterDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.asset_adapter_definition.updated` | `event.asset_adapter_definition.updated.{entity_id}` | `event.entity.updated` | active | staged | resources.v1.AssetAdapterDefinition | authoring | web_cobotar, holo_cobotar |
+| `event.asset_adapter_info.added` | `event.asset_adapter_info.added.{entity_id}` | `event.entity.added` | active | staged | resources.v1.AssetAdapterInfoMessage | authoring | web_cobotar, holo_cobotar |
+| `event.asset_adapter_info.removed` | `event.asset_adapter_info.removed.{entity_id}` | `event.entity.removed` | active | staged | resources.v1.AssetAdapterInfoMessage | authoring | web_cobotar, holo_cobotar |
+| `event.asset_adapter_info.updated` | `event.asset_adapter_info.updated.{entity_id}` | `event.entity.updated` | active | staged | resources.v1.AssetAdapterInfoMessage | authoring | web_cobotar, holo_cobotar |
 | `event.asset_definition.added` | `event.asset_definition.added.{entity_id}` | `event.entity.added` | active | staged | resources.v1.AssetDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.asset_definition.removed` | `event.asset_definition.removed.{entity_id}` | `event.entity.removed` | active | staged | resources.v1.AssetDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.asset_definition.updated` | `event.asset_definition.updated.{entity_id}` | `event.entity.updated` | active | staged | resources.v1.AssetDefinition | authoring | web_cobotar, holo_cobotar |
@@ -271,6 +339,9 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `event.robot_adapter_definition.added` | `event.robot_adapter_definition.added.{entity_id}` | `event.entity.added` | active | staged | resources.v1.RobotAdapterDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.robot_adapter_definition.removed` | `event.robot_adapter_definition.removed.{entity_id}` | `event.entity.removed` | active | staged | resources.v1.RobotAdapterDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.robot_adapter_definition.updated` | `event.robot_adapter_definition.updated.{entity_id}` | `event.entity.updated` | active | staged | resources.v1.RobotAdapterDefinition | authoring | web_cobotar, holo_cobotar |
+| `event.robot_adapter_info.added` | `event.robot_adapter_info.added.{entity_id}` | `event.entity.added` | active | staged | robot.v1.RobotAdapterInfoMessage | authoring | web_cobotar, holo_cobotar |
+| `event.robot_adapter_info.removed` | `event.robot_adapter_info.removed.{entity_id}` | `event.entity.removed` | active | staged | robot.v1.RobotAdapterInfoMessage | authoring | web_cobotar, holo_cobotar |
+| `event.robot_adapter_info.updated` | `event.robot_adapter_info.updated.{entity_id}` | `event.entity.updated` | active | staged | robot.v1.RobotAdapterInfoMessage | authoring | web_cobotar, holo_cobotar |
 | `event.robot_definition.added` | `event.robot_definition.added.{entity_id}` | `event.entity.added` | active | staged | resources.v1.RobotDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.robot_definition.removed` | `event.robot_definition.removed.{entity_id}` | `event.entity.removed` | active | staged | resources.v1.RobotDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.robot_definition.updated` | `event.robot_definition.updated.{entity_id}` | `event.entity.updated` | active | staged | resources.v1.RobotDefinition | authoring | web_cobotar, holo_cobotar |
@@ -340,10 +411,10 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.cell.all` | `get.cell.all` | `get.entity.all` | active | staged | (empty) → resources.v1.CellDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.cell.one` | `get.cell.one` | `get.entity.one` | active | staged | common.v1.GetMessage → resources.v1.CellDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.cell.some` | `get.cell.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → resources.v1.CellDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.container_definition.all` | `get.container_definition.all` | `get.entity.all` | active | staged | (empty) → resources.v1.ContainerDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.container_definition.all` | `get.container_definition.all` | `get.entity.all` | active | staged | (empty) → resources.v1.ContainerDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.container_definition.one` | `get.container_definition.one` | `get.entity.one` | active | staged | common.v1.GetMessage → resources.v1.ContainerDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.container_definition.some` | `get.container_definition.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → resources.v1.ContainerDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.container_instance.all` | `get.container_instance.all` | `get.entity.all` | active | staged | (empty) → resources.v1.ContainerInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.container_instance.all` | `get.container_instance.all` | `get.entity.all` | active | staged | (empty) → resources.v1.ContainerInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.container_instance.one` | `get.container_instance.one` | `get.entity.one` | active | staged | common.v1.GetMessage → resources.v1.ContainerInstance / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.container_instance.some` | `get.container_instance.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → resources.v1.ContainerInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.device.all` | `get.device.all` | `get.entity.all` | active | staged | (empty) → resources.v1.DeviceMessages / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
@@ -374,10 +445,10 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.model.one` | `get.model.one` | `get.entity.one` | active | staged | common.v1.GetMessage → resources.v1.ModelArtifact / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.model.some` | `get.model.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → resources.v1.ModelArtifacts / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.part_definition.all` | `get.part_definition.all` | `get.entity.all` | active | staged | (empty) → product.v1.PartDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.part_definition.one` | `get.part_definition.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.part_definition.one` | `get.part_definition.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.part_definition.some` | `get.part_definition.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → product.v1.PartDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.part_instance.all` | `get.part_instance.all` | `get.entity.all` | active | staged | (empty) → product.v1.PartInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.part_instance.one` | `get.part_instance.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartInstance / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.part_instance.one` | `get.part_instance.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartInstance / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.part_instance.some` | `get.part_instance.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → product.v1.PartInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.presentation_strategy.all` | `get.presentation_strategy.all` | `get.entity.all` | active | staged | (empty) → ar.v1.PresentationStrategies / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.presentation_strategy.one` | `get.presentation_strategy.one` | `get.entity.one` | active | staged | common.v1.GetMessage → ar.v1.PresentationStrategy / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
@@ -385,7 +456,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.process_recipe.all` | `get.process_recipe.all` | `get.entity.all` | active | staged | (empty) → process.v1.ProcessRecipes / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.process_recipe.one` | `get.process_recipe.one` | `get.entity.one` | active | staged | common.v1.GetMessage → process.v1.ProcessRecipe / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.process_recipe.some` | `get.process_recipe.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → process.v1.ProcessRecipes / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.process_run.all` | `get.process_run.all` | `get.entity.all` | active | staged | (empty) → runtime.v1.ProcessRuns / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.process_run.all` | `get.process_run.all` | `get.entity.all` | active | staged | (empty) → runtime.v1.ProcessRuns / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.process_run.one` | `get.process_run.one` | `get.entity.one` | active | staged | common.v1.GetMessage → runtime.v1.ProcessRun / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.process_run.some` | `get.process_run.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → runtime.v1.ProcessRuns / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.product.all` | `get.product.all` | `get.entity.all` | active | staged | (empty) → product.v1.ProductDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
@@ -421,7 +492,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.task_definition.all` | `get.task_definition.all` | `get.entity.all` | active | staged | (empty) → process.v1.TaskDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.task_definition.one` | `get.task_definition.one` | `get.entity.one` | active | staged | common.v1.GetMessage → process.v1.TaskDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.task_definition.some` | `get.task_definition.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → process.v1.TaskDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.task_run.all` | `get.task_run.all` | `get.entity.all` | active | staged | (empty) → runtime.v1.TaskRuns / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
+| `get.task_run.all` | `get.task_run.all` | `get.entity.all` | active | staged | (empty) → runtime.v1.TaskRuns / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.task_run.one` | `get.task_run.one` | `get.entity.one` | active | staged | common.v1.GetMessage → runtime.v1.TaskRun / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.task_run.some` | `get.task_run.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → runtime.v1.TaskRuns / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.tool_definition.all` | `get.tool_definition.all` | `get.entity.all` | active | staged | (empty) → resources.v1.ToolDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
