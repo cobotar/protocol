@@ -3274,6 +3274,7 @@ against a slot&#39;s explicit and consumer-derived requirements.
 | AR_RESOURCE_BINDING_STATUS_DEGRADED | 2 |  |
 | AR_RESOURCE_BINDING_STATUS_UNSATISFIED | 3 |  |
 | AR_RESOURCE_BINDING_STATUS_UNVERIFIED | 4 | One or more requirements cannot be evaluated because the adapter has not reported enough capability information. |
+| AR_RESOURCE_BINDING_STATUS_OFFLINE | 5 | The adapter of the bound resource isn&#39;t running, so none of the slot&#39;s requirements are available until it is back. unmet_requirements lists every requirement, required and optional, with the consumers that need it; a slot without requirements keeps its status. This is runtime state: the backend doesn&#39;t store it and reports it only for existing bindings, never for binding candidates. |
 
 
  

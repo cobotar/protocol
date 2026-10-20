@@ -37,6 +37,13 @@ const (
 	// One or more requirements cannot be evaluated because the adapter has not
 	// reported enough capability information.
 	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNVERIFIED ARResourceBindingStatus = 4
+	// The adapter of the bound resource isn't running, so none of the slot's
+	// requirements are available until it is back. unmet_requirements lists
+	// every requirement, required and optional, with the consumers that need
+	// it; a slot without requirements keeps its status. This is runtime state:
+	// the backend doesn't store it and reports it only for existing bindings,
+	// never for binding candidates.
+	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_OFFLINE ARResourceBindingStatus = 5
 )
 
 // Enum value maps for ARResourceBindingStatus.
@@ -47,6 +54,7 @@ var (
 		2: "AR_RESOURCE_BINDING_STATUS_DEGRADED",
 		3: "AR_RESOURCE_BINDING_STATUS_UNSATISFIED",
 		4: "AR_RESOURCE_BINDING_STATUS_UNVERIFIED",
+		5: "AR_RESOURCE_BINDING_STATUS_OFFLINE",
 	}
 	ARResourceBindingStatus_value = map[string]int32{
 		"AR_RESOURCE_BINDING_STATUS_UNSPECIFIED": 0,
@@ -54,6 +62,7 @@ var (
 		"AR_RESOURCE_BINDING_STATUS_DEGRADED":    2,
 		"AR_RESOURCE_BINDING_STATUS_UNSATISFIED": 3,
 		"AR_RESOURCE_BINDING_STATUS_UNVERIFIED":  4,
+		"AR_RESOURCE_BINDING_STATUS_OFFLINE":     5,
 	}
 )
 
@@ -496,15 +505,14 @@ const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"\x1aARUnmetResourceRequirement\x12K\n" +
 	"\vrequirement\x18\x01 \x01(\v2!.resources.v1.ResourceRequirementB\x06\xbaH\x03\xc8\x01\x01R\vrequirement\x12\xa4\x02\n" +
 	"\tconsumers\x18\x02 \x03(\v2$.ar.v1.ARResourceRequirementConsumerB\xdf\x01\xbaH\xdb\x01\xba\x01\xd2\x01\n" +
-	"2ar_unmet_resource_requirement.consumers.unique_ids\x12$affected consumer ids must be unique\x1avthis.map(consumer, consumer.input_slot_id + consumer.feedback_id + consumer.action_id + consumer.function_id).unique()\x92\x01\x02\b\x01R\tconsumers\"\xca\n" +
-	"\n" +
+	"2ar_unmet_resource_requirement.consumers.unique_ids\x12$affected consumer ids must be unique\x1avthis.map(consumer, consumer.input_slot_id + consumer.feedback_id + consumer.action_id + consumer.function_id).unique()\x92\x01\x02\b\x01R\tconsumers\"\xc5\v\n" +
 	"\x11ARResourceBinding\x12%\n" +
 	"\aslot_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xeb0\x01R\x06slotId\x125\n" +
 	"\x11robot_instance_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa8\xf1\x04\x01R\x0frobotInstanceId\x125\n" +
 	"\x11asset_instance_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId\x12@\n" +
 	"\x06status\x18\x04 \x01(\x0e2\x1e.ar.v1.ARResourceBindingStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\x12P\n" +
-	"\x12unmet_requirements\x18\x05 \x03(\v2!.ar.v1.ARUnmetResourceRequirementR\x11unmetRequirements:\x8b\b\xbaH\x87\b\x1a\xda\a\n" +
-	"5ar_resource_binding.status_matches_unmet_requirements\x125binding status must agree with its unmet requirements\x1a\xe9\x06(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSPECIFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_SATISFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_DEGRADED && this.unmet_requirements.size() > 0 && this.unmet_requirements.all(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_OPTIONAL)) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSATISFIED && this.unmet_requirements.exists(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED)) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0)\"(\n" +
+	"\x12unmet_requirements\x18\x05 \x03(\v2!.ar.v1.ARUnmetResourceRequirementR\x11unmetRequirements:\x86\t\xbaH\x82\t\x1a\xd5\b\n" +
+	"5ar_resource_binding.status_matches_unmet_requirements\x125binding status must agree with its unmet requirements\x1a\xe4\a(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSPECIFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_SATISFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_DEGRADED && this.unmet_requirements.size() > 0 && this.unmet_requirements.all(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_OPTIONAL)) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSATISFIED && this.unmet_requirements.exists(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED)) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0) || (this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_OFFLINE && this.unmet_requirements.size() > 0)\"(\n" +
 	"\x11robot_instance_id\n" +
 	"\x11asset_instance_id\x10\x01\"\xb5\x05\n" +
 	"\x16ARConfigBindingMessage\x12\x19\n" +
@@ -530,13 +538,14 @@ const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"station_id\n" +
 	"\acell_id\x10\x01\"T\n" +
 	"\x17ARConfigBindingMessages\x129\n" +
-	"\bbindings\x18\x01 \x03(\v2\x1d.ar.v1.ARConfigBindingMessageR\bbindings*\xef\x01\n" +
+	"\bbindings\x18\x01 \x03(\v2\x1d.ar.v1.ARConfigBindingMessageR\bbindings*\x97\x02\n" +
 	"\x17ARResourceBindingStatus\x12*\n" +
 	"&AR_RESOURCE_BINDING_STATUS_UNSPECIFIED\x10\x00\x12(\n" +
 	"$AR_RESOURCE_BINDING_STATUS_SATISFIED\x10\x01\x12'\n" +
 	"#AR_RESOURCE_BINDING_STATUS_DEGRADED\x10\x02\x12*\n" +
 	"&AR_RESOURCE_BINDING_STATUS_UNSATISFIED\x10\x03\x12)\n" +
-	"%AR_RESOURCE_BINDING_STATUS_UNVERIFIED\x10\x04B\x90\x01\n" +
+	"%AR_RESOURCE_BINDING_STATUS_UNVERIFIED\x10\x04\x12&\n" +
+	"\"AR_RESOURCE_BINDING_STATUS_OFFLINE\x10\x05B\x90\x01\n" +
 	"\tcom.ar.v1B\x14ArConfigBindingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (

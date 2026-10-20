@@ -18,11 +18,13 @@ class ARResourceBindingStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper)
     AR_RESOURCE_BINDING_STATUS_DEGRADED: _ClassVar[ARResourceBindingStatus]
     AR_RESOURCE_BINDING_STATUS_UNSATISFIED: _ClassVar[ARResourceBindingStatus]
     AR_RESOURCE_BINDING_STATUS_UNVERIFIED: _ClassVar[ARResourceBindingStatus]
+    AR_RESOURCE_BINDING_STATUS_OFFLINE: _ClassVar[ARResourceBindingStatus]
 AR_RESOURCE_BINDING_STATUS_UNSPECIFIED: ARResourceBindingStatus
 AR_RESOURCE_BINDING_STATUS_SATISFIED: ARResourceBindingStatus
 AR_RESOURCE_BINDING_STATUS_DEGRADED: ARResourceBindingStatus
 AR_RESOURCE_BINDING_STATUS_UNSATISFIED: ARResourceBindingStatus
 AR_RESOURCE_BINDING_STATUS_UNVERIFIED: ARResourceBindingStatus
+AR_RESOURCE_BINDING_STATUS_OFFLINE: ARResourceBindingStatus
 
 class ARResourceRequirementConsumer(_message.Message):
     __slots__ = ("input_slot_id", "feedback_id", "action_id", "function_id")

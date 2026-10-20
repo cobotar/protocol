@@ -19,6 +19,13 @@ enum ARResourceBindingStatus {
   // One or more requirements cannot be evaluated because the adapter has not
   // reported enough capability information.
   AR_RESOURCE_BINDING_STATUS_UNVERIFIED = 4;
+  // The adapter of the bound resource isn't running, so none of the slot's
+  // requirements are available until it is back. unmet_requirements lists
+  // every requirement, required and optional, with the consumers that need
+  // it; a slot without requirements keeps its status. This is runtime state:
+  // the backend doesn't store it and reports it only for existing bindings,
+  // never for binding candidates.
+  AR_RESOURCE_BINDING_STATUS_OFFLINE = 5;
 }
 
 // ARResourceRequirementConsumer identifies the config entity affected by an
@@ -76,7 +83,8 @@ message ARResourceBinding {
       "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_SATISFIED && this.unmet_requirements.size() == 0) || "
       "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_DEGRADED && this.unmet_requirements.size() > 0 && this.unmet_requirements.all(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_OPTIONAL)) || "
       "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSATISFIED && this.unmet_requirements.exists(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED)) || "
-      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0)"
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_OFFLINE && this.unmet_requirements.size() > 0)"
   };
 
   string slot_id = 1 [
