@@ -1,7 +1,7 @@
 # CobotAR-Protocol
 A collection of protobuf messages for the CobotAR-project
 
-Current version: 1.6.0
+Current version: 2.0.0
 
 ## Documentation
 Find it here: [documentation/README.md](documentation/README.md)
