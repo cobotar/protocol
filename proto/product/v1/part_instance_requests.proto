@@ -6,7 +6,7 @@ import "product/v1/part_instance.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Product.V1";
-option go_package = "github.com/cobotar/protocol/messages/product/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 
 // PartInstanceBulkCreateSpec describes the instances to create for one
 // PartDefinition.

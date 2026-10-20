@@ -8,7 +8,7 @@ package variancev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -185,8 +185,8 @@ const file_variance_v1_variant_axis_proto_rawDesc = "" +
 	"\aoptions\x18\x05 \x03(\v2\x1a.variance.v1.VariantOptionB\xbf\x03\xbaH\xbb\x03\xba\x01c\n" +
 	"\x1evariant_axis.options.min_items\x12/a variant axis must define at least two options\x1a\x10this.size() >= 2\xba\x01y\n" +
 	"\x1fvariant_axis.options.unique_ids\x120variant option ids must be unique within an axis\x1a$this.map(option, option.id).unique()\xba\x01\xd5\x01\n" +
-	",variant_axis.options.unique_normalized_names\x12ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\x1a:this.map(option, option.name.trim().lowerAscii()).unique()R\aoptionsB\xb6\x01\n" +
-	"\x0fcom.variance.v1B\x10VariantAxisProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
+	",variant_axis.options.unique_normalized_names\x12ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\x1a:this.map(option, option.name.trim().lowerAscii()).unique()R\aoptionsB\xb9\x01\n" +
+	"\x0fcom.variance.v1B\x10VariantAxisProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (
 	file_variance_v1_variant_axis_proto_rawDescOnce sync.Once

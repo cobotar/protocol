@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1evariance/v1/variant_rule.proto\x12\x0bvariance.v1\"\x89\x01\n\x10VariantPredicate\x12\x17\n\x07\x61xis_id\x18\x01 \x01(\tR\x06\x61xisId\x12,\n\x12\x61llowed_option_ids\x18\x02 \x03(\tR\x10\x61llowedOptionIds\x12.\n\x13\x65xcluded_option_ids\x18\x03 \x03(\tR\x11\x65xcludedOptionIds\"C\n\x0bVariantRule\x12\x34\n\x06\x61ll_of\x18\x01 \x03(\x0b\x32\x1d.variance.v1.VariantPredicateR\x05\x61llOfB\xb6\x01\n\x0f\x63om.variance.v1B\x10VariantRuleProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1evariance/v1/variant_rule.proto\x12\x0bvariance.v1\"\x89\x01\n\x10VariantPredicate\x12\x17\n\x07\x61xis_id\x18\x01 \x01(\tR\x06\x61xisId\x12,\n\x12\x61llowed_option_ids\x18\x02 \x03(\tR\x10\x61llowedOptionIds\x12.\n\x13\x65xcluded_option_ids\x18\x03 \x03(\tR\x11\x65xcludedOptionIds\"C\n\x0bVariantRule\x12\x34\n\x06\x61ll_of\x18\x01 \x03(\x0b\x32\x1d.variance.v1.VariantPredicateR\x05\x61llOfB\xb9\x01\n\x0f\x63om.variance.v1B\x10VariantRuleProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'variance.v1.variant_rule_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.variance.v1B\020VariantRuleProtoP\001Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\242\002\003VXX\252\002\024Messages.Variance.V1\312\002\013Variance\\V1\342\002\027Variance\\V1\\GPBMetadata\352\002\014Variance::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.variance.v1B\020VariantRuleProtoP\001Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\242\002\003VXX\252\002\024Messages.Variance.V1\312\002\013Variance\\V1\342\002\027Variance\\V1\\GPBMetadata\352\002\014Variance::V1'
   _globals['_VARIANTPREDICATE']._serialized_start=48
   _globals['_VARIANTPREDICATE']._serialized_end=185
   _globals['_VARIANTRULE']._serialized_start=187

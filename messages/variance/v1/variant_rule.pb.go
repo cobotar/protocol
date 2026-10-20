@@ -136,8 +136,8 @@ const file_variance_v1_variant_rule_proto_rawDesc = "" +
 	"\x12allowed_option_ids\x18\x02 \x03(\tR\x10allowedOptionIds\x12.\n" +
 	"\x13excluded_option_ids\x18\x03 \x03(\tR\x11excludedOptionIds\"C\n" +
 	"\vVariantRule\x124\n" +
-	"\x06all_of\x18\x01 \x03(\v2\x1d.variance.v1.VariantPredicateR\x05allOfB\xb6\x01\n" +
-	"\x0fcom.variance.v1B\x10VariantRuleProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
+	"\x06all_of\x18\x01 \x03(\v2\x1d.variance.v1.VariantPredicateR\x05allOfB\xb9\x01\n" +
+	"\x0fcom.variance.v1B\x10VariantRuleProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (
 	file_variance_v1_variant_rule_proto_rawDescOnce sync.Once

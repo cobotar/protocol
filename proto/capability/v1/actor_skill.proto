@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Capability.V1";
-option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/capability/v1";
 
 /*
    Alternative categories:

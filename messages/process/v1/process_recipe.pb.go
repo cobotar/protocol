@@ -8,9 +8,9 @@ package processv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v1 "github.com/cobotar/protocol/messages/variance/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -710,8 +710,8 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\x17PROCESS_TYPE_INSPECTION\x10\x03\x12\x1a\n" +
 	"\x16PROCESS_TYPE_CHECKLIST\x10\x04\x12\x18\n" +
 	"\x14PROCESS_TYPE_KITTING\x10\x05\x12\x1c\n" +
-	"\x18PROCESS_TYPE_MAINTENANCE\x10\x06B\xb1\x01\n" +
-	"\x0ecom.process.v1B\x12ProcessRecipeProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
+	"\x18PROCESS_TYPE_MAINTENANCE\x10\x06B\xb4\x01\n" +
+	"\x0ecom.process.v1B\x12ProcessRecipeProtoP\x01Z<github.com/cobotar/protocol/v2/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
 var (

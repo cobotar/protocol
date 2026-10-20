@@ -2,7 +2,7 @@ syntax = "proto3";
 package geometry.v1;
 
 option csharp_namespace = "Messages.Geometry.V1";
-option go_package = "github.com/cobotar/protocol/messages/geometry/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/geometry/v1";
 
 message Quad {
   float x = 1;

@@ -102,8 +102,8 @@ const file_ar_v1_feedback_capability_proto_rawDesc = "" +
 	"\x13source_requirements\x18\x03 \x03(\v2 .ar.v1.SemanticSourceRequirementB\x8d\x02\xbaH\x89\x02\xba\x01\x85\x02\n" +
 	"Ffeedback_capability.source_requirements.unique_source_value_type_pairs\x121source and value type combinations must be unique\x1a\x87\x01this.all(requirement, this.filter(other, other.source == requirement.source && other.value_type == requirement.value_type).size() == 1)R\x12sourceRequirements\x12\xc7\x02\n" +
 	"\x13property_influences\x18\x04 \x03(\v2\x18.ar.v1.PropertyInfluenceB\xfb\x01\xbaH\xf7\x01\xba\x01\xf3\x01\n" +
-	"Bfeedback_capability.property_influences.unique_property_axis_pairs\x12-property and axis combinations must be unique\x1a~this.all(property, this.filter(other, other.property_key == property.property_key && other.axis == property.axis).size() == 1)R\x12propertyInfluencesB\x93\x01\n" +
-	"\tcom.ar.v1B\x17FeedbackCapabilityProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"Bfeedback_capability.property_influences.unique_property_axis_pairs\x12-property and axis combinations must be unique\x1a~this.all(property, this.filter(other, other.property_key == property.property_key && other.axis == property.axis).size() == 1)R\x12propertyInfluencesB\x96\x01\n" +
+	"\tcom.ar.v1B\x17FeedbackCapabilityProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_feedback_capability_proto_rawDescOnce sync.Once

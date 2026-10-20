@@ -8,7 +8,7 @@ package servicev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -459,8 +459,8 @@ const file_service_v1_storage_proto_rawDesc = "" +
 	"lastDumpAt\x1a?\n" +
 	"\x11EntityCountsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01B\xab\x01\n" +
-	"\x0ecom.service.v1B\fStorageProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
+	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01B\xae\x01\n" +
+	"\x0ecom.service.v1B\fStorageProtoP\x01Z<github.com/cobotar/protocol/v2/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
 var (

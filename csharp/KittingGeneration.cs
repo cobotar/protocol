@@ -99,11 +99,11 @@ namespace Messages.Process.V1 {
             "c2tHcmFudWxhcml0eRIoCiRLSVRUSU5HX1RBU0tfR1JBTlVMQVJJVFlfVU5T",
             "UEVDSUZJRUQQABIsCihLSVRUSU5HX1RBU0tfR1JBTlVMQVJJVFlfQVRPTUlD",
             "X1RSQU5TRkVSEAESKwonS0lUVElOR19UQVNLX0dSQU5VTEFSSVRZX1BJQ0tf",
-            "QU5EX1BMQUNFEAJCtQEKDmNvbS5wcm9jZXNzLnYxQhZLaXR0aW5nR2VuZXJh",
-            "dGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
-            "YWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlBy",
-            "b2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0",
-            "YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
+            "QU5EX1BMQUNFEAJCuAEKDmNvbS5wcm9jZXNzLnYxQhZLaXR0aW5nR2VuZXJh",
+            "dGlvblByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9t",
+            "ZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2Vz",
+            "LlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRh",
+            "ZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.GenerationRequestsReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Messages.Product.V1.PartDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.KittingBomMode), typeof(global::Messages.Process.V1.KittingItemOrder), typeof(global::Messages.Process.V1.KittingItemValidationMode), typeof(global::Messages.Process.V1.UnresolvedKittingItemPolicy), typeof(global::Messages.Process.V1.KittingItemAction), typeof(global::Messages.Process.V1.KittingAggregationMode), typeof(global::Messages.Process.V1.KittingTaskGranularity), }, null, new pbr::GeneratedClrTypeInfo[] {

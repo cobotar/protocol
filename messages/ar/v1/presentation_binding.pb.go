@@ -8,7 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -209,8 +209,8 @@ const file_ar_v1_presentation_binding_proto_rawDesc = "" +
 	"\abinding\x18\x02 \x01(\v2\x1a.ar.v1.PresentationBindingB\x06\xbaH\x03\xc8\x01\x01R\abinding\"n\n" +
 	"\x18PresentationBindingReset\x12)\n" +
 	"\tconfig_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12'\n" +
-	"\brole_key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\aroleKeyB\x94\x01\n" +
-	"\tcom.ar.v1B\x18PresentationBindingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\brole_key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\aroleKeyB\x97\x01\n" +
+	"\tcom.ar.v1B\x18PresentationBindingProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_presentation_binding_proto_rawDescOnce sync.Once

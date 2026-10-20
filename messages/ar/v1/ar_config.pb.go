@@ -8,7 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -623,8 +623,8 @@ const file_ar_v1_ar_config_proto_rawDesc = "" +
 	",AR_CONFIG_PRIMARY_TYPE_VALIDATION_INSPECTION\x10\x06\x12+\n" +
 	"'AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW\x10\a\x12,\n" +
 	"(AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE\x10\b\x12*\n" +
-	"&AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE\x10\tB\x89\x01\n" +
-	"\tcom.ar.v1B\rArConfigProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"&AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE\x10\tB\x8c\x01\n" +
+	"\tcom.ar.v1B\rArConfigProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_ar_config_proto_rawDescOnce sync.Once

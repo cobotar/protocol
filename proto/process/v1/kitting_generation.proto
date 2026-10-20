@@ -9,7 +9,7 @@ import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_configuration.proto";
 
 option csharp_namespace = "Messages.Process.V1";
-option go_package = "github.com/cobotar/protocol/messages/process/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/process/v1";
 
 // Controls whether kitting expands subassemblies into their constituent parts
 // or treats each subassembly occurrence as one supplied kit item.

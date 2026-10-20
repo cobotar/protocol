@@ -58,10 +58,11 @@ namespace Messages.Common.V1 {
             "EhYKEkxPR19TRVZFUklUWV9UUkFDRRABEhYKEkxPR19TRVZFUklUWV9ERUJV",
             "RxACEhUKEUxPR19TRVZFUklUWV9JTkZPEAMSFQoRTE9HX1NFVkVSSVRZX1dB",
             "Uk4QBBIWChJMT0dfU0VWRVJJVFlfRVJST1IQBRIWChJMT0dfU0VWRVJJVFlf",
-            "RkFUQUwQBkKgAQoNY29tLmNvbW1vbi52MUIITG9nUHJvdG9QAVo3Z2l0aHVi",
-            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21t",
-            "b252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeIC",
-            "FUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
+            "RkFUQUwQBkKjAQoNY29tLmNvbW1vbi52MUIITG9nUHJvdG9QAVo6Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL2NvbW1vbi92MTtj",
+            "b21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxW",
+            "MeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.LogSeverity), }, null, new pbr::GeneratedClrTypeInfo[] {

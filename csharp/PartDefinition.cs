@@ -91,11 +91,11 @@ namespace Messages.Product.V1 {
             "T09EEAcSGgoWTUFURVJJQUxfQ0FURUdPUllfRk9BTRAIEisKJ01BVEVSSUFM",
             "X0NBVEVHT1JZX0VMRUNUUk9OSUNTX1NVQlNUUkFURRAJEh4KGk1BVEVSSUFM",
             "X0NBVEVHT1JZX0NIRU1JQ0FMEAoSGwoXTUFURVJJQUxfQ0FURUdPUllfT1RI",
-            "RVIQY0KyAQoOY29tLnByb2R1Y3QudjFCE1BhcnREZWZpbml0aW9uUHJvdG9Q",
-            "AVo5Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Byb2R1",
-            "Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoC",
-            "ClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVj",
-            "dDo6VjFiBnByb3RvMw=="));
+            "RVIQY0K1AQoOY29tLnByb2R1Y3QudjFCE1BhcnREZWZpbml0aW9uUHJvdG9Q",
+            "AVo8Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3By",
+            "b2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5W",
+            "McoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJv",
+            "ZHVjdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.PartType), typeof(global::Messages.Product.V1.MaterialCategory), }, null, new pbr::GeneratedClrTypeInfo[] {

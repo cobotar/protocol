@@ -9,7 +9,7 @@ import "robot/v1/robot_adapter.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
-option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/resources/v1";
 
 // ResourceRequirementLevel says whether a consumer can still operate when a
 // resource capability is unavailable.

@@ -8,8 +8,8 @@ package productv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -832,8 +832,8 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"'MATERIAL_CATEGORY_ELECTRONICS_SUBSTRATE\x10\t\x12\x1e\n" +
 	"\x1aMATERIAL_CATEGORY_CHEMICAL\x10\n" +
 	"\x12\x1b\n" +
-	"\x17MATERIAL_CATEGORY_OTHER\x10cB\xb2\x01\n" +
-	"\x0ecom.product.v1B\x13PartDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
+	"\x17MATERIAL_CATEGORY_OTHER\x10cB\xb5\x01\n" +
+	"\x0ecom.product.v1B\x13PartDefinitionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
 	"Product\\V1\xe2\x02\x16Product\\V1\\GPBMetadata\xea\x02\vProduct::V1b\x06proto3"
 
 var (

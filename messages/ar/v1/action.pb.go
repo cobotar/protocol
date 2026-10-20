@@ -8,8 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/capability/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/capability/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -557,8 +557,8 @@ const file_ar_v1_action_proto_rawDesc = "" +
 	"\x1cACTION_TYPE_ROBOT_FREE_DRIVE\x104\x12'\n" +
 	"#ACTION_TYPE_ROBOT_BEGIN_COLLABORATE\x105\x12%\n" +
 	"!ACTION_TYPE_ROBOT_END_COLLABORATE\x106\x12(\n" +
-	"$ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x107B\x87\x01\n" +
-	"\tcom.ar.v1B\vActionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"$ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x107B\x8a\x01\n" +
+	"\tcom.ar.v1B\vActionProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_action_proto_rawDescOnce sync.Once

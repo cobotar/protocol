@@ -2,7 +2,7 @@ syntax = "proto3";
 package seed.v1;
 
 option csharp_namespace = "Messages.Seed.V1";
-option go_package = "github.com/cobotar/protocol/messages/seed/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/seed/v1";
 
 enum SaveSeedEntity {
   SAVE_SEED_ENTITY_UNSPECIFIED = 0;

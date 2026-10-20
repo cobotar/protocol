@@ -6,7 +6,7 @@ import "common/v1/enums.proto";
 import "common/v1/key_value_constraint.proto";
 
 option csharp_namespace = "Messages.Capability.V1";
-option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/capability/v1";
 
 message ActorConstraint {
   repeated common.v1.ActorKind allowed_actor_kinds = 1;

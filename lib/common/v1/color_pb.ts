@@ -11,7 +11,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file common/v1/color.proto.
  */
 export const file_common_v1_color: GenFile = /*@__PURE__*/
-  fileDesc("ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSJwCgVDb2xvchIXCgNyZWQYASABKA1CCrpIByoFGP8BKAASGQoFZ3JlZW4YAiABKA1CCrpIByoFGP8BKAASGAoEYmx1ZRgDIAEoDUIKukgHKgUY/wEoABIZCgVhbHBoYRgEIAEoDUIKukgHKgUY/wEoAEKiAQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
+  fileDesc("ChVjb21tb24vdjEvY29sb3IucHJvdG8SCWNvbW1vbi52MSJwCgVDb2xvchIXCgNyZWQYASABKA1CCrpIByoFGP8BKAASGQoFZ3JlZW4YAiABKA1CCrpIByoFGP8BKAASGAoEYmx1ZRgDIAEoDUIKukgHKgUY/wEoABIZCgVhbHBoYRgEIAEoDUIKukgHKgUY/wEoAEKlAQoNY29tLmNvbW1vbi52MUIKQ29sb3JQcm90b1ABWjpnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
 
 /**
  * Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) is half transparent red, and so on.

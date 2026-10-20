@@ -8,8 +8,8 @@ package robotv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -577,8 +577,8 @@ const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"(ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE\x10\x02\x12)\n" +
 	"%ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_POSE\x10\x03\x12+\n" +
 	"'ROBOT_ADAPTER_TELEMETRY_TYPE_TCP_WRENCH\x10\x04\x12)\n" +
-	"%ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE\x10\x05B\xa2\x01\n" +
-	"\fcom.robot.v1B\x11RobotAdapterProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"%ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE\x10\x05B\xa5\x01\n" +
+	"\fcom.robot.v1B\x11RobotAdapterProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_adapter_proto_rawDescOnce sync.Once

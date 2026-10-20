@@ -8,8 +8,8 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -578,8 +578,8 @@ const file_resources_v1_worker_definition_proto_rawDesc = "" +
 	"\x12TextSizePreference\x12$\n" +
 	" TEXT_SIZE_PREFERENCE_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bTEXT_SIZE_PREFERENCE_NORMAL\x10\x01\x12\x1e\n" +
-	"\x1aTEXT_SIZE_PREFERENCE_LARGE\x10\x02B\xc2\x01\n" +
-	"\x10com.resources.v1B\x15WorkerDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"\x1aTEXT_SIZE_PREFERENCE_LARGE\x10\x02B\xc5\x01\n" +
+	"\x10com.resources.v1B\x15WorkerDefinitionProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_worker_definition_proto_rawDescOnce sync.Once

@@ -2,7 +2,7 @@ syntax = "proto3";
 package ar.v1;
 
 option csharp_namespace = "Messages.AR.V1";
-option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/ar/v1";
 
 // Lifecycle of a built-in, system-owned AR content definition.
 //

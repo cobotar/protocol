@@ -71,10 +71,10 @@ namespace Messages.AR.V1 {
             "aXR5EiMKH0hBTkRMRVJfQ0FSRElOQUxJVFlfVU5TUEVDSUZJRUQQABIkCiBI",
             "QU5ETEVSX0NBUkRJTkFMSVRZX0FUX0xFQVNUX09ORRABEiMKH0hBTkRMRVJf",
             "Q0FSRElOQUxJVFlfRVhBQ1RMWV9PTkUQAhIjCh9IQU5ETEVSX0NBUkRJTkFM",
-            "SVRZX0FUX01PU1RfT05FEANChwEKCWNvbS5hci52MUILRXZlbnRzUHJvdG9Q",
-            "AVovZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2FyL3Yx",
-            "O2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFc",
-            "R1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
+            "SVRZX0FUX01PU1RfT05FEANCigEKCWNvbS5hci52MUILRXZlbnRzUHJvdG9Q",
+            "AVoyZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL2Fy",
+            "L3YxO2FydjGiAgNBWFiqAg5NZXNzYWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJc",
+            "VjFcR1BCTWV0YWRhdGHqAgZBcjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.CommandType), typeof(global::Messages.AR.V1.EventType), typeof(global::Messages.AR.V1.TelemetryType), typeof(global::Messages.AR.V1.PlanType), typeof(global::Messages.AR.V1.HandlerCardinality), }, null, new pbr::GeneratedClrTypeInfo[] {

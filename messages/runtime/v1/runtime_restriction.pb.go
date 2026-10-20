@@ -8,8 +8,8 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -213,8 +213,8 @@ const file_runtime_v1_runtime_restriction_proto_rawDesc = "" +
 	"*RESTRICTION_TYPE_REQUIRE_VISION_VALIDATION\x10\x05\x12*\n" +
 	"&RESTRICTION_TYPE_REQUIRE_TOOL_FEEDBACK\x10\x06\x12(\n" +
 	"$RESTRICTION_TYPE_REQUIRE_HUMAN_ACTOR\x10\a\x12(\n" +
-	"$RESTRICTION_TYPE_REQUIRE_ROBOT_ACTOR\x10\bB\xb6\x01\n" +
-	"\x0ecom.runtime.v1B\x17RuntimeRestrictionProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"$RESTRICTION_TYPE_REQUIRE_ROBOT_ACTOR\x10\bB\xb9\x01\n" +
+	"\x0ecom.runtime.v1B\x17RuntimeRestrictionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

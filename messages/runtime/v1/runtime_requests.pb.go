@@ -8,8 +8,8 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -642,8 +642,8 @@ const file_runtime_v1_runtime_requests_proto_rawDesc = "" +
 	"\x1dTASK_PROGRESS_PHASE_EXECUTING\x10\x05\x12#\n" +
 	"\x1fTASK_PROGRESS_PHASE_POSITIONING\x10\x06\x12!\n" +
 	"\x1dTASK_PROGRESS_PHASE_VERIFYING\x10\a\x12)\n" +
-	"%TASK_PROGRESS_PHASE_READY_TO_COMPLETE\x10\bB\xb3\x01\n" +
-	"\x0ecom.runtime.v1B\x14RuntimeRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"%TASK_PROGRESS_PHASE_READY_TO_COMPLETE\x10\bB\xb6\x01\n" +
+	"\x0ecom.runtime.v1B\x14RuntimeRequestsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

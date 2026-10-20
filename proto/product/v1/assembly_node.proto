@@ -8,7 +8,7 @@ import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
 
 option csharp_namespace = "Messages.Product.V1";
-option go_package = "github.com/cobotar/protocol/messages/product/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 
 // NodeKind defines what kind of structural element an AssemblyNode represents in the product structure.
 //

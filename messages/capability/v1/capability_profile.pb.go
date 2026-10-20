@@ -7,7 +7,7 @@
 package capabilityv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -144,8 +144,8 @@ const file_capability_v1_capability_profile_proto_rawDesc = "" +
 	"\rmax_payload_g\x18\x06 \x01(\x01R\vmaxPayloadG\x12)\n" +
 	"\x11min_grip_width_mm\x18\a \x01(\x01R\x0eminGripWidthMm\x12)\n" +
 	"\x11max_grip_width_mm\x18\b \x01(\x01R\x0emaxGripWidthMm\x12?\n" +
-	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraintsB\xca\x01\n" +
-	"\x11com.capability.v1B\x16CapabilityProfileProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
+	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraintsB\xcd\x01\n" +
+	"\x11com.capability.v1B\x16CapabilityProfileProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 
 var (
 	file_capability_v1_capability_profile_proto_rawDescOnce sync.Once

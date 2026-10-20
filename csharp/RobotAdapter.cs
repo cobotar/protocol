@@ -77,11 +77,11 @@ namespace Messages.Robot.V1 {
             "UFRFUl9URUxFTUVUUllfVFlQRV9KT0lOVF9TVEFURRACEikKJVJPQk9UX0FE",
             "QVBURVJfVEVMRU1FVFJZX1RZUEVfVENQX1BPU0UQAxIrCidST0JPVF9BREFQ",
             "VEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9XUkVOQ0gQBBIpCiVST0JPVF9BREFQ",
-            "VEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCogEKDGNvbS5yb2JvdC52",
-            "MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3By",
-            "b3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNz",
-            "YWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRh",
-            "dGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
+            "VEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCpQEKDGNvbS5yb2JvdC52",
+            "MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo4Z2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL3YyL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFN",
+            "ZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0",
+            "YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.SignalReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotAdapterCommandType), typeof(global::Messages.Robot.V1.RobotAdapterPlanType), typeof(global::Messages.Robot.V1.RobotAdapterTelemetryType), }, null, new pbr::GeneratedClrTypeInfo[] {

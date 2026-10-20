@@ -170,8 +170,8 @@ const file_capability_v1_tool_requirement_proto_rawDesc = "" +
 	"\x17TOOL_PROPERTY_INSULATED\x10\x03\x12$\n" +
 	" TOOL_PROPERTY_COLLABORATIVE_SAFE\x10\x04\x12\x1c\n" +
 	"\x18TOOL_PROPERTY_CALIBRATED\x10\x05\x12\x1e\n" +
-	"\x1aTOOL_PROPERTY_QUICK_CHANGE\x10\x06B\xc8\x01\n" +
-	"\x11com.capability.v1B\x14ToolRequirementProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
+	"\x1aTOOL_PROPERTY_QUICK_CHANGE\x10\x06B\xcb\x01\n" +
+	"\x11com.capability.v1B\x14ToolRequirementProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 
 var (
 	file_capability_v1_tool_requirement_proto_rawDescOnce sync.Once

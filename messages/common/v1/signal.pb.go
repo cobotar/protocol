@@ -8,7 +8,7 @@ package commonv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -353,8 +353,8 @@ const file_common_v1_signal_proto_rawDesc = "" +
 	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY\x10<\x12+\n" +
 	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY\x10=\x12%\n" +
 	"!SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE\x10d\x12$\n" +
-	" SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE\x10eB\xa3\x01\n" +
-	"\rcom.common.v1B\vSignalProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	" SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE\x10eB\xa6\x01\n" +
+	"\rcom.common.v1B\vSignalProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

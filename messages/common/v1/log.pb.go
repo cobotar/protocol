@@ -648,8 +648,8 @@ const file_common_v1_log_proto_rawDesc = "" +
 	"\x11LOG_SEVERITY_INFO\x10\x03\x12\x15\n" +
 	"\x11LOG_SEVERITY_WARN\x10\x04\x12\x16\n" +
 	"\x12LOG_SEVERITY_ERROR\x10\x05\x12\x16\n" +
-	"\x12LOG_SEVERITY_FATAL\x10\x06B\xa0\x01\n" +
-	"\rcom.common.v1B\bLogProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x12LOG_SEVERITY_FATAL\x10\x06B\xa3\x01\n" +
+	"\rcom.common.v1B\bLogProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

@@ -6,7 +6,7 @@ import "common/v1/signal.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Robot.V1";
-option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/robot/v1";
 
 enum RobotAdapterCommandType {
   ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED = 0;

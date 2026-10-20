@@ -40,11 +40,11 @@ namespace Messages.Geometry.V1 {
             "YnVmLlRpbWVzdGFtcFILbGFzdFVwZGF0ZWQqggEKDkxvY2FsaXplZFN0YXRl",
             "Eh8KG0xPQ0FMSVpFRF9TVEFURV9VTlNQRUNJRklFRBAAEhkKFUxPQ0FMSVpF",
             "RF9TVEFURV9GT1VORBABEhgKFExPQ0FMSVpFRF9TVEFURV9MT1NUEAISGgoW",
-            "TE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQq8BCg9jb20uZ2VvbWV0cnkudjFC",
-            "CVBvc2VQcm90b1ABWjtnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVz",
-            "c2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2Vz",
-            "Lkdlb21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJN",
-            "ZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z"));
+            "TE9DQUxJWkVEX1NUQVRFX1NUQVRJQxADQrIBCg9jb20uZ2VvbWV0cnkudjFC",
+            "CVBvc2VQcm90b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIv",
+            "bWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3Nh",
+            "Z2VzLkdlb21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxH",
+            "UEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Messages.Geometry.V1.PointReflection.Descriptor, global::Messages.Geometry.V1.QuadReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Geometry.V1.LocalizedState), }, null, new pbr::GeneratedClrTypeInfo[] {

@@ -8,7 +8,7 @@ package geometryv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -155,8 +155,8 @@ const file_geometry_v1_zone_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12*\n" +
 	"\x06points\x18\x05 \x03(\v2\x12.geometry.v1.PointR\x06points\"D\n" +
 	"\x0fZoneDefinitions\x121\n" +
-	"\x05items\x18\x01 \x03(\v2\x1b.geometry.v1.ZoneDefinitionR\x05itemsB\xaf\x01\n" +
-	"\x0fcom.geometry.v1B\tZoneProtoP\x01Z;github.com/cobotar/protocol/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
+	"\x05items\x18\x01 \x03(\v2\x1b.geometry.v1.ZoneDefinitionR\x05itemsB\xb2\x01\n" +
+	"\x0fcom.geometry.v1B\tZoneProtoP\x01Z>github.com/cobotar/protocol/v2/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (
 	file_geometry_v1_zone_proto_rawDescOnce sync.Once

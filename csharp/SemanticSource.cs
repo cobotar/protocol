@@ -64,10 +64,10 @@ namespace Messages.AR.V1 {
             "UE9TRRALEiAKHFNFTUFOVElDX1ZBTFVFX1RZUEVfR0VPTUVUUlkQDBIcChhT",
             "RU1BTlRJQ19WQUxVRV9UWVBFX1BBVEgQDRIeChpTRU1BTlRJQ19WQUxVRV9U",
             "WVBFX1JFR0lPThAOEioKJlNFTUFOVElDX1ZBTFVFX1RZUEVfUFJPQ0VTU19U",
-            "UkFOU0lUSU9OEBRCjwEKCWNvbS5hci52MUITU2VtYW50aWNTb3VyY2VQcm90",
-            "b1ABWi9naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvYXIv",
-            "djE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFBclxW",
-            "MVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
+            "UkFOU0lUSU9OEBRCkgEKCWNvbS5hci52MUITU2VtYW50aWNTb3VyY2VQcm90",
+            "b1ABWjJnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMv",
+            "YXIvdjE7YXJ2MaICA0FYWKoCDk1lc3NhZ2VzLkFSLlYxygIFQXJcVjHiAhFB",
+            "clxWMVxHUEJNZXRhZGF0YeoCBkFyOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.AssistanceSemantic), typeof(global::Messages.AR.V1.SemanticSourceType), typeof(global::Messages.AR.V1.SemanticValueType), }, null, new pbr::GeneratedClrTypeInfo[] {

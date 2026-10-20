@@ -5,7 +5,7 @@ import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Common.V1";
-option go_package = "github.com/cobotar/protocol/messages/common/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/common/v1";
 
 // SignalDataType is the value type exposed by a readable or writable signal.
 enum SignalDataType {

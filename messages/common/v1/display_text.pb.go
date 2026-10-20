@@ -89,8 +89,8 @@ const file_common_v1_display_text_proto_rawDesc = "" +
 	"\vDisplayText\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x121\n" +
-	"\x14operator_instruction\x18\x03 \x01(\tR\x13operatorInstructionB\xa8\x01\n" +
-	"\rcom.common.v1B\x10DisplayTextProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x14operator_instruction\x18\x03 \x01(\tR\x13operatorInstructionB\xab\x01\n" +
+	"\rcom.common.v1B\x10DisplayTextProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

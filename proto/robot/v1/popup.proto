@@ -2,7 +2,7 @@ syntax = "proto3";
 package robot.v1;
 
 option csharp_namespace = "Messages.Robot.V1";
-option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/robot/v1";
 
 message RobotShowPopupRequest {
   string robot_id = 1;

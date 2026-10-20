@@ -26,11 +26,11 @@ namespace Messages.Geometry.V1 {
           string.Concat(
             "ChlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvEgtnZW9tZXRyeS52MSIzCgdW",
             "ZWN0b3IzEgwKAXgYASABKAJSAXgSDAoBeRgCIAEoAlIBeRIMCgF6GAMgASgC",
-            "UgF6QrIBCg9jb20uZ2VvbWV0cnkudjFCDFZlY3RvcjNQcm90b1ABWjtnaXRo",
-            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7",
-            "Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdlb21ldHJ5LlYxygILR2Vv",
-            "bWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5",
-            "OjpWMWIGcHJvdG8z"));
+            "UgF6QrUBCg9jb20uZ2VvbWV0cnkudjFCDFZlY3RvcjNQcm90b1ABWj5naXRo",
+            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvZ2VvbWV0cnkv",
+            "djE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdlb21ldHJ5LlYxygIL",
+            "R2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21l",
+            "dHJ5OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

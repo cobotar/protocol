@@ -113,8 +113,8 @@ const file_robot_v1_robot_io_catalog_proto_rawDesc = "" +
 	",ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER\x10\f\x12.\n" +
 	"*ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER\x10\x14\x120\n" +
 	",ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER\x10\x15\x121\n" +
-	"-ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER\x10\x16B\xa4\x01\n" +
-	"\fcom.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"-ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER\x10\x16B\xa7\x01\n" +
+	"\fcom.robot.v1B\x13RobotIoCatalogProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_io_catalog_proto_rawDescOnce sync.Once

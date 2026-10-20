@@ -4,7 +4,7 @@ package service.v1;
 import "buf/validate/validate.proto";
 
 option csharp_namespace = "Messages.Service.V1";
-option go_package = "github.com/cobotar/protocol/messages/service/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/service/v1";
 
 enum MutationStatus {
   MUTATION_STATUS_UNSPECIFIED = 0;

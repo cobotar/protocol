@@ -241,8 +241,8 @@ const file_service_v1_response_proto_rawDesc = "" +
 	"\x17MUTATION_STATUS_CREATED\x10\x01\x12\x1b\n" +
 	"\x17MUTATION_STATUS_UPDATED\x10\x02\x12\x1d\n" +
 	"\x19MUTATION_STATUS_UNCHANGED\x10\x03\x12\x1b\n" +
-	"\x17MUTATION_STATUS_DELETED\x10\x04B\xac\x01\n" +
-	"\x0ecom.service.v1B\rResponseProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
+	"\x17MUTATION_STATUS_DELETED\x10\x04B\xaf\x01\n" +
+	"\x0ecom.service.v1B\rResponseProtoP\x01Z<github.com/cobotar/protocol/v2/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
 var (

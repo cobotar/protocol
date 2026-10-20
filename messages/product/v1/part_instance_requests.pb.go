@@ -8,7 +8,7 @@ package productv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -188,8 +188,8 @@ const file_product_v1_part_instance_requests_proto_rawDesc = "" +
 	"\x05parts\x18\x01 \x03(\v2&.product.v1.PartInstanceBulkCreateSpecB\n" +
 	"\xbaH\a\x92\x01\x04\b\x01\x10dR\x05parts\x12D\n" +
 	"\blocation\x18\x02 \x01(\v2 .product.v1.PartInstanceLocationB\x06\xbaH\x03\xc8\x01\x01R\blocation\x121\n" +
-	"\x0fidempotency_key\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x01R\x0eidempotencyKeyB\xb8\x01\n" +
-	"\x0ecom.product.v1B\x19PartInstanceRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
+	"\x0fidempotency_key\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x01R\x0eidempotencyKeyB\xbb\x01\n" +
+	"\x0ecom.product.v1B\x19PartInstanceRequestsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
 	"Product\\V1\xe2\x02\x16Product\\V1\\GPBMetadata\xea\x02\vProduct::V1b\x06proto3"
 
 var (

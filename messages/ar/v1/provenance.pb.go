@@ -8,7 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -238,8 +238,8 @@ const file_ar_v1_provenance_proto_rawDesc = "" +
 	"\"ADAPTIVE_PARTICIPATION_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cADAPTIVE_PARTICIPATION_FIXED\x10\x01\x12$\n" +
 	" ADAPTIVE_PARTICIPATION_AVAILABLE\x10\x02\x12\"\n" +
-	"\x1eADAPTIVE_PARTICIPATION_MANAGED\x10\x03B\x8b\x01\n" +
-	"\tcom.ar.v1B\x0fProvenanceProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x1eADAPTIVE_PARTICIPATION_MANAGED\x10\x03B\x8e\x01\n" +
+	"\tcom.ar.v1B\x0fProvenanceProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_provenance_proto_rawDescOnce sync.Once

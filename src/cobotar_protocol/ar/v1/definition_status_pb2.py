@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x61r/v1/definition_status.proto\x12\x05\x61r.v1*\x95\x01\n\x10\x44\x65\x66initionStatus\x12!\n\x1d\x44\x45\x46INITION_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x44\x45\x46INITION_STATUS_ACTIVE\x10\x01\x12 \n\x1c\x44\x45\x46INITION_STATUS_DEPRECATED\x10\x02\x12\x1e\n\x1a\x44\x45\x46INITION_STATUS_DISABLED\x10\x03\x42\x91\x01\n\tcom.ar.v1B\x15\x44\x65\x66initionStatusProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x61r/v1/definition_status.proto\x12\x05\x61r.v1*\x95\x01\n\x10\x44\x65\x66initionStatus\x12!\n\x1d\x44\x45\x46INITION_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x44\x45\x46INITION_STATUS_ACTIVE\x10\x01\x12 \n\x1c\x44\x45\x46INITION_STATUS_DEPRECATED\x10\x02\x12\x1e\n\x1a\x44\x45\x46INITION_STATUS_DISABLED\x10\x03\x42\x94\x01\n\tcom.ar.v1B\x15\x44\x65\x66initionStatusProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ar.v1.definition_status_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\025DefinitionStatusProtoP\001Z/github.com/cobotar/protocol/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\tcom.ar.v1B\025DefinitionStatusProtoP\001Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\242\002\003AXX\252\002\016Messages.AR.V1\312\002\005Ar\\V1\342\002\021Ar\\V1\\GPBMetadata\352\002\006Ar::V1'
   _globals['_DEFINITIONSTATUS']._serialized_start=41
   _globals['_DEFINITIONSTATUS']._serialized_end=190
 # @@protoc_insertion_point(module_scope)

@@ -8,8 +8,8 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -195,8 +195,8 @@ const file_resources_v1_tool_instance_proto_rawDesc = "" +
 	"calibrated\x12R\n" +
 	"\x17calibration_valid_until\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\x15calibrationValidUntil\"A\n" +
 	"\rToolInstances\x120\n" +
-	"\x05items\x18\x01 \x03(\v2\x1a.resources.v1.ToolInstanceR\x05itemsB\xbe\x01\n" +
-	"\x10com.resources.v1B\x11ToolInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"\x05items\x18\x01 \x03(\v2\x1a.resources.v1.ToolInstanceR\x05itemsB\xc1\x01\n" +
+	"\x10com.resources.v1B\x11ToolInstanceProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_tool_instance_proto_rawDescOnce sync.Once

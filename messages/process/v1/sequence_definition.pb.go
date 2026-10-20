@@ -8,9 +8,9 @@ package processv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/geometry/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v11 "github.com/cobotar/protocol/messages/variance/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -386,8 +386,8 @@ const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\x19SEQUENCE_OPERATOR_ORDERED\x10\x01\x12\x1e\n" +
 	"\x1aSEQUENCE_OPERATOR_PARALLEL\x10\x02\x12\x1f\n" +
 	"\x1bSEQUENCE_OPERATOR_EXCLUSIVE\x10\x03\x12\x1f\n" +
-	"\x1bSEQUENCE_OPERATOR_INCLUSIVE\x10\x04B\xb6\x01\n" +
-	"\x0ecom.process.v1B\x17SequenceDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
+	"\x1bSEQUENCE_OPERATOR_INCLUSIVE\x10\x04B\xb9\x01\n" +
+	"\x0ecom.process.v1B\x17SequenceDefinitionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
 var (

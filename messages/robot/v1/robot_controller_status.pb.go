@@ -410,8 +410,8 @@ const file_robot_v1_robot_controller_status_proto_rawDesc = "" +
 	"\x13ROBOT_MODE_POWER_ON\x10\x06\x12\x13\n" +
 	"\x0fROBOT_MODE_IDLE\x10\a\x12\x17\n" +
 	"\x13ROBOT_MODE_BACKDIVE\x10\b\x12\x16\n" +
-	"\x12ROBOT_MODE_RUNNING\x10\tB\xab\x01\n" +
-	"\fcom.robot.v1B\x1aRobotControllerStatusProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\x12ROBOT_MODE_RUNNING\x10\tB\xae\x01\n" +
+	"\fcom.robot.v1B\x1aRobotControllerStatusProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_robot_controller_status_proto_rawDescOnce sync.Once

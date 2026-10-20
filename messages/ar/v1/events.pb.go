@@ -651,8 +651,8 @@ const file_ar_v1_events_proto_rawDesc = "" +
 	"\x1fHANDLER_CARDINALITY_UNSPECIFIED\x10\x00\x12$\n" +
 	" HANDLER_CARDINALITY_AT_LEAST_ONE\x10\x01\x12#\n" +
 	"\x1fHANDLER_CARDINALITY_EXACTLY_ONE\x10\x02\x12#\n" +
-	"\x1fHANDLER_CARDINALITY_AT_MOST_ONE\x10\x03B\x87\x01\n" +
-	"\tcom.ar.v1B\vEventsProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x1fHANDLER_CARDINALITY_AT_MOST_ONE\x10\x03B\x8a\x01\n" +
+	"\tcom.ar.v1B\vEventsProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_events_proto_rawDescOnce sync.Once

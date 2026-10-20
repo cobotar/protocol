@@ -158,11 +158,11 @@ namespace Messages.Process.V1 {
             "VU5BVkFJTEFCSUxJVFlfUE9MSUNZX1dBSVRfRk9SX0FDVE9SEAESNwozQUNU",
             "T1JfVU5BVkFJTEFCSUxJVFlfUE9MSUNZX1JFQVNTSUdOX0lGX05PVF9TVEFS",
             "VEVEEAISNAowQUNUT1JfVU5BVkFJTEFCSUxJVFlfUE9MSUNZX1NVU1BFTkRf",
-            "QU5EX1JFQVNTSUdOEANCsgEKDmNvbS5wcm9jZXNzLnYxQhNUYXNrRGVmaW5p",
-            "dGlvblByb3RvUAFaOWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNz",
-            "YWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlBy",
-            "b2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0",
-            "YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
+            "QU5EX1JFQVNTSUdOEANCtQEKDmNvbS5wcm9jZXNzLnYxQhNUYXNrRGVmaW5p",
+            "dGlvblByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9t",
+            "ZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2Vz",
+            "LlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRh",
+            "ZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorConstraintReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillRequirementReflection.Descriptor, global::Messages.Capability.V1.ToolRequirementReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Messages.Geometry.V1.LocalTargetReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.TaskType), typeof(global::Messages.Process.V1.TaskAssignmentPreference), typeof(global::Messages.Process.V1.ActorUnavailabilityPolicy), }, null, new pbr::GeneratedClrTypeInfo[] {

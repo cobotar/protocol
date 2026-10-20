@@ -126,8 +126,8 @@ const file_common_v1_ref_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\".\n" +
 	"\bNamedRef\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04nameB\xa0\x01\n" +
-	"\rcom.common.v1B\bRefProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x04name\x18\x02 \x01(\tR\x04nameB\xa3\x01\n" +
+	"\rcom.common.v1B\bRefProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

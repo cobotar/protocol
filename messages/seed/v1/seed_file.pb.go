@@ -153,8 +153,8 @@ const file_seed_v1_seed_file_proto_rawDesc = "" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x12\n" +
 	"\x04file\x18\x05 \x01(\tR\x04file\"4\n" +
 	"\tSeedFiles\x12'\n" +
-	"\x05items\x18\x01 \x03(\v2\x11.seed.v1.SeedFileR\x05itemsB\x97\x01\n" +
-	"\vcom.seed.v1B\rSeedFileProtoP\x01Z3github.com/cobotar/protocol/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\aSeed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\bSeed::V1b\x06proto3"
+	"\x05items\x18\x01 \x03(\v2\x11.seed.v1.SeedFileR\x05itemsB\x9a\x01\n" +
+	"\vcom.seed.v1B\rSeedFileProtoP\x01Z6github.com/cobotar/protocol/v2/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\aSeed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\bSeed::V1b\x06proto3"
 
 var (
 	file_seed_v1_seed_file_proto_rawDescOnce sync.Once

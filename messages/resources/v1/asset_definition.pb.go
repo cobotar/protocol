@@ -8,8 +8,8 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -386,8 +386,8 @@ const file_resources_v1_asset_definition_proto_rawDesc = "" +
 	"\x13ASSET_TYPE_CONVEYOR\x10\x03\x12\x15\n" +
 	"\x11ASSET_TYPE_SENSOR\x10\x04\x12\x12\n" +
 	"\x0eASSET_TYPE_HMI\x10\x05\x12\x1a\n" +
-	"\x16ASSET_TYPE_PART_FEEDER\x10\bB\xc1\x01\n" +
-	"\x10com.resources.v1B\x14AssetDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"\x16ASSET_TYPE_PART_FEEDER\x10\bB\xc4\x01\n" +
+	"\x10com.resources.v1B\x14AssetDefinitionProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_asset_definition_proto_rawDescOnce sync.Once

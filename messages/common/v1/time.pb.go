@@ -149,8 +149,8 @@ const file_common_v1_time_proto_rawDesc = "" +
 	"\vmin_seconds\x18\x02 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\n" +
 	"minSeconds\x12(\n" +
 	"\vmax_seconds\x18\x03 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\n" +
-	"maxSecondsB\xa1\x01\n" +
-	"\rcom.common.v1B\tTimeProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"maxSecondsB\xa4\x01\n" +
+	"\rcom.common.v1B\tTimeProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

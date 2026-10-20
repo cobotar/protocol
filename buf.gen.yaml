@@ -7,7 +7,7 @@ managed:
       module: buf.build/bufbuild/protovalidate
   override:
     - file_option: go_package_prefix
-      value: github.com/cobotar/protocol/messages
+      value: github.com/cobotar/protocol/v2/messages
 plugins:
   - remote: buf.build/protocolbuffers/go
     out: messages

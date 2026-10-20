@@ -8,12 +8,12 @@ package processv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v12 "github.com/cobotar/protocol/messages/capability/v1"
-	v13 "github.com/cobotar/protocol/messages/common/v1"
-	v1 "github.com/cobotar/protocol/messages/geometry/v1"
-	v11 "github.com/cobotar/protocol/messages/resources/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v14 "github.com/cobotar/protocol/messages/variance/v1"
+	v12 "github.com/cobotar/protocol/v2/messages/capability/v1"
+	v13 "github.com/cobotar/protocol/v2/messages/common/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/geometry/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/resources/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v14 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1353,8 +1353,8 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"'ACTOR_UNAVAILABILITY_POLICY_UNSPECIFIED\x10\x00\x12.\n" +
 	"*ACTOR_UNAVAILABILITY_POLICY_WAIT_FOR_ACTOR\x10\x01\x127\n" +
 	"3ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED\x10\x02\x124\n" +
-	"0ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN\x10\x03B\xb2\x01\n" +
-	"\x0ecom.process.v1B\x13TaskDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
+	"0ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN\x10\x03B\xb5\x01\n" +
+	"\x0ecom.process.v1B\x13TaskDefinitionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
 var (

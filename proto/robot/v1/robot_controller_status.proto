@@ -5,7 +5,7 @@ import "google/protobuf/timestamp.proto";
 import "robot/v1/program_state.proto";
 
 option csharp_namespace = "Messages.Robot.V1";
-option go_package = "github.com/cobotar/protocol/messages/robot/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/robot/v1";
 
 enum RobotControlAuthority {
   ROBOT_CONTROL_AUTHORITY_UNSPECIFIED = 0;

@@ -8,8 +8,8 @@ package commonv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/geometry/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -2554,8 +2554,8 @@ const file_common_v1_property_proto_rawDesc = "" +
 	"\rPropertyScope\x12\x1e\n" +
 	"\x1aPROPERTY_SCOPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PROPERTY_SCOPE_ENTITY\x10\x01\x12\x1a\n" +
-	"\x16PROPERTY_SCOPE_RUNTIME\x10\x02B\xa5\x01\n" +
-	"\rcom.common.v1B\rPropertyProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x16PROPERTY_SCOPE_RUNTIME\x10\x02B\xa8\x01\n" +
+	"\rcom.common.v1B\rPropertyProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

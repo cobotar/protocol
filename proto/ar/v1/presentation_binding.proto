@@ -5,7 +5,7 @@ import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
-option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/ar/v1";
 
 // Binds one PresentationRole from the ARConfig's active PresentationStrategy
 // to one concrete AR-content entity owned by the same ARConfig.

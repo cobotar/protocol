@@ -144,8 +144,8 @@ const file_service_v1_ar_client_proto_rawDesc = "" +
 	"\fARClientRole\x12\x1e\n" +
 	"\x1aAR_CLIENT_ROLE_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13AR_CLIENT_ROLE_MAIN\x10\x01\x12\x1c\n" +
-	"\x18AR_CLIENT_ROLE_SPECTATOR\x10\x02B\xac\x01\n" +
-	"\x0ecom.service.v1B\rArClientProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
+	"\x18AR_CLIENT_ROLE_SPECTATOR\x10\x02B\xaf\x01\n" +
+	"\x0ecom.service.v1B\rArClientProtoP\x01Z<github.com/cobotar/protocol/v2/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
 var (

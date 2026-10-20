@@ -184,8 +184,8 @@ const file_common_v1_get_proto_rawDesc = "" +
 	"\x03ids\x18\x01 \x03(\tB\n" +
 	"\xbaH\a\x92\x01\x04\b\x01\x18\x01R\x03ids\")\n" +
 	"\x11GetByFieldMessage\x12\x14\n" +
-	"\x05value\x18\x01 \x01(\tR\x05valueB\xa0\x01\n" +
-	"\rcom.common.v1B\bGetProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x05value\x18\x01 \x01(\tR\x05valueB\xa3\x01\n" +
+	"\rcom.common.v1B\bGetProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

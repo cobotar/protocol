@@ -8,8 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/resources/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/resources/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -868,8 +868,8 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"!AR_RUN_SELECTION_CURRENT_ASSIGNED\x10\x02\x12\"\n" +
 	"\x1eAR_RUN_SELECTION_NEXT_EXPECTED\x10\x03\x12#\n" +
 	"\x1fAR_RUN_SELECTION_LAST_COMPLETED\x10\x04\x12#\n" +
-	"\x1fAR_RUN_SELECTION_FIRST_IN_ERROR\x10\x05B\x8a\x01\n" +
-	"\tcom.ar.v1B\x0eInputSlotProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x1fAR_RUN_SELECTION_FIRST_IN_ERROR\x10\x05B\x8d\x01\n" +
+	"\tcom.ar.v1B\x0eInputSlotProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_input_slot_proto_rawDescOnce sync.Once

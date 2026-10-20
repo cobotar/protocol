@@ -7,7 +7,7 @@ import "common/v1/enums.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Capability.V1";
-option go_package = "github.com/cobotar/protocol/messages/capability/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/capability/v1";
 
 // SkillDomain classifies a skill according to the type of work it primarily
 // represents. Domains are used for:

@@ -8,8 +8,8 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -200,8 +200,8 @@ const file_runtime_v1_validation_result_proto_rawDesc = "" +
 	"\x19VALIDATION_STATUS_PENDING\x10\x01\x12\x1c\n" +
 	"\x18VALIDATION_STATUS_PASSED\x10\x02\x12\x1c\n" +
 	"\x18VALIDATION_STATUS_FAILED\x10\x03\x12\x1e\n" +
-	"\x1aVALIDATION_STATUS_BYPASSED\x10\x04B\xb4\x01\n" +
-	"\x0ecom.runtime.v1B\x15ValidationResultProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"\x1aVALIDATION_STATUS_BYPASSED\x10\x04B\xb7\x01\n" +
+	"\x0ecom.runtime.v1B\x15ValidationResultProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

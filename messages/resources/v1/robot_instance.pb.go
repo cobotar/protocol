@@ -8,8 +8,8 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -211,8 +211,8 @@ const file_resources_v1_robot_instance_proto_rawDesc = "" +
 	" \x01(\bR\visSimulated\x12;\n" +
 	"\x06status\x18\v \x01(\x0e2\x19.common.v1.ResourceStatusB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06status\"C\n" +
 	"\x0eRobotInstances\x121\n" +
-	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.RobotInstanceR\x05itemsB\xbf\x01\n" +
-	"\x10com.resources.v1B\x12RobotInstanceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"\x05items\x18\x01 \x03(\v2\x1b.resources.v1.RobotInstanceR\x05itemsB\xc2\x01\n" +
+	"\x10com.resources.v1B\x12RobotInstanceProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_robot_instance_proto_rawDescOnce sync.Once

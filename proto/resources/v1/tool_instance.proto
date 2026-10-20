@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Resources.V1";
-option go_package = "github.com/cobotar/protocol/messages/resources/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/resources/v1";
 
 message ToolInstance {
   string id = 1 [(buf.validate.field).string.(validation.v1.tool_instance_id_component) = true];

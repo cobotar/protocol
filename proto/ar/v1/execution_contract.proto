@@ -4,7 +4,7 @@ package ar.v1;
 import "ar/v1/events.proto";
 
 option csharp_namespace = "Messages.AR.V1";
-option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/ar/v1";
 
 // ExecutionContract declares the runtime dependencies and exchanges required
 // to execute or render a built-in definition.

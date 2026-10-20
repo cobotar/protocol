@@ -8,8 +8,8 @@ package processv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v1 "github.com/cobotar/protocol/messages/variance/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -728,8 +728,8 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\x15VariantGenerationMode\x12'\n" +
 	"#VARIANT_GENERATION_MODE_UNSPECIFIED\x10\x00\x12(\n" +
 	"$VARIANT_GENERATION_MODE_ALL_VARIANTS\x10\x01\x122\n" +
-	".VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION\x10\x02B\xb6\x01\n" +
-	"\x0ecom.process.v1B\x17GenerationRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
+	".VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION\x10\x02B\xb9\x01\n" +
+	"\x0ecom.process.v1B\x17GenerationRequestsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
 var (

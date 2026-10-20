@@ -91,8 +91,8 @@ const file_common_v1_external_references_proto_rawDesc = "" +
 	"\x06system\x18\x01 \x01(\tR\x06system\x12\x1f\n" +
 	"\vexternal_id\x18\x02 \x01(\tR\n" +
 	"externalId\x12\x1d\n" +
-	"\x03url\x18\x03 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03urlB\xaf\x01\n" +
-	"\rcom.common.v1B\x17ExternalReferencesProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x03url\x18\x03 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03urlB\xb2\x01\n" +
+	"\rcom.common.v1B\x17ExternalReferencesProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

@@ -118,8 +118,8 @@ const file_ar_v1_execution_contract_proto_rawDesc = "" +
 	"\x12consumers_required\x18\x03 \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersRequired\x12B\n" +
 	"\x12consumers_optional\x18\x04 \x03(\v2\x13.ar.v1.ExchangeTypeR\x11consumersOptional\x12F\n" +
 	"\x11required_handlers\x18\x05 \x03(\v2\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n" +
-	"\x05emits\x18\x06 \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emitsB\x92\x01\n" +
-	"\tcom.ar.v1B\x16ExecutionContractProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x05emits\x18\x06 \x03(\v2\x13.ar.v1.ExchangeTypeR\x05emitsB\x95\x01\n" +
+	"\tcom.ar.v1B\x16ExecutionContractProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_execution_contract_proto_rawDescOnce sync.Once

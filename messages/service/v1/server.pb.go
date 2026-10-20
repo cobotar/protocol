@@ -205,8 +205,8 @@ const file_service_v1_server_proto_rawDesc = "" +
 	"\tserver_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\bserverId\x12\x14\n" +
 	"\x05epoch\x18\x03 \x01(\x04R\x05epoch\x12\x17\n" +
 	"\aunix_ms\x18\x04 \x01(\x03R\x06unixMs\x12\x0e\n" +
-	"\x02ip\x18\x05 \x01(\tR\x02ipB\xaa\x01\n" +
-	"\x0ecom.service.v1B\vServerProtoP\x01Z9github.com/cobotar/protocol/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
+	"\x02ip\x18\x05 \x01(\tR\x02ipB\xad\x01\n" +
+	"\x0ecom.service.v1B\vServerProtoP\x01Z<github.com/cobotar/protocol/v2/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
 var (

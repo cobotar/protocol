@@ -80,8 +80,8 @@ const file_common_v1_delete_proto_rawDesc = "" +
 	"\x16common/v1/delete.proto\x12\tcommon.v1\"9\n" +
 	"\rDeleteMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessageB\xa3\x01\n" +
-	"\rcom.common.v1B\vDeleteProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\amessage\x18\x02 \x01(\tR\amessageB\xa6\x01\n" +
+	"\rcom.common.v1B\vDeleteProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

@@ -4,6 +4,7 @@
 
 ### Changed (breaking)
 
+- The Go module is `github.com/cobotar/protocol/v2`, since Go requires the module path of version 2 and later to end in the major version; v2.0.0 couldn't be used from Go. Go code imports `github.com/cobotar/protocol/v2/messages/...` and `github.com/cobotar/protocol/v2/subjects`. The npm, Python and NuGet packages don't change.
 - Process recipes and part definitions have revisions (cobotar/protocol#19, step 2 of cobotar/protocol#17): `process.v1.ProcessRecipe.revision`, which covers the recipe's whole tree, and `product.v1.PartDefinition.revision`, both set by the backend and increased with every change. A revision is immutable, so clients may cache definitions by `(id, revision)`. Updates of recipes and part definitions have to carry the revision they were based on, and a stale one is refused; sequence and task definitions carry none of their own.
 - `runtime.v1.ProcessRun.process_recipe_revision` and `part_definition_revisions` name the revisions a run was loaded with, and `ProcessRunDefinitions` holds definitions at those revisions.
 - `common.v1.GetMessage.revision` gets a recipe or part definition at a revision, and a sequence or task definition at a revision of its recipe. The backend keeps the current revision and those runs use, for the retention period after their last run (or forever, if configured); a request for another revision fails.

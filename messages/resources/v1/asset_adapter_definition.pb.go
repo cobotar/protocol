@@ -8,8 +8,8 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -195,8 +195,8 @@ const file_resources_v1_asset_adapter_definition_proto_rawDesc = "" +
 	"\x05items\x18\x01 \x03(\v2$.resources.v1.AssetAdapterDefinitionB\xf4\x03\xbaH\xf0\x03\xba\x01\x87\x01\n" +
 	"*asset_adapter_definitions.items.unique_ids\x12+asset adapter definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xcb\x01\n" +
 	",asset_adapter_definitions.items.unique_names\x12Wasset adapter definition names must be unique, ignoring case and surrounding whitespace\x1aBthis.map(definition, definition.name.trim().lowerAscii()).unique()\xba\x01\x92\x01\n" +
-	"4asset_adapter_definitions.items.unique_adapter_types\x12\"asset adapter types must be unique\x1a6this.map(definition, definition.adapter_type).unique()R\x05itemsB\xc8\x01\n" +
-	"\x10com.resources.v1B\x1bAssetAdapterDefinitionProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"4asset_adapter_definitions.items.unique_adapter_types\x12\"asset adapter types must be unique\x1a6this.map(definition, definition.adapter_type).unique()R\x05itemsB\xcb\x01\n" +
+	"\x10com.resources.v1B\x1bAssetAdapterDefinitionProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_asset_adapter_definition_proto_rawDescOnce sync.Once

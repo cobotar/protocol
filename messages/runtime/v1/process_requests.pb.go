@@ -8,9 +8,9 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v1 "github.com/cobotar/protocol/messages/variance/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1304,8 +1304,8 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x1fPROCESS_LOAD_STATUS_UNSPECIFIED\x10\x00\x12'\n" +
 	"#PROCESS_LOAD_STATUS_PRECHECK_FAILED\x10\x01\x12\x1d\n" +
 	"\x19PROCESS_LOAD_STATUS_READY\x10\x02\x12\x1e\n" +
-	"\x1aPROCESS_LOAD_STATUS_LOADED\x10\x03B\xb3\x01\n" +
-	"\x0ecom.runtime.v1B\x14ProcessRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"\x1aPROCESS_LOAD_STATUS_LOADED\x10\x03B\xb6\x01\n" +
+	"\x0ecom.runtime.v1B\x14ProcessRequestsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

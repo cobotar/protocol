@@ -8,8 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/resources/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/resources/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -344,8 +344,8 @@ const file_ar_v1_ar_binding_candidates_proto_rawDesc = "" +
 	"candidates\x18\x02 \x03(\v2\x19.ar.v1.ARBindingCandidateB\xd0\x01\xbaH\xcc\x01\xba\x01\xc8\x01\n" +
 	"=ar_binding_candidates_response.candidates.unique_resource_ids\x12.candidate resource instance ids must be unique\x1aWthis.map(candidate, candidate.robot_instance_id + candidate.asset_instance_id).unique()R\n" +
 	"candidates:\x9e\x02\xbaH\x9a\x02\x1a\x97\x02\n" +
-	"3ar_binding_candidates_response.single_resource_kind\x129a candidate response cannot mix robot and asset instances\x1a\xa4\x01this.candidates.filter(candidate, candidate.robot_instance_id != '').size() == 0 || this.candidates.filter(candidate, candidate.asset_instance_id != '').size() == 0B\x94\x01\n" +
-	"\tcom.ar.v1B\x18ArBindingCandidatesProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"3ar_binding_candidates_response.single_resource_kind\x129a candidate response cannot mix robot and asset instances\x1a\xa4\x01this.candidates.filter(candidate, candidate.robot_instance_id != '').size() == 0 || this.candidates.filter(candidate, candidate.asset_instance_id != '').size() == 0B\x97\x01\n" +
+	"\tcom.ar.v1B\x18ArBindingCandidatesProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_ar_binding_candidates_proto_rawDescOnce sync.Once

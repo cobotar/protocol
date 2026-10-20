@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/clone.proto\x12\tcommon.v1\"\xa2\x01\n\x0c\x43loneMessage\x12\x1f\n\x0boriginal_id\x18\x01 \x01(\tR\noriginalId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fidempotency_key\x18\n \x01(\tR\x0eidempotencyKeyB\xa2\x01\n\rcom.common.v1B\nCloneProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/clone.proto\x12\tcommon.v1\"\xa2\x01\n\x0c\x43loneMessage\x12\x1f\n\x0boriginal_id\x18\x01 \x01(\tR\noriginalId\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\'\n\x0fidempotency_key\x18\n \x01(\tR\x0eidempotencyKeyB\xa5\x01\n\rcom.common.v1B\nCloneProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.clone_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\nCloneProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\nCloneProtoP\001Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
   _globals['_CLONEMESSAGE']._serialized_start=37
   _globals['_CLONEMESSAGE']._serialized_end=199
 # @@protoc_insertion_point(module_scope)

@@ -7,7 +7,7 @@ import "common/v1/property.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
-option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/ar/v1";
 
 // Assigns a desired value to a property identified by its stable,
 // type-level PropertyDefinition.key.

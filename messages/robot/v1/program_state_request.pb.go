@@ -183,8 +183,8 @@ const file_robot_v1_program_state_request_proto_rawDesc = "" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\"L\n" +
 	"\x15RobotFreeDriveRequest\x12\x19\n" +
 	"\brobot_id\x18\x01 \x01(\tR\arobotId\x12\x18\n" +
-	"\aenabled\x18\x02 \x01(\bR\aenabledB\xa9\x01\n" +
-	"\fcom.robot.v1B\x18ProgramStateRequestProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
+	"\aenabled\x18\x02 \x01(\bR\aenabledB\xac\x01\n" +
+	"\fcom.robot.v1B\x18ProgramStateRequestProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\bRobot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3"
 
 var (
 	file_robot_v1_program_state_request_proto_rawDescOnce sync.Once

@@ -31,11 +31,11 @@ namespace Messages.Robot.V1 {
             "GQoIcm9ib3RfaWQYAiABKAlSB3JvYm90SWQSGQoIZnJhbWVfaWQYAyABKAlS",
             "B2ZyYW1lSWQSIwoNaGlnaGxpZ2h0X2lkeBgEIAEoBVIMaGlnaGxpZ2h0SWR4",
             "EjcKCXdheXBvaW50cxgFIAMoCzIZLnJvYm90LnYxLldheXBvaW50TWVzc2Fn",
-            "ZVIJd2F5cG9pbnRzQp8BCgxjb20ucm9ib3QudjFCDldheXBvaW50c1Byb3Rv",
-            "UAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2Jv",
-            "dC92MTtyb2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2Jv",
-            "dFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90",
-            "bzM="));
+            "ZVIJd2F5cG9pbnRzQqIBCgxjb20ucm9ib3QudjFCDldheXBvaW50c1Byb3Rv",
+            "UAFaOGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9y",
+            "b2JvdC92MTtyb2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghS",
+            "b2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Geometry.V1.PointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

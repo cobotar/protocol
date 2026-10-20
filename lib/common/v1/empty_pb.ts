@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file common/v1/empty.proto.
  */
 export const file_common_v1_empty: GenFile = /*@__PURE__*/
-  fileDesc("ChVjb21tb24vdjEvZW1wdHkucHJvdG8SCWNvbW1vbi52MSIOCgxFbXB0eU1lc3NhZ2VCogEKDWNvbS5jb21tb24udjFCCkVtcHR5UHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw");
+  fileDesc("ChVjb21tb24vdjEvZW1wdHkucHJvdG8SCWNvbW1vbi52MSIOCgxFbXB0eU1lc3NhZ2VCpQEKDWNvbS5jb21tb24udjFCCkVtcHR5UHJvdG9QAVo6Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw");
 
 /**
  * @generated from message common.v1.EmptyMessage

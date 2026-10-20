@@ -311,8 +311,8 @@ const file_seed_v1_seed_request_proto_rawDesc = "" +
 	"\x1eSAVE_SEED_ENTITY_SEQUENCE_RUNS\x103\x12\x1e\n" +
 	"\x1aSAVE_SEED_ENTITY_TASK_RUNS\x104\x12\x1d\n" +
 	"\x19SAVE_SEED_ENTITY_FEEDBACK\x10<\x12\x1c\n" +
-	"\x18SAVE_SEED_ENTITY_ACTIONS\x10=B\x9a\x01\n" +
-	"\vcom.seed.v1B\x10SeedRequestProtoP\x01Z3github.com/cobotar/protocol/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\aSeed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\bSeed::V1b\x06proto3"
+	"\x18SAVE_SEED_ENTITY_ACTIONS\x10=B\x9d\x01\n" +
+	"\vcom.seed.v1B\x10SeedRequestProtoP\x01Z6github.com/cobotar/protocol/v2/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\aSeed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\bSeed::V1b\x06proto3"
 
 var (
 	file_seed_v1_seed_request_proto_rawDescOnce sync.Once

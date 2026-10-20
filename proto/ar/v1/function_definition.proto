@@ -10,7 +10,7 @@ import "resources/v1/resource_requirement.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.AR.V1";
-option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/ar/v1";
 
 enum FunctionGroup {
   FUNCTION_GROUP_UNSPECIFIED = 0;

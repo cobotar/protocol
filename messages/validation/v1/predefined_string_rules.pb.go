@@ -721,8 +721,8 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	",string.asset_adapter_definition_id_component\x127this does not seem to be an asset adapter definition id\x1a<(this == '' || this.startsWith('asset_adapter_definition-'))R!assetAdapterDefinitionIdComponent:\xb7\x02\n" +
 	"\x16adapter_type_component\x12\x19.buf.validate.StringRules\x18\xc4N \x01(\bB\xe4\x01\xc2H\xe0\x01\n" +
 	"\xdd\x01\n" +
-	"\x1dstring.adapter_type_component\x12]adapter type must be 1 to 128 lowercase characters separated by dots, underscores, or hyphens\x1a]this.size() >= 1 && this.size() <= 128 && this.matches('^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$')R\x14adapterTypeComponentB\xb5\x01\n" +
-	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01Z?github.com/cobotar/protocol/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
+	"\x1dstring.adapter_type_component\x12]adapter type must be 1 to 128 lowercase characters separated by dots, underscores, or hyphens\x1a]this.size() >= 1 && this.size() <= 128 && this.matches('^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$')R\x14adapterTypeComponentB\xb8\x01\n" +
+	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
 	(*validate.StringRules)(nil), // 0: buf.validate.StringRules

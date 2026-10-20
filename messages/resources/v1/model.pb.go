@@ -8,8 +8,8 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1197,9 +1197,9 @@ const file_resources_v1_model_proto_rawDesc = "" +
 	"\x18MODEL_STORAGE_BACKEND_S3\x10\x03\x12\x1f\n" +
 	"\x1bMODEL_STORAGE_BACKEND_MINIO\x10\x04\x12$\n" +
 	" MODEL_STORAGE_BACKEND_LOCAL_FILE\x10\x05\x12&\n" +
-	"\"MODEL_STORAGE_BACKEND_EXTERNAL_URL\x10\x06B\xb7\x01\n" +
+	"\"MODEL_STORAGE_BACKEND_EXTERNAL_URL\x10\x06B\xba\x01\n" +
 	"\x10com.resources.v1B\n" +
-	"ModelProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"ModelProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_model_proto_rawDescOnce sync.Once

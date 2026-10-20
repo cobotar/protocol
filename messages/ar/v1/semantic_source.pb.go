@@ -365,8 +365,8 @@ const file_ar_v1_semantic_source_proto_rawDesc = "" +
 	"\x1cSEMANTIC_VALUE_TYPE_GEOMETRY\x10\f\x12\x1c\n" +
 	"\x18SEMANTIC_VALUE_TYPE_PATH\x10\r\x12\x1e\n" +
 	"\x1aSEMANTIC_VALUE_TYPE_REGION\x10\x0e\x12*\n" +
-	"&SEMANTIC_VALUE_TYPE_PROCESS_TRANSITION\x10\x14B\x8f\x01\n" +
-	"\tcom.ar.v1B\x13SemanticSourceProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"&SEMANTIC_VALUE_TYPE_PROCESS_TRANSITION\x10\x14B\x92\x01\n" +
+	"\tcom.ar.v1B\x13SemanticSourceProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_semantic_source_proto_rawDescOnce sync.Once

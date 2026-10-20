@@ -8,7 +8,7 @@ import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Runtime.V1";
-option go_package = "github.com/cobotar/protocol/messages/runtime/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/runtime/v1";
 
 enum ValidationStatus {
   VALIDATION_STATUS_UNSPECIFIED = 0;

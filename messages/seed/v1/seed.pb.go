@@ -7,12 +7,12 @@
 package seedv1
 
 import (
-	v15 "github.com/cobotar/protocol/messages/ar/v1"
-	v11 "github.com/cobotar/protocol/messages/capability/v1"
-	v13 "github.com/cobotar/protocol/messages/process/v1"
-	v12 "github.com/cobotar/protocol/messages/product/v1"
-	v1 "github.com/cobotar/protocol/messages/resources/v1"
-	v14 "github.com/cobotar/protocol/messages/runtime/v1"
+	v15 "github.com/cobotar/protocol/v2/messages/ar/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/capability/v1"
+	v13 "github.com/cobotar/protocol/v2/messages/process/v1"
+	v12 "github.com/cobotar/protocol/v2/messages/product/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/resources/v1"
+	v14 "github.com/cobotar/protocol/v2/messages/runtime/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -321,8 +321,8 @@ const file_seed_v1_seed_proto_rawDesc = "" +
 	"\rsequence_runs\x183 \x03(\v2\x17.runtime.v1.SequenceRunR\fsequenceRuns\x120\n" +
 	"\ttask_runs\x184 \x03(\v2\x13.runtime.v1.TaskRunR\btaskRuns\x122\n" +
 	"\bfeedback\x18< \x03(\v2\x16.ar.v1.FeedbackMessageR\bfeedback\x12.\n" +
-	"\aactions\x18= \x03(\v2\x14.ar.v1.ActionMessageR\aactionsB\x93\x01\n" +
-	"\vcom.seed.v1B\tSeedProtoP\x01Z3github.com/cobotar/protocol/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\aSeed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\bSeed::V1b\x06proto3"
+	"\aactions\x18= \x03(\v2\x14.ar.v1.ActionMessageR\aactionsB\x96\x01\n" +
+	"\vcom.seed.v1B\tSeedProtoP\x01Z6github.com/cobotar/protocol/v2/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\aSeed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\bSeed::V1b\x06proto3"
 
 var (
 	file_seed_v1_seed_proto_rawDescOnce sync.Once

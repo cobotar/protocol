@@ -52,10 +52,10 @@ namespace Messages.Seed.V1 {
             "WV9QUk9DRVNTRVMQMhIiCh5TQVZFX1NFRURfRU5USVRZX1NFUVVFTkNFX1JV",
             "TlMQMxIeChpTQVZFX1NFRURfRU5USVRZX1RBU0tfUlVOUxA0Eh0KGVNBVkVf",
             "U0VFRF9FTlRJVFlfRkVFREJBQ0sQPBIcChhTQVZFX1NFRURfRU5USVRZX0FD",
-            "VElPTlMQPUKaAQoLY29tLnNlZWQudjFCEFNlZWRSZXF1ZXN0UHJvdG9QAVoz",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3NlZWQvdjE7",
-            "c2VlZHYxogIDU1hYqgIQTWVzc2FnZXMuU2VlZC5WMcoCB1NlZWRcVjHiAhNT",
-            "ZWVkXFYxXEdQQk1ldGFkYXRh6gIIU2VlZDo6VjFiBnByb3RvMw=="));
+            "VElPTlMQPUKdAQoLY29tLnNlZWQudjFCEFNlZWRSZXF1ZXN0UHJvdG9QAVo2",
+            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3NlZWQv",
+            "djE7c2VlZHYxogIDU1hYqgIQTWVzc2FnZXMuU2VlZC5WMcoCB1NlZWRcVjHi",
+            "AhNTZWVkXFYxXEdQQk1ldGFkYXRh6gIIU2VlZDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Seed.V1.SaveSeedEntity), }, null, new pbr::GeneratedClrTypeInfo[] {

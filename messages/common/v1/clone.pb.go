@@ -109,9 +109,9 @@ const file_common_v1_clone_proto_rawDesc = "" +
 	"\x04icon\x18\x04 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x05 \x01(\tR\vdescription\x12'\n" +
 	"\x0fidempotency_key\x18\n" +
-	" \x01(\tR\x0eidempotencyKeyB\xa2\x01\n" +
+	" \x01(\tR\x0eidempotencyKeyB\xa5\x01\n" +
 	"\rcom.common.v1B\n" +
-	"CloneProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"CloneProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

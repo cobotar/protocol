@@ -8,8 +8,8 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -304,8 +304,8 @@ const file_runtime_v1_actor_availability_requests_proto_rawDesc = "" +
 	"\x11expected_revision\x18\x05 \x01(\x04R\x10expectedRevision\"\x93\x01\n" +
 	"%ActorAvailabilityOverrideClearRequest\x12=\n" +
 	"\x15actor_availability_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb0\xec0\x01R\x13actorAvailabilityId\x12+\n" +
-	"\x11expected_revision\x18\x02 \x01(\x04R\x10expectedRevisionB\xbd\x01\n" +
-	"\x0ecom.runtime.v1B\x1eActorAvailabilityRequestsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"\x11expected_revision\x18\x02 \x01(\x04R\x10expectedRevisionB\xc0\x01\n" +
+	"\x0ecom.runtime.v1B\x1eActorAvailabilityRequestsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

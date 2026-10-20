@@ -8,9 +8,9 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/process/v1"
-	v11 "github.com/cobotar/protocol/messages/product/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/process/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/product/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -268,8 +268,8 @@ const file_runtime_v1_process_run_definitions_proto_rawDesc = "" +
 	"\x1bProcessRunDefinitionsSource\x12.\n" +
 	"*PROCESS_RUN_DEFINITIONS_SOURCE_UNSPECIFIED\x10\x00\x12)\n" +
 	"%PROCESS_RUN_DEFINITIONS_SOURCE_PINNED\x10\x01\x12)\n" +
-	"%PROCESS_RUN_DEFINITIONS_SOURCE_LATEST\x10\x02B\xb9\x01\n" +
-	"\x0ecom.runtime.v1B\x1aProcessRunDefinitionsProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"%PROCESS_RUN_DEFINITIONS_SOURCE_LATEST\x10\x02B\xbc\x01\n" +
+	"\x0ecom.runtime.v1B\x1aProcessRunDefinitionsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

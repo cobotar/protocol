@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_io_catalog.proto\x12\x08robot.v1*\x8c\x04\n\x13RobotIORegisterKind\x12&\n\"ROBOT_IO_REGISTER_KIND_UNSPECIFIED\x10\x00\x12(\n$ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT\x10\x01\x12)\n%ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT\x10\x02\x12\'\n#ROBOT_IO_REGISTER_KIND_ANALOG_INPUT\x10\x03\x12(\n$ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT\x10\x04\x12-\n)ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER\x10\n\x12/\n+ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER\x10\x0b\x12\x30\n,ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER\x10\x0c\x12.\n*ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER\x10\x14\x12\x30\n,ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER\x10\x15\x12\x31\n-ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER\x10\x16\x42\xa4\x01\n\x0c\x63om.robot.v1B\x13RobotIoCatalogProtoP\x01Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1frobot/v1/robot_io_catalog.proto\x12\x08robot.v1*\x8c\x04\n\x13RobotIORegisterKind\x12&\n\"ROBOT_IO_REGISTER_KIND_UNSPECIFIED\x10\x00\x12(\n$ROBOT_IO_REGISTER_KIND_DIGITAL_INPUT\x10\x01\x12)\n%ROBOT_IO_REGISTER_KIND_DIGITAL_OUTPUT\x10\x02\x12\'\n#ROBOT_IO_REGISTER_KIND_ANALOG_INPUT\x10\x03\x12(\n$ROBOT_IO_REGISTER_KIND_ANALOG_OUTPUT\x10\x04\x12-\n)ROBOT_IO_REGISTER_KIND_INPUT_BIT_REGISTER\x10\n\x12/\n+ROBOT_IO_REGISTER_KIND_INPUT_INT32_REGISTER\x10\x0b\x12\x30\n,ROBOT_IO_REGISTER_KIND_INPUT_DOUBLE_REGISTER\x10\x0c\x12.\n*ROBOT_IO_REGISTER_KIND_OUTPUT_BIT_REGISTER\x10\x14\x12\x30\n,ROBOT_IO_REGISTER_KIND_OUTPUT_INT32_REGISTER\x10\x15\x12\x31\n-ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER\x10\x16\x42\xa7\x01\n\x0c\x63om.robot.v1B\x13RobotIoCatalogProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'robot.v1.robot_io_catalog_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\023RobotIoCatalogProtoP\001Z5github.com/cobotar/protocol/messages/robot/v1;robotv1\242\002\003RXX\252\002\021Messages.Robot.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\014com.robot.v1B\023RobotIoCatalogProtoP\001Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\242\002\003RXX\252\002\021Messages.Robot.V1\312\002\010Robot\\V1\342\002\024Robot\\V1\\GPBMetadata\352\002\tRobot::V1'
   _globals['_ROBOTIOREGISTERKIND']._serialized_start=46
   _globals['_ROBOTIOREGISTERKIND']._serialized_end=570
 # @@protoc_insertion_point(module_scope)

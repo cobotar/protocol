@@ -8,9 +8,9 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
-	v1 "github.com/cobotar/protocol/messages/resources/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/common/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/resources/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -545,8 +545,8 @@ const file_ar_v1_ar_config_binding_proto_rawDesc = "" +
 	"#AR_RESOURCE_BINDING_STATUS_DEGRADED\x10\x02\x12*\n" +
 	"&AR_RESOURCE_BINDING_STATUS_UNSATISFIED\x10\x03\x12)\n" +
 	"%AR_RESOURCE_BINDING_STATUS_UNVERIFIED\x10\x04\x12&\n" +
-	"\"AR_RESOURCE_BINDING_STATUS_OFFLINE\x10\x05B\x90\x01\n" +
-	"\tcom.ar.v1B\x14ArConfigBindingProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\"AR_RESOURCE_BINDING_STATUS_OFFLINE\x10\x05B\x93\x01\n" +
+	"\tcom.ar.v1B\x14ArConfigBindingProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_ar_config_binding_proto_rawDescOnce sync.Once

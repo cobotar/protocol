@@ -8,8 +8,8 @@ package capabilityv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -776,8 +776,8 @@ const file_capability_v1_actor_skill_proto_rawDesc = "" +
 	"$SKILL_NEXT_ACTION_REFRESHER_TRAINING\x10\x02\x12&\n" +
 	"\"SKILL_NEXT_ACTION_RE_CERTIFICATION\x10\x03\x12/\n" +
 	"+SKILL_NEXT_ACTION_EXTRA_VALIDATION_REQUIRED\x10\x04\x122\n" +
-	".SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED\x10\x05B\xc3\x01\n" +
-	"\x11com.capability.v1B\x0fActorSkillProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
+	".SKILL_NEXT_ACTION_SUPERVISOR_APPROVAL_REQUIRED\x10\x05B\xc6\x01\n" +
+	"\x11com.capability.v1B\x0fActorSkillProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 
 var (
 	file_capability_v1_actor_skill_proto_rawDescOnce sync.Once

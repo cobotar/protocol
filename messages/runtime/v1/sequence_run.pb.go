@@ -8,8 +8,8 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -288,8 +288,8 @@ const file_runtime_v1_sequence_run_proto_rawDesc = "" +
 	"\x18SEQUENCE_RUN_STATE_READY\x10\x02\x12\"\n" +
 	"\x1eSEQUENCE_RUN_STATE_IN_PROGRESS\x10\x03\x12\x1b\n" +
 	"\x17SEQUENCE_RUN_STATE_DONE\x10\x04\x12\x1e\n" +
-	"\x1aSEQUENCE_RUN_STATE_ABORTED\x10\x05B\xaf\x01\n" +
-	"\x0ecom.runtime.v1B\x10SequenceRunProtoP\x01Z9github.com/cobotar/protocol/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
+	"\x1aSEQUENCE_RUN_STATE_ABORTED\x10\x05B\xb2\x01\n" +
+	"\x0ecom.runtime.v1B\x10SequenceRunProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\n" +
 	"Runtime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\vRuntime::V1b\x06proto3"
 
 var (

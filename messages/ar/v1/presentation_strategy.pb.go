@@ -8,8 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -681,8 +681,8 @@ const file_ar_v1_presentation_strategy_proto_rawDesc = "" +
 	"!PRESENTATION_FIDELITY_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19PRESENTATION_FIDELITY_LOW\x10\x01\x12 \n" +
 	"\x1cPRESENTATION_FIDELITY_MEDIUM\x10\x02\x12\x1e\n" +
-	"\x1aPRESENTATION_FIDELITY_HIGH\x10\x03B\x95\x01\n" +
-	"\tcom.ar.v1B\x19PresentationStrategyProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x1aPRESENTATION_FIDELITY_HIGH\x10\x03B\x98\x01\n" +
+	"\tcom.ar.v1B\x19PresentationStrategyProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_presentation_strategy_proto_rawDescOnce sync.Once

@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/color.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"\x89\x01\n\x05\x43olor\x12\x1c\n\x03red\x18\x01 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x03red\x12 \n\x05green\x18\x02 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x05green\x12\x1e\n\x04\x62lue\x18\x03 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x04\x62lue\x12 \n\x05\x61lpha\x18\x04 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x05\x61lphaB\xa2\x01\n\rcom.common.v1B\nColorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/color.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"\x89\x01\n\x05\x43olor\x12\x1c\n\x03red\x18\x01 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x03red\x12 \n\x05green\x18\x02 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x05green\x12\x1e\n\x04\x62lue\x18\x03 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x04\x62lue\x12 \n\x05\x61lpha\x18\x04 \x01(\rB\n\xbaH\x07*\x05\x18\xff\x01(\x00R\x05\x61lphaB\xa5\x01\n\rcom.common.v1B\nColorProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.color_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\nColorProtoP\001Z7github.com/cobotar/protocol/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\nColorProtoP\001Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
   _globals['_COLOR'].fields_by_name['red']._loaded_options = None
   _globals['_COLOR'].fields_by_name['red']._serialized_options = b'\272H\007*\005\030\377\001(\000'
   _globals['_COLOR'].fields_by_name['green']._loaded_options = None

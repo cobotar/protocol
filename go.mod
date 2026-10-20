@@ -1,4 +1,4 @@
-module github.com/cobotar/protocol
+module github.com/cobotar/protocol/v2
 
 go 1.24.2
 

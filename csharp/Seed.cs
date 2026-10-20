@@ -84,10 +84,10 @@ namespace Messages.Seed.V1 {
             "CXRhc2tfcnVucxg0IAMoCzITLnJ1bnRpbWUudjEuVGFza1J1blIIdGFza1J1",
             "bnMSMgoIZmVlZGJhY2sYPCADKAsyFi5hci52MS5GZWVkYmFja01lc3NhZ2VS",
             "CGZlZWRiYWNrEi4KB2FjdGlvbnMYPSADKAsyFC5hci52MS5BY3Rpb25NZXNz",
-            "YWdlUgdhY3Rpb25zQpMBCgtjb20uc2VlZC52MUIJU2VlZFByb3RvUAFaM2dp",
-            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9zZWVkL3YxO3Nl",
-            "ZWR2MaICA1NYWKoCEE1lc3NhZ2VzLlNlZWQuVjHKAgdTZWVkXFYx4gITU2Vl",
-            "ZFxWMVxHUEJNZXRhZGF0YeoCCFNlZWQ6OlYxYgZwcm90bzM="));
+            "YWdlUgdhY3Rpb25zQpYBCgtjb20uc2VlZC52MUIJU2VlZFByb3RvUAFaNmdp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9zZWVkL3Yx",
+            "O3NlZWR2MaICA1NYWKoCEE1lc3NhZ2VzLlNlZWQuVjHKAgdTZWVkXFYx4gIT",
+            "U2VlZFxWMVxHUEJNZXRhZGF0YeoCCFNlZWQ6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.AR.V1.ActionReflection.Descriptor, global::Messages.AR.V1.FeedbackReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Capability.V1.SkillDefinitionReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Messages.Product.V1.PartDefinitionReflection.Descriptor, global::Messages.Product.V1.PartInstanceReflection.Descriptor, global::Messages.Product.V1.ProductDefinitionReflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Resources.V1.AssetInstanceReflection.Descriptor, global::Messages.Resources.V1.CellDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Resources.V1.ContainerInstanceReflection.Descriptor, global::Messages.Resources.V1.DeviceReflection.Descriptor, global::Messages.Resources.V1.LineDefinitionReflection.Descriptor, global::Messages.Resources.V1.MarkerInstanceReflection.Descriptor, global::Messages.Resources.V1.ModelReflection.Descriptor, global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor, global::Messages.Resources.V1.RobotInstanceReflection.Descriptor, global::Messages.Resources.V1.StationDefinitionReflection.Descriptor, global::Messages.Resources.V1.ToolDefinitionReflection.Descriptor, global::Messages.Resources.V1.ToolInstanceReflection.Descriptor, global::Messages.Resources.V1.WorkerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ProcessRunReflection.Descriptor, global::Messages.Runtime.V1.SequenceRunReflection.Descriptor, global::Messages.Runtime.V1.TaskRunReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

@@ -8,7 +8,7 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -444,8 +444,8 @@ const file_resources_v1_device_proto_rawDesc = "" +
 	"\x1eDEVICE_BATTERY_STATUS_CHARGING\x10\x01\x12%\n" +
 	"!DEVICE_BATTERY_STATUS_DISCHARGING\x10\x02\x12&\n" +
 	"\"DEVICE_BATTERY_STATUS_NOT_CHARGING\x10\x03\x12\x1e\n" +
-	"\x1aDEVICE_BATTERY_STATUS_FULL\x10\x04B\xb8\x01\n" +
-	"\x10com.resources.v1B\vDeviceProtoP\x01Z=github.com/cobotar/protocol/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
+	"\x1aDEVICE_BATTERY_STATUS_FULL\x10\x04B\xbb\x01\n" +
+	"\x10com.resources.v1B\vDeviceProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\fResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3"
 
 var (
 	file_resources_v1_device_proto_rawDescOnce sync.Once

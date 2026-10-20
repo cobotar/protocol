@@ -8,7 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -521,8 +521,8 @@ const file_ar_v1_function_proto_rawDesc = "" +
 	"&FUNCTION_TYPE_ROBOT_CONFIGURABLE_INPUT\x10x\x12+\n" +
 	"'FUNCTION_TYPE_ROBOT_CONFIGURABLE_OUTPUT\x10y\x12\x1e\n" +
 	"\x1aFUNCTION_TYPE_ROBOT_ANCHOR\x10z\x12\x1d\n" +
-	"\x19FUNCTION_TYPE_ROBOT_STATE\x10{B\x89\x01\n" +
-	"\tcom.ar.v1B\rFunctionProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x19FUNCTION_TYPE_ROBOT_STATE\x10{B\x8c\x01\n" +
+	"\tcom.ar.v1B\rFunctionProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_function_proto_rawDescOnce sync.Once

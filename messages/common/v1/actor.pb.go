@@ -138,9 +138,9 @@ const file_common_v1_actor_proto_rawDesc = "" +
 	"\x16ACTOR_KIND_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10ACTOR_KIND_HUMAN\x10\x01\x12\x14\n" +
 	"\x10ACTOR_KIND_ROBOT\x10\x02\x12\x15\n" +
-	"\x11ACTOR_KIND_HYBRID\x10\x03B\xa2\x01\n" +
+	"\x11ACTOR_KIND_HYBRID\x10\x03B\xa5\x01\n" +
 	"\rcom.common.v1B\n" +
-	"ActorProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"ActorProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

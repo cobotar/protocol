@@ -41,12 +41,12 @@ namespace Messages.Runtime.V1 {
             "BBIuCipSRVNUUklDVElPTl9UWVBFX1JFUVVJUkVfVklTSU9OX1ZBTElEQVRJ",
             "T04QBRIqCiZSRVNUUklDVElPTl9UWVBFX1JFUVVJUkVfVE9PTF9GRUVEQkFD",
             "SxAGEigKJFJFU1RSSUNUSU9OX1RZUEVfUkVRVUlSRV9IVU1BTl9BQ1RPUhAH",
-            "EigKJFJFU1RSSUNUSU9OX1RZUEVfUkVRVUlSRV9ST0JPVF9BQ1RPUhAIQrYB",
-            "Cg5jb20ucnVudGltZS52MUIXUnVudGltZVJlc3RyaWN0aW9uUHJvdG9QAVo5",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUv",
-            "djE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1",
-            "bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6",
-            "VjFiBnByb3RvMw=="));
+            "EigKJFJFU1RSSUNUSU9OX1RZUEVfUkVRVUlSRV9ST0JPVF9BQ1RPUhAIQrkB",
+            "Cg5jb20ucnVudGltZS52MUIXUnVudGltZVJlc3RyaWN0aW9uUHJvdG9QAVo8",
+            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3J1bnRp",
+            "bWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoC",
+            "ClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGlt",
+            "ZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.RestrictionType), }, null, new pbr::GeneratedClrTypeInfo[] {

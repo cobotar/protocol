@@ -175,8 +175,8 @@ const file_common_v1_key_value_constraint_proto_rawDesc = "" +
 	"\x16CONSTRAINT_OPERATOR_LT\x10\x05\x12\x1b\n" +
 	"\x17CONSTRAINT_OPERATOR_LTE\x10\x06\x12\x1a\n" +
 	"\x16CONSTRAINT_OPERATOR_IN\x10\a\x12\x1e\n" +
-	"\x1aCONSTRAINT_OPERATOR_NOT_IN\x10\bB\xaf\x01\n" +
-	"\rcom.common.v1B\x17KeyValueConstraintProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
+	"\x1aCONSTRAINT_OPERATOR_NOT_IN\x10\bB\xb2\x01\n" +
+	"\rcom.common.v1B\x17KeyValueConstraintProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 
 var (

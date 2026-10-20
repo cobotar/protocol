@@ -7,7 +7,7 @@
 package capabilityv1
 
 import (
-	v1 "github.com/cobotar/protocol/messages/common/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -90,8 +90,8 @@ const file_capability_v1_actor_constraint_proto_rawDesc = "" +
 	"\x0fActorConstraint\x12D\n" +
 	"\x13allowed_actor_kinds\x18\x01 \x03(\x0e2\x14.common.v1.ActorKindR\x11allowedActorKinds\x12K\n" +
 	"\x12collaboration_mode\x18\x02 \x01(\x0e2\x1c.common.v1.CollaborationModeR\x11collaborationMode\x12?\n" +
-	"\vconstraints\x18\x03 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraintsB\xc8\x01\n" +
-	"\x11com.capability.v1B\x14ActorConstraintProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
+	"\vconstraints\x18\x03 \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraintsB\xcb\x01\n" +
+	"\x11com.capability.v1B\x14ActorConstraintProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 
 var (
 	file_capability_v1_actor_constraint_proto_rawDescOnce sync.Once

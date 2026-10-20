@@ -8,8 +8,8 @@ package capabilityv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -451,8 +451,8 @@ const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\x12\x18\n" +
 	"\x14TOOL_ROLE_HANDLE_ESD\x10\v\x12\x1f\n" +
 	"\x1bTOOL_ROLE_VISUAL_INSPECTION\x10\f\x12\x18\n" +
-	"\x14TOOL_ROLE_WIPE_CLEAN\x10\rB\xc8\x01\n" +
-	"\x11com.capability.v1B\x14SkillDefinitionProtoP\x01Z?github.com/cobotar/protocol/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
+	"\x14TOOL_ROLE_WIPE_CLEAN\x10\rB\xcb\x01\n" +
+	"\x11com.capability.v1B\x14SkillDefinitionProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03CXX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19Capability\\V1\\GPBMetadata\xea\x02\x0eCapability::V1b\x06proto3"
 
 var (
 	file_capability_v1_skill_definition_proto_rawDescOnce sync.Once

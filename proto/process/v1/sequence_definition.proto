@@ -7,7 +7,7 @@ import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_rule.proto";
 
 option csharp_namespace = "Messages.Process.V1";
-option go_package = "github.com/cobotar/protocol/messages/process/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/process/v1";
 
 // Defines how the children of a SequenceDefinition are executed and how the
 // sequence determines completion.

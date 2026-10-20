@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Service.V1";
-option go_package = "github.com/cobotar/protocol/messages/service/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/service/v1";
 
 // StorageSeedRecord identifies the configured seed composition most recently
 // applied to the stored data. It is absent when no seed composition has been

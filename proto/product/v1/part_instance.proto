@@ -7,7 +7,7 @@ import "geometry/v1/pose.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Product.V1";
-option go_package = "github.com/cobotar/protocol/messages/product/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 
 // QuantityStatus is a lightweight optional description of how much of a part
 // instance remains.

@@ -139,10 +139,10 @@ namespace Messages.AR.V1 {
             "Ul9SVU5fU0VMRUNUSU9OX0NVUlJFTlRfQVNTSUdORUQQAhIiCh5BUl9SVU5f",
             "U0VMRUNUSU9OX05FWFRfRVhQRUNURUQQAxIjCh9BUl9SVU5fU0VMRUNUSU9O",
             "X0xBU1RfQ09NUExFVEVEEAQSIwofQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9J",
-            "Tl9FUlJPUhAFQooBCgljb20uYXIudjFCDklucHV0U2xvdFByb3RvUAFaL2dp",
-            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9hci92MTthcnYx",
-            "ogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQQk1l",
-            "dGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
+            "Tl9FUlJPUhAFQo0BCgljb20uYXIudjFCDklucHV0U2xvdFByb3RvUAFaMmdp",
+            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9hci92MTth",
+            "cnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQ",
+            "Qk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), typeof(global::Messages.AR.V1.ARRunSelection), }, null, new pbr::GeneratedClrTypeInfo[] {

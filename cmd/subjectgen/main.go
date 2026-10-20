@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/cobotar/protocol/internal/subjectgen"
+	"github.com/cobotar/protocol/v2/internal/subjectgen"
 )
 
 func main() {

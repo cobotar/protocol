@@ -5,7 +5,7 @@ import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Variance.V1";
-option go_package = "github.com/cobotar/protocol/messages/variance/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/variance/v1";
 
 message VariantOption {
   string id = 1 [

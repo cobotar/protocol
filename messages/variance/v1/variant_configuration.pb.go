@@ -128,8 +128,8 @@ const file_variance_v1_variant_configuration_proto_rawDesc = "" +
 	"\x14VariantConfiguration\x12=\n" +
 	"\n" +
 	"selections\x18\x01 \x03(\v2\x1d.variance.v1.VariantSelectionR\n" +
-	"selectionsB\xbf\x01\n" +
-	"\x0fcom.variance.v1B\x19VariantConfigurationProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
+	"selectionsB\xc2\x01\n" +
+	"\x0fcom.variance.v1B\x19VariantConfigurationProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (
 	file_variance_v1_variant_configuration_proto_rawDescOnce sync.Once

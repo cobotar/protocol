@@ -8,9 +8,9 @@ package processv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/product/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v1 "github.com/cobotar/protocol/messages/variance/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/product/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -825,8 +825,8 @@ const file_process_v1_kitting_generation_proto_rawDesc = "" +
 	"\x16KittingTaskGranularity\x12(\n" +
 	"$KITTING_TASK_GRANULARITY_UNSPECIFIED\x10\x00\x12,\n" +
 	"(KITTING_TASK_GRANULARITY_ATOMIC_TRANSFER\x10\x01\x12+\n" +
-	"'KITTING_TASK_GRANULARITY_PICK_AND_PLACE\x10\x02B\xb5\x01\n" +
-	"\x0ecom.process.v1B\x16KittingGenerationProtoP\x01Z9github.com/cobotar/protocol/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
+	"'KITTING_TASK_GRANULARITY_PICK_AND_PLACE\x10\x02B\xb8\x01\n" +
+	"\x0ecom.process.v1B\x16KittingGenerationProtoP\x01Z<github.com/cobotar/protocol/v2/messages/process/v1;processv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Process.V1\xca\x02\n" +
 	"Process\\V1\xe2\x02\x16Process\\V1\\GPBMetadata\xea\x02\vProcess::V1b\x06proto3"
 
 var (

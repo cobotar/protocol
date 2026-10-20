@@ -8,7 +8,7 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -98,8 +98,8 @@ const file_ar_v1_feedback_features_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x125\n" +
 	"\rproperty_keys\x18\x03 \x03(\tB\x10\xbaH\r\x92\x01\n" +
-	"\x18\x01\"\x06r\x04\xe0\xf3\x04\x01R\fpropertyKeysB\x91\x01\n" +
-	"\tcom.ar.v1B\x15FeedbackFeaturesProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x18\x01\"\x06r\x04\xe0\xf3\x04\x01R\fpropertyKeysB\x94\x01\n" +
+	"\tcom.ar.v1B\x15FeedbackFeaturesProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_feedback_features_proto_rawDescOnce sync.Once

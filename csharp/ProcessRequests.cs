@@ -150,11 +150,12 @@ namespace Messages.Runtime.V1 {
             "S0VEEAMqoAEKEVByb2Nlc3NMb2FkU3RhdHVzEiMKH1BST0NFU1NfTE9BRF9T",
             "VEFUVVNfVU5TUEVDSUZJRUQQABInCiNQUk9DRVNTX0xPQURfU1RBVFVTX1BS",
             "RUNIRUNLX0ZBSUxFRBABEh0KGVBST0NFU1NfTE9BRF9TVEFUVVNfUkVBRFkQ",
-            "AhIeChpQUk9DRVNTX0xPQURfU1RBVFVTX0xPQURFRBADQrMBCg5jb20ucnVu",
-            "dGltZS52MUIUUHJvY2Vzc1JlcXVlc3RzUHJvdG9QAVo5Z2l0aHViLmNvbS9j",
-            "b2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYx",
-            "ogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZS",
-            "dW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "AhIeChpQUk9DRVNTX0xPQURfU1RBVFVTX0xPQURFRBADQrYBCg5jb20ucnVu",
+            "dGltZS52MUIUUHJvY2Vzc1JlcXVlc3RzUHJvdG9QAVo8Z2l0aHViLmNvbS9j",
+            "b2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGlt",
+            "ZXYxogIDUlhYqgITTWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHi",
+            "AhZSdW50aW1lXFYxXEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Runtime.V1.ProcessRunReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessLoadStrategy), typeof(global::Messages.Runtime.V1.AllocationStrategy), typeof(global::Messages.Runtime.V1.ProcessLoadFailure), typeof(global::Messages.Runtime.V1.ProcessRunIssueSeverity), typeof(global::Messages.Runtime.V1.RequirementImportance), typeof(global::Messages.Runtime.V1.ProcessRunPrecheckStatus), typeof(global::Messages.Runtime.V1.ProcessLoadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {

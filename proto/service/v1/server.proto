@@ -5,7 +5,7 @@ import "buf/validate/validate.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Messages.Service.V1";
-option go_package = "github.com/cobotar/protocol/messages/service/v1";
+option go_package = "github.com/cobotar/protocol/v2/messages/service/v1";
 
 message ServerInfo {
   string service = 1 [(buf.validate.field).required = true]; // E.g. "backend"

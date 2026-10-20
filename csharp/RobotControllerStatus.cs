@@ -59,11 +59,11 @@ namespace Messages.Robot.V1 {
             "GVJPQk9UX01PREVfQ09ORklSTV9TQUZFVFkQAxIWChJST0JPVF9NT0RFX0JP",
             "T1RJTkcQBBIYChRST0JPVF9NT0RFX1BPV0VSX09GRhAFEhcKE1JPQk9UX01P",
             "REVfUE9XRVJfT04QBhITCg9ST0JPVF9NT0RFX0lETEUQBxIXChNST0JPVF9N",
-            "T0RFX0JBQ0tESVZFEAgSFgoSUk9CT1RfTU9ERV9SVU5OSU5HEAlCqwEKDGNv",
-            "bS5yb2JvdC52MUIaUm9ib3RDb250cm9sbGVyU3RhdHVzUHJvdG9QAVo1Z2l0",
-            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3Jv",
-            "Ym90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIU",
-            "Um9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
+            "T0RFX0JBQ0tESVZFEAgSFgoSUk9CT1RfTU9ERV9SVU5OSU5HEAlCrgEKDGNv",
+            "bS5yb2JvdC52MUIaUm9ib3RDb250cm9sbGVyU3RhdHVzUHJvdG9QAVo4Z2l0",
+            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3JvYm90L3Yx",
+            "O3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx",
+            "4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Robot.V1.ProgramStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotControlAuthority), typeof(global::Messages.Robot.V1.RobotOperationalMode), typeof(global::Messages.Robot.V1.RobotSafetyStatus), typeof(global::Messages.Robot.V1.RobotMode), }, null, new pbr::GeneratedClrTypeInfo[] {

@@ -8,9 +8,9 @@ package productv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/messages/common/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
-	v1 "github.com/cobotar/protocol/messages/variance/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/common/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -189,8 +189,8 @@ const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\x05nodes\x18\a \x03(\v2\x18.product.v1.AssemblyNodeR\x05nodes\x12M\n" +
 	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"I\n" +
 	"\x12ProductDefinitions\x123\n" +
-	"\x05items\x18\x01 \x03(\v2\x1d.product.v1.ProductDefinitionR\x05itemsB\xb5\x01\n" +
-	"\x0ecom.product.v1B\x16ProductDefinitionProtoP\x01Z9github.com/cobotar/protocol/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.product.v1.ProductDefinitionR\x05itemsB\xb8\x01\n" +
+	"\x0ecom.product.v1B\x16ProductDefinitionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
 	"Product\\V1\xe2\x02\x16Product\\V1\\GPBMetadata\xea\x02\vProduct::V1b\x06proto3"
 
 var (

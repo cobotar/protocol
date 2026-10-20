@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17seed/v1/seed_file.proto\x12\x07seed.v1\"x\n\x08SeedFile\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ile\x18\x05 \x01(\tR\x04\x66ile\"4\n\tSeedFiles\x12\'\n\x05items\x18\x01 \x03(\x0b\x32\x11.seed.v1.SeedFileR\x05itemsB\x97\x01\n\x0b\x63om.seed.v1B\rSeedFileProtoP\x01Z3github.com/cobotar/protocol/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\x07Seed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\x08Seed::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17seed/v1/seed_file.proto\x12\x07seed.v1\"x\n\x08SeedFile\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ile\x18\x05 \x01(\tR\x04\x66ile\"4\n\tSeedFiles\x12\'\n\x05items\x18\x01 \x03(\x0b\x32\x11.seed.v1.SeedFileR\x05itemsB\x9a\x01\n\x0b\x63om.seed.v1B\rSeedFileProtoP\x01Z6github.com/cobotar/protocol/v2/messages/seed/v1;seedv1\xa2\x02\x03SXX\xaa\x02\x10Messages.Seed.V1\xca\x02\x07Seed\\V1\xe2\x02\x13Seed\\V1\\GPBMetadata\xea\x02\x08Seed::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'seed.v1.seed_file_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\013com.seed.v1B\rSeedFileProtoP\001Z3github.com/cobotar/protocol/messages/seed/v1;seedv1\242\002\003SXX\252\002\020Messages.Seed.V1\312\002\007Seed\\V1\342\002\023Seed\\V1\\GPBMetadata\352\002\010Seed::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\013com.seed.v1B\rSeedFileProtoP\001Z6github.com/cobotar/protocol/v2/messages/seed/v1;seedv1\242\002\003SXX\252\002\020Messages.Seed.V1\312\002\007Seed\\V1\342\002\023Seed\\V1\\GPBMetadata\352\002\010Seed::V1'
   _globals['_SEEDFILE']._serialized_start=36
   _globals['_SEEDFILE']._serialized_end=156
   _globals['_SEEDFILES']._serialized_start=158

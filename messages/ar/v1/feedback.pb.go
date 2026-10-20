@@ -8,8 +8,8 @@ package arv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v1 "github.com/cobotar/protocol/messages/geometry/v1"
-	_ "github.com/cobotar/protocol/messages/validation/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/geometry/v1"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -670,8 +670,8 @@ const file_ar_v1_feedback_proto_rawDesc = "" +
 	"\x12FEEDBACK_TYPE_ICON\x10\xc9\x01\x12\x1c\n" +
 	"\x17FEEDBACK_TYPE_HIGHLIGHT\x10\xca\x01\x12\x17\n" +
 	"\x12FEEDBACK_TYPE_ZONE\x10\xcb\x01\x12\x1d\n" +
-	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10\xcc\x01B\x89\x01\n" +
-	"\tcom.ar.v1B\rFeedbackProtoP\x01Z/github.com/cobotar/protocol/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
+	"\x18FEEDBACK_TYPE_PLAY_SOUND\x10\xcc\x01B\x8c\x01\n" +
+	"\tcom.ar.v1B\rFeedbackProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03AXX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05Ar\\V1\xe2\x02\x11Ar\\V1\\GPBMetadata\xea\x02\x06Ar::V1b\x06proto3"
 
 var (
 	file_ar_v1_feedback_proto_rawDescOnce sync.Once

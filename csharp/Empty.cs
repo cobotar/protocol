@@ -25,10 +25,11 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVjb21tb24vdjEvZW1wdHkucHJvdG8SCWNvbW1vbi52MSIOCgxFbXB0eU1l",
-            "c3NhZ2VCogEKDWNvbS5jb21tb24udjFCCkVtcHR5UHJvdG9QAVo3Z2l0aHVi",
-            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL2NvbW1vbi92MTtjb21t",
-            "b252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeIC",
-            "FUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
+            "c3NhZ2VCpQEKDWNvbS5jb21tb24udjFCCkVtcHR5UHJvdG9QAVo6Z2l0aHVi",
+            "LmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL2NvbW1vbi92MTtj",
+            "b21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxW",
+            "MeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

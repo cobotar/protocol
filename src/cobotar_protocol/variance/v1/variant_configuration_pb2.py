@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'variance/v1/variant_configuration.proto\x12\x0bvariance.v1\"H\n\x10VariantSelection\x12\x17\n\x07\x61xis_id\x18\x01 \x01(\tR\x06\x61xisId\x12\x1b\n\toption_id\x18\x02 \x01(\tR\x08optionId\"U\n\x14VariantConfiguration\x12=\n\nselections\x18\x01 \x03(\x0b\x32\x1d.variance.v1.VariantSelectionR\nselectionsB\xbf\x01\n\x0f\x63om.variance.v1B\x19VariantConfigurationProtoP\x01Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'variance/v1/variant_configuration.proto\x12\x0bvariance.v1\"H\n\x10VariantSelection\x12\x17\n\x07\x61xis_id\x18\x01 \x01(\tR\x06\x61xisId\x12\x1b\n\toption_id\x18\x02 \x01(\tR\x08optionId\"U\n\x14VariantConfiguration\x12=\n\nselections\x18\x01 \x03(\x0b\x32\x1d.variance.v1.VariantSelectionR\nselectionsB\xc2\x01\n\x0f\x63om.variance.v1B\x19VariantConfigurationProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'variance.v1.variant_configuration_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.variance.v1B\031VariantConfigurationProtoP\001Z;github.com/cobotar/protocol/messages/variance/v1;variancev1\242\002\003VXX\252\002\024Messages.Variance.V1\312\002\013Variance\\V1\342\002\027Variance\\V1\\GPBMetadata\352\002\014Variance::V1'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\017com.variance.v1B\031VariantConfigurationProtoP\001Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\242\002\003VXX\252\002\024Messages.Variance.V1\312\002\013Variance\\V1\342\002\027Variance\\V1\\GPBMetadata\352\002\014Variance::V1'
   _globals['_VARIANTSELECTION']._serialized_start=56
   _globals['_VARIANTSELECTION']._serialized_end=128
   _globals['_VARIANTCONFIGURATION']._serialized_start=130
