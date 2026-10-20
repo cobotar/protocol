@@ -187,16 +187,19 @@
 - [robot/v1/robot_adapter.proto](#robot_v1_robot_adapter-proto)
     - [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability)
     - [RobotAdapterInfoMessage](#robot-v1-RobotAdapterInfoMessage)
+    - [RobotAdapterPlanCapability](#robot-v1-RobotAdapterPlanCapability)
     - [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability)
     - [RobotControllerIdentity](#robot-v1-RobotControllerIdentity)
   
     - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
+    - [RobotAdapterPlanType](#robot-v1-RobotAdapterPlanType)
     - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
   
 - [resources/v1/resource_requirement.proto](#resources_v1_resource_requirement-proto)
     - [ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement)
     - [ResourceAssetTypeRequirement](#resources-v1-ResourceAssetTypeRequirement)
     - [ResourceCommandRequirement](#resources-v1-ResourceCommandRequirement)
+    - [ResourcePlanRequirement](#resources-v1-ResourcePlanRequirement)
     - [ResourceRequirement](#resources-v1-ResourceRequirement)
     - [ResourceRequirements](#resources-v1-ResourceRequirements)
     - [ResourceSignalRequirement](#resources-v1-ResourceSignalRequirement)
@@ -629,6 +632,7 @@
 - [robot/v1/program_state_request.proto](#robot_v1_program_state_request-proto)
     - [AcknowledgeRobot](#robot-v1-AcknowledgeRobot)
     - [ProgramStateRequest](#robot-v1-ProgramStateRequest)
+    - [RobotFreeDriveRequest](#robot-v1-RobotFreeDriveRequest)
   
 - [robot/v1/robot_controller_status.proto](#robot_v1_robot_controller_status-proto)
     - [RobotControllerStatusMessage](#robot-v1-RobotControllerStatusMessage)
@@ -2563,6 +2567,7 @@ the adapter-specific signal id. Unspecified is valid for non-standard signals.
 | SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY | 60 | Part-feeder availability states. |
 | SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY | 61 |  |
 | SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE | 100 | Robot input that the robot program waits on to continue, e.g. after a worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command, so it is readable but not writable by clients. |
+| SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE | 101 | Robot output that puts the robot in free drive while it is set, e.g. a digital output wired to a configurable input with the Freedrive action, or a register that the robot program watches. The adapter sets it for FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but not writable by clients. |
 
 
  
@@ -2835,6 +2840,21 @@ TODO: add ToolRole or similar way to express capabilities?
 
 
 
+<a name="robot-v1-RobotAdapterPlanCapability"></a>
+
+### RobotAdapterPlanCapability
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [RobotAdapterPlanType](#robot-v1-RobotAdapterPlanType) |  |  |
+
+
+
+
+
+
 <a name="robot-v1-RobotAdapterTelemetryCapability"></a>
 
 ### RobotAdapterTelemetryCapability
@@ -2890,6 +2910,23 @@ TODO: add ToolRole or similar way to express capabilities?
 | ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON | 30 |  |
 | ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF | 31 |  |
 | ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE | 32 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START | 40 | Free drive: the robot can be moved by hand. START and STOP are idempotent, like PROGRAM_PLAY and PROGRAM_PAUSE. |
+| ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP | 41 |  |
+
+
+
+<a name="robot-v1-RobotAdapterPlanType"></a>
+
+### RobotAdapterPlanType
+RobotAdapterPlanType is a plan of the robot&#39;s next motion that an adapter
+publishes, however it gets it (e.g. from the robot program).
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED | 0 |  |
+| ROBOT_ADAPTER_PLAN_TYPE_PATH | 1 | The TCP path of the next motion: plan.robot.path.{robot_instance_id}.{plan_id}. |
+| ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS | 2 | The waypoints of the next motion. |
+| ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES | 3 | The joint angles the robot will move to. |
 
 
 
@@ -2971,6 +3008,22 @@ consumer property that resolves to a robot or asset input slot.
 
 
 
+<a name="resources-v1-ResourcePlanRequirement"></a>
+
+### ResourcePlanRequirement
+ResourcePlanRequirement asks for a plan of the robot&#39;s next motion, which the
+robot&#39;s adapter definition lists in plans.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_plan | [robot.v1.RobotAdapterPlanType](#robot-v1-RobotAdapterPlanType) |  |  |
+
+
+
+
+
+
 <a name="resources-v1-ResourceRequirement"></a>
 
 ### ResourceRequirement
@@ -2984,6 +3037,7 @@ ResourceRequirement describes one capability that a resource must provide.
 | telemetry | [ResourceTelemetryRequirement](#resources-v1-ResourceTelemetryRequirement) |  |  |
 | signal | [ResourceSignalRequirement](#resources-v1-ResourceSignalRequirement) |  |  |
 | asset_type | [ResourceAssetTypeRequirement](#resources-v1-ResourceAssetTypeRequirement) |  |  |
+| plan | [ResourcePlanRequirement](#resources-v1-ResourcePlanRequirement) |  |  |
 
 
 
@@ -8656,6 +8710,7 @@ implementation independently of any connected robot instance.
 | supported_robot_types | [RobotType](#resources-v1-RobotType) | repeated |  |
 | commands | [robot.v1.RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability) | repeated |  |
 | telemetry | [robot.v1.RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability) | repeated |  |
+| plans | [robot.v1.RobotAdapterPlanCapability](#robot-v1-RobotAdapterPlanCapability) | repeated | Plans of the robot&#39;s next motion that the adapter publishes. |
 | configurable_io_register_kinds | [robot.v1.RobotIORegisterKind](#robot-v1-RobotIORegisterKind) | repeated | I/O register families that an adapter configuration may expose as named signals. |
 
 
@@ -9378,6 +9433,23 @@ ar_edit_permission.
 | ----- | ---- | ----- | ----------- |
 | robot_id | [string](#string) |  |  |
 | state | [ProgramState](#robot-v1-ProgramState) |  |  |
+
+
+
+
+
+
+<a name="robot-v1-RobotFreeDriveRequest"></a>
+
+### RobotFreeDriveRequest
+RobotFreeDriveRequest starts (enabled) or stops free drive, on
+command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_id | [string](#string) |  |  |
+| enabled | [bool](#bool) |  |  |
 
 
 

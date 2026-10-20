@@ -29,7 +29,7 @@ namespace Messages.Resources.V1 {
             "cmVzb3VyY2VzL3YxL3JvYm90X2RlZmluaXRpb24ucHJvdG8aHHJvYm90L3Yx",
             "L3JvYm90X2FkYXB0ZXIucHJvdG8aH3JvYm90L3YxL3JvYm90X2lvX2NhdGFs",
             "b2cucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVs",
-            "ZXMucHJvdG8ijwYKFlJvYm90QWRhcHRlckRlZmluaXRpb24SHAoCaWQYASAB",
+            "ZXMucHJvdG8iwAcKFlJvYm90QWRhcHRlckRlZmluaXRpb24SHAoCaWQYASAB",
             "KAlCDLpICXIEkPQEAcgBAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
             "UgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIsCgxh",
             "ZGFwdGVyX3R5cGUYBCABKAlCCbpIBnIEoPQEAVILYWRhcHRlclR5cGUSYAoV",
@@ -44,31 +44,35 @@ namespace Messages.Resources.V1 {
             "ugF5Ci9yb2JvdF9hZGFwdGVyX2RlZmluaXRpb24udGVsZW1ldHJ5LnVuaXF1",
             "ZV90eXBlcxIedGVsZW1ldHJ5IHR5cGVzIG11c3QgYmUgdW5pcXVlGiZ0aGlz",
             "Lm1hcChzdHJlYW0sIHN0cmVhbS50eXBlKS51bmlxdWUoKVIJdGVsZW1ldHJ5",
-            "EnUKHmNvbmZpZ3VyYWJsZV9pb19yZWdpc3Rlcl9raW5kcxgIIAMoDjIdLnJv",
-            "Ym90LnYxLlJvYm90SU9SZWdpc3RlcktpbmRCEbpIDpIBCxgBIgeCAQQQASAA",
-            "Uhtjb25maWd1cmFibGVJb1JlZ2lzdGVyS2luZHMizQQKF1JvYm90QWRhcHRl",
-            "ckRlZmluaXRpb25zErEECgVpdGVtcxgBIAMoCzIkLnJlc291cmNlcy52MS5S",
-            "b2JvdEFkYXB0ZXJEZWZpbml0aW9uQvQDukjwA7oBhwEKKnJvYm90X2FkYXB0",
-            "ZXJfZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2lkcxIrcm9ib3QgYWRhcHRl",
-            "ciBkZWZpbml0aW9uIGlkcyBtdXN0IGJlIHVuaXF1ZRosdGhpcy5tYXAoZGVm",
-            "aW5pdGlvbiwgZGVmaW5pdGlvbi5pZCkudW5pcXVlKCm6AcsBCixyb2JvdF9h",
-            "ZGFwdGVyX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9uYW1lcxJXcm9ib3Qg",
-            "YWRhcHRlciBkZWZpbml0aW9uIG5hbWVzIG11c3QgYmUgdW5pcXVlLCBpZ25v",
-            "cmluZyBjYXNlIGFuZCBzdXJyb3VuZGluZyB3aGl0ZXNwYWNlGkJ0aGlzLm1h",
-            "cChkZWZpbml0aW9uLCBkZWZpbml0aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNj",
-            "aWkoKSkudW5pcXVlKCm6AZIBCjRyb2JvdF9hZGFwdGVyX2RlZmluaXRpb25z",
-            "Lml0ZW1zLnVuaXF1ZV9hZGFwdGVyX3R5cGVzEiJyb2JvdCBhZGFwdGVyIHR5",
-            "cGVzIG11c3QgYmUgdW5pcXVlGjZ0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZp",
-            "bml0aW9uLmFkYXB0ZXJfdHlwZSkudW5pcXVlKClSBWl0ZW1zQsgBChBjb20u",
-            "cmVzb3VyY2VzLnYxQhtSb2JvdEFkYXB0ZXJEZWZpbml0aW9uUHJvdG9QAVo9",
-            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNl",
-            "cy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5W",
-            "McoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoC",
-            "DVJlc291cmNlczo6VjFiBnByb3RvMw=="));
+            "Eq4BCgVwbGFucxgJIAMoCzIkLnJvYm90LnYxLlJvYm90QWRhcHRlclBsYW5D",
+            "YXBhYmlsaXR5QnK6SG+6AWwKK3JvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbi5w",
+            "bGFucy51bmlxdWVfdHlwZXMSGXBsYW4gdHlwZXMgbXVzdCBiZSB1bmlxdWUa",
+            "InRoaXMubWFwKHBsYW4sIHBsYW4udHlwZSkudW5pcXVlKClSBXBsYW5zEnUK",
+            "HmNvbmZpZ3VyYWJsZV9pb19yZWdpc3Rlcl9raW5kcxgIIAMoDjIdLnJvYm90",
+            "LnYxLlJvYm90SU9SZWdpc3RlcktpbmRCEbpIDpIBCxgBIgeCAQQQASAAUhtj",
+            "b25maWd1cmFibGVJb1JlZ2lzdGVyS2luZHMizQQKF1JvYm90QWRhcHRlckRl",
+            "ZmluaXRpb25zErEECgVpdGVtcxgBIAMoCzIkLnJlc291cmNlcy52MS5Sb2Jv",
+            "dEFkYXB0ZXJEZWZpbml0aW9uQvQDukjwA7oBhwEKKnJvYm90X2FkYXB0ZXJf",
+            "ZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2lkcxIrcm9ib3QgYWRhcHRlciBk",
+            "ZWZpbml0aW9uIGlkcyBtdXN0IGJlIHVuaXF1ZRosdGhpcy5tYXAoZGVmaW5p",
+            "dGlvbiwgZGVmaW5pdGlvbi5pZCkudW5pcXVlKCm6AcsBCixyb2JvdF9hZGFw",
+            "dGVyX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9uYW1lcxJXcm9ib3QgYWRh",
+            "cHRlciBkZWZpbml0aW9uIG5hbWVzIG11c3QgYmUgdW5pcXVlLCBpZ25vcmlu",
+            "ZyBjYXNlIGFuZCBzdXJyb3VuZGluZyB3aGl0ZXNwYWNlGkJ0aGlzLm1hcChk",
+            "ZWZpbml0aW9uLCBkZWZpbml0aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNjaWko",
+            "KSkudW5pcXVlKCm6AZIBCjRyb2JvdF9hZGFwdGVyX2RlZmluaXRpb25zLml0",
+            "ZW1zLnVuaXF1ZV9hZGFwdGVyX3R5cGVzEiJyb2JvdCBhZGFwdGVyIHR5cGVz",
+            "IG11c3QgYmUgdW5pcXVlGjZ0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0",
+            "aW9uLmFkYXB0ZXJfdHlwZSkudW5pcXVlKClSBWl0ZW1zQsgBChBjb20ucmVz",
+            "b3VyY2VzLnYxQhtSb2JvdEFkYXB0ZXJEZWZpbml0aW9uUHJvdG9QAVo9Z2l0",
+            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92",
+            "MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoC",
+            "DFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJl",
+            "c291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor, global::Messages.Robot.V1.RobotAdapterReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotAdapterDefinition), global::Messages.Resources.V1.RobotAdapterDefinition.Parser, new[]{ "Id", "Name", "Description", "AdapterType", "SupportedRobotTypes", "Commands", "Telemetry", "ConfigurableIoRegisterKinds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotAdapterDefinition), global::Messages.Resources.V1.RobotAdapterDefinition.Parser, new[]{ "Id", "Name", "Description", "AdapterType", "SupportedRobotTypes", "Commands", "Telemetry", "Plans", "ConfigurableIoRegisterKinds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotAdapterDefinitions), global::Messages.Resources.V1.RobotAdapterDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -122,6 +126,7 @@ namespace Messages.Resources.V1 {
       supportedRobotTypes_ = other.supportedRobotTypes_.Clone();
       commands_ = other.commands_.Clone();
       telemetry_ = other.telemetry_.Clone();
+      plans_ = other.plans_.Clone();
       configurableIoRegisterKinds_ = other.configurableIoRegisterKinds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -216,6 +221,20 @@ namespace Messages.Resources.V1 {
       get { return telemetry_; }
     }
 
+    /// <summary>Field number for the "plans" field.</summary>
+    public const int PlansFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.Robot.V1.RobotAdapterPlanCapability> _repeated_plans_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.Robot.V1.RobotAdapterPlanCapability.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterPlanCapability> plans_ = new pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterPlanCapability>();
+    /// <summary>
+    /// Plans of the robot's next motion that the adapter publishes.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Robot.V1.RobotAdapterPlanCapability> Plans {
+      get { return plans_; }
+    }
+
     /// <summary>Field number for the "configurable_io_register_kinds" field.</summary>
     public const int ConfigurableIoRegisterKindsFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Messages.Robot.V1.RobotIORegisterKind> _repeated_configurableIoRegisterKinds_codec
@@ -252,6 +271,7 @@ namespace Messages.Resources.V1 {
       if(!supportedRobotTypes_.Equals(other.supportedRobotTypes_)) return false;
       if(!commands_.Equals(other.commands_)) return false;
       if(!telemetry_.Equals(other.telemetry_)) return false;
+      if(!plans_.Equals(other.plans_)) return false;
       if(!configurableIoRegisterKinds_.Equals(other.configurableIoRegisterKinds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -267,6 +287,7 @@ namespace Messages.Resources.V1 {
       hash ^= supportedRobotTypes_.GetHashCode();
       hash ^= commands_.GetHashCode();
       hash ^= telemetry_.GetHashCode();
+      hash ^= plans_.GetHashCode();
       hash ^= configurableIoRegisterKinds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -306,6 +327,7 @@ namespace Messages.Resources.V1 {
       commands_.WriteTo(output, _repeated_commands_codec);
       telemetry_.WriteTo(output, _repeated_telemetry_codec);
       configurableIoRegisterKinds_.WriteTo(output, _repeated_configurableIoRegisterKinds_codec);
+      plans_.WriteTo(output, _repeated_plans_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -336,6 +358,7 @@ namespace Messages.Resources.V1 {
       commands_.WriteTo(ref output, _repeated_commands_codec);
       telemetry_.WriteTo(ref output, _repeated_telemetry_codec);
       configurableIoRegisterKinds_.WriteTo(ref output, _repeated_configurableIoRegisterKinds_codec);
+      plans_.WriteTo(ref output, _repeated_plans_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -361,6 +384,7 @@ namespace Messages.Resources.V1 {
       size += supportedRobotTypes_.CalculateSize(_repeated_supportedRobotTypes_codec);
       size += commands_.CalculateSize(_repeated_commands_codec);
       size += telemetry_.CalculateSize(_repeated_telemetry_codec);
+      size += plans_.CalculateSize(_repeated_plans_codec);
       size += configurableIoRegisterKinds_.CalculateSize(_repeated_configurableIoRegisterKinds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -389,6 +413,7 @@ namespace Messages.Resources.V1 {
       supportedRobotTypes_.Add(other.supportedRobotTypes_);
       commands_.Add(other.commands_);
       telemetry_.Add(other.telemetry_);
+      plans_.Add(other.plans_);
       configurableIoRegisterKinds_.Add(other.configurableIoRegisterKinds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -443,6 +468,10 @@ namespace Messages.Resources.V1 {
             configurableIoRegisterKinds_.AddEntriesFrom(input, _repeated_configurableIoRegisterKinds_codec);
             break;
           }
+          case 74: {
+            plans_.AddEntriesFrom(input, _repeated_plans_codec);
+            break;
+          }
         }
       }
     #endif
@@ -494,6 +523,10 @@ namespace Messages.Resources.V1 {
           case 66:
           case 64: {
             configurableIoRegisterKinds_.AddEntriesFrom(ref input, _repeated_configurableIoRegisterKinds_codec);
+            break;
+          }
+          case 74: {
+            plans_.AddEntriesFrom(ref input, _repeated_plans_codec);
             break;
           }
         }

@@ -25,6 +25,24 @@ enum RobotAdapterCommandType {
   ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON = 30;
   ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF = 31;
   ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE = 32;
+
+  // Free drive: the robot can be moved by hand. START and STOP are idempotent,
+  // like PROGRAM_PLAY and PROGRAM_PAUSE.
+  ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START = 40;
+  ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP = 41;
+}
+
+// RobotAdapterPlanType is a plan of the robot's next motion that an adapter
+// publishes, however it gets it (e.g. from the robot program).
+enum RobotAdapterPlanType {
+  ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED = 0;
+
+  // The TCP path of the next motion: plan.robot.path.{robot_instance_id}.{plan_id}.
+  ROBOT_ADAPTER_PLAN_TYPE_PATH = 1;
+  // The waypoints of the next motion.
+  ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS = 2;
+  // The joint angles the robot will move to.
+  ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES = 3;
 }
 
 enum RobotAdapterTelemetryType {
@@ -39,6 +57,13 @@ enum RobotAdapterTelemetryType {
 
 message RobotAdapterCommandCapability {
   RobotAdapterCommandType type = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+}
+
+message RobotAdapterPlanCapability {
+  RobotAdapterPlanType type = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];

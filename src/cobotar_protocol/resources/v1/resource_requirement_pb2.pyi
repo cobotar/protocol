@@ -56,6 +56,12 @@ class ResourceSignalRequirement(_message.Message):
     signal_id_property_key: str
     def __init__(self, data_type: _Optional[_Union[_signal_pb2.SignalDataType, str]] = ..., readable: bool = ..., writable: bool = ..., signal_id: _Optional[str] = ..., semantic: _Optional[_Union[_signal_pb2.SignalSemantic, str]] = ..., signal_id_property_key: _Optional[str] = ...) -> None: ...
 
+class ResourcePlanRequirement(_message.Message):
+    __slots__ = ("robot_plan",)
+    ROBOT_PLAN_FIELD_NUMBER: _ClassVar[int]
+    robot_plan: _robot_adapter_pb2.RobotAdapterPlanType
+    def __init__(self, robot_plan: _Optional[_Union[_robot_adapter_pb2.RobotAdapterPlanType, str]] = ...) -> None: ...
+
 class ResourceAssetTypeRequirement(_message.Message):
     __slots__ = ("type",)
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -63,18 +69,20 @@ class ResourceAssetTypeRequirement(_message.Message):
     def __init__(self, type: _Optional[_Union[_asset_definition_pb2.AssetType, str]] = ...) -> None: ...
 
 class ResourceRequirement(_message.Message):
-    __slots__ = ("level", "command", "telemetry", "signal", "asset_type")
+    __slots__ = ("level", "command", "telemetry", "signal", "asset_type", "plan")
     LEVEL_FIELD_NUMBER: _ClassVar[int]
     COMMAND_FIELD_NUMBER: _ClassVar[int]
     TELEMETRY_FIELD_NUMBER: _ClassVar[int]
     SIGNAL_FIELD_NUMBER: _ClassVar[int]
     ASSET_TYPE_FIELD_NUMBER: _ClassVar[int]
+    PLAN_FIELD_NUMBER: _ClassVar[int]
     level: ResourceRequirementLevel
     command: ResourceCommandRequirement
     telemetry: ResourceTelemetryRequirement
     signal: ResourceSignalRequirement
     asset_type: ResourceAssetTypeRequirement
-    def __init__(self, level: _Optional[_Union[ResourceRequirementLevel, str]] = ..., command: _Optional[_Union[ResourceCommandRequirement, _Mapping]] = ..., telemetry: _Optional[_Union[ResourceTelemetryRequirement, _Mapping]] = ..., signal: _Optional[_Union[ResourceSignalRequirement, _Mapping]] = ..., asset_type: _Optional[_Union[ResourceAssetTypeRequirement, _Mapping]] = ...) -> None: ...
+    plan: ResourcePlanRequirement
+    def __init__(self, level: _Optional[_Union[ResourceRequirementLevel, str]] = ..., command: _Optional[_Union[ResourceCommandRequirement, _Mapping]] = ..., telemetry: _Optional[_Union[ResourceTelemetryRequirement, _Mapping]] = ..., signal: _Optional[_Union[ResourceSignalRequirement, _Mapping]] = ..., asset_type: _Optional[_Union[ResourceAssetTypeRequirement, _Mapping]] = ..., plan: _Optional[_Union[ResourcePlanRequirement, _Mapping]] = ...) -> None: ...
 
 class ResourceRequirements(_message.Message):
     __slots__ = ("items",)

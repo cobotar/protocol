@@ -14,3 +14,10 @@ message ProgramStateRequest {
 message AcknowledgeRobot {
   string robot_id = 1;
 }
+
+// RobotFreeDriveRequest starts (enabled) or stops free drive, on
+// command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
+message RobotFreeDriveRequest {
+  string robot_id = 1;
+  bool enabled = 2;
+}

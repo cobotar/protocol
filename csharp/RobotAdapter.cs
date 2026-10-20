@@ -29,55 +29,64 @@ namespace Messages.Robot.V1 {
             "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
             "b3RvImMKHVJvYm90QWRhcHRlckNvbW1hbmRDYXBhYmlsaXR5EkIKBHR5cGUY",
             "ASABKA4yIS5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJDb21tYW5kVHlwZUILukgI",
-            "ggECEAHIAQFSBHR5cGUisgEKH1JvYm90QWRhcHRlclRlbGVtZXRyeUNhcGFi",
-            "aWxpdHkSRAoEdHlwZRgBIAEoDjIjLnJvYm90LnYxLlJvYm90QWRhcHRlclRl",
-            "bGVtZXRyeVR5cGVCC7pICIIBAhAByAEBUgR0eXBlEjgKDGZyZXF1ZW5jeV9o",
-            "ehgCIAEoAUIQukgNEgshAAAAAAAAAABAAUgAUgtmcmVxdWVuY3lIeogBAUIP",
-            "Cg1fZnJlcXVlbmN5X2h6IrgBChdSb2JvdENvbnRyb2xsZXJJZGVudGl0eRIi",
-            "CgxtYW51ZmFjdHVyZXIYASABKAlSDG1hbnVmYWN0dXJlchIUCgVtb2RlbBgC",
-            "IAEoCVIFbW9kZWwSIwoNc2VyaWFsX251bWJlchgDIAEoCVIMc2VyaWFsTnVt",
-            "YmVyEj4KG2NvbnRyb2xsZXJfc29mdHdhcmVfdmVyc2lvbhgEIAEoCVIZY29u",
-            "dHJvbGxlclNvZnR3YXJlVmVyc2lvbiK6BAoXUm9ib3RBZGFwdGVySW5mb01l",
-            "c3NhZ2USJwoIcm9ib3RfaWQYASABKAlCDLpICXIEqPEEAcgBAVIHcm9ib3RJ",
-            "ZBI1Cg9hZGFwdGVyX3ZlcnNpb24YBSABKAlCDLpICXIEiPQEAcgBAVIOYWRh",
-            "cHRlclZlcnNpb24SQQoKY29udHJvbGxlchgGIAEoCzIhLnJvYm90LnYxLlJv",
-            "Ym90Q29udHJvbGxlcklkZW50aXR5Ugpjb250cm9sbGVyEkEKFWNhcGFiaWxp",
-            "dGllc19yZXZpc2lvbhgIIAEoCUIMukgJcgSI9AQByAEBUhRjYXBhYmlsaXRp",
-            "ZXNSZXZpc2lvbhJAChVhZGFwdGVyX2RlZmluaXRpb25faWQYCSABKAlCDLpI",
-            "CXIEkPQEAcgBAVITYWRhcHRlckRlZmluaXRpb25JZBJHCg5zaWduYWxfY2F0",
-            "YWxvZxgKIAEoCzIYLmNvbW1vbi52MS5TaWduYWxDYXRhbG9nQga6SAPIAQFS",
-            "DXNpZ25hbENhdGFsb2c6rQG6SKkBGqYBCi1yb2JvdF9hZGFwdGVyX2luZm8u",
-            "c2lnbmFsX2NhdGFsb2dfcmVzb3VyY2VfaWQSQ3RoZSBzaWduYWwgY2F0YWxv",
-            "ZyByZXNvdXJjZSBpZCBtdXN0IG1hdGNoIHRoZSBhZGFwdGVyIGluZm8gcm9i",
-            "b3QgaWQaMHRoaXMuc2lnbmFsX2NhdGFsb2cucmVzb3VyY2VfaWQgPT0gdGhp",
-            "cy5yb2JvdF9pZCqvBAoXUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGUSKgomUk9C",
-            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfVU5TUEVDSUZJRUQQABIrCidST0JP",
-            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1BMQVkQARIsCihST0JP",
-            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1BBVVNFEAISKwonUk9C",
-            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9TVE9QEAMSKgomUk9C",
-            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQUNLTk9XTEVER0UQChIpCiVST0JP",
-            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9TSE9XX1BPUFVQEAsSKQolUk9CT1Rf",
-            "QURBUFRFUl9DT01NQU5EX1RZUEVfSElERV9QT1BVUBAMEisKJ1JPQk9UX0FE",
-            "QVBURVJfQ09NTUFORF9UWVBFX0xPQURfUFJPR1JBTRAUEjAKLFJPQk9UX0FE",
-            "QVBURVJfQ09NTUFORF9UWVBFX0xPQURfSU5TVEFMTEFUSU9OEBUSJwojUk9C",
-            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJfT04QHhIoCiRST0JPVF9B",
-            "REFQVEVSX0NPTU1BTkRfVFlQRV9QT1dFUl9PRkYQHxIsCihST0JPVF9BREFQ",
-            "VEVSX0NPTU1BTkRfVFlQRV9CUkFLRV9SRUxFQVNFECAqqAIKGVJvYm90QWRh",
-            "cHRlclRlbGVtZXRyeVR5cGUSLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllf",
-            "VFlQRV9VTlNQRUNJRklFRBAAEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZ",
-            "X1RZUEVfUk9CT1RfU1RBVEUQARIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRS",
-            "WV9UWVBFX0pPSU5UX1NUQVRFEAISKQolUk9CT1RfQURBUFRFUl9URUxFTUVU",
-            "UllfVFlQRV9UQ1BfUE9TRRADEisKJ1JPQk9UX0FEQVBURVJfVEVMRU1FVFJZ",
-            "X1RZUEVfVENQX1dSRU5DSBAEEikKJVJPQk9UX0FEQVBURVJfVEVMRU1FVFJZ",
-            "X1RZUEVfSU9fU1RBVEUQBUKiAQoMY29tLnJvYm90LnYxQhFSb2JvdEFkYXB0",
-            "ZXJQcm90b1ABWjVnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2Fn",
-            "ZXMvcm9ib3QvdjE7cm9ib3R2MaICA1JYWKoCEU1lc3NhZ2VzLlJvYm90LlYx",
-            "ygIIUm9ib3RcVjHiAhRSb2JvdFxWMVxHUEJNZXRhZGF0YeoCCVJvYm90OjpW",
-            "MWIGcHJvdG8z"));
+            "ggECEAHIAQFSBHR5cGUiXQoaUm9ib3RBZGFwdGVyUGxhbkNhcGFiaWxpdHkS",
+            "PwoEdHlwZRgBIAEoDjIeLnJvYm90LnYxLlJvYm90QWRhcHRlclBsYW5UeXBl",
+            "Qgu6SAiCAQIQAcgBAVIEdHlwZSKyAQofUm9ib3RBZGFwdGVyVGVsZW1ldHJ5",
+            "Q2FwYWJpbGl0eRJECgR0eXBlGAEgASgOMiMucm9ib3QudjEuUm9ib3RBZGFw",
+            "dGVyVGVsZW1ldHJ5VHlwZUILukgIggECEAHIAQFSBHR5cGUSOAoMZnJlcXVl",
+            "bmN5X2h6GAIgASgBQhC6SA0SCyEAAAAAAAAAAEABSABSC2ZyZXF1ZW5jeUh6",
+            "iAEBQg8KDV9mcmVxdWVuY3lfaHoiuAEKF1JvYm90Q29udHJvbGxlcklkZW50",
+            "aXR5EiIKDG1hbnVmYWN0dXJlchgBIAEoCVIMbWFudWZhY3R1cmVyEhQKBW1v",
+            "ZGVsGAIgASgJUgVtb2RlbBIjCg1zZXJpYWxfbnVtYmVyGAMgASgJUgxzZXJp",
+            "YWxOdW1iZXISPgobY29udHJvbGxlcl9zb2Z0d2FyZV92ZXJzaW9uGAQgASgJ",
+            "Uhljb250cm9sbGVyU29mdHdhcmVWZXJzaW9uIroEChdSb2JvdEFkYXB0ZXJJ",
+            "bmZvTWVzc2FnZRInCghyb2JvdF9pZBgBIAEoCUIMukgJcgSo8QQByAEBUgdy",
+            "b2JvdElkEjUKD2FkYXB0ZXJfdmVyc2lvbhgFIAEoCUIMukgJcgSI9AQByAEB",
+            "Ug5hZGFwdGVyVmVyc2lvbhJBCgpjb250cm9sbGVyGAYgASgLMiEucm9ib3Qu",
+            "djEuUm9ib3RDb250cm9sbGVySWRlbnRpdHlSCmNvbnRyb2xsZXISQQoVY2Fw",
+            "YWJpbGl0aWVzX3JldmlzaW9uGAggASgJQgy6SAlyBIj0BAHIAQFSFGNhcGFi",
+            "aWxpdGllc1JldmlzaW9uEkAKFWFkYXB0ZXJfZGVmaW5pdGlvbl9pZBgJIAEo",
+            "CUIMukgJcgSQ9AQByAEBUhNhZGFwdGVyRGVmaW5pdGlvbklkEkcKDnNpZ25h",
+            "bF9jYXRhbG9nGAogASgLMhguY29tbW9uLnYxLlNpZ25hbENhdGFsb2dCBrpI",
+            "A8gBAVINc2lnbmFsQ2F0YWxvZzqtAbpIqQEapgEKLXJvYm90X2FkYXB0ZXJf",
+            "aW5mby5zaWduYWxfY2F0YWxvZ19yZXNvdXJjZV9pZBJDdGhlIHNpZ25hbCBj",
+            "YXRhbG9nIHJlc291cmNlIGlkIG11c3QgbWF0Y2ggdGhlIGFkYXB0ZXIgaW5m",
+            "byByb2JvdCBpZBowdGhpcy5zaWduYWxfY2F0YWxvZy5yZXNvdXJjZV9pZCA9",
+            "PSB0aGlzLnJvYm90X2lkKpAFChdSb2JvdEFkYXB0ZXJDb21tYW5kVHlwZRIq",
+            "CiZST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9VTlNQRUNJRklFRBAAEisK",
+            "J1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BST0dSQU1fUExBWRABEiwK",
+            "KFJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BST0dSQU1fUEFVU0UQAhIr",
+            "CidST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1NUT1AQAxIq",
+            "CiZST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9BQ0tOT1dMRURHRRAKEikK",
+            "JVJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1NIT1dfUE9QVVAQCxIpCiVS",
+            "T0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9ISURFX1BPUFVQEAwSKwonUk9C",
+            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfTE9BRF9QUk9HUkFNEBQSMAosUk9C",
+            "T1RfQURBUFRFUl9DT01NQU5EX1RZUEVfTE9BRF9JTlNUQUxMQVRJT04QFRIn",
+            "CiNST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QT1dFUl9PThAeEigKJFJP",
+            "Qk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BPV0VSX09GRhAfEiwKKFJPQk9U",
+            "X0FEQVBURVJfQ09NTUFORF9UWVBFX0JSQUtFX1JFTEVBU0UQIBIvCitST0JP",
+            "VF9BREFQVEVSX0NPTU1BTkRfVFlQRV9GUkVFX0RSSVZFX1NUQVJUECgSLgoq",
+            "Uk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfRlJFRV9EUklWRV9TVE9QECkq",
+            "sgEKFFJvYm90QWRhcHRlclBsYW5UeXBlEicKI1JPQk9UX0FEQVBURVJfUExB",
+            "Tl9UWVBFX1VOU1BFQ0lGSUVEEAASIAocUk9CT1RfQURBUFRFUl9QTEFOX1RZ",
+            "UEVfUEFUSBABEiUKIVJPQk9UX0FEQVBURVJfUExBTl9UWVBFX1dBWVBPSU5U",
+            "UxACEigKJFJPQk9UX0FEQVBURVJfUExBTl9UWVBFX0pPSU5UX0FOR0xFUxAD",
+            "KqgCChlSb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlEiwKKFJPQk9UX0FEQVBU",
+            "RVJfVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIsCihST0JPVF9BREFQ",
+            "VEVSX1RFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEAESLAooUk9CT1RfQURB",
+            "UFRFUl9URUxFTUVUUllfVFlQRV9KT0lOVF9TVEFURRACEikKJVJPQk9UX0FE",
+            "QVBURVJfVEVMRU1FVFJZX1RZUEVfVENQX1BPU0UQAxIrCidST0JPVF9BREFQ",
+            "VEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9XUkVOQ0gQBBIpCiVST0JPVF9BREFQ",
+            "VEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCogEKDGNvbS5yb2JvdC52",
+            "MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNz",
+            "YWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRh",
+            "dGHqAglSb2JvdDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.SignalReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotAdapterCommandType), typeof(global::Messages.Robot.V1.RobotAdapterTelemetryType), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Robot.V1.RobotAdapterCommandType), typeof(global::Messages.Robot.V1.RobotAdapterPlanType), typeof(global::Messages.Robot.V1.RobotAdapterTelemetryType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterCommandCapability), global::Messages.Robot.V1.RobotAdapterCommandCapability.Parser, new[]{ "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterPlanCapability), global::Messages.Robot.V1.RobotAdapterPlanCapability.Parser, new[]{ "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterTelemetryCapability), global::Messages.Robot.V1.RobotAdapterTelemetryCapability.Parser, new[]{ "Type", "FrequencyHz" }, new[]{ "FrequencyHz" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotControllerIdentity), global::Messages.Robot.V1.RobotControllerIdentity.Parser, new[]{ "Manufacturer", "Model", "SerialNumber", "ControllerSoftwareVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotAdapterInfoMessage), global::Messages.Robot.V1.RobotAdapterInfoMessage.Parser, new[]{ "RobotId", "AdapterVersion", "Controller", "CapabilitiesRevision", "AdapterDefinitionId", "SignalCatalog" }, null, null, null, null)
@@ -100,6 +109,32 @@ namespace Messages.Robot.V1 {
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON")] PowerOn = 30,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF")] PowerOff = 31,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE")] BrakeRelease = 32,
+    /// <summary>
+    /// Free drive: the robot can be moved by hand. START and STOP are idempotent,
+    /// like PROGRAM_PLAY and PROGRAM_PAUSE.
+    /// </summary>
+    [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START")] FreeDriveStart = 40,
+    [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP")] FreeDriveStop = 41,
+  }
+
+  /// <summary>
+  /// RobotAdapterPlanType is a plan of the robot's next motion that an adapter
+  /// publishes, however it gets it (e.g. from the robot program).
+  /// </summary>
+  public enum RobotAdapterPlanType {
+    [pbr::OriginalName("ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// The TCP path of the next motion: plan.robot.path.{robot_instance_id}.{plan_id}.
+    /// </summary>
+    [pbr::OriginalName("ROBOT_ADAPTER_PLAN_TYPE_PATH")] Path = 1,
+    /// <summary>
+    /// The waypoints of the next motion.
+    /// </summary>
+    [pbr::OriginalName("ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS")] Waypoints = 2,
+    /// <summary>
+    /// The joint angles the robot will move to.
+    /// </summary>
+    [pbr::OriginalName("ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES")] JointAngles = 3,
   }
 
   public enum RobotAdapterTelemetryType {
@@ -313,6 +348,204 @@ namespace Messages.Robot.V1 {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RobotAdapterPlanCapability : pb::IMessage<RobotAdapterPlanCapability>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RobotAdapterPlanCapability> _parser = new pb::MessageParser<RobotAdapterPlanCapability>(() => new RobotAdapterPlanCapability());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RobotAdapterPlanCapability> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RobotAdapterPlanCapability() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RobotAdapterPlanCapability(RobotAdapterPlanCapability other) : this() {
+      type_ = other.type_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RobotAdapterPlanCapability Clone() {
+      return new RobotAdapterPlanCapability(this);
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private global::Messages.Robot.V1.RobotAdapterPlanType type_ = global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Robot.V1.RobotAdapterPlanType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RobotAdapterPlanCapability);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RobotAdapterPlanCapability other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Type != other.Type) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Type != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) hash ^= Type.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Type != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Type);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Type != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Type);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Type != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RobotAdapterPlanCapability other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Type != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        Type = other.Type;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Type = (global::Messages.Robot.V1.RobotAdapterPlanType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Type = (global::Messages.Robot.V1.RobotAdapterPlanType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class RobotAdapterTelemetryCapability : pb::IMessage<RobotAdapterTelemetryCapability>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -328,7 +561,7 @@ namespace Messages.Robot.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -582,7 +815,7 @@ namespace Messages.Robot.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -891,7 +1124,7 @@ namespace Messages.Robot.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.Robot.V1.RobotAdapterReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

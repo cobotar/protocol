@@ -105,6 +105,12 @@ const (
 	// worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command,
 	// so it is readable but not writable by clients.
 	SignalSemantic_SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE SignalSemantic = 100
+	// Robot output that puts the robot in free drive while it is set, e.g. a
+	// digital output wired to a configurable input with the Freedrive action, or
+	// a register that the robot program watches. The adapter sets it for
+	// FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but
+	// not writable by clients.
+	SignalSemantic_SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE SignalSemantic = 101
 )
 
 // Enum value maps for SignalSemantic.
@@ -122,6 +128,7 @@ var (
 		60:  "SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY",
 		61:  "SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY",
 		100: "SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE",
+		101: "SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE",
 	}
 	SignalSemantic_value = map[string]int32{
 		"SIGNAL_SEMANTIC_UNSPECIFIED":                    0,
@@ -136,6 +143,7 @@ var (
 		"SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY":        60,
 		"SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY":        61,
 		"SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE":              100,
+		"SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE":               101,
 	}
 )
 
@@ -330,7 +338,7 @@ const file_common_v1_signal_proto_rawDesc = "" +
 	"\x15SIGNAL_DATA_TYPE_BOOL\x10\x01\x12\x1a\n" +
 	"\x16SIGNAL_DATA_TYPE_INT32\x10\x02\x12\x1b\n" +
 	"\x17SIGNAL_DATA_TYPE_DOUBLE\x10\x03\x12\x1b\n" +
-	"\x17SIGNAL_DATA_TYPE_STRING\x10\x04*\x8b\x04\n" +
+	"\x17SIGNAL_DATA_TYPE_STRING\x10\x04*\xb1\x04\n" +
 	"\x0eSignalSemantic\x12\x1f\n" +
 	"\x1bSIGNAL_SEMANTIC_UNSPECIFIED\x10\x00\x12'\n" +
 	"#SIGNAL_SEMANTIC_ASSET_CAMERA_ACTIVE\x10\n" +
@@ -344,7 +352,8 @@ const file_common_v1_signal_proto_rawDesc = "" +
 	".SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE\x102\x12+\n" +
 	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY\x10<\x12+\n" +
 	"'SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY\x10=\x12%\n" +
-	"!SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE\x10dB\xa3\x01\n" +
+	"!SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE\x10d\x12$\n" +
+	" SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE\x10eB\xa3\x01\n" +
 	"\rcom.common.v1B\vSignalProtoP\x01Z7github.com/cobotar/protocol/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
 	"Common::V1b\x06proto3"
 

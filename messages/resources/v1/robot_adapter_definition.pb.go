@@ -36,6 +36,8 @@ type RobotAdapterDefinition struct {
 	SupportedRobotTypes []RobotType                           `protobuf:"varint,5,rep,packed,name=supported_robot_types,json=supportedRobotTypes,proto3,enum=resources.v1.RobotType" json:"supported_robot_types,omitempty"`
 	Commands            []*v1.RobotAdapterCommandCapability   `protobuf:"bytes,6,rep,name=commands,proto3" json:"commands,omitempty"`
 	Telemetry           []*v1.RobotAdapterTelemetryCapability `protobuf:"bytes,7,rep,name=telemetry,proto3" json:"telemetry,omitempty"`
+	// Plans of the robot's next motion that the adapter publishes.
+	Plans []*v1.RobotAdapterPlanCapability `protobuf:"bytes,9,rep,name=plans,proto3" json:"plans,omitempty"`
 	// I/O register families that an adapter configuration may expose as named signals.
 	ConfigurableIoRegisterKinds []v1.RobotIORegisterKind `protobuf:"varint,8,rep,packed,name=configurable_io_register_kinds,json=configurableIoRegisterKinds,proto3,enum=robot.v1.RobotIORegisterKind" json:"configurable_io_register_kinds,omitempty"`
 	unknownFields               protoimpl.UnknownFields
@@ -121,6 +123,13 @@ func (x *RobotAdapterDefinition) GetTelemetry() []*v1.RobotAdapterTelemetryCapab
 	return nil
 }
 
+func (x *RobotAdapterDefinition) GetPlans() []*v1.RobotAdapterPlanCapability {
+	if x != nil {
+		return x.Plans
+	}
+	return nil
+}
+
 func (x *RobotAdapterDefinition) GetConfigurableIoRegisterKinds() []v1.RobotIORegisterKind {
 	if x != nil {
 		return x.ConfigurableIoRegisterKinds
@@ -176,7 +185,7 @@ var File_resources_v1_robot_adapter_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_robot_adapter_definition_proto_rawDesc = "" +
 	"\n" +
-	"+resources/v1/robot_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#resources/v1/robot_definition.proto\x1a\x1crobot/v1/robot_adapter.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8f\x06\n" +
+	"+resources/v1/robot_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#resources/v1/robot_definition.proto\x1a\x1crobot/v1/robot_adapter.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc0\a\n" +
 	"\x16RobotAdapterDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -186,7 +195,9 @@ const file_resources_v1_robot_adapter_definition_proto_rawDesc = "" +
 	"\bcommands\x18\x06 \x03(\v2'.robot.v1.RobotAdapterCommandCapabilityB~\xbaH{\xba\x01x\n" +
 	".robot_adapter_definition.commands.unique_types\x12\x1ccommand types must be unique\x1a(this.map(command, command.type).unique()R\bcommands\x12\xc8\x01\n" +
 	"\ttelemetry\x18\a \x03(\v2).robot.v1.RobotAdapterTelemetryCapabilityB\x7f\xbaH|\xba\x01y\n" +
-	"/robot_adapter_definition.telemetry.unique_types\x12\x1etelemetry types must be unique\x1a&this.map(stream, stream.type).unique()R\ttelemetry\x12u\n" +
+	"/robot_adapter_definition.telemetry.unique_types\x12\x1etelemetry types must be unique\x1a&this.map(stream, stream.type).unique()R\ttelemetry\x12\xae\x01\n" +
+	"\x05plans\x18\t \x03(\v2$.robot.v1.RobotAdapterPlanCapabilityBr\xbaHo\xba\x01l\n" +
+	"+robot_adapter_definition.plans.unique_types\x12\x19plan types must be unique\x1a\"this.map(plan, plan.type).unique()R\x05plans\x12u\n" +
 	"\x1econfigurable_io_register_kinds\x18\b \x03(\x0e2\x1d.robot.v1.RobotIORegisterKindB\x11\xbaH\x0e\x92\x01\v\x18\x01\"\a\x82\x01\x04\x10\x01 \x00R\x1bconfigurableIoRegisterKinds\"\xcd\x04\n" +
 	"\x17RobotAdapterDefinitions\x12\xb1\x04\n" +
 	"\x05items\x18\x01 \x03(\v2$.resources.v1.RobotAdapterDefinitionB\xf4\x03\xbaH\xf0\x03\xba\x01\x87\x01\n" +
@@ -214,19 +225,21 @@ var file_resources_v1_robot_adapter_definition_proto_goTypes = []any{
 	(RobotType)(0),                             // 2: resources.v1.RobotType
 	(*v1.RobotAdapterCommandCapability)(nil),   // 3: robot.v1.RobotAdapterCommandCapability
 	(*v1.RobotAdapterTelemetryCapability)(nil), // 4: robot.v1.RobotAdapterTelemetryCapability
-	(v1.RobotIORegisterKind)(0),                // 5: robot.v1.RobotIORegisterKind
+	(*v1.RobotAdapterPlanCapability)(nil),      // 5: robot.v1.RobotAdapterPlanCapability
+	(v1.RobotIORegisterKind)(0),                // 6: robot.v1.RobotIORegisterKind
 }
 var file_resources_v1_robot_adapter_definition_proto_depIdxs = []int32{
 	2, // 0: resources.v1.RobotAdapterDefinition.supported_robot_types:type_name -> resources.v1.RobotType
 	3, // 1: resources.v1.RobotAdapterDefinition.commands:type_name -> robot.v1.RobotAdapterCommandCapability
 	4, // 2: resources.v1.RobotAdapterDefinition.telemetry:type_name -> robot.v1.RobotAdapterTelemetryCapability
-	5, // 3: resources.v1.RobotAdapterDefinition.configurable_io_register_kinds:type_name -> robot.v1.RobotIORegisterKind
-	0, // 4: resources.v1.RobotAdapterDefinitions.items:type_name -> resources.v1.RobotAdapterDefinition
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	5, // 3: resources.v1.RobotAdapterDefinition.plans:type_name -> robot.v1.RobotAdapterPlanCapability
+	6, // 4: resources.v1.RobotAdapterDefinition.configurable_io_register_kinds:type_name -> robot.v1.RobotIORegisterKind
+	0, // 5: resources.v1.RobotAdapterDefinitions.items:type_name -> resources.v1.RobotAdapterDefinition
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_robot_adapter_definition_proto_init() }

@@ -18,3 +18,11 @@ class AcknowledgeRobot(_message.Message):
     ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
     robot_id: str
     def __init__(self, robot_id: _Optional[str] = ...) -> None: ...
+
+class RobotFreeDriveRequest(_message.Message):
+    __slots__ = ("robot_id", "enabled")
+    ROBOT_ID_FIELD_NUMBER: _ClassVar[int]
+    ENABLED_FIELD_NUMBER: _ClassVar[int]
+    robot_id: str
+    enabled: bool
+    def __init__(self, robot_id: _Optional[str] = ..., enabled: bool = ...) -> None: ...

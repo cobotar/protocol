@@ -50,7 +50,7 @@ message FunctionDefinition {
     expression:
       "this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && "
       "((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || "
-      "(property.type == 14 && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))"
+      "(property.type == 14 && !has(requirement.requirement.plan) && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))"
   };
   option (buf.validate.message).cel = {
     id: "function_definition.signal_requirements.reference_signal_properties"

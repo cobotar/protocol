@@ -39,6 +39,10 @@ const (
 	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON          RobotAdapterCommandType = 30
 	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF         RobotAdapterCommandType = 31
 	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE     RobotAdapterCommandType = 32
+	// Free drive: the robot can be moved by hand. START and STOP are idempotent,
+	// like PROGRAM_PLAY and PROGRAM_PAUSE.
+	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START RobotAdapterCommandType = 40
+	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP  RobotAdapterCommandType = 41
 )
 
 // Enum value maps for RobotAdapterCommandType.
@@ -56,6 +60,8 @@ var (
 		30: "ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON",
 		31: "ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF",
 		32: "ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE",
+		40: "ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START",
+		41: "ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP",
 	}
 	RobotAdapterCommandType_value = map[string]int32{
 		"ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED":       0,
@@ -70,6 +76,8 @@ var (
 		"ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON":          30,
 		"ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF":         31,
 		"ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE":     32,
+		"ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START":  40,
+		"ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP":   41,
 	}
 )
 
@@ -98,6 +106,63 @@ func (x RobotAdapterCommandType) Number() protoreflect.EnumNumber {
 // Deprecated: Use RobotAdapterCommandType.Descriptor instead.
 func (RobotAdapterCommandType) EnumDescriptor() ([]byte, []int) {
 	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{0}
+}
+
+// RobotAdapterPlanType is a plan of the robot's next motion that an adapter
+// publishes, however it gets it (e.g. from the robot program).
+type RobotAdapterPlanType int32
+
+const (
+	RobotAdapterPlanType_ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED RobotAdapterPlanType = 0
+	// The TCP path of the next motion: plan.robot.path.{robot_instance_id}.{plan_id}.
+	RobotAdapterPlanType_ROBOT_ADAPTER_PLAN_TYPE_PATH RobotAdapterPlanType = 1
+	// The waypoints of the next motion.
+	RobotAdapterPlanType_ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS RobotAdapterPlanType = 2
+	// The joint angles the robot will move to.
+	RobotAdapterPlanType_ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES RobotAdapterPlanType = 3
+)
+
+// Enum value maps for RobotAdapterPlanType.
+var (
+	RobotAdapterPlanType_name = map[int32]string{
+		0: "ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED",
+		1: "ROBOT_ADAPTER_PLAN_TYPE_PATH",
+		2: "ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS",
+		3: "ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES",
+	}
+	RobotAdapterPlanType_value = map[string]int32{
+		"ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED":  0,
+		"ROBOT_ADAPTER_PLAN_TYPE_PATH":         1,
+		"ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS":    2,
+		"ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES": 3,
+	}
+)
+
+func (x RobotAdapterPlanType) Enum() *RobotAdapterPlanType {
+	p := new(RobotAdapterPlanType)
+	*p = x
+	return p
+}
+
+func (x RobotAdapterPlanType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RobotAdapterPlanType) Descriptor() protoreflect.EnumDescriptor {
+	return file_robot_v1_robot_adapter_proto_enumTypes[1].Descriptor()
+}
+
+func (RobotAdapterPlanType) Type() protoreflect.EnumType {
+	return &file_robot_v1_robot_adapter_proto_enumTypes[1]
+}
+
+func (x RobotAdapterPlanType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RobotAdapterPlanType.Descriptor instead.
+func (RobotAdapterPlanType) EnumDescriptor() ([]byte, []int) {
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{1}
 }
 
 type RobotAdapterTelemetryType int32
@@ -142,11 +207,11 @@ func (x RobotAdapterTelemetryType) String() string {
 }
 
 func (RobotAdapterTelemetryType) Descriptor() protoreflect.EnumDescriptor {
-	return file_robot_v1_robot_adapter_proto_enumTypes[1].Descriptor()
+	return file_robot_v1_robot_adapter_proto_enumTypes[2].Descriptor()
 }
 
 func (RobotAdapterTelemetryType) Type() protoreflect.EnumType {
-	return &file_robot_v1_robot_adapter_proto_enumTypes[1]
+	return &file_robot_v1_robot_adapter_proto_enumTypes[2]
 }
 
 func (x RobotAdapterTelemetryType) Number() protoreflect.EnumNumber {
@@ -155,7 +220,7 @@ func (x RobotAdapterTelemetryType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RobotAdapterTelemetryType.Descriptor instead.
 func (RobotAdapterTelemetryType) EnumDescriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{1}
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{2}
 }
 
 type RobotAdapterCommandCapability struct {
@@ -202,6 +267,50 @@ func (x *RobotAdapterCommandCapability) GetType() RobotAdapterCommandType {
 	return RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED
 }
 
+type RobotAdapterPlanCapability struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Type          RobotAdapterPlanType   `protobuf:"varint,1,opt,name=type,proto3,enum=robot.v1.RobotAdapterPlanType" json:"type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RobotAdapterPlanCapability) Reset() {
+	*x = RobotAdapterPlanCapability{}
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RobotAdapterPlanCapability) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RobotAdapterPlanCapability) ProtoMessage() {}
+
+func (x *RobotAdapterPlanCapability) ProtoReflect() protoreflect.Message {
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RobotAdapterPlanCapability.ProtoReflect.Descriptor instead.
+func (*RobotAdapterPlanCapability) Descriptor() ([]byte, []int) {
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *RobotAdapterPlanCapability) GetType() RobotAdapterPlanType {
+	if x != nil {
+		return x.Type
+	}
+	return RobotAdapterPlanType_ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED
+}
+
 type RobotAdapterTelemetryCapability struct {
 	state protoimpl.MessageState    `protogen:"open.v1"`
 	Type  RobotAdapterTelemetryType `protobuf:"varint,1,opt,name=type,proto3,enum=robot.v1.RobotAdapterTelemetryType" json:"type,omitempty"`
@@ -213,7 +322,7 @@ type RobotAdapterTelemetryCapability struct {
 
 func (x *RobotAdapterTelemetryCapability) Reset() {
 	*x = RobotAdapterTelemetryCapability{}
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[1]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -225,7 +334,7 @@ func (x *RobotAdapterTelemetryCapability) String() string {
 func (*RobotAdapterTelemetryCapability) ProtoMessage() {}
 
 func (x *RobotAdapterTelemetryCapability) ProtoReflect() protoreflect.Message {
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[1]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -238,7 +347,7 @@ func (x *RobotAdapterTelemetryCapability) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotAdapterTelemetryCapability.ProtoReflect.Descriptor instead.
 func (*RobotAdapterTelemetryCapability) Descriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{1}
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RobotAdapterTelemetryCapability) GetType() RobotAdapterTelemetryType {
@@ -267,7 +376,7 @@ type RobotControllerIdentity struct {
 
 func (x *RobotControllerIdentity) Reset() {
 	*x = RobotControllerIdentity{}
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -279,7 +388,7 @@ func (x *RobotControllerIdentity) String() string {
 func (*RobotControllerIdentity) ProtoMessage() {}
 
 func (x *RobotControllerIdentity) ProtoReflect() protoreflect.Message {
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[2]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -292,7 +401,7 @@ func (x *RobotControllerIdentity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotControllerIdentity.ProtoReflect.Descriptor instead.
 func (*RobotControllerIdentity) Descriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{2}
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RobotControllerIdentity) GetManufacturer() string {
@@ -342,7 +451,7 @@ type RobotAdapterInfoMessage struct {
 
 func (x *RobotAdapterInfoMessage) Reset() {
 	*x = RobotAdapterInfoMessage{}
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -354,7 +463,7 @@ func (x *RobotAdapterInfoMessage) String() string {
 func (*RobotAdapterInfoMessage) ProtoMessage() {}
 
 func (x *RobotAdapterInfoMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_robot_v1_robot_adapter_proto_msgTypes[3]
+	mi := &file_robot_v1_robot_adapter_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -367,7 +476,7 @@ func (x *RobotAdapterInfoMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RobotAdapterInfoMessage.ProtoReflect.Descriptor instead.
 func (*RobotAdapterInfoMessage) Descriptor() ([]byte, []int) {
-	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{3}
+	return file_robot_v1_robot_adapter_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RobotAdapterInfoMessage) GetRobotId() string {
@@ -418,7 +527,9 @@ const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"\n" +
 	"\x1crobot/v1/robot_adapter.proto\x12\brobot.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16common/v1/signal.proto\x1a+validation/v1/predefined_string_rules.proto\"c\n" +
 	"\x1dRobotAdapterCommandCapability\x12B\n" +
-	"\x04type\x18\x01 \x01(\x0e2!.robot.v1.RobotAdapterCommandTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\xb2\x01\n" +
+	"\x04type\x18\x01 \x01(\x0e2!.robot.v1.RobotAdapterCommandTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"]\n" +
+	"\x1aRobotAdapterPlanCapability\x12?\n" +
+	"\x04type\x18\x01 \x01(\x0e2\x1e.robot.v1.RobotAdapterPlanTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\"\xb2\x01\n" +
 	"\x1fRobotAdapterTelemetryCapability\x12D\n" +
 	"\x04type\x18\x01 \x01(\x0e2#.robot.v1.RobotAdapterTelemetryTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x128\n" +
 	"\ffrequency_hz\x18\x02 \x01(\x01B\x10\xbaH\r\x12\v@\x01!\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\vfrequencyHz\x88\x01\x01B\x0f\n" +
@@ -438,7 +549,7 @@ const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	"\x15adapter_definition_id\x18\t \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x13adapterDefinitionId\x12G\n" +
 	"\x0esignal_catalog\x18\n" +
 	" \x01(\v2\x18.common.v1.SignalCatalogB\x06\xbaH\x03\xc8\x01\x01R\rsignalCatalog:\xad\x01\xbaH\xa9\x01\x1a\xa6\x01\n" +
-	"-robot_adapter_info.signal_catalog_resource_id\x12Cthe signal catalog resource id must match the adapter info robot id\x1a0this.signal_catalog.resource_id == this.robot_id*\xaf\x04\n" +
+	"-robot_adapter_info.signal_catalog_resource_id\x12Cthe signal catalog resource id must match the adapter info robot id\x1a0this.signal_catalog.resource_id == this.robot_id*\x90\x05\n" +
 	"\x17RobotAdapterCommandType\x12*\n" +
 	"&ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED\x10\x00\x12+\n" +
 	"'ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY\x10\x01\x12,\n" +
@@ -452,7 +563,14 @@ const file_robot_v1_robot_adapter_proto_rawDesc = "" +
 	",ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION\x10\x15\x12'\n" +
 	"#ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON\x10\x1e\x12(\n" +
 	"$ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF\x10\x1f\x12,\n" +
-	"(ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE\x10 *\xa8\x02\n" +
+	"(ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE\x10 \x12/\n" +
+	"+ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START\x10(\x12.\n" +
+	"*ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP\x10)*\xb2\x01\n" +
+	"\x14RobotAdapterPlanType\x12'\n" +
+	"#ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
+	"\x1cROBOT_ADAPTER_PLAN_TYPE_PATH\x10\x01\x12%\n" +
+	"!ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS\x10\x02\x12(\n" +
+	"$ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES\x10\x03*\xa8\x02\n" +
 	"\x19RobotAdapterTelemetryType\x12,\n" +
 	"(ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED\x10\x00\x12,\n" +
 	"(ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE\x10\x01\x12,\n" +
@@ -474,27 +592,30 @@ func file_robot_v1_robot_adapter_proto_rawDescGZIP() []byte {
 	return file_robot_v1_robot_adapter_proto_rawDescData
 }
 
-var file_robot_v1_robot_adapter_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_robot_v1_robot_adapter_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_robot_v1_robot_adapter_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_robot_v1_robot_adapter_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_robot_v1_robot_adapter_proto_goTypes = []any{
 	(RobotAdapterCommandType)(0),            // 0: robot.v1.RobotAdapterCommandType
-	(RobotAdapterTelemetryType)(0),          // 1: robot.v1.RobotAdapterTelemetryType
-	(*RobotAdapterCommandCapability)(nil),   // 2: robot.v1.RobotAdapterCommandCapability
-	(*RobotAdapterTelemetryCapability)(nil), // 3: robot.v1.RobotAdapterTelemetryCapability
-	(*RobotControllerIdentity)(nil),         // 4: robot.v1.RobotControllerIdentity
-	(*RobotAdapterInfoMessage)(nil),         // 5: robot.v1.RobotAdapterInfoMessage
-	(*v1.SignalCatalog)(nil),                // 6: common.v1.SignalCatalog
+	(RobotAdapterPlanType)(0),               // 1: robot.v1.RobotAdapterPlanType
+	(RobotAdapterTelemetryType)(0),          // 2: robot.v1.RobotAdapterTelemetryType
+	(*RobotAdapterCommandCapability)(nil),   // 3: robot.v1.RobotAdapterCommandCapability
+	(*RobotAdapterPlanCapability)(nil),      // 4: robot.v1.RobotAdapterPlanCapability
+	(*RobotAdapterTelemetryCapability)(nil), // 5: robot.v1.RobotAdapterTelemetryCapability
+	(*RobotControllerIdentity)(nil),         // 6: robot.v1.RobotControllerIdentity
+	(*RobotAdapterInfoMessage)(nil),         // 7: robot.v1.RobotAdapterInfoMessage
+	(*v1.SignalCatalog)(nil),                // 8: common.v1.SignalCatalog
 }
 var file_robot_v1_robot_adapter_proto_depIdxs = []int32{
 	0, // 0: robot.v1.RobotAdapterCommandCapability.type:type_name -> robot.v1.RobotAdapterCommandType
-	1, // 1: robot.v1.RobotAdapterTelemetryCapability.type:type_name -> robot.v1.RobotAdapterTelemetryType
-	4, // 2: robot.v1.RobotAdapterInfoMessage.controller:type_name -> robot.v1.RobotControllerIdentity
-	6, // 3: robot.v1.RobotAdapterInfoMessage.signal_catalog:type_name -> common.v1.SignalCatalog
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	1, // 1: robot.v1.RobotAdapterPlanCapability.type:type_name -> robot.v1.RobotAdapterPlanType
+	2, // 2: robot.v1.RobotAdapterTelemetryCapability.type:type_name -> robot.v1.RobotAdapterTelemetryType
+	6, // 3: robot.v1.RobotAdapterInfoMessage.controller:type_name -> robot.v1.RobotControllerIdentity
+	8, // 4: robot.v1.RobotAdapterInfoMessage.signal_catalog:type_name -> common.v1.SignalCatalog
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_robot_v1_robot_adapter_proto_init() }
@@ -502,14 +623,14 @@ func file_robot_v1_robot_adapter_proto_init() {
 	if File_robot_v1_robot_adapter_proto != nil {
 		return
 	}
-	file_robot_v1_robot_adapter_proto_msgTypes[1].OneofWrappers = []any{}
+	file_robot_v1_robot_adapter_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_robot_v1_robot_adapter_proto_rawDesc), len(file_robot_v1_robot_adapter_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   4,
+			NumEnums:      3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

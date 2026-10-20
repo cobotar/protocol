@@ -46,6 +46,13 @@ message RobotAdapterDefinition {
     expression: "this.map(stream, stream.type).unique()"
   }];
 
+  // Plans of the robot's next motion that the adapter publishes.
+  repeated robot.v1.RobotAdapterPlanCapability plans = 9 [(buf.validate.field).cel = {
+    id: "robot_adapter_definition.plans.unique_types"
+    message: "plan types must be unique"
+    expression: "this.map(plan, plan.type).unique()"
+  }];
+
   // I/O register families that an adapter configuration may expose as named signals.
   repeated robot.v1.RobotIORegisterKind configurable_io_register_kinds = 8 [
     (buf.validate.field).repeated.unique = true,

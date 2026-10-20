@@ -53,7 +53,7 @@ namespace Messages.Common.V1 {
             "bHMqowEKDlNpZ25hbERhdGFUeXBlEiAKHFNJR05BTF9EQVRBX1RZUEVfVU5T",
             "UEVDSUZJRUQQABIZChVTSUdOQUxfREFUQV9UWVBFX0JPT0wQARIaChZTSUdO",
             "QUxfREFUQV9UWVBFX0lOVDMyEAISGwoXU0lHTkFMX0RBVEFfVFlQRV9ET1VC",
-            "TEUQAxIbChdTSUdOQUxfREFUQV9UWVBFX1NUUklORxAEKosECg5TaWduYWxT",
+            "TEUQAxIbChdTSUdOQUxfREFUQV9UWVBFX1NUUklORxAEKrEECg5TaWduYWxT",
             "ZW1hbnRpYxIfChtTSUdOQUxfU0VNQU5USUNfVU5TUEVDSUZJRUQQABInCiNT",
             "SUdOQUxfU0VNQU5USUNfQVNTRVRfQ0FNRVJBX0FDVElWRRAKEi8KK1NJR05B",
             "TF9TRU1BTlRJQ19BU1NFVF9DQU1FUkFfRVJST1JfREVURUNURUQQCxIjCh9T",
@@ -65,11 +65,12 @@ namespace Messages.Common.V1 {
             "TUlfSU5TVFJVQ1RJT05TX1ZJU0lCTEUQMhIrCidTSUdOQUxfU0VNQU5USUNf",
             "QVNTRVRfUEFSVF9GRUVERVJfUkVBRFkQPBIrCidTSUdOQUxfU0VNQU5USUNf",
             "QVNTRVRfUEFSVF9GRUVERVJfRU1QVFkQPRIlCiFTSUdOQUxfU0VNQU5USUNf",
-            "Uk9CT1RfQUNLTk9XTEVER0UQZEKjAQoNY29tLmNvbW1vbi52MUILU2lnbmFs",
-            "UHJvdG9QAVo3Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2Vz",
-            "L2NvbW1vbi92MTtjb21tb252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5W",
-            "McoCCUNvbW1vblxWMeICFUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1v",
-            "bjo6VjFiBnByb3RvMw=="));
+            "Uk9CT1RfQUNLTk9XTEVER0UQZBIkCiBTSUdOQUxfU0VNQU5USUNfUk9CT1Rf",
+            "RlJFRV9EUklWRRBlQqMBCg1jb20uY29tbW9uLnYxQgtTaWduYWxQcm90b1AB",
+            "WjdnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvY29tbW9u",
+            "L3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29t",
+            "bW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Common.V1.SignalDataType), typeof(global::Messages.Common.V1.SignalSemantic), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -132,6 +133,14 @@ namespace Messages.Common.V1 {
     /// so it is readable but not writable by clients.
     /// </summary>
     [pbr::OriginalName("SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE")] RobotAcknowledge = 100,
+    /// <summary>
+    /// Robot output that puts the robot in free drive while it is set, e.g. a
+    /// digital output wired to a configurable input with the Freedrive action, or
+    /// a register that the robot program watches. The adapter sets it for
+    /// FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but
+    /// not writable by clients.
+    /// </summary>
+    [pbr::OriginalName("SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE")] RobotFreeDrive = 101,
   }
 
   #endregion

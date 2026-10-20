@@ -23,6 +23,15 @@ class RobotAdapterCommandType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper)
     ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON: _ClassVar[RobotAdapterCommandType]
     ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF: _ClassVar[RobotAdapterCommandType]
     ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE: _ClassVar[RobotAdapterCommandType]
+    ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START: _ClassVar[RobotAdapterCommandType]
+    ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP: _ClassVar[RobotAdapterCommandType]
+
+class RobotAdapterPlanType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED: _ClassVar[RobotAdapterPlanType]
+    ROBOT_ADAPTER_PLAN_TYPE_PATH: _ClassVar[RobotAdapterPlanType]
+    ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS: _ClassVar[RobotAdapterPlanType]
+    ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES: _ClassVar[RobotAdapterPlanType]
 
 class RobotAdapterTelemetryType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
@@ -44,6 +53,12 @@ ROBOT_ADAPTER_COMMAND_TYPE_LOAD_INSTALLATION: RobotAdapterCommandType
 ROBOT_ADAPTER_COMMAND_TYPE_POWER_ON: RobotAdapterCommandType
 ROBOT_ADAPTER_COMMAND_TYPE_POWER_OFF: RobotAdapterCommandType
 ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE: RobotAdapterCommandType
+ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START: RobotAdapterCommandType
+ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP: RobotAdapterCommandType
+ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED: RobotAdapterPlanType
+ROBOT_ADAPTER_PLAN_TYPE_PATH: RobotAdapterPlanType
+ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS: RobotAdapterPlanType
+ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES: RobotAdapterPlanType
 ROBOT_ADAPTER_TELEMETRY_TYPE_UNSPECIFIED: RobotAdapterTelemetryType
 ROBOT_ADAPTER_TELEMETRY_TYPE_ROBOT_STATE: RobotAdapterTelemetryType
 ROBOT_ADAPTER_TELEMETRY_TYPE_JOINT_STATE: RobotAdapterTelemetryType
@@ -56,6 +71,12 @@ class RobotAdapterCommandCapability(_message.Message):
     TYPE_FIELD_NUMBER: _ClassVar[int]
     type: RobotAdapterCommandType
     def __init__(self, type: _Optional[_Union[RobotAdapterCommandType, str]] = ...) -> None: ...
+
+class RobotAdapterPlanCapability(_message.Message):
+    __slots__ = ("type",)
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    type: RobotAdapterPlanType
+    def __init__(self, type: _Optional[_Union[RobotAdapterPlanType, str]] = ...) -> None: ...
 
 class RobotAdapterTelemetryCapability(_message.Message):
     __slots__ = ("type", "frequency_hz")

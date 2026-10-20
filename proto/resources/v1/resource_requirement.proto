@@ -116,6 +116,15 @@ message ResourceSignalRequirement {
   string signal_id_property_key = 6 [(buf.validate.field).string.(validation.v1.key_component) = true];
 }
 
+// ResourcePlanRequirement asks for a plan of the robot's next motion, which the
+// robot's adapter definition lists in plans.
+message ResourcePlanRequirement {
+  robot.v1.RobotAdapterPlanType robot_plan = 1 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+}
+
 message ResourceAssetTypeRequirement {
   AssetType type = 1 [(buf.validate.field).enum = {
     defined_only: true
@@ -130,7 +139,8 @@ message ResourceRequirement {
       "command",
       "telemetry",
       "signal",
-      "asset_type"
+      "asset_type",
+      "plan"
     ]
     required: true
   };
@@ -143,6 +153,7 @@ message ResourceRequirement {
   ResourceTelemetryRequirement telemetry = 3;
   ResourceSignalRequirement signal = 4;
   ResourceAssetTypeRequirement asset_type = 5;
+  ResourcePlanRequirement plan = 6;
 }
 
 // ResourceRequirements provides presence semantics when a repeated requirement

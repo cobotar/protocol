@@ -284,6 +284,52 @@ func (x *ResourceSignalRequirement) GetSignalIdPropertyKey() string {
 	return ""
 }
 
+// ResourcePlanRequirement asks for a plan of the robot's next motion, which the
+// robot's adapter definition lists in plans.
+type ResourcePlanRequirement struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	RobotPlan     v1.RobotAdapterPlanType `protobuf:"varint,1,opt,name=robot_plan,json=robotPlan,proto3,enum=robot.v1.RobotAdapterPlanType" json:"robot_plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResourcePlanRequirement) Reset() {
+	*x = ResourcePlanRequirement{}
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResourcePlanRequirement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResourcePlanRequirement) ProtoMessage() {}
+
+func (x *ResourcePlanRequirement) ProtoReflect() protoreflect.Message {
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResourcePlanRequirement.ProtoReflect.Descriptor instead.
+func (*ResourcePlanRequirement) Descriptor() ([]byte, []int) {
+	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ResourcePlanRequirement) GetRobotPlan() v1.RobotAdapterPlanType {
+	if x != nil {
+		return x.RobotPlan
+	}
+	return v1.RobotAdapterPlanType(0)
+}
+
 type ResourceAssetTypeRequirement struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Type          AssetType              `protobuf:"varint,1,opt,name=type,proto3,enum=resources.v1.AssetType" json:"type,omitempty"`
@@ -293,7 +339,7 @@ type ResourceAssetTypeRequirement struct {
 
 func (x *ResourceAssetTypeRequirement) Reset() {
 	*x = ResourceAssetTypeRequirement{}
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[3]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -305,7 +351,7 @@ func (x *ResourceAssetTypeRequirement) String() string {
 func (*ResourceAssetTypeRequirement) ProtoMessage() {}
 
 func (x *ResourceAssetTypeRequirement) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[3]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -318,7 +364,7 @@ func (x *ResourceAssetTypeRequirement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResourceAssetTypeRequirement.ProtoReflect.Descriptor instead.
 func (*ResourceAssetTypeRequirement) Descriptor() ([]byte, []int) {
-	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{3}
+	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ResourceAssetTypeRequirement) GetType() AssetType {
@@ -336,13 +382,14 @@ type ResourceRequirement struct {
 	Telemetry     *ResourceTelemetryRequirement `protobuf:"bytes,3,opt,name=telemetry,proto3" json:"telemetry,omitempty"`
 	Signal        *ResourceSignalRequirement    `protobuf:"bytes,4,opt,name=signal,proto3" json:"signal,omitempty"`
 	AssetType     *ResourceAssetTypeRequirement `protobuf:"bytes,5,opt,name=asset_type,json=assetType,proto3" json:"asset_type,omitempty"`
+	Plan          *ResourcePlanRequirement      `protobuf:"bytes,6,opt,name=plan,proto3" json:"plan,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ResourceRequirement) Reset() {
 	*x = ResourceRequirement{}
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[4]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -354,7 +401,7 @@ func (x *ResourceRequirement) String() string {
 func (*ResourceRequirement) ProtoMessage() {}
 
 func (x *ResourceRequirement) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[4]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -367,7 +414,7 @@ func (x *ResourceRequirement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResourceRequirement.ProtoReflect.Descriptor instead.
 func (*ResourceRequirement) Descriptor() ([]byte, []int) {
-	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{4}
+	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ResourceRequirement) GetLevel() ResourceRequirementLevel {
@@ -405,6 +452,13 @@ func (x *ResourceRequirement) GetAssetType() *ResourceAssetTypeRequirement {
 	return nil
 }
 
+func (x *ResourceRequirement) GetPlan() *ResourcePlanRequirement {
+	if x != nil {
+		return x.Plan
+	}
+	return nil
+}
+
 // ResourceRequirements provides presence semantics when a repeated requirement
 // list is replaced by an update request. A present message with no items clears
 // the list; an absent message leaves it unchanged.
@@ -417,7 +471,7 @@ type ResourceRequirements struct {
 
 func (x *ResourceRequirements) Reset() {
 	*x = ResourceRequirements{}
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[5]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -429,7 +483,7 @@ func (x *ResourceRequirements) String() string {
 func (*ResourceRequirements) ProtoMessage() {}
 
 func (x *ResourceRequirements) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[5]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -442,7 +496,7 @@ func (x *ResourceRequirements) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResourceRequirements.ProtoReflect.Descriptor instead.
 func (*ResourceRequirements) Descriptor() ([]byte, []int) {
-	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{5}
+	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ResourceRequirements) GetItems() []*ResourceRequirement {
@@ -464,7 +518,7 @@ type ConsumerResourceRequirement struct {
 
 func (x *ConsumerResourceRequirement) Reset() {
 	*x = ConsumerResourceRequirement{}
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[6]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -476,7 +530,7 @@ func (x *ConsumerResourceRequirement) String() string {
 func (*ConsumerResourceRequirement) ProtoMessage() {}
 
 func (x *ConsumerResourceRequirement) ProtoReflect() protoreflect.Message {
-	mi := &file_resources_v1_resource_requirement_proto_msgTypes[6]
+	mi := &file_resources_v1_resource_requirement_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -489,7 +543,7 @@ func (x *ConsumerResourceRequirement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsumerResourceRequirement.ProtoReflect.Descriptor instead.
 func (*ConsumerResourceRequirement) Descriptor() ([]byte, []int) {
-	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{6}
+	return file_resources_v1_resource_requirement_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ConsumerResourceRequirement) GetResourcePropertyKey() string {
@@ -540,10 +594,14 @@ const file_resources_v1_resource_requirement_proto_rawDesc = "" +
 	"7resource_signal_requirement.standard_semantic_data_type\x124standard signal semantics require the bool data type\x1a\x89\x01this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL\"-\n" +
 	"\tsignal_id\n" +
 	"\bsemantic\n" +
-	"\x16signal_id_property_key\"W\n" +
+	"\x16signal_id_property_key\"d\n" +
+	"\x17ResourcePlanRequirement\x12I\n" +
+	"\n" +
+	"robot_plan\x18\x01 \x01(\x0e2\x1e.robot.v1.RobotAdapterPlanTypeB\n" +
+	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\trobotPlan\"W\n" +
 	"\x1cResourceAssetTypeRequirement\x127\n" +
 	"\x04type\x18\x01 \x01(\x0e2\x17.resources.v1.AssetTypeB\n" +
-	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\x04type\"\xaa\x03\n" +
+	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\x04type\"\xeb\x03\n" +
 	"\x13ResourceRequirement\x12H\n" +
 	"\x05level\x18\x01 \x01(\x0e2&.resources.v1.ResourceRequirementLevelB\n" +
 	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\x05level\x12B\n" +
@@ -551,12 +609,14 @@ const file_resources_v1_resource_requirement_proto_rawDesc = "" +
 	"\ttelemetry\x18\x03 \x01(\v2*.resources.v1.ResourceTelemetryRequirementR\ttelemetry\x12?\n" +
 	"\x06signal\x18\x04 \x01(\v2'.resources.v1.ResourceSignalRequirementR\x06signal\x12I\n" +
 	"\n" +
-	"asset_type\x18\x05 \x01(\v2*.resources.v1.ResourceAssetTypeRequirementR\tassetType:/\xbaH,\"*\n" +
+	"asset_type\x18\x05 \x01(\v2*.resources.v1.ResourceAssetTypeRequirementR\tassetType\x129\n" +
+	"\x04plan\x18\x06 \x01(\v2%.resources.v1.ResourcePlanRequirementR\x04plan:5\xbaH2\"0\n" +
 	"\acommand\n" +
 	"\ttelemetry\n" +
 	"\x06signal\n" +
 	"\n" +
-	"asset_type\x10\x01\"O\n" +
+	"asset_type\n" +
+	"\x04plan\x10\x01\"O\n" +
 	"\x14ResourceRequirements\x127\n" +
 	"\x05items\x18\x01 \x03(\v2!.resources.v1.ResourceRequirementR\x05items\"\xac\x01\n" +
 	"\x1bConsumerResourceRequirement\x12@\n" +
@@ -581,44 +641,48 @@ func file_resources_v1_resource_requirement_proto_rawDescGZIP() []byte {
 }
 
 var file_resources_v1_resource_requirement_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_resources_v1_resource_requirement_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_resources_v1_resource_requirement_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_resources_v1_resource_requirement_proto_goTypes = []any{
 	(ResourceRequirementLevel)(0),        // 0: resources.v1.ResourceRequirementLevel
 	(*ResourceCommandRequirement)(nil),   // 1: resources.v1.ResourceCommandRequirement
 	(*ResourceTelemetryRequirement)(nil), // 2: resources.v1.ResourceTelemetryRequirement
 	(*ResourceSignalRequirement)(nil),    // 3: resources.v1.ResourceSignalRequirement
-	(*ResourceAssetTypeRequirement)(nil), // 4: resources.v1.ResourceAssetTypeRequirement
-	(*ResourceRequirement)(nil),          // 5: resources.v1.ResourceRequirement
-	(*ResourceRequirements)(nil),         // 6: resources.v1.ResourceRequirements
-	(*ConsumerResourceRequirement)(nil),  // 7: resources.v1.ConsumerResourceRequirement
-	(v1.RobotAdapterCommandType)(0),      // 8: robot.v1.RobotAdapterCommandType
-	(AssetAdapterCommandType)(0),         // 9: resources.v1.AssetAdapterCommandType
-	(v1.RobotAdapterTelemetryType)(0),    // 10: robot.v1.RobotAdapterTelemetryType
-	(AssetAdapterTelemetryType)(0),       // 11: resources.v1.AssetAdapterTelemetryType
-	(v11.SignalDataType)(0),              // 12: common.v1.SignalDataType
-	(v11.SignalSemantic)(0),              // 13: common.v1.SignalSemantic
-	(AssetType)(0),                       // 14: resources.v1.AssetType
+	(*ResourcePlanRequirement)(nil),      // 4: resources.v1.ResourcePlanRequirement
+	(*ResourceAssetTypeRequirement)(nil), // 5: resources.v1.ResourceAssetTypeRequirement
+	(*ResourceRequirement)(nil),          // 6: resources.v1.ResourceRequirement
+	(*ResourceRequirements)(nil),         // 7: resources.v1.ResourceRequirements
+	(*ConsumerResourceRequirement)(nil),  // 8: resources.v1.ConsumerResourceRequirement
+	(v1.RobotAdapterCommandType)(0),      // 9: robot.v1.RobotAdapterCommandType
+	(AssetAdapterCommandType)(0),         // 10: resources.v1.AssetAdapterCommandType
+	(v1.RobotAdapterTelemetryType)(0),    // 11: robot.v1.RobotAdapterTelemetryType
+	(AssetAdapterTelemetryType)(0),       // 12: resources.v1.AssetAdapterTelemetryType
+	(v11.SignalDataType)(0),              // 13: common.v1.SignalDataType
+	(v11.SignalSemantic)(0),              // 14: common.v1.SignalSemantic
+	(v1.RobotAdapterPlanType)(0),         // 15: robot.v1.RobotAdapterPlanType
+	(AssetType)(0),                       // 16: resources.v1.AssetType
 }
 var file_resources_v1_resource_requirement_proto_depIdxs = []int32{
-	8,  // 0: resources.v1.ResourceCommandRequirement.robot_command:type_name -> robot.v1.RobotAdapterCommandType
-	9,  // 1: resources.v1.ResourceCommandRequirement.asset_command:type_name -> resources.v1.AssetAdapterCommandType
-	10, // 2: resources.v1.ResourceTelemetryRequirement.robot_telemetry:type_name -> robot.v1.RobotAdapterTelemetryType
-	11, // 3: resources.v1.ResourceTelemetryRequirement.asset_telemetry:type_name -> resources.v1.AssetAdapterTelemetryType
-	12, // 4: resources.v1.ResourceSignalRequirement.data_type:type_name -> common.v1.SignalDataType
-	13, // 5: resources.v1.ResourceSignalRequirement.semantic:type_name -> common.v1.SignalSemantic
-	14, // 6: resources.v1.ResourceAssetTypeRequirement.type:type_name -> resources.v1.AssetType
-	0,  // 7: resources.v1.ResourceRequirement.level:type_name -> resources.v1.ResourceRequirementLevel
-	1,  // 8: resources.v1.ResourceRequirement.command:type_name -> resources.v1.ResourceCommandRequirement
-	2,  // 9: resources.v1.ResourceRequirement.telemetry:type_name -> resources.v1.ResourceTelemetryRequirement
-	3,  // 10: resources.v1.ResourceRequirement.signal:type_name -> resources.v1.ResourceSignalRequirement
-	4,  // 11: resources.v1.ResourceRequirement.asset_type:type_name -> resources.v1.ResourceAssetTypeRequirement
-	5,  // 12: resources.v1.ResourceRequirements.items:type_name -> resources.v1.ResourceRequirement
-	5,  // 13: resources.v1.ConsumerResourceRequirement.requirement:type_name -> resources.v1.ResourceRequirement
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	9,  // 0: resources.v1.ResourceCommandRequirement.robot_command:type_name -> robot.v1.RobotAdapterCommandType
+	10, // 1: resources.v1.ResourceCommandRequirement.asset_command:type_name -> resources.v1.AssetAdapterCommandType
+	11, // 2: resources.v1.ResourceTelemetryRequirement.robot_telemetry:type_name -> robot.v1.RobotAdapterTelemetryType
+	12, // 3: resources.v1.ResourceTelemetryRequirement.asset_telemetry:type_name -> resources.v1.AssetAdapterTelemetryType
+	13, // 4: resources.v1.ResourceSignalRequirement.data_type:type_name -> common.v1.SignalDataType
+	14, // 5: resources.v1.ResourceSignalRequirement.semantic:type_name -> common.v1.SignalSemantic
+	15, // 6: resources.v1.ResourcePlanRequirement.robot_plan:type_name -> robot.v1.RobotAdapterPlanType
+	16, // 7: resources.v1.ResourceAssetTypeRequirement.type:type_name -> resources.v1.AssetType
+	0,  // 8: resources.v1.ResourceRequirement.level:type_name -> resources.v1.ResourceRequirementLevel
+	1,  // 9: resources.v1.ResourceRequirement.command:type_name -> resources.v1.ResourceCommandRequirement
+	2,  // 10: resources.v1.ResourceRequirement.telemetry:type_name -> resources.v1.ResourceTelemetryRequirement
+	3,  // 11: resources.v1.ResourceRequirement.signal:type_name -> resources.v1.ResourceSignalRequirement
+	5,  // 12: resources.v1.ResourceRequirement.asset_type:type_name -> resources.v1.ResourceAssetTypeRequirement
+	4,  // 13: resources.v1.ResourceRequirement.plan:type_name -> resources.v1.ResourcePlanRequirement
+	6,  // 14: resources.v1.ResourceRequirements.items:type_name -> resources.v1.ResourceRequirement
+	6,  // 15: resources.v1.ConsumerResourceRequirement.requirement:type_name -> resources.v1.ResourceRequirement
+	16, // [16:16] is the sub-list for method output_type
+	16, // [16:16] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_resource_requirement_proto_init() }
@@ -635,7 +699,7 @@ func file_resources_v1_resource_requirement_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_resources_v1_resource_requirement_proto_rawDesc), len(file_resources_v1_resource_requirement_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

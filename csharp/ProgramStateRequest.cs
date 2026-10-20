@@ -28,16 +28,19 @@ namespace Messages.Robot.V1 {
             "LnYxGhxyb2JvdC92MS9wcm9ncmFtX3N0YXRlLnByb3RvIl4KE1Byb2dyYW1T",
             "dGF0ZVJlcXVlc3QSGQoIcm9ib3RfaWQYASABKAlSB3JvYm90SWQSLAoFc3Rh",
             "dGUYAiABKA4yFi5yb2JvdC52MS5Qcm9ncmFtU3RhdGVSBXN0YXRlIi0KEEFj",
-            "a25vd2xlZGdlUm9ib3QSGQoIcm9ib3RfaWQYASABKAlSB3JvYm90SWRCqQEK",
-            "DGNvbS5yb2JvdC52MUIYUHJvZ3JhbVN0YXRlUmVxdWVzdFByb3RvUAFaNWdp",
-            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTty",
-            "b2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeIC",
-            "FFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
+            "a25vd2xlZGdlUm9ib3QSGQoIcm9ib3RfaWQYASABKAlSB3JvYm90SWQiTAoV",
+            "Um9ib3RGcmVlRHJpdmVSZXF1ZXN0EhkKCHJvYm90X2lkGAEgASgJUgdyb2Jv",
+            "dElkEhgKB2VuYWJsZWQYAiABKAhSB2VuYWJsZWRCqQEKDGNvbS5yb2JvdC52",
+            "MUIYUHJvZ3JhbVN0YXRlUmVxdWVzdFByb3RvUAFaNWdpdGh1Yi5jb20vY29i",
+            "b3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhY",
+            "qgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQ",
+            "Qk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Messages.Robot.V1.ProgramStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.ProgramStateRequest), global::Messages.Robot.V1.ProgramStateRequest.Parser, new[]{ "RobotId", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.AcknowledgeRobot), global::Messages.Robot.V1.AcknowledgeRobot.Parser, new[]{ "RobotId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.AcknowledgeRobot), global::Messages.Robot.V1.AcknowledgeRobot.Parser, new[]{ "RobotId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Robot.V1.RobotFreeDriveRequest), global::Messages.Robot.V1.RobotFreeDriveRequest.Parser, new[]{ "RobotId", "Enabled" }, null, null, null, null)
           }));
     }
     #endregion
@@ -468,6 +471,245 @@ namespace Messages.Robot.V1 {
             break;
           case 10: {
             RobotId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// RobotFreeDriveRequest starts (enabled) or stops free drive, on
+  /// command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RobotFreeDriveRequest : pb::IMessage<RobotFreeDriveRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RobotFreeDriveRequest> _parser = new pb::MessageParser<RobotFreeDriveRequest>(() => new RobotFreeDriveRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RobotFreeDriveRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Robot.V1.ProgramStateRequestReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RobotFreeDriveRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RobotFreeDriveRequest(RobotFreeDriveRequest other) : this() {
+      robotId_ = other.robotId_;
+      enabled_ = other.enabled_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RobotFreeDriveRequest Clone() {
+      return new RobotFreeDriveRequest(this);
+    }
+
+    /// <summary>Field number for the "robot_id" field.</summary>
+    public const int RobotIdFieldNumber = 1;
+    private string robotId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RobotId {
+      get { return robotId_; }
+      set {
+        robotId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "enabled" field.</summary>
+    public const int EnabledFieldNumber = 2;
+    private bool enabled_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Enabled {
+      get { return enabled_; }
+      set {
+        enabled_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RobotFreeDriveRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RobotFreeDriveRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RobotId != other.RobotId) return false;
+      if (Enabled != other.Enabled) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RobotId.Length != 0) hash ^= RobotId.GetHashCode();
+      if (Enabled != false) hash ^= Enabled.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RobotId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RobotId);
+      }
+      if (Enabled != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Enabled);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RobotId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(RobotId);
+      }
+      if (Enabled != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Enabled);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RobotId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RobotId);
+      }
+      if (Enabled != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RobotFreeDriveRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RobotId.Length != 0) {
+        RobotId = other.RobotId;
+      }
+      if (other.Enabled != false) {
+        Enabled = other.Enabled;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            RobotId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Enabled = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            RobotId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Enabled = input.ReadBool();
             break;
           }
         }

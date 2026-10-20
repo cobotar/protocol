@@ -4,6 +4,7 @@
 
 ### Added
 
+- Free drive and robot plans as robot adapter capabilities (cobotar/protocol#24): `robot.v1.RobotAdapterCommandType` `FREE_DRIVE_START` and `FREE_DRIVE_STOP`; `robot.v1.RobotAdapterPlanType` (path, waypoints, joint angles) with `RobotAdapterPlanCapability` and `resources.v1.RobotAdapterDefinition.plans`; `resources.v1.ResourcePlanRequirement` as `ResourceRequirement.plan`, which only robot resource requirements may use; `common.v1.SignalSemantic.SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE` for the output that puts the robot in free drive; and `robot.v1.RobotFreeDriveRequest` on the new route `command.robot_instance.free_drive.{robot_instance_id}`, which robot adapters serve.
 - `ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_OFFLINE`: the adapter of a bound resource isn't running, so every requirement on the slot is listed as unmet with the consumers that need it. Authoring reports it while it doesn't hear the adapter's heartbeats, without storing it (cobotar/Authoring#69).
 - Subject catalog routes for every subject Authoring serves, publishes, requests or subscribes to: the run, task, availability and ownership commands, AR config input slots and presentation bindings, process recipe structure edits, field lookups, process recipe draft generation, `get.ar_config.info`, `get.process_run_definitions.one`, `get.backend.info`, the robot adapter's commands and requests, robot telemetry, task progress, device and server heartbeats, server restarts and log records (cobotar/Authoring#64).
 - The adapter info subjects (cobotar/protocol#23): adapters announce their info on `report.robot_adapter.info.{robot_instance_id}` and `report.asset_adapter.info.{asset_instance_id}`, and Authoring reports changes as added, updated and removed events of the new `robot_adapter_info` and `asset_adapter_info` entities. The new `robot_adapter` and `asset_adapter` components stand for the adapters of robot instances (such as the UR adapter) and of asset instances, so the routes they serve, request and publish say so.
@@ -22,6 +23,7 @@
 
 ### Changed
 
+- `plan.robot.path.{robot_instance_id}.{plan_id}` is published by robot adapters, not by Authoring.
 - `edit.property_instance.update-value` is now `edit.property_instance.update_value`, since subject tokens are lower_snake_case.
 - The reserved `edit.{entity}.reset.{child}` route is replaced by `edit.ar_config.reset.presentation_binding`, which takes an `ar.v1.PresentationBindingReset`.
 - `get.ar_config_binding.candidates` and `get.asset_adapter.info` are active, since Authoring serves them.

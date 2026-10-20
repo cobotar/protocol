@@ -262,7 +262,7 @@ var File_ar_v1_action_definition_proto protoreflect.FileDescriptor
 
 const file_ar_v1_action_definition_proto_rawDesc = "" +
 	"\n" +
-	"\x1dar/v1/action_definition.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb8\x0f\n" +
+	"\x1dar/v1/action_definition.proto\x12\x05ar.v1\x1a\x12ar/v1/action.proto\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xde\x0f\n" +
 	"\x10ActionDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe8\xf3\x04\x01R\x02id\x12\x1e\n" +
 	"\x03key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
@@ -279,8 +279,8 @@ const file_ar_v1_action_definition_proto_rawDesc = "" +
 	"(action_definition.properties.unique_keys\x12%property template keys must be unique\x1a)this.map(property, property.key).unique()R\n" +
 	"properties\x12>\n" +
 	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecution\x12^\n" +
-	"\x15resource_requirements\x18\x0e \x03(\v2).resources.v1.ConsumerResourceRequirementR\x14resourceRequirements:\xd3\t\xbaH\xcf\t\x1a\x8e\x06\n" +
-	"Eaction_definition.resource_requirements.reference_resource_properties\x12Rresource requirements must reference a compatible ROBOT or ASSET property template\x1a\xf0\x04this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && ((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || (property.type == 14 && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))\x1a\xbb\x03\n" +
+	"\x15resource_requirements\x18\x0e \x03(\v2).resources.v1.ConsumerResourceRequirementR\x14resourceRequirements:\xf9\t\xbaH\xf5\t\x1a\xb4\x06\n" +
+	"Eaction_definition.resource_requirements.reference_resource_properties\x12Rresource requirements must reference a compatible ROBOT or ASSET property template\x1a\x96\x05this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && ((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || (property.type == 14 && !has(requirement.requirement.plan) && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))\x1a\xbb\x03\n" +
 	"Aaction_definition.signal_requirements.reference_signal_properties\x12Isignal id property keys must reference a STRING or ENUM property template\x1a\xaa\x02this.resource_requirements.all(requirement, !has(requirement.requirement.signal) || !has(requirement.requirement.signal.signal_id_property_key) || this.properties.exists(property, property.key == requirement.requirement.signal.signal_id_property_key && (property.type == 5 || property.type == 11)))J\x04\b\v\x10\fJ\x04\b\f\x10\r\"\xbb\x03\n" +
 	"\x11ActionDefinitions\x12\xa5\x03\n" +
 	"\x05items\x18\x01 \x03(\v2\x17.ar.v1.ActionDefinitionB\xf5\x02\xbaH\xf1\x02\xba\x01y\n" +

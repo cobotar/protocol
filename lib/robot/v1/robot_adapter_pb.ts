@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file robot/v1/robot_adapter.proto.
  */
 export const file_robot_v1_robot_adapter: GenFile = /*@__PURE__*/
-  fileDesc("Chxyb2JvdC92MS9yb2JvdF9hZGFwdGVyLnByb3RvEghyb2JvdC52MSJdCh1Sb2JvdEFkYXB0ZXJDb21tYW5kQ2FwYWJpbGl0eRI8CgR0eXBlGAEgASgOMiEucm9ib3QudjEuUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGVCC7pICMgBAYIBAhABIp8BCh9Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlDYXBhYmlsaXR5Ej4KBHR5cGUYASABKA4yIy5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlQgu6SAjIAQGCAQIQARIrCgxmcmVxdWVuY3lfaHoYAiABKAFCELpIDRILQAEhAAAAAAAAAABIAIgBAUIPCg1fZnJlcXVlbmN5X2h6InoKF1JvYm90Q29udHJvbGxlcklkZW50aXR5EhQKDG1hbnVmYWN0dXJlchgBIAEoCRINCgVtb2RlbBgCIAEoCRIVCg1zZXJpYWxfbnVtYmVyGAMgASgJEiMKG2NvbnRyb2xsZXJfc29mdHdhcmVfdmVyc2lvbhgEIAEoCSLbAwoXUm9ib3RBZGFwdGVySW5mb01lc3NhZ2USHgoIcm9ib3RfaWQYASABKAlCDLpICcgBAXIEqPEEARIlCg9hZGFwdGVyX3ZlcnNpb24YBSABKAlCDLpICcgBAXIEiPQEARI1Cgpjb250cm9sbGVyGAYgASgLMiEucm9ib3QudjEuUm9ib3RDb250cm9sbGVySWRlbnRpdHkSKwoVY2FwYWJpbGl0aWVzX3JldmlzaW9uGAggASgJQgy6SAnIAQFyBIj0BAESKwoVYWRhcHRlcl9kZWZpbml0aW9uX2lkGAkgASgJQgy6SAnIAQFyBJD0BAESOAoOc2lnbmFsX2NhdGFsb2cYCiABKAsyGC5jb21tb24udjEuU2lnbmFsQ2F0YWxvZ0IGukgDyAEBOq0BukipARqmAQotcm9ib3RfYWRhcHRlcl9pbmZvLnNpZ25hbF9jYXRhbG9nX3Jlc291cmNlX2lkEkN0aGUgc2lnbmFsIGNhdGFsb2cgcmVzb3VyY2UgaWQgbXVzdCBtYXRjaCB0aGUgYWRhcHRlciBpbmZvIHJvYm90IGlkGjB0aGlzLnNpZ25hbF9jYXRhbG9nLnJlc291cmNlX2lkID09IHRoaXMucm9ib3RfaWQqrwQKF1JvYm90QWRhcHRlckNvbW1hbmRUeXBlEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1VOU1BFQ0lGSUVEEAASKwonUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9QTEFZEAESLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9QQVVTRRACEisKJ1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BST0dSQU1fU1RPUBADEioKJlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0FDS05PV0xFREdFEAoSKQolUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfU0hPV19QT1BVUBALEikKJVJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0hJREVfUE9QVVAQDBIrCidST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX1BST0dSQU0QFBIwCixST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9MT0FEX0lOU1RBTExBVElPThAVEicKI1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX1BPV0VSX09OEB4SKAokUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJfT0ZGEB8SLAooUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQlJBS0VfUkVMRUFTRRAgKqgCChlSb2JvdEFkYXB0ZXJUZWxlbWV0cnlUeXBlEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVU5TUEVDSUZJRUQQABIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1JPQk9UX1NUQVRFEAESLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9KT0lOVF9TVEFURRACEikKJVJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfVENQX1BPU0UQAxIrCidST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9XUkVOQ0gQBBIpCiVST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX0lPX1NUQVRFEAVCogEKDGNvbS5yb2JvdC52MUIRUm9ib3RBZGFwdGVyUHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_signal, file_validation_v1_predefined_string_rules]);
+  fileDesc("Chxyb2JvdC92MS9yb2JvdF9hZGFwdGVyLnByb3RvEghyb2JvdC52MSJdCh1Sb2JvdEFkYXB0ZXJDb21tYW5kQ2FwYWJpbGl0eRI8CgR0eXBlGAEgASgOMiEucm9ib3QudjEuUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGVCC7pICMgBAYIBAhABIlcKGlJvYm90QWRhcHRlclBsYW5DYXBhYmlsaXR5EjkKBHR5cGUYASABKA4yHi5yb2JvdC52MS5Sb2JvdEFkYXB0ZXJQbGFuVHlwZUILukgIyAEBggECEAEinwEKH1JvYm90QWRhcHRlclRlbGVtZXRyeUNhcGFiaWxpdHkSPgoEdHlwZRgBIAEoDjIjLnJvYm90LnYxLlJvYm90QWRhcHRlclRlbGVtZXRyeVR5cGVCC7pICMgBAYIBAhABEisKDGZyZXF1ZW5jeV9oehgCIAEoAUIQukgNEgtAASEAAAAAAAAAAEgAiAEBQg8KDV9mcmVxdWVuY3lfaHoiegoXUm9ib3RDb250cm9sbGVySWRlbnRpdHkSFAoMbWFudWZhY3R1cmVyGAEgASgJEg0KBW1vZGVsGAIgASgJEhUKDXNlcmlhbF9udW1iZXIYAyABKAkSIwobY29udHJvbGxlcl9zb2Z0d2FyZV92ZXJzaW9uGAQgASgJItsDChdSb2JvdEFkYXB0ZXJJbmZvTWVzc2FnZRIeCghyb2JvdF9pZBgBIAEoCUIMukgJyAEBcgSo8QQBEiUKD2FkYXB0ZXJfdmVyc2lvbhgFIAEoCUIMukgJyAEBcgSI9AQBEjUKCmNvbnRyb2xsZXIYBiABKAsyIS5yb2JvdC52MS5Sb2JvdENvbnRyb2xsZXJJZGVudGl0eRIrChVjYXBhYmlsaXRpZXNfcmV2aXNpb24YCCABKAlCDLpICcgBAXIEiPQEARIrChVhZGFwdGVyX2RlZmluaXRpb25faWQYCSABKAlCDLpICcgBAXIEkPQEARI4Cg5zaWduYWxfY2F0YWxvZxgKIAEoCzIYLmNvbW1vbi52MS5TaWduYWxDYXRhbG9nQga6SAPIAQE6rQG6SKkBGqYBCi1yb2JvdF9hZGFwdGVyX2luZm8uc2lnbmFsX2NhdGFsb2dfcmVzb3VyY2VfaWQSQ3RoZSBzaWduYWwgY2F0YWxvZyByZXNvdXJjZSBpZCBtdXN0IG1hdGNoIHRoZSBhZGFwdGVyIGluZm8gcm9ib3QgaWQaMHRoaXMuc2lnbmFsX2NhdGFsb2cucmVzb3VyY2VfaWQgPT0gdGhpcy5yb2JvdF9pZCqQBQoXUm9ib3RBZGFwdGVyQ29tbWFuZFR5cGUSKgomUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfVU5TUEVDSUZJRUQQABIrCidST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1BMQVkQARIsCihST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QUk9HUkFNX1BBVVNFEAISKwonUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUFJPR1JBTV9TVE9QEAMSKgomUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfQUNLTk9XTEVER0UQChIpCiVST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9TSE9XX1BPUFVQEAsSKQolUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfSElERV9QT1BVUBAMEisKJ1JPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0xPQURfUFJPR1JBTRAUEjAKLFJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0xPQURfSU5TVEFMTEFUSU9OEBUSJwojUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfUE9XRVJfT04QHhIoCiRST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9QT1dFUl9PRkYQHxIsCihST0JPVF9BREFQVEVSX0NPTU1BTkRfVFlQRV9CUkFLRV9SRUxFQVNFECASLworUk9CT1RfQURBUFRFUl9DT01NQU5EX1RZUEVfRlJFRV9EUklWRV9TVEFSVBAoEi4KKlJPQk9UX0FEQVBURVJfQ09NTUFORF9UWVBFX0ZSRUVfRFJJVkVfU1RPUBApKrIBChRSb2JvdEFkYXB0ZXJQbGFuVHlwZRInCiNST0JPVF9BREFQVEVSX1BMQU5fVFlQRV9VTlNQRUNJRklFRBAAEiAKHFJPQk9UX0FEQVBURVJfUExBTl9UWVBFX1BBVEgQARIlCiFST0JPVF9BREFQVEVSX1BMQU5fVFlQRV9XQVlQT0lOVFMQAhIoCiRST0JPVF9BREFQVEVSX1BMQU5fVFlQRV9KT0lOVF9BTkdMRVMQAyqoAgoZUm9ib3RBZGFwdGVyVGVsZW1ldHJ5VHlwZRIsCihST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1VOU1BFQ0lGSUVEEAASLAooUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9ST0JPVF9TVEFURRABEiwKKFJPQk9UX0FEQVBURVJfVEVMRU1FVFJZX1RZUEVfSk9JTlRfU1RBVEUQAhIpCiVST0JPVF9BREFQVEVSX1RFTEVNRVRSWV9UWVBFX1RDUF9QT1NFEAMSKwonUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9UQ1BfV1JFTkNIEAQSKQolUk9CT1RfQURBUFRFUl9URUxFTUVUUllfVFlQRV9JT19TVEFURRAFQqIBCgxjb20ucm9ib3QudjFCEVJvYm90QWRhcHRlclByb3RvUAFaNWdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yb2JvdC92MTtyb2JvdHYxogIDUlhYqgIRTWVzc2FnZXMuUm9ib3QuVjHKAghSb2JvdFxWMeICFFJvYm90XFYxXEdQQk1ldGFkYXRh6gIJUm9ib3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_signal, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message robot.v1.RobotAdapterCommandCapability
@@ -32,6 +32,23 @@ export type RobotAdapterCommandCapability = Message<"robot.v1.RobotAdapterComman
  */
 export const RobotAdapterCommandCapabilitySchema: GenMessage<RobotAdapterCommandCapability> = /*@__PURE__*/
   messageDesc(file_robot_v1_robot_adapter, 0);
+
+/**
+ * @generated from message robot.v1.RobotAdapterPlanCapability
+ */
+export type RobotAdapterPlanCapability = Message<"robot.v1.RobotAdapterPlanCapability"> & {
+  /**
+   * @generated from field: robot.v1.RobotAdapterPlanType type = 1;
+   */
+  type: RobotAdapterPlanType;
+};
+
+/**
+ * Describes the message robot.v1.RobotAdapterPlanCapability.
+ * Use `create(RobotAdapterPlanCapabilitySchema)` to create a new message.
+ */
+export const RobotAdapterPlanCapabilitySchema: GenMessage<RobotAdapterPlanCapability> = /*@__PURE__*/
+  messageDesc(file_robot_v1_robot_adapter, 1);
 
 /**
  * @generated from message robot.v1.RobotAdapterTelemetryCapability
@@ -55,7 +72,7 @@ export type RobotAdapterTelemetryCapability = Message<"robot.v1.RobotAdapterTele
  * Use `create(RobotAdapterTelemetryCapabilitySchema)` to create a new message.
  */
 export const RobotAdapterTelemetryCapabilitySchema: GenMessage<RobotAdapterTelemetryCapability> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_adapter, 1);
+  messageDesc(file_robot_v1_robot_adapter, 2);
 
 /**
  * @generated from message robot.v1.RobotControllerIdentity
@@ -87,7 +104,7 @@ export type RobotControllerIdentity = Message<"robot.v1.RobotControllerIdentity"
  * Use `create(RobotControllerIdentitySchema)` to create a new message.
  */
 export const RobotControllerIdentitySchema: GenMessage<RobotControllerIdentity> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_adapter, 2);
+  messageDesc(file_robot_v1_robot_adapter, 3);
 
 /**
  * @generated from message robot.v1.RobotAdapterInfoMessage
@@ -139,7 +156,7 @@ export type RobotAdapterInfoMessage = Message<"robot.v1.RobotAdapterInfoMessage"
  * Use `create(RobotAdapterInfoMessageSchema)` to create a new message.
  */
 export const RobotAdapterInfoMessageSchema: GenMessage<RobotAdapterInfoMessage> = /*@__PURE__*/
-  messageDesc(file_robot_v1_robot_adapter, 3);
+  messageDesc(file_robot_v1_robot_adapter, 4);
 
 /**
  * @generated from enum robot.v1.RobotAdapterCommandType
@@ -204,6 +221,19 @@ export enum RobotAdapterCommandType {
    * @generated from enum value: ROBOT_ADAPTER_COMMAND_TYPE_BRAKE_RELEASE = 32;
    */
   BRAKE_RELEASE = 32,
+
+  /**
+   * Free drive: the robot can be moved by hand. START and STOP are idempotent,
+   * like PROGRAM_PLAY and PROGRAM_PAUSE.
+   *
+   * @generated from enum value: ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_START = 40;
+   */
+  FREE_DRIVE_START = 40,
+
+  /**
+   * @generated from enum value: ROBOT_ADAPTER_COMMAND_TYPE_FREE_DRIVE_STOP = 41;
+   */
+  FREE_DRIVE_STOP = 41,
 }
 
 /**
@@ -211,6 +241,46 @@ export enum RobotAdapterCommandType {
  */
 export const RobotAdapterCommandTypeSchema: GenEnum<RobotAdapterCommandType> = /*@__PURE__*/
   enumDesc(file_robot_v1_robot_adapter, 0);
+
+/**
+ * RobotAdapterPlanType is a plan of the robot's next motion that an adapter
+ * publishes, however it gets it (e.g. from the robot program).
+ *
+ * @generated from enum robot.v1.RobotAdapterPlanType
+ */
+export enum RobotAdapterPlanType {
+  /**
+   * @generated from enum value: ROBOT_ADAPTER_PLAN_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The TCP path of the next motion: plan.robot.path.{robot_instance_id}.{plan_id}.
+   *
+   * @generated from enum value: ROBOT_ADAPTER_PLAN_TYPE_PATH = 1;
+   */
+  PATH = 1,
+
+  /**
+   * The waypoints of the next motion.
+   *
+   * @generated from enum value: ROBOT_ADAPTER_PLAN_TYPE_WAYPOINTS = 2;
+   */
+  WAYPOINTS = 2,
+
+  /**
+   * The joint angles the robot will move to.
+   *
+   * @generated from enum value: ROBOT_ADAPTER_PLAN_TYPE_JOINT_ANGLES = 3;
+   */
+  JOINT_ANGLES = 3,
+}
+
+/**
+ * Describes the enum robot.v1.RobotAdapterPlanType.
+ */
+export const RobotAdapterPlanTypeSchema: GenEnum<RobotAdapterPlanType> = /*@__PURE__*/
+  enumDesc(file_robot_v1_robot_adapter, 1);
 
 /**
  * @generated from enum robot.v1.RobotAdapterTelemetryType
@@ -251,5 +321,5 @@ export enum RobotAdapterTelemetryType {
  * Describes the enum robot.v1.RobotAdapterTelemetryType.
  */
 export const RobotAdapterTelemetryTypeSchema: GenEnum<RobotAdapterTelemetryType> = /*@__PURE__*/
-  enumDesc(file_robot_v1_robot_adapter, 1);
+  enumDesc(file_robot_v1_robot_adapter, 2);
 

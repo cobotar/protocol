@@ -47,6 +47,12 @@ enum SignalSemantic {
   // worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command,
   // so it is readable but not writable by clients.
   SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE = 100;
+  // Robot output that puts the robot in free drive while it is set, e.g. a
+  // digital output wired to a configurable input with the Freedrive action, or
+  // a register that the robot program watches. The adapter sets it for
+  // FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but
+  // not writable by clients.
+  SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE = 101;
 }
 
 // SignalDefinition describes one stable, adapter-facing signal independently

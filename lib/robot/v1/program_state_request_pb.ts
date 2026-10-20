@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file robot/v1/program_state_request.proto.
  */
 export const file_robot_v1_program_state_request: GenFile = /*@__PURE__*/
-  fileDesc("CiRyb2JvdC92MS9wcm9ncmFtX3N0YXRlX3JlcXVlc3QucHJvdG8SCHJvYm90LnYxIk4KE1Byb2dyYW1TdGF0ZVJlcXVlc3QSEAoIcm9ib3RfaWQYASABKAkSJQoFc3RhdGUYAiABKA4yFi5yb2JvdC52MS5Qcm9ncmFtU3RhdGUiJAoQQWNrbm93bGVkZ2VSb2JvdBIQCghyb2JvdF9pZBgBIAEoCUKpAQoMY29tLnJvYm90LnYxQhhQcm9ncmFtU3RhdGVSZXF1ZXN0UHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw", [file_robot_v1_program_state]);
+  fileDesc("CiRyb2JvdC92MS9wcm9ncmFtX3N0YXRlX3JlcXVlc3QucHJvdG8SCHJvYm90LnYxIk4KE1Byb2dyYW1TdGF0ZVJlcXVlc3QSEAoIcm9ib3RfaWQYASABKAkSJQoFc3RhdGUYAiABKA4yFi5yb2JvdC52MS5Qcm9ncmFtU3RhdGUiJAoQQWNrbm93bGVkZ2VSb2JvdBIQCghyb2JvdF9pZBgBIAEoCSI6ChVSb2JvdEZyZWVEcml2ZVJlcXVlc3QSEAoIcm9ib3RfaWQYASABKAkSDwoHZW5hYmxlZBgCIAEoCEKpAQoMY29tLnJvYm90LnYxQhhQcm9ncmFtU3RhdGVSZXF1ZXN0UHJvdG9QAVo1Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3JvYm90L3YxO3JvYm90djGiAgNSWFiqAhFNZXNzYWdlcy5Sb2JvdC5WMcoCCFJvYm90XFYx4gIUUm9ib3RcVjFcR1BCTWV0YWRhdGHqAglSb2JvdDo6VjFiBnByb3RvMw", [file_robot_v1_program_state]);
 
 /**
  * @generated from message robot.v1.ProgramStateRequest
@@ -52,4 +52,29 @@ export type AcknowledgeRobot = Message<"robot.v1.AcknowledgeRobot"> & {
  */
 export const AcknowledgeRobotSchema: GenMessage<AcknowledgeRobot> = /*@__PURE__*/
   messageDesc(file_robot_v1_program_state_request, 1);
+
+/**
+ * RobotFreeDriveRequest starts (enabled) or stops free drive, on
+ * command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
+ *
+ * @generated from message robot.v1.RobotFreeDriveRequest
+ */
+export type RobotFreeDriveRequest = Message<"robot.v1.RobotFreeDriveRequest"> & {
+  /**
+   * @generated from field: string robot_id = 1;
+   */
+  robotId: string;
+
+  /**
+   * @generated from field: bool enabled = 2;
+   */
+  enabled: boolean;
+};
+
+/**
+ * Describes the message robot.v1.RobotFreeDriveRequest.
+ * Use `create(RobotFreeDriveRequestSchema)` to create a new message.
+ */
+export const RobotFreeDriveRequestSchema: GenMessage<RobotFreeDriveRequest> = /*@__PURE__*/
+  messageDesc(file_robot_v1_program_state_request, 2);
 

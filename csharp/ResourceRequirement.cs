@@ -67,40 +67,45 @@ namespace Messages.Resources.V1 {
             "TF9TRU1BTlRJQ19VTlNQRUNJRklFRCB8fCB0aGlzLmRhdGFfdHlwZSA9PSBj",
             "b21tb24udjEuU2lnbmFsRGF0YVR5cGUuU0lHTkFMX0RBVEFfVFlQRV9CT09M",
             "Ii0KCXNpZ25hbF9pZAoIc2VtYW50aWMKFnNpZ25hbF9pZF9wcm9wZXJ0eV9r",
-            "ZXkiVwocUmVzb3VyY2VBc3NldFR5cGVSZXF1aXJlbWVudBI3CgR0eXBlGAEg",
-            "ASgOMhcucmVzb3VyY2VzLnYxLkFzc2V0VHlwZUIKukgHggEEEAEgAFIEdHlw",
-            "ZSKqAwoTUmVzb3VyY2VSZXF1aXJlbWVudBJICgVsZXZlbBgBIAEoDjImLnJl",
-            "c291cmNlcy52MS5SZXNvdXJjZVJlcXVpcmVtZW50TGV2ZWxCCrpIB4IBBBAB",
-            "IABSBWxldmVsEkIKB2NvbW1hbmQYAiABKAsyKC5yZXNvdXJjZXMudjEuUmVz",
-            "b3VyY2VDb21tYW5kUmVxdWlyZW1lbnRSB2NvbW1hbmQSSAoJdGVsZW1ldHJ5",
-            "GAMgASgLMioucmVzb3VyY2VzLnYxLlJlc291cmNlVGVsZW1ldHJ5UmVxdWly",
-            "ZW1lbnRSCXRlbGVtZXRyeRI/CgZzaWduYWwYBCABKAsyJy5yZXNvdXJjZXMu",
-            "djEuUmVzb3VyY2VTaWduYWxSZXF1aXJlbWVudFIGc2lnbmFsEkkKCmFzc2V0",
-            "X3R5cGUYBSABKAsyKi5yZXNvdXJjZXMudjEuUmVzb3VyY2VBc3NldFR5cGVS",
-            "ZXF1aXJlbWVudFIJYXNzZXRUeXBlOi+6SCwiKgoHY29tbWFuZAoJdGVsZW1l",
-            "dHJ5CgZzaWduYWwKCmFzc2V0X3R5cGUQASJPChRSZXNvdXJjZVJlcXVpcmVt",
-            "ZW50cxI3CgVpdGVtcxgBIAMoCzIhLnJlc291cmNlcy52MS5SZXNvdXJjZVJl",
-            "cXVpcmVtZW50UgVpdGVtcyKsAQobQ29uc3VtZXJSZXNvdXJjZVJlcXVpcmVt",
-            "ZW50EkAKFXJlc291cmNlX3Byb3BlcnR5X2tleRgBIAEoCUIMukgJcgTg8wQB",
-            "yAEBUhNyZXNvdXJjZVByb3BlcnR5S2V5EksKC3JlcXVpcmVtZW50GAIgASgL",
-            "MiEucmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWlyZW1lbnRCBrpIA8gBAVIL",
-            "cmVxdWlyZW1lbnQqmAEKGFJlc291cmNlUmVxdWlyZW1lbnRMZXZlbBIqCiZS",
-            "RVNPVVJDRV9SRVFVSVJFTUVOVF9MRVZFTF9VTlNQRUNJRklFRBAAEicKI1JF",
-            "U09VUkNFX1JFUVVJUkVNRU5UX0xFVkVMX1JFUVVJUkVEEAESJwojUkVTT1VS",
-            "Q0VfUkVRVUlSRU1FTlRfTEVWRUxfT1BUSU9OQUwQAkLFAQoQY29tLnJlc291",
-            "cmNlcy52MUIYUmVzb3VyY2VSZXF1aXJlbWVudFByb3RvUAFaPWdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVz",
-            "b3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNv",
-            "dXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJj",
-            "ZXM6OlYxYgZwcm90bzM="));
+            "ZXkiZAoXUmVzb3VyY2VQbGFuUmVxdWlyZW1lbnQSSQoKcm9ib3RfcGxhbhgB",
+            "IAEoDjIeLnJvYm90LnYxLlJvYm90QWRhcHRlclBsYW5UeXBlQgq6SAeCAQQQ",
+            "ASAAUglyb2JvdFBsYW4iVwocUmVzb3VyY2VBc3NldFR5cGVSZXF1aXJlbWVu",
+            "dBI3CgR0eXBlGAEgASgOMhcucmVzb3VyY2VzLnYxLkFzc2V0VHlwZUIKukgH",
+            "ggEEEAEgAFIEdHlwZSLrAwoTUmVzb3VyY2VSZXF1aXJlbWVudBJICgVsZXZl",
+            "bBgBIAEoDjImLnJlc291cmNlcy52MS5SZXNvdXJjZVJlcXVpcmVtZW50TGV2",
+            "ZWxCCrpIB4IBBBABIABSBWxldmVsEkIKB2NvbW1hbmQYAiABKAsyKC5yZXNv",
+            "dXJjZXMudjEuUmVzb3VyY2VDb21tYW5kUmVxdWlyZW1lbnRSB2NvbW1hbmQS",
+            "SAoJdGVsZW1ldHJ5GAMgASgLMioucmVzb3VyY2VzLnYxLlJlc291cmNlVGVs",
+            "ZW1ldHJ5UmVxdWlyZW1lbnRSCXRlbGVtZXRyeRI/CgZzaWduYWwYBCABKAsy",
+            "Jy5yZXNvdXJjZXMudjEuUmVzb3VyY2VTaWduYWxSZXF1aXJlbWVudFIGc2ln",
+            "bmFsEkkKCmFzc2V0X3R5cGUYBSABKAsyKi5yZXNvdXJjZXMudjEuUmVzb3Vy",
+            "Y2VBc3NldFR5cGVSZXF1aXJlbWVudFIJYXNzZXRUeXBlEjkKBHBsYW4YBiAB",
+            "KAsyJS5yZXNvdXJjZXMudjEuUmVzb3VyY2VQbGFuUmVxdWlyZW1lbnRSBHBs",
+            "YW46NbpIMiIwCgdjb21tYW5kCgl0ZWxlbWV0cnkKBnNpZ25hbAoKYXNzZXRf",
+            "dHlwZQoEcGxhbhABIk8KFFJlc291cmNlUmVxdWlyZW1lbnRzEjcKBWl0ZW1z",
+            "GAEgAygLMiEucmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWlyZW1lbnRSBWl0",
+            "ZW1zIqwBChtDb25zdW1lclJlc291cmNlUmVxdWlyZW1lbnQSQAoVcmVzb3Vy",
+            "Y2VfcHJvcGVydHlfa2V5GAEgASgJQgy6SAlyBODzBAHIAQFSE3Jlc291cmNl",
+            "UHJvcGVydHlLZXkSSwoLcmVxdWlyZW1lbnQYAiABKAsyIS5yZXNvdXJjZXMu",
+            "djEuUmVzb3VyY2VSZXF1aXJlbWVudEIGukgDyAEBUgtyZXF1aXJlbWVudCqY",
+            "AQoYUmVzb3VyY2VSZXF1aXJlbWVudExldmVsEioKJlJFU09VUkNFX1JFUVVJ",
+            "UkVNRU5UX0xFVkVMX1VOU1BFQ0lGSUVEEAASJwojUkVTT1VSQ0VfUkVRVUlS",
+            "RU1FTlRfTEVWRUxfUkVRVUlSRUQQARInCiNSRVNPVVJDRV9SRVFVSVJFTUVO",
+            "VF9MRVZFTF9PUFRJT05BTBACQsUBChBjb20ucmVzb3VyY2VzLnYxQhhSZXNv",
+            "dXJjZVJlcXVpcmVtZW50UHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JY",
+            "WKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJl",
+            "c291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.SignalReflection.Descriptor, global::Messages.Resources.V1.AssetAdapterReflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Robot.V1.RobotAdapterReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ResourceRequirementLevel), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceCommandRequirement), global::Messages.Resources.V1.ResourceCommandRequirement.Parser, new[]{ "RobotCommand", "AssetCommand" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceTelemetryRequirement), global::Messages.Resources.V1.ResourceTelemetryRequirement.Parser, new[]{ "RobotTelemetry", "AssetTelemetry", "MinimumFrequencyHz" }, new[]{ "MinimumFrequencyHz" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceSignalRequirement), global::Messages.Resources.V1.ResourceSignalRequirement.Parser, new[]{ "DataType", "Readable", "Writable", "SignalId", "Semantic", "SignalIdPropertyKey" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourcePlanRequirement), global::Messages.Resources.V1.ResourcePlanRequirement.Parser, new[]{ "RobotPlan" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceAssetTypeRequirement), global::Messages.Resources.V1.ResourceAssetTypeRequirement.Parser, new[]{ "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceRequirement), global::Messages.Resources.V1.ResourceRequirement.Parser, new[]{ "Level", "Command", "Telemetry", "Signal", "AssetType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceRequirement), global::Messages.Resources.V1.ResourceRequirement.Parser, new[]{ "Level", "Command", "Telemetry", "Signal", "AssetType", "Plan" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ResourceRequirements), global::Messages.Resources.V1.ResourceRequirements.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ConsumerResourceRequirement), global::Messages.Resources.V1.ConsumerResourceRequirement.Parser, new[]{ "ResourcePropertyKey", "Requirement" }, null, null, null, null)
           }));
@@ -1049,6 +1054,208 @@ namespace Messages.Resources.V1 {
 
   }
 
+  /// <summary>
+  /// ResourcePlanRequirement asks for a plan of the robot's next motion, which the
+  /// robot's adapter definition lists in plans.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ResourcePlanRequirement : pb::IMessage<ResourcePlanRequirement>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ResourcePlanRequirement> _parser = new pb::MessageParser<ResourcePlanRequirement>(() => new ResourcePlanRequirement());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ResourcePlanRequirement> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ResourcePlanRequirement() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ResourcePlanRequirement(ResourcePlanRequirement other) : this() {
+      robotPlan_ = other.robotPlan_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ResourcePlanRequirement Clone() {
+      return new ResourcePlanRequirement(this);
+    }
+
+    /// <summary>Field number for the "robot_plan" field.</summary>
+    public const int RobotPlanFieldNumber = 1;
+    private global::Messages.Robot.V1.RobotAdapterPlanType robotPlan_ = global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Robot.V1.RobotAdapterPlanType RobotPlan {
+      get { return robotPlan_; }
+      set {
+        robotPlan_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ResourcePlanRequirement);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ResourcePlanRequirement other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RobotPlan != other.RobotPlan) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RobotPlan != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) hash ^= RobotPlan.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RobotPlan != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) RobotPlan);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RobotPlan != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) RobotPlan);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RobotPlan != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RobotPlan);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ResourcePlanRequirement other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RobotPlan != global::Messages.Robot.V1.RobotAdapterPlanType.Unspecified) {
+        RobotPlan = other.RobotPlan;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            RobotPlan = (global::Messages.Robot.V1.RobotAdapterPlanType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            RobotPlan = (global::Messages.Robot.V1.RobotAdapterPlanType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ResourceAssetTypeRequirement : pb::IMessage<ResourceAssetTypeRequirement>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1064,7 +1271,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1265,7 +1472,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1290,6 +1497,7 @@ namespace Messages.Resources.V1 {
       telemetry_ = other.telemetry_ != null ? other.telemetry_.Clone() : null;
       signal_ = other.signal_ != null ? other.signal_.Clone() : null;
       assetType_ = other.assetType_ != null ? other.assetType_.Clone() : null;
+      plan_ = other.plan_ != null ? other.plan_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1359,6 +1567,18 @@ namespace Messages.Resources.V1 {
       }
     }
 
+    /// <summary>Field number for the "plan" field.</summary>
+    public const int PlanFieldNumber = 6;
+    private global::Messages.Resources.V1.ResourcePlanRequirement plan_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Resources.V1.ResourcePlanRequirement Plan {
+      get { return plan_; }
+      set {
+        plan_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1379,6 +1599,7 @@ namespace Messages.Resources.V1 {
       if (!object.Equals(Telemetry, other.Telemetry)) return false;
       if (!object.Equals(Signal, other.Signal)) return false;
       if (!object.Equals(AssetType, other.AssetType)) return false;
+      if (!object.Equals(Plan, other.Plan)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1391,6 +1612,7 @@ namespace Messages.Resources.V1 {
       if (telemetry_ != null) hash ^= Telemetry.GetHashCode();
       if (signal_ != null) hash ^= Signal.GetHashCode();
       if (assetType_ != null) hash ^= AssetType.GetHashCode();
+      if (plan_ != null) hash ^= Plan.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1429,6 +1651,10 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(42);
         output.WriteMessage(AssetType);
       }
+      if (plan_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Plan);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1459,6 +1685,10 @@ namespace Messages.Resources.V1 {
         output.WriteRawTag(42);
         output.WriteMessage(AssetType);
       }
+      if (plan_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Plan);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1483,6 +1713,9 @@ namespace Messages.Resources.V1 {
       }
       if (assetType_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AssetType);
+      }
+      if (plan_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Plan);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1522,6 +1755,12 @@ namespace Messages.Resources.V1 {
           AssetType = new global::Messages.Resources.V1.ResourceAssetTypeRequirement();
         }
         AssetType.MergeFrom(other.AssetType);
+      }
+      if (other.plan_ != null) {
+        if (plan_ == null) {
+          Plan = new global::Messages.Resources.V1.ResourcePlanRequirement();
+        }
+        Plan.MergeFrom(other.Plan);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1572,6 +1811,13 @@ namespace Messages.Resources.V1 {
               AssetType = new global::Messages.Resources.V1.ResourceAssetTypeRequirement();
             }
             input.ReadMessage(AssetType);
+            break;
+          }
+          case 50: {
+            if (plan_ == null) {
+              Plan = new global::Messages.Resources.V1.ResourcePlanRequirement();
+            }
+            input.ReadMessage(Plan);
             break;
           }
         }
@@ -1625,6 +1871,13 @@ namespace Messages.Resources.V1 {
             input.ReadMessage(AssetType);
             break;
           }
+          case 50: {
+            if (plan_ == null) {
+              Plan = new global::Messages.Resources.V1.ResourcePlanRequirement();
+            }
+            input.ReadMessage(Plan);
+            break;
+          }
         }
       }
     }
@@ -1652,7 +1905,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1843,7 +2096,7 @@ namespace Messages.Resources.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

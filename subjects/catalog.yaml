@@ -941,6 +941,24 @@ routes:
     consumers: [robot_adapter]
     description: Pulse the robot's acknowledge signal; served by the robot's adapter.
 
+  - id: command.robot_instance.free_drive
+    pattern: command.robot_instance.free_drive.{robot_instance_id}
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/protocol#24
+    interaction: request_reply
+    request: robot.v1.RobotFreeDriveRequest
+    replies:
+      success: service.v1.Response
+      failure: service.v1.Response
+    parameters:
+      robot_instance_id:
+        type: subject_token
+    publishers: [web_cobotar, holo_cobotar]
+    consumers: [robot_adapter]
+    description: Start or stop free drive; served by the robot's adapter.
+
   - id: command.robot_instance.set_io
     pattern: command.robot_instance.set_io.{robot_instance_id}
     lifecycle: active
@@ -1412,7 +1430,7 @@ routes:
     subscriptions:
       - name: for_robot
         parameters: [robot_instance_id]
-    publishers: [authoring]
+    publishers: [robot_adapter]
     consumers: [web_cobotar, holo_cobotar]
 
   - id: telemetry.robot.controller_status

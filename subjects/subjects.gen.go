@@ -104,6 +104,7 @@ var Catalog = []Definition{
 	{ID: "command.process_run.load_request", Pattern: "command.process_run.load_request", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "runtime.v1.ProcessLoadRequest", EmptyRequest: false, SuccessReply: "runtime.v1.ProcessLoadResult", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#64"},
 	{ID: "command.robot.visibility", Pattern: "command.robot.visibility.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotVisibilityMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"web_cobotar"}, Consumers: []string{"holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
 	{ID: "command.robot_instance.acknowledge", Pattern: "command.robot_instance.acknowledge.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "robot.v1.AcknowledgeRobot", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar", "holo_cobotar"}, Consumers: []string{"robot_adapter"}, TrackingIssue: "cobotar/Authoring#64"},
+	{ID: "command.robot_instance.free_drive", Pattern: "command.robot_instance.free_drive.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "robot.v1.RobotFreeDriveRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar", "holo_cobotar"}, Consumers: []string{"robot_adapter"}, TrackingIssue: "cobotar/protocol#24"},
 	{ID: "command.robot_instance.set_io", Pattern: "command.robot_instance.set_io.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "robot.v1.RobotIOCommand", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar", "holo_cobotar"}, Consumers: []string{"robot_adapter"}, TrackingIssue: "cobotar/Authoring#64"},
 	{ID: "command.robot_instance.state_change", Pattern: "command.robot_instance.state_change.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "robot.v1.ProgramStateRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar", "holo_cobotar"}, Consumers: []string{"robot_adapter"}, TrackingIssue: "cobotar/Authoring#64"},
 	{ID: "command.sequence_run.complete", Pattern: "command.sequence_run.complete", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "runtime.v1.SequenceCompleteRequest", EmptyRequest: false, SuccessReply: "service.v1.Response", FailureReply: "service.v1.Response", Publishers: []string{"holo_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#64"},
@@ -161,7 +162,7 @@ var Catalog = []Definition{
 	{ID: "get.robot_instance.io", Pattern: "get.robot_instance.io.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "robot.v1.RobotIOState", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"robot_adapter"}, TrackingIssue: "cobotar/Authoring#64"},
 	{ID: "get.storage.info", Pattern: "get.storage.info", Family: "", Entity: "", Lifecycle: "planned", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "", EmptyRequest: true, SuccessReply: "service.v1.StorageInfo", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#21"},
 	{ID: "get.tool_instance.field.definition_id", Pattern: "get.tool_instance.field.definition_id", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "request_reply", Payload: "", Request: "common.v1.GetByFieldMessage", EmptyRequest: false, SuccessReply: "resources.v1.ToolInstances", FailureReply: "service.v1.Response", Publishers: []string{"web_cobotar"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/Authoring#64"},
-	{ID: "plan.robot.path", Pattern: "plan.robot.path.{robot_instance_id}.{plan_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.PathMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"authoring"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
+	{ID: "plan.robot.path", Pattern: "plan.robot.path.{robot_instance_id}.{plan_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.PathMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"robot_adapter"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
 	{ID: "report.asset_adapter.info", Pattern: "report.asset_adapter.info.{asset_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "resources.v1.AssetAdapterInfoMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"asset_adapter"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#23"},
 	{ID: "report.robot_adapter.info", Pattern: "report.robot_adapter.info.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotAdapterInfoMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"robot_adapter"}, Consumers: []string{"authoring"}, TrackingIssue: "cobotar/protocol#23"},
 	{ID: "telemetry.robot.controller_status", Pattern: "telemetry.robot.controller_status.{robot_instance_id}", Family: "", Entity: "", Lifecycle: "active", Conformance: "staged", Interaction: "publish", Payload: "robot.v1.RobotControllerStatusMessage", Request: "", EmptyRequest: false, SuccessReply: "", FailureReply: "", Publishers: []string{"robot_adapter"}, Consumers: []string{"web_cobotar", "holo_cobotar"}, TrackingIssue: "cobotar/protocol#11"},
@@ -684,6 +685,22 @@ func MustCommandRobotInstanceAcknowledge(robotInstanceId string) string {
 func SubscribeCommandRobotInstanceAcknowledgeAny() string {
 	return "command.robot_instance.acknowledge.*"
 }
+
+// CommandRobotInstanceFreeDrive builds command.robot_instance.free_drive.{robot_instance_id}.
+// Experimental: lifecycle=active, conformance=staged; see cobotar/protocol#24.
+func CommandRobotInstanceFreeDrive(robotInstanceId string) (string, error) {
+	return buildSubject("command.robot_instance.free_drive.{robot_instance_id}", map[string]string{"robot_instance_id": robotInstanceId})
+}
+
+func MustCommandRobotInstanceFreeDrive(robotInstanceId string) string {
+	subject, err := CommandRobotInstanceFreeDrive(robotInstanceId)
+	if err != nil {
+		panic(err)
+	}
+	return subject
+}
+
+func SubscribeCommandRobotInstanceFreeDriveAny() string { return "command.robot_instance.free_drive.*" }
 
 // CommandRobotInstanceSetIo builds command.robot_instance.set_io.{robot_instance_id}.
 // Experimental: lifecycle=active, conformance=staged; see cobotar/Authoring#64.

@@ -46,6 +46,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `command.process_run.load_request` | `command.process_run.load_request` | — | active | staged | runtime.v1.ProcessLoadRequest → runtime.v1.ProcessLoadResult / service.v1.Response | web_cobotar | authoring |
 | `command.robot.visibility` | `command.robot.visibility.{robot_instance_id}` | — | active | staged | robot.v1.RobotVisibilityMessage | web_cobotar | holo_cobotar |
 | `command.robot_instance.acknowledge` | `command.robot_instance.acknowledge.{robot_instance_id}` | — | active | staged | robot.v1.AcknowledgeRobot → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
+| `command.robot_instance.free_drive` | `command.robot_instance.free_drive.{robot_instance_id}` | — | active | staged | robot.v1.RobotFreeDriveRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
 | `command.robot_instance.set_io` | `command.robot_instance.set_io.{robot_instance_id}` | — | active | staged | robot.v1.RobotIOCommand → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
 | `command.robot_instance.state_change` | `command.robot_instance.state_change.{robot_instance_id}` | — | active | staged | robot.v1.ProgramStateRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
 | `command.sequence_run.complete` | `command.sequence_run.complete` | — | active | staged | runtime.v1.SequenceCompleteRequest → service.v1.Response / service.v1.Response | holo_cobotar | authoring |
@@ -103,7 +104,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.robot_instance.io` | `get.robot_instance.io.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotIOState / service.v1.Response | web_cobotar | robot_adapter |
 | `get.storage.info` | `get.storage.info` | — | planned | staged | (empty) → service.v1.StorageInfo / service.v1.Response | web_cobotar | authoring |
 | `get.tool_instance.field.definition_id` | `get.tool_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ToolInstances / service.v1.Response | web_cobotar | authoring |
-| `plan.robot.path` | `plan.robot.path.{robot_instance_id}.{plan_id}` | — | active | staged | robot.v1.PathMessage | authoring | web_cobotar, holo_cobotar |
+| `plan.robot.path` | `plan.robot.path.{robot_instance_id}.{plan_id}` | — | active | staged | robot.v1.PathMessage | robot_adapter | web_cobotar, holo_cobotar |
 | `report.asset_adapter.info` | `report.asset_adapter.info.{asset_instance_id}` | — | active | staged | resources.v1.AssetAdapterInfoMessage | asset_adapter | authoring |
 | `report.robot_adapter.info` | `report.robot_adapter.info.{robot_instance_id}` | — | active | staged | robot.v1.RobotAdapterInfoMessage | robot_adapter | authoring |
 | `telemetry.robot.controller_status` | `telemetry.robot.controller_status.{robot_instance_id}` | — | active | staged | robot.v1.RobotControllerStatusMessage | robot_adapter | web_cobotar, holo_cobotar |
