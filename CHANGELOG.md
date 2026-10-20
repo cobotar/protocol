@@ -19,6 +19,7 @@
 
 ### Changed
 
+- `resources.v1.ResourceSignalRequirement` now accepts an unspecified data type when `signal_id` or `signal_id_property_key` selects the concrete signal, allowing the selected signal to satisfy the requirement regardless of its type (cobotar/protocol#25).
 - `resources.v1.AssetDefinition` now selects an asset adapter definition. `AssetDriverType`, `driver_type` and the robot-specific signal catalog messages have been removed; robot adapter info now uses the shared signal catalog (cobotar/protocol#15).
 - `resources.v1.RobotDefinition` now selects a robot adapter definition, and `robot.v1.RobotAdapterInfoMessage` references that definition while reporting the connected controller identity, adapter version and configured I/O catalog. The former `RobotDriverType`, `driver_type`, legacy adapter identity fields and embedded `RobotAdapterCapabilities` have been removed (cobotar/protocol#14).
 - `max_concurrent_processes` on lines, cells and stations is documented to count only active runs.

@@ -43,49 +43,56 @@ namespace Messages.Resources.V1 {
             "aW11bV9mcmVxdWVuY3lfaHoYAyABKAFCELpIDRILIQAAAAAAAAAAQAFIAFIS",
             "bWluaW11bUZyZXF1ZW5jeUh6iAEBOim6SCYiJAoPcm9ib3RfdGVsZW1ldHJ5",
             "Cg9hc3NldF90ZWxlbWV0cnkQAUIXChVfbWluaW11bV9mcmVxdWVuY3lfaHoi",
-            "igYKGVJlc291cmNlU2lnbmFsUmVxdWlyZW1lbnQSQgoJZGF0YV90eXBlGAEg",
-            "ASgOMhkuY29tbW9uLnYxLlNpZ25hbERhdGFUeXBlQgq6SAeCAQQQASAAUghk",
-            "YXRhVHlwZRIaCghyZWFkYWJsZRgCIAEoCFIIcmVhZGFibGUSGgoId3JpdGFi",
-            "bGUYAyABKAhSCHdyaXRhYmxlEiYKCXNpZ25hbF9pZBgEIAEoCUIJukgGcgTg",
-            "8wQBUghzaWduYWxJZBJBCghzZW1hbnRpYxgFIAEoDjIZLmNvbW1vbi52MS5T",
-            "aWduYWxTZW1hbnRpY0IKukgHggEEEAEgAFIIc2VtYW50aWMSPgoWc2lnbmFs",
-            "X2lkX3Byb3BlcnR5X2tleRgGIAEoCUIJukgGcgTg8wQBUhNzaWduYWxJZFBy",
-            "b3BlcnR5S2V5OsUDukjBAxqRAQowcmVzb3VyY2Vfc2lnbmFsX3JlcXVpcmVt",
-            "ZW50LnJlYWRhYmxlX29yX3dyaXRhYmxlEj1hIHNpZ25hbCByZXF1aXJlbWVu",
-            "dCBtdXN0IHJlcXVpcmUgcmVhZGFibGUsIHdyaXRhYmxlLCBvciBib3RoGh50",
-            "aGlzLnJlYWRhYmxlIHx8IHRoaXMud3JpdGFibGUa+wEKN3Jlc291cmNlX3Np",
-            "Z25hbF9yZXF1aXJlbWVudC5zdGFuZGFyZF9zZW1hbnRpY19kYXRhX3R5cGUS",
-            "NHN0YW5kYXJkIHNpZ25hbCBzZW1hbnRpY3MgcmVxdWlyZSB0aGUgYm9vbCBk",
-            "YXRhIHR5cGUaiQF0aGlzLnNlbWFudGljID09IGNvbW1vbi52MS5TaWduYWxT",
-            "ZW1hbnRpYy5TSUdOQUxfU0VNQU5USUNfVU5TUEVDSUZJRUQgfHwgdGhpcy5k",
-            "YXRhX3R5cGUgPT0gY29tbW9uLnYxLlNpZ25hbERhdGFUeXBlLlNJR05BTF9E",
-            "QVRBX1RZUEVfQk9PTCItCglzaWduYWxfaWQKCHNlbWFudGljChZzaWduYWxf",
-            "aWRfcHJvcGVydHlfa2V5IlcKHFJlc291cmNlQXNzZXRUeXBlUmVxdWlyZW1l",
-            "bnQSNwoEdHlwZRgBIAEoDjIXLnJlc291cmNlcy52MS5Bc3NldFR5cGVCCrpI",
-            "B4IBBBABIABSBHR5cGUiqgMKE1Jlc291cmNlUmVxdWlyZW1lbnQSSAoFbGV2",
-            "ZWwYASABKA4yJi5yZXNvdXJjZXMudjEuUmVzb3VyY2VSZXF1aXJlbWVudExl",
-            "dmVsQgq6SAeCAQQQASAAUgVsZXZlbBJCCgdjb21tYW5kGAIgASgLMigucmVz",
-            "b3VyY2VzLnYxLlJlc291cmNlQ29tbWFuZFJlcXVpcmVtZW50Ugdjb21tYW5k",
-            "EkgKCXRlbGVtZXRyeRgDIAEoCzIqLnJlc291cmNlcy52MS5SZXNvdXJjZVRl",
-            "bGVtZXRyeVJlcXVpcmVtZW50Ugl0ZWxlbWV0cnkSPwoGc2lnbmFsGAQgASgL",
-            "MicucmVzb3VyY2VzLnYxLlJlc291cmNlU2lnbmFsUmVxdWlyZW1lbnRSBnNp",
-            "Z25hbBJJCgphc3NldF90eXBlGAUgASgLMioucmVzb3VyY2VzLnYxLlJlc291",
-            "cmNlQXNzZXRUeXBlUmVxdWlyZW1lbnRSCWFzc2V0VHlwZTovukgsIioKB2Nv",
-            "bW1hbmQKCXRlbGVtZXRyeQoGc2lnbmFsCgphc3NldF90eXBlEAEiTwoUUmVz",
-            "b3VyY2VSZXF1aXJlbWVudHMSNwoFaXRlbXMYASADKAsyIS5yZXNvdXJjZXMu",
-            "djEuUmVzb3VyY2VSZXF1aXJlbWVudFIFaXRlbXMirAEKG0NvbnN1bWVyUmVz",
-            "b3VyY2VSZXF1aXJlbWVudBJAChVyZXNvdXJjZV9wcm9wZXJ0eV9rZXkYASAB",
-            "KAlCDLpICXIE4PMEAcgBAVITcmVzb3VyY2VQcm9wZXJ0eUtleRJLCgtyZXF1",
-            "aXJlbWVudBgCIAEoCzIhLnJlc291cmNlcy52MS5SZXNvdXJjZVJlcXVpcmVt",
-            "ZW50Qga6SAPIAQFSC3JlcXVpcmVtZW50KpgBChhSZXNvdXJjZVJlcXVpcmVt",
-            "ZW50TGV2ZWwSKgomUkVTT1VSQ0VfUkVRVUlSRU1FTlRfTEVWRUxfVU5TUEVD",
-            "SUZJRUQQABInCiNSRVNPVVJDRV9SRVFVSVJFTUVOVF9MRVZFTF9SRVFVSVJF",
-            "RBABEicKI1JFU09VUkNFX1JFUVVJUkVNRU5UX0xFVkVMX09QVElPTkFMEAJC",
-            "xQEKEGNvbS5yZXNvdXJjZXMudjFCGFJlc291cmNlUmVxdWlyZW1lbnRQcm90",
-            "b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVz",
-            "b3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3Vy",
-            "Y2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFk",
-            "YXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z"));
+            "uAgKGVJlc291cmNlU2lnbmFsUmVxdWlyZW1lbnQSQAoJZGF0YV90eXBlGAEg",
+            "ASgOMhkuY29tbW9uLnYxLlNpZ25hbERhdGFUeXBlQgi6SAWCAQIQAVIIZGF0",
+            "YVR5cGUSGgoIcmVhZGFibGUYAiABKAhSCHJlYWRhYmxlEhoKCHdyaXRhYmxl",
+            "GAMgASgIUgh3cml0YWJsZRImCglzaWduYWxfaWQYBCABKAlCCbpIBnIE4PME",
+            "AVIIc2lnbmFsSWQSQQoIc2VtYW50aWMYBSABKA4yGS5jb21tb24udjEuU2ln",
+            "bmFsU2VtYW50aWNCCrpIB4IBBBABIABSCHNlbWFudGljEj4KFnNpZ25hbF9p",
+            "ZF9wcm9wZXJ0eV9rZXkYBiABKAlCCbpIBnIE4PMEAVITc2lnbmFsSWRQcm9w",
+            "ZXJ0eUtleTr1BbpI8QUakQEKMHJlc291cmNlX3NpZ25hbF9yZXF1aXJlbWVu",
+            "dC5yZWFkYWJsZV9vcl93cml0YWJsZRI9YSBzaWduYWwgcmVxdWlyZW1lbnQg",
+            "bXVzdCByZXF1aXJlIHJlYWRhYmxlLCB3cml0YWJsZSwgb3IgYm90aBoedGhp",
+            "cy5yZWFkYWJsZSB8fCB0aGlzLndyaXRhYmxlGq0CCkZyZXNvdXJjZV9zaWdu",
+            "YWxfcmVxdWlyZW1lbnQuZGF0YV90eXBlX3JlcXVpcmVkX3dpdGhvdXRfc2ln",
+            "bmFsX3NlbGVjdG9yElxhIHNpZ25hbCBkYXRhIHR5cGUgaXMgcmVxdWlyZWQg",
+            "dW5sZXNzIHNpZ25hbF9pZCBvciBzaWduYWxfaWRfcHJvcGVydHlfa2V5IHNl",
+            "bGVjdHMgdGhlIHNpZ25hbBqEAXRoaXMuc2lnbmFsX2lkICE9ICcnIHx8IHRo",
+            "aXMuc2lnbmFsX2lkX3Byb3BlcnR5X2tleSAhPSAnJyB8fCB0aGlzLmRhdGFf",
+            "dHlwZSAhPSBjb21tb24udjEuU2lnbmFsRGF0YVR5cGUuU0lHTkFMX0RBVEFf",
+            "VFlQRV9VTlNQRUNJRklFRBr7AQo3cmVzb3VyY2Vfc2lnbmFsX3JlcXVpcmVt",
+            "ZW50LnN0YW5kYXJkX3NlbWFudGljX2RhdGFfdHlwZRI0c3RhbmRhcmQgc2ln",
+            "bmFsIHNlbWFudGljcyByZXF1aXJlIHRoZSBib29sIGRhdGEgdHlwZRqJAXRo",
+            "aXMuc2VtYW50aWMgPT0gY29tbW9uLnYxLlNpZ25hbFNlbWFudGljLlNJR05B",
+            "TF9TRU1BTlRJQ19VTlNQRUNJRklFRCB8fCB0aGlzLmRhdGFfdHlwZSA9PSBj",
+            "b21tb24udjEuU2lnbmFsRGF0YVR5cGUuU0lHTkFMX0RBVEFfVFlQRV9CT09M",
+            "Ii0KCXNpZ25hbF9pZAoIc2VtYW50aWMKFnNpZ25hbF9pZF9wcm9wZXJ0eV9r",
+            "ZXkiVwocUmVzb3VyY2VBc3NldFR5cGVSZXF1aXJlbWVudBI3CgR0eXBlGAEg",
+            "ASgOMhcucmVzb3VyY2VzLnYxLkFzc2V0VHlwZUIKukgHggEEEAEgAFIEdHlw",
+            "ZSKqAwoTUmVzb3VyY2VSZXF1aXJlbWVudBJICgVsZXZlbBgBIAEoDjImLnJl",
+            "c291cmNlcy52MS5SZXNvdXJjZVJlcXVpcmVtZW50TGV2ZWxCCrpIB4IBBBAB",
+            "IABSBWxldmVsEkIKB2NvbW1hbmQYAiABKAsyKC5yZXNvdXJjZXMudjEuUmVz",
+            "b3VyY2VDb21tYW5kUmVxdWlyZW1lbnRSB2NvbW1hbmQSSAoJdGVsZW1ldHJ5",
+            "GAMgASgLMioucmVzb3VyY2VzLnYxLlJlc291cmNlVGVsZW1ldHJ5UmVxdWly",
+            "ZW1lbnRSCXRlbGVtZXRyeRI/CgZzaWduYWwYBCABKAsyJy5yZXNvdXJjZXMu",
+            "djEuUmVzb3VyY2VTaWduYWxSZXF1aXJlbWVudFIGc2lnbmFsEkkKCmFzc2V0",
+            "X3R5cGUYBSABKAsyKi5yZXNvdXJjZXMudjEuUmVzb3VyY2VBc3NldFR5cGVS",
+            "ZXF1aXJlbWVudFIJYXNzZXRUeXBlOi+6SCwiKgoHY29tbWFuZAoJdGVsZW1l",
+            "dHJ5CgZzaWduYWwKCmFzc2V0X3R5cGUQASJPChRSZXNvdXJjZVJlcXVpcmVt",
+            "ZW50cxI3CgVpdGVtcxgBIAMoCzIhLnJlc291cmNlcy52MS5SZXNvdXJjZVJl",
+            "cXVpcmVtZW50UgVpdGVtcyKsAQobQ29uc3VtZXJSZXNvdXJjZVJlcXVpcmVt",
+            "ZW50EkAKFXJlc291cmNlX3Byb3BlcnR5X2tleRgBIAEoCUIMukgJcgTg8wQB",
+            "yAEBUhNyZXNvdXJjZVByb3BlcnR5S2V5EksKC3JlcXVpcmVtZW50GAIgASgL",
+            "MiEucmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWlyZW1lbnRCBrpIA8gBAVIL",
+            "cmVxdWlyZW1lbnQqmAEKGFJlc291cmNlUmVxdWlyZW1lbnRMZXZlbBIqCiZS",
+            "RVNPVVJDRV9SRVFVSVJFTUVOVF9MRVZFTF9VTlNQRUNJRklFRBAAEicKI1JF",
+            "U09VUkNFX1JFUVVJUkVNRU5UX0xFVkVMX1JFUVVJUkVEEAESJwojUkVTT1VS",
+            "Q0VfUkVRVUlSRU1FTlRfTEVWRUxfT1BUSU9OQUwQAkLFAQoQY29tLnJlc291",
+            "cmNlcy52MUIYUmVzb3VyY2VSZXF1aXJlbWVudFByb3RvUAFaPWdpdGh1Yi5j",
+            "b20vY29ib3Rhci9wcm90b2NvbC9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7cmVz",
+            "b3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxSZXNv",
+            "dXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNvdXJj",
+            "ZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.SignalReflection.Descriptor, global::Messages.Resources.V1.AssetAdapterReflection.Descriptor, global::Messages.Resources.V1.AssetDefinitionReflection.Descriptor, global::Messages.Robot.V1.RobotAdapterReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ResourceRequirementLevel), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -701,6 +708,10 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "data_type" field.</summary>
     public const int DataTypeFieldNumber = 1;
     private global::Messages.Common.V1.SignalDataType dataType_ = global::Messages.Common.V1.SignalDataType.Unspecified;
+    /// <summary>
+    /// Required signal data type. UNSPECIFIED means any data type, and is only
+    /// allowed when signal_id or signal_id_property_key selects the signal.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.SignalDataType DataType {
@@ -764,7 +775,9 @@ namespace Messages.Resources.V1 {
     /// <summary>
     /// PropertyTemplate.key whose configured STRING or ENUM value selects the
     /// signal for a concrete feedback, action, or function instance. Binding
-    /// diagnostics resolve this selector to signal_id before reporting it.
+    /// diagnostics replace this selector with the resolved signal_id before
+    /// reporting it. An UNSPECIFIED data_type remains unspecified to mean any
+    /// data type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

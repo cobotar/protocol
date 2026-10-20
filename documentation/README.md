@@ -3017,12 +3017,12 @@ signal matching the data type and direction satisfies the requirement.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| data_type | [common.v1.SignalDataType](#common-v1-SignalDataType) |  |  |
+| data_type | [common.v1.SignalDataType](#common-v1-SignalDataType) |  | Required signal data type. UNSPECIFIED means any data type, and is only allowed when signal_id or signal_id_property_key selects the signal. |
 | readable | [bool](#bool) |  |  |
 | writable | [bool](#bool) |  |  |
 | signal_id | [string](#string) |  |  |
 | semantic | [common.v1.SignalSemantic](#common-v1-SignalSemantic) |  |  |
-| signal_id_property_key | [string](#string) |  | PropertyTemplate.key whose configured STRING or ENUM value selects the signal for a concrete feedback, action, or function instance. Binding diagnostics resolve this selector to signal_id before reporting it. |
+| signal_id_property_key | [string](#string) |  | PropertyTemplate.key whose configured STRING or ENUM value selects the signal for a concrete feedback, action, or function instance. Binding diagnostics replace this selector with the resolved signal_id before reporting it. An UNSPECIFIED data_type remains unspecified to mean any data type. |
 
 
 
@@ -3244,7 +3244,9 @@ unmet requirement. An input slot is the consumer for an explicit constraint.
 ### ARUnmetResourceRequirement
 ARUnmetResourceRequirement reports one unmet requirement and every consumer
 affected by it. Clients can group these entries by consumer to determine
-which optional features must degrade.
+which optional features must degrade. For a property-selected signal, the
+reported requirement contains the resolved signal_id and keeps data_type
+UNSPECIFIED to mean any data type.
 
 
 | Field | Type | Label | Description |

@@ -156,7 +156,9 @@ func (x *ARResourceRequirementConsumer) GetFunctionId() string {
 
 // ARUnmetResourceRequirement reports one unmet requirement and every consumer
 // affected by it. Clients can group these entries by consumer to determine
-// which optional features must degrade.
+// which optional features must degrade. For a property-selected signal, the
+// reported requirement contains the resolved signal_id and keeps data_type
+// UNSPECIFIED to mean any data type.
 type ARUnmetResourceRequirement struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
 	Requirement   *v1.ResourceRequirement          `protobuf:"bytes,1,opt,name=requirement,proto3" json:"requirement,omitempty"`

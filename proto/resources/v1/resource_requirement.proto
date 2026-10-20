@@ -82,6 +82,13 @@ message ResourceSignalRequirement {
     expression: "this.readable || this.writable"
   };
   option (buf.validate.message).cel = {
+    id: "resource_signal_requirement.data_type_required_without_signal_selector"
+    message: "a signal data type is required unless signal_id or signal_id_property_key selects the signal"
+    expression:
+      "this.signal_id != '' || this.signal_id_property_key != '' || "
+      "this.data_type != common.v1.SignalDataType.SIGNAL_DATA_TYPE_UNSPECIFIED"
+  };
+  option (buf.validate.message).cel = {
     id: "resource_signal_requirement.standard_semantic_data_type"
     message: "standard signal semantics require the bool data type"
     expression:
@@ -89,10 +96,9 @@ message ResourceSignalRequirement {
       "this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL"
   };
 
-  common.v1.SignalDataType data_type = 1 [(buf.validate.field).enum = {
-    defined_only: true
-    not_in: [0]
-  }];
+  // Required signal data type. UNSPECIFIED means any data type, and is only
+  // allowed when signal_id or signal_id_property_key selects the signal.
+  common.v1.SignalDataType data_type = 1 [(buf.validate.field).enum.defined_only = true];
   bool readable = 2;
   bool writable = 3;
 
@@ -104,7 +110,9 @@ message ResourceSignalRequirement {
 
   // PropertyTemplate.key whose configured STRING or ENUM value selects the
   // signal for a concrete feedback, action, or function instance. Binding
-  // diagnostics resolve this selector to signal_id before reporting it.
+  // diagnostics replace this selector with the resolved signal_id before
+  // reporting it. An UNSPECIFIED data_type remains unspecified to mean any
+  // data type.
   string signal_id_property_key = 6 [(buf.validate.field).string.(validation.v1.key_component) = true];
 }
 

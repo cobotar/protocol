@@ -194,15 +194,19 @@ func (x *ResourceTelemetryRequirement) GetMinimumFrequencyHz() float64 {
 // or a property containing the configured signal id. With no selector, any
 // signal matching the data type and direction satisfies the requirement.
 type ResourceSignalRequirement struct {
-	state    protoimpl.MessageState `protogen:"open.v1"`
-	DataType v11.SignalDataType     `protobuf:"varint,1,opt,name=data_type,json=dataType,proto3,enum=common.v1.SignalDataType" json:"data_type,omitempty"`
-	Readable bool                   `protobuf:"varint,2,opt,name=readable,proto3" json:"readable,omitempty"`
-	Writable bool                   `protobuf:"varint,3,opt,name=writable,proto3" json:"writable,omitempty"`
-	SignalId string                 `protobuf:"bytes,4,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
-	Semantic v11.SignalSemantic     `protobuf:"varint,5,opt,name=semantic,proto3,enum=common.v1.SignalSemantic" json:"semantic,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Required signal data type. UNSPECIFIED means any data type, and is only
+	// allowed when signal_id or signal_id_property_key selects the signal.
+	DataType v11.SignalDataType `protobuf:"varint,1,opt,name=data_type,json=dataType,proto3,enum=common.v1.SignalDataType" json:"data_type,omitempty"`
+	Readable bool               `protobuf:"varint,2,opt,name=readable,proto3" json:"readable,omitempty"`
+	Writable bool               `protobuf:"varint,3,opt,name=writable,proto3" json:"writable,omitempty"`
+	SignalId string             `protobuf:"bytes,4,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
+	Semantic v11.SignalSemantic `protobuf:"varint,5,opt,name=semantic,proto3,enum=common.v1.SignalSemantic" json:"semantic,omitempty"`
 	// PropertyTemplate.key whose configured STRING or ENUM value selects the
 	// signal for a concrete feedback, action, or function instance. Binding
-	// diagnostics resolve this selector to signal_id before reporting it.
+	// diagnostics replace this selector with the resolved signal_id before
+	// reporting it. An UNSPECIFIED data_type remains unspecified to mean any
+	// data type.
 	SignalIdPropertyKey string `protobuf:"bytes,6,opt,name=signal_id_property_key,json=signalIdPropertyKey,proto3" json:"signal_id_property_key,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
@@ -522,17 +526,17 @@ const file_resources_v1_resource_requirement_proto_rawDesc = "" +
 	"\x14minimum_frequency_hz\x18\x03 \x01(\x01B\x10\xbaH\r\x12\v@\x01!\x00\x00\x00\x00\x00\x00\x00\x00H\x00R\x12minimumFrequencyHz\x88\x01\x01:)\xbaH&\"$\n" +
 	"\x0frobot_telemetry\n" +
 	"\x0fasset_telemetry\x10\x01B\x17\n" +
-	"\x15_minimum_frequency_hz\"\x8a\x06\n" +
-	"\x19ResourceSignalRequirement\x12B\n" +
-	"\tdata_type\x18\x01 \x01(\x0e2\x19.common.v1.SignalDataTypeB\n" +
-	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\bdataType\x12\x1a\n" +
+	"\x15_minimum_frequency_hz\"\xb8\b\n" +
+	"\x19ResourceSignalRequirement\x12@\n" +
+	"\tdata_type\x18\x01 \x01(\x0e2\x19.common.v1.SignalDataTypeB\b\xbaH\x05\x82\x01\x02\x10\x01R\bdataType\x12\x1a\n" +
 	"\breadable\x18\x02 \x01(\bR\breadable\x12\x1a\n" +
 	"\bwritable\x18\x03 \x01(\bR\bwritable\x12&\n" +
 	"\tsignal_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\bsignalId\x12A\n" +
 	"\bsemantic\x18\x05 \x01(\x0e2\x19.common.v1.SignalSemanticB\n" +
 	"\xbaH\a\x82\x01\x04\x10\x01 \x00R\bsemantic\x12>\n" +
-	"\x16signal_id_property_key\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x13signalIdPropertyKey:\xc5\x03\xbaH\xc1\x03\x1a\x91\x01\n" +
-	"0resource_signal_requirement.readable_or_writable\x12=a signal requirement must require readable, writable, or both\x1a\x1ethis.readable || this.writable\x1a\xfb\x01\n" +
+	"\x16signal_id_property_key\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x13signalIdPropertyKey:\xf5\x05\xbaH\xf1\x05\x1a\x91\x01\n" +
+	"0resource_signal_requirement.readable_or_writable\x12=a signal requirement must require readable, writable, or both\x1a\x1ethis.readable || this.writable\x1a\xad\x02\n" +
+	"Fresource_signal_requirement.data_type_required_without_signal_selector\x12\\a signal data type is required unless signal_id or signal_id_property_key selects the signal\x1a\x84\x01this.signal_id != '' || this.signal_id_property_key != '' || this.data_type != common.v1.SignalDataType.SIGNAL_DATA_TYPE_UNSPECIFIED\x1a\xfb\x01\n" +
 	"7resource_signal_requirement.standard_semantic_data_type\x124standard signal semantics require the bool data type\x1a\x89\x01this.semantic == common.v1.SignalSemantic.SIGNAL_SEMANTIC_UNSPECIFIED || this.data_type == common.v1.SignalDataType.SIGNAL_DATA_TYPE_BOOL\"-\n" +
 	"\tsignal_id\n" +
 	"\bsemantic\n" +

@@ -449,7 +449,9 @@ namespace Messages.AR.V1 {
   /// <summary>
   /// ARUnmetResourceRequirement reports one unmet requirement and every consumer
   /// affected by it. Clients can group these entries by consumer to determine
-  /// which optional features must degrade.
+  /// which optional features must degrade. For a property-selected signal, the
+  /// reported requirement contains the resolved signal_id and keeps data_type
+  /// UNSPECIFIED to mean any data type.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ARUnmetResourceRequirement : pb::IMessage<ARUnmetResourceRequirement>
