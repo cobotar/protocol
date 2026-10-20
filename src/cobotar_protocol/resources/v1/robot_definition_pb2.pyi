@@ -33,13 +33,12 @@ class DefaultRobotSkill(_message.Message):
     def __init__(self, skill_id: _Optional[str] = ..., level: _Optional[_Union[_actor_skill_pb2.SkillLevel, str]] = ...) -> None: ...
 
 class RobotDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "model_id", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "default_skills", "robot_adapter_definition_id")
+    __slots__ = ("id", "name", "icon", "description", "type", "coupler_model_id", "supported_tool_definition_ids", "default_tool_definition_id", "tool_slots", "capability_profile", "default_skills", "robot_adapter_definition_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
-    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     COUPLER_MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_TOOL_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     DEFAULT_TOOL_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -52,7 +51,6 @@ class RobotDefinition(_message.Message):
     icon: str
     description: str
     type: RobotType
-    model_id: str
     coupler_model_id: str
     supported_tool_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     default_tool_definition_id: str
@@ -60,7 +58,7 @@ class RobotDefinition(_message.Message):
     capability_profile: _capability_profile_pb2.CapabilityProfile
     default_skills: _containers.RepeatedCompositeFieldContainer[DefaultRobotSkill]
     robot_adapter_definition_id: str
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., model_id: _Optional[str] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., default_skills: _Optional[_Iterable[_Union[DefaultRobotSkill, _Mapping]]] = ..., robot_adapter_definition_id: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[RobotType, str]] = ..., coupler_model_id: _Optional[str] = ..., supported_tool_definition_ids: _Optional[_Iterable[str]] = ..., default_tool_definition_id: _Optional[str] = ..., tool_slots: _Optional[int] = ..., capability_profile: _Optional[_Union[_capability_profile_pb2.CapabilityProfile, _Mapping]] = ..., default_skills: _Optional[_Iterable[_Union[DefaultRobotSkill, _Mapping]]] = ..., robot_adapter_definition_id: _Optional[str] = ...) -> None: ...
 
 class RobotDefinitions(_message.Message):
     __slots__ = ("items",)

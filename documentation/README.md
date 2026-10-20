@@ -8596,7 +8596,6 @@ content_type: &#34;model/gltf-binary&#34;
 | icon | [string](#string) |  | Optional icon representing the robot |
 | description | [string](#string) |  | Optional description of the robot |
 | type | [RobotType](#resources-v1-RobotType) |  | Required type of robot |
-| model_id | [string](#string) |  |  |
 | coupler_model_id | [string](#string) |  | Tool mounting capability |
 | supported_tool_definition_ids | [string](#string) | repeated |  |
 | default_tool_definition_id | [string](#string) |  |  |

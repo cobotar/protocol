@@ -138,17 +138,16 @@ type RobotDefinition struct {
 	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`                              // Optional icon representing the robot
 	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`                // Optional description of the robot
 	Type        RobotType              `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.RobotType" json:"type,omitempty"` // Required type of robot
-	ModelId     string                 `protobuf:"bytes,7,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
 	// Tool mounting capability
-	CouplerModelId             string                `protobuf:"bytes,8,opt,name=coupler_model_id,json=couplerModelId,proto3" json:"coupler_model_id,omitempty"`
-	SupportedToolDefinitionIds []string              `protobuf:"bytes,9,rep,name=supported_tool_definition_ids,json=supportedToolDefinitionIds,proto3" json:"supported_tool_definition_ids,omitempty"`
-	DefaultToolDefinitionId    string                `protobuf:"bytes,10,opt,name=default_tool_definition_id,json=defaultToolDefinitionId,proto3" json:"default_tool_definition_id,omitempty"`
-	ToolSlots                  int32                 `protobuf:"varint,11,opt,name=tool_slots,json=toolSlots,proto3" json:"tool_slots,omitempty"`
-	CapabilityProfile          *v1.CapabilityProfile `protobuf:"bytes,12,opt,name=capability_profile,json=capabilityProfile,proto3" json:"capability_profile,omitempty"`
-	DefaultSkills              []*DefaultRobotSkill  `protobuf:"bytes,13,rep,name=default_skills,json=defaultSkills,proto3" json:"default_skills,omitempty"`
+	CouplerModelId             string                `protobuf:"bytes,6,opt,name=coupler_model_id,json=couplerModelId,proto3" json:"coupler_model_id,omitempty"`
+	SupportedToolDefinitionIds []string              `protobuf:"bytes,7,rep,name=supported_tool_definition_ids,json=supportedToolDefinitionIds,proto3" json:"supported_tool_definition_ids,omitempty"`
+	DefaultToolDefinitionId    string                `protobuf:"bytes,8,opt,name=default_tool_definition_id,json=defaultToolDefinitionId,proto3" json:"default_tool_definition_id,omitempty"`
+	ToolSlots                  int32                 `protobuf:"varint,9,opt,name=tool_slots,json=toolSlots,proto3" json:"tool_slots,omitempty"`
+	CapabilityProfile          *v1.CapabilityProfile `protobuf:"bytes,10,opt,name=capability_profile,json=capabilityProfile,proto3" json:"capability_profile,omitempty"`
+	DefaultSkills              []*DefaultRobotSkill  `protobuf:"bytes,11,rep,name=default_skills,json=defaultSkills,proto3" json:"default_skills,omitempty"`
 	// Selects the static adapter implementation and capability contract used by
 	// every instance of this robot definition.
-	RobotAdapterDefinitionId string `protobuf:"bytes,14,opt,name=robot_adapter_definition_id,json=robotAdapterDefinitionId,proto3" json:"robot_adapter_definition_id,omitempty"`
+	RobotAdapterDefinitionId string `protobuf:"bytes,12,opt,name=robot_adapter_definition_id,json=robotAdapterDefinitionId,proto3" json:"robot_adapter_definition_id,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -216,13 +215,6 @@ func (x *RobotDefinition) GetType() RobotType {
 		return x.Type
 	}
 	return RobotType_ROBOT_TYPE_UNSPECIFIED
-}
-
-func (x *RobotDefinition) GetModelId() string {
-	if x != nil {
-		return x.ModelId
-	}
-	return ""
 }
 
 func (x *RobotDefinition) GetCouplerModelId() string {
@@ -325,23 +317,22 @@ const file_resources_v1_robot_definition_proto_rawDesc = "" +
 	"#resources/v1/robot_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a&capability/v1/capability_profile.proto\x1a+validation/v1/predefined_string_rules.proto\"j\n" +
 	"\x11DefaultRobotSkill\x12$\n" +
 	"\bskill_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\askillId\x12/\n" +
-	"\x05level\x18\x02 \x01(\x0e2\x19.capability.v1.SkillLevelR\x05level\"\x99\x05\n" +
+	"\x05level\x18\x02 \x01(\x0e2\x19.capability.v1.SkillLevelR\x05level\"\xf3\x04\n" +
 	"\x0fRobotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x128\n" +
-	"\x04type\x18\x05 \x01(\x0e2\x17.resources.v1.RobotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12$\n" +
-	"\bmodel_id\x18\a \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\x123\n" +
-	"\x10coupler_model_id\x18\b \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x0ecouplerModelId\x12A\n" +
-	"\x1dsupported_tool_definition_ids\x18\t \x03(\tR\x1asupportedToolDefinitionIds\x12;\n" +
-	"\x1adefault_tool_definition_id\x18\n" +
-	" \x01(\tR\x17defaultToolDefinitionId\x12&\n" +
+	"\x04type\x18\x05 \x01(\x0e2\x17.resources.v1.RobotTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x123\n" +
+	"\x10coupler_model_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\x0ecouplerModelId\x12A\n" +
+	"\x1dsupported_tool_definition_ids\x18\a \x03(\tR\x1asupportedToolDefinitionIds\x12;\n" +
+	"\x1adefault_tool_definition_id\x18\b \x01(\tR\x17defaultToolDefinitionId\x12&\n" +
 	"\n" +
-	"tool_slots\x18\v \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\ttoolSlots\x12O\n" +
-	"\x12capability_profile\x18\f \x01(\v2 .capability.v1.CapabilityProfileR\x11capabilityProfile\x12F\n" +
-	"\x0edefault_skills\x18\r \x03(\v2\x1f.resources.v1.DefaultRobotSkillR\rdefaultSkills\x12K\n" +
-	"\x1brobot_adapter_definition_id\x18\x0e \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x18robotAdapterDefinitionId\"G\n" +
+	"tool_slots\x18\t \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\ttoolSlots\x12O\n" +
+	"\x12capability_profile\x18\n" +
+	" \x01(\v2 .capability.v1.CapabilityProfileR\x11capabilityProfile\x12F\n" +
+	"\x0edefault_skills\x18\v \x03(\v2\x1f.resources.v1.DefaultRobotSkillR\rdefaultSkills\x12K\n" +
+	"\x1brobot_adapter_definition_id\x18\f \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x18robotAdapterDefinitionId\"G\n" +
 	"\x10RobotDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.resources.v1.RobotDefinitionR\x05items*\x81\x01\n" +
 	"\tRobotType\x12\x1a\n" +

@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/robot_definition.proto.
  */
 export const file_resources_v1_robot_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIloKEURlZmF1bHRSb2JvdFNraWxsEhsKCHNraWxsX2lkGAEgASgJQgm6SAZyBIDyBAESKAoFbGV2ZWwYAiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWwi4QMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucmVzb3VyY2VzLnYxLlJvYm90VHlwZUILukgIyAEBggECEAESGwoIbW9kZWxfaWQYByABKAlCCbpIBnIEiPEEARIjChBjb3VwbGVyX21vZGVsX2lkGAggASgJQgm6SAZyBIjxBAESJQodc3VwcG9ydGVkX3Rvb2xfZGVmaW5pdGlvbl9pZHMYCSADKAkSIgoaZGVmYXVsdF90b29sX2RlZmluaXRpb25faWQYCiABKAkSGwoKdG9vbF9zbG90cxgLIAEoBUIHukgEGgIoABI8ChJjYXBhYmlsaXR5X3Byb2ZpbGUYDCABKAsyIC5jYXBhYmlsaXR5LnYxLkNhcGFiaWxpdHlQcm9maWxlEjcKDmRlZmF1bHRfc2tpbGxzGA0gAygLMh8ucmVzb3VyY2VzLnYxLkRlZmF1bHRSb2JvdFNraWxsEjEKG3JvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbl9pZBgOIAEoCUIMukgJyAEBcgSQ9AQBIkAKEFJvYm90RGVmaW5pdGlvbnMSLAoFaXRlbXMYASADKAsyHS5yZXNvdXJjZXMudjEuUm9ib3REZWZpbml0aW9uKoEBCglSb2JvdFR5cGUSGgoWUk9CT1RfVFlQRV9VTlNQRUNJRklFRBAAEhMKD1JPQk9UX1RZUEVfVVIzRRAKEhMKD1JPQk9UX1RZUEVfVVI1RRALEhQKEFJPQk9UX1RZUEVfVVIxMEUQDBIYChRST0JPVF9UWVBFX0tVS0FfSUlXQRAUQsEBChBjb20ucmVzb3VyY2VzLnYxQhRSb2JvdERlZmluaXRpb25Qcm90b1ABWj1naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_actor_skill, file_capability_v1_capability_profile, file_validation_v1_predefined_string_rules]);
+  fileDesc("CiNyZXNvdXJjZXMvdjEvcm9ib3RfZGVmaW5pdGlvbi5wcm90bxIMcmVzb3VyY2VzLnYxIloKEURlZmF1bHRSb2JvdFNraWxsEhsKCHNraWxsX2lkGAEgASgJQgm6SAZyBIDyBAESKAoFbGV2ZWwYAiABKA4yGS5jYXBhYmlsaXR5LnYxLlNraWxsTGV2ZWwixAMKD1JvYm90RGVmaW5pdGlvbhIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucmVzb3VyY2VzLnYxLlJvYm90VHlwZUILukgIyAEBggECEAESIwoQY291cGxlcl9tb2RlbF9pZBgGIAEoCUIJukgGcgSI8QQBEiUKHXN1cHBvcnRlZF90b29sX2RlZmluaXRpb25faWRzGAcgAygJEiIKGmRlZmF1bHRfdG9vbF9kZWZpbml0aW9uX2lkGAggASgJEhsKCnRvb2xfc2xvdHMYCSABKAVCB7pIBBoCKAASPAoSY2FwYWJpbGl0eV9wcm9maWxlGAogASgLMiAuY2FwYWJpbGl0eS52MS5DYXBhYmlsaXR5UHJvZmlsZRI3Cg5kZWZhdWx0X3NraWxscxgLIAMoCzIfLnJlc291cmNlcy52MS5EZWZhdWx0Um9ib3RTa2lsbBIxChtyb2JvdF9hZGFwdGVyX2RlZmluaXRpb25faWQYDCABKAlCDLpICcgBAXIEkPQEASJAChBSb2JvdERlZmluaXRpb25zEiwKBWl0ZW1zGAEgAygLMh0ucmVzb3VyY2VzLnYxLlJvYm90RGVmaW5pdGlvbiqBAQoJUm9ib3RUeXBlEhoKFlJPQk9UX1RZUEVfVU5TUEVDSUZJRUQQABITCg9ST0JPVF9UWVBFX1VSM0UQChITCg9ST0JPVF9UWVBFX1VSNUUQCxIUChBST0JPVF9UWVBFX1VSMTBFEAwSGAoUUk9CT1RfVFlQRV9LVUtBX0lJV0EQFELBAQoQY29tLnJlc291cmNlcy52MUIUUm9ib3REZWZpbml0aW9uUHJvdG9QAVo9Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_capability_v1_actor_skill, file_capability_v1_capability_profile, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message resources.v1.DefaultRobotSkill
@@ -80,39 +80,34 @@ export type RobotDefinition = Message<"resources.v1.RobotDefinition"> & {
   type: RobotType;
 
   /**
-   * @generated from field: string model_id = 7;
-   */
-  modelId: string;
-
-  /**
    * Tool mounting capability
    *
-   * @generated from field: string coupler_model_id = 8;
+   * @generated from field: string coupler_model_id = 6;
    */
   couplerModelId: string;
 
   /**
-   * @generated from field: repeated string supported_tool_definition_ids = 9;
+   * @generated from field: repeated string supported_tool_definition_ids = 7;
    */
   supportedToolDefinitionIds: string[];
 
   /**
-   * @generated from field: string default_tool_definition_id = 10;
+   * @generated from field: string default_tool_definition_id = 8;
    */
   defaultToolDefinitionId: string;
 
   /**
-   * @generated from field: int32 tool_slots = 11;
+   * @generated from field: int32 tool_slots = 9;
    */
   toolSlots: number;
 
   /**
-   * @generated from field: capability.v1.CapabilityProfile capability_profile = 12;
+   * @generated from field: capability.v1.CapabilityProfile capability_profile = 10;
    */
   capabilityProfile?: CapabilityProfile;
 
   /**
-   * @generated from field: repeated resources.v1.DefaultRobotSkill default_skills = 13;
+   * @generated from field: repeated resources.v1.DefaultRobotSkill default_skills = 11;
    */
   defaultSkills: DefaultRobotSkill[];
 
@@ -120,7 +115,7 @@ export type RobotDefinition = Message<"resources.v1.RobotDefinition"> & {
    * Selects the static adapter implementation and capability contract used by
    * every instance of this robot definition.
    *
-   * @generated from field: string robot_adapter_definition_id = 14;
+   * @generated from field: string robot_adapter_definition_id = 12;
    */
   robotAdapterDefinitionId: string;
 };

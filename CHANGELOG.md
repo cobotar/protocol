@@ -31,3 +31,7 @@
 - `resources.v1.AssetDefinition` now selects an asset adapter definition. `AssetDriverType`, `driver_type` and the robot-specific signal catalog messages have been removed; robot adapter info now uses the shared signal catalog (cobotar/protocol#15).
 - `resources.v1.RobotDefinition` now selects a robot adapter definition, and `robot.v1.RobotAdapterInfoMessage` references that definition while reporting the connected controller identity, adapter version and configured I/O catalog. The former `RobotDriverType`, `driver_type`, legacy adapter identity fields and embedded `RobotAdapterCapabilities` have been removed (cobotar/protocol#14).
 - `max_concurrent_processes` on lines, cells and stations is documented to count only active runs.
+
+### Removed
+
+- `resources.v1.RobotDefinition.model_id`; a robot's type now determines its 3D model. Field number 7 and the `model_id` name are reserved, while `coupler_model_id` remains available for the tool coupler model (cobotar/protocol#20).

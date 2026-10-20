@@ -31,21 +31,19 @@ message RobotDefinition {
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ]; // Required type of robot
-  string model_id = 7 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
-
   // Tool mounting capability
-  string coupler_model_id = 8 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
-  repeated string supported_tool_definition_ids = 9;
-  string default_tool_definition_id = 10;
-  int32 tool_slots = 11 [(buf.validate.field).int32.gte = 0];
+  string coupler_model_id = 6 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
+  repeated string supported_tool_definition_ids = 7;
+  string default_tool_definition_id = 8;
+  int32 tool_slots = 9 [(buf.validate.field).int32.gte = 0];
 
-  capability.v1.CapabilityProfile capability_profile = 12;
+  capability.v1.CapabilityProfile capability_profile = 10;
 
-  repeated DefaultRobotSkill default_skills = 13;
+  repeated DefaultRobotSkill default_skills = 11;
 
   // Selects the static adapter implementation and capability contract used by
   // every instance of this robot definition.
-  string robot_adapter_definition_id = 14 [
+  string robot_adapter_definition_id = 12 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.robot_adapter_definition_id_component) = true
   ];
