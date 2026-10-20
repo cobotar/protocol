@@ -101,9 +101,9 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "command.robot_instance.state_change", pattern: "command.robot_instance.state_change.{robot_instance_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "robot.v1.ProgramStateRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar", "holo_cobotar"], consumers: ["robot_adapter"], trackingIssue: "cobotar/Authoring#64" },
   { id: "command.sequence_run.complete", pattern: "command.sequence_run.complete", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.SequenceCompleteRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
   { id: "command.sequence_run.reassign", pattern: "command.sequence_run.reassign", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.SequenceReassignRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
-  { id: "command.storage.clear", pattern: "command.storage.clear", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageClearRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
-  { id: "command.storage.dump", pattern: "command.storage.dump", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageDumpRequest", emptyRequest: false, successReply: "service.v1.StorageDumpResult", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
-  { id: "command.storage.load", pattern: "command.storage.load", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageLoadRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
+  { id: "command.storage.clear", pattern: "command.storage.clear", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageClearRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
+  { id: "command.storage.dump", pattern: "command.storage.dump", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageDumpRequest", emptyRequest: false, successReply: "service.v1.StorageDumpResult", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
+  { id: "command.storage.load", pattern: "command.storage.load", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageLoadRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
   { id: "command.task_run.progress", pattern: "command.task_run.progress", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.TaskProgressUpdate", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["robot_adapter", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "command.task_run.reassign", pattern: "command.task_run.reassign", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.TaskReassignRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
   { id: "command.task_run.state_change", pattern: "command.task_run.state_change.{task_run_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.TaskStateChangeRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["robot_adapter", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
@@ -152,7 +152,7 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "get.robot_instance.controller_status", pattern: "get.robot_instance.controller_status.{robot_instance_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "robot.v1.RobotControllerStatusMessage", failureReply: "service.v1.Response", publishers: ["web_cobotar", "holo_cobotar"], consumers: ["robot_adapter"], trackingIssue: "cobotar/Authoring#64" },
   { id: "get.robot_instance.field.definition_id", pattern: "get.robot_instance.field.definition_id", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetByFieldMessage", emptyRequest: false, successReply: "resources.v1.RobotInstances", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
   { id: "get.robot_instance.io", pattern: "get.robot_instance.io.{robot_instance_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "robot.v1.RobotIOState", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["robot_adapter"], trackingIssue: "cobotar/Authoring#64" },
-  { id: "get.storage.info", pattern: "get.storage.info", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "service.v1.StorageInfo", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
+  { id: "get.storage.info", pattern: "get.storage.info", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "service.v1.StorageInfo", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
   { id: "get.tool_instance.field.definition_id", pattern: "get.tool_instance.field.definition_id", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetByFieldMessage", emptyRequest: false, successReply: "resources.v1.ToolInstances", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
   { id: "plan.robot.path", pattern: "plan.robot.path.{robot_instance_id}.{plan_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "robot.v1.PathMessage", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["robot_adapter"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
   { id: "report.asset_adapter.info", pattern: "report.asset_adapter.info.{asset_instance_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "resources.v1.AssetAdapterInfoMessage", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["asset_adapter"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#23" },
@@ -687,17 +687,17 @@ export const commandSequenceRunComplete = "command.sequence_run.complete"
 export const commandSequenceRunReassign = "command.sequence_run.reassign"
 
 /** Builds `command.storage.clear`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/protocol#21.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#62.
  */
 export const commandStorageClear = "command.storage.clear"
 
 /** Builds `command.storage.dump`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/protocol#21.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#62.
  */
 export const commandStorageDump = "command.storage.dump"
 
 /** Builds `command.storage.load`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/protocol#21.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#62.
  */
 export const commandStorageLoad = "command.storage.load"
 
@@ -986,7 +986,7 @@ export function getRobotInstanceIo(robotInstanceId: string): string {
 export function subscribeGetRobotInstanceIoAny(): string { return "get.robot_instance.io.*" }
 
 /** Builds `get.storage.info`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/protocol#21.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#62.
  */
 export const getStorageInfo = "get.storage.info"
 

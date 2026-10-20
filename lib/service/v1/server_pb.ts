@@ -46,7 +46,7 @@ export type ServerInfo = Message<"service.v1.ServerInfo"> & {
   startedAt?: Timestamp;
 
   /**
-   * e.g. "process_restart", "db_wiped"
+   * "process_restart", "storage_loaded" or "storage_cleared" in event.server.restarted; "info_request" in replies to get.backend.info
    *
    * @generated from field: string reset_reason = 5;
    */

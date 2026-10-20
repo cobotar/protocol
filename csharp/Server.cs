@@ -162,7 +162,7 @@ namespace Messages.Service.V1 {
     public const int ResetReasonFieldNumber = 5;
     private string resetReason_ = "";
     /// <summary>
-    /// e.g. "process_restart", "db_wiped"
+    /// "process_restart", "storage_loaded" or "storage_cleared" in event.server.restarted; "info_request" in replies to get.backend.info
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

@@ -11505,7 +11505,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | instance_id | [string](#string) |  | random UUID per process start |
 | epoch | [uint64](#uint64) |  | Increments each restart (or derived) |
 | started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| reset_reason | [string](#string) |  | e.g. &#34;process_restart&#34;, &#34;db_wiped&#34; |
+| reset_reason | [string](#string) |  | &#34;process_restart&#34;, &#34;storage_loaded&#34; or &#34;storage_cleared&#34; in event.server.restarted; &#34;info_request&#34; in replies to get.backend.info |
 | data_wiped | [bool](#bool) |  | If true clients should strongly consider refetching data |
 
 
@@ -11583,7 +11583,9 @@ Concrete runtime/deployment bindings resolved for this task run.
 ### StorageClearRequest
 StorageClearRequest asks Authoring to remove all stored data. The caller
 must copy the current ServerInfo.instance_id into confirmation_instance_id;
-this prevents a stale confirmation from clearing a restarted backend.
+this prevents a stale confirmation from clearing a restarted backend. After
+a clear, Authoring restarts in place and publishes `event.server.restarted`
+with `data_wiped: true` and `reset_reason: &#34;storage_cleared&#34;`.
 
 
 | Field | Type | Label | Description |
@@ -11602,6 +11604,20 @@ this prevents a stale confirmation from clearing a restarted backend.
 StorageDumpRequest asks Authoring to write a logical dump to the `dumps`
 object-store bucket. object_name is the name within that bucket, not a path
 on the Authoring host.
+
+A dump is a ZIP file with:
+  - `manifest.json`: `format_version` (1), `data_version` (the stored data&#39;s
+    version, see cobotar/Authoring#72), `protocol_version`,
+    `authoring_version`, `created_at` (RFC 3339), `seed_record` (the
+    fingerprint, mode, files and time of the seeds the data was seeded from,
+    if any), `entity_counts` (per kind) and `files` (the object-store files
+    that entities refer to, by bucket, key and SHA-256; the files themselves
+    aren&#39;t in the dump);
+  - one `&lt;kind&gt;.jsonl` file per entity kind, e.g. `station.jsonl`, with one
+    JSON object per line: `id`, `revision` and `entity`, the entity as
+    protojson with proto field names.
+
+A dump loads only into an Authoring that reads the same data version.
 
 
 | Field | Type | Label | Description |
@@ -11691,7 +11707,12 @@ is the value a caller must repeat when sending StorageClearRequest.
 
 ### StorageLoadRequest
 StorageLoadRequest asks Authoring to replace its stored data with the dump
-identified by object_name in the `dumps` object-store bucket.
+identified by object_name in the `dumps` object-store bucket. Authoring
+checks the whole dump first; a dump that fails a check changes nothing.
+After a load, Authoring restarts in place: it publishes
+`event.server.restarted` with `data_wiped: true` and `reset_reason:
+&#34;storage_loaded&#34;`, so clients refetch, and aborts the process runs that were
+active in the dump.
 
 
 | Field | Type | Label | Description |

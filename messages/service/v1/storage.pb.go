@@ -83,6 +83,20 @@ func (x *StorageSeedRecord) GetAppliedAt() *timestamppb.Timestamp {
 // StorageDumpRequest asks Authoring to write a logical dump to the `dumps`
 // object-store bucket. object_name is the name within that bucket, not a path
 // on the Authoring host.
+//
+// A dump is a ZIP file with:
+//   - `manifest.json`: `format_version` (1), `data_version` (the stored data's
+//     version, see cobotar/Authoring#72), `protocol_version`,
+//     `authoring_version`, `created_at` (RFC 3339), `seed_record` (the
+//     fingerprint, mode, files and time of the seeds the data was seeded from,
+//     if any), `entity_counts` (per kind) and `files` (the object-store files
+//     that entities refer to, by bucket, key and SHA-256; the files themselves
+//     aren't in the dump);
+//   - one `<kind>.jsonl` file per entity kind, e.g. `station.jsonl`, with one
+//     JSON object per line: `id`, `revision` and `entity`, the entity as
+//     protojson with proto field names.
+//
+// A dump loads only into an Authoring that reads the same data version.
 type StorageDumpRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ObjectName    string                 `protobuf:"bytes,1,opt,name=object_name,json=objectName,proto3" json:"object_name,omitempty"`
@@ -198,7 +212,12 @@ func (x *StorageDumpResult) GetCreatedAt() *timestamppb.Timestamp {
 }
 
 // StorageLoadRequest asks Authoring to replace its stored data with the dump
-// identified by object_name in the `dumps` object-store bucket.
+// identified by object_name in the `dumps` object-store bucket. Authoring
+// checks the whole dump first; a dump that fails a check changes nothing.
+// After a load, Authoring restarts in place: it publishes
+// `event.server.restarted` with `data_wiped: true` and `reset_reason:
+// "storage_loaded"`, so clients refetch, and aborts the process runs that were
+// active in the dump.
 type StorageLoadRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ObjectName    string                 `protobuf:"bytes,1,opt,name=object_name,json=objectName,proto3" json:"object_name,omitempty"`
@@ -245,7 +264,9 @@ func (x *StorageLoadRequest) GetObjectName() string {
 
 // StorageClearRequest asks Authoring to remove all stored data. The caller
 // must copy the current ServerInfo.instance_id into confirmation_instance_id;
-// this prevents a stale confirmation from clearing a restarted backend.
+// this prevents a stale confirmation from clearing a restarted backend. After
+// a clear, Authoring restarts in place and publishes `event.server.restarted`
+// with `data_wiped: true` and `reset_reason: "storage_cleared"`.
 type StorageClearRequest struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
 	ApplyConfiguredSeeds   *bool                  `protobuf:"varint,1,opt,name=apply_configured_seeds,json=applyConfiguredSeeds,proto3,oneof" json:"apply_configured_seeds,omitempty"`

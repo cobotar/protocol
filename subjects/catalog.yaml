@@ -1309,10 +1309,10 @@ routes:
 
   - id: command.storage.clear
     pattern: command.storage.clear
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
-      tracking_issue: cobotar/protocol#21
+      tracking_issue: cobotar/Authoring#62
     interaction: request_reply
     request: service.v1.StorageClearRequest
     replies:
@@ -1320,13 +1320,14 @@ routes:
       failure: service.v1.Response
     publishers: [web_cobotar]
     consumers: [authoring]
+    description: Clear the backend's stored data, optionally applying the configured seeds again. Authoring answers only in experimenter mode, and then restarts in place.
 
   - id: command.storage.dump
     pattern: command.storage.dump
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
-      tracking_issue: cobotar/protocol#21
+      tracking_issue: cobotar/Authoring#62
     interaction: request_reply
     request: service.v1.StorageDumpRequest
     replies:
@@ -1334,13 +1335,14 @@ routes:
       failure: service.v1.Response
     publishers: [web_cobotar]
     consumers: [authoring]
+    description: Write a dump of the backend's stored data to the dumps object-store bucket. Authoring answers only in experimenter mode.
 
   - id: command.storage.load
     pattern: command.storage.load
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
-      tracking_issue: cobotar/protocol#21
+      tracking_issue: cobotar/Authoring#62
     interaction: request_reply
     request: service.v1.StorageLoadRequest
     replies:
@@ -1348,6 +1350,7 @@ routes:
       failure: service.v1.Response
     publishers: [web_cobotar]
     consumers: [authoring]
+    description: Replace the backend's stored data with a dump from the dumps object-store bucket. Authoring answers only in experimenter mode, and then restarts in place.
 
   - id: command.task_run.progress
     pattern: command.task_run.progress
@@ -1402,10 +1405,10 @@ routes:
 
   - id: get.storage.info
     pattern: get.storage.info
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
-      tracking_issue: cobotar/protocol#21
+      tracking_issue: cobotar/Authoring#62
     interaction: request_reply
     empty_request: true
     replies:
@@ -1413,6 +1416,7 @@ routes:
       failure: service.v1.Response
     publishers: [web_cobotar]
     consumers: [authoring]
+    description: Describe the backend's store, including whether experimenter mode is on.
 
   - id: plan.robot.path
     pattern: plan.robot.path.{robot_instance_id}.{plan_id}

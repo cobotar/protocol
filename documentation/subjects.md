@@ -51,9 +51,9 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `command.robot_instance.state_change` | `command.robot_instance.state_change.{robot_instance_id}` | — | active | staged | robot.v1.ProgramStateRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
 | `command.sequence_run.complete` | `command.sequence_run.complete` | — | active | staged | runtime.v1.SequenceCompleteRequest → service.v1.Response / service.v1.Response | holo_cobotar | authoring |
 | `command.sequence_run.reassign` | `command.sequence_run.reassign` | — | active | staged | runtime.v1.SequenceReassignRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
-| `command.storage.clear` | `command.storage.clear` | — | planned | staged | service.v1.StorageClearRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `command.storage.dump` | `command.storage.dump` | — | planned | staged | service.v1.StorageDumpRequest → service.v1.StorageDumpResult / service.v1.Response | web_cobotar | authoring |
-| `command.storage.load` | `command.storage.load` | — | planned | staged | service.v1.StorageLoadRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.storage.clear` | `command.storage.clear` | — | active | staged | service.v1.StorageClearRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.storage.dump` | `command.storage.dump` | — | active | staged | service.v1.StorageDumpRequest → service.v1.StorageDumpResult / service.v1.Response | web_cobotar | authoring |
+| `command.storage.load` | `command.storage.load` | — | active | staged | service.v1.StorageLoadRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `command.task_run.progress` | `command.task_run.progress` | — | active | staged | runtime.v1.TaskProgressUpdate → service.v1.Response / service.v1.Response | robot_adapter, web_cobotar, holo_cobotar | authoring |
 | `command.task_run.reassign` | `command.task_run.reassign` | — | active | staged | runtime.v1.TaskReassignRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
 | `command.task_run.state_change` | `command.task_run.state_change.{task_run_id}` | — | active | staged | runtime.v1.TaskStateChangeRequest → service.v1.Response / service.v1.Response | robot_adapter, web_cobotar, holo_cobotar | authoring |
@@ -102,7 +102,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.robot_instance.controller_status` | `get.robot_instance.controller_status.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotControllerStatusMessage / service.v1.Response | web_cobotar, holo_cobotar | robot_adapter |
 | `get.robot_instance.field.definition_id` | `get.robot_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.RobotInstances / service.v1.Response | web_cobotar | authoring |
 | `get.robot_instance.io` | `get.robot_instance.io.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotIOState / service.v1.Response | web_cobotar | robot_adapter |
-| `get.storage.info` | `get.storage.info` | — | planned | staged | (empty) → service.v1.StorageInfo / service.v1.Response | web_cobotar | authoring |
+| `get.storage.info` | `get.storage.info` | — | active | staged | (empty) → service.v1.StorageInfo / service.v1.Response | web_cobotar | authoring |
 | `get.tool_instance.field.definition_id` | `get.tool_instance.field.definition_id` | — | active | staged | common.v1.GetByFieldMessage → resources.v1.ToolInstances / service.v1.Response | web_cobotar | authoring |
 | `plan.robot.path` | `plan.robot.path.{robot_instance_id}.{plan_id}` | — | active | staged | robot.v1.PathMessage | robot_adapter | web_cobotar, holo_cobotar |
 | `report.asset_adapter.info` | `report.asset_adapter.info.{asset_instance_id}` | — | active | staged | resources.v1.AssetAdapterInfoMessage | asset_adapter | authoring |

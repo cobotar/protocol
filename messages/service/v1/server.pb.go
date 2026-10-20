@@ -29,7 +29,7 @@ type ServerInfo struct {
 	InstanceId    string                 `protobuf:"bytes,2,opt,name=instance_id,json=instanceId,proto3" json:"instance_id,omitempty"` // random UUID per process start
 	Epoch         uint64                 `protobuf:"varint,3,opt,name=epoch,proto3" json:"epoch,omitempty"`                            // Increments each restart (or derived)
 	StartedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
-	ResetReason   string                 `protobuf:"bytes,5,opt,name=reset_reason,json=resetReason,proto3" json:"reset_reason,omitempty"` // e.g. "process_restart", "db_wiped"
+	ResetReason   string                 `protobuf:"bytes,5,opt,name=reset_reason,json=resetReason,proto3" json:"reset_reason,omitempty"` // "process_restart", "storage_loaded" or "storage_cleared" in event.server.restarted; "info_request" in replies to get.backend.info
 	DataWiped     bool                   `protobuf:"varint,6,opt,name=data_wiped,json=dataWiped,proto3" json:"data_wiped,omitempty"`      // If true clients should strongly consider refetching data
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache

@@ -13,7 +13,7 @@ message ServerInfo {
   uint64 epoch = 3; // Increments each restart (or derived)
   google.protobuf.Timestamp started_at = 4 [(buf.validate.field).timestamp.lt_now = true];
 
-  string reset_reason = 5; // e.g. "process_restart", "db_wiped"
+  string reset_reason = 5; // "process_restart", "storage_loaded" or "storage_cleared" in event.server.restarted; "info_request" in replies to get.backend.info
   bool data_wiped = 6; // If true clients should strongly consider refetching data
 }
 
