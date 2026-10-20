@@ -279,8 +279,8 @@ export enum ARResourceBindingStatus {
   AR_RESOURCE_BINDING_STATUS_UNSATISFIED = 3,
 
   /**
-   * Transient status while an existing binding is being re-evaluated. A new
-   * binding must still be rejected when the adapter has never reported.
+   * One or more requirements cannot be evaluated because the adapter has not
+   * reported enough capability information.
    *
    * @generated from enum value: AR_RESOURCE_BINDING_STATUS_UNVERIFIED = 4;
    */

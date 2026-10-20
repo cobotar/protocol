@@ -249,6 +249,11 @@ func generatePython(catalog *Catalog) []byte {
 		name := snakeName(route.ID)
 		parameters := route.ParameterList()
 		if len(parameters) == 0 {
+			fmt.Fprintf(&out, "# Builds `%s`.", route.Pattern)
+			if route.Lifecycle == "planned" || route.Conformance.Mode == "staged" {
+				fmt.Fprintf(&out, " Experimental: %s/%s; see %s.", route.Lifecycle, route.Conformance.Mode, route.Conformance.TrackingIssue)
+			}
+			out.WriteString("\n")
 			fmt.Fprintf(&out, "%s = %s\n\n", strings.ToUpper(name), pyString(route.Pattern))
 			continue
 		}

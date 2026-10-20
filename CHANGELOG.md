@@ -4,6 +4,7 @@
 
 ### Added
 
+- `ARBindingCandidatesRequest` and `ARBindingCandidatesResponse`, plus `get.ar_config_binding.candidates`, for evaluating which resources satisfy an AR config slot without creating or changing a binding (cobotar/protocol#26).
 - Entity-aware NATS route families, a generated `EntityName` API, and concrete CRUD/event subject contracts with per-entity protobuf metadata for Go, C#, TypeScript, and Python (cobotar/protocol#11).
 - `ar.v1.FunctionType.FUNCTION_TYPE_ROBOT_ANCHOR` and `FUNCTION_TYPE_ROBOT_STATE`, which output a robot frame's anchor and the robot's state, replacing the anchor, state and colour properties that a robot input slot used to generate; and `ar.v1.FunctionAddMessage.robot_property_id`, so a robot function is linked to a slot when it is created, like feedback and actions (cobotar/Authoring#51).
 - `common.v1.SignalSemantic.SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE` for the robot input that an adapter pulses for the `ACKNOWLEDGE` command, so whether a connected robot can acknowledge shows in its signal catalog (cobotar/protocol#22).

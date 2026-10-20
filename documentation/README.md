@@ -210,6 +210,21 @@
   
     - [ActionGroup](#ar-v1-ActionGroup)
   
+- [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
+    - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
+    - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
+    - [ARResourceBinding](#ar-v1-ARResourceBinding)
+    - [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer)
+    - [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement)
+  
+    - [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus)
+  
+- [ar/v1/ar_binding_candidates.proto](#ar_v1_ar_binding_candidates-proto)
+    - [ARBindingCandidate](#ar-v1-ARBindingCandidate)
+    - [ARBindingCandidatesRequest](#ar-v1-ARBindingCandidatesRequest)
+    - [ARBindingCandidatesResponse](#ar-v1-ARBindingCandidatesResponse)
+    - [ARResourceRequirementUsage](#ar-v1-ARResourceRequirementUsage)
+  
 - [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
     - [ARActorSelector](#ar-v1-ARActorSelector)
     - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
@@ -237,15 +252,6 @@
     - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
   
     - [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType)
-  
-- [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
-    - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
-    - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
-    - [ARResourceBinding](#ar-v1-ARResourceBinding)
-    - [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer)
-    - [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement)
-  
-    - [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus)
   
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
     - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
@@ -3135,6 +3141,238 @@ share a type, and that at most one revision per key/type is ACTIVE.
 
 
 
+<a name="ar_v1_ar_config_binding-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/ar_config_binding.proto
+
+
+
+<a name="ar-v1-ARConfigBindingMessage"></a>
+
+### ARConfigBindingMessage
+ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
+workspace.
+
+Runtime resolution should typically work like this:
+- load bindings targeted directly at the active station
+- load bindings targeted at the parent cell
+- sort by standalone/priority
+- apply property_overrides after the config template is loaded
+- populate resource slot properties and runtime context values afterwards
+
+This keeps ARConfig authoring reusable while making station/cell-specific
+resource wiring explicit and safe.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Stable binding identifier. |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| station_id | [string](#string) |  | Station this binding targets directly. |
+| cell_id | [string](#string) |  | Cell this binding targets directly. |
+| ar_config_id | [string](#string) |  | Reusable AR config template to bind. |
+| disabled | [bool](#bool) |  | If true, the binding should be ignored by resolution. |
+| standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
+| priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
+| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated | Concrete resource assignments for config-declared slots. |
+| property_overrides | [common.v1.PropertyInstanceUpdate](#common-v1-PropertyInstanceUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
+
+
+
+
+
+
+<a name="ar-v1-ARConfigBindingMessages"></a>
+
+### ARConfigBindingMessages
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated | Station/cell bindings for reusable AR configs. |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceBinding"></a>
+
+### ARResourceBinding
+ARResourceBinding binds a config-declared slot to a concrete resource
+instance owned by the target station or cell.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slot_id | [string](#string) |  | Config-declared slot to satisfy. |
+| robot_instance_id | [string](#string) |  | Concrete robot instance selected for the slot. |
+| asset_instance_id | [string](#string) |  | Concrete asset instance selected for the slot. |
+| status | [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus) |  | Server-evaluated status; UNSPECIFIED is accepted only before evaluation. |
+| unmet_requirements | [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement) | repeated | Missing capabilities grouped with every affected consumer. |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceRequirementConsumer"></a>
+
+### ARResourceRequirementConsumer
+ARResourceRequirementConsumer identifies the config entity affected by an
+unmet requirement. An input slot is the consumer for an explicit constraint.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| input_slot_id | [string](#string) |  |  |
+| feedback_id | [string](#string) |  |  |
+| action_id | [string](#string) |  |  |
+| function_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ar-v1-ARUnmetResourceRequirement"></a>
+
+### ARUnmetResourceRequirement
+ARUnmetResourceRequirement reports one unmet requirement and every consumer
+affected by it. Clients can group these entries by consumer to determine
+which optional features must degrade.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| requirement | [resources.v1.ResourceRequirement](#resources-v1-ResourceRequirement) |  |  |
+| consumers | [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer) | repeated |  |
+
+
+
+
+
+ 
+
+
+<a name="ar-v1-ARResourceBindingStatus"></a>
+
+### ARResourceBindingStatus
+ARResourceBindingStatus is the result of evaluating a concrete resource
+against a slot&#39;s explicit and consumer-derived requirements.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AR_RESOURCE_BINDING_STATUS_UNSPECIFIED | 0 |  |
+| AR_RESOURCE_BINDING_STATUS_SATISFIED | 1 |  |
+| AR_RESOURCE_BINDING_STATUS_DEGRADED | 2 |  |
+| AR_RESOURCE_BINDING_STATUS_UNSATISFIED | 3 |  |
+| AR_RESOURCE_BINDING_STATUS_UNVERIFIED | 4 | One or more requirements cannot be evaluated because the adapter has not reported enough capability information. |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="ar_v1_ar_binding_candidates-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ar/v1/ar_binding_candidates.proto
+
+
+
+<a name="ar-v1-ARBindingCandidate"></a>
+
+### ARBindingCandidate
+ARBindingCandidate describes what a new binding to one resource would look
+like according to the backend&#39;s authoritative capability evaluator.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| robot_instance_id | [string](#string) |  | Robot instance evaluated by this candidate. |
+| asset_instance_id | [string](#string) |  | Asset instance evaluated by this candidate. |
+| status | [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus) |  | Status a new binding to this resource would receive. |
+| unmet_requirements | [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement) | repeated | Requirements the resource is known not to satisfy, grouped with affected consumers. |
+| unverified_requirements | [ARResourceRequirementUsage](#ar-v1-ARResourceRequirementUsage) | repeated | Requirements the adapter has not reported enough capability information to evaluate. |
+| bindable | [bool](#bool) |  | Whether creating a binding to this resource would be accepted. |
+
+
+
+
+
+
+<a name="ar-v1-ARBindingCandidatesRequest"></a>
+
+### ARBindingCandidatesRequest
+ARBindingCandidatesRequest asks the backend to evaluate resources for one
+resource slot without creating or changing an AR config binding.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ar_config_id | [string](#string) |  | AR config containing the resource slot to evaluate. |
+| slot_id | [string](#string) |  | Resource input slot whose requirements and candidates are evaluated. |
+| robot_instance_ids | [string](#string) | repeated | Optional robot candidates. Empty means evaluate every robot when the slot expects a robot. The backend must reject this filter for an asset slot. |
+| asset_instance_ids | [string](#string) | repeated | Optional asset candidates. Empty means evaluate every asset when the slot expects an asset. The backend must reject this filter for a robot slot. |
+
+
+
+
+
+
+<a name="ar-v1-ARBindingCandidatesResponse"></a>
+
+### ARBindingCandidatesResponse
+ARBindingCandidatesResponse contains the resolved requirements of one
+resource slot and the backend&#39;s evaluation of each candidate resource.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| requirements | [ARResourceRequirementUsage](#ar-v1-ARResourceRequirementUsage) | repeated | Requirements resolved from the slot&#39;s explicit constraints and every feedback, action, or function that consumes the slot. |
+| candidates | [ARBindingCandidate](#ar-v1-ARBindingCandidate) | repeated | Candidate resources evaluated against the resolved slot requirements. |
+
+
+
+
+
+
+<a name="ar-v1-ARResourceRequirementUsage"></a>
+
+### ARResourceRequirementUsage
+ARResourceRequirementUsage identifies every consumer that contributes a
+resolved requirement to a slot. Explicit slot constraints name the slot as
+their consumer.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| requirement | [resources.v1.ResourceRequirement](#resources-v1-ResourceRequirement) |  | Resolved requirement contributed to the slot. |
+| consumers | [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer) | repeated | Feedbacks, actions, functions, or the slot constraint that contribute this requirement. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="ar_v1_input_slot-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3602,147 +3840,6 @@ actions, properties, and input slots.
 | AR_CONFIG_PRIMARY_TYPE_PROCESS_OVERVIEW | 7 | Overview/dashboard-style configuration for process status, task queues, assignments, and runtime control. Typical defaults: overview panel, progress indicators, task status colors, reassignment and completion controls. |
 | AR_CONFIG_PRIMARY_TYPE_TRAINING_GUIDANCE | 8 | Training/onboarding configuration with stronger guidance, explanations, examples, and optional help content. Typical defaults: larger instruction panels, help icons, tutorial prompts, slower animations, and extra confirmation feedback. |
 | AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE | 9 | Safety-focused configuration used to communicate hazards, restricted zones, required approvals, or critical warnings. Typical defaults: warning/error colors, safety zones, alert sounds, approval prompts, and high-visibility icons. |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="ar_v1_ar_config_binding-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/ar_config_binding.proto
-
-
-
-<a name="ar-v1-ARConfigBindingMessage"></a>
-
-### ARConfigBindingMessage
-ARConfigBindingMessage binds a reusable ARConfig to a concrete runtime
-workspace.
-
-Runtime resolution should typically work like this:
-- load bindings targeted directly at the active station
-- load bindings targeted at the parent cell
-- sort by standalone/priority
-- apply property_overrides after the config template is loaded
-- populate resource slot properties and runtime context values afterwards
-
-This keeps ARConfig authoring reusable while making station/cell-specific
-resource wiring explicit and safe.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Stable binding identifier. |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| station_id | [string](#string) |  | Station this binding targets directly. |
-| cell_id | [string](#string) |  | Cell this binding targets directly. |
-| ar_config_id | [string](#string) |  | Reusable AR config template to bind. |
-| disabled | [bool](#bool) |  | If true, the binding should be ignored by resolution. |
-| standalone | [bool](#bool) |  | If true, only standalone bindings with the highest priority should be shown. |
-| priority | [int32](#int32) |  | Higher values should be resolved before lower values. |
-| resource_bindings | [ARResourceBinding](#ar-v1-ARResourceBinding) | repeated | Concrete resource assignments for config-declared slots. |
-| property_overrides | [common.v1.PropertyInstanceUpdate](#common-v1-PropertyInstanceUpdate) | repeated | Station/cell-local values applied to config properties before runtime values. |
-
-
-
-
-
-
-<a name="ar-v1-ARConfigBindingMessages"></a>
-
-### ARConfigBindingMessages
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| bindings | [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage) | repeated | Station/cell bindings for reusable AR configs. |
-
-
-
-
-
-
-<a name="ar-v1-ARResourceBinding"></a>
-
-### ARResourceBinding
-ARResourceBinding binds a config-declared slot to a concrete resource
-instance owned by the target station or cell.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| slot_id | [string](#string) |  | Config-declared slot to satisfy. |
-| robot_instance_id | [string](#string) |  | Concrete robot instance selected for the slot. |
-| asset_instance_id | [string](#string) |  | Concrete asset instance selected for the slot. |
-| status | [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus) |  | Server-evaluated status; UNSPECIFIED is accepted only before evaluation. |
-| unmet_requirements | [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement) | repeated | Missing capabilities grouped with every affected consumer. |
-
-
-
-
-
-
-<a name="ar-v1-ARResourceRequirementConsumer"></a>
-
-### ARResourceRequirementConsumer
-ARResourceRequirementConsumer identifies the config entity affected by an
-unmet requirement. An input slot is the consumer for an explicit constraint.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| input_slot_id | [string](#string) |  |  |
-| feedback_id | [string](#string) |  |  |
-| action_id | [string](#string) |  |  |
-| function_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="ar-v1-ARUnmetResourceRequirement"></a>
-
-### ARUnmetResourceRequirement
-ARUnmetResourceRequirement reports one unmet requirement and every consumer
-affected by it. Clients can group these entries by consumer to determine
-which optional features must degrade.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| requirement | [resources.v1.ResourceRequirement](#resources-v1-ResourceRequirement) |  |  |
-| consumers | [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer) | repeated |  |
-
-
-
-
-
- 
-
-
-<a name="ar-v1-ARResourceBindingStatus"></a>
-
-### ARResourceBindingStatus
-ARResourceBindingStatus is the result of evaluating a concrete resource
-against a slot&#39;s explicit and consumer-derived requirements.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| AR_RESOURCE_BINDING_STATUS_UNSPECIFIED | 0 |  |
-| AR_RESOURCE_BINDING_STATUS_SATISFIED | 1 |  |
-| AR_RESOURCE_BINDING_STATUS_DEGRADED | 2 |  |
-| AR_RESOURCE_BINDING_STATUS_UNSATISFIED | 3 |  |
-| AR_RESOURCE_BINDING_STATUS_UNVERIFIED | 4 | Transient status while an existing binding is being re-evaluated. A new binding must still be rejected when the adapter has never reported. |
 
 
  

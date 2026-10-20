@@ -89,6 +89,7 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "command.storage.load", pattern: "command.storage.load", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageLoadRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
   { id: "command.task_run.progress", pattern: "command.task_run.progress", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.TaskProgressUpdate", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.entity.reset", pattern: "edit.{entity}.reset.{child}", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
+  { id: "get.ar_config_binding.candidates", pattern: "get.ar_config_binding.candidates", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "ar.v1.ARBindingCandidatesRequest", emptyRequest: false, successReply: "ar.v1.ARBindingCandidatesResponse", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#74" },
   { id: "get.asset_adapter.info", pattern: "get.asset_adapter.info.{asset_instance_id}", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "resources.v1.AssetAdapterInfoMessage", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#65" },
   { id: "get.robot_adapter.info", pattern: "get.robot_adapter.info.{robot_instance_id}", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "robot.v1.RobotAdapterInfoMessage", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#14" },
   { id: "get.storage.info", pattern: "get.storage.info", family: "", entity: "", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "service.v1.StorageInfo", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#21" },
@@ -540,6 +541,11 @@ export function editEntityReset(entity: string, child: string): string {
 }
 
 export function subscribeEditEntityResetAny(): string { return "edit.*.reset.*" }
+
+/** Builds `get.ar_config_binding.candidates`.
+ * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#74.
+ */
+export const getArConfigBindingCandidates = "get.ar_config_binding.candidates"
 
 /** Builds `get.asset_adapter.info.{asset_instance_id}`.
  * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#65.

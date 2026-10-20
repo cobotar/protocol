@@ -124,8 +124,8 @@ namespace Messages.AR.V1 {
     [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_DEGRADED")] Degraded = 2,
     [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_UNSATISFIED")] Unsatisfied = 3,
     /// <summary>
-    /// Transient status while an existing binding is being re-evaluated. A new
-    /// binding must still be rejected when the adapter has never reported.
+    /// One or more requirements cannot be evaluated because the adapter has not
+    /// reported enough capability information.
     /// </summary>
     [pbr::OriginalName("AR_RESOURCE_BINDING_STATUS_UNVERIFIED")] Unverified = 4,
   }

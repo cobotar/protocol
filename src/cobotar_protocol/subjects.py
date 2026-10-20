@@ -22,6 +22,7 @@ SUBJECT_CATALOG: Tuple[Dict[str, object], ...] = (
     {"id": "command.storage.load", "pattern": "command.storage.load", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "service.v1.StorageLoadRequest", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
     {"id": "command.task_run.progress", "pattern": "command.task_run.progress", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "runtime.v1.TaskProgressUpdate", "empty_request": False, "success_reply": "service.v1.Response", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
     {"id": "edit.entity.reset", "pattern": "edit.{entity}.reset.{child}", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": False, "success_reply": "", "failure_reply": "", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#11"},
+    {"id": "get.ar_config_binding.candidates", "pattern": "get.ar_config_binding.candidates", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "ar.v1.ARBindingCandidatesRequest", "empty_request": False, "success_reply": "ar.v1.ARBindingCandidatesResponse", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#74"},
     {"id": "get.asset_adapter.info", "pattern": "get.asset_adapter.info.{asset_instance_id}", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "resources.v1.AssetAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/Authoring#65"},
     {"id": "get.robot_adapter.info", "pattern": "get.robot_adapter.info.{robot_instance_id}", "family": "", "entity": "", "lifecycle": "active", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "robot.v1.RobotAdapterInfoMessage", "failure_reply": "service.v1.Response", "publishers": ("authoring", "web_cobotar", "holo_cobotar"), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#14"},
     {"id": "get.storage.info", "pattern": "get.storage.info", "family": "", "entity": "", "lifecycle": "planned", "conformance": "staged", "interaction": "request_reply", "payload": "", "request": "", "empty_request": True, "success_reply": "service.v1.StorageInfo", "failure_reply": "service.v1.Response", "publishers": ("web_cobotar",), "consumers": ("authoring",), "tracking_issue": "cobotar/protocol#21"},
@@ -440,12 +441,16 @@ def subscribe_command_robot_visibility_any() -> str:
     """Subscribe to every concrete `command.robot.visibility` subject."""
     return "command.robot.visibility.*"
 
+# Builds `command.storage.clear`. Experimental: planned/staged; see cobotar/protocol#21.
 COMMAND_STORAGE_CLEAR = "command.storage.clear"
 
+# Builds `command.storage.dump`. Experimental: planned/staged; see cobotar/protocol#21.
 COMMAND_STORAGE_DUMP = "command.storage.dump"
 
+# Builds `command.storage.load`. Experimental: planned/staged; see cobotar/protocol#21.
 COMMAND_STORAGE_LOAD = "command.storage.load"
 
+# Builds `command.task_run.progress`. Experimental: active/staged; see cobotar/protocol#11.
 COMMAND_TASK_RUN_PROGRESS = "command.task_run.progress"
 
 def edit_entity_reset(entity: str, child: str) -> str:
@@ -455,6 +460,9 @@ def edit_entity_reset(entity: str, child: str) -> str:
 def subscribe_edit_entity_reset_any() -> str:
     """Subscribe to every concrete `edit.entity.reset` subject."""
     return "edit.*.reset.*"
+
+# Builds `get.ar_config_binding.candidates`. Experimental: planned/staged; see cobotar/Authoring#74.
+GET_AR_CONFIG_BINDING_CANDIDATES = "get.ar_config_binding.candidates"
 
 def get_asset_adapter_info(asset_instance_id: str) -> str:
     """Build `get.asset_adapter.info.{asset_instance_id}`. Experimental: planned/staged; see cobotar/Authoring#65."""
@@ -472,6 +480,7 @@ def subscribe_get_robot_adapter_info_any() -> str:
     """Subscribe to every concrete `get.robot_adapter.info` subject."""
     return "get.robot_adapter.info.*"
 
+# Builds `get.storage.info`. Experimental: planned/staged; see cobotar/protocol#21.
 GET_STORAGE_INFO = "get.storage.info"
 
 def plan_robot_path(robot_instance_id: str, plan_id: str) -> str:
@@ -502,270 +511,403 @@ def subscribe_telemetry_robot_end_effector_any() -> str:
     """Subscribe to every concrete `telemetry.robot.end_effector` subject."""
     return "telemetry.robot.end_effector.*"
 
+# Builds `edit.action.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTION_ADD = "edit.action.add"
 
+# Builds `edit.action.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTION_CLONE = "edit.action.clone"
 
+# Builds `edit.action.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTION_REMOVE = "edit.action.remove"
 
+# Builds `edit.action.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTION_UPDATE = "edit.action.update"
 
+# Builds `edit.actor_skill.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTOR_SKILL_ADD = "edit.actor_skill.add"
 
+# Builds `edit.actor_skill.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTOR_SKILL_CLONE = "edit.actor_skill.clone"
 
+# Builds `edit.actor_skill.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTOR_SKILL_REMOVE = "edit.actor_skill.remove"
 
+# Builds `edit.actor_skill.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ACTOR_SKILL_UPDATE = "edit.actor_skill.update"
 
+# Builds `edit.ar_config.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_ADD = "edit.ar_config.add"
 
+# Builds `edit.ar_config.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_CLONE = "edit.ar_config.clone"
 
+# Builds `edit.ar_config.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_REMOVE = "edit.ar_config.remove"
 
+# Builds `edit.ar_config.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_UPDATE = "edit.ar_config.update"
 
+# Builds `edit.ar_config_binding.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_BINDING_ADD = "edit.ar_config_binding.add"
 
+# Builds `edit.ar_config_binding.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_BINDING_CLONE = "edit.ar_config_binding.clone"
 
+# Builds `edit.ar_config_binding.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_BINDING_REMOVE = "edit.ar_config_binding.remove"
 
+# Builds `edit.ar_config_binding.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_AR_CONFIG_BINDING_UPDATE = "edit.ar_config_binding.update"
 
+# Builds `edit.asset_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_DEFINITION_ADD = "edit.asset_definition.add"
 
+# Builds `edit.asset_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_DEFINITION_CLONE = "edit.asset_definition.clone"
 
+# Builds `edit.asset_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_DEFINITION_REMOVE = "edit.asset_definition.remove"
 
+# Builds `edit.asset_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_DEFINITION_UPDATE = "edit.asset_definition.update"
 
+# Builds `edit.asset_instance.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_INSTANCE_ADD = "edit.asset_instance.add"
 
+# Builds `edit.asset_instance.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_INSTANCE_CLONE = "edit.asset_instance.clone"
 
+# Builds `edit.asset_instance.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_INSTANCE_REMOVE = "edit.asset_instance.remove"
 
+# Builds `edit.asset_instance.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ASSET_INSTANCE_UPDATE = "edit.asset_instance.update"
 
+# Builds `edit.cell.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CELL_ADD = "edit.cell.add"
 
+# Builds `edit.cell.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CELL_CLONE = "edit.cell.clone"
 
+# Builds `edit.cell.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CELL_REMOVE = "edit.cell.remove"
 
+# Builds `edit.cell.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CELL_UPDATE = "edit.cell.update"
 
+# Builds `edit.container_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_DEFINITION_ADD = "edit.container_definition.add"
 
+# Builds `edit.container_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_DEFINITION_CLONE = "edit.container_definition.clone"
 
+# Builds `edit.container_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_DEFINITION_REMOVE = "edit.container_definition.remove"
 
+# Builds `edit.container_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_DEFINITION_UPDATE = "edit.container_definition.update"
 
+# Builds `edit.container_instance.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_INSTANCE_ADD = "edit.container_instance.add"
 
+# Builds `edit.container_instance.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_INSTANCE_CLONE = "edit.container_instance.clone"
 
+# Builds `edit.container_instance.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_INSTANCE_REMOVE = "edit.container_instance.remove"
 
+# Builds `edit.container_instance.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_CONTAINER_INSTANCE_UPDATE = "edit.container_instance.update"
 
+# Builds `edit.device.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_DEVICE_ADD = "edit.device.add"
 
+# Builds `edit.device.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_DEVICE_CLONE = "edit.device.clone"
 
+# Builds `edit.device.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_DEVICE_REMOVE = "edit.device.remove"
 
+# Builds `edit.device.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_DEVICE_UPDATE = "edit.device.update"
 
+# Builds `edit.execution_evidence.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_EXECUTION_EVIDENCE_ADD = "edit.execution_evidence.add"
 
+# Builds `edit.feedback.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FEEDBACK_ADD = "edit.feedback.add"
 
+# Builds `edit.feedback.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FEEDBACK_CLONE = "edit.feedback.clone"
 
+# Builds `edit.feedback.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FEEDBACK_REMOVE = "edit.feedback.remove"
 
+# Builds `edit.feedback.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FEEDBACK_UPDATE = "edit.feedback.update"
 
+# Builds `edit.function.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FUNCTION_ADD = "edit.function.add"
 
+# Builds `edit.function.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FUNCTION_CLONE = "edit.function.clone"
 
+# Builds `edit.function.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FUNCTION_REMOVE = "edit.function.remove"
 
+# Builds `edit.function.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_FUNCTION_UPDATE = "edit.function.update"
 
+# Builds `edit.line.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_LINE_ADD = "edit.line.add"
 
+# Builds `edit.line.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_LINE_CLONE = "edit.line.clone"
 
+# Builds `edit.line.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_LINE_REMOVE = "edit.line.remove"
 
+# Builds `edit.line.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_LINE_UPDATE = "edit.line.update"
 
+# Builds `edit.marker.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MARKER_ADD = "edit.marker.add"
 
+# Builds `edit.marker.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MARKER_CLONE = "edit.marker.clone"
 
+# Builds `edit.marker.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MARKER_REMOVE = "edit.marker.remove"
 
+# Builds `edit.marker.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MARKER_UPDATE = "edit.marker.update"
 
+# Builds `edit.model.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MODEL_ADD = "edit.model.add"
 
+# Builds `edit.model.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MODEL_CLONE = "edit.model.clone"
 
+# Builds `edit.model.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MODEL_REMOVE = "edit.model.remove"
 
+# Builds `edit.model.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_MODEL_UPDATE = "edit.model.update"
 
+# Builds `edit.part_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_DEFINITION_ADD = "edit.part_definition.add"
 
+# Builds `edit.part_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_DEFINITION_CLONE = "edit.part_definition.clone"
 
+# Builds `edit.part_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_DEFINITION_REMOVE = "edit.part_definition.remove"
 
+# Builds `edit.part_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_DEFINITION_UPDATE = "edit.part_definition.update"
 
+# Builds `edit.part_instance.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_INSTANCE_ADD = "edit.part_instance.add"
 
+# Builds `edit.part_instance.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_INSTANCE_CLONE = "edit.part_instance.clone"
 
+# Builds `edit.part_instance.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_INSTANCE_REMOVE = "edit.part_instance.remove"
 
+# Builds `edit.part_instance.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PART_INSTANCE_UPDATE = "edit.part_instance.update"
 
+# Builds `edit.presentation_strategy.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRESENTATION_STRATEGY_ADD = "edit.presentation_strategy.add"
 
+# Builds `edit.presentation_strategy.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRESENTATION_STRATEGY_CLONE = "edit.presentation_strategy.clone"
 
+# Builds `edit.presentation_strategy.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRESENTATION_STRATEGY_REMOVE = "edit.presentation_strategy.remove"
 
+# Builds `edit.presentation_strategy.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRESENTATION_STRATEGY_UPDATE = "edit.presentation_strategy.update"
 
+# Builds `edit.process_recipe.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROCESS_RECIPE_ADD = "edit.process_recipe.add"
 
+# Builds `edit.process_recipe.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROCESS_RECIPE_CLONE = "edit.process_recipe.clone"
 
+# Builds `edit.process_recipe.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROCESS_RECIPE_REMOVE = "edit.process_recipe.remove"
 
+# Builds `edit.process_recipe.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROCESS_RECIPE_UPDATE = "edit.process_recipe.update"
 
+# Builds `edit.product.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRODUCT_ADD = "edit.product.add"
 
+# Builds `edit.product.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRODUCT_CLONE = "edit.product.clone"
 
+# Builds `edit.product.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRODUCT_REMOVE = "edit.product.remove"
 
+# Builds `edit.product.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PRODUCT_UPDATE = "edit.product.update"
 
+# Builds `edit.property_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_DEFINITION_ADD = "edit.property_definition.add"
 
+# Builds `edit.property_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_DEFINITION_CLONE = "edit.property_definition.clone"
 
+# Builds `edit.property_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_DEFINITION_REMOVE = "edit.property_definition.remove"
 
+# Builds `edit.property_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_DEFINITION_UPDATE = "edit.property_definition.update"
 
+# Builds `edit.property_instance.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_INSTANCE_ADD = "edit.property_instance.add"
 
+# Builds `edit.property_instance.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_INSTANCE_CLONE = "edit.property_instance.clone"
 
+# Builds `edit.property_instance.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_INSTANCE_REMOVE = "edit.property_instance.remove"
 
+# Builds `edit.property_instance.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_PROPERTY_INSTANCE_UPDATE = "edit.property_instance.update"
 
+# Builds `edit.robot_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_DEFINITION_ADD = "edit.robot_definition.add"
 
+# Builds `edit.robot_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_DEFINITION_CLONE = "edit.robot_definition.clone"
 
+# Builds `edit.robot_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_DEFINITION_REMOVE = "edit.robot_definition.remove"
 
+# Builds `edit.robot_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_DEFINITION_UPDATE = "edit.robot_definition.update"
 
+# Builds `edit.robot_instance.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_INSTANCE_ADD = "edit.robot_instance.add"
 
+# Builds `edit.robot_instance.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_INSTANCE_CLONE = "edit.robot_instance.clone"
 
+# Builds `edit.robot_instance.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_INSTANCE_REMOVE = "edit.robot_instance.remove"
 
+# Builds `edit.robot_instance.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ROBOT_INSTANCE_UPDATE = "edit.robot_instance.update"
 
+# Builds `edit.sequence_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SEQUENCE_DEFINITION_ADD = "edit.sequence_definition.add"
 
+# Builds `edit.sequence_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SEQUENCE_DEFINITION_CLONE = "edit.sequence_definition.clone"
 
+# Builds `edit.sequence_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SEQUENCE_DEFINITION_REMOVE = "edit.sequence_definition.remove"
 
+# Builds `edit.sequence_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SEQUENCE_DEFINITION_UPDATE = "edit.sequence_definition.update"
 
+# Builds `edit.skill.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SKILL_ADD = "edit.skill.add"
 
+# Builds `edit.skill.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SKILL_CLONE = "edit.skill.clone"
 
+# Builds `edit.skill.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SKILL_REMOVE = "edit.skill.remove"
 
+# Builds `edit.skill.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_SKILL_UPDATE = "edit.skill.update"
 
+# Builds `edit.station.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_STATION_ADD = "edit.station.add"
 
+# Builds `edit.station.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_STATION_CLONE = "edit.station.clone"
 
+# Builds `edit.station.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_STATION_REMOVE = "edit.station.remove"
 
+# Builds `edit.station.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_STATION_UPDATE = "edit.station.update"
 
+# Builds `edit.task_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TASK_DEFINITION_ADD = "edit.task_definition.add"
 
+# Builds `edit.task_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TASK_DEFINITION_CLONE = "edit.task_definition.clone"
 
+# Builds `edit.task_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TASK_DEFINITION_REMOVE = "edit.task_definition.remove"
 
+# Builds `edit.task_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TASK_DEFINITION_UPDATE = "edit.task_definition.update"
 
+# Builds `edit.tool_definition.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_DEFINITION_ADD = "edit.tool_definition.add"
 
+# Builds `edit.tool_definition.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_DEFINITION_CLONE = "edit.tool_definition.clone"
 
+# Builds `edit.tool_definition.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_DEFINITION_REMOVE = "edit.tool_definition.remove"
 
+# Builds `edit.tool_definition.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_DEFINITION_UPDATE = "edit.tool_definition.update"
 
+# Builds `edit.tool_instance.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_INSTANCE_ADD = "edit.tool_instance.add"
 
+# Builds `edit.tool_instance.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_INSTANCE_CLONE = "edit.tool_instance.clone"
 
+# Builds `edit.tool_instance.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_INSTANCE_REMOVE = "edit.tool_instance.remove"
 
+# Builds `edit.tool_instance.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_TOOL_INSTANCE_UPDATE = "edit.tool_instance.update"
 
+# Builds `edit.validity_policy.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_VALIDITY_POLICY_ADD = "edit.validity_policy.add"
 
+# Builds `edit.validity_policy.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_VALIDITY_POLICY_CLONE = "edit.validity_policy.clone"
 
+# Builds `edit.validity_policy.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_VALIDITY_POLICY_REMOVE = "edit.validity_policy.remove"
 
+# Builds `edit.validity_policy.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_VALIDITY_POLICY_UPDATE = "edit.validity_policy.update"
 
+# Builds `edit.worker.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_WORKER_ADD = "edit.worker.add"
 
+# Builds `edit.worker.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_WORKER_CLONE = "edit.worker.clone"
 
+# Builds `edit.worker.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_WORKER_REMOVE = "edit.worker.remove"
 
+# Builds `edit.worker.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_WORKER_UPDATE = "edit.worker.update"
 
+# Builds `edit.zone.add`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ZONE_ADD = "edit.zone.add"
 
+# Builds `edit.zone.clone`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ZONE_CLONE = "edit.zone.clone"
 
+# Builds `edit.zone.remove`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ZONE_REMOVE = "edit.zone.remove"
 
+# Builds `edit.zone.update`. Experimental: active/staged; see cobotar/protocol#11.
 EDIT_ZONE_UPDATE = "edit.zone.update"
 
 def event_action_added(entity_id: str) -> str:
@@ -1800,262 +1942,391 @@ def subscribe_event_zone_updated_any() -> str:
     """Subscribe to every concrete `event.zone.updated` subject."""
     return "event.zone.updated.*"
 
+# Builds `get.action.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTION_ALL = "get.action.all"
 
+# Builds `get.action.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTION_ONE = "get.action.one"
 
+# Builds `get.action.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTION_SOME = "get.action.some"
 
+# Builds `get.action_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTION_DEFINITION_ALL = "get.action_definition.all"
 
+# Builds `get.action_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTION_DEFINITION_ONE = "get.action_definition.one"
 
+# Builds `get.action_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTION_DEFINITION_SOME = "get.action_definition.some"
 
+# Builds `get.actor_availability.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTOR_AVAILABILITY_ALL = "get.actor_availability.all"
 
+# Builds `get.actor_availability.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTOR_AVAILABILITY_ONE = "get.actor_availability.one"
 
+# Builds `get.actor_availability.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTOR_AVAILABILITY_SOME = "get.actor_availability.some"
 
+# Builds `get.actor_skill.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTOR_SKILL_ALL = "get.actor_skill.all"
 
+# Builds `get.actor_skill.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTOR_SKILL_ONE = "get.actor_skill.one"
 
+# Builds `get.actor_skill.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ACTOR_SKILL_SOME = "get.actor_skill.some"
 
+# Builds `get.ar_config.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_AR_CONFIG_ALL = "get.ar_config.all"
 
+# Builds `get.ar_config.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_AR_CONFIG_ONE = "get.ar_config.one"
 
+# Builds `get.ar_config.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_AR_CONFIG_SOME = "get.ar_config.some"
 
+# Builds `get.ar_config_binding.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_AR_CONFIG_BINDING_ALL = "get.ar_config_binding.all"
 
+# Builds `get.ar_config_binding.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_AR_CONFIG_BINDING_ONE = "get.ar_config_binding.one"
 
+# Builds `get.ar_config_binding.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_AR_CONFIG_BINDING_SOME = "get.ar_config_binding.some"
 
+# Builds `get.asset_adapter_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_ADAPTER_DEFINITION_ALL = "get.asset_adapter_definition.all"
 
+# Builds `get.asset_adapter_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_ADAPTER_DEFINITION_ONE = "get.asset_adapter_definition.one"
 
+# Builds `get.asset_adapter_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_ADAPTER_DEFINITION_SOME = "get.asset_adapter_definition.some"
 
+# Builds `get.asset_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_DEFINITION_ALL = "get.asset_definition.all"
 
+# Builds `get.asset_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_DEFINITION_ONE = "get.asset_definition.one"
 
+# Builds `get.asset_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_DEFINITION_SOME = "get.asset_definition.some"
 
+# Builds `get.asset_instance.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_INSTANCE_ALL = "get.asset_instance.all"
 
+# Builds `get.asset_instance.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_INSTANCE_ONE = "get.asset_instance.one"
 
+# Builds `get.asset_instance.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ASSET_INSTANCE_SOME = "get.asset_instance.some"
 
+# Builds `get.cell.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CELL_ALL = "get.cell.all"
 
+# Builds `get.cell.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CELL_ONE = "get.cell.one"
 
+# Builds `get.cell.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CELL_SOME = "get.cell.some"
 
+# Builds `get.container_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CONTAINER_DEFINITION_ALL = "get.container_definition.all"
 
+# Builds `get.container_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CONTAINER_DEFINITION_ONE = "get.container_definition.one"
 
+# Builds `get.container_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CONTAINER_DEFINITION_SOME = "get.container_definition.some"
 
+# Builds `get.container_instance.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CONTAINER_INSTANCE_ALL = "get.container_instance.all"
 
+# Builds `get.container_instance.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CONTAINER_INSTANCE_ONE = "get.container_instance.one"
 
+# Builds `get.container_instance.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_CONTAINER_INSTANCE_SOME = "get.container_instance.some"
 
+# Builds `get.device.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_DEVICE_ALL = "get.device.all"
 
+# Builds `get.device.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_DEVICE_ONE = "get.device.one"
 
+# Builds `get.device.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_DEVICE_SOME = "get.device.some"
 
+# Builds `get.execution_evidence.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_EXECUTION_EVIDENCE_ALL = "get.execution_evidence.all"
 
+# Builds `get.execution_evidence.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_EXECUTION_EVIDENCE_ONE = "get.execution_evidence.one"
 
+# Builds `get.execution_evidence.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_EXECUTION_EVIDENCE_SOME = "get.execution_evidence.some"
 
+# Builds `get.feedback.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FEEDBACK_ALL = "get.feedback.all"
 
+# Builds `get.feedback.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FEEDBACK_ONE = "get.feedback.one"
 
+# Builds `get.feedback.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FEEDBACK_SOME = "get.feedback.some"
 
+# Builds `get.feedback_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FEEDBACK_DEFINITION_ALL = "get.feedback_definition.all"
 
+# Builds `get.feedback_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FEEDBACK_DEFINITION_ONE = "get.feedback_definition.one"
 
+# Builds `get.feedback_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FEEDBACK_DEFINITION_SOME = "get.feedback_definition.some"
 
+# Builds `get.function.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FUNCTION_ALL = "get.function.all"
 
+# Builds `get.function.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FUNCTION_ONE = "get.function.one"
 
+# Builds `get.function.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FUNCTION_SOME = "get.function.some"
 
+# Builds `get.function_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FUNCTION_DEFINITION_ALL = "get.function_definition.all"
 
+# Builds `get.function_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FUNCTION_DEFINITION_ONE = "get.function_definition.one"
 
+# Builds `get.function_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_FUNCTION_DEFINITION_SOME = "get.function_definition.some"
 
+# Builds `get.line.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_LINE_ALL = "get.line.all"
 
+# Builds `get.line.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_LINE_ONE = "get.line.one"
 
+# Builds `get.line.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_LINE_SOME = "get.line.some"
 
+# Builds `get.marker.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_MARKER_ALL = "get.marker.all"
 
+# Builds `get.marker.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_MARKER_ONE = "get.marker.one"
 
+# Builds `get.marker.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_MARKER_SOME = "get.marker.some"
 
+# Builds `get.model.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_MODEL_ALL = "get.model.all"
 
+# Builds `get.model.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_MODEL_ONE = "get.model.one"
 
+# Builds `get.model.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_MODEL_SOME = "get.model.some"
 
+# Builds `get.part_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PART_DEFINITION_ALL = "get.part_definition.all"
 
+# Builds `get.part_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PART_DEFINITION_ONE = "get.part_definition.one"
 
+# Builds `get.part_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PART_DEFINITION_SOME = "get.part_definition.some"
 
+# Builds `get.part_instance.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PART_INSTANCE_ALL = "get.part_instance.all"
 
+# Builds `get.part_instance.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PART_INSTANCE_ONE = "get.part_instance.one"
 
+# Builds `get.part_instance.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PART_INSTANCE_SOME = "get.part_instance.some"
 
+# Builds `get.presentation_strategy.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PRESENTATION_STRATEGY_ALL = "get.presentation_strategy.all"
 
+# Builds `get.presentation_strategy.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PRESENTATION_STRATEGY_ONE = "get.presentation_strategy.one"
 
+# Builds `get.presentation_strategy.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PRESENTATION_STRATEGY_SOME = "get.presentation_strategy.some"
 
+# Builds `get.process_recipe.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROCESS_RECIPE_ALL = "get.process_recipe.all"
 
+# Builds `get.process_recipe.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROCESS_RECIPE_ONE = "get.process_recipe.one"
 
+# Builds `get.process_recipe.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROCESS_RECIPE_SOME = "get.process_recipe.some"
 
+# Builds `get.process_run.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROCESS_RUN_ALL = "get.process_run.all"
 
+# Builds `get.process_run.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROCESS_RUN_ONE = "get.process_run.one"
 
+# Builds `get.process_run.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROCESS_RUN_SOME = "get.process_run.some"
 
+# Builds `get.product.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PRODUCT_ALL = "get.product.all"
 
+# Builds `get.product.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PRODUCT_ONE = "get.product.one"
 
+# Builds `get.product.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PRODUCT_SOME = "get.product.some"
 
+# Builds `get.property_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROPERTY_DEFINITION_ALL = "get.property_definition.all"
 
+# Builds `get.property_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROPERTY_DEFINITION_ONE = "get.property_definition.one"
 
+# Builds `get.property_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROPERTY_DEFINITION_SOME = "get.property_definition.some"
 
+# Builds `get.property_instance.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROPERTY_INSTANCE_ALL = "get.property_instance.all"
 
+# Builds `get.property_instance.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROPERTY_INSTANCE_ONE = "get.property_instance.one"
 
+# Builds `get.property_instance.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_PROPERTY_INSTANCE_SOME = "get.property_instance.some"
 
+# Builds `get.robot_adapter_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_ADAPTER_DEFINITION_ALL = "get.robot_adapter_definition.all"
 
+# Builds `get.robot_adapter_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_ADAPTER_DEFINITION_ONE = "get.robot_adapter_definition.one"
 
+# Builds `get.robot_adapter_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_ADAPTER_DEFINITION_SOME = "get.robot_adapter_definition.some"
 
+# Builds `get.robot_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_DEFINITION_ALL = "get.robot_definition.all"
 
+# Builds `get.robot_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_DEFINITION_ONE = "get.robot_definition.one"
 
+# Builds `get.robot_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_DEFINITION_SOME = "get.robot_definition.some"
 
+# Builds `get.robot_instance.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_INSTANCE_ALL = "get.robot_instance.all"
 
+# Builds `get.robot_instance.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_INSTANCE_ONE = "get.robot_instance.one"
 
+# Builds `get.robot_instance.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ROBOT_INSTANCE_SOME = "get.robot_instance.some"
 
+# Builds `get.sequence_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SEQUENCE_DEFINITION_ALL = "get.sequence_definition.all"
 
+# Builds `get.sequence_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SEQUENCE_DEFINITION_ONE = "get.sequence_definition.one"
 
+# Builds `get.sequence_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SEQUENCE_DEFINITION_SOME = "get.sequence_definition.some"
 
+# Builds `get.sequence_run.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SEQUENCE_RUN_ALL = "get.sequence_run.all"
 
+# Builds `get.sequence_run.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SEQUENCE_RUN_ONE = "get.sequence_run.one"
 
+# Builds `get.sequence_run.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SEQUENCE_RUN_SOME = "get.sequence_run.some"
 
+# Builds `get.skill.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SKILL_ALL = "get.skill.all"
 
+# Builds `get.skill.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SKILL_ONE = "get.skill.one"
 
+# Builds `get.skill.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_SKILL_SOME = "get.skill.some"
 
+# Builds `get.station.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_STATION_ALL = "get.station.all"
 
+# Builds `get.station.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_STATION_ONE = "get.station.one"
 
+# Builds `get.station.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_STATION_SOME = "get.station.some"
 
+# Builds `get.task_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TASK_DEFINITION_ALL = "get.task_definition.all"
 
+# Builds `get.task_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TASK_DEFINITION_ONE = "get.task_definition.one"
 
+# Builds `get.task_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TASK_DEFINITION_SOME = "get.task_definition.some"
 
+# Builds `get.task_run.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TASK_RUN_ALL = "get.task_run.all"
 
+# Builds `get.task_run.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TASK_RUN_ONE = "get.task_run.one"
 
+# Builds `get.task_run.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TASK_RUN_SOME = "get.task_run.some"
 
+# Builds `get.tool_definition.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TOOL_DEFINITION_ALL = "get.tool_definition.all"
 
+# Builds `get.tool_definition.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TOOL_DEFINITION_ONE = "get.tool_definition.one"
 
+# Builds `get.tool_definition.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TOOL_DEFINITION_SOME = "get.tool_definition.some"
 
+# Builds `get.tool_instance.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TOOL_INSTANCE_ALL = "get.tool_instance.all"
 
+# Builds `get.tool_instance.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TOOL_INSTANCE_ONE = "get.tool_instance.one"
 
+# Builds `get.tool_instance.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_TOOL_INSTANCE_SOME = "get.tool_instance.some"
 
+# Builds `get.validity_policy.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_VALIDITY_POLICY_ALL = "get.validity_policy.all"
 
+# Builds `get.validity_policy.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_VALIDITY_POLICY_ONE = "get.validity_policy.one"
 
+# Builds `get.validity_policy.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_VALIDITY_POLICY_SOME = "get.validity_policy.some"
 
+# Builds `get.worker.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_WORKER_ALL = "get.worker.all"
 
+# Builds `get.worker.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_WORKER_ONE = "get.worker.one"
 
+# Builds `get.worker.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_WORKER_SOME = "get.worker.some"
 
+# Builds `get.zone.all`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ZONE_ALL = "get.zone.all"
 
+# Builds `get.zone.one`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ZONE_ONE = "get.zone.one"
 
+# Builds `get.zone.some`. Experimental: active/staged; see cobotar/protocol#11.
 GET_ZONE_SOME = "get.zone.some"
 
 def edit_entity_add(entity: EntityName) -> str:

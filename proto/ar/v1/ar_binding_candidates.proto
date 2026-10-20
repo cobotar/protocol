@@ -1,0 +1,133 @@
+syntax = "proto3";
+package ar.v1;
+
+import "ar/v1/ar_config_binding.proto";
+import "buf/validate/validate.proto";
+import "resources/v1/resource_requirement.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.AR.V1";
+option go_package = "github.com/cobotar/protocol/messages/ar/v1";
+
+// ARBindingCandidatesRequest asks the backend to evaluate resources for one
+// resource slot without creating or changing an AR config binding.
+message ARBindingCandidatesRequest {
+  option (buf.validate.message).cel = {
+    id: "ar_binding_candidates_request.single_resource_filter_kind"
+    message: "robot and asset instance filters cannot both be set"
+    expression: "this.robot_instance_ids.size() == 0 || this.asset_instance_ids.size() == 0"
+  };
+
+  // AR config containing the resource slot to evaluate.
+  string ar_config_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_config_id_component) = true
+  ];
+  // Resource input slot whose requirements and candidates are evaluated.
+  string slot_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.ar_input_slot_id_component) = true
+  ];
+
+  // Optional robot candidates. Empty means evaluate every robot when the slot
+  // expects a robot. The backend must reject this filter for an asset slot.
+  repeated string robot_instance_ids = 3 [(buf.validate.field).repeated = {
+    unique: true
+    items: {
+      string: {
+        min_len: 1
+        [validation.v1.robot_instance_id_component]: true
+      }
+    }
+  }];
+  // Optional asset candidates. Empty means evaluate every asset when the slot
+  // expects an asset. The backend must reject this filter for a robot slot.
+  repeated string asset_instance_ids = 4 [(buf.validate.field).repeated = {
+    unique: true
+    items: {
+      string: {
+        min_len: 1
+        [validation.v1.asset_instance_id_component]: true
+      }
+    }
+  }];
+}
+
+// ARResourceRequirementUsage identifies every consumer that contributes a
+// resolved requirement to a slot. Explicit slot constraints name the slot as
+// their consumer.
+message ARResourceRequirementUsage {
+  // Resolved requirement contributed to the slot.
+  resources.v1.ResourceRequirement requirement = 1 [(buf.validate.field).required = true];
+  // Feedbacks, actions, functions, or the slot constraint that contribute
+  // this requirement.
+  repeated ARResourceRequirementConsumer consumers = 2 [
+    (buf.validate.field).repeated.min_items = 1,
+    (buf.validate.field).cel = {
+      id: "ar_resource_requirement_usage.consumers.unique_ids"
+      message: "requirement consumer ids must be unique"
+      expression: "this.map(consumer, consumer.input_slot_id + consumer.feedback_id + consumer.action_id + consumer.function_id).unique()"
+    }
+  ];
+}
+
+// ARBindingCandidate describes what a new binding to one resource would look
+// like according to the backend's authoritative capability evaluator.
+message ARBindingCandidate {
+  option (buf.validate.message).oneof = {
+    fields: [
+      "robot_instance_id",
+      "asset_instance_id"
+    ]
+    required: true
+  };
+
+  option (buf.validate.message).cel = {
+    id: "ar_binding_candidate.result_consistency"
+    message: "candidate status, requirements, and bindable must describe a consistent evaluation result"
+    expression:
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_SATISFIED && this.unmet_requirements.size() == 0 && this.unverified_requirements.size() == 0 && this.bindable) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_DEGRADED && this.unmet_requirements.size() > 0 && this.unmet_requirements.all(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_OPTIONAL) && this.unverified_requirements.size() == 0 && this.bindable) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNSATISFIED && this.unmet_requirements.exists(unmet, unmet.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED) && this.unverified_requirements.size() == 0 && !this.bindable) || "
+      "(this.status == ar.v1.ARResourceBindingStatus.AR_RESOURCE_BINDING_STATUS_UNVERIFIED && this.unmet_requirements.size() == 0 && this.unverified_requirements.size() > 0 && this.bindable == !this.unverified_requirements.exists(u, u.requirement.level == resources.v1.ResourceRequirementLevel.RESOURCE_REQUIREMENT_LEVEL_REQUIRED))"
+  };
+
+  // Robot instance evaluated by this candidate.
+  string robot_instance_id = 1 [(buf.validate.field).string.(validation.v1.robot_instance_id_component) = true];
+  // Asset instance evaluated by this candidate.
+  string asset_instance_id = 2 [(buf.validate.field).string.(validation.v1.asset_instance_id_component) = true];
+  // Status a new binding to this resource would receive.
+  ARResourceBindingStatus status = 3 [(buf.validate.field).enum = {
+    defined_only: true
+    not_in: [0]
+  }];
+  // Requirements the resource is known not to satisfy, grouped with affected
+  // consumers.
+  repeated ARUnmetResourceRequirement unmet_requirements = 4;
+  // Requirements the adapter has not reported enough capability information
+  // to evaluate.
+  repeated ARResourceRequirementUsage unverified_requirements = 5;
+  // Whether creating a binding to this resource would be accepted.
+  bool bindable = 6;
+}
+
+// ARBindingCandidatesResponse contains the resolved requirements of one
+// resource slot and the backend's evaluation of each candidate resource.
+message ARBindingCandidatesResponse {
+  option (buf.validate.message).cel = {
+    id: "ar_binding_candidates_response.single_resource_kind"
+    message: "a candidate response cannot mix robot and asset instances"
+    expression: "this.candidates.filter(candidate, candidate.robot_instance_id != '').size() == 0 || this.candidates.filter(candidate, candidate.asset_instance_id != '').size() == 0"
+  };
+
+  // Requirements resolved from the slot's explicit constraints and every
+  // feedback, action, or function that consumes the slot.
+  repeated ARResourceRequirementUsage requirements = 1;
+
+  // Candidate resources evaluated against the resolved slot requirements.
+  repeated ARBindingCandidate candidates = 2 [(buf.validate.field).cel = {
+    id: "ar_binding_candidates_response.candidates.unique_resource_ids"
+    message: "candidate resource instance ids must be unique"
+    expression: "this.map(candidate, candidate.robot_instance_id + candidate.asset_instance_id).unique()"
+  }];
+}

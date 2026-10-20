@@ -41,6 +41,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `command.storage.load` | `command.storage.load` | — | planned | staged | service.v1.StorageLoadRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `command.task_run.progress` | `command.task_run.progress` | — | active | staged | runtime.v1.TaskProgressUpdate → service.v1.Response / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `edit.entity.reset` | `edit.{entity}.reset.{child}` | — | planned | staged | (TBD) → (TBD) / (TBD) | web_cobotar | authoring |
+| `get.ar_config_binding.candidates` | `get.ar_config_binding.candidates` | — | planned | staged | ar.v1.ARBindingCandidatesRequest → ar.v1.ARBindingCandidatesResponse / service.v1.Response | web_cobotar | authoring |
 | `get.asset_adapter.info` | `get.asset_adapter.info.{asset_instance_id}` | — | planned | staged | (empty) → resources.v1.AssetAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.robot_adapter.info` | `get.robot_adapter.info.{robot_instance_id}` | — | active | staged | (empty) → robot.v1.RobotAdapterInfoMessage / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.storage.info` | `get.storage.info` | — | planned | staged | (empty) → service.v1.StorageInfo / service.v1.Response | web_cobotar | authoring |

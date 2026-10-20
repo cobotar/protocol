@@ -34,8 +34,8 @@ const (
 	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_SATISFIED   ARResourceBindingStatus = 1
 	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_DEGRADED    ARResourceBindingStatus = 2
 	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNSATISFIED ARResourceBindingStatus = 3
-	// Transient status while an existing binding is being re-evaluated. A new
-	// binding must still be rejected when the adapter has never reported.
+	// One or more requirements cannot be evaluated because the adapter has not
+	// reported enough capability information.
 	ARResourceBindingStatus_AR_RESOURCE_BINDING_STATUS_UNVERIFIED ARResourceBindingStatus = 4
 )
 

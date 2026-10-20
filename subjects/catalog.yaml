@@ -263,6 +263,21 @@ route_families:
     consumers: [web_cobotar, holo_cobotar]
 
 routes:
+  - id: get.ar_config_binding.candidates
+    pattern: get.ar_config_binding.candidates
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#74
+    interaction: request_reply
+    request: ar.v1.ARBindingCandidatesRequest
+    replies:
+      success: ar.v1.ARBindingCandidatesResponse
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    description: Evaluate which resources can satisfy an AR config resource slot without creating or changing a binding.
+
   - id: command.robot.visibility
     pattern: command.robot.visibility.{robot_instance_id}
     lifecycle: active
