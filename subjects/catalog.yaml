@@ -606,7 +606,7 @@ routes:
 
   - id: edit.product.import
     pattern: edit.product.import
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
       tracking_issue: cobotar/Authoring#78

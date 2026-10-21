@@ -68,7 +68,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.process_recipe.add.task` | `edit.process_recipe.add.task` | — | active | staged | process.v1.AddChildTaskRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.process_recipe.remove.sequence` | `edit.process_recipe.remove.sequence` | — | active | staged | process.v1.RemoveSequenceRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.process_recipe.remove.task` | `edit.process_recipe.remove.task` | — | active | staged | process.v1.RemoveTaskRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.product.import` | `edit.product.import` | — | planned | staged | product.v1.ImportProduct → product.v1.ImportProductResult / service.v1.Response | fusion360_exporter | authoring |
+| `edit.product.import` | `edit.product.import` | — | active | staged | product.v1.ImportProduct → product.v1.ImportProductResult / service.v1.Response | fusion360_exporter | authoring |
 | `edit.property_instance.update_value` | `edit.property_instance.update_value` | — | active | staged | common.v1.PropertyInstanceUpdate → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
 | `event.device.heartbeat` | `event.device.heartbeat.{device_id}` | — | active | staged | resources.v1.DeviceHeartbeat | holo_cobotar | authoring |
 | `event.log.error` | `event.log.error.{service}` | — | active | staged | common.v1.LogRecord | authoring, robot_adapter, holo_cobotar | web_cobotar |
