@@ -617,7 +617,7 @@ routes:
       failure: service.v1.Response
     publishers: [fusion360_exporter]
     consumers: [authoring]
-    description: Create or update a product with its models and parts in one unit of work, matching earlier imports by external reference.
+    description: Create or update a product (optional) with its models and parts in one unit of work, matching earlier imports by external reference.
 
   - id: edit.property_instance.update_value
     pattern: edit.property_instance.update_value

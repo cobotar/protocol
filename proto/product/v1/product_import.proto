@@ -13,8 +13,10 @@ option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 
 // ImportProduct creates or updates a product with its models and parts in one
 // request (edit.product.import, cobotar/protocol#31), e.g. an export from a
-// CAD tool. The backend applies it in one unit of work: it changes everything
-// or nothing. The files are uploaded first (see resources.v1.UploadedObject).
+// CAD tool. The product is optional: without it, the import creates or updates
+// only the models and parts. The backend applies it in one unit of work: it
+// changes everything or nothing. The files are uploaded first (see
+// resources.v1.UploadedObject).
 //
 // The models and parts have keys, which are only valid within the request: a
 // part names its default model by model_key, and an assembly node names its
@@ -67,8 +69,9 @@ message ImportProduct {
     message: "part keys must be unique"
     expression: "this.map(part, part.key).unique()"
   }];
-  // The product. Its nodes name their parts by key in part_definition_id.
-  ProductDefinition product = 3 [(buf.validate.field).required = true];
+  // The product, if the import has one. Its nodes name their parts by key in
+  // part_definition_id.
+  ProductDefinition product = 3;
 }
 
 // ImportedModel is a model of an ImportProduct, with its key in the request.
@@ -96,14 +99,12 @@ message ImportedPart {
 // ImportProductResult answers an ImportProduct that was applied. A refused
 // import is answered with a failed service.v1.Response.
 message ImportProductResult {
-  ImportedEntity product = 1 [
-    (buf.validate.field).required = true,
-    (buf.validate.field).cel = {
-      id: "import_product_result.product_without_key"
-      message: "the product's result has no key"
-      expression: "this.key == ''"
-    }
-  ];
+  // Set when the import had a product.
+  ImportedEntity product = 1 [(buf.validate.field).cel = {
+    id: "import_product_result.product_without_key"
+    message: "the product's result has no key"
+    expression: "this.key == ''"
+  }];
   // One per model of the request, in its order.
   repeated ImportedEntity models = 2 [(buf.validate.field).cel = {
     id: "import_product_result.models_keyed"

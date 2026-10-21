@@ -27,8 +27,10 @@ const (
 
 // ImportProduct creates or updates a product with its models and parts in one
 // request (edit.product.import, cobotar/protocol#31), e.g. an export from a
-// CAD tool. The backend applies it in one unit of work: it changes everything
-// or nothing. The files are uploaded first (see resources.v1.UploadedObject).
+// CAD tool. The product is optional: without it, the import creates or updates
+// only the models and parts. The backend applies it in one unit of work: it
+// changes everything or nothing. The files are uploaded first (see
+// resources.v1.UploadedObject).
 //
 // The models and parts have keys, which are only valid within the request: a
 // part names its default model by model_key, and an assembly node names its
@@ -48,7 +50,8 @@ type ImportProduct struct {
 	state  protoimpl.MessageState `protogen:"open.v1"`
 	Models []*ImportedModel       `protobuf:"bytes,1,rep,name=models,proto3" json:"models,omitempty"`
 	Parts  []*ImportedPart        `protobuf:"bytes,2,rep,name=parts,proto3" json:"parts,omitempty"`
-	// The product. Its nodes name their parts by key in part_definition_id.
+	// The product, if the import has one. Its nodes name their parts by key in
+	// part_definition_id.
 	Product       *ProductDefinition `protobuf:"bytes,3,opt,name=product,proto3" json:"product,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -225,8 +228,9 @@ func (x *ImportedPart) GetModelKey() string {
 // ImportProductResult answers an ImportProduct that was applied. A refused
 // import is answered with a failed service.v1.Response.
 type ImportProductResult struct {
-	state   protoimpl.MessageState `protogen:"open.v1"`
-	Product *ImportedEntity        `protobuf:"bytes,1,opt,name=product,proto3" json:"product,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Set when the import had a product.
+	Product *ImportedEntity `protobuf:"bytes,1,opt,name=product,proto3" json:"product,omitempty"`
 	// One per model of the request, in its order.
 	Models []*ImportedEntity `protobuf:"bytes,2,rep,name=models,proto3" json:"models,omitempty"`
 	// One per part of the request, in its order.
@@ -355,13 +359,13 @@ var File_product_v1_product_import_proto protoreflect.FileDescriptor
 const file_product_v1_product_import_proto_rawDesc = "" +
 	"\n" +
 	"\x1fproduct/v1/product_import.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a product/v1/part_definition.proto\x1a#product/v1/product_definition.proto\x1a!resources/v1/model_requests.proto\x1a\x19service/v1/response.proto\x1a+validation/v1/predefined_string_rules.proto\"\xaa\f\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a product/v1/part_definition.proto\x1a#product/v1/product_definition.proto\x1a!resources/v1/model_requests.proto\x1a\x19service/v1/response.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa2\f\n" +
 	"\rImportProduct\x12\x9c\x01\n" +
 	"\x06models\x18\x01 \x03(\v2\x19.product.v1.ImportedModelBi\xbaHf\xba\x01c\n" +
 	"!import_product.models.unique_keys\x12\x19model keys must be unique\x1a#this.map(model, model.key).unique()R\x06models\x12\x95\x01\n" +
 	"\x05parts\x18\x02 \x03(\v2\x18.product.v1.ImportedPartBe\xbaHb\xba\x01_\n" +
-	" import_product.parts.unique_keys\x12\x18part keys must be unique\x1a!this.map(part, part.key).unique()R\x05parts\x12?\n" +
-	"\aproduct\x18\x03 \x01(\v2\x1d.product.v1.ProductDefinitionB\x06\xbaH\x03\xc8\x01\x01R\aproduct:\xa0\t\xbaH\x9c\t\x1a\xcb\x01\n" +
+	" import_product.parts.unique_keys\x12\x18part keys must be unique\x1a!this.map(part, part.key).unique()R\x05parts\x127\n" +
+	"\aproduct\x18\x03 \x01(\v2\x1d.product.v1.ProductDefinitionR\aproduct:\xa0\t\xbaH\x9c\t\x1a\xcb\x01\n" +
 	"!import_product.model_keys_defined\x12@every part's model_key must be the key of a model in the request\x1adthis.parts.all(part, part.model_key == '' || this.models.exists(model, model.key == part.model_key))\x1a\x89\x02\n" +
 	" import_product.part_keys_defined\x12Qevery assembly node's part_definition_id must be the key of a part in the request\x1a\x91\x01!has(this.product) || this.product.nodes.all(node, node.part_definition_id == '' || this.parts.exists(part, part.key == node.part_definition_id))\x1a\xd6\x02\n" +
 	"%import_product.part_references_unique\x12Ptwo imported parts must not share an external reference (system and external_id)\x1a\xda\x01this.parts.all(part, part.part.external_references.all(reference, this.parts.filter(other, other.part.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))\x1a\x9e\x01\n" +
@@ -374,10 +378,10 @@ const file_product_v1_product_import_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x126\n" +
 	"\x04part\x18\x02 \x01(\v2\x1a.product.v1.PartDefinitionB\x06\xbaH\x03\xc8\x01\x01R\x04part\x12\x1b\n" +
 	"\tmodel_key\x18\x03 \x01(\tR\bmodelKey:\xcb\x01\xbaH\xc7\x01\x1a\xc4\x01\n" +
-	"\x19imported_part.without_ids\x12>an imported part must not set id, revision or default_model_id\x1ag!has(this.part) || (this.part.id == '' && this.part.revision == 0u && this.part.default_model_id == '')\"\xd9\x04\n" +
-	"\x13ImportProductResult\x12\x9b\x01\n" +
-	"\aproduct\x18\x01 \x01(\v2\x1a.product.v1.ImportedEntityBe\xbaHb\xba\x01\\\n" +
-	")import_product_result.product_without_key\x12\x1fthe product's result has no key\x1a\x0ethis.key == ''\xc8\x01\x01R\aproduct\x12\xd4\x01\n" +
+	"\x19imported_part.without_ids\x12>an imported part must not set id, revision or default_model_id\x1ag!has(this.part) || (this.part.id == '' && this.part.revision == 0u && this.part.default_model_id == '')\"\xd6\x04\n" +
+	"\x13ImportProductResult\x12\x98\x01\n" +
+	"\aproduct\x18\x01 \x01(\v2\x1a.product.v1.ImportedEntityBb\xbaH_\xba\x01\\\n" +
+	")import_product_result.product_without_key\x12\x1fthe product's result has no key\x1a\x0ethis.key == ''R\aproduct\x12\xd4\x01\n" +
 	"\x06models\x18\x02 \x03(\v2\x1a.product.v1.ImportedEntityB\x9f\x01\xbaH\x9b\x01\xba\x01\x97\x01\n" +
 	"\"import_product_result.models_keyed\x12(every model's result names its key, once\x1aGthis.all(model, model.key != '') && this.map(model, model.key).unique()R\x06models\x12\xcc\x01\n" +
 	"\x05parts\x18\x03 \x03(\v2\x1a.product.v1.ImportedEntityB\x99\x01\xbaH\x95\x01\xba\x01\x91\x01\n" +

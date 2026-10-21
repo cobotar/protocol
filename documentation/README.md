@@ -8126,8 +8126,10 @@ digest in the key, and fills in size, digest and content type.
 ### ImportProduct
 ImportProduct creates or updates a product with its models and parts in one
 request (edit.product.import, cobotar/protocol#31), e.g. an export from a
-CAD tool. The backend applies it in one unit of work: it changes everything
-or nothing. The files are uploaded first (see resources.v1.UploadedObject).
+CAD tool. The product is optional: without it, the import creates or updates
+only the models and parts. The backend applies it in one unit of work: it
+changes everything or nothing. The files are uploaded first (see
+resources.v1.UploadedObject).
 
 The models and parts have keys, which are only valid within the request: a
 part names its default model by model_key, and an assembly node names its
@@ -8149,7 +8151,7 @@ when one reference matches several existing parts or products.
 | ----- | ---- | ----- | ----------- |
 | models | [ImportedModel](#product-v1-ImportedModel) | repeated |  |
 | parts | [ImportedPart](#product-v1-ImportedPart) | repeated |  |
-| product | [ProductDefinition](#product-v1-ProductDefinition) |  | The product. Its nodes name their parts by key in part_definition_id. |
+| product | [ProductDefinition](#product-v1-ProductDefinition) |  | The product, if the import has one. Its nodes name their parts by key in part_definition_id. |
 
 
 
@@ -8165,7 +8167,7 @@ import is answered with a failed service.v1.Response.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| product | [ImportedEntity](#product-v1-ImportedEntity) |  |  |
+| product | [ImportedEntity](#product-v1-ImportedEntity) |  | Set when the import had a product. |
 | models | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per model of the request, in its order. |
 | parts | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per part of the request, in its order. |
 
