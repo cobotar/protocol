@@ -92,7 +92,7 @@ entities:
   - name: robot_instance
     messages: {entity: resources.v1.RobotInstance, list: resources.v1.RobotInstances, create: resources.v1.RobotInstance, update: resources.v1.RobotInstance}
   - name: sequence_definition
-    messages: {entity: process.v1.SequenceDefinition, list: process.v1.SequenceDefinitions, create: process.v1.SequenceDefinition, update: process.v1.SequenceDefinition}
+    messages: {entity: process.v1.SequenceDefinition, list: process.v1.SequenceDefinitions, create: process.v1.SequenceDefinition, update: process.v1.UpdateSequenceDefinition}
   - name: sequence_run
     messages: {entity: runtime.v1.SequenceRun, list: runtime.v1.SequenceRuns}
   - name: skill
@@ -100,7 +100,7 @@ entities:
   - name: station
     messages: {entity: resources.v1.StationDefinition, list: resources.v1.StationDefinitions, create: resources.v1.StationDefinition, update: resources.v1.StationDefinition}
   - name: task_definition
-    messages: {entity: process.v1.TaskDefinition, list: process.v1.TaskDefinitions, create: process.v1.TaskDefinition, update: process.v1.TaskDefinition}
+    messages: {entity: process.v1.TaskDefinition, list: process.v1.TaskDefinitions, create: process.v1.TaskDefinition, update: process.v1.UpdateTaskDefinition}
   - name: task_run
     messages: {entity: runtime.v1.TaskRun, list: runtime.v1.TaskRuns}
   - name: tool_definition

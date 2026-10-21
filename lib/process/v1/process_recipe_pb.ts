@@ -20,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/process_recipe.proto.
  */
 export const file_process_v1_process_recipe: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKdAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCSADKAkSEAoIdGFza19pZHMYCiADKAkSKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEhAKCHJldmlzaW9uGA0gASgEIjoKDlByb2Nlc3NSZWNpcGVzEigKBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlIqYBChNDcmVhdGVQcm9jZXNzUmVjaXBlEjEKBnJlY2lwZRgBIAEoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBEjEKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uEikKBXRhc2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbiI5ChZBZGRSb290U2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBIl0KF0FkZENoaWxkU2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEiEKC3NlcXVlbmNlX2lkGAIgASgJQgy6SAnIAQFyBKjyBAEidgoVUmVtb3ZlU2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEiEKC3NlcXVlbmNlX2lkGAIgASgJQgy6SAnIAQFyBKjyBAESGQoRdHJ5X2tlZXBfY2hpbGRyZW4YAyABKAgiWQoTQWRkQ2hpbGRUYXNrUmVxdWVzdBIfCglyZWNpcGVfaWQYASABKAlCDLpICcgBAXIEoPIEARIhCgtzZXF1ZW5jZV9pZBgCIAEoCUIMukgJyAEBcgSo8gQBIlMKEVJlbW92ZVRhc2tSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEh0KB3Rhc2tfaWQYAiABKAlCDLpICcgBAXIEsPIEASrVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkK0AQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
+  fileDesc("Ch9wcm9jZXNzL3YxL3Byb2Nlc3NfcmVjaXBlLnByb3RvEgpwcm9jZXNzLnYxImsKE1JlY2lwZUFwcGxpY2FiaWxpdHkSKQoHaW5jbHVkZRgBIAMoCzIYLnZhcmlhbmNlLnYxLlZhcmlhbnRSdWxlEikKB2V4Y2x1ZGUYAiADKAsyGC52YXJpYW5jZS52MS5WYXJpYW50UnVsZSKdAwoNUHJvY2Vzc1JlY2lwZRIKCgJpZBgBIAEoCRIXCgRuYW1lGAIgASgJQgm6SAZyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRIyCgR0eXBlGAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIyAEBggECEAESHQoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJEjYKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNzLnYxLlJlY2lwZUFwcGxpY2FiaWxpdHkSGAoQcm9vdF9zZXF1ZW5jZV9pZBgIIAEoCRIUCgxzZXF1ZW5jZV9pZHMYCSADKAkSEAoIdGFza19pZHMYCiADKAkSKgoic3VwcG9ydGVkX2NvbnRhaW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCRI5ChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlEhAKCHJldmlzaW9uGA0gASgEIjoKDlByb2Nlc3NSZWNpcGVzEigKBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlIqYBChNDcmVhdGVQcm9jZXNzUmVjaXBlEjEKBnJlY2lwZRgBIAEoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBEjEKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uEikKBXRhc2tzGAMgAygLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbiJtChhVcGRhdGVTZXF1ZW5jZURlZmluaXRpb24SOAoIc2VxdWVuY2UYASABKAsyHi5wcm9jZXNzLnYxLlNlcXVlbmNlRGVmaW5pdGlvbkIGukgDyAEBEhcKD3JlY2lwZV9yZXZpc2lvbhgCIAEoBCJhChRVcGRhdGVUYXNrRGVmaW5pdGlvbhIwCgR0YXNrGAEgASgLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbkIGukgDyAEBEhcKD3JlY2lwZV9yZXZpc2lvbhgCIAEoBCJrChZBZGRSb290U2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEhwKD3JlY2lwZV9yZXZpc2lvbhgCIAEoBEgAiAEBQhIKEF9yZWNpcGVfcmV2aXNpb24ijwEKF0FkZENoaWxkU2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEiEKC3NlcXVlbmNlX2lkGAIgASgJQgy6SAnIAQFyBKjyBAESHAoPcmVjaXBlX3JldmlzaW9uGAMgASgESACIAQFCEgoQX3JlY2lwZV9yZXZpc2lvbiKoAQoVUmVtb3ZlU2VxdWVuY2VSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEiEKC3NlcXVlbmNlX2lkGAIgASgJQgy6SAnIAQFyBKjyBAESGQoRdHJ5X2tlZXBfY2hpbGRyZW4YAyABKAgSHAoPcmVjaXBlX3JldmlzaW9uGAQgASgESACIAQFCEgoQX3JlY2lwZV9yZXZpc2lvbiKLAQoTQWRkQ2hpbGRUYXNrUmVxdWVzdBIfCglyZWNpcGVfaWQYASABKAlCDLpICcgBAXIEoPIEARIhCgtzZXF1ZW5jZV9pZBgCIAEoCUIMukgJyAEBcgSo8gQBEhwKD3JlY2lwZV9yZXZpc2lvbhgDIAEoBEgAiAEBQhIKEF9yZWNpcGVfcmV2aXNpb24ihQEKEVJlbW92ZVRhc2tSZXF1ZXN0Eh8KCXJlY2lwZV9pZBgBIAEoCUIMukgJyAEBcgSg8gQBEh0KB3Rhc2tfaWQYAiABKAlCDLpICcgBAXIEsPIEARIcCg9yZWNpcGVfcmV2aXNpb24YAyABKARIAIgBAUISChBfcmVjaXBlX3JldmlzaW9uKtUBCgtQcm9jZXNzVHlwZRIcChhQUk9DRVNTX1RZUEVfVU5TUEVDSUZJRUQQABIZChVQUk9DRVNTX1RZUEVfQVNTRU1CTFkQARIcChhQUk9DRVNTX1RZUEVfRElTQVNTRU1CTFkQAhIbChdQUk9DRVNTX1RZUEVfSU5TUEVDVElPThADEhoKFlBST0NFU1NfVFlQRV9DSEVDS0xJU1QQBBIYChRQUk9DRVNTX1RZUEVfS0lUVElORxAFEhwKGFBST0NFU1NfVFlQRV9NQUlOVEVOQU5DRRAGQrQBCg5jb20ucHJvY2Vzcy52MUISUHJvY2Vzc1JlY2lwZVByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_common_v1_external_references, file_process_v1_sequence_definition, file_process_v1_task_definition, file_validation_v1_predefined_string_rules, file_variance_v1_variant_rule]);
 
 /**
  * @generated from message process.v1.RecipeApplicability
@@ -128,7 +128,10 @@ export type ProcessRecipe = Message<"process.v1.ProcessRecipe"> & {
    * which carry no revision of their own (cobotar/protocol#19). Revisions are
    * immutable: a recipe tree at a given (id, revision) never changes, so
    * clients may cache it. An update has to carry the revision of the recipe it
-   * was based on, and is refused if the recipe changed since. Ignored on create.
+   * was based on, and is refused if the recipe changed since. So do updates of
+   * its sequences and tasks (UpdateSequenceDefinition, UpdateTaskDefinition)
+   * and, optionally, the tree requests (cobotar/protocol#30). Ignored on
+   * create.
    *
    * @generated from field: uint64 revision = 13;
    */
@@ -187,6 +190,64 @@ export const CreateProcessRecipeSchema: GenMessage<CreateProcessRecipe> = /*@__P
   messageDesc(file_process_v1_process_recipe, 3);
 
 /**
+ * UpdateSequenceDefinition updates a sequence definition
+ * (edit.sequence_definition.update). A sequence carries no revision of its own,
+ * so the update carries the revision of the recipe that contains it, as the
+ * client loaded the sequence: the backend refuses it if the recipe has another
+ * revision, i.e. if its tree changed since (cobotar/protocol#30). For a
+ * sequence no recipe contains, recipe_revision is ignored.
+ *
+ * @generated from message process.v1.UpdateSequenceDefinition
+ */
+export type UpdateSequenceDefinition = Message<"process.v1.UpdateSequenceDefinition"> & {
+  /**
+   * @generated from field: process.v1.SequenceDefinition sequence = 1;
+   */
+  sequence?: SequenceDefinition;
+
+  /**
+   * @generated from field: uint64 recipe_revision = 2;
+   */
+  recipeRevision: bigint;
+};
+
+/**
+ * Describes the message process.v1.UpdateSequenceDefinition.
+ * Use `create(UpdateSequenceDefinitionSchema)` to create a new message.
+ */
+export const UpdateSequenceDefinitionSchema: GenMessage<UpdateSequenceDefinition> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 4);
+
+/**
+ * UpdateTaskDefinition updates a task definition (edit.task_definition.update).
+ * A task carries no revision of its own, so the update carries the revision of
+ * the recipe that contains it, as the client loaded the task: the backend
+ * refuses it if the recipe has another revision, i.e. if its tree changed since
+ * (cobotar/protocol#30). For a task no recipe contains, recipe_revision is
+ * ignored.
+ *
+ * @generated from message process.v1.UpdateTaskDefinition
+ */
+export type UpdateTaskDefinition = Message<"process.v1.UpdateTaskDefinition"> & {
+  /**
+   * @generated from field: process.v1.TaskDefinition task = 1;
+   */
+  task?: TaskDefinition;
+
+  /**
+   * @generated from field: uint64 recipe_revision = 2;
+   */
+  recipeRevision: bigint;
+};
+
+/**
+ * Describes the message process.v1.UpdateTaskDefinition.
+ * Use `create(UpdateTaskDefinitionSchema)` to create a new message.
+ */
+export const UpdateTaskDefinitionSchema: GenMessage<UpdateTaskDefinition> = /*@__PURE__*/
+  messageDesc(file_process_v1_process_recipe, 5);
+
+/**
  * @generated from message process.v1.AddRootSequenceRequest
  */
 export type AddRootSequenceRequest = Message<"process.v1.AddRootSequenceRequest"> & {
@@ -194,6 +255,15 @@ export type AddRootSequenceRequest = Message<"process.v1.AddRootSequenceRequest"
    * @generated from field: string recipe_id = 1;
    */
   recipeId: string;
+
+  /**
+   * The revision of the recipe the request is based on. When set, the backend
+   * refuses the request if the recipe has another revision, i.e. if its tree
+   * changed since (cobotar/protocol#30).
+   *
+   * @generated from field: optional uint64 recipe_revision = 2;
+   */
+  recipeRevision?: bigint;
 };
 
 /**
@@ -201,7 +271,7 @@ export type AddRootSequenceRequest = Message<"process.v1.AddRootSequenceRequest"
  * Use `create(AddRootSequenceRequestSchema)` to create a new message.
  */
 export const AddRootSequenceRequestSchema: GenMessage<AddRootSequenceRequest> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 4);
+  messageDesc(file_process_v1_process_recipe, 6);
 
 /**
  * @generated from message process.v1.AddChildSequenceRequest
@@ -216,6 +286,15 @@ export type AddChildSequenceRequest = Message<"process.v1.AddChildSequenceReques
    * @generated from field: string sequence_id = 2;
    */
   sequenceId: string;
+
+  /**
+   * The revision of the recipe the request is based on. When set, the backend
+   * refuses the request if the recipe has another revision, i.e. if its tree
+   * changed since (cobotar/protocol#30).
+   *
+   * @generated from field: optional uint64 recipe_revision = 3;
+   */
+  recipeRevision?: bigint;
 };
 
 /**
@@ -223,7 +302,7 @@ export type AddChildSequenceRequest = Message<"process.v1.AddChildSequenceReques
  * Use `create(AddChildSequenceRequestSchema)` to create a new message.
  */
 export const AddChildSequenceRequestSchema: GenMessage<AddChildSequenceRequest> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 5);
+  messageDesc(file_process_v1_process_recipe, 7);
 
 /**
  * @generated from message process.v1.RemoveSequenceRequest
@@ -245,6 +324,15 @@ export type RemoveSequenceRequest = Message<"process.v1.RemoveSequenceRequest"> 
    * @generated from field: bool try_keep_children = 3;
    */
   tryKeepChildren: boolean;
+
+  /**
+   * The revision of the recipe the request is based on. When set, the backend
+   * refuses the request if the recipe has another revision, i.e. if its tree
+   * changed since (cobotar/protocol#30).
+   *
+   * @generated from field: optional uint64 recipe_revision = 4;
+   */
+  recipeRevision?: bigint;
 };
 
 /**
@@ -252,7 +340,7 @@ export type RemoveSequenceRequest = Message<"process.v1.RemoveSequenceRequest"> 
  * Use `create(RemoveSequenceRequestSchema)` to create a new message.
  */
 export const RemoveSequenceRequestSchema: GenMessage<RemoveSequenceRequest> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 6);
+  messageDesc(file_process_v1_process_recipe, 8);
 
 /**
  * @generated from message process.v1.AddChildTaskRequest
@@ -267,6 +355,15 @@ export type AddChildTaskRequest = Message<"process.v1.AddChildTaskRequest"> & {
    * @generated from field: string sequence_id = 2;
    */
   sequenceId: string;
+
+  /**
+   * The revision of the recipe the request is based on. When set, the backend
+   * refuses the request if the recipe has another revision, i.e. if its tree
+   * changed since (cobotar/protocol#30).
+   *
+   * @generated from field: optional uint64 recipe_revision = 3;
+   */
+  recipeRevision?: bigint;
 };
 
 /**
@@ -274,7 +371,7 @@ export type AddChildTaskRequest = Message<"process.v1.AddChildTaskRequest"> & {
  * Use `create(AddChildTaskRequestSchema)` to create a new message.
  */
 export const AddChildTaskRequestSchema: GenMessage<AddChildTaskRequest> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 7);
+  messageDesc(file_process_v1_process_recipe, 9);
 
 /**
  * @generated from message process.v1.RemoveTaskRequest
@@ -289,6 +386,15 @@ export type RemoveTaskRequest = Message<"process.v1.RemoveTaskRequest"> & {
    * @generated from field: string task_id = 2;
    */
   taskId: string;
+
+  /**
+   * The revision of the recipe the request is based on. When set, the backend
+   * refuses the request if the recipe has another revision, i.e. if its tree
+   * changed since (cobotar/protocol#30).
+   *
+   * @generated from field: optional uint64 recipe_revision = 3;
+   */
+  recipeRevision?: bigint;
 };
 
 /**
@@ -296,7 +402,7 @@ export type RemoveTaskRequest = Message<"process.v1.RemoveTaskRequest"> & {
  * Use `create(RemoveTaskRequestSchema)` to create a new message.
  */
 export const RemoveTaskRequestSchema: GenMessage<RemoveTaskRequest> = /*@__PURE__*/
-  messageDesc(file_process_v1_process_recipe, 8);
+  messageDesc(file_process_v1_process_recipe, 10);
 
 /**
  * @generated from enum process.v1.ProcessType

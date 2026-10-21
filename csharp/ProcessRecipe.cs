@@ -51,29 +51,42 @@ namespace Messages.Process.V1 {
             "KAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBAVIGcmVjaXBl",
             "EjwKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZp",
             "bml0aW9uUglzZXF1ZW5jZXMSMAoFdGFza3MYAyADKAsyGi5wcm9jZXNzLnYx",
-            "LlRhc2tEZWZpbml0aW9uUgV0YXNrcyJDChZBZGRSb290U2VxdWVuY2VSZXF1",
-            "ZXN0EikKCXJlY2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJ",
-            "ZCJzChdBZGRDaGlsZFNlcXVlbmNlUmVxdWVzdBIpCglyZWNpcGVfaWQYASAB",
-            "KAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSLQoLc2VxdWVuY2VfaWQYAiAB",
-            "KAlCDLpICXIEqPIEAcgBAVIKc2VxdWVuY2VJZCKdAQoVUmVtb3ZlU2VxdWVu",
-            "Y2VSZXF1ZXN0EikKCXJlY2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghy",
-            "ZWNpcGVJZBItCgtzZXF1ZW5jZV9pZBgCIAEoCUIMukgJcgSo8gQByAEBUgpz",
-            "ZXF1ZW5jZUlkEioKEXRyeV9rZWVwX2NoaWxkcmVuGAMgASgIUg90cnlLZWVw",
-            "Q2hpbGRyZW4ibwoTQWRkQ2hpbGRUYXNrUmVxdWVzdBIpCglyZWNpcGVfaWQY",
-            "ASABKAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSLQoLc2VxdWVuY2VfaWQY",
-            "AiABKAlCDLpICXIEqPIEAcgBAVIKc2VxdWVuY2VJZCJlChFSZW1vdmVUYXNr",
-            "UmVxdWVzdBIpCglyZWNpcGVfaWQYASABKAlCDLpICXIEoPIEAcgBAVIIcmVj",
-            "aXBlSWQSJQoHdGFza19pZBgCIAEoCUIMukgJcgSw8gQByAEBUgZ0YXNrSWQq",
-            "1QEKC1Byb2Nlc3NUeXBlEhwKGFBST0NFU1NfVFlQRV9VTlNQRUNJRklFRBAA",
-            "EhkKFVBST0NFU1NfVFlQRV9BU1NFTUJMWRABEhwKGFBST0NFU1NfVFlQRV9E",
-            "SVNBU1NFTUJMWRACEhsKF1BST0NFU1NfVFlQRV9JTlNQRUNUSU9OEAMSGgoW",
-            "UFJPQ0VTU19UWVBFX0NIRUNLTElTVBAEEhgKFFBST0NFU1NfVFlQRV9LSVRU",
-            "SU5HEAUSHAoYUFJPQ0VTU19UWVBFX01BSU5URU5BTkNFEAZCtAEKDmNvbS5w",
-            "cm9jZXNzLnYxQhJQcm9jZXNzUmVjaXBlUHJvdG9QAVo8Z2l0aHViLmNvbS9j",
-            "b2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3Byb2Nlc3MvdjE7cHJvY2Vz",
-            "c3YxogIDUFhYqgITTWVzc2FnZXMuUHJvY2Vzcy5WMcoCClByb2Nlc3NcVjHi",
-            "AhZQcm9jZXNzXFYxXEdQQk1ldGFkYXRh6gILUHJvY2Vzczo6VjFiBnByb3Rv",
-            "Mw=="));
+            "LlRhc2tEZWZpbml0aW9uUgV0YXNrcyKHAQoYVXBkYXRlU2VxdWVuY2VEZWZp",
+            "bml0aW9uEkIKCHNlcXVlbmNlGAEgASgLMh4ucHJvY2Vzcy52MS5TZXF1ZW5j",
+            "ZURlZmluaXRpb25CBrpIA8gBAVIIc2VxdWVuY2USJwoPcmVjaXBlX3Jldmlz",
+            "aW9uGAIgASgEUg5yZWNpcGVSZXZpc2lvbiJ3ChRVcGRhdGVUYXNrRGVmaW5p",
+            "dGlvbhI2CgR0YXNrGAEgASgLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlv",
+            "bkIGukgDyAEBUgR0YXNrEicKD3JlY2lwZV9yZXZpc2lvbhgCIAEoBFIOcmVj",
+            "aXBlUmV2aXNpb24ihQEKFkFkZFJvb3RTZXF1ZW5jZVJlcXVlc3QSKQoJcmVj",
+            "aXBlX2lkGAEgASgJQgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEiwKD3JlY2lw",
+            "ZV9yZXZpc2lvbhgCIAEoBEgAUg5yZWNpcGVSZXZpc2lvbogBAUISChBfcmVj",
+            "aXBlX3JldmlzaW9uIrUBChdBZGRDaGlsZFNlcXVlbmNlUmVxdWVzdBIpCgly",
+            "ZWNpcGVfaWQYASABKAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSLQoLc2Vx",
+            "dWVuY2VfaWQYAiABKAlCDLpICXIEqPIEAcgBAVIKc2VxdWVuY2VJZBIsCg9y",
+            "ZWNpcGVfcmV2aXNpb24YAyABKARIAFIOcmVjaXBlUmV2aXNpb26IAQFCEgoQ",
+            "X3JlY2lwZV9yZXZpc2lvbiLfAQoVUmVtb3ZlU2VxdWVuY2VSZXF1ZXN0EikK",
+            "CXJlY2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBItCgtz",
+            "ZXF1ZW5jZV9pZBgCIAEoCUIMukgJcgSo8gQByAEBUgpzZXF1ZW5jZUlkEioK",
+            "EXRyeV9rZWVwX2NoaWxkcmVuGAMgASgIUg90cnlLZWVwQ2hpbGRyZW4SLAoP",
+            "cmVjaXBlX3JldmlzaW9uGAQgASgESABSDnJlY2lwZVJldmlzaW9uiAEBQhIK",
+            "EF9yZWNpcGVfcmV2aXNpb24isQEKE0FkZENoaWxkVGFza1JlcXVlc3QSKQoJ",
+            "cmVjaXBlX2lkGAEgASgJQgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEi0KC3Nl",
+            "cXVlbmNlX2lkGAIgASgJQgy6SAlyBKjyBAHIAQFSCnNlcXVlbmNlSWQSLAoP",
+            "cmVjaXBlX3JldmlzaW9uGAMgASgESABSDnJlY2lwZVJldmlzaW9uiAEBQhIK",
+            "EF9yZWNpcGVfcmV2aXNpb24ipwEKEVJlbW92ZVRhc2tSZXF1ZXN0EikKCXJl",
+            "Y2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBIlCgd0YXNr",
+            "X2lkGAIgASgJQgy6SAlyBLDyBAHIAQFSBnRhc2tJZBIsCg9yZWNpcGVfcmV2",
+            "aXNpb24YAyABKARIAFIOcmVjaXBlUmV2aXNpb26IAQFCEgoQX3JlY2lwZV9y",
+            "ZXZpc2lvbirVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VT",
+            "U19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJ",
+            "T04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19U",
+            "WVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkK0",
+            "AQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjxnaXRo",
+            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92",
+            "MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJv",
+            "Y2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpW",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.ProcessType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,11 +94,13 @@ namespace Messages.Process.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProcessRecipe), global::Messages.Process.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "SequenceIds", "TaskIds", "SupportedContainerDefinitionIds", "ExternalReferences", "Revision" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProcessRecipes), global::Messages.Process.V1.ProcessRecipes.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.CreateProcessRecipe), global::Messages.Process.V1.CreateProcessRecipe.Parser, new[]{ "Recipe", "Sequences", "Tasks" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddRootSequenceRequest), global::Messages.Process.V1.AddRootSequenceRequest.Parser, new[]{ "RecipeId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddChildSequenceRequest), global::Messages.Process.V1.AddChildSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveSequenceRequest), global::Messages.Process.V1.RemoveSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId", "TryKeepChildren" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddChildTaskRequest), global::Messages.Process.V1.AddChildTaskRequest.Parser, new[]{ "RecipeId", "SequenceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveTaskRequest), global::Messages.Process.V1.RemoveTaskRequest.Parser, new[]{ "RecipeId", "TaskId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.UpdateSequenceDefinition), global::Messages.Process.V1.UpdateSequenceDefinition.Parser, new[]{ "Sequence", "RecipeRevision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.UpdateTaskDefinition), global::Messages.Process.V1.UpdateTaskDefinition.Parser, new[]{ "Task", "RecipeRevision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddRootSequenceRequest), global::Messages.Process.V1.AddRootSequenceRequest.Parser, new[]{ "RecipeId", "RecipeRevision" }, new[]{ "RecipeRevision" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddChildSequenceRequest), global::Messages.Process.V1.AddChildSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId", "RecipeRevision" }, new[]{ "RecipeRevision" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveSequenceRequest), global::Messages.Process.V1.RemoveSequenceRequest.Parser, new[]{ "RecipeId", "SequenceId", "TryKeepChildren", "RecipeRevision" }, new[]{ "RecipeRevision" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.AddChildTaskRequest), global::Messages.Process.V1.AddChildTaskRequest.Parser, new[]{ "RecipeId", "SequenceId", "RecipeRevision" }, new[]{ "RecipeRevision" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RemoveTaskRequest), global::Messages.Process.V1.RemoveTaskRequest.Parser, new[]{ "RecipeId", "TaskId", "RecipeRevision" }, new[]{ "RecipeRevision" }, null, null, null)
           }));
     }
     #endregion
@@ -560,7 +575,10 @@ namespace Messages.Process.V1 {
     /// which carry no revision of their own (cobotar/protocol#19). Revisions are
     /// immutable: a recipe tree at a given (id, revision) never changes, so
     /// clients may cache it. An update has to carry the revision of the recipe it
-    /// was based on, and is refused if the recipe changed since. Ignored on create.
+    /// was based on, and is refused if the recipe changed since. So do updates of
+    /// its sequences and tasks (UpdateSequenceDefinition, UpdateTaskDefinition)
+    /// and, optionally, the tree requests (cobotar/protocol#30). Ignored on
+    /// create.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1415,6 +1433,510 @@ namespace Messages.Process.V1 {
 
   }
 
+  /// <summary>
+  /// UpdateSequenceDefinition updates a sequence definition
+  /// (edit.sequence_definition.update). A sequence carries no revision of its own,
+  /// so the update carries the revision of the recipe that contains it, as the
+  /// client loaded the sequence: the backend refuses it if the recipe has another
+  /// revision, i.e. if its tree changed since (cobotar/protocol#30). For a
+  /// sequence no recipe contains, recipe_revision is ignored.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class UpdateSequenceDefinition : pb::IMessage<UpdateSequenceDefinition>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateSequenceDefinition> _parser = new pb::MessageParser<UpdateSequenceDefinition>(() => new UpdateSequenceDefinition());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdateSequenceDefinition> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateSequenceDefinition() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateSequenceDefinition(UpdateSequenceDefinition other) : this() {
+      sequence_ = other.sequence_ != null ? other.sequence_.Clone() : null;
+      recipeRevision_ = other.recipeRevision_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateSequenceDefinition Clone() {
+      return new UpdateSequenceDefinition(this);
+    }
+
+    /// <summary>Field number for the "sequence" field.</summary>
+    public const int SequenceFieldNumber = 1;
+    private global::Messages.Process.V1.SequenceDefinition sequence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Process.V1.SequenceDefinition Sequence {
+      get { return sequence_; }
+      set {
+        sequence_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 2;
+    private ulong recipeRevision_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { return recipeRevision_; }
+      set {
+        recipeRevision_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateSequenceDefinition);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdateSequenceDefinition other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Sequence, other.Sequence)) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (sequence_ != null) hash ^= Sequence.GetHashCode();
+      if (RecipeRevision != 0UL) hash ^= RecipeRevision.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (sequence_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Sequence);
+      }
+      if (RecipeRevision != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(RecipeRevision);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (sequence_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Sequence);
+      }
+      if (RecipeRevision != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(RecipeRevision);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (sequence_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Sequence);
+      }
+      if (RecipeRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdateSequenceDefinition other) {
+      if (other == null) {
+        return;
+      }
+      if (other.sequence_ != null) {
+        if (sequence_ == null) {
+          Sequence = new global::Messages.Process.V1.SequenceDefinition();
+        }
+        Sequence.MergeFrom(other.Sequence);
+      }
+      if (other.RecipeRevision != 0UL) {
+        RecipeRevision = other.RecipeRevision;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (sequence_ == null) {
+              Sequence = new global::Messages.Process.V1.SequenceDefinition();
+            }
+            input.ReadMessage(Sequence);
+            break;
+          }
+          case 16: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (sequence_ == null) {
+              Sequence = new global::Messages.Process.V1.SequenceDefinition();
+            }
+            input.ReadMessage(Sequence);
+            break;
+          }
+          case 16: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// UpdateTaskDefinition updates a task definition (edit.task_definition.update).
+  /// A task carries no revision of its own, so the update carries the revision of
+  /// the recipe that contains it, as the client loaded the task: the backend
+  /// refuses it if the recipe has another revision, i.e. if its tree changed since
+  /// (cobotar/protocol#30). For a task no recipe contains, recipe_revision is
+  /// ignored.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class UpdateTaskDefinition : pb::IMessage<UpdateTaskDefinition>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateTaskDefinition> _parser = new pb::MessageParser<UpdateTaskDefinition>(() => new UpdateTaskDefinition());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdateTaskDefinition> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateTaskDefinition() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateTaskDefinition(UpdateTaskDefinition other) : this() {
+      task_ = other.task_ != null ? other.task_.Clone() : null;
+      recipeRevision_ = other.recipeRevision_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateTaskDefinition Clone() {
+      return new UpdateTaskDefinition(this);
+    }
+
+    /// <summary>Field number for the "task" field.</summary>
+    public const int TaskFieldNumber = 1;
+    private global::Messages.Process.V1.TaskDefinition task_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Process.V1.TaskDefinition Task {
+      get { return task_; }
+      set {
+        task_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 2;
+    private ulong recipeRevision_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { return recipeRevision_; }
+      set {
+        recipeRevision_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateTaskDefinition);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdateTaskDefinition other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Task, other.Task)) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (task_ != null) hash ^= Task.GetHashCode();
+      if (RecipeRevision != 0UL) hash ^= RecipeRevision.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (task_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Task);
+      }
+      if (RecipeRevision != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(RecipeRevision);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (task_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Task);
+      }
+      if (RecipeRevision != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(RecipeRevision);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (task_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Task);
+      }
+      if (RecipeRevision != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdateTaskDefinition other) {
+      if (other == null) {
+        return;
+      }
+      if (other.task_ != null) {
+        if (task_ == null) {
+          Task = new global::Messages.Process.V1.TaskDefinition();
+        }
+        Task.MergeFrom(other.Task);
+      }
+      if (other.RecipeRevision != 0UL) {
+        RecipeRevision = other.RecipeRevision;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (task_ == null) {
+              Task = new global::Messages.Process.V1.TaskDefinition();
+            }
+            input.ReadMessage(Task);
+            break;
+          }
+          case 16: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (task_ == null) {
+              Task = new global::Messages.Process.V1.TaskDefinition();
+            }
+            input.ReadMessage(Task);
+            break;
+          }
+          case 16: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class AddRootSequenceRequest : pb::IMessage<AddRootSequenceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1423,6 +1945,7 @@ namespace Messages.Process.V1 {
   {
     private static readonly pb::MessageParser<AddRootSequenceRequest> _parser = new pb::MessageParser<AddRootSequenceRequest>(() => new AddRootSequenceRequest());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AddRootSequenceRequest> Parser { get { return _parser; } }
@@ -1430,7 +1953,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1450,7 +1973,9 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddRootSequenceRequest(AddRootSequenceRequest other) : this() {
+      _hasBits0 = other._hasBits0;
       recipeId_ = other.recipeId_;
+      recipeRevision_ = other.recipeRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1472,6 +1997,38 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 2;
+    private readonly static ulong RecipeRevisionDefaultValue = 0UL;
+
+    private ulong recipeRevision_;
+    /// <summary>
+    /// The revision of the recipe the request is based on. When set, the backend
+    /// refuses the request if the recipe has another revision, i.e. if its tree
+    /// changed since (cobotar/protocol#30).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { if ((_hasBits0 & 1) != 0) { return recipeRevision_; } else { return RecipeRevisionDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        recipeRevision_ = value;
+      }
+    }
+    /// <summary>Gets whether the "recipe_revision" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRecipeRevision {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "recipe_revision" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRecipeRevision() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1488,6 +2045,7 @@ namespace Messages.Process.V1 {
         return true;
       }
       if (RecipeId != other.RecipeId) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1496,6 +2054,7 @@ namespace Messages.Process.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
+      if (HasRecipeRevision) hash ^= RecipeRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1518,6 +2077,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(10);
         output.WriteString(RecipeId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1532,6 +2095,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(10);
         output.WriteString(RecipeId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1544,6 +2111,9 @@ namespace Messages.Process.V1 {
       int size = 0;
       if (RecipeId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RecipeId);
+      }
+      if (HasRecipeRevision) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1559,6 +2129,9 @@ namespace Messages.Process.V1 {
       }
       if (other.RecipeId.Length != 0) {
         RecipeId = other.RecipeId;
+      }
+      if (other.HasRecipeRevision) {
+        RecipeRevision = other.RecipeRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1581,6 +2154,10 @@ namespace Messages.Process.V1 {
             break;
           case 10: {
             RecipeId = input.ReadString();
+            break;
+          }
+          case 16: {
+            RecipeRevision = input.ReadUInt64();
             break;
           }
         }
@@ -1606,6 +2183,10 @@ namespace Messages.Process.V1 {
             RecipeId = input.ReadString();
             break;
           }
+          case 16: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     }
@@ -1621,6 +2202,7 @@ namespace Messages.Process.V1 {
   {
     private static readonly pb::MessageParser<AddChildSequenceRequest> _parser = new pb::MessageParser<AddChildSequenceRequest>(() => new AddChildSequenceRequest());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AddChildSequenceRequest> Parser { get { return _parser; } }
@@ -1628,7 +2210,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1648,8 +2230,10 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddChildSequenceRequest(AddChildSequenceRequest other) : this() {
+      _hasBits0 = other._hasBits0;
       recipeId_ = other.recipeId_;
       sequenceId_ = other.sequenceId_;
+      recipeRevision_ = other.recipeRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1683,6 +2267,38 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 3;
+    private readonly static ulong RecipeRevisionDefaultValue = 0UL;
+
+    private ulong recipeRevision_;
+    /// <summary>
+    /// The revision of the recipe the request is based on. When set, the backend
+    /// refuses the request if the recipe has another revision, i.e. if its tree
+    /// changed since (cobotar/protocol#30).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { if ((_hasBits0 & 1) != 0) { return recipeRevision_; } else { return RecipeRevisionDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        recipeRevision_ = value;
+      }
+    }
+    /// <summary>Gets whether the "recipe_revision" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRecipeRevision {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "recipe_revision" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRecipeRevision() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1700,6 +2316,7 @@ namespace Messages.Process.V1 {
       }
       if (RecipeId != other.RecipeId) return false;
       if (SequenceId != other.SequenceId) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1709,6 +2326,7 @@ namespace Messages.Process.V1 {
       int hash = 1;
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
       if (SequenceId.Length != 0) hash ^= SequenceId.GetHashCode();
+      if (HasRecipeRevision) hash ^= RecipeRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1735,6 +2353,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(SequenceId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1753,6 +2375,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(SequenceId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1768,6 +2394,9 @@ namespace Messages.Process.V1 {
       }
       if (SequenceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SequenceId);
+      }
+      if (HasRecipeRevision) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1786,6 +2415,9 @@ namespace Messages.Process.V1 {
       }
       if (other.SequenceId.Length != 0) {
         SequenceId = other.SequenceId;
+      }
+      if (other.HasRecipeRevision) {
+        RecipeRevision = other.RecipeRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1812,6 +2444,10 @@ namespace Messages.Process.V1 {
           }
           case 18: {
             SequenceId = input.ReadString();
+            break;
+          }
+          case 24: {
+            RecipeRevision = input.ReadUInt64();
             break;
           }
         }
@@ -1841,6 +2477,10 @@ namespace Messages.Process.V1 {
             SequenceId = input.ReadString();
             break;
           }
+          case 24: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     }
@@ -1856,6 +2496,7 @@ namespace Messages.Process.V1 {
   {
     private static readonly pb::MessageParser<RemoveSequenceRequest> _parser = new pb::MessageParser<RemoveSequenceRequest>(() => new RemoveSequenceRequest());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RemoveSequenceRequest> Parser { get { return _parser; } }
@@ -1863,7 +2504,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1883,9 +2524,11 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveSequenceRequest(RemoveSequenceRequest other) : this() {
+      _hasBits0 = other._hasBits0;
       recipeId_ = other.recipeId_;
       sequenceId_ = other.sequenceId_;
       tryKeepChildren_ = other.tryKeepChildren_;
+      recipeRevision_ = other.recipeRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1934,6 +2577,38 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 4;
+    private readonly static ulong RecipeRevisionDefaultValue = 0UL;
+
+    private ulong recipeRevision_;
+    /// <summary>
+    /// The revision of the recipe the request is based on. When set, the backend
+    /// refuses the request if the recipe has another revision, i.e. if its tree
+    /// changed since (cobotar/protocol#30).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { if ((_hasBits0 & 1) != 0) { return recipeRevision_; } else { return RecipeRevisionDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        recipeRevision_ = value;
+      }
+    }
+    /// <summary>Gets whether the "recipe_revision" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRecipeRevision {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "recipe_revision" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRecipeRevision() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1952,6 +2627,7 @@ namespace Messages.Process.V1 {
       if (RecipeId != other.RecipeId) return false;
       if (SequenceId != other.SequenceId) return false;
       if (TryKeepChildren != other.TryKeepChildren) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1962,6 +2638,7 @@ namespace Messages.Process.V1 {
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
       if (SequenceId.Length != 0) hash ^= SequenceId.GetHashCode();
       if (TryKeepChildren != false) hash ^= TryKeepChildren.GetHashCode();
+      if (HasRecipeRevision) hash ^= RecipeRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1992,6 +2669,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(24);
         output.WriteBool(TryKeepChildren);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2014,6 +2695,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(24);
         output.WriteBool(TryKeepChildren);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2032,6 +2717,9 @@ namespace Messages.Process.V1 {
       }
       if (TryKeepChildren != false) {
         size += 1 + 1;
+      }
+      if (HasRecipeRevision) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2053,6 +2741,9 @@ namespace Messages.Process.V1 {
       }
       if (other.TryKeepChildren != false) {
         TryKeepChildren = other.TryKeepChildren;
+      }
+      if (other.HasRecipeRevision) {
+        RecipeRevision = other.RecipeRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2083,6 +2774,10 @@ namespace Messages.Process.V1 {
           }
           case 24: {
             TryKeepChildren = input.ReadBool();
+            break;
+          }
+          case 32: {
+            RecipeRevision = input.ReadUInt64();
             break;
           }
         }
@@ -2116,6 +2811,10 @@ namespace Messages.Process.V1 {
             TryKeepChildren = input.ReadBool();
             break;
           }
+          case 32: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     }
@@ -2131,6 +2830,7 @@ namespace Messages.Process.V1 {
   {
     private static readonly pb::MessageParser<AddChildTaskRequest> _parser = new pb::MessageParser<AddChildTaskRequest>(() => new AddChildTaskRequest());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AddChildTaskRequest> Parser { get { return _parser; } }
@@ -2138,7 +2838,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2158,8 +2858,10 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddChildTaskRequest(AddChildTaskRequest other) : this() {
+      _hasBits0 = other._hasBits0;
       recipeId_ = other.recipeId_;
       sequenceId_ = other.sequenceId_;
+      recipeRevision_ = other.recipeRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2193,6 +2895,38 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 3;
+    private readonly static ulong RecipeRevisionDefaultValue = 0UL;
+
+    private ulong recipeRevision_;
+    /// <summary>
+    /// The revision of the recipe the request is based on. When set, the backend
+    /// refuses the request if the recipe has another revision, i.e. if its tree
+    /// changed since (cobotar/protocol#30).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { if ((_hasBits0 & 1) != 0) { return recipeRevision_; } else { return RecipeRevisionDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        recipeRevision_ = value;
+      }
+    }
+    /// <summary>Gets whether the "recipe_revision" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRecipeRevision {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "recipe_revision" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRecipeRevision() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2210,6 +2944,7 @@ namespace Messages.Process.V1 {
       }
       if (RecipeId != other.RecipeId) return false;
       if (SequenceId != other.SequenceId) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2219,6 +2954,7 @@ namespace Messages.Process.V1 {
       int hash = 1;
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
       if (SequenceId.Length != 0) hash ^= SequenceId.GetHashCode();
+      if (HasRecipeRevision) hash ^= RecipeRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2245,6 +2981,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(SequenceId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2263,6 +3003,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(SequenceId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2278,6 +3022,9 @@ namespace Messages.Process.V1 {
       }
       if (SequenceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SequenceId);
+      }
+      if (HasRecipeRevision) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2296,6 +3043,9 @@ namespace Messages.Process.V1 {
       }
       if (other.SequenceId.Length != 0) {
         SequenceId = other.SequenceId;
+      }
+      if (other.HasRecipeRevision) {
+        RecipeRevision = other.RecipeRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2322,6 +3072,10 @@ namespace Messages.Process.V1 {
           }
           case 18: {
             SequenceId = input.ReadString();
+            break;
+          }
+          case 24: {
+            RecipeRevision = input.ReadUInt64();
             break;
           }
         }
@@ -2351,6 +3105,10 @@ namespace Messages.Process.V1 {
             SequenceId = input.ReadString();
             break;
           }
+          case 24: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     }
@@ -2366,6 +3124,7 @@ namespace Messages.Process.V1 {
   {
     private static readonly pb::MessageParser<RemoveTaskRequest> _parser = new pb::MessageParser<RemoveTaskRequest>(() => new RemoveTaskRequest());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RemoveTaskRequest> Parser { get { return _parser; } }
@@ -2373,7 +3132,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Messages.Process.V1.ProcessRecipeReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2393,8 +3152,10 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveTaskRequest(RemoveTaskRequest other) : this() {
+      _hasBits0 = other._hasBits0;
       recipeId_ = other.recipeId_;
       taskId_ = other.taskId_;
+      recipeRevision_ = other.recipeRevision_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2428,6 +3189,38 @@ namespace Messages.Process.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipe_revision" field.</summary>
+    public const int RecipeRevisionFieldNumber = 3;
+    private readonly static ulong RecipeRevisionDefaultValue = 0UL;
+
+    private ulong recipeRevision_;
+    /// <summary>
+    /// The revision of the recipe the request is based on. When set, the backend
+    /// refuses the request if the recipe has another revision, i.e. if its tree
+    /// changed since (cobotar/protocol#30).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong RecipeRevision {
+      get { if ((_hasBits0 & 1) != 0) { return recipeRevision_; } else { return RecipeRevisionDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        recipeRevision_ = value;
+      }
+    }
+    /// <summary>Gets whether the "recipe_revision" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRecipeRevision {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "recipe_revision" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRecipeRevision() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2445,6 +3238,7 @@ namespace Messages.Process.V1 {
       }
       if (RecipeId != other.RecipeId) return false;
       if (TaskId != other.TaskId) return false;
+      if (RecipeRevision != other.RecipeRevision) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2454,6 +3248,7 @@ namespace Messages.Process.V1 {
       int hash = 1;
       if (RecipeId.Length != 0) hash ^= RecipeId.GetHashCode();
       if (TaskId.Length != 0) hash ^= TaskId.GetHashCode();
+      if (HasRecipeRevision) hash ^= RecipeRevision.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2480,6 +3275,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(TaskId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2498,6 +3297,10 @@ namespace Messages.Process.V1 {
         output.WriteRawTag(18);
         output.WriteString(TaskId);
       }
+      if (HasRecipeRevision) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(RecipeRevision);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2513,6 +3316,9 @@ namespace Messages.Process.V1 {
       }
       if (TaskId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskId);
+      }
+      if (HasRecipeRevision) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RecipeRevision);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2531,6 +3337,9 @@ namespace Messages.Process.V1 {
       }
       if (other.TaskId.Length != 0) {
         TaskId = other.TaskId;
+      }
+      if (other.HasRecipeRevision) {
+        RecipeRevision = other.RecipeRevision;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2559,6 +3368,10 @@ namespace Messages.Process.V1 {
             TaskId = input.ReadString();
             break;
           }
+          case 24: {
+            RecipeRevision = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -2584,6 +3397,10 @@ namespace Messages.Process.V1 {
           }
           case 18: {
             TaskId = input.ReadString();
+            break;
+          }
+          case 24: {
+            RecipeRevision = input.ReadUInt64();
             break;
           }
         }

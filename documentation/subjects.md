@@ -214,7 +214,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.sequence_definition.add` | `edit.sequence_definition.add` | `edit.entity.add` | active | staged | process.v1.SequenceDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.sequence_definition.clone` | `edit.sequence_definition.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.sequence_definition.remove` | `edit.sequence_definition.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.sequence_definition.update` | `edit.sequence_definition.update` | `edit.entity.update` | active | staged | process.v1.SequenceDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.sequence_definition.update` | `edit.sequence_definition.update` | `edit.entity.update` | active | staged | process.v1.UpdateSequenceDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.skill.add` | `edit.skill.add` | `edit.entity.add` | active | staged | capability.v1.SkillDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.skill.clone` | `edit.skill.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.skill.remove` | `edit.skill.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
@@ -226,7 +226,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.task_definition.add` | `edit.task_definition.add` | `edit.entity.add` | active | staged | process.v1.TaskDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.task_definition.clone` | `edit.task_definition.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.task_definition.remove` | `edit.task_definition.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.task_definition.update` | `edit.task_definition.update` | `edit.entity.update` | active | staged | process.v1.TaskDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.task_definition.update` | `edit.task_definition.update` | `edit.entity.update` | active | staged | process.v1.UpdateTaskDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.tool_definition.add` | `edit.tool_definition.add` | `edit.entity.add` | active | staged | resources.v1.ToolDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.tool_definition.clone` | `edit.tool_definition.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.tool_definition.remove` | `edit.tool_definition.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |

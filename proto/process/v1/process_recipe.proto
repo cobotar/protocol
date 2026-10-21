@@ -55,7 +55,10 @@ message ProcessRecipe {
   // which carry no revision of their own (cobotar/protocol#19). Revisions are
   // immutable: a recipe tree at a given (id, revision) never changes, so
   // clients may cache it. An update has to carry the revision of the recipe it
-  // was based on, and is refused if the recipe changed since. Ignored on create.
+  // was based on, and is refused if the recipe changed since. So do updates of
+  // its sequences and tasks (UpdateSequenceDefinition, UpdateTaskDefinition)
+  // and, optionally, the tree requests (cobotar/protocol#30). Ignored on
+  // create.
   uint64 revision = 13;
 }
 
@@ -69,11 +72,37 @@ message CreateProcessRecipe {
   repeated TaskDefinition tasks = 3;
 }
 
+// UpdateSequenceDefinition updates a sequence definition
+// (edit.sequence_definition.update). A sequence carries no revision of its own,
+// so the update carries the revision of the recipe that contains it, as the
+// client loaded the sequence: the backend refuses it if the recipe has another
+// revision, i.e. if its tree changed since (cobotar/protocol#30). For a
+// sequence no recipe contains, recipe_revision is ignored.
+message UpdateSequenceDefinition {
+  SequenceDefinition sequence = 1 [(buf.validate.field).required = true];
+  uint64 recipe_revision = 2;
+}
+
+// UpdateTaskDefinition updates a task definition (edit.task_definition.update).
+// A task carries no revision of its own, so the update carries the revision of
+// the recipe that contains it, as the client loaded the task: the backend
+// refuses it if the recipe has another revision, i.e. if its tree changed since
+// (cobotar/protocol#30). For a task no recipe contains, recipe_revision is
+// ignored.
+message UpdateTaskDefinition {
+  TaskDefinition task = 1 [(buf.validate.field).required = true];
+  uint64 recipe_revision = 2;
+}
+
 message AddRootSequenceRequest {
   string recipe_id = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.process_recipe_id_component) = true
   ];
+  // The revision of the recipe the request is based on. When set, the backend
+  // refuses the request if the recipe has another revision, i.e. if its tree
+  // changed since (cobotar/protocol#30).
+  optional uint64 recipe_revision = 2;
 }
 
 message AddChildSequenceRequest {
@@ -85,6 +114,10 @@ message AddChildSequenceRequest {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
   ];
+  // The revision of the recipe the request is based on. When set, the backend
+  // refuses the request if the recipe has another revision, i.e. if its tree
+  // changed since (cobotar/protocol#30).
+  optional uint64 recipe_revision = 3;
 }
 
 message RemoveSequenceRequest {
@@ -97,6 +130,10 @@ message RemoveSequenceRequest {
     (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
   ];
   bool try_keep_children = 3; // If true, all children are assign to the parent of the sequence - if the sequence have a parent
+  // The revision of the recipe the request is based on. When set, the backend
+  // refuses the request if the recipe has another revision, i.e. if its tree
+  // changed since (cobotar/protocol#30).
+  optional uint64 recipe_revision = 4;
 }
 
 message AddChildTaskRequest {
@@ -108,6 +145,10 @@ message AddChildTaskRequest {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true
   ];
+  // The revision of the recipe the request is based on. When set, the backend
+  // refuses the request if the recipe has another revision, i.e. if its tree
+  // changed since (cobotar/protocol#30).
+  optional uint64 recipe_revision = 3;
 }
 
 message RemoveTaskRequest {
@@ -119,4 +160,8 @@ message RemoveTaskRequest {
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.task_definition_id_component) = true
   ];
+  // The revision of the recipe the request is based on. When set, the backend
+  // refuses the request if the recipe has another revision, i.e. if its tree
+  // changed since (cobotar/protocol#30).
+  optional uint64 recipe_revision = 3;
 }

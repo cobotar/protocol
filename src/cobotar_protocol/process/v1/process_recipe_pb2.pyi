@@ -84,42 +84,68 @@ class CreateProcessRecipe(_message.Message):
     tasks: _containers.RepeatedCompositeFieldContainer[_task_definition_pb2.TaskDefinition]
     def __init__(self, recipe: _Optional[_Union[ProcessRecipe, _Mapping]] = ..., sequences: _Optional[_Iterable[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]]] = ..., tasks: _Optional[_Iterable[_Union[_task_definition_pb2.TaskDefinition, _Mapping]]] = ...) -> None: ...
 
+class UpdateSequenceDefinition(_message.Message):
+    __slots__ = ("sequence", "recipe_revision")
+    SEQUENCE_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
+    sequence: _sequence_definition_pb2.SequenceDefinition
+    recipe_revision: int
+    def __init__(self, sequence: _Optional[_Union[_sequence_definition_pb2.SequenceDefinition, _Mapping]] = ..., recipe_revision: _Optional[int] = ...) -> None: ...
+
+class UpdateTaskDefinition(_message.Message):
+    __slots__ = ("task", "recipe_revision")
+    TASK_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
+    task: _task_definition_pb2.TaskDefinition
+    recipe_revision: int
+    def __init__(self, task: _Optional[_Union[_task_definition_pb2.TaskDefinition, _Mapping]] = ..., recipe_revision: _Optional[int] = ...) -> None: ...
+
 class AddRootSequenceRequest(_message.Message):
-    __slots__ = ("recipe_id",)
+    __slots__ = ("recipe_id", "recipe_revision")
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
     recipe_id: str
-    def __init__(self, recipe_id: _Optional[str] = ...) -> None: ...
+    recipe_revision: int
+    def __init__(self, recipe_id: _Optional[str] = ..., recipe_revision: _Optional[int] = ...) -> None: ...
 
 class AddChildSequenceRequest(_message.Message):
-    __slots__ = ("recipe_id", "sequence_id")
+    __slots__ = ("recipe_id", "sequence_id", "recipe_revision")
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
     recipe_id: str
     sequence_id: str
-    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
+    recipe_revision: int
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ..., recipe_revision: _Optional[int] = ...) -> None: ...
 
 class RemoveSequenceRequest(_message.Message):
-    __slots__ = ("recipe_id", "sequence_id", "try_keep_children")
+    __slots__ = ("recipe_id", "sequence_id", "try_keep_children", "recipe_revision")
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
     TRY_KEEP_CHILDREN_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
     recipe_id: str
     sequence_id: str
     try_keep_children: bool
-    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ..., try_keep_children: bool = ...) -> None: ...
+    recipe_revision: int
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ..., try_keep_children: bool = ..., recipe_revision: _Optional[int] = ...) -> None: ...
 
 class AddChildTaskRequest(_message.Message):
-    __slots__ = ("recipe_id", "sequence_id")
+    __slots__ = ("recipe_id", "sequence_id", "recipe_revision")
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     SEQUENCE_ID_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
     recipe_id: str
     sequence_id: str
-    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ...) -> None: ...
+    recipe_revision: int
+    def __init__(self, recipe_id: _Optional[str] = ..., sequence_id: _Optional[str] = ..., recipe_revision: _Optional[int] = ...) -> None: ...
 
 class RemoveTaskRequest(_message.Message):
-    __slots__ = ("recipe_id", "task_id")
+    __slots__ = ("recipe_id", "task_id", "recipe_revision")
     RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    RECIPE_REVISION_FIELD_NUMBER: _ClassVar[int]
     recipe_id: str
     task_id: str
-    def __init__(self, recipe_id: _Optional[str] = ..., task_id: _Optional[str] = ...) -> None: ...
+    recipe_revision: int
+    def __init__(self, recipe_id: _Optional[str] = ..., task_id: _Optional[str] = ..., recipe_revision: _Optional[int] = ...) -> None: ...

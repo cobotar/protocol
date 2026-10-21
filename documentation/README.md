@@ -440,6 +440,8 @@
     - [RecipeApplicability](#process-v1-RecipeApplicability)
     - [RemoveSequenceRequest](#process-v1-RemoveSequenceRequest)
     - [RemoveTaskRequest](#process-v1-RemoveTaskRequest)
+    - [UpdateSequenceDefinition](#process-v1-UpdateSequenceDefinition)
+    - [UpdateTaskDefinition](#process-v1-UpdateTaskDefinition)
   
     - [ProcessType](#process-v1-ProcessType)
   
@@ -6504,6 +6506,7 @@ They should stay reusable across workcells and deployments.
 | ----- | ---- | ----- | ----------- |
 | recipe_id | [string](#string) |  |  |
 | sequence_id | [string](#string) |  |  |
+| recipe_revision | [uint64](#uint64) | optional | The revision of the recipe the request is based on. When set, the backend refuses the request if the recipe has another revision, i.e. if its tree changed since (cobotar/protocol#30). |
 
 
 
@@ -6520,6 +6523,7 @@ They should stay reusable across workcells and deployments.
 | ----- | ---- | ----- | ----------- |
 | recipe_id | [string](#string) |  |  |
 | sequence_id | [string](#string) |  |  |
+| recipe_revision | [uint64](#uint64) | optional | The revision of the recipe the request is based on. When set, the backend refuses the request if the recipe has another revision, i.e. if its tree changed since (cobotar/protocol#30). |
 
 
 
@@ -6535,6 +6539,7 @@ They should stay reusable across workcells and deployments.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | recipe_id | [string](#string) |  |  |
+| recipe_revision | [uint64](#uint64) | optional | The revision of the recipe the request is based on. When set, the backend refuses the request if the recipe has another revision, i.e. if its tree changed since (cobotar/protocol#30). |
 
 
 
@@ -6584,7 +6589,7 @@ ProcessRecipe describes the following:
 | task_ids | [string](#string) | repeated |  |
 | supported_container_definition_ids | [string](#string) | repeated | Containers (typically fixture/pallet definitions) that this recipe is intended to run with. |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| revision | [uint64](#uint64) |  | Revision of the recipe&#39;s whole tree, set by the backend: it increases with every change to the recipe or to one of its sequence or task definitions, which carry no revision of their own (cobotar/protocol#19). Revisions are immutable: a recipe tree at a given (id, revision) never changes, so clients may cache it. An update has to carry the revision of the recipe it was based on, and is refused if the recipe changed since. Ignored on create. |
+| revision | [uint64](#uint64) |  | Revision of the recipe&#39;s whole tree, set by the backend: it increases with every change to the recipe or to one of its sequence or task definitions, which carry no revision of their own (cobotar/protocol#19). Revisions are immutable: a recipe tree at a given (id, revision) never changes, so clients may cache it. An update has to carry the revision of the recipe it was based on, and is refused if the recipe changed since. So do updates of its sequences and tasks (UpdateSequenceDefinition, UpdateTaskDefinition) and, optionally, the tree requests (cobotar/protocol#30). Ignored on create. |
 
 
 
@@ -6633,6 +6638,7 @@ ProcessRecipe describes the following:
 | recipe_id | [string](#string) |  |  |
 | sequence_id | [string](#string) |  |  |
 | try_keep_children | [bool](#bool) |  | If true, all children are assign to the parent of the sequence - if the sequence have a parent |
+| recipe_revision | [uint64](#uint64) | optional | The revision of the recipe the request is based on. When set, the backend refuses the request if the recipe has another revision, i.e. if its tree changed since (cobotar/protocol#30). |
 
 
 
@@ -6649,6 +6655,49 @@ ProcessRecipe describes the following:
 | ----- | ---- | ----- | ----------- |
 | recipe_id | [string](#string) |  |  |
 | task_id | [string](#string) |  |  |
+| recipe_revision | [uint64](#uint64) | optional | The revision of the recipe the request is based on. When set, the backend refuses the request if the recipe has another revision, i.e. if its tree changed since (cobotar/protocol#30). |
+
+
+
+
+
+
+<a name="process-v1-UpdateSequenceDefinition"></a>
+
+### UpdateSequenceDefinition
+UpdateSequenceDefinition updates a sequence definition
+(edit.sequence_definition.update). A sequence carries no revision of its own,
+so the update carries the revision of the recipe that contains it, as the
+client loaded the sequence: the backend refuses it if the recipe has another
+revision, i.e. if its tree changed since (cobotar/protocol#30). For a
+sequence no recipe contains, recipe_revision is ignored.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| sequence | [SequenceDefinition](#process-v1-SequenceDefinition) |  |  |
+| recipe_revision | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="process-v1-UpdateTaskDefinition"></a>
+
+### UpdateTaskDefinition
+UpdateTaskDefinition updates a task definition (edit.task_definition.update).
+A task carries no revision of its own, so the update carries the revision of
+the recipe that contains it, as the client loaded the task: the backend
+refuses it if the recipe has another revision, i.e. if its tree changed since
+(cobotar/protocol#30). For a task no recipe contains, recipe_revision is
+ignored.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task | [TaskDefinition](#process-v1-TaskDefinition) |  |  |
+| recipe_revision | [uint64](#uint64) |  |  |
 
 
 
