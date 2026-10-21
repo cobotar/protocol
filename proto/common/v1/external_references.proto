@@ -2,13 +2,25 @@ syntax = "proto3";
 package common.v1;
 
 import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Common.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/common/v1";
 
+// ExternalReference identifies an entity in another system, e.g. the Fusion
+// document and component a part was exported from. system names the other
+// system (e.g. "fusion360") and external_id the entity there; both are
+// required, since the pair is what an import matches earlier imports by
+// (product.v1.ImportProduct).
 message ExternalReference {
-  string system = 1;
-  string external_id = 2;
+  string system = 1 [
+    (buf.validate.field).string.(validation.v1.not_blank) = true,
+    (buf.validate.field).string.max_len = 64
+  ];
+  string external_id = 2 [
+    (buf.validate.field).string.(validation.v1.not_blank) = true,
+    (buf.validate.field).string.max_len = 512
+  ];
   string url = 3 [
     (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
     (buf.validate.field).string.uri = true

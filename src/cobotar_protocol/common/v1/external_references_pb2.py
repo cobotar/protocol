@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#common/v1/external_references.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\"k\n\x11\x45xternalReference\x12\x16\n\x06system\x18\x01 \x01(\tR\x06system\x12\x1f\n\x0b\x65xternal_id\x18\x02 \x01(\tR\nexternalId\x12\x1d\n\x03url\x18\x03 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03urlB\xb2\x01\n\rcom.common.v1B\x17\x45xternalReferencesProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#common/v1/external_references.proto\x12\tcommon.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x86\x01\n\x11\x45xternalReference\x12#\n\x06system\x18\x01 \x01(\tB\x0b\xbaH\x08r\x06\x18@\x88\xf4\x04\x01R\x06system\x12-\n\x0b\x65xternal_id\x18\x02 \x01(\tB\x0c\xbaH\tr\x07\x18\x80\x04\x88\xf4\x04\x01R\nexternalId\x12\x1d\n\x03url\x18\x03 \x01(\tB\x0b\xbaH\x08r\x03\x88\x01\x01\xd8\x01\x01R\x03urlB\xb2\x01\n\rcom.common.v1B\x17\x45xternalReferencesProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03\x43XX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15\x43ommon\\V1\\GPBMetadata\xea\x02\nCommon::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +34,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.external_referenc
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.common.v1B\027ExternalReferencesProtoP\001Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\242\002\003CXX\252\002\022Messages.Common.V1\312\002\tCommon\\V1\342\002\025Common\\V1\\GPBMetadata\352\002\nCommon::V1'
+  _globals['_EXTERNALREFERENCE'].fields_by_name['system']._loaded_options = None
+  _globals['_EXTERNALREFERENCE'].fields_by_name['system']._serialized_options = b'\272H\010r\006\030@\210\364\004\001'
+  _globals['_EXTERNALREFERENCE'].fields_by_name['external_id']._loaded_options = None
+  _globals['_EXTERNALREFERENCE'].fields_by_name['external_id']._serialized_options = b'\272H\tr\007\030\200\004\210\364\004\001'
   _globals['_EXTERNALREFERENCE'].fields_by_name['url']._loaded_options = None
   _globals['_EXTERNALREFERENCE'].fields_by_name['url']._serialized_options = b'\272H\010r\003\210\001\001\330\001\001'
-  _globals['_EXTERNALREFERENCE']._serialized_start=79
-  _globals['_EXTERNALREFERENCE']._serialized_end=186
+  _globals['_EXTERNALREFERENCE']._serialized_start=125
+  _globals['_EXTERNALREFERENCE']._serialized_end=259
 # @@protoc_insertion_point(module_scope)

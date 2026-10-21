@@ -504,6 +504,40 @@
     - [ProductDefinition](#product-v1-ProductDefinition)
     - [ProductDefinitions](#product-v1-ProductDefinitions)
   
+- [resources/v1/model.proto](#resources_v1_model-proto)
+    - [FileLocation](#resources-v1-FileLocation)
+    - [ImageAssetRef](#resources-v1-ImageAssetRef)
+    - [ModelArtifact](#resources-v1-ModelArtifact)
+    - [ModelArtifacts](#resources-v1-ModelArtifacts)
+    - [ModelAssetRef](#resources-v1-ModelAssetRef)
+    - [SidecarAssetRef](#resources-v1-SidecarAssetRef)
+  
+    - [ImageAssetFormat](#resources-v1-ImageAssetFormat)
+    - [ModelAssetFormat](#resources-v1-ModelAssetFormat)
+    - [ModelAssetRole](#resources-v1-ModelAssetRole)
+    - [ModelAxis](#resources-v1-ModelAxis)
+    - [ModelGroup](#resources-v1-ModelGroup)
+    - [ModelStorageBackend](#resources-v1-ModelStorageBackend)
+    - [ModelUnit](#resources-v1-ModelUnit)
+    - [SidecarAssetFormat](#resources-v1-SidecarAssetFormat)
+  
+- [resources/v1/model_requests.proto](#resources_v1_model_requests-proto)
+    - [CreateModelArtifact](#resources-v1-CreateModelArtifact)
+    - [UploadedObject](#resources-v1-UploadedObject)
+  
+- [service/v1/response.proto](#service_v1_response-proto)
+    - [Response](#service-v1-Response)
+    - [ValidationViolation](#service-v1-ValidationViolation)
+  
+    - [MutationStatus](#service-v1-MutationStatus)
+  
+- [product/v1/product_import.proto](#product_v1_product_import-proto)
+    - [ImportProduct](#product-v1-ImportProduct)
+    - [ImportProductResult](#product-v1-ImportProductResult)
+    - [ImportedEntity](#product-v1-ImportedEntity)
+    - [ImportedModel](#product-v1-ImportedModel)
+    - [ImportedPart](#product-v1-ImportedPart)
+  
 - [resources/v1/asset_adapter_definition.proto](#resources_v1_asset_adapter_definition-proto)
     - [AssetAdapterDefinition](#resources-v1-AssetAdapterDefinition)
     - [AssetAdapterDefinitions](#resources-v1-AssetAdapterDefinitions)
@@ -550,23 +584,6 @@
     - [MarkerInstances](#resources-v1-MarkerInstances)
   
     - [MarkerType](#resources-v1-MarkerType)
-  
-- [resources/v1/model.proto](#resources_v1_model-proto)
-    - [FileLocation](#resources-v1-FileLocation)
-    - [ImageAssetRef](#resources-v1-ImageAssetRef)
-    - [ModelArtifact](#resources-v1-ModelArtifact)
-    - [ModelArtifacts](#resources-v1-ModelArtifacts)
-    - [ModelAssetRef](#resources-v1-ModelAssetRef)
-    - [SidecarAssetRef](#resources-v1-SidecarAssetRef)
-  
-    - [ImageAssetFormat](#resources-v1-ImageAssetFormat)
-    - [ModelAssetFormat](#resources-v1-ModelAssetFormat)
-    - [ModelAssetRole](#resources-v1-ModelAssetRole)
-    - [ModelAxis](#resources-v1-ModelAxis)
-    - [ModelGroup](#resources-v1-ModelGroup)
-    - [ModelStorageBackend](#resources-v1-ModelStorageBackend)
-    - [ModelUnit](#resources-v1-ModelUnit)
-    - [SidecarAssetFormat](#resources-v1-SidecarAssetFormat)
   
 - [resources/v1/robot_definition.proto](#resources_v1_robot_definition-proto)
     - [DefaultRobotSkill](#resources-v1-DefaultRobotSkill)
@@ -771,12 +788,6 @@
     - [ARClientMessage](#service-v1-ARClientMessage)
   
     - [ARClientRole](#service-v1-ARClientRole)
-  
-- [service/v1/response.proto](#service_v1_response-proto)
-    - [Response](#service-v1-Response)
-    - [ValidationViolation](#service-v1-ValidationViolation)
-  
-    - [MutationStatus](#service-v1-MutationStatus)
   
 - [service/v1/server.proto](#service_v1_server-proto)
     - [ServerHeartbeat](#service-v1-ServerHeartbeat)
@@ -5375,7 +5386,11 @@ This domain is particularly relevant in human-robot collaboration environments. 
 <a name="common-v1-ExternalReference"></a>
 
 ### ExternalReference
-
+ExternalReference identifies an entity in another system, e.g. the Fusion
+document and component a part was exported from. system names the other
+system (e.g. &#34;fusion360&#34;) and external_id the entity there; both are
+required, since the pair is what an import matches earlier imports by
+(product.v1.ImportProduct).
 
 
 | Field | Type | Label | Description |
@@ -7653,6 +7668,576 @@ TODO: add validation for: root_node_id, nodes
 
 
 
+<a name="resources_v1_model-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/model.proto
+
+
+
+<a name="resources-v1-FileLocation"></a>
+
+### FileLocation
+Examples:
+asset {
+backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+bucket: &#34;cobotar-assets&#34;
+object_key: &#34;models/&lt;sha256 of the file&gt;/bracket.obj&#34;
+filename: &#34;bracket.obj&#34;
+content_type: &#34;model/obj&#34;
+size_bytes: 123456
+sha256: &#34;...&#34;
+}
+thumbnail {
+backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
+bucket: &#34;cobotar-assets&#34;
+object_key: &#34;thumbnails/&lt;sha256 of the file&gt;/bracket.png&#34;
+filename: &#34;bracket.png&#34;
+content_type: &#34;image/png&#34;
+}
+
+asset {
+backend: MODEL_STORAGE_BACKEND_BUILT_IN
+filename: &#34;models/robot_ur5e.glb&#34;
+content_type: &#34;model/gltf-binary&#34;
+}
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| backend | [ModelStorageBackend](#resources-v1-ModelStorageBackend) |  |  |
+| bucket | [string](#string) |  |  |
+| object_key | [string](#string) |  | storage identifier |
+| uri | [string](#string) |  |  |
+| filename | [string](#string) |  | original/display/download filename |
+| content_type | [string](#string) |  | Examples: MODEL_ASSET_FORMAT_GLB → model/gltf-binary, MODEL_ASSET_FORMAT_GLTF → model/gltf&#43;json, MODEL_ASSET_FORMAT_OBJ → model/obj or text/plain, MODEL_ASSET_FORMAT_STL → model/stl, MODEL_ASSET_FORMAT_STEP → model/step, IMAGE_ASSET_FORMAT_PNG → image/png, IMAGE_ASSET_FORMAT_JPEG → image/jpeg, IMAGE_ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip, |
+| size_bytes | [uint64](#uint64) |  |  |
+| sha256 | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ImageAssetRef"></a>
+
+### ImageAssetRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [FileLocation](#resources-v1-FileLocation) |  |  |
+| format | [ImageAssetFormat](#resources-v1-ImageAssetFormat) |  |  |
+| derived_from_model_asset_id | [string](#string) |  | Optional link to the model asset this image was generated from. Example: a PNG thumbnail can point to the GLB/OBJ it previews. |
+
+
+
+
+
+
+<a name="resources-v1-ModelArtifact"></a>
+
+### ModelArtifact
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
+| asset | [ModelAssetRef](#resources-v1-ModelAssetRef) |  | Primary loadable model asset. |
+| thumbnail | [ImageAssetRef](#resources-v1-ImageAssetRef) |  | Optional preview image. |
+| alternatives | [ModelAssetRef](#resources-v1-ModelAssetRef) | repeated | Source, derived, preview, or collision model assets. |
+| sidecars | [SidecarAssetRef](#resources-v1-SidecarAssetRef) | repeated |  |
+| version | [string](#string) |  |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| content_hash | [string](#string) |  | Stable digest of the model artifact content graph, including primary asset, sidecars, asset.format, asset.unit, asset.up_axis, and asset.forward_axis. Used for cache invalidation and change detection. |
+
+
+
+
+
+
+<a name="resources-v1-ModelArtifacts"></a>
+
+### ModelArtifacts
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ModelArtifact](#resources-v1-ModelArtifact) | repeated |  |
+
+
+
+
+
+
+<a name="resources-v1-ModelAssetRef"></a>
+
+### ModelAssetRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [FileLocation](#resources-v1-FileLocation) |  |  |
+| format | [ModelAssetFormat](#resources-v1-ModelAssetFormat) |  |  |
+| unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
+| up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Z, many CAD systems: Z |
+| forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;forward&#34; in the source asset coordinate system. Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y |
+| role | [ModelAssetRole](#resources-v1-ModelAssetRole) |  |  |
+| derived_from_asset_id | [string](#string) |  | Optional link to the source asset this asset was generated from. Example: a runtime GLB can point to the original imported OBJ/STEP asset. |
+
+
+
+
+
+
+<a name="resources-v1-SidecarAssetRef"></a>
+
+### SidecarAssetRef
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| location | [FileLocation](#resources-v1-FileLocation) |  |  |
+| format | [SidecarAssetFormat](#resources-v1-SidecarAssetFormat) |  |  |
+| associated_model_asset_id | [string](#string) |  | Optional link to the model asset this sidecar belongs to or was generated from. Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB. |
+
+
+
+
+
+ 
+
+
+<a name="resources-v1-ImageAssetFormat"></a>
+
+### ImageAssetFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| IMAGE_ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| IMAGE_ASSET_FORMAT_PNG | 100 |  |
+| IMAGE_ASSET_FORMAT_JPEG | 101 |  |
+| IMAGE_ASSET_FORMAT_WEBP | 102 |  |
+| IMAGE_ASSET_FORMAT_SVG | 103 |  |
+
+
+
+<a name="resources-v1-ModelAssetFormat"></a>
+
+### ModelAssetFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| MODEL_ASSET_FORMAT_GLB | 1 |  |
+| MODEL_ASSET_FORMAT_GLTF | 2 |  |
+| MODEL_ASSET_FORMAT_OBJ | 3 |  |
+| MODEL_ASSET_FORMAT_FBX | 4 |  |
+| MODEL_ASSET_FORMAT_STL | 5 |  |
+| MODEL_ASSET_FORMAT_STEP | 6 |  |
+| MODEL_ASSET_FORMAT_IGES | 7 |  |
+| MODEL_ASSET_FORMAT_USD | 8 |  |
+| MODEL_ASSET_FORMAT_USDZ | 9 |  |
+
+
+
+<a name="resources-v1-ModelAssetRole"></a>
+
+### ModelAssetRole
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_ASSET_ROLE_UNSPECIFIED | 0 |  |
+| MODEL_ASSET_ROLE_RUNTIME | 1 | Preferred asset for runtime loading in clients such as Unity. |
+| MODEL_ASSET_ROLE_SOURCE | 2 | Original/source CAD or mesh asset imported into the system. |
+| MODEL_ASSET_ROLE_DERIVED | 3 | Converted representation derived from another asset. |
+| MODEL_ASSET_ROLE_PREVIEW | 4 | Lower-detail representation used for preview, web viewers, or performance. |
+| MODEL_ASSET_ROLE_COLLISION | 5 | Collision/physics proxy representation. |
+
+
+
+<a name="resources-v1-ModelAxis"></a>
+
+### ModelAxis
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_AXIS_UNSPECIFIED | 0 |  |
+| MODEL_AXIS_POSITIVE_X | 1 |  |
+| MODEL_AXIS_NEGATIVE_X | 2 |  |
+| MODEL_AXIS_POSITIVE_Y | 3 |  |
+| MODEL_AXIS_NEGATIVE_Y | 4 |  |
+| MODEL_AXIS_POSITIVE_Z | 5 |  |
+| MODEL_AXIS_NEGATIVE_Z | 6 |  |
+
+
+
+<a name="resources-v1-ModelGroup"></a>
+
+### ModelGroup
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_GROUP_UNSPECIFIED | 0 |  |
+| MODEL_GROUP_PRODUCT | 10 |  |
+| MODEL_GROUP_SUB_ASSEMBLY | 11 |  |
+| MODEL_GROUP_PART | 12 |  |
+| MODEL_GROUP_TOOL | 20 |  |
+| MODEL_GROUP_ROBOT | 30 |  |
+| MODEL_GROUP_CONTAINER | 40 |  |
+| MODEL_GROUP_ASSET | 50 |  |
+
+
+
+<a name="resources-v1-ModelStorageBackend"></a>
+
+### ModelStorageBackend
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_STORAGE_BACKEND_UNSPECIFIED | 0 |  |
+| MODEL_STORAGE_BACKEND_BUILT_IN | 1 |  |
+| MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE | 2 |  |
+| MODEL_STORAGE_BACKEND_S3 | 3 |  |
+| MODEL_STORAGE_BACKEND_MINIO | 4 |  |
+| MODEL_STORAGE_BACKEND_LOCAL_FILE | 5 |  |
+| MODEL_STORAGE_BACKEND_EXTERNAL_URL | 6 |  |
+
+
+
+<a name="resources-v1-ModelUnit"></a>
+
+### ModelUnit
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MODEL_UNIT_UNSPECIFIED | 0 |  |
+| MODEL_UNIT_MILLIMETER | 1 | Metric |
+| MODEL_UNIT_CENTIMETER | 2 |  |
+| MODEL_UNIT_METER | 3 |  |
+| MODEL_UNIT_KILOMETER | 4 |  |
+| MODEL_UNIT_INCH | 10 | Imperial |
+| MODEL_UNIT_FOOT | 11 |  |
+| MODEL_UNIT_YARD | 12 |  |
+| MODEL_UNIT_MICROMETER | 20 | CAD / scientific |
+
+
+
+<a name="resources-v1-SidecarAssetFormat"></a>
+
+### SidecarAssetFormat
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SIDECAR_ASSET_FORMAT_UNSPECIFIED | 0 |  |
+| SIDECAR_ASSET_FORMAT_MTL | 81 |  |
+| SIDECAR_ASSET_FORMAT_BASIS | 82 |  |
+| SIDECAR_ASSET_FORMAT_KTX2 | 83 |  |
+| SIDECAR_ASSET_FORMAT_ZIP | 84 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="resources_v1_model_requests-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/model_requests.proto
+
+
+
+<a name="resources-v1-CreateModelArtifact"></a>
+
+### CreateModelArtifact
+CreateModelArtifact creates a model from uploaded files (edit.model.add,
+cobotar/protocol#10). It holds only what a person or an exporter knows. The
+backend builds the ModelArtifact from it: the IDs, the runtime role of the
+primary asset, the file locations with size, digest and content type, and
+the content hash. A model with the same content hash is reused: the reply
+says UNCHANGED and carries its ID.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
+| version | [string](#string) |  |  |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| asset | [UploadedObject](#resources-v1-UploadedObject) |  | The primary model file, uploaded under models/. |
+| format | [ModelAssetFormat](#resources-v1-ModelAssetFormat) |  | The asset&#39;s format. Unspecified: taken from the file extension (.glb, .gltf, .obj, .fbx, .stl, .step/.stp, .iges/.igs, .usd, .usdz). |
+| unit | [ModelUnit](#resources-v1-ModelUnit) |  | The unit and axes of the asset&#39;s coordinates, set together. Required, except for glTF and GLB assets (by format, or by extension when format is unspecified), which default to the glTF convention: metres, &#43;Y up, &#43;Z forward. |
+| up_axis | [ModelAxis](#resources-v1-ModelAxis) |  |  |
+| forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  |  |
+| sidecars | [UploadedObject](#resources-v1-UploadedObject) | repeated | Files the asset needs, such as an OBJ&#39;s MTL, uploaded under sidecars/. Their format is taken from the file extension (.mtl, .basis, .ktx2, .zip). |
+| thumbnail | [UploadedObject](#resources-v1-UploadedObject) |  | An optional preview image, uploaded under thumbnails/. Its format is taken from the file extension (.png, .jpg/.jpeg, .webp, .svg). |
+
+
+
+
+
+
+<a name="resources-v1-UploadedObject"></a>
+
+### UploadedObject
+UploadedObject is a file that a client put in a model object store bucket
+(a NATS JetStream object store) before naming it in a request
+(cobotar/protocol#31).
+
+Keys are content-addressed: &lt;kind&gt;/&lt;sha256&gt;/&lt;filename&gt;, where kind is
+&#34;models&#34;, &#34;sidecars&#34; or &#34;thumbnails&#34;, sha256 is the lowercase hex SHA-256 of
+the file&#39;s content, and filename is the file&#39;s original name. So that a key
+can be saved as a file on any system, the file name is limited to ASCII
+letters, digits, spaces, dots, underscores and hyphens, starts with a letter
+or digit (no &#34;.&#34; or &#34;..&#34;), ends with an extension, and isn&#39;t a name Windows
+reserves (CON, PRN, AUX, NUL, COM1-9, LPT1-9, with any extension). Clients
+replace other characters, e.g. with underscores. An object at a
+key never changes: a client uploads a file only when no object has its key,
+and a changed file gets another key, so a file that a model points at is
+never overwritten. Files that belong together (an OBJ and the MTL its
+mtllib names) keep their names, so they still find each other when they&#39;re
+downloaded side by side.
+
+The backend checks that the object exists and that its content matches the
+digest in the key, and fills in size, digest and content type.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bucket | [string](#string) |  |  |
+| object_key | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="service_v1_response-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## service/v1/response.proto
+
+
+
+<a name="service-v1-Response"></a>
+
+### Response
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  | True if the request was carried out, false if an error occurred |
+| message | [string](#string) |  | Human-readable status or error summary. It may be empty when validation_violations contains the complete error details. |
+| main_modified_id | [string](#string) |  | Might contain an ID of the entity that mainly was modified (added, updated, deleted) |
+| status | [MutationStatus](#service-v1-MutationStatus) |  |  |
+| validation_violations | [ValidationViolation](#service-v1-ValidationViolation) | repeated |  |
+
+
+
+
+
+
+<a name="service-v1-ValidationViolation"></a>
+
+### ValidationViolation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| field_path | [string](#string) |  | Empty for message-level violations. Otherwise, a protobuf field path, using snake_case field names, for example &#34;items[0].name&#34;. |
+| message | [string](#string) |  |  |
+| rule_id | [string](#string) |  | Optional because validators are not guaranteed to supply a stable rule ID. |
+
+
+
+
+
+ 
+
+
+<a name="service-v1-MutationStatus"></a>
+
+### MutationStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MUTATION_STATUS_UNSPECIFIED | 0 |  |
+| MUTATION_STATUS_CREATED | 1 |  |
+| MUTATION_STATUS_UPDATED | 2 |  |
+| MUTATION_STATUS_UNCHANGED | 3 |  |
+| MUTATION_STATUS_DELETED | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="product_v1_product_import-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/product_import.proto
+
+
+
+<a name="product-v1-ImportProduct"></a>
+
+### ImportProduct
+ImportProduct creates or updates a product with its models and parts in one
+request (edit.product.import, cobotar/protocol#31), e.g. an export from a
+CAD tool. The backend applies it in one unit of work: it changes everything
+or nothing. The files are uploaded first (see resources.v1.UploadedObject).
+
+The models and parts have keys, which are only valid within the request: a
+part names its default model by model_key, and an assembly node names its
+part by the part&#39;s key in part_definition_id.
+
+Importing again is matched by external reference. An imported part or
+product that has an external reference (system and external_id) of an
+existing part or product updates that one instead of creating another. An
+updated part gets a new revision, so runs pinned to its earlier revision
+keep that one (cobotar/protocol#19). Models are matched by content hash, not
+by external reference: a model whose files changed is a new model, which the
+part&#39;s new revision points to, while the earlier model stays for the
+earlier revision. A part or product without external references is always
+created. An import is refused when two of its parts share a reference, or
+when one reference matches several existing parts or products.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| models | [ImportedModel](#product-v1-ImportedModel) | repeated |  |
+| parts | [ImportedPart](#product-v1-ImportedPart) | repeated |  |
+| product | [ProductDefinition](#product-v1-ProductDefinition) |  | The product. Its nodes name their parts by key in part_definition_id. |
+
+
+
+
+
+
+<a name="product-v1-ImportProductResult"></a>
+
+### ImportProductResult
+ImportProductResult answers an ImportProduct that was applied. A refused
+import is answered with a failed service.v1.Response.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| product | [ImportedEntity](#product-v1-ImportedEntity) |  |  |
+| models | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per model of the request, in its order. |
+| parts | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per part of the request, in its order. |
+
+
+
+
+
+
+<a name="product-v1-ImportedEntity"></a>
+
+### ImportedEntity
+ImportedEntity is what an import did with one model, part or product:
+CREATED, UPDATED (a part&#39;s new revision, or the product), or UNCHANGED (an
+existing model with the same content, or a part or product that matched and
+didn&#39;t change).
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | Empty for the product. |
+| id | [string](#string) |  |  |
+| status | [service.v1.MutationStatus](#service-v1-MutationStatus) |  |  |
+
+
+
+
+
+
+<a name="product-v1-ImportedModel"></a>
+
+### ImportedModel
+ImportedModel is a model of an ImportProduct, with its key in the request.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| model | [resources.v1.CreateModelArtifact](#resources-v1-CreateModelArtifact) |  |  |
+
+
+
+
+
+
+<a name="product-v1-ImportedPart"></a>
+
+### ImportedPart
+ImportedPart is a part definition of an ImportProduct, with its key in the
+request. The part has no id, revision or default_model_id: it&#39;s matched by
+external reference, and names its default model by model_key.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| part | [PartDefinition](#product-v1-PartDefinition) |  |  |
+| model_key | [string](#string) |  | The key of the part&#39;s default model in the request; empty for none. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="resources_v1_asset_adapter_definition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -8308,302 +8893,6 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | ---- | ------ | ----------- |
 | MARKER_TYPE_UNSPECIFIED | 0 |  |
 | MARKER_TYPE_QR_CODE | 1 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="resources_v1_model-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## resources/v1/model.proto
-
-
-
-<a name="resources-v1-FileLocation"></a>
-
-### FileLocation
-Examples:
-asset {
-backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
-bucket: &#34;cobotar-assets&#34;
-object_key: &#34;models/part-123.obj&#34;
-filename: &#34;bracket.obj&#34;
-content_type: &#34;model/obj&#34;
-size_bytes: 123456
-sha256: &#34;...&#34;
-}
-thumbnail {
-backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
-bucket: &#34;cobotar-assets&#34;
-object_key: &#34;thumbnails/part-123.png&#34;
-filename: &#34;bracket.png&#34;
-content_type: &#34;image/png&#34;
-}
-
-asset {
-backend: MODEL_STORAGE_BACKEND_BUILT_IN
-filename: &#34;models/robot_ur5e.glb&#34;
-content_type: &#34;model/gltf-binary&#34;
-}
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| backend | [ModelStorageBackend](#resources-v1-ModelStorageBackend) |  |  |
-| bucket | [string](#string) |  |  |
-| object_key | [string](#string) |  | storage identifier |
-| uri | [string](#string) |  |  |
-| filename | [string](#string) |  | original/display/download filename |
-| content_type | [string](#string) |  | Examples: MODEL_ASSET_FORMAT_GLB → model/gltf-binary, MODEL_ASSET_FORMAT_GLTF → model/gltf&#43;json, MODEL_ASSET_FORMAT_OBJ → model/obj or text/plain, MODEL_ASSET_FORMAT_STL → model/stl, MODEL_ASSET_FORMAT_STEP → model/step, IMAGE_ASSET_FORMAT_PNG → image/png, IMAGE_ASSET_FORMAT_JPEG → image/jpeg, IMAGE_ASSET_FORMAT_WEBP → image/webp, ASSET_FORMAT_ZIP → application/zip, |
-| size_bytes | [uint64](#uint64) |  |  |
-| sha256 | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="resources-v1-ImageAssetRef"></a>
-
-### ImageAssetRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [FileLocation](#resources-v1-FileLocation) |  |  |
-| format | [ImageAssetFormat](#resources-v1-ImageAssetFormat) |  |  |
-| derived_from_model_asset_id | [string](#string) |  | Optional link to the model asset this image was generated from. Example: a PNG thumbnail can point to the GLB/OBJ it previews. |
-
-
-
-
-
-
-<a name="resources-v1-ModelArtifact"></a>
-
-### ModelArtifact
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| name | [string](#string) |  |  |
-| icon | [string](#string) |  |  |
-| description | [string](#string) |  |  |
-| group | [ModelGroup](#resources-v1-ModelGroup) |  |  |
-| asset | [ModelAssetRef](#resources-v1-ModelAssetRef) |  | Primary loadable model asset. |
-| thumbnail | [ImageAssetRef](#resources-v1-ImageAssetRef) |  | Optional preview image. |
-| alternatives | [ModelAssetRef](#resources-v1-ModelAssetRef) | repeated | Source, derived, preview, or collision model assets. |
-| sidecars | [SidecarAssetRef](#resources-v1-SidecarAssetRef) | repeated |  |
-| version | [string](#string) |  |  |
-| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
-| content_hash | [string](#string) |  | Stable digest of the model artifact content graph, including primary asset, sidecars, asset.format, asset.unit, asset.up_axis, and asset.forward_axis. Used for cache invalidation and change detection. |
-
-
-
-
-
-
-<a name="resources-v1-ModelArtifacts"></a>
-
-### ModelArtifacts
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| items | [ModelArtifact](#resources-v1-ModelArtifact) | repeated |  |
-
-
-
-
-
-
-<a name="resources-v1-ModelAssetRef"></a>
-
-### ModelAssetRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [FileLocation](#resources-v1-FileLocation) |  |  |
-| format | [ModelAssetFormat](#resources-v1-ModelAssetFormat) |  |  |
-| unit | [ModelUnit](#resources-v1-ModelUnit) |  | Unit used for the model geometry coordinates. Typically &#34;mm&#34;, &#34;cm&#34;, &#34;m&#34;, &#34;in&#34;, etc. Used to scale the model correctly when loading. |
-| up_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;up&#34; in the source asset coordinate system. Examples: Unity: Y, Blender: Z, many CAD systems: Z |
-| forward_axis | [ModelAxis](#resources-v1-ModelAxis) |  | Defines which axis is &#34;forward&#34; in the source asset coordinate system. Examples: Unity: Z, Blender: -Y, many CAD systems: X/Y |
-| role | [ModelAssetRole](#resources-v1-ModelAssetRole) |  |  |
-| derived_from_asset_id | [string](#string) |  | Optional link to the source asset this asset was generated from. Example: a runtime GLB can point to the original imported OBJ/STEP asset. |
-
-
-
-
-
-
-<a name="resources-v1-SidecarAssetRef"></a>
-
-### SidecarAssetRef
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  |  |
-| location | [FileLocation](#resources-v1-FileLocation) |  |  |
-| format | [SidecarAssetFormat](#resources-v1-SidecarAssetFormat) |  |  |
-| associated_model_asset_id | [string](#string) |  | Optional link to the model asset this sidecar belongs to or was generated from. Example: an MTL can point to the OBJ it describes; a KTX2 texture can point to a GLB. |
-
-
-
-
-
- 
-
-
-<a name="resources-v1-ImageAssetFormat"></a>
-
-### ImageAssetFormat
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| IMAGE_ASSET_FORMAT_UNSPECIFIED | 0 |  |
-| IMAGE_ASSET_FORMAT_PNG | 100 |  |
-| IMAGE_ASSET_FORMAT_JPEG | 101 |  |
-| IMAGE_ASSET_FORMAT_WEBP | 102 |  |
-| IMAGE_ASSET_FORMAT_SVG | 103 |  |
-
-
-
-<a name="resources-v1-ModelAssetFormat"></a>
-
-### ModelAssetFormat
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_ASSET_FORMAT_UNSPECIFIED | 0 |  |
-| MODEL_ASSET_FORMAT_GLB | 1 |  |
-| MODEL_ASSET_FORMAT_GLTF | 2 |  |
-| MODEL_ASSET_FORMAT_OBJ | 3 |  |
-| MODEL_ASSET_FORMAT_FBX | 4 |  |
-| MODEL_ASSET_FORMAT_STL | 5 |  |
-| MODEL_ASSET_FORMAT_STEP | 6 |  |
-| MODEL_ASSET_FORMAT_IGES | 7 |  |
-| MODEL_ASSET_FORMAT_USD | 8 |  |
-| MODEL_ASSET_FORMAT_USDZ | 9 |  |
-
-
-
-<a name="resources-v1-ModelAssetRole"></a>
-
-### ModelAssetRole
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_ASSET_ROLE_UNSPECIFIED | 0 |  |
-| MODEL_ASSET_ROLE_RUNTIME | 1 | Preferred asset for runtime loading in clients such as Unity. |
-| MODEL_ASSET_ROLE_SOURCE | 2 | Original/source CAD or mesh asset imported into the system. |
-| MODEL_ASSET_ROLE_DERIVED | 3 | Converted representation derived from another asset. |
-| MODEL_ASSET_ROLE_PREVIEW | 4 | Lower-detail representation used for preview, web viewers, or performance. |
-| MODEL_ASSET_ROLE_COLLISION | 5 | Collision/physics proxy representation. |
-
-
-
-<a name="resources-v1-ModelAxis"></a>
-
-### ModelAxis
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_AXIS_UNSPECIFIED | 0 |  |
-| MODEL_AXIS_POSITIVE_X | 1 |  |
-| MODEL_AXIS_NEGATIVE_X | 2 |  |
-| MODEL_AXIS_POSITIVE_Y | 3 |  |
-| MODEL_AXIS_NEGATIVE_Y | 4 |  |
-| MODEL_AXIS_POSITIVE_Z | 5 |  |
-| MODEL_AXIS_NEGATIVE_Z | 6 |  |
-
-
-
-<a name="resources-v1-ModelGroup"></a>
-
-### ModelGroup
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_GROUP_UNSPECIFIED | 0 |  |
-| MODEL_GROUP_PRODUCT | 10 |  |
-| MODEL_GROUP_SUB_ASSEMBLY | 11 |  |
-| MODEL_GROUP_PART | 12 |  |
-| MODEL_GROUP_TOOL | 20 |  |
-| MODEL_GROUP_ROBOT | 30 |  |
-| MODEL_GROUP_CONTAINER | 40 |  |
-| MODEL_GROUP_ASSET | 50 |  |
-
-
-
-<a name="resources-v1-ModelStorageBackend"></a>
-
-### ModelStorageBackend
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_STORAGE_BACKEND_UNSPECIFIED | 0 |  |
-| MODEL_STORAGE_BACKEND_BUILT_IN | 1 |  |
-| MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE | 2 |  |
-| MODEL_STORAGE_BACKEND_S3 | 3 |  |
-| MODEL_STORAGE_BACKEND_MINIO | 4 |  |
-| MODEL_STORAGE_BACKEND_LOCAL_FILE | 5 |  |
-| MODEL_STORAGE_BACKEND_EXTERNAL_URL | 6 |  |
-
-
-
-<a name="resources-v1-ModelUnit"></a>
-
-### ModelUnit
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MODEL_UNIT_UNSPECIFIED | 0 |  |
-| MODEL_UNIT_MILLIMETER | 1 | Metric |
-| MODEL_UNIT_CENTIMETER | 2 |  |
-| MODEL_UNIT_METER | 3 |  |
-| MODEL_UNIT_KILOMETER | 4 |  |
-| MODEL_UNIT_INCH | 10 | Imperial |
-| MODEL_UNIT_FOOT | 11 |  |
-| MODEL_UNIT_YARD | 12 |  |
-| MODEL_UNIT_MICROMETER | 20 | CAD / scientific |
-
-
-
-<a name="resources-v1-SidecarAssetFormat"></a>
-
-### SidecarAssetFormat
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SIDECAR_ASSET_FORMAT_UNSPECIFIED | 0 |  |
-| SIDECAR_ASSET_FORMAT_MTL | 81 |  |
-| SIDECAR_ASSET_FORMAT_BASIS | 82 |  |
-| SIDECAR_ASSET_FORMAT_KTX2 | 83 |  |
-| SIDECAR_ASSET_FORMAT_ZIP | 84 |  |
 
 
  
@@ -11472,73 +11761,6 @@ Concrete runtime/deployment bindings resolved for this task run.
 | AR_CLIENT_ROLE_UNSPECIFIED | 0 |  |
 | AR_CLIENT_ROLE_MAIN | 1 |  |
 | AR_CLIENT_ROLE_SPECTATOR | 2 |  |
-
-
- 
-
- 
-
- 
-
-
-
-<a name="service_v1_response-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## service/v1/response.proto
-
-
-
-<a name="service-v1-Response"></a>
-
-### Response
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  | True if the request was carried out, false if an error occurred |
-| message | [string](#string) |  | Human-readable status or error summary. It may be empty when validation_violations contains the complete error details. |
-| main_modified_id | [string](#string) |  | Might contain an ID of the entity that mainly was modified (added, updated, deleted) |
-| status | [MutationStatus](#service-v1-MutationStatus) |  |  |
-| validation_violations | [ValidationViolation](#service-v1-ValidationViolation) | repeated |  |
-
-
-
-
-
-
-<a name="service-v1-ValidationViolation"></a>
-
-### ValidationViolation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| field_path | [string](#string) |  | Empty for message-level violations. Otherwise, a protobuf field path, using snake_case field names, for example &#34;items[0].name&#34;. |
-| message | [string](#string) |  |  |
-| rule_id | [string](#string) |  | Optional because validators are not guaranteed to supply a stable rule ID. |
-
-
-
-
-
- 
-
-
-<a name="service-v1-MutationStatus"></a>
-
-### MutationStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| MUTATION_STATUS_UNSPECIFIED | 0 |  |
-| MUTATION_STATUS_CREATED | 1 |  |
-| MUTATION_STATUS_UPDATED | 2 |  |
-| MUTATION_STATUS_UNCHANGED | 3 |  |
-| MUTATION_STATUS_DELETED | 4 |  |
 
 
  

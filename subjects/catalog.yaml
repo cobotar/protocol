@@ -64,7 +64,7 @@ entities:
   - name: marker
     messages: {entity: resources.v1.MarkerInstance, list: resources.v1.MarkerInstances, create: resources.v1.MarkerInstance, update: resources.v1.MarkerInstance}
   - name: model
-    messages: {entity: resources.v1.ModelArtifact, list: resources.v1.ModelArtifacts, create: resources.v1.ModelArtifact, update: resources.v1.ModelArtifact}
+    messages: {entity: resources.v1.ModelArtifact, list: resources.v1.ModelArtifacts, create: resources.v1.CreateModelArtifact, update: resources.v1.ModelArtifact}
   - name: part_definition
     messages: {entity: product.v1.PartDefinition, list: product.v1.PartDefinitions, create: product.v1.PartDefinition, update: product.v1.PartDefinition}
   - name: part_instance
@@ -208,13 +208,6 @@ route_families:
     replies: {success: service.v1.Response, failure: service.v1.Response}
     publishers: [web_cobotar]
     consumers: [authoring]
-    entity_overrides:
-      model:
-        publishers: [fusion360_exporter, web_cobotar]
-      part_definition:
-        publishers: [fusion360_exporter, web_cobotar]
-      product:
-        publishers: [fusion360_exporter, web_cobotar]
 
   - id: edit.entity.clone
     pattern: edit.{entity}.clone
@@ -610,6 +603,21 @@ routes:
       failure: service.v1.Response
     publishers: [web_cobotar]
     consumers: [authoring]
+
+  - id: edit.product.import
+    pattern: edit.product.import
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#78
+    interaction: request_reply
+    request: product.v1.ImportProduct
+    replies:
+      success: product.v1.ImportProductResult
+      failure: service.v1.Response
+    publishers: [fusion360_exporter]
+    consumers: [authoring]
+    description: Create or update a product with its models and parts in one unit of work, matching earlier imports by external reference.
 
   - id: edit.property_instance.update_value
     pattern: edit.property_instance.update_value

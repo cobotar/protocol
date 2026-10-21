@@ -5,15 +5,22 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file common/v1/external_references.proto.
  */
 export const file_common_v1_external_references: GenFile = /*@__PURE__*/
-  fileDesc("CiNjb21tb24vdjEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxIJY29tbW9uLnYxIlIKEUV4dGVybmFsUmVmZXJlbmNlEg4KBnN5c3RlbRgBIAEoCRITCgtleHRlcm5hbF9pZBgCIAEoCRIYCgN1cmwYAyABKAlCC7pICNgBAXIDiAEBQrIBCg1jb20uY29tbW9uLnYxQhdFeHRlcm5hbFJlZmVyZW5jZXNQcm90b1ABWjpnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate]);
+  fileDesc("CiNjb21tb24vdjEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxIJY29tbW9uLnYxIm0KEUV4dGVybmFsUmVmZXJlbmNlEhsKBnN5c3RlbRgBIAEoCUILukgIcgaI9AQBGEASIQoLZXh0ZXJuYWxfaWQYAiABKAlCDLpICXIHiPQEARiABBIYCgN1cmwYAyABKAlCC7pICNgBAXIDiAEBQrIBCg1jb20uY29tbW9uLnYxQhdFeHRlcm5hbFJlZmVyZW5jZXNQcm90b1ABWjpnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9uLlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29tbW9uOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
+ * ExternalReference identifies an entity in another system, e.g. the Fusion
+ * document and component a part was exported from. system names the other
+ * system (e.g. "fusion360") and external_id the entity there; both are
+ * required, since the pair is what an import matches earlier imports by
+ * (product.v1.ImportProduct).
+ *
  * @generated from message common.v1.ExternalReference
  */
 export type ExternalReference = Message<"common.v1.ExternalReference"> & {

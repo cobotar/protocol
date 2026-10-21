@@ -1,0 +1,133 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/external_references.proto";
+import "resources/v1/model.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/v2/messages/resources/v1";
+
+// UploadedObject is a file that a client put in a model object store bucket
+// (a NATS JetStream object store) before naming it in a request
+// (cobotar/protocol#31).
+//
+// Keys are content-addressed: <kind>/<sha256>/<filename>, where kind is
+// "models", "sidecars" or "thumbnails", sha256 is the lowercase hex SHA-256 of
+// the file's content, and filename is the file's original name. So that a key
+// can be saved as a file on any system, the file name is limited to ASCII
+// letters, digits, spaces, dots, underscores and hyphens, starts with a letter
+// or digit (no "." or ".."), ends with an extension, and isn't a name Windows
+// reserves (CON, PRN, AUX, NUL, COM1-9, LPT1-9, with any extension). Clients
+// replace other characters, e.g. with underscores. An object at a
+// key never changes: a client uploads a file only when no object has its key,
+// and a changed file gets another key, so a file that a model points at is
+// never overwritten. Files that belong together (an OBJ and the MTL its
+// mtllib names) keep their names, so they still find each other when they're
+// downloaded side by side.
+//
+// The backend checks that the object exists and that its content matches the
+// digest in the key, and fills in size, digest and content type.
+message UploadedObject {
+  string bucket = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.pattern = "^[A-Za-z0-9_-]+$"
+  ];
+  string object_key = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.pattern = "^(models|sidecars|thumbnails)/[a-f0-9]{64}/[A-Za-z0-9][A-Za-z0-9 ._-]{0,126}\\.[A-Za-z0-9]{1,16}$",
+    (buf.validate.field).cel = {
+      id: "uploaded_object.object_key.reserved_name"
+      message: "the file name must not be a name Windows reserves (CON, PRN, AUX, NUL, COM1-9, LPT1-9)"
+      expression: "!this.matches('(?i)/(con|prn|aux|nul|com[1-9]|lpt[1-9])([.][^/]*)?$')"
+    }
+  ];
+}
+
+// CreateModelArtifact creates a model from uploaded files (edit.model.add,
+// cobotar/protocol#10). It holds only what a person or an exporter knows. The
+// backend builds the ModelArtifact from it: the IDs, the runtime role of the
+// primary asset, the file locations with size, digest and content type, and
+// the content hash. A model with the same content hash is reused: the reply
+// says UNCHANGED and carries its ID.
+message CreateModelArtifact {
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.asset_kind"
+    message: "the asset must be uploaded under models/"
+    expression: "!has(this.asset) || this.asset.object_key.startsWith('models/')"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.sidecar_kind"
+    message: "sidecars must be uploaded under sidecars/"
+    expression: "this.sidecars.all(sidecar, sidecar.object_key.startsWith('sidecars/'))"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.thumbnail_kind"
+    message: "the thumbnail must be uploaded under thumbnails/"
+    expression: "!has(this.thumbnail) || this.thumbnail.object_key.startsWith('thumbnails/')"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.asset_extension"
+    message: "without a format, the asset's file extension must be one of .glb, .gltf, .obj, .fbx, .stl, .step, .stp, .iges, .igs, .usd, .usdz"
+    expression: "this.format != 0 || !has(this.asset) || this.asset.object_key.matches('(?i)[.](glb|gltf|obj|fbx|stl|step|stp|iges|igs|usd|usdz)$')"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.sidecar_extension"
+    message: "a sidecar's file extension must be one of .mtl, .basis, .ktx2, .zip"
+    expression: "this.sidecars.all(sidecar, sidecar.object_key.matches('(?i)[.](mtl|basis|ktx2|zip)$'))"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.thumbnail_extension"
+    message: "the thumbnail's file extension must be one of .png, .jpg, .jpeg, .webp, .svg"
+    expression: "!has(this.thumbnail) || this.thumbnail.object_key.matches('(?i)[.](png|jpe?g|webp|svg)$')"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.frame_required"
+    message: "unit, up_axis and forward_axis are required except for glTF and GLB assets"
+    expression: "this.unit != 0 || this.format in [1, 2] || (this.format == 0 && has(this.asset) && this.asset.object_key.matches('(?i)[.](glb|gltf)$'))"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.frame_together"
+    message: "unit, up_axis and forward_axis must be set together"
+    expression: "(this.unit == 0) == (this.up_axis == 0) && (this.up_axis == 0) == (this.forward_axis == 0)"
+  };
+  option (buf.validate.message).cel = {
+    id: "create_model_artifact.axes_different"
+    message: "up_axis and forward_axis must be different"
+    expression: "this.up_axis == 0 || this.up_axis != this.forward_axis"
+  };
+
+  string name = 1 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 2;
+  string description = 3;
+  ModelGroup group = 4 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string version = 5;
+  repeated common.v1.ExternalReference external_references = 6;
+
+  // The primary model file, uploaded under models/.
+  UploadedObject asset = 7 [(buf.validate.field).required = true];
+
+  // The asset's format. Unspecified: taken from the file extension (.glb,
+  // .gltf, .obj, .fbx, .stl, .step/.stp, .iges/.igs, .usd, .usdz).
+  ModelAssetFormat format = 8 [(buf.validate.field).enum.defined_only = true];
+
+  // The unit and axes of the asset's coordinates, set together. Required,
+  // except for glTF and GLB assets (by format, or by extension when format is
+  // unspecified), which default to the glTF convention: metres, +Y up, +Z
+  // forward.
+  ModelUnit unit = 9 [(buf.validate.field).enum.defined_only = true];
+  ModelAxis up_axis = 10 [(buf.validate.field).enum.defined_only = true];
+  ModelAxis forward_axis = 11 [(buf.validate.field).enum.defined_only = true];
+
+  // Files the asset needs, such as an OBJ's MTL, uploaded under sidecars/.
+  // Their format is taken from the file extension (.mtl, .basis, .ktx2, .zip).
+  repeated UploadedObject sidecars = 12;
+
+  // An optional preview image, uploaded under thumbnails/. Its format is
+  // taken from the file extension (.png, .jpg/.jpeg, .webp, .svg).
+  UploadedObject thumbnail = 13;
+}

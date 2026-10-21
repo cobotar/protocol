@@ -68,6 +68,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.process_recipe.add.task` | `edit.process_recipe.add.task` | — | active | staged | process.v1.AddChildTaskRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.process_recipe.remove.sequence` | `edit.process_recipe.remove.sequence` | — | active | staged | process.v1.RemoveSequenceRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.process_recipe.remove.task` | `edit.process_recipe.remove.task` | — | active | staged | process.v1.RemoveTaskRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.product.import` | `edit.product.import` | — | planned | staged | product.v1.ImportProduct → product.v1.ImportProductResult / service.v1.Response | fusion360_exporter | authoring |
 | `edit.property_instance.update_value` | `edit.property_instance.update_value` | — | active | staged | common.v1.PropertyInstanceUpdate → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
 | `event.device.heartbeat` | `event.device.heartbeat.{device_id}` | — | active | staged | resources.v1.DeviceHeartbeat | holo_cobotar | authoring |
 | `event.log.error` | `event.log.error.{service}` | — | active | staged | common.v1.LogRecord | authoring, robot_adapter, holo_cobotar | web_cobotar |
@@ -171,11 +172,11 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.marker.clone` | `edit.marker.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.marker.remove` | `edit.marker.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.marker.update` | `edit.marker.update` | `edit.entity.update` | active | staged | resources.v1.MarkerInstance → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.model.add` | `edit.model.add` | `edit.entity.add` | active | staged | resources.v1.ModelArtifact → service.v1.Response / service.v1.Response | fusion360_exporter, web_cobotar | authoring |
+| `edit.model.add` | `edit.model.add` | `edit.entity.add` | active | staged | resources.v1.CreateModelArtifact → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.model.clone` | `edit.model.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.model.remove` | `edit.model.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.model.update` | `edit.model.update` | `edit.entity.update` | active | staged | resources.v1.ModelArtifact → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.part_definition.add` | `edit.part_definition.add` | `edit.entity.add` | active | staged | product.v1.PartDefinition → service.v1.Response / service.v1.Response | fusion360_exporter, web_cobotar | authoring |
+| `edit.part_definition.add` | `edit.part_definition.add` | `edit.entity.add` | active | staged | product.v1.PartDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_definition.clone` | `edit.part_definition.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_definition.remove` | `edit.part_definition.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_definition.update` | `edit.part_definition.update` | `edit.entity.update` | active | staged | product.v1.PartDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
@@ -191,7 +192,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.process_recipe.clone` | `edit.process_recipe.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.process_recipe.remove` | `edit.process_recipe.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.process_recipe.update` | `edit.process_recipe.update` | `edit.entity.update` | active | staged | process.v1.ProcessRecipe → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.product.add` | `edit.product.add` | `edit.entity.add` | active | staged | product.v1.ProductDefinition → service.v1.Response / service.v1.Response | fusion360_exporter, web_cobotar | authoring |
+| `edit.product.add` | `edit.product.add` | `edit.entity.add` | active | staged | product.v1.ProductDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.product.clone` | `edit.product.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.product.remove` | `edit.product.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.product.update` | `edit.product.update` | `edit.entity.update` | active | staged | product.v1.ProductDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |

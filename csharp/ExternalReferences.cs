@@ -25,16 +25,17 @@ namespace Messages.Common.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNjb21tb24vdjEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxIJY29tbW9u",
-            "LnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8iawoRRXh0ZXJuYWxS",
-            "ZWZlcmVuY2USFgoGc3lzdGVtGAEgASgJUgZzeXN0ZW0SHwoLZXh0ZXJuYWxf",
-            "aWQYAiABKAlSCmV4dGVybmFsSWQSHQoDdXJsGAMgASgJQgu6SAhyA4gBAdgB",
-            "AVIDdXJsQrIBCg1jb20uY29tbW9uLnYxQhdFeHRlcm5hbFJlZmVyZW5jZXNQ",
-            "cm90b1ABWjpnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2Fn",
-            "ZXMvY29tbW9uL3YxO2NvbW1vbnYxogIDQ1hYqgISTWVzc2FnZXMuQ29tbW9u",
-            "LlYxygIJQ29tbW9uXFYx4gIVQ29tbW9uXFYxXEdQQk1ldGFkYXRh6gIKQ29t",
-            "bW9uOjpWMWIGcHJvdG8z"));
+            "LnYxGhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aK3ZhbGlkYXRpb24v",
+            "djEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8ihgEKEUV4dGVybmFs",
+            "UmVmZXJlbmNlEiMKBnN5c3RlbRgBIAEoCUILukgIcgYYQIj0BAFSBnN5c3Rl",
+            "bRItCgtleHRlcm5hbF9pZBgCIAEoCUIMukgJcgcYgASI9AQBUgpleHRlcm5h",
+            "bElkEh0KA3VybBgDIAEoCUILukgIcgOIAQHYAQFSA3VybEKyAQoNY29tLmNv",
+            "bW1vbi52MUIXRXh0ZXJuYWxSZWZlcmVuY2VzUHJvdG9QAVo6Z2l0aHViLmNv",
+            "bS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL2NvbW1vbi92MTtjb21t",
+            "b252MaICA0NYWKoCEk1lc3NhZ2VzLkNvbW1vbi5WMcoCCUNvbW1vblxWMeIC",
+            "FUNvbW1vblxWMVxHUEJNZXRhZGF0YeoCCkNvbW1vbjo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Common.V1.ExternalReference), global::Messages.Common.V1.ExternalReference.Parser, new[]{ "System", "ExternalId", "Url" }, null, null, null, null)
           }));
@@ -43,6 +44,13 @@ namespace Messages.Common.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// ExternalReference identifies an entity in another system, e.g. the Fusion
+  /// document and component a part was exported from. system names the other
+  /// system (e.g. "fusion360") and external_id the entity there; both are
+  /// required, since the pair is what an import matches earlier imports by
+  /// (product.v1.ImportProduct).
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ExternalReference : pb::IMessage<ExternalReference>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

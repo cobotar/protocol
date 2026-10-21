@@ -22,7 +22,7 @@ export const file_resources_v1_model: GenFile = /*@__PURE__*/
  * asset {
  * backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
  * bucket: "cobotar-assets"
- * object_key: "models/part-123.obj"
+ * object_key: "models/<sha256 of the file>/bracket.obj"
  * filename: "bracket.obj"
  * content_type: "model/obj"
  * size_bytes: 123456
@@ -31,7 +31,7 @@ export const file_resources_v1_model: GenFile = /*@__PURE__*/
  * thumbnail {
  * backend: MODEL_STORAGE_BACKEND_NATS_OBJECT_STORE
  * bucket: "cobotar-assets"
- * object_key: "thumbnails/part-123.png"
+ * object_key: "thumbnails/<sha256 of the file>/bracket.png"
  * filename: "bracket.png"
  * content_type: "image/png"
  * }

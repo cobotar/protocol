@@ -8,6 +8,7 @@ package commonv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -22,6 +23,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// ExternalReference identifies an entity in another system, e.g. the Fusion
+// document and component a part was exported from. system names the other
+// system (e.g. "fusion360") and external_id the entity there; both are
+// required, since the pair is what an import matches earlier imports by
+// (product.v1.ImportProduct).
 type ExternalReference struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	System        string                 `protobuf:"bytes,1,opt,name=system,proto3" json:"system,omitempty"`
@@ -86,10 +92,10 @@ var File_common_v1_external_references_proto protoreflect.FileDescriptor
 
 const file_common_v1_external_references_proto_rawDesc = "" +
 	"\n" +
-	"#common/v1/external_references.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\"k\n" +
-	"\x11ExternalReference\x12\x16\n" +
-	"\x06system\x18\x01 \x01(\tR\x06system\x12\x1f\n" +
-	"\vexternal_id\x18\x02 \x01(\tR\n" +
+	"#common/v1/external_references.proto\x12\tcommon.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x86\x01\n" +
+	"\x11ExternalReference\x12#\n" +
+	"\x06system\x18\x01 \x01(\tB\v\xbaH\br\x06\x88\xf4\x04\x01\x18@R\x06system\x12-\n" +
+	"\vexternal_id\x18\x02 \x01(\tB\f\xbaH\tr\a\x88\xf4\x04\x01\x18\x80\x04R\n" +
 	"externalId\x12\x1d\n" +
 	"\x03url\x18\x03 \x01(\tB\v\xbaH\b\xd8\x01\x01r\x03\x88\x01\x01R\x03urlB\xb2\x01\n" +
 	"\rcom.common.v1B\x17ExternalReferencesProtoP\x01Z:github.com/cobotar/protocol/v2/messages/common/v1;commonv1\xa2\x02\x03CXX\xaa\x02\x12Messages.Common.V1\xca\x02\tCommon\\V1\xe2\x02\x15Common\\V1\\GPBMetadata\xea\x02\n" +
