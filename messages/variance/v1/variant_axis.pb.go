@@ -91,13 +91,22 @@ func (x *VariantOption) GetDescription() string {
 	return ""
 }
 
+// VariantAxis is a dimension in which a product varies, e.g. connectivity,
+// memory or the colour of the case. An axis is either selected (chosen when a
+// process is loaded) or derived (has a derivation): its option follows from
+// the selected axes of its group, so it's never asked of the operator. Both
+// kinds can be used in applicability.
 type VariantAxis struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Options       []*VariantOption       `protobuf:"bytes,5,rep,name=options,proto3" json:"options,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Options     []*VariantOption       `protobuf:"bytes,5,rep,name=options,proto3" json:"options,omitempty"`
+	// Set for a derived axis, e.g. the main PCB, which follows from connectivity
+	// and memory. A derived axis has to be in a variant group, and its
+	// conditions only name selected axes of that group.
+	Derivation    *VariantDerivation `protobuf:"bytes,6,opt,name=derivation,proto3" json:"derivation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,16 +176,125 @@ func (x *VariantAxis) GetOptions() []*VariantOption {
 	return nil
 }
 
+func (x *VariantAxis) GetDerivation() *VariantDerivation {
+	if x != nil {
+		return x.Derivation
+	}
+	return nil
+}
+
+// VariantDerivation gives, for each option of a derived axis, the condition
+// under which it applies. For every valid combination of the group's selected
+// axes exactly one condition holds; the backend checks this when the product
+// is saved.
+type VariantDerivation struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Options       []*DerivedVariantOption `protobuf:"bytes,1,rep,name=options,proto3" json:"options,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VariantDerivation) Reset() {
+	*x = VariantDerivation{}
+	mi := &file_variance_v1_variant_axis_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VariantDerivation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VariantDerivation) ProtoMessage() {}
+
+func (x *VariantDerivation) ProtoReflect() protoreflect.Message {
+	mi := &file_variance_v1_variant_axis_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VariantDerivation.ProtoReflect.Descriptor instead.
+func (*VariantDerivation) Descriptor() ([]byte, []int) {
+	return file_variance_v1_variant_axis_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *VariantDerivation) GetOptions() []*DerivedVariantOption {
+	if x != nil {
+		return x.Options
+	}
+	return nil
+}
+
+type DerivedVariantOption struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	OptionId string                 `protobuf:"bytes,1,opt,name=option_id,json=optionId,proto3" json:"option_id,omitempty"`
+	// The option applies when this condition holds, e.g. "main_pcb: slots_2"
+	// when "connectivity: wifi_bt" and "memory: 32gb". It can't be empty.
+	When          *VariantCondition `protobuf:"bytes,2,opt,name=when,proto3" json:"when,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DerivedVariantOption) Reset() {
+	*x = DerivedVariantOption{}
+	mi := &file_variance_v1_variant_axis_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DerivedVariantOption) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DerivedVariantOption) ProtoMessage() {}
+
+func (x *DerivedVariantOption) ProtoReflect() protoreflect.Message {
+	mi := &file_variance_v1_variant_axis_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DerivedVariantOption.ProtoReflect.Descriptor instead.
+func (*DerivedVariantOption) Descriptor() ([]byte, []int) {
+	return file_variance_v1_variant_axis_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *DerivedVariantOption) GetOptionId() string {
+	if x != nil {
+		return x.OptionId
+	}
+	return ""
+}
+
+func (x *DerivedVariantOption) GetWhen() *VariantCondition {
+	if x != nil {
+		return x.When
+	}
+	return nil
+}
+
 var File_variance_v1_variant_axis_proto protoreflect.FileDescriptor
 
 const file_variance_v1_variant_axis_proto_rawDesc = "" +
 	"\n" +
-	"\x1evariance/v1/variant_axis.proto\x12\vvariance.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x85\x01\n" +
+	"\x1evariance/v1/variant_axis.proto\x12\vvariance.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\x85\x01\n" +
 	"\rVariantOption\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x02id\x12 \n" +
 	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
-	"\vdescription\x18\x04 \x01(\tR\vdescription\"\xfc\x04\n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\"\xdf\t\n" +
 	"\vVariantAxis\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x02id\x12 \n" +
 	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -185,7 +303,19 @@ const file_variance_v1_variant_axis_proto_rawDesc = "" +
 	"\aoptions\x18\x05 \x03(\v2\x1a.variance.v1.VariantOptionB\xbf\x03\xbaH\xbb\x03\xba\x01c\n" +
 	"\x1evariant_axis.options.min_items\x12/a variant axis must define at least two options\x1a\x10this.size() >= 2\xba\x01y\n" +
 	"\x1fvariant_axis.options.unique_ids\x120variant option ids must be unique within an axis\x1a$this.map(option, option.id).unique()\xba\x01\xd5\x01\n" +
-	",variant_axis.options.unique_normalized_names\x12ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\x1a:this.map(option, option.name.trim().lowerAscii()).unique()R\aoptionsB\xb9\x01\n" +
+	",variant_axis.options.unique_normalized_names\x12ivariant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case\x1a:this.map(option, option.name.trim().lowerAscii()).unique()R\aoptions\x12>\n" +
+	"\n" +
+	"derivation\x18\x06 \x01(\v2\x1e.variance.v1.VariantDerivationR\n" +
+	"derivation:\xa0\x04\xbaH\x9c\x04\x1a\xbb\x02\n" +
+	"&variant_axis.derivation.covers_options\x12Ya derivation must give a condition for every option of the axis, and only for its options\x1a\xb5\x01!has(this.derivation) || (this.derivation.options.size() == this.options.size() && this.derivation.options.all(derived, this.options.exists(option, option.id == derived.option_id)))\x1a\xdb\x01\n" +
+	" variant_axis.derivation.not_self\x126a derived axis's conditions can't name the axis itself\x1a\x7f!has(this.derivation) || this.derivation.options.all(derived, derived.when.all_of.all(condition, condition.axis_id != this.id))\"\xee\x01\n" +
+	"\x11VariantDerivation\x12\xd8\x01\n" +
+	"\aoptions\x18\x01 \x03(\v2!.variance.v1.DerivedVariantOptionB\x9a\x01\xbaH\x96\x01\xba\x01\x92\x01\n" +
+	",variant_derivation.options.unique_option_ids\x123a derivation can give only one condition per option\x1a-this.map(derived, derived.option_id).unique()R\aoptions\"\xe3\x01\n" +
+	"\x14DerivedVariantOption\x12)\n" +
+	"\toption_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\boptionId\x12\x9f\x01\n" +
+	"\x04when\x18\x02 \x01(\v2\x1d.variance.v1.VariantConditionBl\xbaHi\xba\x01c\n" +
+	"%derived_variant_option.when.not_empty\x12\"a derived option needs a condition\x1a\x16this.all_of.size() > 0\xc8\x01\x01R\x04whenB\xb9\x01\n" +
 	"\x0fcom.variance.v1B\x10VariantAxisProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (
@@ -200,18 +330,24 @@ func file_variance_v1_variant_axis_proto_rawDescGZIP() []byte {
 	return file_variance_v1_variant_axis_proto_rawDescData
 }
 
-var file_variance_v1_variant_axis_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_variance_v1_variant_axis_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_variance_v1_variant_axis_proto_goTypes = []any{
-	(*VariantOption)(nil), // 0: variance.v1.VariantOption
-	(*VariantAxis)(nil),   // 1: variance.v1.VariantAxis
+	(*VariantOption)(nil),        // 0: variance.v1.VariantOption
+	(*VariantAxis)(nil),          // 1: variance.v1.VariantAxis
+	(*VariantDerivation)(nil),    // 2: variance.v1.VariantDerivation
+	(*DerivedVariantOption)(nil), // 3: variance.v1.DerivedVariantOption
+	(*VariantCondition)(nil),     // 4: variance.v1.VariantCondition
 }
 var file_variance_v1_variant_axis_proto_depIdxs = []int32{
 	0, // 0: variance.v1.VariantAxis.options:type_name -> variance.v1.VariantOption
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 1: variance.v1.VariantAxis.derivation:type_name -> variance.v1.VariantDerivation
+	3, // 2: variance.v1.VariantDerivation.options:type_name -> variance.v1.DerivedVariantOption
+	4, // 3: variance.v1.DerivedVariantOption.when:type_name -> variance.v1.VariantCondition
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_variance_v1_variant_axis_proto_init() }
@@ -219,13 +355,14 @@ func file_variance_v1_variant_axis_proto_init() {
 	if File_variance_v1_variant_axis_proto != nil {
 		return
 	}
+	file_variance_v1_variant_condition_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_variance_v1_variant_axis_proto_rawDesc), len(file_variance_v1_variant_axis_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

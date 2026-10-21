@@ -5,7 +5,7 @@ import "buf/validate/validate.proto";
 import "geometry/v1/pose.proto";
 import "geometry/v1/vector3.proto";
 import "validation/v1/predefined_string_rules.proto";
-import "variance/v1/variant_rule.proto";
+import "variance/v1/variant_condition.proto";
 
 option csharp_namespace = "Messages.Product.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
@@ -57,7 +57,11 @@ message AssemblyNode {
   geometry.v1.Vector3 insertion_offset_hint = 12; // Offset from final pose to pre-insertion pose, in mm
   geometry.v1.Vector3 approach_offset_hint = 13; // Offset from final pose to preferred approach pose, in mm
   bool optional = 14;
-  repeated variance.v1.VariantRule applicability = 15; // Applies if any rule matches. Empty means always applicable.
+  // The node applies when this condition and every ancestor's hold, so it only
+  // says what the ancestors don't. Empty means it applies wherever its parent
+  // does. A node's condition names axes of one variant group only, so groups
+  // stay independent.
+  variance.v1.VariantCondition applicability = 15;
   // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
 
   option (buf.validate.message).cel = {

@@ -1,7 +1,7 @@
 from buf.validate import validate_pb2 as _validate_pb2
 from geometry.v1 import local_target_pb2 as _local_target_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
-from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
+from variance.v1 import variant_condition_pb2 as _variant_condition_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -51,8 +51,8 @@ class SequenceDefinition(_message.Message):
     local_target: _local_target_pb2.LocalTarget
     optional: bool
     can_bulk_complete: bool
-    applicability: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., parent_sequence_id: _Optional[str] = ..., operator: _Optional[_Union[SequenceOperator, str]] = ..., child_sequence_ids: _Optional[_Iterable[str]] = ..., child_task_ids: _Optional[_Iterable[str]] = ..., local_target: _Optional[_Union[_local_target_pb2.LocalTarget, _Mapping]] = ..., optional: bool = ..., can_bulk_complete: bool = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ...) -> None: ...
+    applicability: _variant_condition_pb2.VariantCondition
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., sequence_number: _Optional[int] = ..., parent_sequence_id: _Optional[str] = ..., operator: _Optional[_Union[SequenceOperator, str]] = ..., child_sequence_ids: _Optional[_Iterable[str]] = ..., child_task_ids: _Optional[_Iterable[str]] = ..., local_target: _Optional[_Union[_local_target_pb2.LocalTarget, _Mapping]] = ..., optional: bool = ..., can_bulk_complete: bool = ..., applicability: _Optional[_Union[_variant_condition_pb2.VariantCondition, _Mapping]] = ...) -> None: ...
 
 class SequenceDefinitions(_message.Message):
     __slots__ = ("items",)

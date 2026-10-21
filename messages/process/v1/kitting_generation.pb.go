@@ -532,8 +532,9 @@ type DraftKittingProcessRecipeGenerateRequest struct {
 	// Optional human-readable description.
 	RecipeDescription     string                `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
 	VariantGenerationMode VariantGenerationMode `protobuf:"varint,21,opt,name=variant_generation_mode,json=variantGenerationMode,proto3,enum=process.v1.VariantGenerationMode" json:"variant_generation_mode,omitempty"`
-	// Required when variant_generation_mode is SELECTED_CONFIGURATION.
-	// At most one selection is allowed per axis.
+	// Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds
+	// the selected axes only; the backend adds the derived ones and refuses an
+	// invalid configuration, as for process loads.
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// Optional subtree to kit. If empty, generation starts at the product root.
 	RootNodeId string `protobuf:"bytes,7,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
@@ -764,7 +765,7 @@ const file_process_v1_kitting_generation_proto_rawDesc = "" +
 	"\x06source\x18\x04 \x01(\v2\x1b.process.v1.ContainerTargetR\x06source\x12=\n" +
 	"\vdestination\x18\x05 \x01(\v2\x1b.process.v1.ContainerTargetR\vdestination:-\xbaH*\"(\n" +
 	"\x10assembly_node_id\n" +
-	"\x12part_definition_id\x10\x01\"\x9a\f\n" +
+	"\x12part_definition_id\x10\x01\"\xc5\x0e\n" +
 	"(DraftKittingProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12&\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
@@ -792,7 +793,8 @@ const file_process_v1_kitting_generation_proto_rawDesc = "" +
 	"\x13excluded_part_types\x18\x12 \x03(\x0e2\x14.product.v1.PartTypeB\r\xbaH\n" +
 	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\x11excludedPartTypes\x12W\n" +
 	"\x10aggregation_mode\x18\x13 \x01(\x0e2\".process.v1.KittingAggregationModeB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0faggregationMode\x12W\n" +
-	"\x10task_granularity\x18\x14 \x01(\x0e2\".process.v1.KittingTaskGranularityB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0ftaskGranularityB\x18\n" +
+	"\x10task_granularity\x18\x14 \x01(\x0e2\".process.v1.KittingTaskGranularityB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0ftaskGranularity:\xa8\x02\xbaH\xa4\x02\x1a\xa1\x02\n" +
+	"cdraft_kitting_process_recipe_generate_request.selected_configuration_requires_variant_configuration\x12cVARIANT_GENERATION_MODE_SELECTED_CONFIGURATION (2) requires a variant_configuration with selections\x1aUthis.variant_generation_mode != 2 || this.variant_configuration.selections.size() > 0B\x18\n" +
 	"\x16_product_units_per_kit*\x80\x01\n" +
 	"\x0eKittingBomMode\x12 \n" +
 	"\x1cKITTING_BOM_MODE_UNSPECIFIED\x10\x00\x12\x1f\n" +

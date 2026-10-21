@@ -30,7 +30,7 @@ namespace Messages.Runtime.V1 {
             "bWUvdjEvYWN0b3JfYXNzaWdubWVudC5wcm90bxordmFsaWRhdGlvbi92MS9w",
             "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxondmFyaWFuY2UvdjEvdmFy",
             "aWFudF9jb25maWd1cmF0aW9uLnByb3RvIjYKDFJ1blBhcmFtZXRlchIQCgNr",
-            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUiiQkKClByb2Nl",
+            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUizgkKClByb2Nl",
             "c3NSdW4SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
             "aWNvbhgDIAEoCVIEaWNvbhI4ChFwcm9jZXNzX3JlY2lwZV9pZBgEIAEoCUIM",
             "ukgJcgSg8gQByAEBUg9wcm9jZXNzUmVjaXBlSWQSGQoIb3JkZXJfaWQYBSAB",
@@ -54,24 +54,26 @@ namespace Messages.Runtime.V1 {
             "CHJldmlzaW9uEjYKF3Byb2Nlc3NfcmVjaXBlX3JldmlzaW9uGBQgASgEUhVw",
             "cm9jZXNzUmVjaXBlUmV2aXNpb24SbwoZcGFydF9kZWZpbml0aW9uX3Jldmlz",
             "aW9ucxgVIAMoCzIzLnJ1bnRpbWUudjEuUHJvY2Vzc1J1bi5QYXJ0RGVmaW5p",
-            "dGlvblJldmlzaW9uc0VudHJ5UhdwYXJ0RGVmaW5pdGlvblJldmlzaW9ucxpK",
-            "ChxQYXJ0RGVmaW5pdGlvblJldmlzaW9uc0VudHJ5EhAKA2tleRgBIAEoCVID",
-            "a2V5EhQKBXZhbHVlGAIgASgEUgV2YWx1ZToCOAEiOwoLUHJvY2Vzc1J1bnMS",
-            "LAoFaXRlbXMYASADKAsyFi5ydW50aW1lLnYxLlByb2Nlc3NSdW5SBWl0ZW1z",
-            "Ks0BCg9Qcm9jZXNzUnVuU3RhdGUSIQodUFJPQ0VTU19SVU5fU1RBVEVfVU5T",
-            "UEVDSUZJRUQQABIcChhQUk9DRVNTX1JVTl9TVEFURV9RVUVVRUQQARIbChdQ",
-            "Uk9DRVNTX1JVTl9TVEFURV9SRUFEWRACEiEKHVBST0NFU1NfUlVOX1NUQVRF",
-            "X0lOX1BST0dSRVNTEAMSGgoWUFJPQ0VTU19SVU5fU1RBVEVfRE9ORRAEEh0K",
-            "GVBST0NFU1NfUlVOX1NUQVRFX0FCT1JURUQQBUKxAQoOY29tLnJ1bnRpbWUu",
-            "djFCD1Byb2Nlc3NSdW5Qcm90b1ABWjxnaXRodWIuY29tL2NvYm90YXIvcHJv",
-            "dG9jb2wvdjIvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGiAgNSWFiq",
-            "AhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1bnRpbWVc",
-            "VjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z"));
+            "dGlvblJldmlzaW9uc0VudHJ5UhdwYXJ0RGVmaW5pdGlvblJldmlzaW9ucxJD",
+            "Ch5uYW1lZF92YXJpYW50X2NvbmZpZ3VyYXRpb25faWQYFiABKAlSG25hbWVk",
+            "VmFyaWFudENvbmZpZ3VyYXRpb25JZBpKChxQYXJ0RGVmaW5pdGlvblJldmlz",
+            "aW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgEUgV2",
+            "YWx1ZToCOAEiOwoLUHJvY2Vzc1J1bnMSLAoFaXRlbXMYASADKAsyFi5ydW50",
+            "aW1lLnYxLlByb2Nlc3NSdW5SBWl0ZW1zKs0BCg9Qcm9jZXNzUnVuU3RhdGUS",
+            "IQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhQUk9DRVNT",
+            "X1JVTl9TVEFURV9RVUVVRUQQARIbChdQUk9DRVNTX1JVTl9TVEFURV9SRUFE",
+            "WRACEiEKHVBST0NFU1NfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSGgoWUFJP",
+            "Q0VTU19SVU5fU1RBVEVfRE9ORRAEEh0KGVBST0NFU1NfUlVOX1NUQVRFX0FC",
+            "T1JURUQQBUKxAQoOY29tLnJ1bnRpbWUudjFCD1Byb2Nlc3NSdW5Qcm90b1AB",
+            "WjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcnVu",
+            "dGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYx",
+            "ygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50",
+            "aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.RunParameter), global::Messages.Runtime.V1.RunParameter.Parser, new[]{ "Key", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "Name", "Icon", "ProcessRecipeId", "OrderId", "StationId", "CellId", "LineId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters", "Revision", "ProcessRecipeRevision", "PartDefinitionRevisions" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRun), global::Messages.Runtime.V1.ProcessRun.Parser, new[]{ "Id", "Name", "Icon", "ProcessRecipeId", "OrderId", "StationId", "CellId", "LineId", "Frame", "RootSequenceRunId", "SequenceRunIds", "TaskRunIds", "State", "InitiatedAt", "EndedAt", "Assignments", "VariantConfiguration", "Parameters", "Revision", "ProcessRecipeRevision", "PartDefinitionRevisions", "NamedVariantConfigurationId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRuns), global::Messages.Runtime.V1.ProcessRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -404,6 +406,7 @@ namespace Messages.Runtime.V1 {
       revision_ = other.revision_;
       processRecipeRevision_ = other.processRecipeRevision_;
       partDefinitionRevisions_ = other.partDefinitionRevisions_.Clone();
+      namedVariantConfigurationId_ = other.namedVariantConfigurationId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -608,6 +611,11 @@ namespace Messages.Runtime.V1 {
     /// <summary>Field number for the "variant_configuration" field.</summary>
     public const int VariantConfigurationFieldNumber = 17;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
+    /// <summary>
+    /// The run's full variant configuration: the selected axes and the derived
+    /// ones the backend resolved from them (cobotar/protocol#32). Set by the
+    /// backend.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Variance.V1.VariantConfiguration VariantConfiguration {
@@ -676,6 +684,22 @@ namespace Messages.Runtime.V1 {
       get { return partDefinitionRevisions_; }
     }
 
+    /// <summary>Field number for the "named_variant_configuration_id" field.</summary>
+    public const int NamedVariantConfigurationIdFieldNumber = 22;
+    private string namedVariantConfigurationId_ = "";
+    /// <summary>
+    /// The product's named configuration the run was loaded with, if the load
+    /// named one. Set by the backend.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NamedVariantConfigurationId {
+      get { return namedVariantConfigurationId_; }
+      set {
+        namedVariantConfigurationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -712,6 +736,7 @@ namespace Messages.Runtime.V1 {
       if (Revision != other.Revision) return false;
       if (ProcessRecipeRevision != other.ProcessRecipeRevision) return false;
       if (!PartDefinitionRevisions.Equals(other.PartDefinitionRevisions)) return false;
+      if (NamedVariantConfigurationId != other.NamedVariantConfigurationId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -740,6 +765,7 @@ namespace Messages.Runtime.V1 {
       if (Revision != 0UL) hash ^= Revision.GetHashCode();
       if (ProcessRecipeRevision != 0UL) hash ^= ProcessRecipeRevision.GetHashCode();
       hash ^= PartDefinitionRevisions.GetHashCode();
+      if (NamedVariantConfigurationId.Length != 0) hash ^= NamedVariantConfigurationId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -827,6 +853,10 @@ namespace Messages.Runtime.V1 {
         output.WriteUInt64(ProcessRecipeRevision);
       }
       partDefinitionRevisions_.WriteTo(output, _map_partDefinitionRevisions_codec);
+      if (NamedVariantConfigurationId.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(NamedVariantConfigurationId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -906,6 +936,10 @@ namespace Messages.Runtime.V1 {
         output.WriteUInt64(ProcessRecipeRevision);
       }
       partDefinitionRevisions_.WriteTo(ref output, _map_partDefinitionRevisions_codec);
+      if (NamedVariantConfigurationId.Length != 0) {
+        output.WriteRawTag(178, 1);
+        output.WriteString(NamedVariantConfigurationId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -969,6 +1003,9 @@ namespace Messages.Runtime.V1 {
         size += 2 + pb::CodedOutputStream.ComputeUInt64Size(ProcessRecipeRevision);
       }
       size += partDefinitionRevisions_.CalculateSize(_map_partDefinitionRevisions_codec);
+      if (NamedVariantConfigurationId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(NamedVariantConfigurationId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1046,6 +1083,9 @@ namespace Messages.Runtime.V1 {
         ProcessRecipeRevision = other.ProcessRecipeRevision;
       }
       partDefinitionRevisions_.MergeFrom(other.partDefinitionRevisions_);
+      if (other.NamedVariantConfigurationId.Length != 0) {
+        NamedVariantConfigurationId = other.NamedVariantConfigurationId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1161,6 +1201,10 @@ namespace Messages.Runtime.V1 {
             partDefinitionRevisions_.AddEntriesFrom(input, _map_partDefinitionRevisions_codec);
             break;
           }
+          case 178: {
+            NamedVariantConfigurationId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1274,6 +1318,10 @@ namespace Messages.Runtime.V1 {
           }
           case 170: {
             partDefinitionRevisions_.AddEntriesFrom(ref input, _map_partDefinitionRevisions_codec);
+            break;
+          }
+          case 178: {
+            NamedVariantConfigurationId = input.ReadString();
             break;
           }
         }

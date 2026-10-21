@@ -14,7 +14,7 @@ import "geometry/v1/vector3.proto";
 import "resources/v1/asset_definition.proto";
 import "resources/v1/container_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
-import "variance/v1/variant_rule.proto";
+import "variance/v1/variant_condition.proto";
 
 option csharp_namespace = "Messages.Process.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/process/v1";
@@ -176,8 +176,17 @@ message TaskExecutionPolicy {
 // semantically the same operation. Use TaskDefinition.applicability and separate
 // task definitions when a variant requires a materially different operation,
 // tool, skill, safety classification, or sequence structure.
+//
+// The first override whose condition holds applies; later ones are ignored.
 message TaskOverride {
-  repeated variance.v1.VariantRule when = 1;
+  variance.v1.VariantCondition when = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).cel = {
+      id: "task_override.when.not_empty"
+      message: "a task override needs a condition"
+      expression: "this.all_of.size() > 0"
+    }
+  ];
 
   string instruction_text = 2; // Variant-specific instruction text.
 
@@ -248,7 +257,10 @@ message TaskDefinition {
   TaskEndpoint source = 17; // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
   TaskEndpoint destination = 18; // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
   QuantityRequirement quantity = 19; // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
-  repeated variance.v1.VariantRule applicability = 21; // Task applies if any rule matches. Empty means always applicable.
+  // The task applies when this condition, every ancestor sequence's and the
+  // recipe's include condition hold. Empty means it applies wherever its
+  // sequence does. Its axes are axes of the recipe's product.
+  variance.v1.VariantCondition applicability = 21;
   repeated TaskOverride overrides = 22; // adjust small authoring/runtime details when the task is otherwise the same task.
   repeated TaskConstraint constraints = 23 [(buf.validate.field).cel = {
     id: "task_definition.constraints.unique_ids"

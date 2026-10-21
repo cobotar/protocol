@@ -30,39 +30,42 @@ namespace Messages.Runtime.V1 {
             "dG8aHHJ1bnRpbWUvdjEvcHJvY2Vzc19ydW4ucHJvdG8aJHJ1bnRpbWUvdjEv",
             "cnVudGltZV9yZXN0cmljdGlvbi5wcm90bxordmFsaWRhdGlvbi92MS9wcmVk",
             "ZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxondmFyaWFuY2UvdjEvdmFyaWFu",
-            "dF9jb25maWd1cmF0aW9uLnByb3RvIoIGChJQcm9jZXNzTG9hZFJlcXVlc3QS",
+            "dF9jb25maWd1cmF0aW9uLnByb3RvIuEGChJQcm9jZXNzTG9hZFJlcXVlc3QS",
             "OAoRcHJvY2Vzc19yZWNpcGVfaWQYASABKAlCDLpICXIEoPIEAcgBAVIPcHJv",
             "Y2Vzc1JlY2lwZUlkEjIKDnRhcmdldF9saW5lX2lkGAIgASgJQgy6SAlyBMDy",
             "BAHIAQFSDHRhcmdldExpbmVJZBIvCg50YXJnZXRfY2VsbF9pZBgDIAEoCUIJ",
             "ukgGcgS48gQBUgx0YXJnZXRDZWxsSWQSNQoRdGFyZ2V0X3N0YXRpb25faWQY",
-            "BCABKAlCCbpIBnIE+PEEAVIPdGFyZ2V0U3RhdGlvbklkElYKFXZhcmlhbnRf",
+            "BCABKAlCCbpIBnIE+PEEAVIPdGFyZ2V0U3RhdGlvbklkElgKFXZhcmlhbnRf",
             "Y29uZmlndXJhdGlvbhgFIAEoCzIhLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25m",
-            "aWd1cmF0aW9uUhR2YXJpYW50Q29uZmlndXJhdGlvbhIXCgdkcnlfcnVuGAYg",
-            "ASgIUgZkcnlSdW4SKgoRcXVldWVfaWZfb2NjdXBpZWQYByABKAhSD3F1ZXVl",
-            "SWZPY2N1cGllZBJFCghzdHJhdGVneRgIIAEoDjIfLnJ1bnRpbWUudjEuUHJv",
-            "Y2Vzc0xvYWRTdHJhdGVneUIIukgFggECEAFSCHN0cmF0ZWd5EhkKCG9yZGVy",
-            "X2lkGAkgASgJUgdvcmRlcklkEj0KCnBhcmFtZXRlcnMYCiADKAsyHS5jb21t",
-            "b24udjEuS2V5VmFsdWVDb25zdHJhaW50UgpwYXJhbWV0ZXJzElkKE2FsbG9j",
-            "YXRpb25fc3RyYXRlZ3kYCyABKA4yHi5ydW50aW1lLnYxLkFsbG9jYXRpb25T",
-            "dHJhdGVneUIIukgFggECEAFSEmFsbG9jYXRpb25TdHJhdGVneRIyCg90YXJn",
-            "ZXRfZW1wbG95ZWUYDCABKAlCCbpIBnIE2OswAVIOdGFyZ2V0RW1wbG95ZWUS",
-            "SQoYZG9uZV90YXNrX2RlZmluaXRpb25faWRzGA0gAygJQhC6SA2SAQoYASIG",
-            "cgSw8gQBUhVkb25lVGFza0RlZmluaXRpb25JZHMinQUKD1Byb2Nlc3NSdW5J",
-            "c3N1ZRI4CgdmYWlsdXJlGAEgASgOMh4ucnVudGltZS52MS5Qcm9jZXNzTG9h",
-            "ZEZhaWx1cmVSB2ZhaWx1cmUSGAoHbWVzc2FnZRgCIAEoCVIHbWVzc2FnZRI/",
-            "CghzZXZlcml0eRgDIAEoDjIjLnJ1bnRpbWUudjEuUHJvY2Vzc1J1bklzc3Vl",
-            "U2V2ZXJpdHlSCHNldmVyaXR5EioKEXByb2Nlc3NfcmVjaXBlX2lkGAQgASgJ",
-            "Ug9wcm9jZXNzUmVjaXBlSWQSNAoWc2VxdWVuY2VfZGVmaW5pdGlvbl9pZBgF",
-            "IAEoCVIUc2VxdWVuY2VEZWZpbml0aW9uSWQSLAoSdGFza19kZWZpbml0aW9u",
-            "X2lkGAYgASgJUhB0YXNrRGVmaW5pdGlvbklkEiwKEnJlcXVpcmVkX3Rvb2xf",
-            "cm9sZRgHIAEoCVIQcmVxdWlyZWRUb29sUm9sZRIqChFyZXF1aXJlZF9za2ls",
-            "bF9pZBgIIAEoCVIPcmVxdWlyZWRTa2lsbElkEjIKFWZpeHR1cmVfZGVmaW5p",
-            "dGlvbl9pZBgJIAEoCVITZml4dHVyZURlZmluaXRpb25JZBIXCgdjZWxsX2lk",
-            "GAogASgJUgZjZWxsSWQSHQoKc3RhdGlvbl9pZBgLIAEoCVIJc3RhdGlvbklk",
-            "EhkKCGFjdG9yX2lkGAwgASgJUgdhY3RvcklkEh8KC3Jlc291cmNlX2lkGA0g",
-            "ASgJUgpyZXNvdXJjZUlkEiAKC3JlbWVkaWF0aW9uGA4gASgJUgtyZW1lZGlh",
-            "dGlvbhJBCgppbXBvcnRhbmNlGA8gASgOMiEucnVudGltZS52MS5SZXF1aXJl",
-            "bWVudEltcG9ydGFuY2VSCmltcG9ydGFuY2Ui2gEKGENhbmRpZGF0ZUFjdG9y",
+            "aWd1cmF0aW9uSABSFHZhcmlhbnRDb25maWd1cmF0aW9uElAKHm5hbWVkX3Zh",
+            "cmlhbnRfY29uZmlndXJhdGlvbl9pZBgOIAEoCUIJukgGcgTg8wQBSABSG25h",
+            "bWVkVmFyaWFudENvbmZpZ3VyYXRpb25JZBIXCgdkcnlfcnVuGAYgASgIUgZk",
+            "cnlSdW4SKgoRcXVldWVfaWZfb2NjdXBpZWQYByABKAhSD3F1ZXVlSWZPY2N1",
+            "cGllZBJFCghzdHJhdGVneRgIIAEoDjIfLnJ1bnRpbWUudjEuUHJvY2Vzc0xv",
+            "YWRTdHJhdGVneUIIukgFggECEAFSCHN0cmF0ZWd5EhkKCG9yZGVyX2lkGAkg",
+            "ASgJUgdvcmRlcklkEj0KCnBhcmFtZXRlcnMYCiADKAsyHS5jb21tb24udjEu",
+            "S2V5VmFsdWVDb25zdHJhaW50UgpwYXJhbWV0ZXJzElkKE2FsbG9jYXRpb25f",
+            "c3RyYXRlZ3kYCyABKA4yHi5ydW50aW1lLnYxLkFsbG9jYXRpb25TdHJhdGVn",
+            "eUIIukgFggECEAFSEmFsbG9jYXRpb25TdHJhdGVneRIyCg90YXJnZXRfZW1w",
+            "bG95ZWUYDCABKAlCCbpIBnIE2OswAVIOdGFyZ2V0RW1wbG95ZWUSSQoYZG9u",
+            "ZV90YXNrX2RlZmluaXRpb25faWRzGA0gAygJQhC6SA2SAQoYASIGcgSw8gQB",
+            "UhVkb25lVGFza0RlZmluaXRpb25JZHNCCQoHdmFyaWFudCLFBQoPUHJvY2Vz",
+            "c1J1bklzc3VlEjgKB2ZhaWx1cmUYASABKA4yHi5ydW50aW1lLnYxLlByb2Nl",
+            "c3NMb2FkRmFpbHVyZVIHZmFpbHVyZRIYCgdtZXNzYWdlGAIgASgJUgdtZXNz",
+            "YWdlEj8KCHNldmVyaXR5GAMgASgOMiMucnVudGltZS52MS5Qcm9jZXNzUnVu",
+            "SXNzdWVTZXZlcml0eVIIc2V2ZXJpdHkSKgoRcHJvY2Vzc19yZWNpcGVfaWQY",
+            "BCABKAlSD3Byb2Nlc3NSZWNpcGVJZBI0ChZzZXF1ZW5jZV9kZWZpbml0aW9u",
+            "X2lkGAUgASgJUhRzZXF1ZW5jZURlZmluaXRpb25JZBIsChJ0YXNrX2RlZmlu",
+            "aXRpb25faWQYBiABKAlSEHRhc2tEZWZpbml0aW9uSWQSLAoScmVxdWlyZWRf",
+            "dG9vbF9yb2xlGAcgASgJUhByZXF1aXJlZFRvb2xSb2xlEioKEXJlcXVpcmVk",
+            "X3NraWxsX2lkGAggASgJUg9yZXF1aXJlZFNraWxsSWQSMgoVZml4dHVyZV9k",
+            "ZWZpbml0aW9uX2lkGAkgASgJUhNmaXh0dXJlRGVmaW5pdGlvbklkEhcKB2Nl",
+            "bGxfaWQYCiABKAlSBmNlbGxJZBIdCgpzdGF0aW9uX2lkGAsgASgJUglzdGF0",
+            "aW9uSWQSGQoIYWN0b3JfaWQYDCABKAlSB2FjdG9ySWQSHwoLcmVzb3VyY2Vf",
+            "aWQYDSABKAlSCnJlc291cmNlSWQSIAoLcmVtZWRpYXRpb24YDiABKAlSC3Jl",
+            "bWVkaWF0aW9uEkEKCmltcG9ydGFuY2UYDyABKA4yIS5ydW50aW1lLnYxLlJl",
+            "cXVpcmVtZW50SW1wb3J0YW5jZVIKaW1wb3J0YW5jZRImCg92YXJpYW50X2F4",
+            "aXNfaWQYECABKAlSDXZhcmlhbnRBeGlzSWQi2gEKGENhbmRpZGF0ZUFjdG9y",
             "RXZhbHVhdGlvbhIpCgVhY3RvchgBIAEoCzITLmNvbW1vbi52MS5BY3RvclJl",
             "ZlIFYWN0b3ISGgoIZmVhc2libGUYAiABKAhSCGZlYXNpYmxlEkIKDHJlc3Ry",
             "aWN0aW9ucxgDIAMoCzIeLnJ1bnRpbWUudjEuUnVudGltZVJlc3RyaWN0aW9u",
@@ -102,67 +105,68 @@ namespace Messages.Runtime.V1 {
             "RF9TVFJBVEVHWV9QUkVGRVJfVEFSR0VUX1NDT1BFEAMSJAogUFJPQ0VTU19M",
             "T0FEX1NUUkFURUdZX0JFU1RfTUFUQ0gQBCpZChJBbGxvY2F0aW9uU3RyYXRl",
             "Z3kSIwofQUxMT0NBVElPTl9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEh4KGkFM",
-            "TE9DQVRJT05fU1RSQVRFR1lfU1RBVElDEAEq2gwKElByb2Nlc3NMb2FkRmFp",
+            "TE9DQVRJT05fU1RSQVRFR1lfU1RBVElDEAEqkg0KElByb2Nlc3NMb2FkRmFp",
             "bHVyZRIkCiBQUk9DRVNTX0xPQURfRkFJTFVSRV9VTlNQRUNJRklFRBAAEjEK",
             "LVBST0NFU1NfTE9BRF9GQUlMVVJFX1BST0NFU1NfUkVDSVBFX05PVF9GT1VO",
             "RBACEi4KKlBST0NFU1NfTE9BRF9GQUlMVVJFX1BST0RVQ1RfTk9UX1NVUFBP",
             "UlRFRBADEi8KK1BST0NFU1NfTE9BRF9GQUlMVVJFX1JFU09VUkNFX1NUQVRF",
             "X1VOS05PV04QBBIrCidQUk9DRVNTX0xPQURfRkFJTFVSRV9JTlZBTElEX0RP",
-            "TkVfVEFTS1MQBRIwCixQUk9DRVNTX0xPQURfRkFJTFVSRV9OT19DT01QQVRJ",
-            "QkxFX0NPTlRBSU5FUhAKEjAKLFBST0NFU1NfTE9BRF9GQUlMVVJFX1JFUVVJ",
-            "UkVEX1NMT1RfTk9UX0ZPVU5EEAsSNQoxUFJPQ0VTU19MT0FEX0ZBSUxVUkVf",
-            "UkVRVUlSRURfU0xPVF9UWVBFX05PVF9GT1VORBAMEioKJlBST0NFU1NfTE9B",
-            "RF9GQUlMVVJFX01JU1NJTkdfVE9PTF9ST0xFEBQSLAooUFJPQ0VTU19MT0FE",
-            "X0ZBSUxVUkVfVE9PTF9OT1RfQ0FMSUJSQVRFRBAVEjUKMVBST0NFU1NfTE9B",
-            "RF9GQUlMVVJFX1RPT0xfQ0FQQUJJTElUWV9JTlNVRkZJQ0lFTlQQFhIqCiZQ",
-            "Uk9DRVNTX0xPQURfRkFJTFVSRV9ST0JPVF9VTkFWQUlMQUJMRRAeEi8KK1BS",
-            "T0NFU1NfTE9BRF9GQUlMVVJFX1JPQk9UX1RPT0xJTkdfTUlTTUFUQ0gQHxIu",
-            "CipQUk9DRVNTX0xPQURfRkFJTFVSRV9OT19RVUFMSUZJRURfT1BFUkFUT1IQ",
-            "KBIqCiZQUk9DRVNTX0xPQURfRkFJTFVSRV9OT19GRUFTSUJMRV9BQ1RPUhAp",
-            "EjIKLlBST0NFU1NfTE9BRF9GQUlMVVJFX1JFUVVJUkVEX1NLSUxMX1JFU1RS",
-            "SUNURUQQKhIvCitQUk9DRVNTX0xPQURfRkFJTFVSRV9SRVFVSVJFRF9TS0lM",
-            "TF9FWFBJUkVEECsSNwozUFJPQ0VTU19MT0FEX0ZBSUxVUkVfQ09MTEFCT1JB",
-            "VElPTl9NT0RFX1VOU1VQUE9SVEVEEDISLQopUFJPQ0VTU19MT0FEX0ZBSUxV",
-            "UkVfU0FGRVRZX01PREVfTUlTTUFUQ0gQMxIxCi1QUk9DRVNTX0xPQURfRkFJ",
-            "TFVSRV9WSVNJT05fQVNTRVRfVU5BVkFJTEFCTEUQPBIyCi5QUk9DRVNTX0xP",
-            "QURfRkFJTFVSRV9WQUxJREFUSU9OX1NPVVJDRV9NSVNTSU5HED0SNgoyUFJP",
-            "Q0VTU19MT0FEX0ZBSUxVUkVfTk9fRkVBU0lCTEVfVkFMSURBVElPTl9NRVRI",
-            "T0QQPhInCiNQUk9DRVNTX0xPQURfRkFJTFVSRV9MSU5FX05PVF9GT1VORBBG",
-            "EiQKIFBST0NFU1NfTE9BRF9GQUlMVVJFX0xJTkVfQ0xPU0VEEEcSIgoeUFJP",
-            "Q0VTU19MT0FEX0ZBSUxVUkVfTElORV9CVVNZEEgSJQohUFJPQ0VTU19MT0FE",
-            "X0ZBSUxVUkVfTElORV9CTE9DS0VEEEkSJwojUFJPQ0VTU19MT0FEX0ZBSUxV",
-            "UkVfQ0VMTF9OT1RfRk9VTkQQUBIkCiBQUk9DRVNTX0xPQURfRkFJTFVSRV9D",
-            "RUxMX0NMT1NFRBBREiIKHlBST0NFU1NfTE9BRF9GQUlMVVJFX0NFTExfQlVT",
-            "WRBSEiUKIVBST0NFU1NfTE9BRF9GQUlMVVJFX0NFTExfQkxPQ0tFRBBTEioK",
-            "JlBST0NFU1NfTE9BRF9GQUlMVVJFX1NUQVRJT05fTk9UX0ZPVU5EEFoSJwoj",
-            "UFJPQ0VTU19MT0FEX0ZBSUxVUkVfU1RBVElPTl9DTE9TRUQQWxIlCiFQUk9D",
-            "RVNTX0xPQURfRkFJTFVSRV9TVEFUSU9OX0JVU1kQXBIoCiRQUk9DRVNTX0xP",
-            "QURfRkFJTFVSRV9TVEFUSU9OX0JMT0NLRUQQXRIyCi5QUk9DRVNTX0xPQURf",
-            "RkFJTFVSRV9SRVFVSVJFRF9QQVJUX05PVF9QUkVTRU5UEGQqlgEKF1Byb2Nl",
-            "c3NSdW5Jc3N1ZVNldmVyaXR5EioKJlBST0NFU1NfUlVOX0lTU1VFX1NFVkVS",
-            "SVRZX1VOU1BFQ0lGSUVEEAASJwojUFJPQ0VTU19SVU5fSVNTVUVfU0VWRVJJ",
-            "VFlfQkxPQ0tJTkcQARImCiJQUk9DRVNTX1JVTl9JU1NVRV9TRVZFUklUWV9X",
-            "QVJOSU5HEAIqigEKFVJlcXVpcmVtZW50SW1wb3J0YW5jZRImCiJSRVFVSVJF",
-            "TUVOVF9JTVBPUlRBTkNFX1VOU1BFQ0lGSUVEEAASIwofUkVRVUlSRU1FTlRf",
-            "SU1QT1JUQU5DRV9SRVFVSVJFRBABEiQKIFJFUVVJUkVNRU5UX0lNUE9SVEFO",
-            "Q0VfUFJFRkVSUkVEEAIqxgEKGFByb2Nlc3NSdW5QcmVjaGVja1N0YXR1cxIr",
-            "CidQUk9DRVNTX1JVTl9QUkVDSEVDS19TVEFUVVNfVU5TUEVDSUZJRUQQABIi",
-            "Ch5QUk9DRVNTX1JVTl9QUkVDSEVDS19TVEFUVVNfT0sQARIwCixQUk9DRVNT",
-            "X1JVTl9QUkVDSEVDS19TVEFUVVNfT0tfV0lUSF9XQVJOSU5HUxACEicKI1BS",
-            "T0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19CTE9DS0VEEAMqoAEKEVByb2Nl",
-            "c3NMb2FkU3RhdHVzEiMKH1BST0NFU1NfTE9BRF9TVEFUVVNfVU5TUEVDSUZJ",
-            "RUQQABInCiNQUk9DRVNTX0xPQURfU1RBVFVTX1BSRUNIRUNLX0ZBSUxFRBAB",
-            "Eh0KGVBST0NFU1NfTE9BRF9TVEFUVVNfUkVBRFkQAhIeChpQUk9DRVNTX0xP",
-            "QURfU1RBVFVTX0xPQURFRBADQrYBCg5jb20ucnVudGltZS52MUIUUHJvY2Vz",
-            "c1JlcXVlc3RzUHJvdG9QAVo8Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L3YyL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgITTWVz",
-            "c2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYxXEdQ",
-            "Qk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
+            "TkVfVEFTS1MQBRI2CjJQUk9DRVNTX0xPQURfRkFJTFVSRV9JTlZBTElEX1ZB",
+            "UklBTlRfQ09ORklHVVJBVElPThAGEjAKLFBST0NFU1NfTE9BRF9GQUlMVVJF",
+            "X05PX0NPTVBBVElCTEVfQ09OVEFJTkVSEAoSMAosUFJPQ0VTU19MT0FEX0ZB",
+            "SUxVUkVfUkVRVUlSRURfU0xPVF9OT1RfRk9VTkQQCxI1CjFQUk9DRVNTX0xP",
+            "QURfRkFJTFVSRV9SRVFVSVJFRF9TTE9UX1RZUEVfTk9UX0ZPVU5EEAwSKgom",
+            "UFJPQ0VTU19MT0FEX0ZBSUxVUkVfTUlTU0lOR19UT09MX1JPTEUQFBIsCihQ",
+            "Uk9DRVNTX0xPQURfRkFJTFVSRV9UT09MX05PVF9DQUxJQlJBVEVEEBUSNQox",
+            "UFJPQ0VTU19MT0FEX0ZBSUxVUkVfVE9PTF9DQVBBQklMSVRZX0lOU1VGRklD",
+            "SUVOVBAWEioKJlBST0NFU1NfTE9BRF9GQUlMVVJFX1JPQk9UX1VOQVZBSUxB",
+            "QkxFEB4SLworUFJPQ0VTU19MT0FEX0ZBSUxVUkVfUk9CT1RfVE9PTElOR19N",
+            "SVNNQVRDSBAfEi4KKlBST0NFU1NfTE9BRF9GQUlMVVJFX05PX1FVQUxJRklF",
+            "RF9PUEVSQVRPUhAoEioKJlBST0NFU1NfTE9BRF9GQUlMVVJFX05PX0ZFQVNJ",
+            "QkxFX0FDVE9SECkSMgouUFJPQ0VTU19MT0FEX0ZBSUxVUkVfUkVRVUlSRURf",
+            "U0tJTExfUkVTVFJJQ1RFRBAqEi8KK1BST0NFU1NfTE9BRF9GQUlMVVJFX1JF",
+            "UVVJUkVEX1NLSUxMX0VYUElSRUQQKxI3CjNQUk9DRVNTX0xPQURfRkFJTFVS",
+            "RV9DT0xMQUJPUkFUSU9OX01PREVfVU5TVVBQT1JURUQQMhItCilQUk9DRVNT",
+            "X0xPQURfRkFJTFVSRV9TQUZFVFlfTU9ERV9NSVNNQVRDSBAzEjEKLVBST0NF",
+            "U1NfTE9BRF9GQUlMVVJFX1ZJU0lPTl9BU1NFVF9VTkFWQUlMQUJMRRA8EjIK",
+            "LlBST0NFU1NfTE9BRF9GQUlMVVJFX1ZBTElEQVRJT05fU09VUkNFX01JU1NJ",
+            "TkcQPRI2CjJQUk9DRVNTX0xPQURfRkFJTFVSRV9OT19GRUFTSUJMRV9WQUxJ",
+            "REFUSU9OX01FVEhPRBA+EicKI1BST0NFU1NfTE9BRF9GQUlMVVJFX0xJTkVf",
+            "Tk9UX0ZPVU5EEEYSJAogUFJPQ0VTU19MT0FEX0ZBSUxVUkVfTElORV9DTE9T",
+            "RUQQRxIiCh5QUk9DRVNTX0xPQURfRkFJTFVSRV9MSU5FX0JVU1kQSBIlCiFQ",
+            "Uk9DRVNTX0xPQURfRkFJTFVSRV9MSU5FX0JMT0NLRUQQSRInCiNQUk9DRVNT",
+            "X0xPQURfRkFJTFVSRV9DRUxMX05PVF9GT1VORBBQEiQKIFBST0NFU1NfTE9B",
+            "RF9GQUlMVVJFX0NFTExfQ0xPU0VEEFESIgoeUFJPQ0VTU19MT0FEX0ZBSUxV",
+            "UkVfQ0VMTF9CVVNZEFISJQohUFJPQ0VTU19MT0FEX0ZBSUxVUkVfQ0VMTF9C",
+            "TE9DS0VEEFMSKgomUFJPQ0VTU19MT0FEX0ZBSUxVUkVfU1RBVElPTl9OT1Rf",
+            "Rk9VTkQQWhInCiNQUk9DRVNTX0xPQURfRkFJTFVSRV9TVEFUSU9OX0NMT1NF",
+            "RBBbEiUKIVBST0NFU1NfTE9BRF9GQUlMVVJFX1NUQVRJT05fQlVTWRBcEigK",
+            "JFBST0NFU1NfTE9BRF9GQUlMVVJFX1NUQVRJT05fQkxPQ0tFRBBdEjIKLlBS",
+            "T0NFU1NfTE9BRF9GQUlMVVJFX1JFUVVJUkVEX1BBUlRfTk9UX1BSRVNFTlQQ",
+            "ZCqWAQoXUHJvY2Vzc1J1bklzc3VlU2V2ZXJpdHkSKgomUFJPQ0VTU19SVU5f",
+            "SVNTVUVfU0VWRVJJVFlfVU5TUEVDSUZJRUQQABInCiNQUk9DRVNTX1JVTl9J",
+            "U1NVRV9TRVZFUklUWV9CTE9DS0lORxABEiYKIlBST0NFU1NfUlVOX0lTU1VF",
+            "X1NFVkVSSVRZX1dBUk5JTkcQAiqKAQoVUmVxdWlyZW1lbnRJbXBvcnRhbmNl",
+            "EiYKIlJFUVVJUkVNRU5UX0lNUE9SVEFOQ0VfVU5TUEVDSUZJRUQQABIjCh9S",
+            "RVFVSVJFTUVOVF9JTVBPUlRBTkNFX1JFUVVJUkVEEAESJAogUkVRVUlSRU1F",
+            "TlRfSU1QT1JUQU5DRV9QUkVGRVJSRUQQAirGAQoYUHJvY2Vzc1J1blByZWNo",
+            "ZWNrU3RhdHVzEisKJ1BST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19VTlNQ",
+            "RUNJRklFRBAAEiIKHlBST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19PSxAB",
+            "EjAKLFBST0NFU1NfUlVOX1BSRUNIRUNLX1NUQVRVU19PS19XSVRIX1dBUk5J",
+            "TkdTEAISJwojUFJPQ0VTU19SVU5fUFJFQ0hFQ0tfU1RBVFVTX0JMT0NLRUQQ",
+            "AyqgAQoRUHJvY2Vzc0xvYWRTdGF0dXMSIwofUFJPQ0VTU19MT0FEX1NUQVRV",
+            "U19VTlNQRUNJRklFRBAAEicKI1BST0NFU1NfTE9BRF9TVEFUVVNfUFJFQ0hF",
+            "Q0tfRkFJTEVEEAESHQoZUFJPQ0VTU19MT0FEX1NUQVRVU19SRUFEWRACEh4K",
+            "GlBST0NFU1NfTE9BRF9TVEFUVVNfTE9BREVEEANCtgEKDmNvbS5ydW50aW1l",
+            "LnYxQhRQcm9jZXNzUmVxdWVzdHNQcm90b1ABWjxnaXRodWIuY29tL2NvYm90",
+            "YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcnVudGltZS92MTtydW50aW1ldjGi",
+            "AgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYxygIKUnVudGltZVxWMeICFlJ1",
+            "bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50aW1lOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Runtime.V1.ProcessRunReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessLoadStrategy), typeof(global::Messages.Runtime.V1.AllocationStrategy), typeof(global::Messages.Runtime.V1.ProcessLoadFailure), typeof(global::Messages.Runtime.V1.ProcessRunIssueSeverity), typeof(global::Messages.Runtime.V1.RequirementImportance), typeof(global::Messages.Runtime.V1.ProcessRunPrecheckStatus), typeof(global::Messages.Runtime.V1.ProcessLoadStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessLoadRequest), global::Messages.Runtime.V1.ProcessLoadRequest.Parser, new[]{ "ProcessRecipeId", "TargetLineId", "TargetCellId", "TargetStationId", "VariantConfiguration", "DryRun", "QueueIfOccupied", "Strategy", "OrderId", "Parameters", "AllocationStrategy", "TargetEmployee", "DoneTaskDefinitionIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRunIssue), global::Messages.Runtime.V1.ProcessRunIssue.Parser, new[]{ "Failure", "Message", "Severity", "ProcessRecipeId", "SequenceDefinitionId", "TaskDefinitionId", "RequiredToolRole", "RequiredSkillId", "FixtureDefinitionId", "CellId", "StationId", "ActorId", "ResourceId", "Remediation", "Importance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessLoadRequest), global::Messages.Runtime.V1.ProcessLoadRequest.Parser, new[]{ "ProcessRecipeId", "TargetLineId", "TargetCellId", "TargetStationId", "VariantConfiguration", "NamedVariantConfigurationId", "DryRun", "QueueIfOccupied", "Strategy", "OrderId", "Parameters", "AllocationStrategy", "TargetEmployee", "DoneTaskDefinitionIds" }, new[]{ "Variant" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRunIssue), global::Messages.Runtime.V1.ProcessRunIssue.Parser, new[]{ "Failure", "Message", "Severity", "ProcessRecipeId", "SequenceDefinitionId", "TaskDefinitionId", "RequiredToolRole", "RequiredSkillId", "FixtureDefinitionId", "CellId", "StationId", "ActorId", "ResourceId", "Remediation", "Importance", "VariantAxisId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.CandidateActorEvaluation), global::Messages.Runtime.V1.CandidateActorEvaluation.Parser, new[]{ "Actor", "Feasible", "Restrictions", "Issues" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskFeasibility), global::Messages.Runtime.V1.TaskFeasibility.Parser, new[]{ "TaskDefinitionId", "Feasible", "CandidateActors", "CandidateRobotInstanceIds", "CandidateToolInstanceIds", "CandidateContainerInstanceIds", "CandidateAssetInstanceIds", "CandidatePartInstanceIds", "Issues", "CandidateActorEvaluations" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.ProcessRunPrecheckResult), global::Messages.Runtime.V1.ProcessRunPrecheckResult.Parser, new[]{ "Ok", "Issues", "BlockingIssueCount", "WarningIssueCount", "ProcessRecipeId", "TargetLineId", "TaskFeasibility", "Status" }, null, null, null, null),
@@ -211,6 +215,12 @@ namespace Messages.Runtime.V1 {
     /// starts; the issue's task_definition_id names the offending task.
     /// </summary>
     [pbr::OriginalName("PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS")] InvalidDoneTasks = 5,
+    /// <summary>
+    /// The variant configuration or named configuration isn't valid for the
+    /// recipe's product; the issue's variant_axis_id names the axis, if one is to
+    /// blame, and its message says why.
+    /// </summary>
+    [pbr::OriginalName("PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION")] InvalidVariantConfiguration = 6,
     /// <summary>
     /// Container related failures
     /// </summary>
@@ -398,7 +408,6 @@ namespace Messages.Runtime.V1 {
       targetLineId_ = other.targetLineId_;
       targetCellId_ = other.targetCellId_;
       targetStationId_ = other.targetStationId_;
-      variantConfiguration_ = other.variantConfiguration_ != null ? other.variantConfiguration_.Clone() : null;
       dryRun_ = other.dryRun_;
       queueIfOccupied_ = other.queueIfOccupied_;
       strategy_ = other.strategy_;
@@ -407,6 +416,15 @@ namespace Messages.Runtime.V1 {
       allocationStrategy_ = other.allocationStrategy_;
       targetEmployee_ = other.targetEmployee_;
       doneTaskDefinitionIds_ = other.doneTaskDefinitionIds_.Clone();
+      switch (other.VariantCase) {
+        case VariantOneofCase.VariantConfiguration:
+          VariantConfiguration = other.VariantConfiguration.Clone();
+          break;
+        case VariantOneofCase.NamedVariantConfigurationId:
+          NamedVariantConfigurationId = other.NamedVariantConfigurationId;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -476,16 +494,49 @@ namespace Messages.Runtime.V1 {
 
     /// <summary>Field number for the "variant_configuration" field.</summary>
     public const int VariantConfigurationFieldNumber = 5;
-    private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
-    /// Optional variant configuration used to evaluate recipe/task applicability.
+    /// The selected axes only. The backend adds the derived axes and refuses
+    /// (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) a configuration
+    /// that misses a selected axis, names an unknown axis or option, selects a
+    /// derived axis, is excluded by its variant group, or for which a derived
+    /// axis gets no option or several.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Variance.V1.VariantConfiguration VariantConfiguration {
-      get { return variantConfiguration_; }
+      get { return variantCase_ == VariantOneofCase.VariantConfiguration ? (global::Messages.Variance.V1.VariantConfiguration) variant_ : null; }
       set {
-        variantConfiguration_ = value;
+        variant_ = value;
+        variantCase_ = value == null ? VariantOneofCase.None : VariantOneofCase.VariantConfiguration;
+      }
+    }
+
+    /// <summary>Field number for the "named_variant_configuration_id" field.</summary>
+    public const int NamedVariantConfigurationIdFieldNumber = 14;
+    /// <summary>
+    /// One of the product's named configurations, by ID.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NamedVariantConfigurationId {
+      get { return HasNamedVariantConfigurationId ? (string) variant_ : ""; }
+      set {
+        variant_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        variantCase_ = VariantOneofCase.NamedVariantConfigurationId;
+      }
+    }
+    /// <summary>Gets whether the "named_variant_configuration_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNamedVariantConfigurationId {
+      get { return variantCase_ == VariantOneofCase.NamedVariantConfigurationId; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "named_variant_configuration_id" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNamedVariantConfigurationId() {
+      if (HasNamedVariantConfigurationId) {
+        ClearVariant();
       }
     }
 
@@ -614,6 +665,27 @@ namespace Messages.Runtime.V1 {
       get { return doneTaskDefinitionIds_; }
     }
 
+    private object variant_;
+    /// <summary>Enum of possible cases for the "variant" oneof.</summary>
+    public enum VariantOneofCase {
+      None = 0,
+      VariantConfiguration = 5,
+      NamedVariantConfigurationId = 14,
+    }
+    private VariantOneofCase variantCase_ = VariantOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VariantOneofCase VariantCase {
+      get { return variantCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearVariant() {
+      variantCase_ = VariantOneofCase.None;
+      variant_ = null;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -634,6 +706,7 @@ namespace Messages.Runtime.V1 {
       if (TargetCellId != other.TargetCellId) return false;
       if (TargetStationId != other.TargetStationId) return false;
       if (!object.Equals(VariantConfiguration, other.VariantConfiguration)) return false;
+      if (NamedVariantConfigurationId != other.NamedVariantConfigurationId) return false;
       if (DryRun != other.DryRun) return false;
       if (QueueIfOccupied != other.QueueIfOccupied) return false;
       if (Strategy != other.Strategy) return false;
@@ -642,6 +715,7 @@ namespace Messages.Runtime.V1 {
       if (AllocationStrategy != other.AllocationStrategy) return false;
       if (TargetEmployee != other.TargetEmployee) return false;
       if(!doneTaskDefinitionIds_.Equals(other.doneTaskDefinitionIds_)) return false;
+      if (VariantCase != other.VariantCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -653,7 +727,8 @@ namespace Messages.Runtime.V1 {
       if (TargetLineId.Length != 0) hash ^= TargetLineId.GetHashCode();
       if (TargetCellId.Length != 0) hash ^= TargetCellId.GetHashCode();
       if (TargetStationId.Length != 0) hash ^= TargetStationId.GetHashCode();
-      if (variantConfiguration_ != null) hash ^= VariantConfiguration.GetHashCode();
+      if (variantCase_ == VariantOneofCase.VariantConfiguration) hash ^= VariantConfiguration.GetHashCode();
+      if (HasNamedVariantConfigurationId) hash ^= NamedVariantConfigurationId.GetHashCode();
       if (DryRun != false) hash ^= DryRun.GetHashCode();
       if (QueueIfOccupied != false) hash ^= QueueIfOccupied.GetHashCode();
       if (Strategy != global::Messages.Runtime.V1.ProcessLoadStrategy.Unspecified) hash ^= Strategy.GetHashCode();
@@ -662,6 +737,7 @@ namespace Messages.Runtime.V1 {
       if (AllocationStrategy != global::Messages.Runtime.V1.AllocationStrategy.Unspecified) hash ^= AllocationStrategy.GetHashCode();
       if (TargetEmployee.Length != 0) hash ^= TargetEmployee.GetHashCode();
       hash ^= doneTaskDefinitionIds_.GetHashCode();
+      hash ^= (int) variantCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -696,7 +772,7 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(34);
         output.WriteString(TargetStationId);
       }
-      if (variantConfiguration_ != null) {
+      if (variantCase_ == VariantOneofCase.VariantConfiguration) {
         output.WriteRawTag(42);
         output.WriteMessage(VariantConfiguration);
       }
@@ -726,6 +802,10 @@ namespace Messages.Runtime.V1 {
         output.WriteString(TargetEmployee);
       }
       doneTaskDefinitionIds_.WriteTo(output, _repeated_doneTaskDefinitionIds_codec);
+      if (HasNamedVariantConfigurationId) {
+        output.WriteRawTag(114);
+        output.WriteString(NamedVariantConfigurationId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -752,7 +832,7 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(34);
         output.WriteString(TargetStationId);
       }
-      if (variantConfiguration_ != null) {
+      if (variantCase_ == VariantOneofCase.VariantConfiguration) {
         output.WriteRawTag(42);
         output.WriteMessage(VariantConfiguration);
       }
@@ -782,6 +862,10 @@ namespace Messages.Runtime.V1 {
         output.WriteString(TargetEmployee);
       }
       doneTaskDefinitionIds_.WriteTo(ref output, _repeated_doneTaskDefinitionIds_codec);
+      if (HasNamedVariantConfigurationId) {
+        output.WriteRawTag(114);
+        output.WriteString(NamedVariantConfigurationId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -804,8 +888,11 @@ namespace Messages.Runtime.V1 {
       if (TargetStationId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetStationId);
       }
-      if (variantConfiguration_ != null) {
+      if (variantCase_ == VariantOneofCase.VariantConfiguration) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(VariantConfiguration);
+      }
+      if (HasNamedVariantConfigurationId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NamedVariantConfigurationId);
       }
       if (DryRun != false) {
         size += 1 + 1;
@@ -851,12 +938,6 @@ namespace Messages.Runtime.V1 {
       if (other.TargetStationId.Length != 0) {
         TargetStationId = other.TargetStationId;
       }
-      if (other.variantConfiguration_ != null) {
-        if (variantConfiguration_ == null) {
-          VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
-        }
-        VariantConfiguration.MergeFrom(other.VariantConfiguration);
-      }
       if (other.DryRun != false) {
         DryRun = other.DryRun;
       }
@@ -877,6 +958,18 @@ namespace Messages.Runtime.V1 {
         TargetEmployee = other.TargetEmployee;
       }
       doneTaskDefinitionIds_.Add(other.doneTaskDefinitionIds_);
+      switch (other.VariantCase) {
+        case VariantOneofCase.VariantConfiguration:
+          if (VariantConfiguration == null) {
+            VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
+          }
+          VariantConfiguration.MergeFrom(other.VariantConfiguration);
+          break;
+        case VariantOneofCase.NamedVariantConfigurationId:
+          NamedVariantConfigurationId = other.NamedVariantConfigurationId;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -913,10 +1006,12 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 42: {
-            if (variantConfiguration_ == null) {
-              VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
+            global::Messages.Variance.V1.VariantConfiguration subBuilder = new global::Messages.Variance.V1.VariantConfiguration();
+            if (variantCase_ == VariantOneofCase.VariantConfiguration) {
+              subBuilder.MergeFrom(VariantConfiguration);
             }
-            input.ReadMessage(VariantConfiguration);
+            input.ReadMessage(subBuilder);
+            VariantConfiguration = subBuilder;
             break;
           }
           case 48: {
@@ -949,6 +1044,10 @@ namespace Messages.Runtime.V1 {
           }
           case 106: {
             doneTaskDefinitionIds_.AddEntriesFrom(input, _repeated_doneTaskDefinitionIds_codec);
+            break;
+          }
+          case 114: {
+            NamedVariantConfigurationId = input.ReadString();
             break;
           }
         }
@@ -987,10 +1086,12 @@ namespace Messages.Runtime.V1 {
             break;
           }
           case 42: {
-            if (variantConfiguration_ == null) {
-              VariantConfiguration = new global::Messages.Variance.V1.VariantConfiguration();
+            global::Messages.Variance.V1.VariantConfiguration subBuilder = new global::Messages.Variance.V1.VariantConfiguration();
+            if (variantCase_ == VariantOneofCase.VariantConfiguration) {
+              subBuilder.MergeFrom(VariantConfiguration);
             }
-            input.ReadMessage(VariantConfiguration);
+            input.ReadMessage(subBuilder);
+            VariantConfiguration = subBuilder;
             break;
           }
           case 48: {
@@ -1023,6 +1124,10 @@ namespace Messages.Runtime.V1 {
           }
           case 106: {
             doneTaskDefinitionIds_.AddEntriesFrom(ref input, _repeated_doneTaskDefinitionIds_codec);
+            break;
+          }
+          case 114: {
+            NamedVariantConfigurationId = input.ReadString();
             break;
           }
         }
@@ -1082,6 +1187,7 @@ namespace Messages.Runtime.V1 {
       resourceId_ = other.resourceId_;
       remediation_ = other.remediation_;
       importance_ = other.importance_;
+      variantAxisId_ = other.variantAxisId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1283,6 +1389,22 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "variant_axis_id" field.</summary>
+    public const int VariantAxisIdFieldNumber = 16;
+    private string variantAxisId_ = "";
+    /// <summary>
+    /// The variant axis the issue is about, e.g. for an invalid variant
+    /// configuration.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string VariantAxisId {
+      get { return variantAxisId_; }
+      set {
+        variantAxisId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1313,6 +1435,7 @@ namespace Messages.Runtime.V1 {
       if (ResourceId != other.ResourceId) return false;
       if (Remediation != other.Remediation) return false;
       if (Importance != other.Importance) return false;
+      if (VariantAxisId != other.VariantAxisId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1335,6 +1458,7 @@ namespace Messages.Runtime.V1 {
       if (ResourceId.Length != 0) hash ^= ResourceId.GetHashCode();
       if (Remediation.Length != 0) hash ^= Remediation.GetHashCode();
       if (Importance != global::Messages.Runtime.V1.RequirementImportance.Unspecified) hash ^= Importance.GetHashCode();
+      if (VariantAxisId.Length != 0) hash ^= VariantAxisId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1413,6 +1537,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(120);
         output.WriteEnum((int) Importance);
       }
+      if (VariantAxisId.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(VariantAxisId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1483,6 +1611,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(120);
         output.WriteEnum((int) Importance);
       }
+      if (VariantAxisId.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(VariantAxisId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1537,6 +1669,9 @@ namespace Messages.Runtime.V1 {
       }
       if (Importance != global::Messages.Runtime.V1.RequirementImportance.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Importance);
+      }
+      if (VariantAxisId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(VariantAxisId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1594,6 +1729,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.Importance != global::Messages.Runtime.V1.RequirementImportance.Unspecified) {
         Importance = other.Importance;
+      }
+      if (other.VariantAxisId.Length != 0) {
+        VariantAxisId = other.VariantAxisId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1674,6 +1812,10 @@ namespace Messages.Runtime.V1 {
             Importance = (global::Messages.Runtime.V1.RequirementImportance) input.ReadEnum();
             break;
           }
+          case 130: {
+            VariantAxisId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1751,6 +1893,10 @@ namespace Messages.Runtime.V1 {
           }
           case 120: {
             Importance = (global::Messages.Runtime.V1.RequirementImportance) input.ReadEnum();
+            break;
+          }
+          case 130: {
+            VariantAxisId = input.ReadString();
             break;
           }
         }

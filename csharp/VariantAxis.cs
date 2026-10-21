@@ -26,34 +26,61 @@ namespace Messages.Variance.V1 {
           string.Concat(
             "Ch52YXJpYW5jZS92MS92YXJpYW50X2F4aXMucHJvdG8SC3ZhcmlhbmNlLnYx",
             "GhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aK3ZhbGlkYXRpb24vdjEv",
-            "cHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8ihQEKDVZhcmlhbnRPcHRp",
-            "b24SHAoCaWQYASABKAlCDLpICXIE4PMEAcgBAVICaWQSIAoEbmFtZRgCIAEo",
-            "CUIMukgJcgSA8QQByAEBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoL",
-            "ZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uIvwECgtWYXJpYW50QXhp",
-            "cxIcCgJpZBgBIAEoCUIMukgJcgTg8wQByAEBUgJpZBIgCgRuYW1lGAIgASgJ",
-            "Qgy6SAlyBIDxBAHIAQFSBG5hbWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtk",
-            "ZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24S9gMKB29wdGlvbnMYBSAD",
-            "KAsyGi52YXJpYW5jZS52MS5WYXJpYW50T3B0aW9uQr8Duki7A7oBYwoedmFy",
-            "aWFudF9heGlzLm9wdGlvbnMubWluX2l0ZW1zEi9hIHZhcmlhbnQgYXhpcyBt",
-            "dXN0IGRlZmluZSBhdCBsZWFzdCB0d28gb3B0aW9ucxoQdGhpcy5zaXplKCkg",
-            "Pj0gMroBeQofdmFyaWFudF9heGlzLm9wdGlvbnMudW5pcXVlX2lkcxIwdmFy",
-            "aWFudCBvcHRpb24gaWRzIG11c3QgYmUgdW5pcXVlIHdpdGhpbiBhbiBheGlz",
-            "GiR0aGlzLm1hcChvcHRpb24sIG9wdGlvbi5pZCkudW5pcXVlKCm6AdUBCix2",
-            "YXJpYW50X2F4aXMub3B0aW9ucy51bmlxdWVfbm9ybWFsaXplZF9uYW1lcxJp",
-            "dmFyaWFudCBvcHRpb24gbmFtZXMgbXVzdCBiZSB1bmlxdWUgd2l0aGluIGFu",
-            "IGF4aXMsIGlnbm9yaW5nIHN1cnJvdW5kaW5nIHdoaXRlc3BhY2UgYW5kIEFT",
-            "Q0lJIGxldHRlciBjYXNlGjp0aGlzLm1hcChvcHRpb24sIG9wdGlvbi5uYW1l",
-            "LnRyaW0oKS5sb3dlckFzY2lpKCkpLnVuaXF1ZSgpUgdvcHRpb25zQrkBCg9j",
-            "b20udmFyaWFuY2UudjFCEFZhcmlhbnRBeGlzUHJvdG9QAVo+Z2l0aHViLmNv",
-            "bS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3ZhcmlhbmNlL3YxO3Zh",
-            "cmlhbmNldjGiAgNWWFiqAhRNZXNzYWdlcy5WYXJpYW5jZS5WMcoCC1Zhcmlh",
-            "bmNlXFYx4gIXVmFyaWFuY2VcVjFcR1BCTWV0YWRhdGHqAgxWYXJpYW5jZTo6",
-            "VjFiBnByb3RvMw=="));
+            "cHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8aI3ZhcmlhbmNlL3YxL3Zh",
+            "cmlhbnRfY29uZGl0aW9uLnByb3RvIoUBCg1WYXJpYW50T3B0aW9uEhwKAmlk",
+            "GAEgASgJQgy6SAlyBODzBAHIAQFSAmlkEiAKBG5hbWUYAiABKAlCDLpICXIE",
+            "gPEEAcgBAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0",
+            "aW9uGAQgASgJUgtkZXNjcmlwdGlvbiLfCQoLVmFyaWFudEF4aXMSHAoCaWQY",
+            "ASABKAlCDLpICXIE4PMEAcgBAVICaWQSIAoEbmFtZRgCIAEoCUIMukgJcgSA",
+            "8QQByAEBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRp",
+            "b24YBCABKAlSC2Rlc2NyaXB0aW9uEvYDCgdvcHRpb25zGAUgAygLMhoudmFy",
+            "aWFuY2UudjEuVmFyaWFudE9wdGlvbkK/A7pIuwO6AWMKHnZhcmlhbnRfYXhp",
+            "cy5vcHRpb25zLm1pbl9pdGVtcxIvYSB2YXJpYW50IGF4aXMgbXVzdCBkZWZp",
+            "bmUgYXQgbGVhc3QgdHdvIG9wdGlvbnMaEHRoaXMuc2l6ZSgpID49IDK6AXkK",
+            "H3ZhcmlhbnRfYXhpcy5vcHRpb25zLnVuaXF1ZV9pZHMSMHZhcmlhbnQgb3B0",
+            "aW9uIGlkcyBtdXN0IGJlIHVuaXF1ZSB3aXRoaW4gYW4gYXhpcxokdGhpcy5t",
+            "YXAob3B0aW9uLCBvcHRpb24uaWQpLnVuaXF1ZSgpugHVAQosdmFyaWFudF9h",
+            "eGlzLm9wdGlvbnMudW5pcXVlX25vcm1hbGl6ZWRfbmFtZXMSaXZhcmlhbnQg",
+            "b3B0aW9uIG5hbWVzIG11c3QgYmUgdW5pcXVlIHdpdGhpbiBhbiBheGlzLCBp",
+            "Z25vcmluZyBzdXJyb3VuZGluZyB3aGl0ZXNwYWNlIGFuZCBBU0NJSSBsZXR0",
+            "ZXIgY2FzZRo6dGhpcy5tYXAob3B0aW9uLCBvcHRpb24ubmFtZS50cmltKCku",
+            "bG93ZXJBc2NpaSgpKS51bmlxdWUoKVIHb3B0aW9ucxI+CgpkZXJpdmF0aW9u",
+            "GAYgASgLMh4udmFyaWFuY2UudjEuVmFyaWFudERlcml2YXRpb25SCmRlcml2",
+            "YXRpb246oAS6SJwEGrsCCiZ2YXJpYW50X2F4aXMuZGVyaXZhdGlvbi5jb3Zl",
+            "cnNfb3B0aW9ucxJZYSBkZXJpdmF0aW9uIG11c3QgZ2l2ZSBhIGNvbmRpdGlv",
+            "biBmb3IgZXZlcnkgb3B0aW9uIG9mIHRoZSBheGlzLCBhbmQgb25seSBmb3Ig",
+            "aXRzIG9wdGlvbnMatQEhaGFzKHRoaXMuZGVyaXZhdGlvbikgfHwgKHRoaXMu",
+            "ZGVyaXZhdGlvbi5vcHRpb25zLnNpemUoKSA9PSB0aGlzLm9wdGlvbnMuc2l6",
+            "ZSgpICYmIHRoaXMuZGVyaXZhdGlvbi5vcHRpb25zLmFsbChkZXJpdmVkLCB0",
+            "aGlzLm9wdGlvbnMuZXhpc3RzKG9wdGlvbiwgb3B0aW9uLmlkID09IGRlcml2",
+            "ZWQub3B0aW9uX2lkKSkpGtsBCiB2YXJpYW50X2F4aXMuZGVyaXZhdGlvbi5u",
+            "b3Rfc2VsZhI2YSBkZXJpdmVkIGF4aXMncyBjb25kaXRpb25zIGNhbid0IG5h",
+            "bWUgdGhlIGF4aXMgaXRzZWxmGn8haGFzKHRoaXMuZGVyaXZhdGlvbikgfHwg",
+            "dGhpcy5kZXJpdmF0aW9uLm9wdGlvbnMuYWxsKGRlcml2ZWQsIGRlcml2ZWQu",
+            "d2hlbi5hbGxfb2YuYWxsKGNvbmRpdGlvbiwgY29uZGl0aW9uLmF4aXNfaWQg",
+            "IT0gdGhpcy5pZCkpIu4BChFWYXJpYW50RGVyaXZhdGlvbhLYAQoHb3B0aW9u",
+            "cxgBIAMoCzIhLnZhcmlhbmNlLnYxLkRlcml2ZWRWYXJpYW50T3B0aW9uQpoB",
+            "ukiWAboBkgEKLHZhcmlhbnRfZGVyaXZhdGlvbi5vcHRpb25zLnVuaXF1ZV9v",
+            "cHRpb25faWRzEjNhIGRlcml2YXRpb24gY2FuIGdpdmUgb25seSBvbmUgY29u",
+            "ZGl0aW9uIHBlciBvcHRpb24aLXRoaXMubWFwKGRlcml2ZWQsIGRlcml2ZWQu",
+            "b3B0aW9uX2lkKS51bmlxdWUoKVIHb3B0aW9ucyLjAQoURGVyaXZlZFZhcmlh",
+            "bnRPcHRpb24SKQoJb3B0aW9uX2lkGAEgASgJQgy6SAlyBODzBAHIAQFSCG9w",
+            "dGlvbklkEp8BCgR3aGVuGAIgASgLMh0udmFyaWFuY2UudjEuVmFyaWFudENv",
+            "bmRpdGlvbkJsukhpugFjCiVkZXJpdmVkX3ZhcmlhbnRfb3B0aW9uLndoZW4u",
+            "bm90X2VtcHR5EiJhIGRlcml2ZWQgb3B0aW9uIG5lZWRzIGEgY29uZGl0aW9u",
+            "GhZ0aGlzLmFsbF9vZi5zaXplKCkgPiAwyAEBUgR3aGVuQrkBCg9jb20udmFy",
+            "aWFuY2UudjFCEFZhcmlhbnRBeGlzUHJvdG9QAVo+Z2l0aHViLmNvbS9jb2Jv",
+            "dGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3ZhcmlhbmNlL3YxO3ZhcmlhbmNl",
+            "djGiAgNWWFiqAhRNZXNzYWdlcy5WYXJpYW5jZS5WMcoCC1ZhcmlhbmNlXFYx",
+            "4gIXVmFyaWFuY2VcVjFcR1BCTWV0YWRhdGHqAgxWYXJpYW5jZTo6VjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantOption), global::Messages.Variance.V1.VariantOption.Parser, new[]{ "Id", "Name", "Icon", "Description" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantAxis), global::Messages.Variance.V1.VariantAxis.Parser, new[]{ "Id", "Name", "Icon", "Description", "Options" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantAxis), global::Messages.Variance.V1.VariantAxis.Parser, new[]{ "Id", "Name", "Icon", "Description", "Options", "Derivation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantDerivation), global::Messages.Variance.V1.VariantDerivation.Parser, new[]{ "Options" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.DerivedVariantOption), global::Messages.Variance.V1.DerivedVariantOption.Parser, new[]{ "OptionId", "When" }, null, null, null, null)
           }));
     }
     #endregion
@@ -369,6 +396,13 @@ namespace Messages.Variance.V1 {
 
   }
 
+  /// <summary>
+  /// VariantAxis is a dimension in which a product varies, e.g. connectivity,
+  /// memory or the colour of the case. An axis is either selected (chosen when a
+  /// process is loaded) or derived (has a derivation): its option follows from
+  /// the selected axes of its group, so it's never asked of the operator. Both
+  /// kinds can be used in applicability.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class VariantAxis : pb::IMessage<VariantAxis>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -409,6 +443,7 @@ namespace Messages.Variance.V1 {
       icon_ = other.icon_;
       description_ = other.description_;
       options_ = other.options_.Clone();
+      derivation_ = other.derivation_ != null ? other.derivation_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -477,6 +512,23 @@ namespace Messages.Variance.V1 {
       get { return options_; }
     }
 
+    /// <summary>Field number for the "derivation" field.</summary>
+    public const int DerivationFieldNumber = 6;
+    private global::Messages.Variance.V1.VariantDerivation derivation_;
+    /// <summary>
+    /// Set for a derived axis, e.g. the main PCB, which follows from connectivity
+    /// and memory. A derived axis has to be in a variant group, and its
+    /// conditions only name selected axes of that group.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Variance.V1.VariantDerivation Derivation {
+      get { return derivation_; }
+      set {
+        derivation_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -497,6 +549,7 @@ namespace Messages.Variance.V1 {
       if (Icon != other.Icon) return false;
       if (Description != other.Description) return false;
       if(!options_.Equals(other.options_)) return false;
+      if (!object.Equals(Derivation, other.Derivation)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -509,6 +562,7 @@ namespace Messages.Variance.V1 {
       if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= options_.GetHashCode();
+      if (derivation_ != null) hash ^= Derivation.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -544,6 +598,10 @@ namespace Messages.Variance.V1 {
         output.WriteString(Description);
       }
       options_.WriteTo(output, _repeated_options_codec);
+      if (derivation_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Derivation);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -571,6 +629,10 @@ namespace Messages.Variance.V1 {
         output.WriteString(Description);
       }
       options_.WriteTo(ref output, _repeated_options_codec);
+      if (derivation_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Derivation);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -594,6 +656,9 @@ namespace Messages.Variance.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       size += options_.CalculateSize(_repeated_options_codec);
+      if (derivation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Derivation);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -619,6 +684,12 @@ namespace Messages.Variance.V1 {
         Description = other.Description;
       }
       options_.Add(other.options_);
+      if (other.derivation_ != null) {
+        if (derivation_ == null) {
+          Derivation = new global::Messages.Variance.V1.VariantDerivation();
+        }
+        Derivation.MergeFrom(other.Derivation);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -658,6 +729,13 @@ namespace Messages.Variance.V1 {
             options_.AddEntriesFrom(input, _repeated_options_codec);
             break;
           }
+          case 50: {
+            if (derivation_ == null) {
+              Derivation = new global::Messages.Variance.V1.VariantDerivation();
+            }
+            input.ReadMessage(Derivation);
+            break;
+          }
         }
       }
     #endif
@@ -695,6 +773,454 @@ namespace Messages.Variance.V1 {
           }
           case 42: {
             options_.AddEntriesFrom(ref input, _repeated_options_codec);
+            break;
+          }
+          case 50: {
+            if (derivation_ == null) {
+              Derivation = new global::Messages.Variance.V1.VariantDerivation();
+            }
+            input.ReadMessage(Derivation);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// VariantDerivation gives, for each option of a derived axis, the condition
+  /// under which it applies. For every valid combination of the group's selected
+  /// axes exactly one condition holds; the backend checks this when the product
+  /// is saved.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class VariantDerivation : pb::IMessage<VariantDerivation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<VariantDerivation> _parser = new pb::MessageParser<VariantDerivation>(() => new VariantDerivation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<VariantDerivation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Variance.V1.VariantAxisReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VariantDerivation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VariantDerivation(VariantDerivation other) : this() {
+      options_ = other.options_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VariantDerivation Clone() {
+      return new VariantDerivation(this);
+    }
+
+    /// <summary>Field number for the "options" field.</summary>
+    public const int OptionsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Variance.V1.DerivedVariantOption> _repeated_options_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Variance.V1.DerivedVariantOption.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Variance.V1.DerivedVariantOption> options_ = new pbc::RepeatedField<global::Messages.Variance.V1.DerivedVariantOption>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Variance.V1.DerivedVariantOption> Options {
+      get { return options_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as VariantDerivation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(VariantDerivation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!options_.Equals(other.options_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= options_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      options_.WriteTo(output, _repeated_options_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      options_.WriteTo(ref output, _repeated_options_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += options_.CalculateSize(_repeated_options_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(VariantDerivation other) {
+      if (other == null) {
+        return;
+      }
+      options_.Add(other.options_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            options_.AddEntriesFrom(input, _repeated_options_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            options_.AddEntriesFrom(ref input, _repeated_options_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class DerivedVariantOption : pb::IMessage<DerivedVariantOption>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DerivedVariantOption> _parser = new pb::MessageParser<DerivedVariantOption>(() => new DerivedVariantOption());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DerivedVariantOption> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Variance.V1.VariantAxisReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DerivedVariantOption() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DerivedVariantOption(DerivedVariantOption other) : this() {
+      optionId_ = other.optionId_;
+      when_ = other.when_ != null ? other.when_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DerivedVariantOption Clone() {
+      return new DerivedVariantOption(this);
+    }
+
+    /// <summary>Field number for the "option_id" field.</summary>
+    public const int OptionIdFieldNumber = 1;
+    private string optionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OptionId {
+      get { return optionId_; }
+      set {
+        optionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "when" field.</summary>
+    public const int WhenFieldNumber = 2;
+    private global::Messages.Variance.V1.VariantCondition when_;
+    /// <summary>
+    /// The option applies when this condition holds, e.g. "main_pcb: slots_2"
+    /// when "connectivity: wifi_bt" and "memory: 32gb". It can't be empty.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Variance.V1.VariantCondition When {
+      get { return when_; }
+      set {
+        when_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DerivedVariantOption);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DerivedVariantOption other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OptionId != other.OptionId) return false;
+      if (!object.Equals(When, other.When)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OptionId.Length != 0) hash ^= OptionId.GetHashCode();
+      if (when_ != null) hash ^= When.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (OptionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(OptionId);
+      }
+      if (when_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(When);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (OptionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(OptionId);
+      }
+      if (when_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(When);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (OptionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OptionId);
+      }
+      if (when_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(When);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DerivedVariantOption other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OptionId.Length != 0) {
+        OptionId = other.OptionId;
+      }
+      if (other.when_ != null) {
+        if (when_ == null) {
+          When = new global::Messages.Variance.V1.VariantCondition();
+        }
+        When.MergeFrom(other.When);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            OptionId = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (when_ == null) {
+              When = new global::Messages.Variance.V1.VariantCondition();
+            }
+            input.ReadMessage(When);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            OptionId = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (when_ == null) {
+              When = new global::Messages.Variance.V1.VariantCondition();
+            }
+            input.ReadMessage(When);
             break;
           }
         }

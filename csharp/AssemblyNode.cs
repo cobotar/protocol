@@ -27,45 +27,45 @@ namespace Messages.Product.V1 {
             "Ch5wcm9kdWN0L3YxL2Fzc2VtYmx5X25vZGUucHJvdG8SCnByb2R1Y3QudjEa",
             "G2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoWZ2VvbWV0cnkvdjEvcG9z",
             "ZS5wcm90bxoZZ2VvbWV0cnkvdjEvdmVjdG9yMy5wcm90bxordmFsaWRhdGlv",
-            "bi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxoedmFyaWFuY2Uv",
-            "djEvdmFyaWFudF9ydWxlLnByb3RvIpkICgxBc3NlbWJseU5vZGUSDgoCaWQY",
-            "ASABKAlSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRIkCg5w",
-            "YXJlbnRfbm9kZV9pZBgDIAEoCVIMcGFyZW50Tm9kZUlkEjUKBGtpbmQYBCAB",
-            "KA4yFC5wcm9kdWN0LnYxLk5vZGVLaW5kQgu6SAiCAQIQAcgBAVIEa2luZBIs",
-            "ChJwYXJ0X2RlZmluaXRpb25faWQYBSABKAlSEHBhcnREZWZpbml0aW9uSWQS",
-            "KgoRb3ZlcnJpZGVfbW9kZWxfaWQYBiABKAlSD292ZXJyaWRlTW9kZWxJZBIw",
-            "Cgpsb2NhbF9wb3NlGAcgASgLMhEuZ2VvbWV0cnkudjEuUG9zZVIJbG9jYWxQ",
-            "b3NlEiMKDXNlcXVlbmNlX2hpbnQYCSABKAVSDHNlcXVlbmNlSGludBIuChNj",
-            "YWRfb2NjdXJyZW5jZV9wYXRoGAogASgJUhFjYWRPY2N1cnJlbmNlUGF0aBJA",
-            "ChBqb2luX21ldGhvZF9oaW50GAsgASgOMhYucHJvZHVjdC52MS5Kb2luTWV0",
-            "aG9kUg5qb2luTWV0aG9kSGludBJIChVpbnNlcnRpb25fb2Zmc2V0X2hpbnQY",
-            "DCABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzUhNpbnNlcnRpb25PZmZzZXRI",
-            "aW50EkYKFGFwcHJvYWNoX29mZnNldF9oaW50GA0gASgLMhQuZ2VvbWV0cnku",
-            "djEuVmVjdG9yM1ISYXBwcm9hY2hPZmZzZXRIaW50EhoKCG9wdGlvbmFsGA4g",
-            "ASgIUghvcHRpb25hbBI+Cg1hcHBsaWNhYmlsaXR5GA8gAygLMhgudmFyaWFu",
-            "Y2UudjEuVmFyaWFudFJ1bGVSDWFwcGxpY2FiaWxpdHk66wK6SOcCGpEBCjFh",
-            "c3NlbWJseV9ub2RlLmdyb3VwX211c3Rfbm90X2hhdmVfcGFydF9kZWZpbml0",
-            "aW9uEitHUk9VUCBub2RlcyBtdXN0IG5vdCBzZXQgcGFydF9kZWZpbml0aW9u",
-            "X2lkGi90aGlzLmtpbmQgIT0gMSB8fCB0aGlzLnBhcnRfZGVmaW5pdGlvbl9p",
-            "ZCA9PSAnJxrQAQo6YXNzZW1ibHlfbm9kZS5waHlzaWNhbF9vY2N1cnJlbmNl",
-            "X3JlcXVpcmVzX3BhcnRfZGVmaW5pdGlvbhJMUEFSVF9PQ0NVUlJFTkNFIGFu",
-            "ZCBTVUJBU1NFTUJMWV9PQ0NVUlJFTkNFIG5vZGVzIG11c3Qgc2V0IHBhcnRf",
-            "ZGVmaW5pdGlvbl9pZBpEISh0aGlzLmtpbmQgPT0gMiB8fCB0aGlzLmtpbmQg",
-            "PT0gMykgfHwgdGhpcy5wYXJ0X2RlZmluaXRpb25faWQgIT0gJycqfwoITm9k",
-            "ZUtpbmQSGQoVTk9ERV9LSU5EX1VOU1BFQ0lGSUVEEAASEwoPTk9ERV9LSU5E",
-            "X0dST1VQEAESHQoZTk9ERV9LSU5EX1BBUlRfT0NDVVJSRU5DRRACEiQKIE5P",
-            "REVfS0lORF9TVUJBU1NFTUJMWV9PQ0NVUlJFTkNFEAMq0wEKCkpvaW5NZXRo",
-            "b2QSGwoXSk9JTl9NRVRIT0RfVU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhP",
-            "RF9OT05FEAESFgoSSk9JTl9NRVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRI",
-            "T0RfUFJFU1NfRklUEAMSGAoUSk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRK",
-            "T0lOX01FVEhPRF9BREhFU0lWRRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIV",
-            "ChFKT0lOX01FVEhPRF9QTEFDRRAHQrMBCg5jb20ucHJvZHVjdC52MUIRQXNz",
-            "ZW1ibHlOb2RlUHJvdG9QAVo8Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
-            "L3YyL21lc3NhZ2VzL3Byb2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVz",
-            "c2FnZXMuUHJvZHVjdC5WMcoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQ",
-            "Qk1ldGFkYXRh6gILUHJvZHVjdDo6VjFiBnByb3RvMw=="));
+            "bi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxojdmFyaWFuY2Uv",
+            "djEvdmFyaWFudF9jb25kaXRpb24ucHJvdG8inggKDEFzc2VtYmx5Tm9kZRIO",
+            "CgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
+            "EiQKDnBhcmVudF9ub2RlX2lkGAMgASgJUgxwYXJlbnROb2RlSWQSNQoEa2lu",
+            "ZBgEIAEoDjIULnByb2R1Y3QudjEuTm9kZUtpbmRCC7pICIIBAhAByAEBUgRr",
+            "aW5kEiwKEnBhcnRfZGVmaW5pdGlvbl9pZBgFIAEoCVIQcGFydERlZmluaXRp",
+            "b25JZBIqChFvdmVycmlkZV9tb2RlbF9pZBgGIAEoCVIPb3ZlcnJpZGVNb2Rl",
+            "bElkEjAKCmxvY2FsX3Bvc2UYByABKAsyES5nZW9tZXRyeS52MS5Qb3NlUgls",
+            "b2NhbFBvc2USIwoNc2VxdWVuY2VfaGludBgJIAEoBVIMc2VxdWVuY2VIaW50",
+            "Ei4KE2NhZF9vY2N1cnJlbmNlX3BhdGgYCiABKAlSEWNhZE9jY3VycmVuY2VQ",
+            "YXRoEkAKEGpvaW5fbWV0aG9kX2hpbnQYCyABKA4yFi5wcm9kdWN0LnYxLkpv",
+            "aW5NZXRob2RSDmpvaW5NZXRob2RIaW50EkgKFWluc2VydGlvbl9vZmZzZXRf",
+            "aGludBgMIAEoCzIULmdlb21ldHJ5LnYxLlZlY3RvcjNSE2luc2VydGlvbk9m",
+            "ZnNldEhpbnQSRgoUYXBwcm9hY2hfb2Zmc2V0X2hpbnQYDSABKAsyFC5nZW9t",
+            "ZXRyeS52MS5WZWN0b3IzUhJhcHByb2FjaE9mZnNldEhpbnQSGgoIb3B0aW9u",
+            "YWwYDiABKAhSCG9wdGlvbmFsEkMKDWFwcGxpY2FiaWxpdHkYDyABKAsyHS52",
+            "YXJpYW5jZS52MS5WYXJpYW50Q29uZGl0aW9uUg1hcHBsaWNhYmlsaXR5OusC",
+            "ukjnAhqRAQoxYXNzZW1ibHlfbm9kZS5ncm91cF9tdXN0X25vdF9oYXZlX3Bh",
+            "cnRfZGVmaW5pdGlvbhIrR1JPVVAgbm9kZXMgbXVzdCBub3Qgc2V0IHBhcnRf",
+            "ZGVmaW5pdGlvbl9pZBovdGhpcy5raW5kICE9IDEgfHwgdGhpcy5wYXJ0X2Rl",
+            "ZmluaXRpb25faWQgPT0gJyca0AEKOmFzc2VtYmx5X25vZGUucGh5c2ljYWxf",
+            "b2NjdXJyZW5jZV9yZXF1aXJlc19wYXJ0X2RlZmluaXRpb24STFBBUlRfT0ND",
+            "VVJSRU5DRSBhbmQgU1VCQVNTRU1CTFlfT0NDVVJSRU5DRSBub2RlcyBtdXN0",
+            "IHNldCBwYXJ0X2RlZmluaXRpb25faWQaRCEodGhpcy5raW5kID09IDIgfHwg",
+            "dGhpcy5raW5kID09IDMpIHx8IHRoaXMucGFydF9kZWZpbml0aW9uX2lkICE9",
+            "ICcnKn8KCE5vZGVLaW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMK",
+            "D05PREVfS0lORF9HUk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVO",
+            "Q0UQAhIkCiBOT0RFX0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADKtMB",
+            "CgpKb2luTWV0aG9kEhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVEEAASFAoQ",
+            "Sk9JTl9NRVRIT0RfTk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RFThACEhkK",
+            "FUpPSU5fTUVUSE9EX1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9EX1NOQVBf",
+            "RklUEAQSGAoUSk9JTl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lOX01FVEhP",
+            "RF9XRUxEEAYSFQoRSk9JTl9NRVRIT0RfUExBQ0UQB0KzAQoOY29tLnByb2R1",
+            "Y3QudjFCEUFzc2VtYmx5Tm9kZVByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC92Mi9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaIC",
+            "A1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJv",
+            "ZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.NodeKind), typeof(global::Messages.Product.V1.JoinMethod), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.AssemblyNode), global::Messages.Product.V1.AssemblyNode.Parser, new[]{ "Id", "Name", "ParentNodeId", "Kind", "PartDefinitionId", "OverrideModelId", "LocalPose", "SequenceHint", "CadOccurrencePath", "JoinMethodHint", "InsertionOffsetHint", "ApproachOffsetHint", "Optional", "Applicability" }, null, null, null, null)
           }));
@@ -194,7 +194,7 @@ namespace Messages.Product.V1 {
       insertionOffsetHint_ = other.insertionOffsetHint_ != null ? other.insertionOffsetHint_.Clone() : null;
       approachOffsetHint_ = other.approachOffsetHint_ != null ? other.approachOffsetHint_.Clone() : null;
       optional_ = other.optional_;
-      applicability_ = other.applicability_.Clone();
+      applicability_ = other.applicability_ != null ? other.applicability_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -383,16 +383,20 @@ namespace Messages.Product.V1 {
 
     /// <summary>Field number for the "applicability" field.</summary>
     public const int ApplicabilityFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Messages.Variance.V1.VariantRule> _repeated_applicability_codec
-        = pb::FieldCodec.ForMessage(122, global::Messages.Variance.V1.VariantRule.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> applicability_ = new pbc::RepeatedField<global::Messages.Variance.V1.VariantRule>();
+    private global::Messages.Variance.V1.VariantCondition applicability_;
     /// <summary>
-    /// Applies if any rule matches. Empty means always applicable.
+    /// The node applies when this condition and every ancestor's hold, so it only
+    /// says what the ancestors don't. Empty means it applies wherever its parent
+    /// does. A node's condition names axes of one variant group only, so groups
+    /// stay independent.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> Applicability {
+    public global::Messages.Variance.V1.VariantCondition Applicability {
       get { return applicability_; }
+      set {
+        applicability_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -423,7 +427,7 @@ namespace Messages.Product.V1 {
       if (!object.Equals(InsertionOffsetHint, other.InsertionOffsetHint)) return false;
       if (!object.Equals(ApproachOffsetHint, other.ApproachOffsetHint)) return false;
       if (Optional != other.Optional) return false;
-      if(!applicability_.Equals(other.applicability_)) return false;
+      if (!object.Equals(Applicability, other.Applicability)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -444,7 +448,7 @@ namespace Messages.Product.V1 {
       if (insertionOffsetHint_ != null) hash ^= InsertionOffsetHint.GetHashCode();
       if (approachOffsetHint_ != null) hash ^= ApproachOffsetHint.GetHashCode();
       if (Optional != false) hash ^= Optional.GetHashCode();
-      hash ^= applicability_.GetHashCode();
+      if (applicability_ != null) hash ^= Applicability.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -515,7 +519,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(112);
         output.WriteBool(Optional);
       }
-      applicability_.WriteTo(output, _repeated_applicability_codec);
+      if (applicability_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Applicability);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -578,7 +585,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(112);
         output.WriteBool(Optional);
       }
-      applicability_.WriteTo(ref output, _repeated_applicability_codec);
+      if (applicability_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Applicability);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -628,7 +638,9 @@ namespace Messages.Product.V1 {
       if (Optional != false) {
         size += 1 + 1;
       }
-      size += applicability_.CalculateSize(_repeated_applicability_codec);
+      if (applicability_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Applicability);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -689,7 +701,12 @@ namespace Messages.Product.V1 {
       if (other.Optional != false) {
         Optional = other.Optional;
       }
-      applicability_.Add(other.applicability_);
+      if (other.applicability_ != null) {
+        if (applicability_ == null) {
+          Applicability = new global::Messages.Variance.V1.VariantCondition();
+        }
+        Applicability.MergeFrom(other.Applicability);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -771,7 +788,10 @@ namespace Messages.Product.V1 {
             break;
           }
           case 122: {
-            applicability_.AddEntriesFrom(input, _repeated_applicability_codec);
+            if (applicability_ == null) {
+              Applicability = new global::Messages.Variance.V1.VariantCondition();
+            }
+            input.ReadMessage(Applicability);
             break;
           }
         }
@@ -855,7 +875,10 @@ namespace Messages.Product.V1 {
             break;
           }
           case 122: {
-            applicability_.AddEntriesFrom(ref input, _repeated_applicability_codec);
+            if (applicability_ == null) {
+              Applicability = new global::Messages.Variance.V1.VariantCondition();
+            }
+            input.ReadMessage(Applicability);
             break;
           }
         }

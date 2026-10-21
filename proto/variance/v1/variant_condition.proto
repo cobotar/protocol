@@ -1,0 +1,43 @@
+syntax = "proto3";
+package variance.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Variance.V1";
+option go_package = "github.com/cobotar/protocol/v2/messages/variance/v1";
+
+// AxisCondition holds when a configuration's option on the axis is one of
+// option_ids, e.g. "connectivity: wifi, wifi_bt".
+message AxisCondition {
+  string axis_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  repeated string option_ids = 2 [
+    (buf.validate.field).repeated.min_items = 1,
+    (buf.validate.field).repeated.unique = true,
+    (buf.validate.field).repeated.items.string.(validation.v1.key_component) = true
+  ];
+}
+
+// VariantCondition holds when every one of its axis conditions holds, e.g.
+// "connectivity: wifi, wifi_bt" and "memory: 32gb". An empty condition always
+// holds.
+//
+// Applicability is one condition, and it is inherited (cobotar/protocol#32):
+// an assembly node applies when its own condition and every ancestor's hold,
+// and a sequence or task when its own condition, every ancestor sequence's and
+// the recipe's include condition hold. A condition only needs to say what its
+// ancestors don't already say.
+//
+// There is no "or" across axes. Express one with a derived axis that names
+// the reason (VariantAxis.derivation), or with two nodes. Lists of conditions
+// are used only where "any of" is meant: exclusions.
+message VariantCondition {
+  repeated AxisCondition all_of = 1 [(buf.validate.field).cel = {
+    id: "variant_condition.all_of.unique_axis_ids"
+    message: "a variant condition can name an axis only once"
+    expression: "this.map(condition, condition.axis_id).unique()"
+  }];
+}

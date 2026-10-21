@@ -2,12 +2,11 @@ from buf.validate import validate_pb2 as _validate_pb2
 from geometry.v1 import pose_pb2 as _pose_pb2
 from geometry.v1 import vector3_pb2 as _vector3_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
-from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
-from google.protobuf.internal import containers as _containers
+from variance.v1 import variant_condition_pb2 as _variant_condition_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Iterable as _Iterable, Mapping as _Mapping
+from collections.abc import Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -71,5 +70,5 @@ class AssemblyNode(_message.Message):
     insertion_offset_hint: _vector3_pb2.Vector3
     approach_offset_hint: _vector3_pb2.Vector3
     optional: bool
-    applicability: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., parent_node_id: _Optional[str] = ..., kind: _Optional[_Union[NodeKind, str]] = ..., part_definition_id: _Optional[str] = ..., override_model_id: _Optional[str] = ..., local_pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., sequence_hint: _Optional[int] = ..., cad_occurrence_path: _Optional[str] = ..., join_method_hint: _Optional[_Union[JoinMethod, str]] = ..., insertion_offset_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., optional: bool = ..., applicability: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ...) -> None: ...
+    applicability: _variant_condition_pb2.VariantCondition
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., parent_node_id: _Optional[str] = ..., kind: _Optional[_Union[NodeKind, str]] = ..., part_definition_id: _Optional[str] = ..., override_model_id: _Optional[str] = ..., local_pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., sequence_hint: _Optional[int] = ..., cad_occurrence_path: _Optional[str] = ..., join_method_hint: _Optional[_Union[JoinMethod, str]] = ..., insertion_offset_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., approach_offset_hint: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., optional: bool = ..., applicability: _Optional[_Union[_variant_condition_pb2.VariantCondition, _Mapping]] = ...) -> None: ...

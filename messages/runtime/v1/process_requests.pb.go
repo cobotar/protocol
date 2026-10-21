@@ -8,9 +8,9 @@ package runtimev1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
-	v11 "github.com/cobotar/protocol/v2/messages/common/v1"
+	v1 "github.com/cobotar/protocol/v2/messages/common/v1"
 	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
-	v1 "github.com/cobotar/protocol/v2/messages/variance/v1"
+	v11 "github.com/cobotar/protocol/v2/messages/variance/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -141,6 +141,10 @@ const (
 	// ProcessLoadRequest.done_task_definition_ids can't be done before the run
 	// starts; the issue's task_definition_id names the offending task.
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS ProcessLoadFailure = 5
+	// The variant configuration or named configuration isn't valid for the
+	// recipe's product; the issue's variant_axis_id names the axis, if one is to
+	// blame, and its message says why.
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION ProcessLoadFailure = 6
 	// Container related failures
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER      ProcessLoadFailure = 10
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND      ProcessLoadFailure = 11
@@ -191,6 +195,7 @@ var (
 		3:   "PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED",
 		4:   "PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN",
 		5:   "PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS",
+		6:   "PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION",
 		10:  "PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER",
 		11:  "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND",
 		12:  "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND",
@@ -228,6 +233,7 @@ var (
 		"PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED":          3,
 		"PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN":         4,
 		"PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS":             5,
+		"PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION":  6,
 		"PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER":        10,
 		"PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND":        11,
 		"PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND":   12,
@@ -529,8 +535,15 @@ type ProcessLoadRequest struct {
 	// If set, the loader must validate and respect these targets.
 	TargetCellId    string `protobuf:"bytes,3,opt,name=target_cell_id,json=targetCellId,proto3" json:"target_cell_id,omitempty"`
 	TargetStationId string `protobuf:"bytes,4,opt,name=target_station_id,json=targetStationId,proto3" json:"target_station_id,omitempty"`
-	// Optional variant configuration used to evaluate recipe/task applicability.
-	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,5,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
+	// The variant of the recipe's product to run, used to evaluate recipe,
+	// sequence and task applicability (cobotar/protocol#32). Required when the
+	// product has variant axes.
+	//
+	// Types that are valid to be assigned to Variant:
+	//
+	//	*ProcessLoadRequest_VariantConfiguration
+	//	*ProcessLoadRequest_NamedVariantConfigurationId
+	Variant isProcessLoadRequest_Variant `protobuf_oneof:"variant"`
 	// true  -> perform precheck only
 	// false -> perform precheck and instantiate ProcessRun if feasible
 	DryRun bool `protobuf:"varint,6,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"`
@@ -542,9 +555,9 @@ type ProcessLoadRequest struct {
 	// Optional order/business reference to carry into the ProcessRun.
 	OrderId string `protobuf:"bytes,9,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	// Optional caller-provided parameters used during instantiation.
-	Parameters         []*v11.KeyValueConstraint `protobuf:"bytes,10,rep,name=parameters,proto3" json:"parameters,omitempty"`
-	AllocationStrategy AllocationStrategy        `protobuf:"varint,11,opt,name=allocation_strategy,json=allocationStrategy,proto3,enum=runtime.v1.AllocationStrategy" json:"allocation_strategy,omitempty"`
-	TargetEmployee     string                    `protobuf:"bytes,12,opt,name=target_employee,json=targetEmployee,proto3" json:"target_employee,omitempty"`
+	Parameters         []*v1.KeyValueConstraint `protobuf:"bytes,10,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	AllocationStrategy AllocationStrategy       `protobuf:"varint,11,opt,name=allocation_strategy,json=allocationStrategy,proto3,enum=runtime.v1.AllocationStrategy" json:"allocation_strategy,omitempty"`
+	TargetEmployee     string                   `protobuf:"bytes,12,opt,name=target_employee,json=targetEmployee,proto3" json:"target_employee,omitempty"`
 	// Tasks of the recipe that are already done, so the run starts after them
 	// (cobotar/protocol#28): their task runs start DONE, and the runtime derives
 	// every other state from them as if they had been done in the run, e.g. the
@@ -620,11 +633,29 @@ func (x *ProcessLoadRequest) GetTargetStationId() string {
 	return ""
 }
 
-func (x *ProcessLoadRequest) GetVariantConfiguration() *v1.VariantConfiguration {
+func (x *ProcessLoadRequest) GetVariant() isProcessLoadRequest_Variant {
 	if x != nil {
-		return x.VariantConfiguration
+		return x.Variant
 	}
 	return nil
+}
+
+func (x *ProcessLoadRequest) GetVariantConfiguration() *v11.VariantConfiguration {
+	if x != nil {
+		if x, ok := x.Variant.(*ProcessLoadRequest_VariantConfiguration); ok {
+			return x.VariantConfiguration
+		}
+	}
+	return nil
+}
+
+func (x *ProcessLoadRequest) GetNamedVariantConfigurationId() string {
+	if x != nil {
+		if x, ok := x.Variant.(*ProcessLoadRequest_NamedVariantConfigurationId); ok {
+			return x.NamedVariantConfigurationId
+		}
+	}
+	return ""
 }
 
 func (x *ProcessLoadRequest) GetDryRun() bool {
@@ -655,7 +686,7 @@ func (x *ProcessLoadRequest) GetOrderId() string {
 	return ""
 }
 
-func (x *ProcessLoadRequest) GetParameters() []*v11.KeyValueConstraint {
+func (x *ProcessLoadRequest) GetParameters() []*v1.KeyValueConstraint {
 	if x != nil {
 		return x.Parameters
 	}
@@ -683,6 +714,28 @@ func (x *ProcessLoadRequest) GetDoneTaskDefinitionIds() []string {
 	return nil
 }
 
+type isProcessLoadRequest_Variant interface {
+	isProcessLoadRequest_Variant()
+}
+
+type ProcessLoadRequest_VariantConfiguration struct {
+	// The selected axes only. The backend adds the derived axes and refuses
+	// (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) a configuration
+	// that misses a selected axis, names an unknown axis or option, selects a
+	// derived axis, is excluded by its variant group, or for which a derived
+	// axis gets no option or several.
+	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,5,opt,name=variant_configuration,json=variantConfiguration,proto3,oneof"`
+}
+
+type ProcessLoadRequest_NamedVariantConfigurationId struct {
+	// One of the product's named configurations, by ID.
+	NamedVariantConfigurationId string `protobuf:"bytes,14,opt,name=named_variant_configuration_id,json=namedVariantConfigurationId,proto3,oneof"`
+}
+
+func (*ProcessLoadRequest_VariantConfiguration) isProcessLoadRequest_Variant() {}
+
+func (*ProcessLoadRequest_NamedVariantConfigurationId) isProcessLoadRequest_Variant() {}
+
 type ProcessRunIssue struct {
 	state    protoimpl.MessageState  `protogen:"open.v1"`
 	Failure  ProcessLoadFailure      `protobuf:"varint,1,opt,name=failure,proto3,enum=runtime.v1.ProcessLoadFailure" json:"failure,omitempty"`
@@ -701,8 +754,11 @@ type ProcessRunIssue struct {
 	ActorId             string `protobuf:"bytes,12,opt,name=actor_id,json=actorId,proto3" json:"actor_id,omitempty"`
 	ResourceId          string `protobuf:"bytes,13,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"` // tool/robot/fixture/asset/part instance if known
 	// Optional remediation hint
-	Remediation   string                `protobuf:"bytes,14,opt,name=remediation,proto3" json:"remediation,omitempty"`
-	Importance    RequirementImportance `protobuf:"varint,15,opt,name=importance,proto3,enum=runtime.v1.RequirementImportance" json:"importance,omitempty"`
+	Remediation string                `protobuf:"bytes,14,opt,name=remediation,proto3" json:"remediation,omitempty"`
+	Importance  RequirementImportance `protobuf:"varint,15,opt,name=importance,proto3,enum=runtime.v1.RequirementImportance" json:"importance,omitempty"`
+	// The variant axis the issue is about, e.g. for an invalid variant
+	// configuration.
+	VariantAxisId string `protobuf:"bytes,16,opt,name=variant_axis_id,json=variantAxisId,proto3" json:"variant_axis_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -842,9 +898,16 @@ func (x *ProcessRunIssue) GetImportance() RequirementImportance {
 	return RequirementImportance_REQUIREMENT_IMPORTANCE_UNSPECIFIED
 }
 
+func (x *ProcessRunIssue) GetVariantAxisId() string {
+	if x != nil {
+		return x.VariantAxisId
+	}
+	return ""
+}
+
 type CandidateActorEvaluation struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Actor *v11.ActorRef          `protobuf:"bytes,1,opt,name=actor,proto3" json:"actor,omitempty"`
+	Actor *v1.ActorRef           `protobuf:"bytes,1,opt,name=actor,proto3" json:"actor,omitempty"`
 	// Whether this actor is currently feasible for the task.
 	Feasible bool `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
 	// Effective restrictions if this actor were assigned.
@@ -885,7 +948,7 @@ func (*CandidateActorEvaluation) Descriptor() ([]byte, []int) {
 	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CandidateActorEvaluation) GetActor() *v11.ActorRef {
+func (x *CandidateActorEvaluation) GetActor() *v1.ActorRef {
 	if x != nil {
 		return x.Actor
 	}
@@ -917,7 +980,7 @@ type TaskFeasibility struct {
 	state                         protoimpl.MessageState      `protogen:"open.v1"`
 	TaskDefinitionId              string                      `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
 	Feasible                      bool                        `protobuf:"varint,2,opt,name=feasible,proto3" json:"feasible,omitempty"`
-	CandidateActors               []*v11.ActorRef             `protobuf:"bytes,3,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
+	CandidateActors               []*v1.ActorRef              `protobuf:"bytes,3,rep,name=candidate_actors,json=candidateActors,proto3" json:"candidate_actors,omitempty"`
 	CandidateRobotInstanceIds     []string                    `protobuf:"bytes,4,rep,name=candidate_robot_instance_ids,json=candidateRobotInstanceIds,proto3" json:"candidate_robot_instance_ids,omitempty"`
 	CandidateToolInstanceIds      []string                    `protobuf:"bytes,5,rep,name=candidate_tool_instance_ids,json=candidateToolInstanceIds,proto3" json:"candidate_tool_instance_ids,omitempty"`
 	CandidateContainerInstanceIds []string                    `protobuf:"bytes,6,rep,name=candidate_container_instance_ids,json=candidateContainerInstanceIds,proto3" json:"candidate_container_instance_ids,omitempty"`
@@ -973,7 +1036,7 @@ func (x *TaskFeasibility) GetFeasible() bool {
 	return false
 }
 
-func (x *TaskFeasibility) GetCandidateActors() []*v11.ActorRef {
+func (x *TaskFeasibility) GetCandidateActors() []*v1.ActorRef {
 	if x != nil {
 		return x.CandidateActors
 	}
@@ -1198,13 +1261,14 @@ var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/process_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\x82\x06\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xe1\x06\n" +
 	"\x12ProcessLoadRequest\x128\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\x0fprocessRecipeId\x122\n" +
 	"\x0etarget_line_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc0\xf2\x04\x01R\ftargetLineId\x12/\n" +
 	"\x0etarget_cell_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\ftargetCellId\x125\n" +
-	"\x11target_station_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\x0ftargetStationId\x12V\n" +
-	"\x15variant_configuration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationR\x14variantConfiguration\x12\x17\n" +
+	"\x11target_station_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\x0ftargetStationId\x12X\n" +
+	"\x15variant_configuration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationH\x00R\x14variantConfiguration\x12P\n" +
+	"\x1enamed_variant_configuration_id\x18\x0e \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01H\x00R\x1bnamedVariantConfigurationId\x12\x17\n" +
 	"\adry_run\x18\x06 \x01(\bR\x06dryRun\x12*\n" +
 	"\x11queue_if_occupied\x18\a \x01(\bR\x0fqueueIfOccupied\x12E\n" +
 	"\bstrategy\x18\b \x01(\x0e2\x1f.runtime.v1.ProcessLoadStrategyB\b\xbaH\x05\x82\x01\x02\x10\x01R\bstrategy\x12\x19\n" +
@@ -1216,7 +1280,8 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\x13allocation_strategy\x18\v \x01(\x0e2\x1e.runtime.v1.AllocationStrategyB\b\xbaH\x05\x82\x01\x02\x10\x01R\x12allocationStrategy\x122\n" +
 	"\x0ftarget_employee\x18\f \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x0etargetEmployee\x12I\n" +
 	"\x18done_task_definition_ids\x18\r \x03(\tB\x10\xbaH\r\x92\x01\n" +
-	"\x18\x01\"\x06r\x04\xb0\xf2\x04\x01R\x15doneTaskDefinitionIds\"\x9d\x05\n" +
+	"\x18\x01\"\x06r\x04\xb0\xf2\x04\x01R\x15doneTaskDefinitionIdsB\t\n" +
+	"\avariant\"\xc5\x05\n" +
 	"\x0fProcessRunIssue\x128\n" +
 	"\afailure\x18\x01 \x01(\x0e2\x1e.runtime.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12?\n" +
@@ -1237,7 +1302,8 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\vremediation\x18\x0e \x01(\tR\vremediation\x12A\n" +
 	"\n" +
 	"importance\x18\x0f \x01(\x0e2!.runtime.v1.RequirementImportanceR\n" +
-	"importance\"\xda\x01\n" +
+	"importance\x12&\n" +
+	"\x0fvariant_axis_id\x18\x10 \x01(\tR\rvariantAxisId\"\xda\x01\n" +
 	"\x18CandidateActorEvaluation\x12)\n" +
 	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12B\n" +
@@ -1277,13 +1343,14 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*Y\n" +
 	"\x12AllocationStrategy\x12#\n" +
 	"\x1fALLOCATION_STRATEGY_UNSPECIFIED\x10\x00\x12\x1e\n" +
-	"\x1aALLOCATION_STRATEGY_STATIC\x10\x01*\xda\f\n" +
+	"\x1aALLOCATION_STRATEGY_STATIC\x10\x01*\x92\r\n" +
 	"\x12ProcessLoadFailure\x12$\n" +
 	" PROCESS_LOAD_FAILURE_UNSPECIFIED\x10\x00\x121\n" +
 	"-PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND\x10\x02\x12.\n" +
 	"*PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED\x10\x03\x12/\n" +
 	"+PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN\x10\x04\x12+\n" +
-	"'PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS\x10\x05\x120\n" +
+	"'PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS\x10\x05\x126\n" +
+	"2PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION\x10\x06\x120\n" +
 	",PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER\x10\n" +
 	"\x120\n" +
 	",PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND\x10\v\x125\n" +
@@ -1364,9 +1431,9 @@ var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(*TaskFeasibility)(nil),          // 10: runtime.v1.TaskFeasibility
 	(*ProcessRunPrecheckResult)(nil), // 11: runtime.v1.ProcessRunPrecheckResult
 	(*ProcessLoadResult)(nil),        // 12: runtime.v1.ProcessLoadResult
-	(*v1.VariantConfiguration)(nil),  // 13: variance.v1.VariantConfiguration
-	(*v11.KeyValueConstraint)(nil),   // 14: common.v1.KeyValueConstraint
-	(*v11.ActorRef)(nil),             // 15: common.v1.ActorRef
+	(*v11.VariantConfiguration)(nil), // 13: variance.v1.VariantConfiguration
+	(*v1.KeyValueConstraint)(nil),    // 14: common.v1.KeyValueConstraint
+	(*v1.ActorRef)(nil),              // 15: common.v1.ActorRef
 	(*RuntimeRestriction)(nil),       // 16: runtime.v1.RuntimeRestriction
 	(*ProcessRun)(nil),               // 17: runtime.v1.ProcessRun
 }
@@ -1404,6 +1471,10 @@ func file_runtime_v1_process_requests_proto_init() {
 	}
 	file_runtime_v1_process_run_proto_init()
 	file_runtime_v1_runtime_restriction_proto_init()
+	file_runtime_v1_process_requests_proto_msgTypes[0].OneofWrappers = []any{
+		(*ProcessLoadRequest_VariantConfiguration)(nil),
+		(*ProcessLoadRequest_NamedVariantConfigurationId)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

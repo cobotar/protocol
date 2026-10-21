@@ -6,12 +6,75 @@ import "common/v1/external_references.proto";
 import "product/v1/assembly_node.proto";
 import "validation/v1/predefined_string_rules.proto";
 import "variance/v1/variant_axis.proto";
+import "variance/v1/variant_configuration.proto";
+import "variance/v1/variant_group.proto";
 
 option csharp_namespace = "Messages.Product.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 
 // TODO: add validation for: root_node_id, nodes
 message ProductDefinition {
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_groups.known_axes"
+    message: "variant groups can only name axes of the product"
+    expression: "this.variant_groups.all(group, group.axis_ids.all(axis_id, this.variant_axes.exists(axis, axis.id == axis_id)))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_groups.disjoint"
+    message: "an axis can be in at most one variant group"
+    expression: "this.variant_axes.all(axis, this.variant_groups.filter(group, axis.id in group.axis_ids).size() <= 1)"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_axes.derived_in_group"
+    message: "a derived axis must be in a variant group, and its conditions can only name selected axes of that group"
+    expression: "this.variant_axes.all(axis, !has(axis.derivation) || this.variant_groups.exists(group, axis.id in group.axis_ids && axis.derivation.options.all(derived, derived.when.all_of.all(condition, condition.axis_id in group.axis_ids && this.variant_axes.exists(other, other.id == condition.axis_id && !has(other.derivation))))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_groups.selected_axes_only"
+    message: "excluded and allowed combinations can only name selected axes"
+    expression: "this.variant_groups.all(group, group.excluded.all(condition, condition.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && !has(axis.derivation)))) && group.allowed.all(configuration, configuration.selections.all(selection, this.variant_axes.exists(axis, axis.id == selection.axis_id && !has(axis.derivation)))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.configurations.selected_axes_only"
+    message: "named configurations can only select selected axes of the product"
+    expression: "this.configurations.all(named, named.configuration.selections.all(selection, this.variant_axes.exists(axis, axis.id == selection.axis_id && !has(axis.derivation))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_groups.allowed_complete"
+    message: "an allowed combination must select every selected axis of its group"
+    expression: "this.variant_groups.all(group, group.allowed.all(configuration, group.axis_ids.all(axis_id, this.variant_axes.exists(axis, axis.id == axis_id && has(axis.derivation)) || configuration.selections.exists(selection, selection.axis_id == axis_id))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.configurations.complete"
+    message: "a named configuration must select every selected axis of the product"
+    expression: "this.configurations.all(named, this.variant_axes.all(axis, has(axis.derivation) || named.configuration.selections.exists(selection, selection.axis_id == axis.id)))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_axes.derivation_known_options"
+    message: "a derived axis's conditions can only name options of their axes"
+    expression: "this.variant_axes.all(derived_axis, !has(derived_axis.derivation) || derived_axis.derivation.options.all(derived, derived.when.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && c.option_ids.all(option_id, axis.options.exists(option, option.id == option_id))))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_groups.known_options"
+    message: "excluded and allowed combinations can only name options of their axes"
+    expression: "this.variant_groups.all(group, group.excluded.all(condition, condition.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && c.option_ids.all(option_id, axis.options.exists(option, option.id == option_id))))) && group.allowed.all(configuration, configuration.selections.all(s, this.variant_axes.exists(axis, axis.id == s.axis_id && axis.options.exists(option, option.id == s.option_id)))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.configurations.known_options"
+    message: "named configurations can only select options of their axes"
+    expression: "this.configurations.all(named, named.configuration.selections.all(s, this.variant_axes.exists(axis, axis.id == s.axis_id && axis.options.exists(option, option.id == s.option_id))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.nodes.applicability_known"
+    message: "an assembly node's applicability can only name axes of the product and their options"
+    expression: "this.nodes.all(node, node.applicability.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && c.option_ids.all(option_id, axis.options.exists(option, option.id == option_id)))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.nodes.applicability_one_group"
+    message: "an assembly node's applicability can only name axes of one variant group, so groups stay independent"
+    expression: "this.nodes.all(node, node.applicability.all_of.all(a, node.applicability.all_of.all(b, a.axis_id == b.axis_id || this.variant_groups.exists(group, a.axis_id in group.axis_ids && b.axis_id in group.axis_ids))))"
+  };
+
   string id = 1 [(buf.validate.field).string.(validation.v1.product_id_component) = true];
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
@@ -31,6 +94,36 @@ message ProductDefinition {
   string root_node_id = 6;
   repeated AssemblyNode nodes = 7;
   repeated common.v1.ExternalReference external_references = 8;
+
+  // Groups of axes that depend on each other (cobotar/protocol#32). An axis
+  // outside every group is independent, and every option of it is valid.
+  repeated variance.v1.VariantGroup variant_groups = 9 [
+    (buf.validate.field).cel = {
+      id: "product_definition.variant_groups.unique_ids"
+      message: "variant group ids must be unique within a product definition"
+      expression: "this.map(group, group.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "product_definition.variant_groups.unique_normalized_names"
+      message: "variant group names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case"
+      expression: "this.map(group, group.name.trim().lowerAscii()).unique()"
+    }
+  ];
+
+  // Configurations the product names, e.g. the rows of the configuration
+  // table, which an operator can pick when loading a process.
+  repeated variance.v1.NamedVariantConfiguration configurations = 10 [
+    (buf.validate.field).cel = {
+      id: "product_definition.configurations.unique_ids"
+      message: "named configuration ids must be unique within a product definition"
+      expression: "this.map(named, named.id).unique()"
+    },
+    (buf.validate.field).cel = {
+      id: "product_definition.configurations.unique_normalized_names"
+      message: "named configuration names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case"
+      expression: "this.map(named, named.name.trim().lowerAscii()).unique()"
+    }
+  ];
 }
 
 message ProductDefinitions {

@@ -3,6 +3,7 @@ package variance.v1;
 
 import "buf/validate/validate.proto";
 import "validation/v1/predefined_string_rules.proto";
+import "variance/v1/variant_condition.proto";
 
 option csharp_namespace = "Messages.Variance.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/variance/v1";
@@ -20,7 +21,23 @@ message VariantOption {
   string description = 4;
 }
 
+// VariantAxis is a dimension in which a product varies, e.g. connectivity,
+// memory or the colour of the case. An axis is either selected (chosen when a
+// process is loaded) or derived (has a derivation): its option follows from
+// the selected axes of its group, so it's never asked of the operator. Both
+// kinds can be used in applicability.
 message VariantAxis {
+  option (buf.validate.message).cel = {
+    id: "variant_axis.derivation.covers_options"
+    message: "a derivation must give a condition for every option of the axis, and only for its options"
+    expression: "!has(this.derivation) || (this.derivation.options.size() == this.options.size() && this.derivation.options.all(derived, this.options.exists(option, option.id == derived.option_id)))"
+  };
+  option (buf.validate.message).cel = {
+    id: "variant_axis.derivation.not_self"
+    message: "a derived axis's conditions can't name the axis itself"
+    expression: "!has(this.derivation) || this.derivation.options.all(derived, derived.when.all_of.all(condition, condition.axis_id != this.id))"
+  };
+
   string id = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.key_component) = true
@@ -46,6 +63,40 @@ message VariantAxis {
       id: "variant_axis.options.unique_normalized_names"
       message: "variant option names must be unique within an axis, ignoring surrounding whitespace and ASCII letter case"
       expression: "this.map(option, option.name.trim().lowerAscii()).unique()"
+    }
+  ];
+
+  // Set for a derived axis, e.g. the main PCB, which follows from connectivity
+  // and memory. A derived axis has to be in a variant group, and its
+  // conditions only name selected axes of that group.
+  VariantDerivation derivation = 6;
+}
+
+// VariantDerivation gives, for each option of a derived axis, the condition
+// under which it applies. For every valid combination of the group's selected
+// axes exactly one condition holds; the backend checks this when the product
+// is saved.
+message VariantDerivation {
+  repeated DerivedVariantOption options = 1 [(buf.validate.field).cel = {
+    id: "variant_derivation.options.unique_option_ids"
+    message: "a derivation can give only one condition per option"
+    expression: "this.map(derived, derived.option_id).unique()"
+  }];
+}
+
+message DerivedVariantOption {
+  string option_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  // The option applies when this condition holds, e.g. "main_pcb: slots_2"
+  // when "connectivity: wifi_bt" and "memory: 32gb". It can't be empty.
+  VariantCondition when = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).cel = {
+      id: "derived_variant_option.when.not_empty"
+      message: "a derived option needs a condition"
+      expression: "this.all_of.size() > 0"
     }
   ];
 }

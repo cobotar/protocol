@@ -3,7 +3,7 @@ from common.v1 import external_references_pb2 as _external_references_pb2
 from process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
 from process.v1 import task_definition_pb2 as _task_definition_pb2
 from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
-from variance.v1 import variant_rule_pb2 as _variant_rule_pb2
+from variance.v1 import variant_condition_pb2 as _variant_condition_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -34,9 +34,9 @@ class RecipeApplicability(_message.Message):
     __slots__ = ("include", "exclude")
     INCLUDE_FIELD_NUMBER: _ClassVar[int]
     EXCLUDE_FIELD_NUMBER: _ClassVar[int]
-    include: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
-    exclude: _containers.RepeatedCompositeFieldContainer[_variant_rule_pb2.VariantRule]
-    def __init__(self, include: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ..., exclude: _Optional[_Iterable[_Union[_variant_rule_pb2.VariantRule, _Mapping]]] = ...) -> None: ...
+    include: _variant_condition_pb2.VariantCondition
+    exclude: _containers.RepeatedCompositeFieldContainer[_variant_condition_pb2.VariantCondition]
+    def __init__(self, include: _Optional[_Union[_variant_condition_pb2.VariantCondition, _Mapping]] = ..., exclude: _Optional[_Iterable[_Union[_variant_condition_pb2.VariantCondition, _Mapping]]] = ...) -> None: ...
 
 class ProcessRecipe(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "product_definition_id", "applicability", "root_sequence_id", "sequence_ids", "task_ids", "supported_container_definition_ids", "external_references", "revision")

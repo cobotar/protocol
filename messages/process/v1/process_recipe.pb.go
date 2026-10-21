@@ -86,10 +86,20 @@ func (ProcessType) EnumDescriptor() ([]byte, []int) {
 	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{0}
 }
 
+// RecipeApplicability says for which configurations of the recipe's product the
+// recipe applies. Its conditions, and those of the recipe's sequences, tasks
+// and task overrides, name axes and options of that product
+// (cobotar/protocol#9); the backend checks this when the recipe is saved. A
+// recipe without a product, e.g. a checklist or a startup procedure, has no
+// conditions; one that needs them names a product, which can be a placeholder
+// or the machine itself.
 type RecipeApplicability struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Include       []*v1.VariantRule      `protobuf:"bytes,1,rep,name=include,proto3" json:"include,omitempty"` // Recipe applies if any include rule matches. Empty means generally applicable.
-	Exclude       []*v1.VariantRule      `protobuf:"bytes,2,rep,name=exclude,proto3" json:"exclude,omitempty"` // Recipe is rejected if any exclude rule matches.
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The recipe applies when this condition holds, and it's inherited by every
+	// sequence and task of the recipe. Empty means every configuration.
+	Include *v1.VariantCondition `protobuf:"bytes,1,opt,name=include,proto3" json:"include,omitempty"`
+	// The recipe is rejected when any of these conditions holds.
+	Exclude       []*v1.VariantCondition `protobuf:"bytes,2,rep,name=exclude,proto3" json:"exclude,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,14 +134,14 @@ func (*RecipeApplicability) Descriptor() ([]byte, []int) {
 	return file_process_v1_process_recipe_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RecipeApplicability) GetInclude() []*v1.VariantRule {
+func (x *RecipeApplicability) GetInclude() *v1.VariantCondition {
 	if x != nil {
 		return x.Include
 	}
 	return nil
 }
 
-func (x *RecipeApplicability) GetExclude() []*v1.VariantRule {
+func (x *RecipeApplicability) GetExclude() []*v1.VariantCondition {
 	if x != nil {
 		return x.Exclude
 	}
@@ -153,7 +163,7 @@ type ProcessRecipe struct {
 	Description                     string                   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	Type                            ProcessType              `protobuf:"varint,5,opt,name=type,proto3,enum=process.v1.ProcessType" json:"type,omitempty"`
 	ProductDefinitionId             string                   `protobuf:"bytes,6,opt,name=product_definition_id,json=productDefinitionId,proto3" json:"product_definition_id,omitempty"`
-	Applicability                   *RecipeApplicability     `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"`
+	Applicability                   *RecipeApplicability     `protobuf:"bytes,7,opt,name=applicability,proto3" json:"applicability,omitempty"` // Requires product_definition_id when it has conditions.
 	RootSequenceId                  string                   `protobuf:"bytes,8,opt,name=root_sequence_id,json=rootSequenceId,proto3" json:"root_sequence_id,omitempty"`
 	SequenceIds                     []string                 `protobuf:"bytes,9,rep,name=sequence_ids,json=sequenceIds,proto3" json:"sequence_ids,omitempty"`
 	TaskIds                         []string                 `protobuf:"bytes,10,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
@@ -834,10 +844,11 @@ var File_process_v1_process_recipe_proto protoreflect.FileDescriptor
 const file_process_v1_process_recipe_proto_rawDesc = "" +
 	"\n" +
 	"\x1fprocess/v1/process_recipe.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"}\n" +
-	"\x13RecipeApplicability\x122\n" +
-	"\ainclude\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\ainclude\x122\n" +
-	"\aexclude\x18\x02 \x03(\v2\x18.variance.v1.VariantRuleR\aexclude\"\xc9\x04\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\x98\x02\n" +
+	"\x13RecipeApplicability\x127\n" +
+	"\ainclude\x18\x01 \x01(\v2\x1d.variance.v1.VariantConditionR\ainclude\x12\xc7\x01\n" +
+	"\aexclude\x18\x02 \x03(\v2\x1d.variance.v1.VariantConditionB\x8d\x01\xbaH\x89\x01\xba\x01\x85\x01\n" +
+	"&recipe_applicability.exclude.not_empty\x12)an excluded combination needs a condition\x1a0this.all(condition, condition.all_of.size() > 0)R\aexclude\"\xe1\x06\n" +
 	"\rProcessRecipe\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -852,7 +863,8 @@ const file_process_v1_process_recipe_proto_rawDesc = "" +
 	" \x03(\tR\ataskIds\x12K\n" +
 	"\"supported_container_definition_ids\x18\v \x03(\tR\x1fsupportedContainerDefinitionIds\x12M\n" +
 	"\x13external_references\x18\f \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x12\x1a\n" +
-	"\brevision\x18\r \x01(\x04R\brevision\"A\n" +
+	"\brevision\x18\r \x01(\x04R\brevision:\x95\x02\xbaH\x91\x02\x1a\x8e\x02\n" +
+	"-process_recipe.applicability.requires_product\x12Aa recipe with applicability conditions needs a product definition\x1a\x99\x01this.product_definition_id != '' || !has(this.applicability) || (this.applicability.include.all_of.size() == 0 && this.applicability.exclude.size() == 0)\"A\n" +
 	"\x0eProcessRecipes\x12/\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.process.v1.ProcessRecipeR\x05items\"\xc0\x01\n" +
 	"\x13CreateProcessRecipe\x129\n" +
@@ -931,14 +943,14 @@ var file_process_v1_process_recipe_proto_goTypes = []any{
 	(*RemoveSequenceRequest)(nil),    // 9: process.v1.RemoveSequenceRequest
 	(*AddChildTaskRequest)(nil),      // 10: process.v1.AddChildTaskRequest
 	(*RemoveTaskRequest)(nil),        // 11: process.v1.RemoveTaskRequest
-	(*v1.VariantRule)(nil),           // 12: variance.v1.VariantRule
+	(*v1.VariantCondition)(nil),      // 12: variance.v1.VariantCondition
 	(*v11.ExternalReference)(nil),    // 13: common.v1.ExternalReference
 	(*SequenceDefinition)(nil),       // 14: process.v1.SequenceDefinition
 	(*TaskDefinition)(nil),           // 15: process.v1.TaskDefinition
 }
 var file_process_v1_process_recipe_proto_depIdxs = []int32{
-	12, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantRule
-	12, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantRule
+	12, // 0: process.v1.RecipeApplicability.include:type_name -> variance.v1.VariantCondition
+	12, // 1: process.v1.RecipeApplicability.exclude:type_name -> variance.v1.VariantCondition
 	0,  // 2: process.v1.ProcessRecipe.type:type_name -> process.v1.ProcessType
 	1,  // 3: process.v1.ProcessRecipe.applicability:type_name -> process.v1.RecipeApplicability
 	13, // 4: process.v1.ProcessRecipe.external_references:type_name -> common.v1.ExternalReference

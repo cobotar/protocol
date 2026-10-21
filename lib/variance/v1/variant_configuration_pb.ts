@@ -4,13 +4,15 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file variance/v1/variant_configuration.proto.
  */
 export const file_variance_v1_variant_configuration: GenFile = /*@__PURE__*/
-  fileDesc("Cid2YXJpYW5jZS92MS92YXJpYW50X2NvbmZpZ3VyYXRpb24ucHJvdG8SC3ZhcmlhbmNlLnYxIjYKEFZhcmlhbnRTZWxlY3Rpb24SDwoHYXhpc19pZBgBIAEoCRIRCglvcHRpb25faWQYAiABKAkiSQoUVmFyaWFudENvbmZpZ3VyYXRpb24SMQoKc2VsZWN0aW9ucxgBIAMoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRTZWxlY3Rpb25CwgEKD2NvbS52YXJpYW5jZS52MUIZVmFyaWFudENvbmZpZ3VyYXRpb25Qcm90b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvdmFyaWFuY2UvdjE7dmFyaWFuY2V2MaICA1ZYWKoCFE1lc3NhZ2VzLlZhcmlhbmNlLlYxygILVmFyaWFuY2VcVjHiAhdWYXJpYW5jZVxWMVxHUEJNZXRhZGF0YeoCDFZhcmlhbmNlOjpWMWIGcHJvdG8z");
+  fileDesc("Cid2YXJpYW5jZS92MS92YXJpYW50X2NvbmZpZ3VyYXRpb24ucHJvdG8SC3ZhcmlhbmNlLnYxIlIKEFZhcmlhbnRTZWxlY3Rpb24SHQoHYXhpc19pZBgBIAEoCUIMukgJyAEBcgTg8wQBEh8KCW9wdGlvbl9pZBgCIAEoCUIMukgJyAEBcgTg8wQBIvUBChRWYXJpYW50Q29uZmlndXJhdGlvbhLcAQoKc2VsZWN0aW9ucxgBIAMoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRTZWxlY3Rpb25CqAG6SKQBugGgAQowdmFyaWFudF9jb25maWd1cmF0aW9uLnNlbGVjdGlvbnMudW5pcXVlX2F4aXNfaWRzEjthIHZhcmlhbnQgY29uZmlndXJhdGlvbiBjYW4gc2VsZWN0IG9ubHkgb25lIG9wdGlvbiBwZXIgYXhpcxovdGhpcy5tYXAoc2VsZWN0aW9uLCBzZWxlY3Rpb24uYXhpc19pZCkudW5pcXVlKCkitgEKGU5hbWVkVmFyaWFudENvbmZpZ3VyYXRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRJACg1jb25maWd1cmF0aW9uGAUgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25CBrpIA8gBAULCAQoPY29tLnZhcmlhbmNlLnYxQhlWYXJpYW50Q29uZmlndXJhdGlvblByb3RvUAFaPmdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy92YXJpYW5jZS92MTt2YXJpYW5jZXYxogIDVlhYqgIUTWVzc2FnZXMuVmFyaWFuY2UuVjHKAgtWYXJpYW5jZVxWMeICF1ZhcmlhbmNlXFYxXEdQQk1ldGFkYXRh6gIMVmFyaWFuY2U6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message variance.v1.VariantSelection
@@ -39,6 +41,12 @@ export const VariantSelectionSchema: GenMessage<VariantSelection> = /*@__PURE__*
   messageDesc(file_variance_v1_variant_configuration, 0);
 
 /**
+ * VariantConfiguration selects one option per axis. In requests (loads and
+ * recipe generation) it holds the selected axes only: the backend adds the
+ * derived axes (VariantAxis.derivation) and refuses an incomplete, excluded
+ * or ambiguous configuration. On a process run it holds every axis, derived
+ * ones included.
+ *
  * @generated from message variance.v1.VariantConfiguration
  */
 export type VariantConfiguration = Message<"variance.v1.VariantConfiguration"> & {
@@ -54,4 +62,47 @@ export type VariantConfiguration = Message<"variance.v1.VariantConfiguration"> &
  */
 export const VariantConfigurationSchema: GenMessage<VariantConfiguration> = /*@__PURE__*/
   messageDesc(file_variance_v1_variant_configuration, 1);
+
+/**
+ * NamedVariantConfiguration is a configuration a product names, e.g. a row of
+ * the configuration table ("Full spec, black"), which an operator can pick
+ * instead of choosing axis by axis. It holds the selected axes only. Named
+ * configurations are shortcuts: they don't define which configurations are
+ * valid.
+ *
+ * @generated from message variance.v1.NamedVariantConfiguration
+ */
+export type NamedVariantConfiguration = Message<"variance.v1.NamedVariantConfiguration"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string icon = 3;
+   */
+  icon: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: variance.v1.VariantConfiguration configuration = 5;
+   */
+  configuration?: VariantConfiguration;
+};
+
+/**
+ * Describes the message variance.v1.NamedVariantConfiguration.
+ * Use `create(NamedVariantConfigurationSchema)` to create a new message.
+ */
+export const NamedVariantConfigurationSchema: GenMessage<NamedVariantConfiguration> = /*@__PURE__*/
+  messageDesc(file_variance_v1_variant_configuration, 2);
 

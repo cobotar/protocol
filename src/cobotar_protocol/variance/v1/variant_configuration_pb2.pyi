@@ -1,3 +1,5 @@
+from buf.validate import validate_pb2 as _validate_pb2
+from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -19,3 +21,17 @@ class VariantConfiguration(_message.Message):
     SELECTIONS_FIELD_NUMBER: _ClassVar[int]
     selections: _containers.RepeatedCompositeFieldContainer[VariantSelection]
     def __init__(self, selections: _Optional[_Iterable[_Union[VariantSelection, _Mapping]]] = ...) -> None: ...
+
+class NamedVariantConfiguration(_message.Message):
+    __slots__ = ("id", "name", "icon", "description", "configuration")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ICON_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    name: str
+    icon: str
+    description: str
+    configuration: VariantConfiguration
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., configuration: _Optional[_Union[VariantConfiguration, _Mapping]] = ...) -> None: ...

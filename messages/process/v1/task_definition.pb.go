@@ -799,9 +799,11 @@ func (x *TaskExecutionPolicy) GetRequireFullGuidance() bool {
 // semantically the same operation. Use TaskDefinition.applicability and separate
 // task definitions when a variant requires a materially different operation,
 // tool, skill, safety classification, or sequence structure.
+//
+// The first override whose condition holds applies; later ones are ignored.
 type TaskOverride struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	When            []*v14.VariantRule     `protobuf:"bytes,1,rep,name=when,proto3" json:"when,omitempty"`
+	When            *v14.VariantCondition  `protobuf:"bytes,1,opt,name=when,proto3" json:"when,omitempty"`
 	InstructionText string                 `protobuf:"bytes,2,opt,name=instruction_text,json=instructionText,proto3" json:"instruction_text,omitempty"` // Variant-specific instruction text.
 	Target          *TaskTarget            `protobuf:"bytes,3,opt,name=target,proto3" json:"target,omitempty"`                                          // Variant-specific target, e.g. a different colored part occurrence
 	InsertionOffset *v1.Vector3            `protobuf:"bytes,4,opt,name=insertion_offset,json=insertionOffset,proto3" json:"insertion_offset,omitempty"` // Variant-specific insertion offset.
@@ -840,7 +842,7 @@ func (*TaskOverride) Descriptor() ([]byte, []int) {
 	return file_process_v1_task_definition_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *TaskOverride) GetWhen() []*v14.VariantRule {
+func (x *TaskOverride) GetWhen() *v14.VariantCondition {
 	if x != nil {
 		return x.When
 	}
@@ -1003,11 +1005,14 @@ type TaskDefinition struct {
 	Source            *TaskEndpoint           `protobuf:"bytes,17,opt,name=source,proto3" json:"source,omitempty"`                                                                          // Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
 	Destination       *TaskEndpoint           `protobuf:"bytes,18,opt,name=destination,proto3" json:"destination,omitempty"`                                                                // Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations.
 	Quantity          *QuantityRequirement    `protobuf:"bytes,19,opt,name=quantity,proto3" json:"quantity,omitempty"`                                                                      // Amount of the target part or material handled by this task. Omit only when quantity is not meaningful.
-	Applicability     []*v14.VariantRule      `protobuf:"bytes,21,rep,name=applicability,proto3" json:"applicability,omitempty"`                                                            // Task applies if any rule matches. Empty means always applicable.
-	Overrides         []*TaskOverride         `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`                                                                    // adjust small authoring/runtime details when the task is otherwise the same task.
-	Constraints       []*TaskConstraint       `protobuf:"bytes,23,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                // Semantic conditions that supplement the task's validation mechanism.
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// The task applies when this condition, every ancestor sequence's and the
+	// recipe's include condition hold. Empty means it applies wherever its
+	// sequence does. Its axes are axes of the recipe's product.
+	Applicability *v14.VariantCondition `protobuf:"bytes,21,opt,name=applicability,proto3" json:"applicability,omitempty"`
+	Overrides     []*TaskOverride       `protobuf:"bytes,22,rep,name=overrides,proto3" json:"overrides,omitempty"`     // adjust small authoring/runtime details when the task is otherwise the same task.
+	Constraints   []*TaskConstraint     `protobuf:"bytes,23,rep,name=constraints,proto3" json:"constraints,omitempty"` // Semantic conditions that supplement the task's validation mechanism.
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TaskDefinition) Reset() {
@@ -1166,7 +1171,7 @@ func (x *TaskDefinition) GetQuantity() *QuantityRequirement {
 	return nil
 }
 
-func (x *TaskDefinition) GetApplicability() []*v14.VariantRule {
+func (x *TaskDefinition) GetApplicability() *v14.VariantCondition {
 	if x != nil {
 		return x.Applicability
 	}
@@ -1236,7 +1241,7 @@ var File_process_v1_task_definition_proto protoreflect.FileDescriptor
 const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\n" +
 	" process/v1/task_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x9e\x01\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\x9e\x01\n" +
 	"\rProductTarget\x12\x17\n" +
 	"\anode_id\x18\x01 \x01(\tR\x06nodeId\x127\n" +
 	"\x12part_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\x12;\n" +
@@ -1276,9 +1281,10 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x18estimated_human_duration\x18\x05 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedHumanDuration\x12V\n" +
 	"\x18estimated_robot_duration\x18\x06 \x01(\v2\x1c.common.v1.EstimatedDurationR\x16estimatedRobotDuration\x122\n" +
 	"\x15require_full_guidance\x18\a \x01(\bR\x13requireFullGuidance:\x81\x03\xbaH\xfd\x02\x1a\xfa\x02\n" +
-	"Gtask_execution_policy.actor_unavailability_policy.requires_reassignment\x12?reassignment actor-unavailability policies require can_reassign\x1a\xed\x01this.can_reassign || !(this.actor_unavailability_policy in [process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED, process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN])\"\x97\x02\n" +
-	"\fTaskOverride\x12,\n" +
-	"\x04when\x18\x01 \x03(\v2\x18.variance.v1.VariantRuleR\x04when\x12)\n" +
+	"Gtask_execution_policy.actor_unavailability_policy.requires_reassignment\x12?reassignment actor-unavailability policies require can_reassign\x1a\xed\x01this.can_reassign || !(this.actor_unavailability_policy in [process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_REASSIGN_IF_NOT_STARTED, process.v1.ActorUnavailabilityPolicy.ACTOR_UNAVAILABILITY_POLICY_SUSPEND_AND_REASSIGN])\"\x81\x03\n" +
+	"\fTaskOverride\x12\x95\x01\n" +
+	"\x04when\x18\x01 \x01(\v2\x1d.variance.v1.VariantConditionBb\xbaH_\xba\x01Y\n" +
+	"\x1ctask_override.when.not_empty\x12!a task override needs a condition\x1a\x16this.all_of.size() > 0\xc8\x01\x01R\x04when\x12)\n" +
 	"\x10instruction_text\x18\x02 \x01(\tR\x0finstructionText\x12.\n" +
 	"\x06target\x18\x03 \x01(\v2\x16.process.v1.TaskTargetR\x06target\x12?\n" +
 	"\x10insertion_offset\x18\x04 \x01(\v2\x14.geometry.v1.Vector3R\x0finsertionOffset\x12=\n" +
@@ -1290,7 +1296,7 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x02id\x12C\n" +
 	"\vorientation\x18\n" +
 	" \x01(\v2!.process.v1.OrientationConstraintR\vorientation:\x14\xbaH\x11\"\x0f\n" +
-	"\vorientation\x10\x01\"\x8f\f\n" +
+	"\vorientation\x10\x01\"\x94\f\n" +
 	"\x0eTaskDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -1312,8 +1318,8 @@ const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\x10safety_relevance\x18\x10 \x01(\x0e2\x1a.common.v1.SafetyRelevanceR\x0fsafetyRelevance\x120\n" +
 	"\x06source\x18\x11 \x01(\v2\x18.process.v1.TaskEndpointR\x06source\x12:\n" +
 	"\vdestination\x18\x12 \x01(\v2\x18.process.v1.TaskEndpointR\vdestination\x12;\n" +
-	"\bquantity\x18\x13 \x01(\v2\x1f.process.v1.QuantityRequirementR\bquantity\x12>\n" +
-	"\rapplicability\x18\x15 \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability\x126\n" +
+	"\bquantity\x18\x13 \x01(\v2\x1f.process.v1.QuantityRequirementR\bquantity\x12C\n" +
+	"\rapplicability\x18\x15 \x01(\v2\x1d.variance.v1.VariantConditionR\rapplicability\x126\n" +
 	"\toverrides\x18\x16 \x03(\v2\x18.process.v1.TaskOverrideR\toverrides\x12\xbf\x01\n" +
 	"\vconstraints\x18\x17 \x03(\v2\x1a.process.v1.TaskConstraintB\x80\x01\xbaH}\xba\x01z\n" +
 	"&task_definition.constraints.unique_ids\x12\"task constraint ids must be unique\x1a,this.map(constraint, constraint.id).unique()R\vconstraints:\xf7\x01\xbaH\xf3\x01\x1a\xf0\x01\n" +
@@ -1395,7 +1401,7 @@ var file_process_v1_task_definition_proto_goTypes = []any{
 	(*v13.KeyValueConstraint)(nil), // 20: common.v1.KeyValueConstraint
 	(*v12.ActorConstraint)(nil),    // 21: capability.v1.ActorConstraint
 	(*v13.EstimatedDuration)(nil),  // 22: common.v1.EstimatedDuration
-	(*v14.VariantRule)(nil),        // 23: variance.v1.VariantRule
+	(*v14.VariantCondition)(nil),   // 23: variance.v1.VariantCondition
 	(*v1.Vector3)(nil),             // 24: geometry.v1.Vector3
 	(*v12.ToolRequirement)(nil),    // 25: capability.v1.ToolRequirement
 	(*v12.SkillRequirement)(nil),   // 26: capability.v1.SkillRequirement
@@ -1417,7 +1423,7 @@ var file_process_v1_task_definition_proto_depIdxs = []int32{
 	2,  // 12: process.v1.TaskExecutionPolicy.actor_unavailability_policy:type_name -> process.v1.ActorUnavailabilityPolicy
 	22, // 13: process.v1.TaskExecutionPolicy.estimated_human_duration:type_name -> common.v1.EstimatedDuration
 	22, // 14: process.v1.TaskExecutionPolicy.estimated_robot_duration:type_name -> common.v1.EstimatedDuration
-	23, // 15: process.v1.TaskOverride.when:type_name -> variance.v1.VariantRule
+	23, // 15: process.v1.TaskOverride.when:type_name -> variance.v1.VariantCondition
 	6,  // 16: process.v1.TaskOverride.target:type_name -> process.v1.TaskTarget
 	24, // 17: process.v1.TaskOverride.insertion_offset:type_name -> geometry.v1.Vector3
 	24, // 18: process.v1.TaskOverride.approach_offset:type_name -> geometry.v1.Vector3
@@ -1434,7 +1440,7 @@ var file_process_v1_task_definition_proto_depIdxs = []int32{
 	8,  // 29: process.v1.TaskDefinition.source:type_name -> process.v1.TaskEndpoint
 	8,  // 30: process.v1.TaskDefinition.destination:type_name -> process.v1.TaskEndpoint
 	7,  // 31: process.v1.TaskDefinition.quantity:type_name -> process.v1.QuantityRequirement
-	23, // 32: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantRule
+	23, // 32: process.v1.TaskDefinition.applicability:type_name -> variance.v1.VariantCondition
 	11, // 33: process.v1.TaskDefinition.overrides:type_name -> process.v1.TaskOverride
 	13, // 34: process.v1.TaskDefinition.constraints:type_name -> process.v1.TaskConstraint
 	14, // 35: process.v1.TaskDefinitions.items:type_name -> process.v1.TaskDefinition

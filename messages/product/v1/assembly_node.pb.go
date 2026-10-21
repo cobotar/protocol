@@ -162,15 +162,19 @@ type AssemblyNode struct {
 	OverrideModelId  string                 `protobuf:"bytes,6,opt,name=override_model_id,json=overrideModelId,proto3" json:"override_model_id,omitempty"`
 	LocalPose        *v1.Pose               `protobuf:"bytes,7,opt,name=local_pose,json=localPose,proto3" json:"local_pose,omitempty"` // final pose, in mm
 	// repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
-	SequenceHint        int32              `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
-	CadOccurrencePath   string             `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
-	JoinMethodHint      JoinMethod         `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=product.v1.JoinMethod" json:"join_method_hint,omitempty"`
-	InsertionOffsetHint *v1.Vector3        `protobuf:"bytes,12,opt,name=insertion_offset_hint,json=insertionOffsetHint,proto3" json:"insertion_offset_hint,omitempty"` // Offset from final pose to pre-insertion pose, in mm
-	ApproachOffsetHint  *v1.Vector3        `protobuf:"bytes,13,opt,name=approach_offset_hint,json=approachOffsetHint,proto3" json:"approach_offset_hint,omitempty"`    // Offset from final pose to preferred approach pose, in mm
-	Optional            bool               `protobuf:"varint,14,opt,name=optional,proto3" json:"optional,omitempty"`
-	Applicability       []*v11.VariantRule `protobuf:"bytes,15,rep,name=applicability,proto3" json:"applicability,omitempty"` // Applies if any rule matches. Empty means always applicable.
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	SequenceHint        int32       `protobuf:"varint,9,opt,name=sequence_hint,json=sequenceHint,proto3" json:"sequence_hint,omitempty"`
+	CadOccurrencePath   string      `protobuf:"bytes,10,opt,name=cad_occurrence_path,json=cadOccurrencePath,proto3" json:"cad_occurrence_path,omitempty"` // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
+	JoinMethodHint      JoinMethod  `protobuf:"varint,11,opt,name=join_method_hint,json=joinMethodHint,proto3,enum=product.v1.JoinMethod" json:"join_method_hint,omitempty"`
+	InsertionOffsetHint *v1.Vector3 `protobuf:"bytes,12,opt,name=insertion_offset_hint,json=insertionOffsetHint,proto3" json:"insertion_offset_hint,omitempty"` // Offset from final pose to pre-insertion pose, in mm
+	ApproachOffsetHint  *v1.Vector3 `protobuf:"bytes,13,opt,name=approach_offset_hint,json=approachOffsetHint,proto3" json:"approach_offset_hint,omitempty"`    // Offset from final pose to preferred approach pose, in mm
+	Optional            bool        `protobuf:"varint,14,opt,name=optional,proto3" json:"optional,omitempty"`
+	// The node applies when this condition and every ancestor's hold, so it only
+	// says what the ancestors don't. Empty means it applies wherever its parent
+	// does. A node's condition names axes of one variant group only, so groups
+	// stay independent.
+	Applicability *v11.VariantCondition `protobuf:"bytes,15,opt,name=applicability,proto3" json:"applicability,omitempty"` // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *AssemblyNode) Reset() {
@@ -294,7 +298,7 @@ func (x *AssemblyNode) GetOptional() bool {
 	return false
 }
 
-func (x *AssemblyNode) GetApplicability() []*v11.VariantRule {
+func (x *AssemblyNode) GetApplicability() *v11.VariantCondition {
 	if x != nil {
 		return x.Applicability
 	}
@@ -306,7 +310,7 @@ var File_product_v1_assembly_node_proto protoreflect.FileDescriptor
 const file_product_v1_assembly_node_proto_rawDesc = "" +
 	"\n" +
 	"\x1eproduct/v1/assembly_node.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_rule.proto\"\x99\b\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\x9e\b\n" +
 	"\fAssemblyNode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12$\n" +
@@ -322,8 +326,8 @@ const file_product_v1_assembly_node_proto_rawDesc = "" +
 	"\x10join_method_hint\x18\v \x01(\x0e2\x16.product.v1.JoinMethodR\x0ejoinMethodHint\x12H\n" +
 	"\x15insertion_offset_hint\x18\f \x01(\v2\x14.geometry.v1.Vector3R\x13insertionOffsetHint\x12F\n" +
 	"\x14approach_offset_hint\x18\r \x01(\v2\x14.geometry.v1.Vector3R\x12approachOffsetHint\x12\x1a\n" +
-	"\boptional\x18\x0e \x01(\bR\boptional\x12>\n" +
-	"\rapplicability\x18\x0f \x03(\v2\x18.variance.v1.VariantRuleR\rapplicability:\xeb\x02\xbaH\xe7\x02\x1a\x91\x01\n" +
+	"\boptional\x18\x0e \x01(\bR\boptional\x12C\n" +
+	"\rapplicability\x18\x0f \x01(\v2\x1d.variance.v1.VariantConditionR\rapplicability:\xeb\x02\xbaH\xe7\x02\x1a\x91\x01\n" +
 	"1assembly_node.group_must_not_have_part_definition\x12+GROUP nodes must not set part_definition_id\x1a/this.kind != 1 || this.part_definition_id == ''\x1a\xd0\x01\n" +
 	":assembly_node.physical_occurrence_requires_part_definition\x12LPART_OCCURRENCE and SUBASSEMBLY_OCCURRENCE nodes must set part_definition_id\x1aD!(this.kind == 2 || this.kind == 3) || this.part_definition_id != ''*\x7f\n" +
 	"\bNodeKind\x12\x19\n" +
@@ -359,12 +363,12 @@ func file_product_v1_assembly_node_proto_rawDescGZIP() []byte {
 var file_product_v1_assembly_node_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_product_v1_assembly_node_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_product_v1_assembly_node_proto_goTypes = []any{
-	(NodeKind)(0),           // 0: product.v1.NodeKind
-	(JoinMethod)(0),         // 1: product.v1.JoinMethod
-	(*AssemblyNode)(nil),    // 2: product.v1.AssemblyNode
-	(*v1.Pose)(nil),         // 3: geometry.v1.Pose
-	(*v1.Vector3)(nil),      // 4: geometry.v1.Vector3
-	(*v11.VariantRule)(nil), // 5: variance.v1.VariantRule
+	(NodeKind)(0),                // 0: product.v1.NodeKind
+	(JoinMethod)(0),              // 1: product.v1.JoinMethod
+	(*AssemblyNode)(nil),         // 2: product.v1.AssemblyNode
+	(*v1.Pose)(nil),              // 3: geometry.v1.Pose
+	(*v1.Vector3)(nil),           // 4: geometry.v1.Vector3
+	(*v11.VariantCondition)(nil), // 5: variance.v1.VariantCondition
 }
 var file_product_v1_assembly_node_proto_depIdxs = []int32{
 	0, // 0: product.v1.AssemblyNode.kind:type_name -> product.v1.NodeKind
@@ -372,7 +376,7 @@ var file_product_v1_assembly_node_proto_depIdxs = []int32{
 	1, // 2: product.v1.AssemblyNode.join_method_hint:type_name -> product.v1.JoinMethod
 	4, // 3: product.v1.AssemblyNode.insertion_offset_hint:type_name -> geometry.v1.Vector3
 	4, // 4: product.v1.AssemblyNode.approach_offset_hint:type_name -> geometry.v1.Vector3
-	5, // 5: product.v1.AssemblyNode.applicability:type_name -> variance.v1.VariantRule
+	5, // 5: product.v1.AssemblyNode.applicability:type_name -> variance.v1.VariantCondition
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name

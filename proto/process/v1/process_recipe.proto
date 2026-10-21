@@ -6,7 +6,7 @@ import "common/v1/external_references.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
 import "validation/v1/predefined_string_rules.proto";
-import "variance/v1/variant_rule.proto";
+import "variance/v1/variant_condition.proto";
 
 option csharp_namespace = "Messages.Process.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/process/v1";
@@ -21,9 +21,24 @@ enum ProcessType {
   PROCESS_TYPE_MAINTENANCE = 6; // Example: replace filter
 }
 
+// RecipeApplicability says for which configurations of the recipe's product the
+// recipe applies. Its conditions, and those of the recipe's sequences, tasks
+// and task overrides, name axes and options of that product
+// (cobotar/protocol#9); the backend checks this when the recipe is saved. A
+// recipe without a product, e.g. a checklist or a startup procedure, has no
+// conditions; one that needs them names a product, which can be a placeholder
+// or the machine itself.
 message RecipeApplicability {
-  repeated variance.v1.VariantRule include = 1; // Recipe applies if any include rule matches. Empty means generally applicable.
-  repeated variance.v1.VariantRule exclude = 2; // Recipe is rejected if any exclude rule matches.
+  // The recipe applies when this condition holds, and it's inherited by every
+  // sequence and task of the recipe. Empty means every configuration.
+  variance.v1.VariantCondition include = 1;
+
+  // The recipe is rejected when any of these conditions holds.
+  repeated variance.v1.VariantCondition exclude = 2 [(buf.validate.field).cel = {
+    id: "recipe_applicability.exclude.not_empty"
+    message: "an excluded combination needs a condition"
+    expression: "this.all(condition, condition.all_of.size() > 0)"
+  }];
 }
 
 // ProcessRecipe describes the following:
@@ -34,6 +49,12 @@ message RecipeApplicability {
 // - What actor constrains exist
 // - What validation is needed
 message ProcessRecipe {
+  option (buf.validate.message).cel = {
+    id: "process_recipe.applicability.requires_product"
+    message: "a recipe with applicability conditions needs a product definition"
+    expression: "this.product_definition_id != '' || !has(this.applicability) || (this.applicability.include.all_of.size() == 0 && this.applicability.exclude.size() == 0)"
+  };
+
   string id = 1;
   string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
   string icon = 3;
@@ -43,7 +64,7 @@ message ProcessRecipe {
     (buf.validate.field).enum.defined_only = true
   ];
   string product_definition_id = 6;
-  RecipeApplicability applicability = 7;
+  RecipeApplicability applicability = 7; // Requires product_definition_id when it has conditions.
   string root_sequence_id = 8;
   repeated string sequence_ids = 9;
   repeated string task_ids = 10;

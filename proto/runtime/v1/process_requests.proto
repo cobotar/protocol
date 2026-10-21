@@ -80,8 +80,20 @@ message ProcessLoadRequest {
   string target_cell_id = 3 [(buf.validate.field).string.(validation.v1.cell_id_component) = true];
   string target_station_id = 4 [(buf.validate.field).string.(validation.v1.station_id_component) = true];
 
-  // Optional variant configuration used to evaluate recipe/task applicability.
-  variance.v1.VariantConfiguration variant_configuration = 5;
+  // The variant of the recipe's product to run, used to evaluate recipe,
+  // sequence and task applicability (cobotar/protocol#32). Required when the
+  // product has variant axes.
+  oneof variant {
+    // The selected axes only. The backend adds the derived axes and refuses
+    // (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) a configuration
+    // that misses a selected axis, names an unknown axis or option, selects a
+    // derived axis, is excluded by its variant group, or for which a derived
+    // axis gets no option or several.
+    variance.v1.VariantConfiguration variant_configuration = 5;
+
+    // One of the product's named configurations, by ID.
+    string named_variant_configuration_id = 14 [(buf.validate.field).string.(validation.v1.key_component) = true];
+  }
 
   // true  -> perform precheck only
   // false -> perform precheck and instantiate ProcessRun if feasible
@@ -130,6 +142,10 @@ enum ProcessLoadFailure {
   // ProcessLoadRequest.done_task_definition_ids can't be done before the run
   // starts; the issue's task_definition_id names the offending task.
   PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS = 5;
+  // The variant configuration or named configuration isn't valid for the
+  // recipe's product; the issue's variant_axis_id names the axis, if one is to
+  // blame, and its message says why.
+  PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION = 6;
 
   // Container related failures
   PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER = 10;
@@ -217,6 +233,10 @@ message ProcessRunIssue {
   string remediation = 14;
 
   RequirementImportance importance = 15;
+
+  // The variant axis the issue is about, e.g. for an invalid variant
+  // configuration.
+  string variant_axis_id = 16;
 }
 
 message CandidateActorEvaluation {

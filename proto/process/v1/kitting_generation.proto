@@ -158,6 +158,12 @@ message KittingItemRoutingOverride {
 // The resulting recipe contains static definition-level routing. Concrete
 // inventory and container instances are resolved when creating a ProcessRun.
 message DraftKittingProcessRecipeGenerateRequest {
+  option (buf.validate.message).cel = {
+    id: "draft_kitting_process_recipe_generate_request.selected_configuration_requires_variant_configuration"
+    message: "VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION (2) requires a variant_configuration with selections"
+    expression: "this.variant_generation_mode != 2 || this.variant_configuration.selections.size() > 0"
+  };
+
   // Product structure whose applicable BOM items should be kitted.
   string product_definition_id = 1 [
     (buf.validate.field).required = true,
@@ -179,8 +185,9 @@ message DraftKittingProcessRecipeGenerateRequest {
 
   VariantGenerationMode variant_generation_mode = 21 [(buf.validate.field).enum.defined_only = true];
 
-  // Required when variant_generation_mode is SELECTED_CONFIGURATION.
-  // At most one selection is allowed per axis.
+  // Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds
+  // the selected axes only; the backend adds the derived ones and refuses an
+  // invalid configuration, as for process loads.
   variance.v1.VariantConfiguration variant_configuration = 6;
 
   // Optional subtree to kit. If empty, generation starts at the product root.

@@ -34,6 +34,7 @@ class ProcessLoadFailure(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS: _ClassVar[ProcessLoadFailure]
+    PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND: _ClassVar[ProcessLoadFailure]
@@ -102,6 +103,7 @@ PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS: ProcessLoadFailure
+PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND: ProcessLoadFailure
@@ -148,12 +150,13 @@ PROCESS_LOAD_STATUS_READY: ProcessLoadStatus
 PROCESS_LOAD_STATUS_LOADED: ProcessLoadStatus
 
 class ProcessLoadRequest(_message.Message):
-    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee", "done_task_definition_ids")
+    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "named_variant_configuration_id", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee", "done_task_definition_ids")
     PROCESS_RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_LINE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_CELL_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_STATION_ID_FIELD_NUMBER: _ClassVar[int]
     VARIANT_CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
+    NAMED_VARIANT_CONFIGURATION_ID_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     QUEUE_IF_OCCUPIED_FIELD_NUMBER: _ClassVar[int]
     STRATEGY_FIELD_NUMBER: _ClassVar[int]
@@ -167,6 +170,7 @@ class ProcessLoadRequest(_message.Message):
     target_cell_id: str
     target_station_id: str
     variant_configuration: _variant_configuration_pb2.VariantConfiguration
+    named_variant_configuration_id: str
     dry_run: bool
     queue_if_occupied: bool
     strategy: ProcessLoadStrategy
@@ -175,10 +179,10 @@ class ProcessLoadRequest(_message.Message):
     allocation_strategy: AllocationStrategy
     target_employee: str
     done_task_definition_ids: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ..., done_task_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., named_variant_configuration_id: _Optional[str] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ..., done_task_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ProcessRunIssue(_message.Message):
-    __slots__ = ("failure", "message", "severity", "process_recipe_id", "sequence_definition_id", "task_definition_id", "required_tool_role", "required_skill_id", "fixture_definition_id", "cell_id", "station_id", "actor_id", "resource_id", "remediation", "importance")
+    __slots__ = ("failure", "message", "severity", "process_recipe_id", "sequence_definition_id", "task_definition_id", "required_tool_role", "required_skill_id", "fixture_definition_id", "cell_id", "station_id", "actor_id", "resource_id", "remediation", "importance", "variant_axis_id")
     FAILURE_FIELD_NUMBER: _ClassVar[int]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     SEVERITY_FIELD_NUMBER: _ClassVar[int]
@@ -194,6 +198,7 @@ class ProcessRunIssue(_message.Message):
     RESOURCE_ID_FIELD_NUMBER: _ClassVar[int]
     REMEDIATION_FIELD_NUMBER: _ClassVar[int]
     IMPORTANCE_FIELD_NUMBER: _ClassVar[int]
+    VARIANT_AXIS_ID_FIELD_NUMBER: _ClassVar[int]
     failure: ProcessLoadFailure
     message: str
     severity: ProcessRunIssueSeverity
@@ -209,7 +214,8 @@ class ProcessRunIssue(_message.Message):
     resource_id: str
     remediation: str
     importance: RequirementImportance
-    def __init__(self, failure: _Optional[_Union[ProcessLoadFailure, str]] = ..., message: _Optional[str] = ..., severity: _Optional[_Union[ProcessRunIssueSeverity, str]] = ..., process_recipe_id: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., required_tool_role: _Optional[str] = ..., required_skill_id: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., actor_id: _Optional[str] = ..., resource_id: _Optional[str] = ..., remediation: _Optional[str] = ..., importance: _Optional[_Union[RequirementImportance, str]] = ...) -> None: ...
+    variant_axis_id: str
+    def __init__(self, failure: _Optional[_Union[ProcessLoadFailure, str]] = ..., message: _Optional[str] = ..., severity: _Optional[_Union[ProcessRunIssueSeverity, str]] = ..., process_recipe_id: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., required_tool_role: _Optional[str] = ..., required_skill_id: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., actor_id: _Optional[str] = ..., resource_id: _Optional[str] = ..., remediation: _Optional[str] = ..., importance: _Optional[_Union[RequirementImportance, str]] = ..., variant_axis_id: _Optional[str] = ...) -> None: ...
 
 class CandidateActorEvaluation(_message.Message):
     __slots__ = ("actor", "feasible", "restrictions", "issues")

@@ -65,6 +65,9 @@ message ProcessRun {
   google.protobuf.Timestamp initiated_at = 14;
   google.protobuf.Timestamp ended_at = 15;
   repeated ActorAssignment assignments = 16; // is assignment history; released records remain present with released_at populated.
+  // The run's full variant configuration: the selected axes and the derived
+  // ones the backend resolved from them (cobotar/protocol#32). Set by the
+  // backend.
   variance.v1.VariantConfiguration variant_configuration = 17;
   repeated RunParameter parameters = 18;
 
@@ -79,6 +82,9 @@ message ProcessRun {
   // The revisions of the part definitions the run's tasks target, by part
   // definition ID, as the run was loaded. Set by the backend.
   map<string, uint64> part_definition_revisions = 21;
+  // The product's named configuration the run was loaded with, if the load
+  // named one. Set by the backend.
+  string named_variant_configuration_id = 22;
 }
 
 message ProcessRuns {

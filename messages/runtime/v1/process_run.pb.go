@@ -142,23 +142,26 @@ func (x *RunParameter) GetValue() string {
 // the run is created. Runtime conditions may subsequently change, causing
 // individual tasks to be reassigned, blocked, or suspended.
 type ProcessRun struct {
-	state                protoimpl.MessageState    `protogen:"open.v1"`
-	Id                   string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                 string                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                 string                    `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	ProcessRecipeId      string                    `protobuf:"bytes,4,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
-	OrderId              string                    `protobuf:"bytes,5,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	StationId            string                    `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	CellId               string                    `protobuf:"bytes,7,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	LineId               string                    `protobuf:"bytes,8,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
-	Frame                *v1.LocalizedPose         `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
-	RootSequenceRunId    string                    `protobuf:"bytes,10,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
-	SequenceRunIds       []string                  `protobuf:"bytes,11,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
-	TaskRunIds           []string                  `protobuf:"bytes,12,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
-	State                ProcessRunState           `protobuf:"varint,13,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
-	InitiatedAt          *timestamppb.Timestamp    `protobuf:"bytes,14,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
-	EndedAt              *timestamppb.Timestamp    `protobuf:"bytes,15,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
-	Assignments          []*ActorAssignment        `protobuf:"bytes,16,rep,name=assignments,proto3" json:"assignments,omitempty"` // is assignment history; released records remain present with released_at populated.
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon              string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	ProcessRecipeId   string                 `protobuf:"bytes,4,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
+	OrderId           string                 `protobuf:"bytes,5,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	StationId         string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	CellId            string                 `protobuf:"bytes,7,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	LineId            string                 `protobuf:"bytes,8,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
+	Frame             *v1.LocalizedPose      `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
+	RootSequenceRunId string                 `protobuf:"bytes,10,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
+	SequenceRunIds    []string               `protobuf:"bytes,11,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
+	TaskRunIds        []string               `protobuf:"bytes,12,rep,name=task_run_ids,json=taskRunIds,proto3" json:"task_run_ids,omitempty"`
+	State             ProcessRunState        `protobuf:"varint,13,opt,name=state,proto3,enum=runtime.v1.ProcessRunState" json:"state,omitempty"`
+	InitiatedAt       *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=initiated_at,json=initiatedAt,proto3" json:"initiated_at,omitempty"`
+	EndedAt           *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=ended_at,json=endedAt,proto3" json:"ended_at,omitempty"`
+	Assignments       []*ActorAssignment     `protobuf:"bytes,16,rep,name=assignments,proto3" json:"assignments,omitempty"` // is assignment history; released records remain present with released_at populated.
+	// The run's full variant configuration: the selected axes and the derived
+	// ones the backend resolved from them (cobotar/protocol#32). Set by the
+	// backend.
 	VariantConfiguration *v11.VariantConfiguration `protobuf:"bytes,17,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	Parameters           []*RunParameter           `protobuf:"bytes,18,rep,name=parameters,proto3" json:"parameters,omitempty"`
 	// Revision used to prevent concurrent state changes and reassignments from
@@ -171,8 +174,11 @@ type ProcessRun struct {
 	// The revisions of the part definitions the run's tasks target, by part
 	// definition ID, as the run was loaded. Set by the backend.
 	PartDefinitionRevisions map[string]uint64 `protobuf:"bytes,21,rep,name=part_definition_revisions,json=partDefinitionRevisions,proto3" json:"part_definition_revisions,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
-	unknownFields           protoimpl.UnknownFields
-	sizeCache               protoimpl.SizeCache
+	// The product's named configuration the run was loaded with, if the load
+	// named one. Set by the backend.
+	NamedVariantConfigurationId string `protobuf:"bytes,22,opt,name=named_variant_configuration_id,json=namedVariantConfigurationId,proto3" json:"named_variant_configuration_id,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
 }
 
 func (x *ProcessRun) Reset() {
@@ -352,6 +358,13 @@ func (x *ProcessRun) GetPartDefinitionRevisions() map[string]uint64 {
 	return nil
 }
 
+func (x *ProcessRun) GetNamedVariantConfigurationId() string {
+	if x != nil {
+		return x.NamedVariantConfigurationId
+	}
+	return ""
+}
+
 type ProcessRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProcessRun          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -404,7 +417,7 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\x89\t\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xce\t\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -432,7 +445,8 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"parameters\x12#\n" +
 	"\brevision\x18\x13 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x126\n" +
 	"\x17process_recipe_revision\x18\x14 \x01(\x04R\x15processRecipeRevision\x12o\n" +
-	"\x19part_definition_revisions\x18\x15 \x03(\v23.runtime.v1.ProcessRun.PartDefinitionRevisionsEntryR\x17partDefinitionRevisions\x1aJ\n" +
+	"\x19part_definition_revisions\x18\x15 \x03(\v23.runtime.v1.ProcessRun.PartDefinitionRevisionsEntryR\x17partDefinitionRevisions\x12C\n" +
+	"\x1enamed_variant_configuration_id\x18\x16 \x01(\tR\x1bnamedVariantConfigurationId\x1aJ\n" +
 	"\x1cPartDefinitionRevisionsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01\";\n" +

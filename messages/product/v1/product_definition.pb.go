@@ -36,8 +36,14 @@ type ProductDefinition struct {
 	RootNodeId         string                   `protobuf:"bytes,6,opt,name=root_node_id,json=rootNodeId,proto3" json:"root_node_id,omitempty"`
 	Nodes              []*AssemblyNode          `protobuf:"bytes,7,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	ExternalReferences []*v11.ExternalReference `protobuf:"bytes,8,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// Groups of axes that depend on each other (cobotar/protocol#32). An axis
+	// outside every group is independent, and every option of it is valid.
+	VariantGroups []*v1.VariantGroup `protobuf:"bytes,9,rep,name=variant_groups,json=variantGroups,proto3" json:"variant_groups,omitempty"`
+	// Configurations the product names, e.g. the rows of the configuration
+	// table, which an operator can pick when loading a process.
+	Configurations []*v1.NamedVariantConfiguration `protobuf:"bytes,10,rep,name=configurations,proto3" json:"configurations,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *ProductDefinition) Reset() {
@@ -126,6 +132,20 @@ func (x *ProductDefinition) GetExternalReferences() []*v11.ExternalReference {
 	return nil
 }
 
+func (x *ProductDefinition) GetVariantGroups() []*v1.VariantGroup {
+	if x != nil {
+		return x.VariantGroups
+	}
+	return nil
+}
+
+func (x *ProductDefinition) GetConfigurations() []*v1.NamedVariantConfiguration {
+	if x != nil {
+		return x.Configurations
+	}
+	return nil
+}
+
 type ProductDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProductDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -175,7 +195,7 @@ var File_product_v1_product_definition_proto protoreflect.FileDescriptor
 const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\n" +
 	"#product/v1/product_definition.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_axis.proto\"\xe3\x05\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_axis.proto\x1a'variance/v1/variant_configuration.proto\x1a\x1fvariance/v1/variant_group.proto\"\x98.\n" +
 	"\x11ProductDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -187,7 +207,26 @@ const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\froot_node_id\x18\x06 \x01(\tR\n" +
 	"rootNodeId\x12.\n" +
 	"\x05nodes\x18\a \x03(\v2\x18.product.v1.AssemblyNodeR\x05nodes\x12M\n" +
-	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"I\n" +
+	"\x13external_references\x18\b \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x12\xcb\x03\n" +
+	"\x0evariant_groups\x18\t \x03(\v2\x19.variance.v1.VariantGroupB\x88\x03\xbaH\x84\x03\xba\x01\x90\x01\n" +
+	",product_definition.variant_groups.unique_ids\x12<variant group ids must be unique within a product definition\x1a\"this.map(group, group.id).unique()\xba\x01\xec\x01\n" +
+	"9product_definition.variant_groups.unique_normalized_names\x12uvariant group names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case\x1a8this.map(group, group.name.trim().lowerAscii()).unique()R\rvariantGroups\x12\xe5\x03\n" +
+	"\x0econfigurations\x18\n" +
+	" \x03(\v2&.variance.v1.NamedVariantConfigurationB\x94\x03\xbaH\x90\x03\xba\x01\x96\x01\n" +
+	",product_definition.configurations.unique_ids\x12Bnamed configuration ids must be unique within a product definition\x1a\"this.map(named, named.id).unique()\xba\x01\xf2\x01\n" +
+	"9product_definition.configurations.unique_normalized_names\x12{named configuration names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case\x1a8this.map(named, named.name.trim().lowerAscii()).unique()R\x0econfigurations:\xfc \xbaH\xf8 \x1a\xd1\x01\n" +
+	",product_definition.variant_groups.known_axes\x120variant groups can only name axes of the product\x1aothis.variant_groups.all(group, group.axis_ids.all(axis_id, this.variant_axes.exists(axis, axis.id == axis_id)))\x1a\xc0\x01\n" +
+	"*product_definition.variant_groups.disjoint\x12+an axis can be in at most one variant group\x1aethis.variant_axes.all(axis, this.variant_groups.filter(group, axis.id in group.axis_ids).size() <= 1)\x1a\xdd\x03\n" +
+	"0product_definition.variant_axes.derived_in_group\x12ga derived axis must be in a variant group, and its conditions can only name selected axes of that group\x1a\xbf\x02this.variant_axes.all(axis, !has(axis.derivation) || this.variant_groups.exists(group, axis.id in group.axis_ids && axis.derivation.options.all(derived, derived.when.all_of.all(condition, condition.axis_id in group.axis_ids && this.variant_axes.exists(other, other.id == condition.axis_id && !has(other.derivation))))))\x1a\xc1\x03\n" +
+	"4product_definition.variant_groups.selected_axes_only\x12=excluded and allowed combinations can only name selected axes\x1a\xc9\x02this.variant_groups.all(group, group.excluded.all(condition, condition.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && !has(axis.derivation)))) && group.allowed.all(configuration, configuration.selections.all(selection, this.variant_axes.exists(axis, axis.id == selection.axis_id && !has(axis.derivation)))))\x1a\xa0\x02\n" +
+	"4product_definition.configurations.selected_axes_only\x12Anamed configurations can only select selected axes of the product\x1a\xa4\x01this.configurations.all(named, named.configuration.selections.all(selection, this.variant_axes.exists(axis, axis.id == selection.axis_id && !has(axis.derivation))))\x1a\xf1\x02\n" +
+	"2product_definition.variant_groups.allowed_complete\x12Can allowed combination must select every selected axis of its group\x1a\xf5\x01this.variant_groups.all(group, group.allowed.all(configuration, group.axis_ids.all(axis_id, this.variant_axes.exists(axis, axis.id == axis_id && has(axis.derivation)) || configuration.selections.exists(selection, selection.axis_id == axis_id))))\x1a\x98\x02\n" +
+	"*product_definition.configurations.complete\x12Da named configuration must select every selected axis of the product\x1a\xa3\x01this.configurations.all(named, this.variant_axes.all(axis, has(axis.derivation) || named.configuration.selections.exists(selection, selection.axis_id == axis.id)))\x1a\x96\x03\n" +
+	"8product_definition.variant_axes.derivation_known_options\x12?a derived axis's conditions can only name options of their axes\x1a\x98\x02this.variant_axes.all(derived_axis, !has(derived_axis.derivation) || derived_axis.derivation.options.all(derived, derived.when.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && c.option_ids.all(option_id, axis.options.exists(option, option.id == option_id))))))\x1a\x8f\x04\n" +
+	"/product_definition.variant_groups.known_options\x12Eexcluded and allowed combinations can only name options of their axes\x1a\x94\x03this.variant_groups.all(group, group.excluded.all(condition, condition.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && c.option_ids.all(option_id, axis.options.exists(option, option.id == option_id))))) && group.allowed.all(configuration, configuration.selections.all(s, this.variant_axes.exists(axis, axis.id == s.axis_id && axis.options.exists(option, option.id == s.option_id)))))\x1a\xa4\x02\n" +
+	"/product_definition.configurations.known_options\x12:named configurations can only select options of their axes\x1a\xb4\x01this.configurations.all(named, named.configuration.selections.all(s, this.variant_axes.exists(axis, axis.id == s.axis_id && axis.options.exists(option, option.id == s.option_id))))\x1a\xc7\x02\n" +
+	",product_definition.nodes.applicability_known\x12Tan assembly node's applicability can only name axes of the product and their options\x1a\xc0\x01this.nodes.all(node, node.applicability.all_of.all(c, this.variant_axes.exists(axis, axis.id == c.axis_id && c.option_ids.all(option_id, axis.options.exists(option, option.id == option_id)))))\x1a\xec\x02\n" +
+	"0product_definition.nodes.applicability_one_group\x12dan assembly node's applicability can only name axes of one variant group, so groups stay independent\x1a\xd1\x01this.nodes.all(node, node.applicability.all_of.all(a, node.applicability.all_of.all(b, a.axis_id == b.axis_id || this.variant_groups.exists(group, a.axis_id in group.axis_ids && b.axis_id in group.axis_ids))))\"I\n" +
 	"\x12ProductDefinitions\x123\n" +
 	"\x05items\x18\x01 \x03(\v2\x1d.product.v1.ProductDefinitionR\x05itemsB\xb8\x01\n" +
 	"\x0ecom.product.v1B\x16ProductDefinitionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\n" +
@@ -207,22 +246,26 @@ func file_product_v1_product_definition_proto_rawDescGZIP() []byte {
 
 var file_product_v1_product_definition_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_product_v1_product_definition_proto_goTypes = []any{
-	(*ProductDefinition)(nil),     // 0: product.v1.ProductDefinition
-	(*ProductDefinitions)(nil),    // 1: product.v1.ProductDefinitions
-	(*v1.VariantAxis)(nil),        // 2: variance.v1.VariantAxis
-	(*AssemblyNode)(nil),          // 3: product.v1.AssemblyNode
-	(*v11.ExternalReference)(nil), // 4: common.v1.ExternalReference
+	(*ProductDefinition)(nil),            // 0: product.v1.ProductDefinition
+	(*ProductDefinitions)(nil),           // 1: product.v1.ProductDefinitions
+	(*v1.VariantAxis)(nil),               // 2: variance.v1.VariantAxis
+	(*AssemblyNode)(nil),                 // 3: product.v1.AssemblyNode
+	(*v11.ExternalReference)(nil),        // 4: common.v1.ExternalReference
+	(*v1.VariantGroup)(nil),              // 5: variance.v1.VariantGroup
+	(*v1.NamedVariantConfiguration)(nil), // 6: variance.v1.NamedVariantConfiguration
 }
 var file_product_v1_product_definition_proto_depIdxs = []int32{
 	2, // 0: product.v1.ProductDefinition.variant_axes:type_name -> variance.v1.VariantAxis
 	3, // 1: product.v1.ProductDefinition.nodes:type_name -> product.v1.AssemblyNode
 	4, // 2: product.v1.ProductDefinition.external_references:type_name -> common.v1.ExternalReference
-	0, // 3: product.v1.ProductDefinitions.items:type_name -> product.v1.ProductDefinition
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	5, // 3: product.v1.ProductDefinition.variant_groups:type_name -> variance.v1.VariantGroup
+	6, // 4: product.v1.ProductDefinition.configurations:type_name -> variance.v1.NamedVariantConfiguration
+	0, // 5: product.v1.ProductDefinitions.items:type_name -> product.v1.ProductDefinition
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_product_v1_product_definition_proto_init() }

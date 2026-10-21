@@ -392,9 +392,9 @@
     - [ZoneDefinition](#geometry-v1-ZoneDefinition)
     - [ZoneDefinitions](#geometry-v1-ZoneDefinitions)
   
-- [variance/v1/variant_rule.proto](#variance_v1_variant_rule-proto)
-    - [VariantPredicate](#variance-v1-VariantPredicate)
-    - [VariantRule](#variance-v1-VariantRule)
+- [variance/v1/variant_condition.proto](#variance_v1_variant_condition-proto)
+    - [AxisCondition](#variance-v1-AxisCondition)
+    - [VariantCondition](#variance-v1-VariantCondition)
   
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
@@ -446,6 +446,7 @@
     - [ProcessType](#process-v1-ProcessType)
   
 - [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
+    - [NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration)
     - [VariantConfiguration](#variance-v1-VariantConfiguration)
     - [VariantSelection](#variance-v1-VariantSelection)
   
@@ -497,8 +498,13 @@
     - [PartInstanceBulkCreateSpec](#product-v1-PartInstanceBulkCreateSpec)
   
 - [variance/v1/variant_axis.proto](#variance_v1_variant_axis-proto)
+    - [DerivedVariantOption](#variance-v1-DerivedVariantOption)
     - [VariantAxis](#variance-v1-VariantAxis)
+    - [VariantDerivation](#variance-v1-VariantDerivation)
     - [VariantOption](#variance-v1-VariantOption)
+  
+- [variance/v1/variant_group.proto](#variance_v1_variant_group-proto)
+    - [VariantGroup](#variance-v1-VariantGroup)
   
 - [product/v1/product_definition.proto](#product_v1_product_definition-proto)
     - [ProductDefinition](#product-v1-ProductDefinition)
@@ -5852,39 +5858,51 @@ importance or process-run issue severity.
 
 
 
-<a name="variance_v1_variant_rule-proto"></a>
+<a name="variance_v1_variant_condition-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## variance/v1/variant_rule.proto
+## variance/v1/variant_condition.proto
 
 
 
-<a name="variance-v1-VariantPredicate"></a>
+<a name="variance-v1-AxisCondition"></a>
 
-### VariantPredicate
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| axis_id | [string](#string) |  | Variant axis identifier, e.g. &#34;hinge_side&#34; |
-| allowed_option_ids | [string](#string) | repeated | Allowed options on that axis, e.g. [&#34;left&#34;] |
-| excluded_option_ids | [string](#string) | repeated | Options on that axis that must not be selected. |
-
-
-
-
-
-
-<a name="variance-v1-VariantRule"></a>
-
-### VariantRule
-VariantRule: a rule matches if all predicates match
+### AxisCondition
+AxisCondition holds when a configuration&#39;s option on the axis is one of
+option_ids, e.g. &#34;connectivity: wifi, wifi_bt&#34;.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| all_of | [VariantPredicate](#variance-v1-VariantPredicate) | repeated | All predicates must match for the rule to match. |
+| axis_id | [string](#string) |  |  |
+| option_ids | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="variance-v1-VariantCondition"></a>
+
+### VariantCondition
+VariantCondition holds when every one of its axis conditions holds, e.g.
+&#34;connectivity: wifi, wifi_bt&#34; and &#34;memory: 32gb&#34;. An empty condition always
+holds.
+
+Applicability is one condition, and it is inherited (cobotar/protocol#32):
+an assembly node applies when its own condition and every ancestor&#39;s hold,
+and a sequence or task when its own condition, every ancestor sequence&#39;s and
+the recipe&#39;s include condition hold. A condition only needs to say what its
+ancestors don&#39;t already say.
+
+There is no &#34;or&#34; across axes. Express one with a derived axis that names
+the reason (VariantAxis.derivation), or with two nodes. Lists of conditions
+are used only where &#34;any of&#34; is meant: exclusions.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| all_of | [AxisCondition](#variance-v1-AxisCondition) | repeated |  |
 
 
 
@@ -5939,7 +5957,7 @@ evaluated by the runtime according to the specified operator.
 | local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Optional local target defining the spatial or logical context for this sequence. |
 | optional | [bool](#bool) |  | Indicates whether this sequence is optional and may be skipped during execution. |
 | can_bulk_complete | [bool](#bool) |  | Indicates whether all child tasks in this sequence can be completed in bulk. |
-| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Sequence applies if any rule matches. Empty means always applicable. |
+| applicability | [variance.v1.VariantCondition](#variance-v1-VariantCondition) |  | The sequence applies when this condition, every ancestor sequence&#39;s and the recipe&#39;s include condition hold. Empty means it applies wherever its parent does. Its axes are axes of the recipe&#39;s product. |
 
 
 
@@ -6300,7 +6318,7 @@ asset, station, or container bindings belongs in runtime.v1.TaskRun.
 | source | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic source reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
 | destination | [TaskEndpoint](#process-v1-TaskEndpoint) |  | Optional static/generic destination reference for move, pick/place, kitting, storage, tray, pallet, or fixture operations. |
 | quantity | [QuantityRequirement](#process-v1-QuantityRequirement) |  | Amount of the target part or material handled by this task. Omit only when quantity is not meaningful. |
-| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Task applies if any rule matches. Empty means always applicable. |
+| applicability | [variance.v1.VariantCondition](#variance-v1-VariantCondition) |  | The task applies when this condition, every ancestor sequence&#39;s and the recipe&#39;s include condition hold. Empty means it applies wherever its sequence does. Its axes are axes of the recipe&#39;s product. |
 | overrides | [TaskOverride](#process-v1-TaskOverride) | repeated | adjust small authoring/runtime details when the task is otherwise the same task. |
 | constraints | [TaskConstraint](#process-v1-TaskConstraint) | repeated | Semantic conditions that supplement the task&#39;s validation mechanism. |
 
@@ -6374,10 +6392,12 @@ semantically the same operation. Use TaskDefinition.applicability and separate
 task definitions when a variant requires a materially different operation,
 tool, skill, safety classification, or sequence structure.
 
+The first override whose condition holds applies; later ones are ignored.
+
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| when | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated |  |
+| when | [variance.v1.VariantCondition](#variance-v1-VariantCondition) |  |  |
 | instruction_text | [string](#string) |  | Variant-specific instruction text. |
 | target | [TaskTarget](#process-v1-TaskTarget) |  | Variant-specific target, e.g. a different colored part occurrence |
 | insertion_offset | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Variant-specific insertion offset. |
@@ -6598,7 +6618,7 @@ ProcessRecipe describes the following:
 | description | [string](#string) |  |  |
 | type | [ProcessType](#process-v1-ProcessType) |  |  |
 | product_definition_id | [string](#string) |  |  |
-| applicability | [RecipeApplicability](#process-v1-RecipeApplicability) |  |  |
+| applicability | [RecipeApplicability](#process-v1-RecipeApplicability) |  | Requires product_definition_id when it has conditions. |
 | root_sequence_id | [string](#string) |  |  |
 | sequence_ids | [string](#string) | repeated |  |
 | task_ids | [string](#string) | repeated |  |
@@ -6629,13 +6649,19 @@ ProcessRecipe describes the following:
 <a name="process-v1-RecipeApplicability"></a>
 
 ### RecipeApplicability
-
+RecipeApplicability says for which configurations of the recipe&#39;s product the
+recipe applies. Its conditions, and those of the recipe&#39;s sequences, tasks
+and task overrides, name axes and options of that product
+(cobotar/protocol#9); the backend checks this when the recipe is saved. A
+recipe without a product, e.g. a checklist or a startup procedure, has no
+conditions; one that needs them names a product, which can be a placeholder
+or the machine itself.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| include | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe applies if any include rule matches. Empty means generally applicable. |
-| exclude | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Recipe is rejected if any exclude rule matches. |
+| include | [variance.v1.VariantCondition](#variance-v1-VariantCondition) |  | The recipe applies when this condition holds, and it&#39;s inherited by every sequence and task of the recipe. Empty means every configuration. |
+| exclude | [variance.v1.VariantCondition](#variance-v1-VariantCondition) | repeated | The recipe is rejected when any of these conditions holds. |
 
 
 
@@ -6752,10 +6778,37 @@ ignored.
 
 
 
+<a name="variance-v1-NamedVariantConfiguration"></a>
+
+### NamedVariantConfiguration
+NamedVariantConfiguration is a configuration a product names, e.g. a row of
+the configuration table (&#34;Full spec, black&#34;), which an operator can pick
+instead of choosing axis by axis. It holds the selected axes only. Named
+configurations are shortcuts: they don&#39;t define which configurations are
+valid.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| configuration | [VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
+
+
+
+
+
+
 <a name="variance-v1-VariantConfiguration"></a>
 
 ### VariantConfiguration
-
+VariantConfiguration selects one option per axis. In requests (loads and
+recipe generation) it holds the selected axes only: the backend adds the
+derived axes (VariantAxis.derivation) and refuses an incomplete, excluded
+or ambiguous configuration. On a process run it holds every axis, derived
+ones included.
 
 
 | Field | Type | Label | Description |
@@ -6817,7 +6870,7 @@ This is intended for authoring-time generation, not runtime execution.
 | recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
 | recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
 | variant_generation_mode | [VariantGenerationMode](#process-v1-VariantGenerationMode) |  |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. At most one selection is allowed per axis. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds the selected axes only; the backend adds the derived ones and refuses an invalid configuration, as for process loads. |
 | insert_hold_before_unfasten_group | [bool](#bool) |  | If true, the generator may insert HOLD tasks before grouped UNFASTEN work when that improves stability and task flow during disassembly. |
 | group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-removal-oriented sequence. |
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts disassembly sequence. |
@@ -6871,7 +6924,7 @@ This is intended for authoring-time generation, not runtime execution.
 | recipe_icon | [string](#string) |  | Optional icon for the generated recipe. |
 | recipe_description | [string](#string) |  | Optional human-readable description for the generated recipe. |
 | variant_generation_mode | [VariantGenerationMode](#process-v1-VariantGenerationMode) |  |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. At most one selection is allowed per axis. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds the selected axes only; the backend adds the derived ones and refuses an invalid configuration, as for process loads. |
 | insert_align_before_fasten_group | [bool](#bool) |  | If true, the generator may insert ALIGN tasks before grouped fastener work when that improves the generated task flow. |
 | group_fasteners_threshold | [int32](#int32) |  | Minimum number of sibling fasteners required before grouping them into a shared fastener-oriented sequence. |
 | group_repeated_parts_threshold | [int32](#int32) |  | Minimum number of repeated sibling parts required before grouping them into a shared repeated-parts sequence. |
@@ -6918,7 +6971,7 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | VARIANT_GENERATION_MODE_UNSPECIFIED | 0 |  |
-| VARIANT_GENERATION_MODE_ALL_VARIANTS | 1 | Generate one recipe containing every potentially applicable node. Variant-dependent sequences and tasks retain their applicability rules. |
+| VARIANT_GENERATION_MODE_ALL_VARIANTS | 1 | Generate one recipe containing every potentially applicable node. Variant-dependent sequences and tasks keep their nodes&#39; conditions. |
 | VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION | 2 | Generate a recipe specialized for one concrete variant configuration. |
 
 
@@ -7153,7 +7206,7 @@ inventory and container instances are resolved when creating a ProcessRun.
 | recipe_icon | [string](#string) |  | Optional icon. The backend supplies a default if empty. |
 | recipe_description | [string](#string) |  | Optional human-readable description. |
 | variant_generation_mode | [VariantGenerationMode](#process-v1-VariantGenerationMode) |  |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. At most one selection is allowed per axis. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds the selected axes only; the backend adds the derived ones and refuses an invalid configuration, as for process loads. |
 | root_node_id | [string](#string) |  | Optional subtree to kit. If empty, generation starts at the product root. |
 | include_optional_nodes | [bool](#bool) |  | Include applicable nodes marked optional. |
 | bom_mode | [KittingBomMode](#process-v1-KittingBomMode) |  | Determines whether subassemblies are expanded or supplied as kit items. |
@@ -7336,7 +7389,9 @@ TODO: add validation for: id, ...
 | insertion_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to pre-insertion pose, in mm |
 | approach_offset_hint | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Offset from final pose to preferred approach pose, in mm |
 | optional | [bool](#bool) |  |  |
-| applicability | [variance.v1.VariantRule](#variance-v1-VariantRule) | repeated | Applies if any rule matches. Empty means always applicable. |
+| applicability | [variance.v1.VariantCondition](#variance-v1-VariantCondition) |  | The node applies when this condition and every ancestor&#39;s hold, so it only says what the ancestors don&#39;t. Empty means it applies wherever its parent does. A node&#39;s condition names axes of one variant group only, so groups stay independent.
+
+TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1 |
 
 
 
@@ -7569,10 +7624,30 @@ Omit this for independently tracked discrete parts. |
 
 
 
+<a name="variance-v1-DerivedVariantOption"></a>
+
+### DerivedVariantOption
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| option_id | [string](#string) |  |  |
+| when | [VariantCondition](#variance-v1-VariantCondition) |  | The option applies when this condition holds, e.g. &#34;main_pcb: slots_2&#34; when &#34;connectivity: wifi_bt&#34; and &#34;memory: 32gb&#34;. It can&#39;t be empty. |
+
+
+
+
+
+
 <a name="variance-v1-VariantAxis"></a>
 
 ### VariantAxis
-
+VariantAxis is a dimension in which a product varies, e.g. connectivity,
+memory or the colour of the case. An axis is either selected (chosen when a
+process is loaded) or derived (has a derivation): its option follows from
+the selected axes of its group, so it&#39;s never asked of the operator. Both
+kinds can be used in applicability.
 
 
 | Field | Type | Label | Description |
@@ -7582,6 +7657,25 @@ Omit this for independently tracked discrete parts. |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | options | [VariantOption](#variance-v1-VariantOption) | repeated |  |
+| derivation | [VariantDerivation](#variance-v1-VariantDerivation) |  | Set for a derived axis, e.g. the main PCB, which follows from connectivity and memory. A derived axis has to be in a variant group, and its conditions only name selected axes of that group. |
+
+
+
+
+
+
+<a name="variance-v1-VariantDerivation"></a>
+
+### VariantDerivation
+VariantDerivation gives, for each option of a derived axis, the condition
+under which it applies. For every valid combination of the group&#39;s selected
+axes exactly one condition holds; the backend checks this when the product
+is saved.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| options | [DerivedVariantOption](#variance-v1-DerivedVariantOption) | repeated |  |
 
 
 
@@ -7600,6 +7694,50 @@ Omit this for independently tracked discrete parts. |
 | name | [string](#string) |  |  |
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="variance_v1_variant_group-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## variance/v1/variant_group.proto
+
+
+
+<a name="variance-v1-VariantGroup"></a>
+
+### VariantGroup
+VariantGroup is a set of axes that depend on each other, e.g. connectivity,
+memory and the main PCB that follows from them. Groups are independent: a
+configuration is valid when each group&#39;s combination is valid. An axis
+outside every group is a group of its own, in which every option is valid,
+e.g. the colour of the case.
+
+Within a group every combination of the selected axes is valid, except the
+excluded ones, or, when allowed is given, only the allowed ones.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| axis_ids | [string](#string) | repeated |  |
+| excluded | [VariantCondition](#variance-v1-VariantCondition) | repeated | Combinations that aren&#39;t valid, any of which rejects a configuration, e.g. &#34;connectivity: none&#34; and &#34;memory: 32gb&#34;. |
+| allowed | [VariantConfiguration](#variance-v1-VariantConfiguration) | repeated | The only valid combinations, each selecting every selected axis of the group and nothing else (checked by ProductDefinition). Give it only when listing them is shorter than excluding the rest. |
 
 
 
@@ -7638,6 +7776,8 @@ TODO: add validation for: root_node_id, nodes
 | root_node_id | [string](#string) |  |  |
 | nodes | [AssemblyNode](#product-v1-AssemblyNode) | repeated |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| variant_groups | [variance.v1.VariantGroup](#variance-v1-VariantGroup) | repeated | Groups of axes that depend on each other (cobotar/protocol#32). An axis outside every group is independent, and every option of it is valid. |
+| configurations | [variance.v1.NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration) | repeated | Configurations the product names, e.g. the rows of the configuration table, which an operator can pick when loading a process. |
 
 
 
@@ -10581,11 +10721,12 @@ individual tasks to be reassigned, blocked, or suspended.
 | initiated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | ended_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 | assignments | [ActorAssignment](#runtime-v1-ActorAssignment) | repeated | is assignment history; released records remain present with released_at populated. |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  |  |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | The run&#39;s full variant configuration: the selected axes and the derived ones the backend resolved from them (cobotar/protocol#32). Set by the backend. |
 | parameters | [RunParameter](#runtime-v1-RunParameter) | repeated |  |
 | revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
 | process_recipe_revision | [uint64](#uint64) |  | The revision of the recipe (process_recipe_id) the run was loaded with. Its sequence and task runs refer to the sequence and task definitions of that recipe revision (cobotar/protocol#19). Set by the backend. |
 | part_definition_revisions | [ProcessRun.PartDefinitionRevisionsEntry](#runtime-v1-ProcessRun-PartDefinitionRevisionsEntry) | repeated | The revisions of the part definitions the run&#39;s tasks target, by part definition ID, as the run was loaded. Set by the backend. |
+| named_variant_configuration_id | [string](#string) |  | The product&#39;s named configuration the run was loaded with, if the load named one. Set by the backend. |
 
 
 
@@ -10796,7 +10937,8 @@ Thus the following must be evaluated:
 | target_line_id | [string](#string) |  | Required top-level routing scope. |
 | target_cell_id | [string](#string) |  | Optional narrowing of the target scope. If set, the loader must validate and respect these targets. |
 | target_station_id | [string](#string) |  |  |
-| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | Optional variant configuration used to evaluate recipe/task applicability. |
+| variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | The selected axes only. The backend adds the derived axes and refuses (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) a configuration that misses a selected axis, names an unknown axis or option, selects a derived axis, is excluded by its variant group, or for which a derived axis gets no option or several. |
+| named_variant_configuration_id | [string](#string) |  | One of the product&#39;s named configurations, by ID. |
 | dry_run | [bool](#bool) |  | true -&gt; perform precheck only false -&gt; perform precheck and instantiate ProcessRun if feasible |
 | queue_if_occupied | [bool](#bool) |  | If true, the loader may create a queued ProcessRun when the preferred execution target is currently BUSY but otherwise feasible. |
 | strategy | [ProcessLoadStrategy](#runtime-v1-ProcessLoadStrategy) |  | Optional execution preferences for the loader. |
@@ -10853,6 +10995,7 @@ The load is refused (PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS) if a task isn&#39;
 | resource_id | [string](#string) |  | tool/robot/fixture/asset/part instance if known |
 | remediation | [string](#string) |  | Optional remediation hint |
 | importance | [RequirementImportance](#runtime-v1-RequirementImportance) |  |  |
+| variant_axis_id | [string](#string) |  | The variant axis the issue is about, e.g. for an invalid variant configuration. |
 
 
 
@@ -10931,6 +11074,7 @@ The load is refused (PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS) if a task isn&#39;
 | PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
 | PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
 | PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS | 5 | ProcessLoadRequest.done_task_definition_ids can&#39;t be done before the run starts; the issue&#39;s task_definition_id names the offending task. |
+| PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION | 6 | The variant configuration or named configuration isn&#39;t valid for the recipe&#39;s product; the issue&#39;s variant_axis_id names the axis, if one is to blame, and its message says why. |
 | PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER | 10 | Container related failures |
 | PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND | 11 |  |
 | PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND | 12 |  |

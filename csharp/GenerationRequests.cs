@@ -30,7 +30,7 @@ namespace Messages.Process.V1 {
             "ZWZpbml0aW9uLnByb3RvGiBwcm9jZXNzL3YxL3Rhc2tfZGVmaW5pdGlvbi5w",
             "cm90bxordmFsaWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5w",
             "cm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9jb25maWd1cmF0aW9uLnByb3Rv",
-            "ItAJCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSQAoVcHJv",
+            "IvMLCiFEcmFmdFByb2Nlc3NSZWNpcGVHZW5lcmF0ZVJlcXVlc3QSQAoVcHJv",
             "ZHVjdF9kZWZpbml0aW9uX2lkGAEgASgJQgy6SAlyBODrMAHIAQFSE3Byb2R1",
             "Y3REZWZpbml0aW9uSWQSKQoJcmVjaXBlX2lkGAIgASgJQgy6SAlyBKDyBAHI",
             "AQFSCHJlY2lwZUlkEh8KC3JlY2lwZV9uYW1lGAMgASgJUgpyZWNpcGVOYW1l",
@@ -57,51 +57,65 @@ namespace Messages.Process.V1 {
             "cl9kZWZpbml0aW9uX2lkcxgRIAMoCUIOukgLkgEIIgZyBMjyBAFSHHNvdXJj",
             "ZUNvbnRhaW5lckRlZmluaXRpb25JZHMSVQofdGFyZ2V0X2NvbnRhaW5lcl9k",
             "ZWZpbml0aW9uX2lkcxgSIAMoCUIOukgLkgEIIgZyBMjyBAFSHHRhcmdldENv",
-            "bnRhaW5lckRlZmluaXRpb25JZHMitQkKLERyYWZ0RGlzYXNzZW1ibHlQcm9j",
-            "ZXNzUmVjaXBlR2VuZXJhdGVSZXF1ZXN0EkAKFXByb2R1Y3RfZGVmaW5pdGlv",
-            "bl9pZBgBIAEoCUIMukgJcgTg6zAByAEBUhNwcm9kdWN0RGVmaW5pdGlvbklk",
-            "EikKCXJlY2lwZV9pZBgCIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBIf",
-            "CgtyZWNpcGVfbmFtZRgDIAEoCVIKcmVjaXBlTmFtZRIfCgtyZWNpcGVfaWNv",
-            "bhgEIAEoCVIKcmVjaXBlSWNvbhItChJyZWNpcGVfZGVzY3JpcHRpb24YBSAB",
-            "KAlSEXJlY2lwZURlc2NyaXB0aW9uEmMKF3ZhcmlhbnRfZ2VuZXJhdGlvbl9t",
-            "b2RlGBMgASgOMiEucHJvY2Vzcy52MS5WYXJpYW50R2VuZXJhdGlvbk1vZGVC",
-            "CLpIBYIBAhABUhV2YXJpYW50R2VuZXJhdGlvbk1vZGUSVgoVdmFyaWFudF9j",
-            "b25maWd1cmF0aW9uGAYgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZp",
-            "Z3VyYXRpb25SFHZhcmlhbnRDb25maWd1cmF0aW9uEkgKIWluc2VydF9ob2xk",
-            "X2JlZm9yZV91bmZhc3Rlbl9ncm91cBgHIAEoCFIdaW5zZXJ0SG9sZEJlZm9y",
-            "ZVVuZmFzdGVuR3JvdXASOgoZZ3JvdXBfZmFzdGVuZXJzX3RocmVzaG9sZBgI",
-            "IAEoBVIXZ3JvdXBGYXN0ZW5lcnNUaHJlc2hvbGQSQwoeZ3JvdXBfcmVwZWF0",
-            "ZWRfcGFydHNfdGhyZXNob2xkGAkgASgFUhtncm91cFJlcGVhdGVkUGFydHNU",
-            "aHJlc2hvbGQSMgoVZ2VuZXJhdGVfdmVyaWZ5X3Rhc2tzGAogASgIUhNnZW5l",
-            "cmF0ZVZlcmlmeVRhc2tzEkQKH3ByZWZlcl9tb3ZlX3Rhc2tzX3doZW5fcG9z",
-            "c2libGUYCyABKAhSG3ByZWZlck1vdmVUYXNrc1doZW5Qb3NzaWJsZRI0ChZp",
-            "bmNsdWRlX29wdGlvbmFsX25vZGVzGAwgASgIUhRpbmNsdWRlT3B0aW9uYWxO",
-            "b2RlcxIuChNnZW5lcmF0ZV93aXBlX3Rhc2tzGA0gASgIUhFnZW5lcmF0ZVdp",
-            "cGVUYXNrcxJVCh90YXJnZXRfY29udGFpbmVyX2RlZmluaXRpb25faWRzGA4g",
-            "AygJQg66SAuSAQgiBnIEyPIEAVIcdGFyZ2V0Q29udGFpbmVyRGVmaW5pdGlv",
-            "bklkcxIgCgxyb290X25vZGVfaWQYDyABKAlSCnJvb3ROb2RlSWQSTwokcHJl",
-            "c2VydmVfc3ViYXNzZW1ibGllc193aGVuX3Bvc3NpYmxlGBAgASgIUiFwcmVz",
-            "ZXJ2ZVN1YmFzc2VtYmxpZXNXaGVuUG9zc2libGUSPwoccmV2ZXJzZV9jaGls",
-            "ZF9zZXF1ZW5jZV9vcmRlchgRIAEoCFIZcmV2ZXJzZUNoaWxkU2VxdWVuY2VP",
-            "cmRlchI0ChZnZW5lcmF0ZV9pbnNwZWN0X3Rhc2tzGBIgASgIUhRnZW5lcmF0",
-            "ZUluc3BlY3RUYXNrcyKdAQofRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJ",
-            "c3N1ZRIgCgdtZXNzYWdlGAEgASgJQga6SAPIAQFSB21lc3NhZ2USHwoHbm9k",
-            "ZV9pZBgCIAEoCUIGukgDyAEBUgZub2RlSWQSNwoScGFydF9kZWZpbml0aW9u",
-            "X2lkGAMgASgJQgm6SAZyBMjxBAFSEHBhcnREZWZpbml0aW9uSWQikgIKIERy",
-            "YWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVzdWx0EjkKBnJlY2lwZRgBIAEo",
-            "CzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEBUgZyZWNpcGUS",
-            "PAoJc2VxdWVuY2VzGAIgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmlu",
-            "aXRpb25SCXNlcXVlbmNlcxIwCgV0YXNrcxgDIAMoCzIaLnByb2Nlc3MudjEu",
-            "VGFza0RlZmluaXRpb25SBXRhc2tzEkMKBmlzc3VlcxgEIAMoCzIrLnByb2Nl",
-            "c3MudjEuRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJc3N1ZVIGaXNzdWVz",
-            "Kp4BChVWYXJpYW50R2VuZXJhdGlvbk1vZGUSJwojVkFSSUFOVF9HRU5FUkFU",
-            "SU9OX01PREVfVU5TUEVDSUZJRUQQABIoCiRWQVJJQU5UX0dFTkVSQVRJT05f",
-            "TU9ERV9BTExfVkFSSUFOVFMQARIyCi5WQVJJQU5UX0dFTkVSQVRJT05fTU9E",
-            "RV9TRUxFQ1RFRF9DT05GSUdVUkFUSU9OEAJCuQEKDmNvbS5wcm9jZXNzLnYx",
-            "QhdHZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjxnaXRodWIuY29tL2NvYm90",
-            "YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGi",
-            "AgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlBy",
-            "b2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
+            "bnRhaW5lckRlZmluaXRpb25JZHM6oAK6SJwCGpkCCltkcmFmdF9wcm9jZXNz",
+            "X3JlY2lwZV9nZW5lcmF0ZV9yZXF1ZXN0LnNlbGVjdGVkX2NvbmZpZ3VyYXRp",
+            "b25fcmVxdWlyZXNfdmFyaWFudF9jb25maWd1cmF0aW9uEmNWQVJJQU5UX0dF",
+            "TkVSQVRJT05fTU9ERV9TRUxFQ1RFRF9DT05GSUdVUkFUSU9OICgyKSByZXF1",
+            "aXJlcyBhIHZhcmlhbnRfY29uZmlndXJhdGlvbiB3aXRoIHNlbGVjdGlvbnMa",
+            "VXRoaXMudmFyaWFudF9nZW5lcmF0aW9uX21vZGUgIT0gMiB8fCB0aGlzLnZh",
+            "cmlhbnRfY29uZmlndXJhdGlvbi5zZWxlY3Rpb25zLnNpemUoKSA+IDAi5AsK",
+            "LERyYWZ0RGlzYXNzZW1ibHlQcm9jZXNzUmVjaXBlR2VuZXJhdGVSZXF1ZXN0",
+            "EkAKFXByb2R1Y3RfZGVmaW5pdGlvbl9pZBgBIAEoCUIMukgJcgTg6zAByAEB",
+            "UhNwcm9kdWN0RGVmaW5pdGlvbklkEikKCXJlY2lwZV9pZBgCIAEoCUIMukgJ",
+            "cgSg8gQByAEBUghyZWNpcGVJZBIfCgtyZWNpcGVfbmFtZRgDIAEoCVIKcmVj",
+            "aXBlTmFtZRIfCgtyZWNpcGVfaWNvbhgEIAEoCVIKcmVjaXBlSWNvbhItChJy",
+            "ZWNpcGVfZGVzY3JpcHRpb24YBSABKAlSEXJlY2lwZURlc2NyaXB0aW9uEmMK",
+            "F3ZhcmlhbnRfZ2VuZXJhdGlvbl9tb2RlGBMgASgOMiEucHJvY2Vzcy52MS5W",
+            "YXJpYW50R2VuZXJhdGlvbk1vZGVCCLpIBYIBAhABUhV2YXJpYW50R2VuZXJh",
+            "dGlvbk1vZGUSVgoVdmFyaWFudF9jb25maWd1cmF0aW9uGAYgASgLMiEudmFy",
+            "aWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25SFHZhcmlhbnRDb25maWd1",
+            "cmF0aW9uEkgKIWluc2VydF9ob2xkX2JlZm9yZV91bmZhc3Rlbl9ncm91cBgH",
+            "IAEoCFIdaW5zZXJ0SG9sZEJlZm9yZVVuZmFzdGVuR3JvdXASOgoZZ3JvdXBf",
+            "ZmFzdGVuZXJzX3RocmVzaG9sZBgIIAEoBVIXZ3JvdXBGYXN0ZW5lcnNUaHJl",
+            "c2hvbGQSQwoeZ3JvdXBfcmVwZWF0ZWRfcGFydHNfdGhyZXNob2xkGAkgASgF",
+            "Uhtncm91cFJlcGVhdGVkUGFydHNUaHJlc2hvbGQSMgoVZ2VuZXJhdGVfdmVy",
+            "aWZ5X3Rhc2tzGAogASgIUhNnZW5lcmF0ZVZlcmlmeVRhc2tzEkQKH3ByZWZl",
+            "cl9tb3ZlX3Rhc2tzX3doZW5fcG9zc2libGUYCyABKAhSG3ByZWZlck1vdmVU",
+            "YXNrc1doZW5Qb3NzaWJsZRI0ChZpbmNsdWRlX29wdGlvbmFsX25vZGVzGAwg",
+            "ASgIUhRpbmNsdWRlT3B0aW9uYWxOb2RlcxIuChNnZW5lcmF0ZV93aXBlX3Rh",
+            "c2tzGA0gASgIUhFnZW5lcmF0ZVdpcGVUYXNrcxJVCh90YXJnZXRfY29udGFp",
+            "bmVyX2RlZmluaXRpb25faWRzGA4gAygJQg66SAuSAQgiBnIEyPIEAVIcdGFy",
+            "Z2V0Q29udGFpbmVyRGVmaW5pdGlvbklkcxIgCgxyb290X25vZGVfaWQYDyAB",
+            "KAlSCnJvb3ROb2RlSWQSTwokcHJlc2VydmVfc3ViYXNzZW1ibGllc193aGVu",
+            "X3Bvc3NpYmxlGBAgASgIUiFwcmVzZXJ2ZVN1YmFzc2VtYmxpZXNXaGVuUG9z",
+            "c2libGUSPwoccmV2ZXJzZV9jaGlsZF9zZXF1ZW5jZV9vcmRlchgRIAEoCFIZ",
+            "cmV2ZXJzZUNoaWxkU2VxdWVuY2VPcmRlchI0ChZnZW5lcmF0ZV9pbnNwZWN0",
+            "X3Rhc2tzGBIgASgIUhRnZW5lcmF0ZUluc3BlY3RUYXNrczqsArpIqAIapQIK",
+            "Z2RyYWZ0X2Rpc2Fzc2VtYmx5X3Byb2Nlc3NfcmVjaXBlX2dlbmVyYXRlX3Jl",
+            "cXVlc3Quc2VsZWN0ZWRfY29uZmlndXJhdGlvbl9yZXF1aXJlc192YXJpYW50",
+            "X2NvbmZpZ3VyYXRpb24SY1ZBUklBTlRfR0VORVJBVElPTl9NT0RFX1NFTEVD",
+            "VEVEX0NPTkZJR1VSQVRJT04gKDIpIHJlcXVpcmVzIGEgdmFyaWFudF9jb25m",
+            "aWd1cmF0aW9uIHdpdGggc2VsZWN0aW9ucxpVdGhpcy52YXJpYW50X2dlbmVy",
+            "YXRpb25fbW9kZSAhPSAyIHx8IHRoaXMudmFyaWFudF9jb25maWd1cmF0aW9u",
+            "LnNlbGVjdGlvbnMuc2l6ZSgpID4gMCKdAQofRHJhZnRQcm9jZXNzUmVjaXBl",
+            "R2VuZXJhdGVJc3N1ZRIgCgdtZXNzYWdlGAEgASgJQga6SAPIAQFSB21lc3Nh",
+            "Z2USHwoHbm9kZV9pZBgCIAEoCUIGukgDyAEBUgZub2RlSWQSNwoScGFydF9k",
+            "ZWZpbml0aW9uX2lkGAMgASgJQgm6SAZyBMjxBAFSEHBhcnREZWZpbml0aW9u",
+            "SWQikgIKIERyYWZ0UHJvY2Vzc1JlY2lwZUdlbmVyYXRlUmVzdWx0EjkKBnJl",
+            "Y2lwZRgBIAEoCzIZLnByb2Nlc3MudjEuUHJvY2Vzc1JlY2lwZUIGukgDyAEB",
+            "UgZyZWNpcGUSPAoJc2VxdWVuY2VzGAIgAygLMh4ucHJvY2Vzcy52MS5TZXF1",
+            "ZW5jZURlZmluaXRpb25SCXNlcXVlbmNlcxIwCgV0YXNrcxgDIAMoCzIaLnBy",
+            "b2Nlc3MudjEuVGFza0RlZmluaXRpb25SBXRhc2tzEkMKBmlzc3VlcxgEIAMo",
+            "CzIrLnByb2Nlc3MudjEuRHJhZnRQcm9jZXNzUmVjaXBlR2VuZXJhdGVJc3N1",
+            "ZVIGaXNzdWVzKp4BChVWYXJpYW50R2VuZXJhdGlvbk1vZGUSJwojVkFSSUFO",
+            "VF9HRU5FUkFUSU9OX01PREVfVU5TUEVDSUZJRUQQABIoCiRWQVJJQU5UX0dF",
+            "TkVSQVRJT05fTU9ERV9BTExfVkFSSUFOVFMQARIyCi5WQVJJQU5UX0dFTkVS",
+            "QVRJT05fTU9ERV9TRUxFQ1RFRF9DT05GSUdVUkFUSU9OEAJCuQEKDmNvbS5w",
+            "cm9jZXNzLnYxQhdHZW5lcmF0aW9uUmVxdWVzdHNQcm90b1ABWjxnaXRodWIu",
+            "Y29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92MTtw",
+            "cm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vz",
+            "c1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Process.V1.ProcessRecipeReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.VariantGenerationMode), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -119,7 +133,7 @@ namespace Messages.Process.V1 {
     [pbr::OriginalName("VARIANT_GENERATION_MODE_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
     /// Generate one recipe containing every potentially applicable node.
-    /// Variant-dependent sequences and tasks retain their applicability rules.
+    /// Variant-dependent sequences and tasks keep their nodes' conditions.
     /// </summary>
     [pbr::OriginalName("VARIANT_GENERATION_MODE_ALL_VARIANTS")] AllVariants = 1,
     /// <summary>
@@ -292,8 +306,9 @@ namespace Messages.Process.V1 {
     public const int VariantConfigurationFieldNumber = 6;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
-    /// Required when variant_generation_mode is SELECTED_CONFIGURATION.
-    /// At most one selection is allowed per axis.
+    /// Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds
+    /// the selected axes only; the backend adds the derived ones and refuses an
+    /// invalid configuration, as for process loads.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1216,8 +1231,9 @@ namespace Messages.Process.V1 {
     public const int VariantConfigurationFieldNumber = 6;
     private global::Messages.Variance.V1.VariantConfiguration variantConfiguration_;
     /// <summary>
-    /// Required when variant_generation_mode is SELECTED_CONFIGURATION.
-    /// At most one selection is allowed per axis.
+    /// Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds
+    /// the selected axes only; the backend adds the derived ones and refuses an
+    /// invalid configuration, as for process loads.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

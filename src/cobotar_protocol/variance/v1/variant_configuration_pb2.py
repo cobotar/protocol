@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
+from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'variance/v1/variant_configuration.proto\x12\x0bvariance.v1\"H\n\x10VariantSelection\x12\x17\n\x07\x61xis_id\x18\x01 \x01(\tR\x06\x61xisId\x12\x1b\n\toption_id\x18\x02 \x01(\tR\x08optionId\"U\n\x14VariantConfiguration\x12=\n\nselections\x18\x01 \x03(\x0b\x32\x1d.variance.v1.VariantSelectionR\nselectionsB\xc2\x01\n\x0f\x63om.variance.v1B\x19VariantConfigurationProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'variance/v1/variant_configuration.proto\x12\x0bvariance.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"d\n\x10VariantSelection\x12%\n\x07\x61xis_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x06\x61xisId\x12)\n\toption_id\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x08optionId\"\x81\x02\n\x14VariantConfiguration\x12\xe8\x01\n\nselections\x18\x01 \x03(\x0b\x32\x1d.variance.v1.VariantSelectionB\xa8\x01\xbaH\xa4\x01\xba\x01\xa0\x01\n0variant_configuration.selections.unique_axis_ids\x12;a variant configuration can select only one option per axis\x1a/this.map(selection, selection.axis_id).unique()R\nselections\"\xe2\x01\n\x19NamedVariantConfiguration\x12\x1c\n\x02id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x02id\x12 \n\x04name\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\x80\xf1\x04\x01\xc8\x01\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12O\n\rconfiguration\x18\x05 \x01(\x0b\x32!.variance.v1.VariantConfigurationB\x06\xbaH\x03\xc8\x01\x01R\rconfigurationB\xc2\x01\n\x0f\x63om.variance.v1B\x19VariantConfigurationProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +34,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'variance.v1.variant_configu
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\017com.variance.v1B\031VariantConfigurationProtoP\001Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\242\002\003VXX\252\002\024Messages.Variance.V1\312\002\013Variance\\V1\342\002\027Variance\\V1\\GPBMetadata\352\002\014Variance::V1'
-  _globals['_VARIANTSELECTION']._serialized_start=56
-  _globals['_VARIANTSELECTION']._serialized_end=128
-  _globals['_VARIANTCONFIGURATION']._serialized_start=130
-  _globals['_VARIANTCONFIGURATION']._serialized_end=215
+  _globals['_VARIANTSELECTION'].fields_by_name['axis_id']._loaded_options = None
+  _globals['_VARIANTSELECTION'].fields_by_name['axis_id']._serialized_options = b'\272H\tr\004\340\363\004\001\310\001\001'
+  _globals['_VARIANTSELECTION'].fields_by_name['option_id']._loaded_options = None
+  _globals['_VARIANTSELECTION'].fields_by_name['option_id']._serialized_options = b'\272H\tr\004\340\363\004\001\310\001\001'
+  _globals['_VARIANTCONFIGURATION'].fields_by_name['selections']._loaded_options = None
+  _globals['_VARIANTCONFIGURATION'].fields_by_name['selections']._serialized_options = b'\272H\244\001\272\001\240\001\n0variant_configuration.selections.unique_axis_ids\022;a variant configuration can select only one option per axis\032/this.map(selection, selection.axis_id).unique()'
+  _globals['_NAMEDVARIANTCONFIGURATION'].fields_by_name['id']._loaded_options = None
+  _globals['_NAMEDVARIANTCONFIGURATION'].fields_by_name['id']._serialized_options = b'\272H\tr\004\340\363\004\001\310\001\001'
+  _globals['_NAMEDVARIANTCONFIGURATION'].fields_by_name['name']._loaded_options = None
+  _globals['_NAMEDVARIANTCONFIGURATION'].fields_by_name['name']._serialized_options = b'\272H\tr\004\200\361\004\001\310\001\001'
+  _globals['_NAMEDVARIANTCONFIGURATION'].fields_by_name['configuration']._loaded_options = None
+  _globals['_NAMEDVARIANTCONFIGURATION'].fields_by_name['configuration']._serialized_options = b'\272H\003\310\001\001'
+  _globals['_VARIANTSELECTION']._serialized_start=130
+  _globals['_VARIANTSELECTION']._serialized_end=230
+  _globals['_VARIANTCONFIGURATION']._serialized_start=233
+  _globals['_VARIANTCONFIGURATION']._serialized_end=490
+  _globals['_NAMEDVARIANTCONFIGURATION']._serialized_start=493
+  _globals['_NAMEDVARIANTCONFIGURATION']._serialized_end=719
 # @@protoc_insertion_point(module_scope)

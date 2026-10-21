@@ -6,13 +6,15 @@ import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
+import type { VariantCondition } from "./variant_condition_pb.ts";
+import { file_variance_v1_variant_condition } from "./variant_condition_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file variance/v1/variant_axis.proto.
  */
 export const file_variance_v1_variant_axis: GenFile = /*@__PURE__*/
-  fileDesc("Ch52YXJpYW5jZS92MS92YXJpYW50X2F4aXMucHJvdG8SC3ZhcmlhbmNlLnYxImgKDVZhcmlhbnRPcHRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSLWBAoLVmFyaWFudEF4aXMSGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRLtAwoHb3B0aW9ucxgFIAMoCzIaLnZhcmlhbmNlLnYxLlZhcmlhbnRPcHRpb25CvwO6SLsDugFjCh52YXJpYW50X2F4aXMub3B0aW9ucy5taW5faXRlbXMSL2EgdmFyaWFudCBheGlzIG11c3QgZGVmaW5lIGF0IGxlYXN0IHR3byBvcHRpb25zGhB0aGlzLnNpemUoKSA+PSAyugF5Ch92YXJpYW50X2F4aXMub3B0aW9ucy51bmlxdWVfaWRzEjB2YXJpYW50IG9wdGlvbiBpZHMgbXVzdCBiZSB1bmlxdWUgd2l0aGluIGFuIGF4aXMaJHRoaXMubWFwKG9wdGlvbiwgb3B0aW9uLmlkKS51bmlxdWUoKboB1QEKLHZhcmlhbnRfYXhpcy5vcHRpb25zLnVuaXF1ZV9ub3JtYWxpemVkX25hbWVzEml2YXJpYW50IG9wdGlvbiBuYW1lcyBtdXN0IGJlIHVuaXF1ZSB3aXRoaW4gYW4gYXhpcywgaWdub3Jpbmcgc3Vycm91bmRpbmcgd2hpdGVzcGFjZSBhbmQgQVNDSUkgbGV0dGVyIGNhc2UaOnRoaXMubWFwKG9wdGlvbiwgb3B0aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNjaWkoKSkudW5pcXVlKClCuQEKD2NvbS52YXJpYW5jZS52MUIQVmFyaWFudEF4aXNQcm90b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvdmFyaWFuY2UvdjE7dmFyaWFuY2V2MaICA1ZYWKoCFE1lc3NhZ2VzLlZhcmlhbmNlLlYxygILVmFyaWFuY2VcVjHiAhdWYXJpYW5jZVxWMVxHUEJNZXRhZGF0YeoCDFZhcmlhbmNlOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch52YXJpYW5jZS92MS92YXJpYW50X2F4aXMucHJvdG8SC3ZhcmlhbmNlLnYxImgKDVZhcmlhbnRPcHRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCSKtCQoLVmFyaWFudEF4aXMSGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRLtAwoHb3B0aW9ucxgFIAMoCzIaLnZhcmlhbmNlLnYxLlZhcmlhbnRPcHRpb25CvwO6SLsDugFjCh52YXJpYW50X2F4aXMub3B0aW9ucy5taW5faXRlbXMSL2EgdmFyaWFudCBheGlzIG11c3QgZGVmaW5lIGF0IGxlYXN0IHR3byBvcHRpb25zGhB0aGlzLnNpemUoKSA+PSAyugF5Ch92YXJpYW50X2F4aXMub3B0aW9ucy51bmlxdWVfaWRzEjB2YXJpYW50IG9wdGlvbiBpZHMgbXVzdCBiZSB1bmlxdWUgd2l0aGluIGFuIGF4aXMaJHRoaXMubWFwKG9wdGlvbiwgb3B0aW9uLmlkKS51bmlxdWUoKboB1QEKLHZhcmlhbnRfYXhpcy5vcHRpb25zLnVuaXF1ZV9ub3JtYWxpemVkX25hbWVzEml2YXJpYW50IG9wdGlvbiBuYW1lcyBtdXN0IGJlIHVuaXF1ZSB3aXRoaW4gYW4gYXhpcywgaWdub3Jpbmcgc3Vycm91bmRpbmcgd2hpdGVzcGFjZSBhbmQgQVNDSUkgbGV0dGVyIGNhc2UaOnRoaXMubWFwKG9wdGlvbiwgb3B0aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNjaWkoKSkudW5pcXVlKCkSMgoKZGVyaXZhdGlvbhgGIAEoCzIeLnZhcmlhbmNlLnYxLlZhcmlhbnREZXJpdmF0aW9uOqAEukicBBq7AgomdmFyaWFudF9heGlzLmRlcml2YXRpb24uY292ZXJzX29wdGlvbnMSWWEgZGVyaXZhdGlvbiBtdXN0IGdpdmUgYSBjb25kaXRpb24gZm9yIGV2ZXJ5IG9wdGlvbiBvZiB0aGUgYXhpcywgYW5kIG9ubHkgZm9yIGl0cyBvcHRpb25zGrUBIWhhcyh0aGlzLmRlcml2YXRpb24pIHx8ICh0aGlzLmRlcml2YXRpb24ub3B0aW9ucy5zaXplKCkgPT0gdGhpcy5vcHRpb25zLnNpemUoKSAmJiB0aGlzLmRlcml2YXRpb24ub3B0aW9ucy5hbGwoZGVyaXZlZCwgdGhpcy5vcHRpb25zLmV4aXN0cyhvcHRpb24sIG9wdGlvbi5pZCA9PSBkZXJpdmVkLm9wdGlvbl9pZCkpKRrbAQogdmFyaWFudF9heGlzLmRlcml2YXRpb24ubm90X3NlbGYSNmEgZGVyaXZlZCBheGlzJ3MgY29uZGl0aW9ucyBjYW4ndCBuYW1lIHRoZSBheGlzIGl0c2VsZhp/IWhhcyh0aGlzLmRlcml2YXRpb24pIHx8IHRoaXMuZGVyaXZhdGlvbi5vcHRpb25zLmFsbChkZXJpdmVkLCBkZXJpdmVkLndoZW4uYWxsX29mLmFsbChjb25kaXRpb24sIGNvbmRpdGlvbi5heGlzX2lkICE9IHRoaXMuaWQpKSLlAQoRVmFyaWFudERlcml2YXRpb24SzwEKB29wdGlvbnMYASADKAsyIS52YXJpYW5jZS52MS5EZXJpdmVkVmFyaWFudE9wdGlvbkKaAbpIlgG6AZIBCix2YXJpYW50X2Rlcml2YXRpb24ub3B0aW9ucy51bmlxdWVfb3B0aW9uX2lkcxIzYSBkZXJpdmF0aW9uIGNhbiBnaXZlIG9ubHkgb25lIGNvbmRpdGlvbiBwZXIgb3B0aW9uGi10aGlzLm1hcChkZXJpdmVkLCBkZXJpdmVkLm9wdGlvbl9pZCkudW5pcXVlKCki0wEKFERlcml2ZWRWYXJpYW50T3B0aW9uEh8KCW9wdGlvbl9pZBgBIAEoCUIMukgJyAEBcgTg8wQBEpkBCgR3aGVuGAIgASgLMh0udmFyaWFuY2UudjEuVmFyaWFudENvbmRpdGlvbkJsukhpugFjCiVkZXJpdmVkX3ZhcmlhbnRfb3B0aW9uLndoZW4ubm90X2VtcHR5EiJhIGRlcml2ZWQgb3B0aW9uIG5lZWRzIGEgY29uZGl0aW9uGhZ0aGlzLmFsbF9vZi5zaXplKCkgPiAwyAEBQrkBCg9jb20udmFyaWFuY2UudjFCEFZhcmlhbnRBeGlzUHJvdG9QAVo+Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3ZhcmlhbmNlL3YxO3ZhcmlhbmNldjGiAgNWWFiqAhRNZXNzYWdlcy5WYXJpYW5jZS5WMcoCC1ZhcmlhbmNlXFYx4gIXVmFyaWFuY2VcVjFcR1BCTWV0YWRhdGHqAgxWYXJpYW5jZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_validation_v1_predefined_string_rules, file_variance_v1_variant_condition]);
 
 /**
  * @generated from message variance.v1.VariantOption
@@ -47,6 +49,12 @@ export const VariantOptionSchema: GenMessage<VariantOption> = /*@__PURE__*/
   messageDesc(file_variance_v1_variant_axis, 0);
 
 /**
+ * VariantAxis is a dimension in which a product varies, e.g. connectivity,
+ * memory or the colour of the case. An axis is either selected (chosen when a
+ * process is loaded) or derived (has a derivation): its option follows from
+ * the selected axes of its group, so it's never asked of the operator. Both
+ * kinds can be used in applicability.
+ *
  * @generated from message variance.v1.VariantAxis
  */
 export type VariantAxis = Message<"variance.v1.VariantAxis"> & {
@@ -74,6 +82,15 @@ export type VariantAxis = Message<"variance.v1.VariantAxis"> & {
    * @generated from field: repeated variance.v1.VariantOption options = 5;
    */
   options: VariantOption[];
+
+  /**
+   * Set for a derived axis, e.g. the main PCB, which follows from connectivity
+   * and memory. A derived axis has to be in a variant group, and its
+   * conditions only name selected axes of that group.
+   *
+   * @generated from field: variance.v1.VariantDerivation derivation = 6;
+   */
+  derivation?: VariantDerivation;
 };
 
 /**
@@ -82,4 +99,51 @@ export type VariantAxis = Message<"variance.v1.VariantAxis"> & {
  */
 export const VariantAxisSchema: GenMessage<VariantAxis> = /*@__PURE__*/
   messageDesc(file_variance_v1_variant_axis, 1);
+
+/**
+ * VariantDerivation gives, for each option of a derived axis, the condition
+ * under which it applies. For every valid combination of the group's selected
+ * axes exactly one condition holds; the backend checks this when the product
+ * is saved.
+ *
+ * @generated from message variance.v1.VariantDerivation
+ */
+export type VariantDerivation = Message<"variance.v1.VariantDerivation"> & {
+  /**
+   * @generated from field: repeated variance.v1.DerivedVariantOption options = 1;
+   */
+  options: DerivedVariantOption[];
+};
+
+/**
+ * Describes the message variance.v1.VariantDerivation.
+ * Use `create(VariantDerivationSchema)` to create a new message.
+ */
+export const VariantDerivationSchema: GenMessage<VariantDerivation> = /*@__PURE__*/
+  messageDesc(file_variance_v1_variant_axis, 2);
+
+/**
+ * @generated from message variance.v1.DerivedVariantOption
+ */
+export type DerivedVariantOption = Message<"variance.v1.DerivedVariantOption"> & {
+  /**
+   * @generated from field: string option_id = 1;
+   */
+  optionId: string;
+
+  /**
+   * The option applies when this condition holds, e.g. "main_pcb: slots_2"
+   * when "connectivity: wifi_bt" and "memory: 32gb". It can't be empty.
+   *
+   * @generated from field: variance.v1.VariantCondition when = 2;
+   */
+  when?: VariantCondition;
+};
+
+/**
+ * Describes the message variance.v1.DerivedVariantOption.
+ * Use `create(DerivedVariantOptionSchema)` to create a new message.
+ */
+export const DerivedVariantOptionSchema: GenMessage<DerivedVariantOption> = /*@__PURE__*/
+  messageDesc(file_variance_v1_variant_axis, 3);
 

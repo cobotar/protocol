@@ -1,0 +1,65 @@
+syntax = "proto3";
+package variance.v1;
+
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+import "variance/v1/variant_condition.proto";
+import "variance/v1/variant_configuration.proto";
+
+option csharp_namespace = "Messages.Variance.V1";
+option go_package = "github.com/cobotar/protocol/v2/messages/variance/v1";
+
+// VariantGroup is a set of axes that depend on each other, e.g. connectivity,
+// memory and the main PCB that follows from them. Groups are independent: a
+// configuration is valid when each group's combination is valid. An axis
+// outside every group is a group of its own, in which every option is valid,
+// e.g. the colour of the case.
+//
+// Within a group every combination of the selected axes is valid, except the
+// excluded ones, or, when allowed is given, only the allowed ones.
+message VariantGroup {
+  option (buf.validate.message).cel = {
+    id: "variant_group.excluded_or_allowed"
+    message: "a variant group can list excluded or allowed combinations, not both"
+    expression: "this.excluded.size() == 0 || this.allowed.size() == 0"
+  };
+  option (buf.validate.message).cel = {
+    id: "variant_group.excluded.own_axes"
+    message: "excluded combinations can only name axes of their group"
+    expression: "this.excluded.all(condition, condition.all_of.all(axis, axis.axis_id in this.axis_ids))"
+  };
+  option (buf.validate.message).cel = {
+    id: "variant_group.allowed.own_axes"
+    message: "allowed combinations can only select axes of their group"
+    expression: "this.allowed.all(configuration, configuration.selections.all(selection, selection.axis_id in this.axis_ids))"
+  };
+
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.name_component) = true
+  ];
+  string icon = 3;
+  string description = 4;
+  repeated string axis_ids = 5 [
+    (buf.validate.field).repeated.min_items = 1,
+    (buf.validate.field).repeated.unique = true,
+    (buf.validate.field).repeated.items.string.(validation.v1.key_component) = true
+  ];
+
+  // Combinations that aren't valid, any of which rejects a configuration,
+  // e.g. "connectivity: none" and "memory: 32gb".
+  repeated VariantCondition excluded = 6 [(buf.validate.field).cel = {
+    id: "variant_group.excluded.not_empty"
+    message: "an excluded combination needs a condition"
+    expression: "this.all(condition, condition.all_of.size() > 0)"
+  }];
+
+  // The only valid combinations, each selecting every selected axis of the
+  // group and nothing else (checked by ProductDefinition). Give it only when
+  // listing them is shorter than excluding the rest.
+  repeated VariantConfiguration allowed = 7;
+}

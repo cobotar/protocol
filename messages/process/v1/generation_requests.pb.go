@@ -29,7 +29,7 @@ type VariantGenerationMode int32
 const (
 	VariantGenerationMode_VARIANT_GENERATION_MODE_UNSPECIFIED VariantGenerationMode = 0
 	// Generate one recipe containing every potentially applicable node.
-	// Variant-dependent sequences and tasks retain their applicability rules.
+	// Variant-dependent sequences and tasks keep their nodes' conditions.
 	VariantGenerationMode_VARIANT_GENERATION_MODE_ALL_VARIANTS VariantGenerationMode = 1
 	// Generate a recipe specialized for one concrete variant configuration.
 	VariantGenerationMode_VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION VariantGenerationMode = 2
@@ -94,8 +94,9 @@ type DraftProcessRecipeGenerateRequest struct {
 	// Optional human-readable description for the generated recipe.
 	RecipeDescription     string                `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
 	VariantGenerationMode VariantGenerationMode `protobuf:"varint,19,opt,name=variant_generation_mode,json=variantGenerationMode,proto3,enum=process.v1.VariantGenerationMode" json:"variant_generation_mode,omitempty"`
-	// Required when variant_generation_mode is SELECTED_CONFIGURATION.
-	// At most one selection is allowed per axis.
+	// Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds
+	// the selected axes only; the backend adds the derived ones and refuses an
+	// invalid configuration, as for process loads.
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// If true, the generator may insert ALIGN tasks before grouped fastener work
 	// when that improves the generated task flow.
@@ -317,8 +318,9 @@ type DraftDisassemblyProcessRecipeGenerateRequest struct {
 	// Optional human-readable description for the generated recipe.
 	RecipeDescription     string                `protobuf:"bytes,5,opt,name=recipe_description,json=recipeDescription,proto3" json:"recipe_description,omitempty"`
 	VariantGenerationMode VariantGenerationMode `protobuf:"varint,19,opt,name=variant_generation_mode,json=variantGenerationMode,proto3,enum=process.v1.VariantGenerationMode" json:"variant_generation_mode,omitempty"`
-	// Required when variant_generation_mode is SELECTED_CONFIGURATION.
-	// At most one selection is allowed per axis.
+	// Required when variant_generation_mode is SELECTED_CONFIGURATION. Holds
+	// the selected axes only; the backend adds the derived ones and refuses an
+	// invalid configuration, as for process loads.
 	VariantConfiguration *v1.VariantConfiguration `protobuf:"bytes,6,opt,name=variant_configuration,json=variantConfiguration,proto3" json:"variant_configuration,omitempty"`
 	// If true, the generator may insert HOLD tasks before grouped UNFASTEN work
 	// when that improves stability and task flow during disassembly.
@@ -667,7 +669,7 @@ var File_process_v1_generation_requests_proto protoreflect.FileDescriptor
 const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/generation_requests.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xd0\t\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xf3\v\n" +
 	"!DraftProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12)\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
@@ -691,7 +693,8 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"-assemble_subassemblies_as_units_when_possible\x18\x0f \x01(\bR(assembleSubassembliesAsUnitsWhenPossible\x124\n" +
 	"\x16generate_inspect_tasks\x18\x10 \x01(\bR\x14generateInspectTasks\x12U\n" +
 	"\x1fsource_container_definition_ids\x18\x11 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1csourceContainerDefinitionIds\x12U\n" +
-	"\x1ftarget_container_definition_ids\x18\x12 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1ctargetContainerDefinitionIds\"\xb5\t\n" +
+	"\x1ftarget_container_definition_ids\x18\x12 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xc8\xf2\x04\x01R\x1ctargetContainerDefinitionIds:\xa0\x02\xbaH\x9c\x02\x1a\x99\x02\n" +
+	"[draft_process_recipe_generate_request.selected_configuration_requires_variant_configuration\x12cVARIANT_GENERATION_MODE_SELECTED_CONFIGURATION (2) requires a variant_configuration with selections\x1aUthis.variant_generation_mode != 2 || this.variant_configuration.selections.size() > 0\"\xe4\v\n" +
 	",DraftDisassemblyProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12)\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +
@@ -715,7 +718,8 @@ const file_process_v1_generation_requests_proto_rawDesc = "" +
 	"rootNodeId\x12O\n" +
 	"$preserve_subassemblies_when_possible\x18\x10 \x01(\bR!preserveSubassembliesWhenPossible\x12?\n" +
 	"\x1creverse_child_sequence_order\x18\x11 \x01(\bR\x19reverseChildSequenceOrder\x124\n" +
-	"\x16generate_inspect_tasks\x18\x12 \x01(\bR\x14generateInspectTasks\"\x9d\x01\n" +
+	"\x16generate_inspect_tasks\x18\x12 \x01(\bR\x14generateInspectTasks:\xac\x02\xbaH\xa8\x02\x1a\xa5\x02\n" +
+	"gdraft_disassembly_process_recipe_generate_request.selected_configuration_requires_variant_configuration\x12cVARIANT_GENERATION_MODE_SELECTED_CONFIGURATION (2) requires a variant_configuration with selections\x1aUthis.variant_generation_mode != 2 || this.variant_configuration.selections.size() > 0\"\x9d\x01\n" +
 	"\x1fDraftProcessRecipeGenerateIssue\x12 \n" +
 	"\amessage\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\amessage\x12\x1f\n" +
 	"\anode_id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06nodeId\x127\n" +

@@ -1,14 +1,51 @@
 syntax = "proto3";
 package variance.v1;
 
+import "buf/validate/validate.proto";
+import "validation/v1/predefined_string_rules.proto";
+
 option csharp_namespace = "Messages.Variance.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/variance/v1";
 
 message VariantSelection {
-  string axis_id = 1; // "hinge_side"
-  string option_id = 2; // "left"
+  string axis_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ]; // "hinge_side"
+  string option_id = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ]; // "left"
 }
 
+// VariantConfiguration selects one option per axis. In requests (loads and
+// recipe generation) it holds the selected axes only: the backend adds the
+// derived axes (VariantAxis.derivation) and refuses an incomplete, excluded
+// or ambiguous configuration. On a process run it holds every axis, derived
+// ones included.
 message VariantConfiguration {
-  repeated VariantSelection selections = 1;
+  repeated VariantSelection selections = 1 [(buf.validate.field).cel = {
+    id: "variant_configuration.selections.unique_axis_ids"
+    message: "a variant configuration can select only one option per axis"
+    expression: "this.map(selection, selection.axis_id).unique()"
+  }];
+}
+
+// NamedVariantConfiguration is a configuration a product names, e.g. a row of
+// the configuration table ("Full spec, black"), which an operator can pick
+// instead of choosing axis by axis. It holds the selected axes only. Named
+// configurations are shortcuts: they don't define which configurations are
+// valid.
+message NamedVariantConfiguration {
+  string id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  string name = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.name_component) = true
+  ];
+  string icon = 3;
+  string description = 4;
+  VariantConfiguration configuration = 5 [(buf.validate.field).required = true];
 }

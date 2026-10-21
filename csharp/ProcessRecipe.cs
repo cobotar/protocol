@@ -29,66 +29,75 @@ namespace Messages.Process.V1 {
             "cm5hbF9yZWZlcmVuY2VzLnByb3RvGiRwcm9jZXNzL3YxL3NlcXVlbmNlX2Rl",
             "ZmluaXRpb24ucHJvdG8aIHByb2Nlc3MvdjEvdGFza19kZWZpbml0aW9uLnBy",
             "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvGh52YXJpYW5jZS92MS92YXJpYW50X3J1bGUucHJvdG8ifQoTUmVjaXBl",
-            "QXBwbGljYWJpbGl0eRIyCgdpbmNsdWRlGAEgAygLMhgudmFyaWFuY2UudjEu",
-            "VmFyaWFudFJ1bGVSB2luY2x1ZGUSMgoHZXhjbHVkZRgCIAMoCzIYLnZhcmlh",
-            "bmNlLnYxLlZhcmlhbnRSdWxlUgdleGNsdWRlIskECg1Qcm9jZXNzUmVjaXBl",
-            "Eg4KAmlkGAEgASgJUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5h",
-            "bWUSEgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVIL",
-            "ZGVzY3JpcHRpb24SOAoEdHlwZRgFIAEoDjIXLnByb2Nlc3MudjEuUHJvY2Vz",
-            "c1R5cGVCC7pICIIBAhAByAEBUgR0eXBlEjIKFXByb2R1Y3RfZGVmaW5pdGlv",
-            "bl9pZBgGIAEoCVITcHJvZHVjdERlZmluaXRpb25JZBJFCg1hcHBsaWNhYmls",
-            "aXR5GAcgASgLMh8ucHJvY2Vzcy52MS5SZWNpcGVBcHBsaWNhYmlsaXR5Ug1h",
-            "cHBsaWNhYmlsaXR5EigKEHJvb3Rfc2VxdWVuY2VfaWQYCCABKAlSDnJvb3RT",
-            "ZXF1ZW5jZUlkEiEKDHNlcXVlbmNlX2lkcxgJIAMoCVILc2VxdWVuY2VJZHMS",
-            "GQoIdGFza19pZHMYCiADKAlSB3Rhc2tJZHMSSwoic3VwcG9ydGVkX2NvbnRh",
-            "aW5lcl9kZWZpbml0aW9uX2lkcxgLIAMoCVIfc3VwcG9ydGVkQ29udGFpbmVy",
-            "RGVmaW5pdGlvbklkcxJNChNleHRlcm5hbF9yZWZlcmVuY2VzGAwgAygLMhwu",
-            "Y29tbW9uLnYxLkV4dGVybmFsUmVmZXJlbmNlUhJleHRlcm5hbFJlZmVyZW5j",
-            "ZXMSGgoIcmV2aXNpb24YDSABKARSCHJldmlzaW9uIkEKDlByb2Nlc3NSZWNp",
-            "cGVzEi8KBWl0ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBl",
-            "UgVpdGVtcyLAAQoTQ3JlYXRlUHJvY2Vzc1JlY2lwZRI5CgZyZWNpcGUYASAB",
-            "KAsyGS5wcm9jZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBAVIGcmVjaXBl",
-            "EjwKCXNlcXVlbmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZp",
-            "bml0aW9uUglzZXF1ZW5jZXMSMAoFdGFza3MYAyADKAsyGi5wcm9jZXNzLnYx",
-            "LlRhc2tEZWZpbml0aW9uUgV0YXNrcyKHAQoYVXBkYXRlU2VxdWVuY2VEZWZp",
-            "bml0aW9uEkIKCHNlcXVlbmNlGAEgASgLMh4ucHJvY2Vzcy52MS5TZXF1ZW5j",
-            "ZURlZmluaXRpb25CBrpIA8gBAVIIc2VxdWVuY2USJwoPcmVjaXBlX3Jldmlz",
-            "aW9uGAIgASgEUg5yZWNpcGVSZXZpc2lvbiJ3ChRVcGRhdGVUYXNrRGVmaW5p",
-            "dGlvbhI2CgR0YXNrGAEgASgLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlv",
-            "bkIGukgDyAEBUgR0YXNrEicKD3JlY2lwZV9yZXZpc2lvbhgCIAEoBFIOcmVj",
-            "aXBlUmV2aXNpb24ihQEKFkFkZFJvb3RTZXF1ZW5jZVJlcXVlc3QSKQoJcmVj",
-            "aXBlX2lkGAEgASgJQgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEiwKD3JlY2lw",
-            "ZV9yZXZpc2lvbhgCIAEoBEgAUg5yZWNpcGVSZXZpc2lvbogBAUISChBfcmVj",
-            "aXBlX3JldmlzaW9uIrUBChdBZGRDaGlsZFNlcXVlbmNlUmVxdWVzdBIpCgly",
-            "ZWNpcGVfaWQYASABKAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSLQoLc2Vx",
-            "dWVuY2VfaWQYAiABKAlCDLpICXIEqPIEAcgBAVIKc2VxdWVuY2VJZBIsCg9y",
-            "ZWNpcGVfcmV2aXNpb24YAyABKARIAFIOcmVjaXBlUmV2aXNpb26IAQFCEgoQ",
-            "X3JlY2lwZV9yZXZpc2lvbiLfAQoVUmVtb3ZlU2VxdWVuY2VSZXF1ZXN0EikK",
-            "CXJlY2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBItCgtz",
-            "ZXF1ZW5jZV9pZBgCIAEoCUIMukgJcgSo8gQByAEBUgpzZXF1ZW5jZUlkEioK",
-            "EXRyeV9rZWVwX2NoaWxkcmVuGAMgASgIUg90cnlLZWVwQ2hpbGRyZW4SLAoP",
-            "cmVjaXBlX3JldmlzaW9uGAQgASgESABSDnJlY2lwZVJldmlzaW9uiAEBQhIK",
-            "EF9yZWNpcGVfcmV2aXNpb24isQEKE0FkZENoaWxkVGFza1JlcXVlc3QSKQoJ",
-            "cmVjaXBlX2lkGAEgASgJQgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEi0KC3Nl",
-            "cXVlbmNlX2lkGAIgASgJQgy6SAlyBKjyBAHIAQFSCnNlcXVlbmNlSWQSLAoP",
-            "cmVjaXBlX3JldmlzaW9uGAMgASgESABSDnJlY2lwZVJldmlzaW9uiAEBQhIK",
-            "EF9yZWNpcGVfcmV2aXNpb24ipwEKEVJlbW92ZVRhc2tSZXF1ZXN0EikKCXJl",
-            "Y2lwZV9pZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBIlCgd0YXNr",
-            "X2lkGAIgASgJQgy6SAlyBLDyBAHIAQFSBnRhc2tJZBIsCg9yZWNpcGVfcmV2",
+            "b3RvGiN2YXJpYW5jZS92MS92YXJpYW50X2NvbmRpdGlvbi5wcm90byKYAgoT",
+            "UmVjaXBlQXBwbGljYWJpbGl0eRI3CgdpbmNsdWRlGAEgASgLMh0udmFyaWFu",
+            "Y2UudjEuVmFyaWFudENvbmRpdGlvblIHaW5jbHVkZRLHAQoHZXhjbHVkZRgC",
+            "IAMoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25kaXRpb25CjQG6SIkBugGF",
+            "AQomcmVjaXBlX2FwcGxpY2FiaWxpdHkuZXhjbHVkZS5ub3RfZW1wdHkSKWFu",
+            "IGV4Y2x1ZGVkIGNvbWJpbmF0aW9uIG5lZWRzIGEgY29uZGl0aW9uGjB0aGlz",
+            "LmFsbChjb25kaXRpb24sIGNvbmRpdGlvbi5hbGxfb2Yuc2l6ZSgpID4gMClS",
+            "B2V4Y2x1ZGUi4QYKDVByb2Nlc3NSZWNpcGUSDgoCaWQYASABKAlSAmlkEh0K",
+            "BG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRp",
+            "Y29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI4CgR0eXBl",
+            "GAUgASgOMhcucHJvY2Vzcy52MS5Qcm9jZXNzVHlwZUILukgIggECEAHIAQFS",
+            "BHR5cGUSMgoVcHJvZHVjdF9kZWZpbml0aW9uX2lkGAYgASgJUhNwcm9kdWN0",
+            "RGVmaW5pdGlvbklkEkUKDWFwcGxpY2FiaWxpdHkYByABKAsyHy5wcm9jZXNz",
+            "LnYxLlJlY2lwZUFwcGxpY2FiaWxpdHlSDWFwcGxpY2FiaWxpdHkSKAoQcm9v",
+            "dF9zZXF1ZW5jZV9pZBgIIAEoCVIOcm9vdFNlcXVlbmNlSWQSIQoMc2VxdWVu",
+            "Y2VfaWRzGAkgAygJUgtzZXF1ZW5jZUlkcxIZCgh0YXNrX2lkcxgKIAMoCVIH",
+            "dGFza0lkcxJLCiJzdXBwb3J0ZWRfY29udGFpbmVyX2RlZmluaXRpb25faWRz",
+            "GAsgAygJUh9zdXBwb3J0ZWRDb250YWluZXJEZWZpbml0aW9uSWRzEk0KE2V4",
+            "dGVybmFsX3JlZmVyZW5jZXMYDCADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxS",
+            "ZWZlcmVuY2VSEmV4dGVybmFsUmVmZXJlbmNlcxIaCghyZXZpc2lvbhgNIAEo",
+            "BFIIcmV2aXNpb246lQK6SJECGo4CCi1wcm9jZXNzX3JlY2lwZS5hcHBsaWNh",
+            "YmlsaXR5LnJlcXVpcmVzX3Byb2R1Y3QSQWEgcmVjaXBlIHdpdGggYXBwbGlj",
+            "YWJpbGl0eSBjb25kaXRpb25zIG5lZWRzIGEgcHJvZHVjdCBkZWZpbml0aW9u",
+            "GpkBdGhpcy5wcm9kdWN0X2RlZmluaXRpb25faWQgIT0gJycgfHwgIWhhcyh0",
+            "aGlzLmFwcGxpY2FiaWxpdHkpIHx8ICh0aGlzLmFwcGxpY2FiaWxpdHkuaW5j",
+            "bHVkZS5hbGxfb2Yuc2l6ZSgpID09IDAgJiYgdGhpcy5hcHBsaWNhYmlsaXR5",
+            "LmV4Y2x1ZGUuc2l6ZSgpID09IDApIkEKDlByb2Nlc3NSZWNpcGVzEi8KBWl0",
+            "ZW1zGAEgAygLMhkucHJvY2Vzcy52MS5Qcm9jZXNzUmVjaXBlUgVpdGVtcyLA",
+            "AQoTQ3JlYXRlUHJvY2Vzc1JlY2lwZRI5CgZyZWNpcGUYASABKAsyGS5wcm9j",
+            "ZXNzLnYxLlByb2Nlc3NSZWNpcGVCBrpIA8gBAVIGcmVjaXBlEjwKCXNlcXVl",
+            "bmNlcxgCIAMoCzIeLnByb2Nlc3MudjEuU2VxdWVuY2VEZWZpbml0aW9uUglz",
+            "ZXF1ZW5jZXMSMAoFdGFza3MYAyADKAsyGi5wcm9jZXNzLnYxLlRhc2tEZWZp",
+            "bml0aW9uUgV0YXNrcyKHAQoYVXBkYXRlU2VxdWVuY2VEZWZpbml0aW9uEkIK",
+            "CHNlcXVlbmNlGAEgASgLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmluaXRp",
+            "b25CBrpIA8gBAVIIc2VxdWVuY2USJwoPcmVjaXBlX3JldmlzaW9uGAIgASgE",
+            "Ug5yZWNpcGVSZXZpc2lvbiJ3ChRVcGRhdGVUYXNrRGVmaW5pdGlvbhI2CgR0",
+            "YXNrGAEgASgLMhoucHJvY2Vzcy52MS5UYXNrRGVmaW5pdGlvbkIGukgDyAEB",
+            "UgR0YXNrEicKD3JlY2lwZV9yZXZpc2lvbhgCIAEoBFIOcmVjaXBlUmV2aXNp",
+            "b24ihQEKFkFkZFJvb3RTZXF1ZW5jZVJlcXVlc3QSKQoJcmVjaXBlX2lkGAEg",
+            "ASgJQgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEiwKD3JlY2lwZV9yZXZpc2lv",
+            "bhgCIAEoBEgAUg5yZWNpcGVSZXZpc2lvbogBAUISChBfcmVjaXBlX3Jldmlz",
+            "aW9uIrUBChdBZGRDaGlsZFNlcXVlbmNlUmVxdWVzdBIpCglyZWNpcGVfaWQY",
+            "ASABKAlCDLpICXIEoPIEAcgBAVIIcmVjaXBlSWQSLQoLc2VxdWVuY2VfaWQY",
+            "AiABKAlCDLpICXIEqPIEAcgBAVIKc2VxdWVuY2VJZBIsCg9yZWNpcGVfcmV2",
             "aXNpb24YAyABKARIAFIOcmVjaXBlUmV2aXNpb26IAQFCEgoQX3JlY2lwZV9y",
-            "ZXZpc2lvbirVAQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BF",
-            "Q0lGSUVEEAASGQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VT",
-            "U19UWVBFX0RJU0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJ",
-            "T04QAxIaChZQUk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19U",
-            "WVBFX0tJVFRJTkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkK0",
-            "AQoOY29tLnByb2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjxnaXRo",
-            "dWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92",
-            "MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJv",
-            "Y2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpW",
-            "MWIGcHJvdG8z"));
+            "ZXZpc2lvbiLfAQoVUmVtb3ZlU2VxdWVuY2VSZXF1ZXN0EikKCXJlY2lwZV9p",
+            "ZBgBIAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBItCgtzZXF1ZW5jZV9p",
+            "ZBgCIAEoCUIMukgJcgSo8gQByAEBUgpzZXF1ZW5jZUlkEioKEXRyeV9rZWVw",
+            "X2NoaWxkcmVuGAMgASgIUg90cnlLZWVwQ2hpbGRyZW4SLAoPcmVjaXBlX3Jl",
+            "dmlzaW9uGAQgASgESABSDnJlY2lwZVJldmlzaW9uiAEBQhIKEF9yZWNpcGVf",
+            "cmV2aXNpb24isQEKE0FkZENoaWxkVGFza1JlcXVlc3QSKQoJcmVjaXBlX2lk",
+            "GAEgASgJQgy6SAlyBKDyBAHIAQFSCHJlY2lwZUlkEi0KC3NlcXVlbmNlX2lk",
+            "GAIgASgJQgy6SAlyBKjyBAHIAQFSCnNlcXVlbmNlSWQSLAoPcmVjaXBlX3Jl",
+            "dmlzaW9uGAMgASgESABSDnJlY2lwZVJldmlzaW9uiAEBQhIKEF9yZWNpcGVf",
+            "cmV2aXNpb24ipwEKEVJlbW92ZVRhc2tSZXF1ZXN0EikKCXJlY2lwZV9pZBgB",
+            "IAEoCUIMukgJcgSg8gQByAEBUghyZWNpcGVJZBIlCgd0YXNrX2lkGAIgASgJ",
+            "Qgy6SAlyBLDyBAHIAQFSBnRhc2tJZBIsCg9yZWNpcGVfcmV2aXNpb24YAyAB",
+            "KARIAFIOcmVjaXBlUmV2aXNpb26IAQFCEgoQX3JlY2lwZV9yZXZpc2lvbirV",
+            "AQoLUHJvY2Vzc1R5cGUSHAoYUFJPQ0VTU19UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "GQoVUFJPQ0VTU19UWVBFX0FTU0VNQkxZEAESHAoYUFJPQ0VTU19UWVBFX0RJ",
+            "U0FTU0VNQkxZEAISGwoXUFJPQ0VTU19UWVBFX0lOU1BFQ1RJT04QAxIaChZQ",
+            "Uk9DRVNTX1RZUEVfQ0hFQ0tMSVNUEAQSGAoUUFJPQ0VTU19UWVBFX0tJVFRJ",
+            "TkcQBRIcChhQUk9DRVNTX1RZUEVfTUFJTlRFTkFOQ0UQBkK0AQoOY29tLnBy",
+            "b2Nlc3MudjFCElByb2Nlc3NSZWNpcGVQcm90b1ABWjxnaXRodWIuY29tL2Nv",
+            "Ym90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNz",
+            "djGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeIC",
+            "FlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantRuleReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Process.V1.SequenceDefinitionReflection.Descriptor, global::Messages.Process.V1.TaskDefinitionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.ProcessType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.RecipeApplicability), global::Messages.Process.V1.RecipeApplicability.Parser, new[]{ "Include", "Exclude" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Process.V1.ProcessRecipe), global::Messages.Process.V1.ProcessRecipe.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ProductDefinitionId", "Applicability", "RootSequenceId", "SequenceIds", "TaskIds", "SupportedContainerDefinitionIds", "ExternalReferences", "Revision" }, null, null, null, null),
@@ -138,6 +147,15 @@ namespace Messages.Process.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// RecipeApplicability says for which configurations of the recipe's product the
+  /// recipe applies. Its conditions, and those of the recipe's sequences, tasks
+  /// and task overrides, name axes and options of that product
+  /// (cobotar/protocol#9); the backend checks this when the recipe is saved. A
+  /// recipe without a product, e.g. a checklist or a startup procedure, has no
+  /// conditions; one that needs them names a product, which can be a placeholder
+  /// or the machine itself.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class RecipeApplicability : pb::IMessage<RecipeApplicability>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -173,7 +191,7 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RecipeApplicability(RecipeApplicability other) : this() {
-      include_ = other.include_.Clone();
+      include_ = other.include_ != null ? other.include_.Clone() : null;
       exclude_ = other.exclude_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -186,29 +204,31 @@ namespace Messages.Process.V1 {
 
     /// <summary>Field number for the "include" field.</summary>
     public const int IncludeFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Messages.Variance.V1.VariantRule> _repeated_include_codec
-        = pb::FieldCodec.ForMessage(10, global::Messages.Variance.V1.VariantRule.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> include_ = new pbc::RepeatedField<global::Messages.Variance.V1.VariantRule>();
+    private global::Messages.Variance.V1.VariantCondition include_;
     /// <summary>
-    /// Recipe applies if any include rule matches. Empty means generally applicable.
+    /// The recipe applies when this condition holds, and it's inherited by every
+    /// sequence and task of the recipe. Empty means every configuration.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> Include {
+    public global::Messages.Variance.V1.VariantCondition Include {
       get { return include_; }
+      set {
+        include_ = value;
+      }
     }
 
     /// <summary>Field number for the "exclude" field.</summary>
     public const int ExcludeFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Messages.Variance.V1.VariantRule> _repeated_exclude_codec
-        = pb::FieldCodec.ForMessage(18, global::Messages.Variance.V1.VariantRule.Parser);
-    private readonly pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> exclude_ = new pbc::RepeatedField<global::Messages.Variance.V1.VariantRule>();
+    private static readonly pb::FieldCodec<global::Messages.Variance.V1.VariantCondition> _repeated_exclude_codec
+        = pb::FieldCodec.ForMessage(18, global::Messages.Variance.V1.VariantCondition.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Variance.V1.VariantCondition> exclude_ = new pbc::RepeatedField<global::Messages.Variance.V1.VariantCondition>();
     /// <summary>
-    /// Recipe is rejected if any exclude rule matches.
+    /// The recipe is rejected when any of these conditions holds.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Messages.Variance.V1.VariantRule> Exclude {
+    public pbc::RepeatedField<global::Messages.Variance.V1.VariantCondition> Exclude {
       get { return exclude_; }
     }
 
@@ -227,7 +247,7 @@ namespace Messages.Process.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!include_.Equals(other.include_)) return false;
+      if (!object.Equals(Include, other.Include)) return false;
       if(!exclude_.Equals(other.exclude_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -236,7 +256,7 @@ namespace Messages.Process.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= include_.GetHashCode();
+      if (include_ != null) hash ^= Include.GetHashCode();
       hash ^= exclude_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -256,7 +276,10 @@ namespace Messages.Process.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      include_.WriteTo(output, _repeated_include_codec);
+      if (include_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Include);
+      }
       exclude_.WriteTo(output, _repeated_exclude_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -268,7 +291,10 @@ namespace Messages.Process.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      include_.WriteTo(ref output, _repeated_include_codec);
+      if (include_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Include);
+      }
       exclude_.WriteTo(ref output, _repeated_exclude_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -280,7 +306,9 @@ namespace Messages.Process.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += include_.CalculateSize(_repeated_include_codec);
+      if (include_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Include);
+      }
       size += exclude_.CalculateSize(_repeated_exclude_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -294,7 +322,12 @@ namespace Messages.Process.V1 {
       if (other == null) {
         return;
       }
-      include_.Add(other.include_);
+      if (other.include_ != null) {
+        if (include_ == null) {
+          Include = new global::Messages.Variance.V1.VariantCondition();
+        }
+        Include.MergeFrom(other.Include);
+      }
       exclude_.Add(other.exclude_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -316,7 +349,10 @@ namespace Messages.Process.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            include_.AddEntriesFrom(input, _repeated_include_codec);
+            if (include_ == null) {
+              Include = new global::Messages.Variance.V1.VariantCondition();
+            }
+            input.ReadMessage(Include);
             break;
           }
           case 18: {
@@ -343,7 +379,10 @@ namespace Messages.Process.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            include_.AddEntriesFrom(ref input, _repeated_include_codec);
+            if (include_ == null) {
+              Include = new global::Messages.Variance.V1.VariantCondition();
+            }
+            input.ReadMessage(Include);
             break;
           }
           case 18: {
@@ -498,6 +537,9 @@ namespace Messages.Process.V1 {
     /// <summary>Field number for the "applicability" field.</summary>
     public const int ApplicabilityFieldNumber = 7;
     private global::Messages.Process.V1.RecipeApplicability applicability_;
+    /// <summary>
+    /// Requires product_definition_id when it has conditions.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Process.V1.RecipeApplicability Applicability {

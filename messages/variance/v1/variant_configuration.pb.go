@@ -7,6 +7,8 @@
 package variancev1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -73,6 +75,11 @@ func (x *VariantSelection) GetOptionId() string {
 	return ""
 }
 
+// VariantConfiguration selects one option per axis. In requests (loads and
+// recipe generation) it holds the selected axes only: the backend adds the
+// derived axes (VariantAxis.derivation) and refuses an incomplete, excluded
+// or ambiguous configuration. On a process run it holds every axis, derived
+// ones included.
 type VariantConfiguration struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Selections    []*VariantSelection    `protobuf:"bytes,1,rep,name=selections,proto3" json:"selections,omitempty"`
@@ -117,18 +124,106 @@ func (x *VariantConfiguration) GetSelections() []*VariantSelection {
 	return nil
 }
 
+// NamedVariantConfiguration is a configuration a product names, e.g. a row of
+// the configuration table ("Full spec, black"), which an operator can pick
+// instead of choosing axis by axis. It holds the selected axes only. Named
+// configurations are shortcuts: they don't define which configurations are
+// valid.
+type NamedVariantConfiguration struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon          string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Configuration *VariantConfiguration  `protobuf:"bytes,5,opt,name=configuration,proto3" json:"configuration,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *NamedVariantConfiguration) Reset() {
+	*x = NamedVariantConfiguration{}
+	mi := &file_variance_v1_variant_configuration_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *NamedVariantConfiguration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NamedVariantConfiguration) ProtoMessage() {}
+
+func (x *NamedVariantConfiguration) ProtoReflect() protoreflect.Message {
+	mi := &file_variance_v1_variant_configuration_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NamedVariantConfiguration.ProtoReflect.Descriptor instead.
+func (*NamedVariantConfiguration) Descriptor() ([]byte, []int) {
+	return file_variance_v1_variant_configuration_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *NamedVariantConfiguration) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *NamedVariantConfiguration) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *NamedVariantConfiguration) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
+}
+
+func (x *NamedVariantConfiguration) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *NamedVariantConfiguration) GetConfiguration() *VariantConfiguration {
+	if x != nil {
+		return x.Configuration
+	}
+	return nil
+}
+
 var File_variance_v1_variant_configuration_proto protoreflect.FileDescriptor
 
 const file_variance_v1_variant_configuration_proto_rawDesc = "" +
 	"\n" +
-	"'variance/v1/variant_configuration.proto\x12\vvariance.v1\"H\n" +
-	"\x10VariantSelection\x12\x17\n" +
-	"\aaxis_id\x18\x01 \x01(\tR\x06axisId\x12\x1b\n" +
-	"\toption_id\x18\x02 \x01(\tR\boptionId\"U\n" +
-	"\x14VariantConfiguration\x12=\n" +
+	"'variance/v1/variant_configuration.proto\x12\vvariance.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"d\n" +
+	"\x10VariantSelection\x12%\n" +
+	"\aaxis_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x06axisId\x12)\n" +
+	"\toption_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\boptionId\"\x81\x02\n" +
+	"\x14VariantConfiguration\x12\xe8\x01\n" +
 	"\n" +
-	"selections\x18\x01 \x03(\v2\x1d.variance.v1.VariantSelectionR\n" +
-	"selectionsB\xc2\x01\n" +
+	"selections\x18\x01 \x03(\v2\x1d.variance.v1.VariantSelectionB\xa8\x01\xbaH\xa4\x01\xba\x01\xa0\x01\n" +
+	"0variant_configuration.selections.unique_axis_ids\x12;a variant configuration can select only one option per axis\x1a/this.map(selection, selection.axis_id).unique()R\n" +
+	"selections\"\xe2\x01\n" +
+	"\x19NamedVariantConfiguration\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x02id\x12 \n" +
+	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
+	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12O\n" +
+	"\rconfiguration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationB\x06\xbaH\x03\xc8\x01\x01R\rconfigurationB\xc2\x01\n" +
 	"\x0fcom.variance.v1B\x19VariantConfigurationProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (
@@ -143,18 +238,20 @@ func file_variance_v1_variant_configuration_proto_rawDescGZIP() []byte {
 	return file_variance_v1_variant_configuration_proto_rawDescData
 }
 
-var file_variance_v1_variant_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_variance_v1_variant_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_variance_v1_variant_configuration_proto_goTypes = []any{
-	(*VariantSelection)(nil),     // 0: variance.v1.VariantSelection
-	(*VariantConfiguration)(nil), // 1: variance.v1.VariantConfiguration
+	(*VariantSelection)(nil),          // 0: variance.v1.VariantSelection
+	(*VariantConfiguration)(nil),      // 1: variance.v1.VariantConfiguration
+	(*NamedVariantConfiguration)(nil), // 2: variance.v1.NamedVariantConfiguration
 }
 var file_variance_v1_variant_configuration_proto_depIdxs = []int32{
 	0, // 0: variance.v1.VariantConfiguration.selections:type_name -> variance.v1.VariantSelection
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 1: variance.v1.NamedVariantConfiguration.configuration:type_name -> variance.v1.VariantConfiguration
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_variance_v1_variant_configuration_proto_init() }
@@ -168,7 +265,7 @@ func file_variance_v1_variant_configuration_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_variance_v1_variant_configuration_proto_rawDesc), len(file_variance_v1_variant_configuration_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
