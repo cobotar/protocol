@@ -38,7 +38,7 @@ namespace Messages.Runtime.V1 {
             "ZBJFCg5jb250YWluZXJfc2xvdBgEIAEoCzIeLnJlc291cmNlcy52MS5Db250",
             "YWluZXJTbG90UmVmUg1jb250YWluZXJTbG90Ek0KG2NhbmRpZGF0ZV9wYXJ0",
             "X2luc3RhbmNlX2lkcxgFIAMoCUIOukgLkgEIIgZyBNDxBAFSGGNhbmRpZGF0",
-            "ZVBhcnRJbnN0YW5jZUlkcyLZCAoHVGFza1J1bhIOCgJpZBgBIAEoCVICaWQS",
+            "ZVBhcnRJbnN0YW5jZUlkcyKDCQoHVGFza1J1bhIOCgJpZBgBIAEoCVICaWQS",
             "EgoEbmFtZRgCIAEoCVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29uEjoKEnRh",
             "c2tfZGVmaW5pdGlvbl9pZBgEIAEoCUIMukgJcgSw8gQByAEBUhB0YXNrRGVm",
             "aW5pdGlvbklkEkEKFnBhcmVudF9zZXF1ZW5jZV9ydW5faWQYBSABKAlCDLpI",
@@ -63,22 +63,23 @@ namespace Messages.Runtime.V1 {
             "bnMSZQoXYWN0b3JfYXNzaWdubWVudF9zdGF0dXMYFSABKAsyJS5ydW50aW1l",
             "LnYxLlRhc2tBY3RvckFzc2lnbm1lbnRTdGF0dXNCBrpIA8gBAVIVYWN0b3JB",
             "c3NpZ25tZW50U3RhdHVzEiMKCHJldmlzaW9uGBYgASgEQge6SAQyAigBUghy",
-            "ZXZpc2lvbiI1CghUYXNrUnVucxIpCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUu",
-            "djEuVGFza1J1blIFaXRlbXMq9AEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JV",
-            "Tl9TVEFURV9VTlNQRUNJRklFRBAAEhwKGFRBU0tfUlVOX1NUQVRFX05PVF9S",
-            "RUFEWRABEhgKFFRBU0tfUlVOX1NUQVRFX1JFQURZEAISHgoaVEFTS19SVU5f",
-            "U1RBVEVfSU5fUFJPR1JFU1MQAxIXChNUQVNLX1JVTl9TVEFURV9ET05FEAQS",
-            "GQoVVEFTS19SVU5fU1RBVEVfRkFJTEVEEAUSGgoWVEFTS19SVU5fU1RBVEVf",
-            "QUJPUlRFRBAGEhwKGFRBU0tfUlVOX1NUQVRFX1NVU1BFTkRFRBAHQq4BCg5j",
-            "b20ucnVudGltZS52MUIMVGFza1J1blByb3RvUAFaPGdpdGh1Yi5jb20vY29i",
-            "b3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2",
-            "MaICA1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIW",
-            "UnVudGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
+            "ZXZpc2lvbhIoChBkb25lX2JlZm9yZV9sb2FkGBcgASgIUg5kb25lQmVmb3Jl",
+            "TG9hZCI1CghUYXNrUnVucxIpCgVpdGVtcxgBIAMoCzITLnJ1bnRpbWUudjEu",
+            "VGFza1J1blIFaXRlbXMq9AEKDFRhc2tSdW5TdGF0ZRIeChpUQVNLX1JVTl9T",
+            "VEFURV9VTlNQRUNJRklFRBAAEhwKGFRBU0tfUlVOX1NUQVRFX05PVF9SRUFE",
+            "WRABEhgKFFRBU0tfUlVOX1NUQVRFX1JFQURZEAISHgoaVEFTS19SVU5fU1RB",
+            "VEVfSU5fUFJPR1JFU1MQAxIXChNUQVNLX1JVTl9TVEFURV9ET05FEAQSGQoV",
+            "VEFTS19SVU5fU1RBVEVfRkFJTEVEEAUSGgoWVEFTS19SVU5fU1RBVEVfQUJP",
+            "UlRFRBAGEhwKGFRBU0tfUlVOX1NUQVRFX1NVU1BFTkRFRBAHQq4BCg5jb20u",
+            "cnVudGltZS52MUIMVGFza1J1blByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rh",
+            "ci9wcm90b2NvbC92Mi9tZXNzYWdlcy9ydW50aW1lL3YxO3J1bnRpbWV2MaIC",
+            "A1JYWKoCE01lc3NhZ2VzLlJ1bnRpbWUuVjHKAgpSdW50aW1lXFYx4gIWUnVu",
+            "dGltZVxWMVxHUEJNZXRhZGF0YeoCC1J1bnRpbWU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ActorReflection.Descriptor, global::Messages.Common.V1.TimeReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Resources.V1.ContainerDefinitionReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Messages.Runtime.V1.ProcessRequestsReflection.Descriptor, global::Messages.Runtime.V1.RuntimeRestrictionReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.TaskRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuntimeBinding), global::Messages.Runtime.V1.TaskRuntimeBinding.Parser, new[]{ "AssetInstanceId", "StationId", "CellId", "ContainerSlot", "CandidatePartInstanceIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "FailureCode", "FailureMessage", "Binding", "Restrictions", "CandidateActorEvaluations", "ActorAssignmentStatus", "Revision" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRun), global::Messages.Runtime.V1.TaskRun.Parser, new[]{ "Id", "Name", "Icon", "TaskDefinitionId", "ParentSequenceRunId", "State", "CandidateActors", "AssignedActor", "CanDo", "CanUndo", "WorkableHorizon", "EstimatedDuration", "StartedAt", "CompletedAt", "FailureCode", "FailureMessage", "Binding", "Restrictions", "CandidateActorEvaluations", "ActorAssignmentStatus", "Revision", "DoneBeforeLoad" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Runtime.V1.TaskRuns), global::Messages.Runtime.V1.TaskRuns.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -543,6 +544,7 @@ namespace Messages.Runtime.V1 {
       candidateActorEvaluations_ = other.candidateActorEvaluations_.Clone();
       actorAssignmentStatus_ = other.actorAssignmentStatus_ != null ? other.actorAssignmentStatus_.Clone() : null;
       revision_ = other.revision_;
+      doneBeforeLoad_ = other.doneBeforeLoad_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -832,6 +834,24 @@ namespace Messages.Runtime.V1 {
       }
     }
 
+    /// <summary>Field number for the "done_before_load" field.</summary>
+    public const int DoneBeforeLoadFieldNumber = 23;
+    private bool doneBeforeLoad_;
+    /// <summary>
+    /// The task was done before the run was loaded
+    /// (ProcessLoadRequest.done_task_definition_ids, cobotar/protocol#28): it
+    /// started DONE, so it has no actor, start time or execution evidence from
+    /// this run. Undoing it clears the flag.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool DoneBeforeLoad {
+      get { return doneBeforeLoad_; }
+      set {
+        doneBeforeLoad_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -868,6 +888,7 @@ namespace Messages.Runtime.V1 {
       if(!candidateActorEvaluations_.Equals(other.candidateActorEvaluations_)) return false;
       if (!object.Equals(ActorAssignmentStatus, other.ActorAssignmentStatus)) return false;
       if (Revision != other.Revision) return false;
+      if (DoneBeforeLoad != other.DoneBeforeLoad) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -896,6 +917,7 @@ namespace Messages.Runtime.V1 {
       hash ^= candidateActorEvaluations_.GetHashCode();
       if (actorAssignmentStatus_ != null) hash ^= ActorAssignmentStatus.GetHashCode();
       if (Revision != 0UL) hash ^= Revision.GetHashCode();
+      if (DoneBeforeLoad != false) hash ^= DoneBeforeLoad.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -989,6 +1011,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(176, 1);
         output.WriteUInt64(Revision);
       }
+      if (DoneBeforeLoad != false) {
+        output.WriteRawTag(184, 1);
+        output.WriteBool(DoneBeforeLoad);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1074,6 +1100,10 @@ namespace Messages.Runtime.V1 {
         output.WriteRawTag(176, 1);
         output.WriteUInt64(Revision);
       }
+      if (DoneBeforeLoad != false) {
+        output.WriteRawTag(184, 1);
+        output.WriteBool(DoneBeforeLoad);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1140,6 +1170,9 @@ namespace Messages.Runtime.V1 {
       }
       if (Revision != 0UL) {
         size += 2 + pb::CodedOutputStream.ComputeUInt64Size(Revision);
+      }
+      if (DoneBeforeLoad != false) {
+        size += 2 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1227,6 +1260,9 @@ namespace Messages.Runtime.V1 {
       }
       if (other.Revision != 0UL) {
         Revision = other.Revision;
+      }
+      if (other.DoneBeforeLoad != false) {
+        DoneBeforeLoad = other.DoneBeforeLoad;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1349,6 +1385,10 @@ namespace Messages.Runtime.V1 {
             Revision = input.ReadUInt64();
             break;
           }
+          case 184: {
+            DoneBeforeLoad = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -1468,6 +1508,10 @@ namespace Messages.Runtime.V1 {
           }
           case 176: {
             Revision = input.ReadUInt64();
+            break;
+          }
+          case 184: {
+            DoneBeforeLoad = input.ReadBool();
             break;
           }
         }

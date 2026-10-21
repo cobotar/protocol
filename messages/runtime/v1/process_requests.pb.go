@@ -138,6 +138,9 @@ const (
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND ProcessLoadFailure = 2
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED    ProcessLoadFailure = 3
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN   ProcessLoadFailure = 4
+	// ProcessLoadRequest.done_task_definition_ids can't be done before the run
+	// starts; the issue's task_definition_id names the offending task.
+	ProcessLoadFailure_PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS ProcessLoadFailure = 5
 	// Container related failures
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER      ProcessLoadFailure = 10
 	ProcessLoadFailure_PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND      ProcessLoadFailure = 11
@@ -187,6 +190,7 @@ var (
 		2:   "PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND",
 		3:   "PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED",
 		4:   "PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN",
+		5:   "PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS",
 		10:  "PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER",
 		11:  "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND",
 		12:  "PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND",
@@ -223,6 +227,7 @@ var (
 		"PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND":       2,
 		"PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED":          3,
 		"PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN":         4,
+		"PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS":             5,
 		"PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER":        10,
 		"PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND":        11,
 		"PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND":   12,
@@ -540,8 +545,21 @@ type ProcessLoadRequest struct {
 	Parameters         []*v11.KeyValueConstraint `protobuf:"bytes,10,rep,name=parameters,proto3" json:"parameters,omitempty"`
 	AllocationStrategy AllocationStrategy        `protobuf:"varint,11,opt,name=allocation_strategy,json=allocationStrategy,proto3,enum=runtime.v1.AllocationStrategy" json:"allocation_strategy,omitempty"`
 	TargetEmployee     string                    `protobuf:"bytes,12,opt,name=target_employee,json=targetEmployee,proto3" json:"target_employee,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// Tasks of the recipe that are already done, so the run starts after them
+	// (cobotar/protocol#28): their task runs start DONE, and the runtime derives
+	// every other state from them as if they had been done in the run, e.g. the
+	// tasks that become ready, the branch an EXCLUSIVE sequence took and the
+	// sequences' completed-task counts. A client that restarts an aborted run
+	// sends the tasks that were done in it; one that starts at a task sends the
+	// tasks before it. Empty means the run starts from the beginning.
+	//
+	// The load is refused (PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS) if a task
+	// isn't in the recipe or doesn't apply to the variant, if an ORDERED
+	// sequence would have a task done before one that comes earlier, or if an
+	// EXCLUSIVE sequence would have done tasks in more than one branch.
+	DoneTaskDefinitionIds []string `protobuf:"bytes,13,rep,name=done_task_definition_ids,json=doneTaskDefinitionIds,proto3" json:"done_task_definition_ids,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *ProcessLoadRequest) Reset() {
@@ -656,6 +674,13 @@ func (x *ProcessLoadRequest) GetTargetEmployee() string {
 		return x.TargetEmployee
 	}
 	return ""
+}
+
+func (x *ProcessLoadRequest) GetDoneTaskDefinitionIds() []string {
+	if x != nil {
+		return x.DoneTaskDefinitionIds
+	}
+	return nil
 }
 
 type ProcessRunIssue struct {
@@ -1173,7 +1198,7 @@ var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/process_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xb7\x05\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\x82\x06\n" +
 	"\x12ProcessLoadRequest\x128\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\x0fprocessRecipeId\x122\n" +
 	"\x0etarget_line_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc0\xf2\x04\x01R\ftargetLineId\x12/\n" +
@@ -1189,7 +1214,9 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	" \x03(\v2\x1d.common.v1.KeyValueConstraintR\n" +
 	"parameters\x12Y\n" +
 	"\x13allocation_strategy\x18\v \x01(\x0e2\x1e.runtime.v1.AllocationStrategyB\b\xbaH\x05\x82\x01\x02\x10\x01R\x12allocationStrategy\x122\n" +
-	"\x0ftarget_employee\x18\f \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x0etargetEmployee\"\x9d\x05\n" +
+	"\x0ftarget_employee\x18\f \x01(\tB\t\xbaH\x06r\x04\xd8\xeb0\x01R\x0etargetEmployee\x12I\n" +
+	"\x18done_task_definition_ids\x18\r \x03(\tB\x10\xbaH\r\x92\x01\n" +
+	"\x18\x01\"\x06r\x04\xb0\xf2\x04\x01R\x15doneTaskDefinitionIds\"\x9d\x05\n" +
 	"\x0fProcessRunIssue\x128\n" +
 	"\afailure\x18\x01 \x01(\x0e2\x1e.runtime.v1.ProcessLoadFailureR\afailure\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12?\n" +
@@ -1250,12 +1277,13 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	" PROCESS_LOAD_STRATEGY_BEST_MATCH\x10\x04*Y\n" +
 	"\x12AllocationStrategy\x12#\n" +
 	"\x1fALLOCATION_STRATEGY_UNSPECIFIED\x10\x00\x12\x1e\n" +
-	"\x1aALLOCATION_STRATEGY_STATIC\x10\x01*\xad\f\n" +
+	"\x1aALLOCATION_STRATEGY_STATIC\x10\x01*\xda\f\n" +
 	"\x12ProcessLoadFailure\x12$\n" +
 	" PROCESS_LOAD_FAILURE_UNSPECIFIED\x10\x00\x121\n" +
 	"-PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND\x10\x02\x12.\n" +
 	"*PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED\x10\x03\x12/\n" +
-	"+PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN\x10\x04\x120\n" +
+	"+PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN\x10\x04\x12+\n" +
+	"'PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS\x10\x05\x120\n" +
 	",PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER\x10\n" +
 	"\x120\n" +
 	",PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND\x10\v\x125\n" +

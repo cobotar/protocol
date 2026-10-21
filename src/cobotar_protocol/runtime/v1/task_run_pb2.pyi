@@ -52,7 +52,7 @@ class TaskRuntimeBinding(_message.Message):
     def __init__(self, asset_instance_id: _Optional[str] = ..., station_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., container_slot: _Optional[_Union[_container_definition_pb2.ContainerSlotRef, _Mapping]] = ..., candidate_part_instance_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TaskRun(_message.Message):
-    __slots__ = ("id", "name", "icon", "task_definition_id", "parent_sequence_run_id", "state", "candidate_actors", "assigned_actor", "can_do", "can_undo", "workable_horizon", "estimated_duration", "started_at", "completed_at", "failure_code", "failure_message", "binding", "restrictions", "candidate_actor_evaluations", "actor_assignment_status", "revision")
+    __slots__ = ("id", "name", "icon", "task_definition_id", "parent_sequence_run_id", "state", "candidate_actors", "assigned_actor", "can_do", "can_undo", "workable_horizon", "estimated_duration", "started_at", "completed_at", "failure_code", "failure_message", "binding", "restrictions", "candidate_actor_evaluations", "actor_assignment_status", "revision", "done_before_load")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -74,6 +74,7 @@ class TaskRun(_message.Message):
     CANDIDATE_ACTOR_EVALUATIONS_FIELD_NUMBER: _ClassVar[int]
     ACTOR_ASSIGNMENT_STATUS_FIELD_NUMBER: _ClassVar[int]
     REVISION_FIELD_NUMBER: _ClassVar[int]
+    DONE_BEFORE_LOAD_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -95,7 +96,8 @@ class TaskRun(_message.Message):
     candidate_actor_evaluations: _containers.RepeatedCompositeFieldContainer[_process_requests_pb2.CandidateActorEvaluation]
     actor_assignment_status: _actor_assignment_pb2.TaskActorAssignmentStatus
     revision: int
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskRunState, str]] = ..., candidate_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ..., assigned_actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., can_do: bool = ..., can_undo: bool = ..., workable_horizon: _Optional[int] = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., failure_code: _Optional[str] = ..., failure_message: _Optional[str] = ..., binding: _Optional[_Union[TaskRuntimeBinding, _Mapping]] = ..., restrictions: _Optional[_Iterable[_Union[_runtime_restriction_pb2.RuntimeRestriction, _Mapping]]] = ..., candidate_actor_evaluations: _Optional[_Iterable[_Union[_process_requests_pb2.CandidateActorEvaluation, _Mapping]]] = ..., actor_assignment_status: _Optional[_Union[_actor_assignment_pb2.TaskActorAssignmentStatus, _Mapping]] = ..., revision: _Optional[int] = ...) -> None: ...
+    done_before_load: bool
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., parent_sequence_run_id: _Optional[str] = ..., state: _Optional[_Union[TaskRunState, str]] = ..., candidate_actors: _Optional[_Iterable[_Union[_actor_pb2.ActorRef, _Mapping]]] = ..., assigned_actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., can_do: bool = ..., can_undo: bool = ..., workable_horizon: _Optional[int] = ..., estimated_duration: _Optional[_Union[_time_pb2.EstimatedDuration, _Mapping]] = ..., started_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., completed_at: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., failure_code: _Optional[str] = ..., failure_message: _Optional[str] = ..., binding: _Optional[_Union[TaskRuntimeBinding, _Mapping]] = ..., restrictions: _Optional[_Iterable[_Union[_runtime_restriction_pb2.RuntimeRestriction, _Mapping]]] = ..., candidate_actor_evaluations: _Optional[_Iterable[_Union[_process_requests_pb2.CandidateActorEvaluation, _Mapping]]] = ..., actor_assignment_status: _Optional[_Union[_actor_assignment_pb2.TaskActorAssignmentStatus, _Mapping]] = ..., revision: _Optional[int] = ..., done_before_load: bool = ...) -> None: ...
 
 class TaskRuns(_message.Message):
     __slots__ = ("items",)

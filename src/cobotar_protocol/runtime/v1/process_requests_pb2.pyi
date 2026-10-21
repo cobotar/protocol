@@ -33,6 +33,7 @@ class ProcessLoadFailure(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN: _ClassVar[ProcessLoadFailure]
+    PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND: _ClassVar[ProcessLoadFailure]
     PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND: _ClassVar[ProcessLoadFailure]
@@ -100,6 +101,7 @@ PROCESS_LOAD_FAILURE_UNSPECIFIED: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN: ProcessLoadFailure
+PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND: ProcessLoadFailure
 PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND: ProcessLoadFailure
@@ -146,7 +148,7 @@ PROCESS_LOAD_STATUS_READY: ProcessLoadStatus
 PROCESS_LOAD_STATUS_LOADED: ProcessLoadStatus
 
 class ProcessLoadRequest(_message.Message):
-    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee")
+    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee", "done_task_definition_ids")
     PROCESS_RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_LINE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_CELL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -159,6 +161,7 @@ class ProcessLoadRequest(_message.Message):
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     ALLOCATION_STRATEGY_FIELD_NUMBER: _ClassVar[int]
     TARGET_EMPLOYEE_FIELD_NUMBER: _ClassVar[int]
+    DONE_TASK_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     process_recipe_id: str
     target_line_id: str
     target_cell_id: str
@@ -171,7 +174,8 @@ class ProcessLoadRequest(_message.Message):
     parameters: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
     allocation_strategy: AllocationStrategy
     target_employee: str
-    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ...) -> None: ...
+    done_task_definition_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ..., done_task_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ProcessRunIssue(_message.Message):
     __slots__ = ("failure", "message", "severity", "process_recipe_id", "sequence_definition_id", "task_definition_id", "required_tool_role", "required_skill_id", "fixture_definition_id", "cell_id", "station_id", "actor_id", "resource_id", "remediation", "importance")

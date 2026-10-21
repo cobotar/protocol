@@ -10513,6 +10513,9 @@ Thus the following must be evaluated:
 | parameters | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Optional caller-provided parameters used during instantiation. |
 | allocation_strategy | [AllocationStrategy](#runtime-v1-AllocationStrategy) |  |  |
 | target_employee | [string](#string) |  |  |
+| done_task_definition_ids | [string](#string) | repeated | Tasks of the recipe that are already done, so the run starts after them (cobotar/protocol#28): their task runs start DONE, and the runtime derives every other state from them as if they had been done in the run, e.g. the tasks that become ready, the branch an EXCLUSIVE sequence took and the sequences&#39; completed-task counts. A client that restarts an aborted run sends the tasks that were done in it; one that starts at a task sends the tasks before it. Empty means the run starts from the beginning.
+
+The load is refused (PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS) if a task isn&#39;t in the recipe or doesn&#39;t apply to the variant, if an ORDERED sequence would have a task done before one that comes earlier, or if an EXCLUSIVE sequence would have done tasks in more than one branch. |
 
 
 
@@ -10636,6 +10639,7 @@ Thus the following must be evaluated:
 | PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND | 2 | General failures |
 | PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED | 3 |  |
 | PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN | 4 |  |
+| PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS | 5 | ProcessLoadRequest.done_task_definition_ids can&#39;t be done before the run starts; the issue&#39;s task_definition_id names the offending task. |
 | PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER | 10 | Container related failures |
 | PROCESS_LOAD_FAILURE_REQUIRED_SLOT_NOT_FOUND | 11 |  |
 | PROCESS_LOAD_FAILURE_REQUIRED_SLOT_TYPE_NOT_FOUND | 12 |  |
@@ -11114,6 +11118,7 @@ Examples: - AR guidance required because the assigned actor&#39;s skill is restr
 | candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |
 | actor_assignment_status | [TaskActorAssignmentStatus](#runtime-v1-TaskActorAssignmentStatus) |  | Current actor-assignment resolution for this task. |
 | revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
+| done_before_load | [bool](#bool) |  | The task was done before the run was loaded (ProcessLoadRequest.done_task_definition_ids, cobotar/protocol#28): it started DONE, so it has no actor, start time or execution evidence from this run. Undoing it clears the flag. |
 
 
 

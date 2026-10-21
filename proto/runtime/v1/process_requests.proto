@@ -102,6 +102,23 @@ message ProcessLoadRequest {
 
   AllocationStrategy allocation_strategy = 11 [(buf.validate.field).enum.defined_only = true];
   string target_employee = 12 [(buf.validate.field).string.(validation.v1.worker_id_component) = true];
+
+  // Tasks of the recipe that are already done, so the run starts after them
+  // (cobotar/protocol#28): their task runs start DONE, and the runtime derives
+  // every other state from them as if they had been done in the run, e.g. the
+  // tasks that become ready, the branch an EXCLUSIVE sequence took and the
+  // sequences' completed-task counts. A client that restarts an aborted run
+  // sends the tasks that were done in it; one that starts at a task sends the
+  // tasks before it. Empty means the run starts from the beginning.
+  //
+  // The load is refused (PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS) if a task
+  // isn't in the recipe or doesn't apply to the variant, if an ORDERED
+  // sequence would have a task done before one that comes earlier, or if an
+  // EXCLUSIVE sequence would have done tasks in more than one branch.
+  repeated string done_task_definition_ids = 13 [
+    (buf.validate.field).repeated.unique = true,
+    (buf.validate.field).repeated.items.string.(validation.v1.task_definition_id_component) = true
+  ];
 }
 
 enum ProcessLoadFailure {
@@ -110,6 +127,9 @@ enum ProcessLoadFailure {
   PROCESS_LOAD_FAILURE_PROCESS_RECIPE_NOT_FOUND = 2;
   PROCESS_LOAD_FAILURE_PRODUCT_NOT_SUPPORTED = 3;
   PROCESS_LOAD_FAILURE_RESOURCE_STATE_UNKNOWN = 4;
+  // ProcessLoadRequest.done_task_definition_ids can't be done before the run
+  // starts; the issue's task_definition_id names the offending task.
+  PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS = 5;
 
   // Container related failures
   PROCESS_LOAD_FAILURE_NO_COMPATIBLE_CONTAINER = 10;

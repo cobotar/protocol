@@ -211,9 +211,14 @@ type TaskRun struct {
 	ActorAssignmentStatus *TaskActorAssignmentStatus `protobuf:"bytes,21,opt,name=actor_assignment_status,json=actorAssignmentStatus,proto3" json:"actor_assignment_status,omitempty"`
 	// Revision used to prevent concurrent state changes and reassignments from
 	// overwriting one another. Starts at 1.
-	Revision      uint64 `protobuf:"varint,22,opt,name=revision,proto3" json:"revision,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Revision uint64 `protobuf:"varint,22,opt,name=revision,proto3" json:"revision,omitempty"`
+	// The task was done before the run was loaded
+	// (ProcessLoadRequest.done_task_definition_ids, cobotar/protocol#28): it
+	// started DONE, so it has no actor, start time or execution evidence from
+	// this run. Undoing it clears the flag.
+	DoneBeforeLoad bool `protobuf:"varint,23,opt,name=done_before_load,json=doneBeforeLoad,proto3" json:"done_before_load,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *TaskRun) Reset() {
@@ -393,6 +398,13 @@ func (x *TaskRun) GetRevision() uint64 {
 	return 0
 }
 
+func (x *TaskRun) GetDoneBeforeLoad() bool {
+	if x != nil {
+		return x.DoneBeforeLoad
+	}
+	return false
+}
+
 type TaskRuns struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*TaskRun             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -449,7 +461,7 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"station_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\"\n" +
 	"\acell_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12E\n" +
 	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\x12M\n" +
-	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\"\xd9\b\n" +
+	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\"\x83\t\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -473,7 +485,8 @@ const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\frestrictions\x18\x13 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x12d\n" +
 	"\x1bcandidate_actor_evaluations\x18\x14 \x03(\v2$.runtime.v1.CandidateActorEvaluationR\x19candidateActorEvaluations\x12e\n" +
 	"\x17actor_assignment_status\x18\x15 \x01(\v2%.runtime.v1.TaskActorAssignmentStatusB\x06\xbaH\x03\xc8\x01\x01R\x15actorAssignmentStatus\x12#\n" +
-	"\brevision\x18\x16 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\"5\n" +
+	"\brevision\x18\x16 \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x12(\n" +
+	"\x10done_before_load\x18\x17 \x01(\bR\x0edoneBeforeLoad\"5\n" +
 	"\bTaskRuns\x12)\n" +
 	"\x05items\x18\x01 \x03(\v2\x13.runtime.v1.TaskRunR\x05items*\xf4\x01\n" +
 	"\fTaskRunState\x12\x1e\n" +

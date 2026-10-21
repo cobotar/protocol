@@ -98,6 +98,12 @@ message TaskRun {
   // Revision used to prevent concurrent state changes and reassignments from
   // overwriting one another. Starts at 1.
   uint64 revision = 22 [(buf.validate.field).uint64.gte = 1];
+
+  // The task was done before the run was loaded
+  // (ProcessLoadRequest.done_task_definition_ids, cobotar/protocol#28): it
+  // started DONE, so it has no actor, start time or execution evidence from
+  // this run. Undoing it clears the flag.
+  bool done_before_load = 23;
 }
 
 message TaskRuns {
