@@ -13,14 +13,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ImportProduct(_message.Message):
-    __slots__ = ("models", "parts", "product")
+    __slots__ = ("models", "parts", "product", "product_model_key")
     MODELS_FIELD_NUMBER: _ClassVar[int]
     PARTS_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_MODEL_KEY_FIELD_NUMBER: _ClassVar[int]
     models: _containers.RepeatedCompositeFieldContainer[ImportedModel]
     parts: _containers.RepeatedCompositeFieldContainer[ImportedPart]
     product: _product_definition_pb2.ProductDefinition
-    def __init__(self, models: _Optional[_Iterable[_Union[ImportedModel, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[ImportedPart, _Mapping]]] = ..., product: _Optional[_Union[_product_definition_pb2.ProductDefinition, _Mapping]] = ...) -> None: ...
+    product_model_key: str
+    def __init__(self, models: _Optional[_Iterable[_Union[ImportedModel, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[ImportedPart, _Mapping]]] = ..., product: _Optional[_Union[_product_definition_pb2.ProductDefinition, _Mapping]] = ..., product_model_key: _Optional[str] = ...) -> None: ...
 
 class ImportedModel(_message.Message):
     __slots__ = ("key", "model")

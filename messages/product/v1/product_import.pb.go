@@ -52,9 +52,13 @@ type ImportProduct struct {
 	Parts  []*ImportedPart        `protobuf:"bytes,2,rep,name=parts,proto3" json:"parts,omitempty"`
 	// The product, if the import has one. Its nodes name their parts by key in
 	// part_definition_id.
-	Product       *ProductDefinition `protobuf:"bytes,3,opt,name=product,proto3" json:"product,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Product *ProductDefinition `protobuf:"bytes,3,opt,name=product,proto3" json:"product,omitempty"`
+	// The key of the product's model (ProductDefinition.model_id) in the
+	// request, e.g. the whole assembly with its thumbnail; empty for none, which
+	// keeps the model of the product the import updates.
+	ProductModelKey string `protobuf:"bytes,4,opt,name=product_model_key,json=productModelKey,proto3" json:"product_model_key,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *ImportProduct) Reset() {
@@ -106,6 +110,13 @@ func (x *ImportProduct) GetProduct() *ProductDefinition {
 		return x.Product
 	}
 	return nil
+}
+
+func (x *ImportProduct) GetProductModelKey() string {
+	if x != nil {
+		return x.ProductModelKey
+	}
+	return ""
 }
 
 // ImportedModel is a model of an ImportProduct, with its key in the request.
@@ -359,17 +370,20 @@ var File_product_v1_product_import_proto protoreflect.FileDescriptor
 const file_product_v1_product_import_proto_rawDesc = "" +
 	"\n" +
 	"\x1fproduct/v1/product_import.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a product/v1/part_definition.proto\x1a#product/v1/product_definition.proto\x1a!resources/v1/model_requests.proto\x1a\x19service/v1/response.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa2\f\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a product/v1/part_definition.proto\x1a#product/v1/product_definition.proto\x1a!resources/v1/model_requests.proto\x1a\x19service/v1/response.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf8\x0f\n" +
 	"\rImportProduct\x12\x9c\x01\n" +
 	"\x06models\x18\x01 \x03(\v2\x19.product.v1.ImportedModelBi\xbaHf\xba\x01c\n" +
 	"!import_product.models.unique_keys\x12\x19model keys must be unique\x1a#this.map(model, model.key).unique()R\x06models\x12\x95\x01\n" +
 	"\x05parts\x18\x02 \x03(\v2\x18.product.v1.ImportedPartBe\xbaHb\xba\x01_\n" +
 	" import_product.parts.unique_keys\x12\x18part keys must be unique\x1a!this.map(part, part.key).unique()R\x05parts\x127\n" +
-	"\aproduct\x18\x03 \x01(\v2\x1d.product.v1.ProductDefinitionR\aproduct:\xa0\t\xbaH\x9c\t\x1a\xcb\x01\n" +
+	"\aproduct\x18\x03 \x01(\v2\x1d.product.v1.ProductDefinitionR\aproduct\x12*\n" +
+	"\x11product_model_key\x18\x04 \x01(\tR\x0fproductModelKey:\xca\f\xbaH\xc6\f\x1a\xcb\x01\n" +
 	"!import_product.model_keys_defined\x12@every part's model_key must be the key of a model in the request\x1adthis.parts.all(part, part.model_key == '' || this.models.exists(model, model.key == part.model_key))\x1a\x89\x02\n" +
 	" import_product.part_keys_defined\x12Qevery assembly node's part_definition_id must be the key of a part in the request\x1a\x91\x01!has(this.product) || this.product.nodes.all(node, node.part_definition_id == '' || this.parts.exists(part, part.key == node.part_definition_id))\x1a\xd6\x02\n" +
 	"%import_product.part_references_unique\x12Ptwo imported parts must not share an external reference (system and external_id)\x1a\xda\x01this.parts.all(part, part.part.external_references.all(reference, this.parts.filter(other, other.part.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))\x1a\x9e\x01\n" +
-	"!import_product.product_without_id\x12Lthe imported product must not have an id; it's matched by external reference\x1a+!has(this.product) || this.product.id == ''\x1a\xc5\x01\n" +
+	"!import_product.product_without_id\x12Lthe imported product must not have an id; it's matched by external reference\x1a+!has(this.product) || this.product.id == ''\x1a\xf3\x01\n" +
+	"(import_product.product_model_key_defined\x12Pproduct_model_key must be the key of a model in the request, and needs a product\x1authis.product_model_key == '' || (has(this.product) && this.models.exists(model, model.key == this.product_model_key))\x1a\xb1\x01\n" +
+	"'import_product.product_without_model_id\x12Sthe imported product must not set model_id; it names its model by product_model_key\x1a1!has(this.product) || this.product.model_id == ''\x1a\xc5\x01\n" +
 	"+import_product.nodes_without_override_model\x12Dassembly nodes of an imported product must not set override_model_id\x1aP!has(this.product) || this.product.nodes.all(node, node.override_model_id == '')\"m\n" +
 	"\rImportedModel\x12\x1b\n" +
 	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12?\n" +

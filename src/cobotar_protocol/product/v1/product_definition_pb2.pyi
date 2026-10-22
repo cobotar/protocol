@@ -14,7 +14,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ProductDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "variant_axes", "root_node_id", "nodes", "external_references", "variant_groups", "configurations")
+    __slots__ = ("id", "name", "icon", "description", "variant_axes", "root_node_id", "nodes", "external_references", "variant_groups", "configurations", "model_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -25,6 +25,7 @@ class ProductDefinition(_message.Message):
     EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     VARIANT_GROUPS_FIELD_NUMBER: _ClassVar[int]
     CONFIGURATIONS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -35,7 +36,8 @@ class ProductDefinition(_message.Message):
     external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
     variant_groups: _containers.RepeatedCompositeFieldContainer[_variant_group_pb2.VariantGroup]
     configurations: _containers.RepeatedCompositeFieldContainer[_variant_configuration_pb2.NamedVariantConfiguration]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., variant_axes: _Optional[_Iterable[_Union[_variant_axis_pb2.VariantAxis, _Mapping]]] = ..., root_node_id: _Optional[str] = ..., nodes: _Optional[_Iterable[_Union[_assembly_node_pb2.AssemblyNode, _Mapping]]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., variant_groups: _Optional[_Iterable[_Union[_variant_group_pb2.VariantGroup, _Mapping]]] = ..., configurations: _Optional[_Iterable[_Union[_variant_configuration_pb2.NamedVariantConfiguration, _Mapping]]] = ...) -> None: ...
+    model_id: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., variant_axes: _Optional[_Iterable[_Union[_variant_axis_pb2.VariantAxis, _Mapping]]] = ..., root_node_id: _Optional[str] = ..., nodes: _Optional[_Iterable[_Union[_assembly_node_pb2.AssemblyNode, _Mapping]]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ..., variant_groups: _Optional[_Iterable[_Union[_variant_group_pb2.VariantGroup, _Mapping]]] = ..., configurations: _Optional[_Iterable[_Union[_variant_configuration_pb2.NamedVariantConfiguration, _Mapping]]] = ..., model_id: _Optional[str] = ...) -> None: ...
 
 class ProductDefinitions(_message.Message):
     __slots__ = ("items",)

@@ -54,6 +54,16 @@ message ImportProduct {
     expression: "!has(this.product) || this.product.id == ''"
   };
   option (buf.validate.message).cel = {
+    id: "import_product.product_model_key_defined"
+    message: "product_model_key must be the key of a model in the request, and needs a product"
+    expression: "this.product_model_key == '' || (has(this.product) && this.models.exists(model, model.key == this.product_model_key))"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_product.product_without_model_id"
+    message: "the imported product must not set model_id; it names its model by product_model_key"
+    expression: "!has(this.product) || this.product.model_id == ''"
+  };
+  option (buf.validate.message).cel = {
     id: "import_product.nodes_without_override_model"
     message: "assembly nodes of an imported product must not set override_model_id"
     expression: "!has(this.product) || this.product.nodes.all(node, node.override_model_id == '')"
@@ -72,6 +82,10 @@ message ImportProduct {
   // The product, if the import has one. Its nodes name their parts by key in
   // part_definition_id.
   ProductDefinition product = 3;
+  // The key of the product's model (ProductDefinition.model_id) in the
+  // request, e.g. the whole assembly with its thumbnail; empty for none, which
+  // keeps the model of the product the import updates.
+  string product_model_key = 4;
 }
 
 // ImportedModel is a model of an ImportProduct, with its key in the request.

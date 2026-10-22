@@ -7792,6 +7792,7 @@ TODO: add validation for: root_node_id, nodes
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | variant_groups | [variance.v1.VariantGroup](#variance-v1-VariantGroup) | repeated | Groups of axes that depend on each other (cobotar/protocol#32). An axis outside every group is independent, and every option of it is valid. |
 | configurations | [variance.v1.NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration) | repeated | Configurations the product names, e.g. the rows of the configuration table, which an operator can pick when loading a process. |
+| model_id | [string](#string) |  | A model of the whole product, e.g. the assembly exported from CAD, for its thumbnail in lists and a 3D preview; empty for none. For a product with variants it shows one configuration, such as the one the CAD design had active. It&#39;s only a picture of the product: the nodes and their parts&#39; models are what processes and the AR runtime use. |
 
 
 
@@ -8306,6 +8307,7 @@ when one reference matches several existing parts or products.
 | models | [ImportedModel](#product-v1-ImportedModel) | repeated |  |
 | parts | [ImportedPart](#product-v1-ImportedPart) | repeated |  |
 | product | [ProductDefinition](#product-v1-ProductDefinition) |  | The product, if the import has one. Its nodes name their parts by key in part_definition_id. |
+| product_model_key | [string](#string) |  | The key of the product&#39;s model (ProductDefinition.model_id) in the request, e.g. the whole assembly with its thumbnail; empty for none, which keeps the model of the product the import updates. |
 
 
 

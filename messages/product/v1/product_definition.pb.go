@@ -42,8 +42,14 @@ type ProductDefinition struct {
 	// Configurations the product names, e.g. the rows of the configuration
 	// table, which an operator can pick when loading a process.
 	Configurations []*v1.NamedVariantConfiguration `protobuf:"bytes,10,rep,name=configurations,proto3" json:"configurations,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// A model of the whole product, e.g. the assembly exported from CAD, for its
+	// thumbnail in lists and a 3D preview; empty for none. For a product with
+	// variants it shows one configuration, such as the one the CAD design had
+	// active. It's only a picture of the product: the nodes and their parts'
+	// models are what processes and the AR runtime use.
+	ModelId       string `protobuf:"bytes,11,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProductDefinition) Reset() {
@@ -146,6 +152,13 @@ func (x *ProductDefinition) GetConfigurations() []*v1.NamedVariantConfiguration 
 	return nil
 }
 
+func (x *ProductDefinition) GetModelId() string {
+	if x != nil {
+		return x.ModelId
+	}
+	return ""
+}
+
 type ProductDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ProductDefinition   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -195,7 +208,7 @@ var File_product_v1_product_definition_proto protoreflect.FileDescriptor
 const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\n" +
 	"#product/v1/product_definition.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_axis.proto\x1a'variance/v1/variant_configuration.proto\x1a\x1fvariance/v1/variant_group.proto\"\x98.\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a\x1eproduct/v1/assembly_node.proto\x1a+validation/v1/predefined_string_rules.proto\x1a\x1evariance/v1/variant_axis.proto\x1a'variance/v1/variant_configuration.proto\x1a\x1fvariance/v1/variant_group.proto\"\xbe.\n" +
 	"\x11ProductDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xeb0\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -214,7 +227,8 @@ const file_product_v1_product_definition_proto_rawDesc = "" +
 	"\x0econfigurations\x18\n" +
 	" \x03(\v2&.variance.v1.NamedVariantConfigurationB\x94\x03\xbaH\x90\x03\xba\x01\x96\x01\n" +
 	",product_definition.configurations.unique_ids\x12Bnamed configuration ids must be unique within a product definition\x1a\"this.map(named, named.id).unique()\xba\x01\xf2\x01\n" +
-	"9product_definition.configurations.unique_normalized_names\x12{named configuration names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case\x1a8this.map(named, named.name.trim().lowerAscii()).unique()R\x0econfigurations:\xfc \xbaH\xf8 \x1a\xd1\x01\n" +
+	"9product_definition.configurations.unique_normalized_names\x12{named configuration names must be unique within a product definition, ignoring surrounding whitespace and ASCII letter case\x1a8this.map(named, named.name.trim().lowerAscii()).unique()R\x0econfigurations\x12$\n" +
+	"\bmodel_id\x18\v \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId:\xfc \xbaH\xf8 \x1a\xd1\x01\n" +
 	",product_definition.variant_groups.known_axes\x120variant groups can only name axes of the product\x1aothis.variant_groups.all(group, group.axis_ids.all(axis_id, this.variant_axes.exists(axis, axis.id == axis_id)))\x1a\xc0\x01\n" +
 	"*product_definition.variant_groups.disjoint\x12+an axis can be in at most one variant group\x1aethis.variant_axes.all(axis, this.variant_groups.filter(group, axis.id in group.axis_ids).size() <= 1)\x1a\xdd\x03\n" +
 	"0product_definition.variant_axes.derived_in_group\x12ga derived axis must be in a variant group, and its conditions can only name selected axes of that group\x1a\xbf\x02this.variant_axes.all(axis, !has(axis.derivation) || this.variant_groups.exists(group, axis.id in group.axis_ids && axis.derivation.options.all(derived, derived.when.all_of.all(condition, condition.axis_id in group.axis_ids && this.variant_axes.exists(other, other.id == condition.axis_id && !has(other.derivation))))))\x1a\xc1\x03\n" +

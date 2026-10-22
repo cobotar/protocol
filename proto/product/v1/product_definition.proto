@@ -124,6 +124,13 @@ message ProductDefinition {
       expression: "this.map(named, named.name.trim().lowerAscii()).unique()"
     }
   ];
+
+  // A model of the whole product, e.g. the assembly exported from CAD, for its
+  // thumbnail in lists and a 3D preview; empty for none. For a product with
+  // variants it shows one configuration, such as the one the CAD design had
+  // active. It's only a picture of the product: the nodes and their parts'
+  // models are what processes and the AR runtime use.
+  string model_id = 11 [(buf.validate.field).string.(validation.v1.model_id_component) = true];
 }
 
 message ProductDefinitions {
