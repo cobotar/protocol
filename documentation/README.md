@@ -807,12 +807,15 @@
   
 - [service/v1/storage.proto](#service_v1_storage-proto)
     - [StorageClearRequest](#service-v1-StorageClearRequest)
+    - [StorageCollectGarbageRequest](#service-v1-StorageCollectGarbageRequest)
+    - [StorageCollectGarbageResult](#service-v1-StorageCollectGarbageResult)
     - [StorageDumpRequest](#service-v1-StorageDumpRequest)
     - [StorageDumpResult](#service-v1-StorageDumpResult)
     - [StorageDumpResult.EntityCountsEntry](#service-v1-StorageDumpResult-EntityCountsEntry)
     - [StorageInfo](#service-v1-StorageInfo)
     - [StorageInfo.EntityCountsEntry](#service-v1-StorageInfo-EntityCountsEntry)
     - [StorageLoadRequest](#service-v1-StorageLoadRequest)
+    - [StorageObject](#service-v1-StorageObject)
     - [StorageSeedRecord](#service-v1-StorageSeedRecord)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -12079,6 +12082,52 @@ with `data_wiped: true` and `reset_reason: &#34;storage_cleared&#34;`.
 
 
 
+<a name="service-v1-StorageCollectGarbageRequest"></a>
+
+### StorageCollectGarbageRequest
+StorageCollectGarbageRequest asks Authoring to remove the uploaded model
+files that nothing refers to (cobotar/Authoring#17). Model files are
+uploaded under content-addressed keys, `&lt;kind&gt;/&lt;sha256&gt;/&lt;filename&gt;`
+(resources.v1.UploadedObject), and several models can share one, so
+deleting a model leaves its files; this command removes them later.
+
+A file is removed when it is in a bucket that models&#39; files are in, has a
+content-addressed key, is older than min_age, no model refers to it, and no
+dump in the `dumps` bucket lists it in its manifest (so a dump can still be
+loaded with its files). Files under other keys, such as seeded ones, are
+never removed.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dry_run | [bool](#bool) |  | List the files that would be removed, without removing them. |
+| min_age | [google.protobuf.Duration](#google-protobuf-Duration) |  | Keep files younger than this, e.g. ones uploaded for a model that is being created. One hour when unset. |
+
+
+
+
+
+
+<a name="service-v1-StorageCollectGarbageResult"></a>
+
+### StorageCollectGarbageResult
+StorageCollectGarbageResult lists the files a StorageCollectGarbageRequest
+removed, or would remove when it was a dry run. A failed collection
+returns Response instead.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dry_run | [bool](#bool) |  |  |
+| removed | [StorageObject](#service-v1-StorageObject) | repeated |  |
+| removed_bytes | [uint64](#uint64) |  |  |
+| kept | [uint64](#uint64) |  | How many content-addressed files were kept because something refers to them or they are younger than min_age. |
+
+
+
+
+
+
 <a name="service-v1-StorageDumpRequest"></a>
 
 ### StorageDumpRequest
@@ -12199,6 +12248,23 @@ active in the dump.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | object_name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="service-v1-StorageObject"></a>
+
+### StorageObject
+StorageObject is a file in an object-store bucket.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bucket | [string](#string) |  |  |
+| key | [string](#string) |  |  |
+| size_bytes | [uint64](#uint64) |  |  |
 
 
 

@@ -2,6 +2,7 @@ syntax = "proto3";
 package service.v1;
 
 import "buf/validate/validate.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "validation/v1/predefined_string_rules.proto";
 
@@ -122,4 +123,43 @@ message StorageInfo {
   StorageSeedRecord seed_record = 5;
   bool experimenter_mode = 6;
   google.protobuf.Timestamp last_dump_at = 7 [(buf.validate.field).timestamp.lt_now = true];
+}
+
+// StorageCollectGarbageRequest asks Authoring to remove the uploaded model
+// files that nothing refers to (cobotar/Authoring#17). Model files are
+// uploaded under content-addressed keys, `<kind>/<sha256>/<filename>`
+// (resources.v1.UploadedObject), and several models can share one, so
+// deleting a model leaves its files; this command removes them later.
+//
+// A file is removed when it is in a bucket that models' files are in, has a
+// content-addressed key, is older than min_age, no model refers to it, and no
+// dump in the `dumps` bucket lists it in its manifest (so a dump can still be
+// loaded with its files). Files under other keys, such as seeded ones, are
+// never removed.
+message StorageCollectGarbageRequest {
+  // List the files that would be removed, without removing them.
+  bool dry_run = 1;
+
+  // Keep files younger than this, e.g. ones uploaded for a model that is
+  // being created. One hour when unset.
+  google.protobuf.Duration min_age = 2 [(buf.validate.field).duration.gte = {}];
+}
+
+// StorageObject is a file in an object-store bucket.
+message StorageObject {
+  string bucket = 1 [(buf.validate.field).required = true];
+  string key = 2 [(buf.validate.field).required = true];
+  uint64 size_bytes = 3;
+}
+
+// StorageCollectGarbageResult lists the files a StorageCollectGarbageRequest
+// removed, or would remove when it was a dry run. A failed collection
+// returns Response instead.
+message StorageCollectGarbageResult {
+  bool dry_run = 1;
+  repeated StorageObject removed = 2;
+  uint64 removed_bytes = 3;
+  // How many content-addressed files were kept because something refers to
+  // them or they are younger than min_age.
+  uint64 kept = 4;
 }

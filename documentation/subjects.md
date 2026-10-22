@@ -52,6 +52,7 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `command.sequence_run.complete` | `command.sequence_run.complete` | — | active | staged | runtime.v1.SequenceCompleteRequest → service.v1.Response / service.v1.Response | holo_cobotar | authoring |
 | `command.sequence_run.reassign` | `command.sequence_run.reassign` | — | active | staged | runtime.v1.SequenceReassignRequest → service.v1.Response / service.v1.Response | web_cobotar, holo_cobotar | authoring |
 | `command.storage.clear` | `command.storage.clear` | — | active | staged | service.v1.StorageClearRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `command.storage.collect_garbage` | `command.storage.collect_garbage` | — | active | staged | service.v1.StorageCollectGarbageRequest → service.v1.StorageCollectGarbageResult / service.v1.Response | web_cobotar | authoring |
 | `command.storage.dump` | `command.storage.dump` | — | active | staged | service.v1.StorageDumpRequest → service.v1.StorageDumpResult / service.v1.Response | web_cobotar | authoring |
 | `command.storage.load` | `command.storage.load` | — | active | staged | service.v1.StorageLoadRequest → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `command.task_run.progress` | `command.task_run.progress` | — | active | staged | runtime.v1.TaskProgressUpdate → service.v1.Response / service.v1.Response | robot_adapter, web_cobotar, holo_cobotar | authoring |

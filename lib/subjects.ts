@@ -102,6 +102,7 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "command.sequence_run.complete", pattern: "command.sequence_run.complete", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.SequenceCompleteRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
   { id: "command.sequence_run.reassign", pattern: "command.sequence_run.reassign", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.SequenceReassignRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#64" },
   { id: "command.storage.clear", pattern: "command.storage.clear", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageClearRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
+  { id: "command.storage.collect_garbage", pattern: "command.storage.collect_garbage", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageCollectGarbageRequest", emptyRequest: false, successReply: "service.v1.StorageCollectGarbageResult", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#17" },
   { id: "command.storage.dump", pattern: "command.storage.dump", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageDumpRequest", emptyRequest: false, successReply: "service.v1.StorageDumpResult", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
   { id: "command.storage.load", pattern: "command.storage.load", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "service.v1.StorageLoadRequest", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#62" },
   { id: "command.task_run.progress", pattern: "command.task_run.progress", family: "", entity: "", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "runtime.v1.TaskProgressUpdate", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["robot_adapter", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
@@ -691,6 +692,11 @@ export const commandSequenceRunReassign = "command.sequence_run.reassign"
  * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#62.
  */
 export const commandStorageClear = "command.storage.clear"
+
+/** Builds `command.storage.collect_garbage`.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#17.
+ */
+export const commandStorageCollectGarbage = "command.storage.collect_garbage"
 
 /** Builds `command.storage.dump`.
  * @experimental lifecycle=active, conformance=staged; see cobotar/Authoring#62.

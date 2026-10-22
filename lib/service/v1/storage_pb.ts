@@ -5,8 +5,8 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
-import type { Timestamp } from "@bufbuild/protobuf/wkt";
-import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
+import type { Duration, Timestamp } from "@bufbuild/protobuf/wkt";
+import { file_google_protobuf_duration, file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import { file_validation_v1_predefined_string_rules } from "../../validation/v1/predefined_string_rules_pb.ts";
 import type { Message } from "@bufbuild/protobuf";
 
@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file service/v1/storage.proto.
  */
 export const file_service_v1_storage: GenFile = /*@__PURE__*/
-  fileDesc("ChhzZXJ2aWNlL3YxL3N0b3JhZ2UucHJvdG8SCnNlcnZpY2UudjEifwoRU3RvcmFnZVNlZWRSZWNvcmQSLQoLZmluZ2VycHJpbnQYASABKAlCGLpIFcgBAXIQMg5eW2EtZjAtOV17NjR9JBI7CgphcHBsaWVkX2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEILukgIyAEBsgECOAEiOgoSU3RvcmFnZUR1bXBSZXF1ZXN0EiQKC29iamVjdF9uYW1lGAEgASgJQg+6SAzIAQFyB4j0BAEYgAgipQIKEVN0b3JhZ2VEdW1wUmVzdWx0EiQKC29iamVjdF9uYW1lGAEgASgJQg+6SAzIAQFyB4j0BAEYgAgSGwoKc2l6ZV9ieXRlcxgCIAEoBEIHukgEMgIgABJbCg1lbnRpdHlfY291bnRzGAMgAygLMi8uc2VydmljZS52MS5TdG9yYWdlRHVtcFJlc3VsdC5FbnRpdHlDb3VudHNFbnRyeUITukgQmgENIgtyCYj0BAEQARiAAhI7CgpjcmVhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEILukgIyAEBsgECOAEaMwoRRW50aXR5Q291bnRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgEOgI4ASI6ChJTdG9yYWdlTG9hZFJlcXVlc3QSJAoLb2JqZWN0X25hbWUYASABKAlCD7pIDMgBAXIHiPQEARiACCKEAQoTU3RvcmFnZUNsZWFyUmVxdWVzdBIjChZhcHBseV9jb25maWd1cmVkX3NlZWRzGAEgASgISACIAQESLQoYY29uZmlybWF0aW9uX2luc3RhbmNlX2lkGAIgASgJQgu6SAjIAQFyA7ABAUIZChdfYXBwbHlfY29uZmlndXJlZF9zZWVkcyL7AgoLU3RvcmFnZUluZm8SHwoHYmFja2VuZBgBIAEoCUIOukgLyAEBcgaI9AQBGEASIAoLaW5zdGFuY2VfaWQYAiABKAlCC7pICMgBAXIDsAEBEhIKCnNpemVfYnl0ZXMYAyABKAQSVQoNZW50aXR5X2NvdW50cxgEIAMoCzIpLnNlcnZpY2UudjEuU3RvcmFnZUluZm8uRW50aXR5Q291bnRzRW50cnlCE7pIEJoBDSILcgmI9AQBEAEYgAISMgoLc2VlZF9yZWNvcmQYBSABKAsyHS5zZXJ2aWNlLnYxLlN0b3JhZ2VTZWVkUmVjb3JkEhkKEWV4cGVyaW1lbnRlcl9tb2RlGAYgASgIEjoKDGxhc3RfZHVtcF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCLpIBbIBAjgBGjMKEUVudGl0eUNvdW50c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoBDoCOAFCrgEKDmNvbS5zZXJ2aWNlLnYxQgxTdG9yYWdlUHJvdG9QAVo8Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3NlcnZpY2UvdjE7c2VydmljZXYxogIDU1hYqgITTWVzc2FnZXMuU2VydmljZS5WMcoCClNlcnZpY2VcVjHiAhZTZXJ2aWNlXFYxXEdQQk1ldGFkYXRh6gILU2VydmljZTo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
+  fileDesc("ChhzZXJ2aWNlL3YxL3N0b3JhZ2UucHJvdG8SCnNlcnZpY2UudjEifwoRU3RvcmFnZVNlZWRSZWNvcmQSLQoLZmluZ2VycHJpbnQYASABKAlCGLpIFcgBAXIQMg5eW2EtZjAtOV17NjR9JBI7CgphcHBsaWVkX2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEILukgIyAEBsgECOAEiOgoSU3RvcmFnZUR1bXBSZXF1ZXN0EiQKC29iamVjdF9uYW1lGAEgASgJQg+6SAzIAQFyB4j0BAEYgAgipQIKEVN0b3JhZ2VEdW1wUmVzdWx0EiQKC29iamVjdF9uYW1lGAEgASgJQg+6SAzIAQFyB4j0BAEYgAgSGwoKc2l6ZV9ieXRlcxgCIAEoBEIHukgEMgIgABJbCg1lbnRpdHlfY291bnRzGAMgAygLMi8uc2VydmljZS52MS5TdG9yYWdlRHVtcFJlc3VsdC5FbnRpdHlDb3VudHNFbnRyeUITukgQmgENIgtyCYj0BAEQARiAAhI7CgpjcmVhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEILukgIyAEBsgECOAEaMwoRRW50aXR5Q291bnRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgEOgI4ASI6ChJTdG9yYWdlTG9hZFJlcXVlc3QSJAoLb2JqZWN0X25hbWUYASABKAlCD7pIDMgBAXIHiPQEARiACCKEAQoTU3RvcmFnZUNsZWFyUmVxdWVzdBIjChZhcHBseV9jb25maWd1cmVkX3NlZWRzGAEgASgISACIAQESLQoYY29uZmlybWF0aW9uX2luc3RhbmNlX2lkGAIgASgJQgu6SAjIAQFyA7ABAUIZChdfYXBwbHlfY29uZmlndXJlZF9zZWVkcyL7AgoLU3RvcmFnZUluZm8SHwoHYmFja2VuZBgBIAEoCUIOukgLyAEBcgaI9AQBGEASIAoLaW5zdGFuY2VfaWQYAiABKAlCC7pICMgBAXIDsAEBEhIKCnNpemVfYnl0ZXMYAyABKAQSVQoNZW50aXR5X2NvdW50cxgEIAMoCzIpLnNlcnZpY2UudjEuU3RvcmFnZUluZm8uRW50aXR5Q291bnRzRW50cnlCE7pIEJoBDSILcgmI9AQBEAEYgAISMgoLc2VlZF9yZWNvcmQYBSABKAsyHS5zZXJ2aWNlLnYxLlN0b3JhZ2VTZWVkUmVjb3JkEhkKEWV4cGVyaW1lbnRlcl9tb2RlGAYgASgIEjoKDGxhc3RfZHVtcF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCLpIBbIBAjgBGjMKEUVudGl0eUNvdW50c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoBDoCOAEiZQocU3RvcmFnZUNvbGxlY3RHYXJiYWdlUmVxdWVzdBIPCgdkcnlfcnVuGAEgASgIEjQKB21pbl9hZ2UYAiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25CCLpIBaoBAjIAIlAKDVN0b3JhZ2VPYmplY3QSFgoGYnVja2V0GAEgASgJQga6SAPIAQESEwoDa2V5GAIgASgJQga6SAPIAQESEgoKc2l6ZV9ieXRlcxgDIAEoBCJ/ChtTdG9yYWdlQ29sbGVjdEdhcmJhZ2VSZXN1bHQSDwoHZHJ5X3J1bhgBIAEoCBIqCgdyZW1vdmVkGAIgAygLMhkuc2VydmljZS52MS5TdG9yYWdlT2JqZWN0EhUKDXJlbW92ZWRfYnl0ZXMYAyABKAQSDAoEa2VwdBgEIAEoBEKuAQoOY29tLnNlcnZpY2UudjFCDFN0b3JhZ2VQcm90b1ABWjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvc2VydmljZS92MTtzZXJ2aWNldjGiAgNTWFiqAhNNZXNzYWdlcy5TZXJ2aWNlLlYxygIKU2VydmljZVxWMeICFlNlcnZpY2VcVjFcR1BCTWV0YWRhdGHqAgtTZXJ2aWNlOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_google_protobuf_duration, file_google_protobuf_timestamp, file_validation_v1_predefined_string_rules]);
 
 /**
  * StorageSeedRecord identifies the configured seed composition most recently
@@ -216,4 +216,111 @@ export type StorageInfo = Message<"service.v1.StorageInfo"> & {
  */
 export const StorageInfoSchema: GenMessage<StorageInfo> = /*@__PURE__*/
   messageDesc(file_service_v1_storage, 5);
+
+/**
+ * StorageCollectGarbageRequest asks Authoring to remove the uploaded model
+ * files that nothing refers to (cobotar/Authoring#17). Model files are
+ * uploaded under content-addressed keys, `<kind>/<sha256>/<filename>`
+ * (resources.v1.UploadedObject), and several models can share one, so
+ * deleting a model leaves its files; this command removes them later.
+ *
+ * A file is removed when it is in a bucket that models' files are in, has a
+ * content-addressed key, is older than min_age, no model refers to it, and no
+ * dump in the `dumps` bucket lists it in its manifest (so a dump can still be
+ * loaded with its files). Files under other keys, such as seeded ones, are
+ * never removed.
+ *
+ * @generated from message service.v1.StorageCollectGarbageRequest
+ */
+export type StorageCollectGarbageRequest = Message<"service.v1.StorageCollectGarbageRequest"> & {
+  /**
+   * List the files that would be removed, without removing them.
+   *
+   * @generated from field: bool dry_run = 1;
+   */
+  dryRun: boolean;
+
+  /**
+   * Keep files younger than this, e.g. ones uploaded for a model that is
+   * being created. One hour when unset.
+   *
+   * @generated from field: google.protobuf.Duration min_age = 2;
+   */
+  minAge?: Duration;
+};
+
+/**
+ * Describes the message service.v1.StorageCollectGarbageRequest.
+ * Use `create(StorageCollectGarbageRequestSchema)` to create a new message.
+ */
+export const StorageCollectGarbageRequestSchema: GenMessage<StorageCollectGarbageRequest> = /*@__PURE__*/
+  messageDesc(file_service_v1_storage, 6);
+
+/**
+ * StorageObject is a file in an object-store bucket.
+ *
+ * @generated from message service.v1.StorageObject
+ */
+export type StorageObject = Message<"service.v1.StorageObject"> & {
+  /**
+   * @generated from field: string bucket = 1;
+   */
+  bucket: string;
+
+  /**
+   * @generated from field: string key = 2;
+   */
+  key: string;
+
+  /**
+   * @generated from field: uint64 size_bytes = 3;
+   */
+  sizeBytes: bigint;
+};
+
+/**
+ * Describes the message service.v1.StorageObject.
+ * Use `create(StorageObjectSchema)` to create a new message.
+ */
+export const StorageObjectSchema: GenMessage<StorageObject> = /*@__PURE__*/
+  messageDesc(file_service_v1_storage, 7);
+
+/**
+ * StorageCollectGarbageResult lists the files a StorageCollectGarbageRequest
+ * removed, or would remove when it was a dry run. A failed collection
+ * returns Response instead.
+ *
+ * @generated from message service.v1.StorageCollectGarbageResult
+ */
+export type StorageCollectGarbageResult = Message<"service.v1.StorageCollectGarbageResult"> & {
+  /**
+   * @generated from field: bool dry_run = 1;
+   */
+  dryRun: boolean;
+
+  /**
+   * @generated from field: repeated service.v1.StorageObject removed = 2;
+   */
+  removed: StorageObject[];
+
+  /**
+   * @generated from field: uint64 removed_bytes = 3;
+   */
+  removedBytes: bigint;
+
+  /**
+   * How many content-addressed files were kept because something refers to
+   * them or they are younger than min_age.
+   *
+   * @generated from field: uint64 kept = 4;
+   */
+  kept: bigint;
+};
+
+/**
+ * Describes the message service.v1.StorageCollectGarbageResult.
+ * Use `create(StorageCollectGarbageResultSchema)` to create a new message.
+ */
+export const StorageCollectGarbageResultSchema: GenMessage<StorageCollectGarbageResult> = /*@__PURE__*/
+  messageDesc(file_service_v1_storage, 8);
 

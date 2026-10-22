@@ -1330,6 +1330,21 @@ routes:
     consumers: [authoring]
     description: Clear the backend's stored data, optionally applying the configured seeds again. Authoring answers only in experimenter mode, and then restarts in place.
 
+  - id: command.storage.collect_garbage
+    pattern: command.storage.collect_garbage
+    lifecycle: active
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#17
+    interaction: request_reply
+    request: service.v1.StorageCollectGarbageRequest
+    replies:
+      success: service.v1.StorageCollectGarbageResult
+      failure: service.v1.Response
+    publishers: [web_cobotar]
+    consumers: [authoring]
+    description: Remove the uploaded model files that no model and no dump refers to, or list them in a dry run.
+
   - id: command.storage.dump
     pattern: command.storage.dump
     lifecycle: active

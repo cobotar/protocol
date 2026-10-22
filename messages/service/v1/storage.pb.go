@@ -11,6 +11,7 @@ import (
 	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	durationpb "google.golang.org/protobuf/types/known/durationpb"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
@@ -414,12 +415,212 @@ func (x *StorageInfo) GetLastDumpAt() *timestamppb.Timestamp {
 	return nil
 }
 
+// StorageCollectGarbageRequest asks Authoring to remove the uploaded model
+// files that nothing refers to (cobotar/Authoring#17). Model files are
+// uploaded under content-addressed keys, `<kind>/<sha256>/<filename>`
+// (resources.v1.UploadedObject), and several models can share one, so
+// deleting a model leaves its files; this command removes them later.
+//
+// A file is removed when it is in a bucket that models' files are in, has a
+// content-addressed key, is older than min_age, no model refers to it, and no
+// dump in the `dumps` bucket lists it in its manifest (so a dump can still be
+// loaded with its files). Files under other keys, such as seeded ones, are
+// never removed.
+type StorageCollectGarbageRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// List the files that would be removed, without removing them.
+	DryRun bool `protobuf:"varint,1,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"`
+	// Keep files younger than this, e.g. ones uploaded for a model that is
+	// being created. One hour when unset.
+	MinAge        *durationpb.Duration `protobuf:"bytes,2,opt,name=min_age,json=minAge,proto3" json:"min_age,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StorageCollectGarbageRequest) Reset() {
+	*x = StorageCollectGarbageRequest{}
+	mi := &file_service_v1_storage_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StorageCollectGarbageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StorageCollectGarbageRequest) ProtoMessage() {}
+
+func (x *StorageCollectGarbageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_v1_storage_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StorageCollectGarbageRequest.ProtoReflect.Descriptor instead.
+func (*StorageCollectGarbageRequest) Descriptor() ([]byte, []int) {
+	return file_service_v1_storage_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *StorageCollectGarbageRequest) GetDryRun() bool {
+	if x != nil {
+		return x.DryRun
+	}
+	return false
+}
+
+func (x *StorageCollectGarbageRequest) GetMinAge() *durationpb.Duration {
+	if x != nil {
+		return x.MinAge
+	}
+	return nil
+}
+
+// StorageObject is a file in an object-store bucket.
+type StorageObject struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Bucket        string                 `protobuf:"bytes,1,opt,name=bucket,proto3" json:"bucket,omitempty"`
+	Key           string                 `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	SizeBytes     uint64                 `protobuf:"varint,3,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StorageObject) Reset() {
+	*x = StorageObject{}
+	mi := &file_service_v1_storage_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StorageObject) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StorageObject) ProtoMessage() {}
+
+func (x *StorageObject) ProtoReflect() protoreflect.Message {
+	mi := &file_service_v1_storage_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StorageObject.ProtoReflect.Descriptor instead.
+func (*StorageObject) Descriptor() ([]byte, []int) {
+	return file_service_v1_storage_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *StorageObject) GetBucket() string {
+	if x != nil {
+		return x.Bucket
+	}
+	return ""
+}
+
+func (x *StorageObject) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *StorageObject) GetSizeBytes() uint64 {
+	if x != nil {
+		return x.SizeBytes
+	}
+	return 0
+}
+
+// StorageCollectGarbageResult lists the files a StorageCollectGarbageRequest
+// removed, or would remove when it was a dry run. A failed collection
+// returns Response instead.
+type StorageCollectGarbageResult struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	DryRun       bool                   `protobuf:"varint,1,opt,name=dry_run,json=dryRun,proto3" json:"dry_run,omitempty"`
+	Removed      []*StorageObject       `protobuf:"bytes,2,rep,name=removed,proto3" json:"removed,omitempty"`
+	RemovedBytes uint64                 `protobuf:"varint,3,opt,name=removed_bytes,json=removedBytes,proto3" json:"removed_bytes,omitempty"`
+	// How many content-addressed files were kept because something refers to
+	// them or they are younger than min_age.
+	Kept          uint64 `protobuf:"varint,4,opt,name=kept,proto3" json:"kept,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StorageCollectGarbageResult) Reset() {
+	*x = StorageCollectGarbageResult{}
+	mi := &file_service_v1_storage_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StorageCollectGarbageResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StorageCollectGarbageResult) ProtoMessage() {}
+
+func (x *StorageCollectGarbageResult) ProtoReflect() protoreflect.Message {
+	mi := &file_service_v1_storage_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StorageCollectGarbageResult.ProtoReflect.Descriptor instead.
+func (*StorageCollectGarbageResult) Descriptor() ([]byte, []int) {
+	return file_service_v1_storage_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *StorageCollectGarbageResult) GetDryRun() bool {
+	if x != nil {
+		return x.DryRun
+	}
+	return false
+}
+
+func (x *StorageCollectGarbageResult) GetRemoved() []*StorageObject {
+	if x != nil {
+		return x.Removed
+	}
+	return nil
+}
+
+func (x *StorageCollectGarbageResult) GetRemovedBytes() uint64 {
+	if x != nil {
+		return x.RemovedBytes
+	}
+	return 0
+}
+
+func (x *StorageCollectGarbageResult) GetKept() uint64 {
+	if x != nil {
+		return x.Kept
+	}
+	return 0
+}
+
 var File_service_v1_storage_proto protoreflect.FileDescriptor
 
 const file_service_v1_storage_proto_rawDesc = "" +
 	"\n" +
 	"\x18service/v1/storage.proto\x12\n" +
-	"service.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x01\n" +
+	"service.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a+validation/v1/predefined_string_rules.proto\"\x97\x01\n" +
 	"\x11StorageSeedRecord\x12:\n" +
 	"\vfingerprint\x18\x01 \x01(\tB\x18\xbaH\x15\xc8\x01\x01r\x102\x0e^[a-f0-9]{64}$R\vfingerprint\x12F\n" +
 	"\n" +
@@ -459,7 +660,20 @@ const file_service_v1_storage_proto_rawDesc = "" +
 	"lastDumpAt\x1a?\n" +
 	"\x11EntityCountsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01B\xae\x01\n" +
+	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01\"u\n" +
+	"\x1cStorageCollectGarbageRequest\x12\x17\n" +
+	"\adry_run\x18\x01 \x01(\bR\x06dryRun\x12<\n" +
+	"\amin_age\x18\x02 \x01(\v2\x19.google.protobuf.DurationB\b\xbaH\x05\xaa\x01\x022\x00R\x06minAge\"h\n" +
+	"\rStorageObject\x12\x1e\n" +
+	"\x06bucket\x18\x01 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x06bucket\x12\x18\n" +
+	"\x03key\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x03key\x12\x1d\n" +
+	"\n" +
+	"size_bytes\x18\x03 \x01(\x04R\tsizeBytes\"\xa4\x01\n" +
+	"\x1bStorageCollectGarbageResult\x12\x17\n" +
+	"\adry_run\x18\x01 \x01(\bR\x06dryRun\x123\n" +
+	"\aremoved\x18\x02 \x03(\v2\x19.service.v1.StorageObjectR\aremoved\x12#\n" +
+	"\rremoved_bytes\x18\x03 \x01(\x04R\fremovedBytes\x12\x12\n" +
+	"\x04kept\x18\x04 \x01(\x04R\x04keptB\xae\x01\n" +
 	"\x0ecom.service.v1B\fStorageProtoP\x01Z<github.com/cobotar/protocol/v2/messages/service/v1;servicev1\xa2\x02\x03SXX\xaa\x02\x13Messages.Service.V1\xca\x02\n" +
 	"Service\\V1\xe2\x02\x16Service\\V1\\GPBMetadata\xea\x02\vService::V1b\x06proto3"
 
@@ -475,30 +689,36 @@ func file_service_v1_storage_proto_rawDescGZIP() []byte {
 	return file_service_v1_storage_proto_rawDescData
 }
 
-var file_service_v1_storage_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_service_v1_storage_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_service_v1_storage_proto_goTypes = []any{
-	(*StorageSeedRecord)(nil),     // 0: service.v1.StorageSeedRecord
-	(*StorageDumpRequest)(nil),    // 1: service.v1.StorageDumpRequest
-	(*StorageDumpResult)(nil),     // 2: service.v1.StorageDumpResult
-	(*StorageLoadRequest)(nil),    // 3: service.v1.StorageLoadRequest
-	(*StorageClearRequest)(nil),   // 4: service.v1.StorageClearRequest
-	(*StorageInfo)(nil),           // 5: service.v1.StorageInfo
-	nil,                           // 6: service.v1.StorageDumpResult.EntityCountsEntry
-	nil,                           // 7: service.v1.StorageInfo.EntityCountsEntry
-	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
+	(*StorageSeedRecord)(nil),            // 0: service.v1.StorageSeedRecord
+	(*StorageDumpRequest)(nil),           // 1: service.v1.StorageDumpRequest
+	(*StorageDumpResult)(nil),            // 2: service.v1.StorageDumpResult
+	(*StorageLoadRequest)(nil),           // 3: service.v1.StorageLoadRequest
+	(*StorageClearRequest)(nil),          // 4: service.v1.StorageClearRequest
+	(*StorageInfo)(nil),                  // 5: service.v1.StorageInfo
+	(*StorageCollectGarbageRequest)(nil), // 6: service.v1.StorageCollectGarbageRequest
+	(*StorageObject)(nil),                // 7: service.v1.StorageObject
+	(*StorageCollectGarbageResult)(nil),  // 8: service.v1.StorageCollectGarbageResult
+	nil,                                  // 9: service.v1.StorageDumpResult.EntityCountsEntry
+	nil,                                  // 10: service.v1.StorageInfo.EntityCountsEntry
+	(*timestamppb.Timestamp)(nil),        // 11: google.protobuf.Timestamp
+	(*durationpb.Duration)(nil),          // 12: google.protobuf.Duration
 }
 var file_service_v1_storage_proto_depIdxs = []int32{
-	8, // 0: service.v1.StorageSeedRecord.applied_at:type_name -> google.protobuf.Timestamp
-	6, // 1: service.v1.StorageDumpResult.entity_counts:type_name -> service.v1.StorageDumpResult.EntityCountsEntry
-	8, // 2: service.v1.StorageDumpResult.created_at:type_name -> google.protobuf.Timestamp
-	7, // 3: service.v1.StorageInfo.entity_counts:type_name -> service.v1.StorageInfo.EntityCountsEntry
-	0, // 4: service.v1.StorageInfo.seed_record:type_name -> service.v1.StorageSeedRecord
-	8, // 5: service.v1.StorageInfo.last_dump_at:type_name -> google.protobuf.Timestamp
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	11, // 0: service.v1.StorageSeedRecord.applied_at:type_name -> google.protobuf.Timestamp
+	9,  // 1: service.v1.StorageDumpResult.entity_counts:type_name -> service.v1.StorageDumpResult.EntityCountsEntry
+	11, // 2: service.v1.StorageDumpResult.created_at:type_name -> google.protobuf.Timestamp
+	10, // 3: service.v1.StorageInfo.entity_counts:type_name -> service.v1.StorageInfo.EntityCountsEntry
+	0,  // 4: service.v1.StorageInfo.seed_record:type_name -> service.v1.StorageSeedRecord
+	11, // 5: service.v1.StorageInfo.last_dump_at:type_name -> google.protobuf.Timestamp
+	12, // 6: service.v1.StorageCollectGarbageRequest.min_age:type_name -> google.protobuf.Duration
+	7,  // 7: service.v1.StorageCollectGarbageResult.removed:type_name -> service.v1.StorageObject
+	8,  // [8:8] is the sub-list for method output_type
+	8,  // [8:8] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_service_v1_storage_proto_init() }
@@ -513,7 +733,7 @@ func file_service_v1_storage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_v1_storage_proto_rawDesc), len(file_service_v1_storage_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
