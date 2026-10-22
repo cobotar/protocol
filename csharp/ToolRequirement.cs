@@ -68,6 +68,18 @@ namespace Messages.Capability.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// ToolRequirement says what a task needs to be done with: the roles a tool
+  /// has to fill, and the properties and capability it must have.
+  ///
+  /// An actor can fill the roles itself when the intrinsic tool roles of its
+  /// skills (SkillDefinition.intrinsic_tool_roles) cover every role and the
+  /// requirement asks for nothing more, i.e. no required_properties, minimum_capability or
+  /// allowed_tool_definition_ids: an operator positions or aligns a component by
+  /// hand. Otherwise the actor needs a tool instance whose definition has the
+  /// roles, properties and capability, and whose actor_kind fits the actor, e.g.
+  /// ESD tweezers for an ESD-sensitive part, or a robot's gripper.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ToolRequirement : pb::IMessage<ToolRequirement>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

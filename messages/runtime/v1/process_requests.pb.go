@@ -913,7 +913,10 @@ type CandidateActorEvaluation struct {
 	// Effective restrictions if this actor were assigned.
 	Restrictions []*RuntimeRestriction `protobuf:"bytes,3,rep,name=restrictions,proto3" json:"restrictions,omitempty"`
 	// Optional explanations or issues tied specifically to this actor.
-	Issues        []*ProcessRunIssue `protobuf:"bytes,4,rep,name=issues,proto3" json:"issues,omitempty"`
+	Issues []*ProcessRunIssue `protobuf:"bytes,4,rep,name=issues,proto3" json:"issues,omitempty"`
+	// How this actor meets the task's tool requirement. Unset when the task has
+	// none, or the actor can't meet it.
+	Tool          *TaskToolProvision `protobuf:"bytes,5,opt,name=tool,proto3" json:"tool,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -976,6 +979,72 @@ func (x *CandidateActorEvaluation) GetIssues() []*ProcessRunIssue {
 	return nil
 }
 
+func (x *CandidateActorEvaluation) GetTool() *TaskToolProvision {
+	if x != nil {
+		return x.Tool
+	}
+	return nil
+}
+
+// TaskToolProvision says how an actor meets a task's tool requirement
+// (capability.v1.ToolRequirement): by itself, e.g. an operator positioning a
+// component by hand, or with one of the listed tool instances.
+type TaskToolProvision struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The actor fills every role of the requirement itself, through the
+	// intrinsic tool roles of its skills, so no tool is needed.
+	ByActor bool `protobuf:"varint,1,opt,name=by_actor,json=byActor,proto3" json:"by_actor,omitempty"`
+	// The tool instances the actor can use, best first, e.g. the tool mounted
+	// on a robot before the ones it can change to.
+	ToolInstanceIds []string `protobuf:"bytes,2,rep,name=tool_instance_ids,json=toolInstanceIds,proto3" json:"tool_instance_ids,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *TaskToolProvision) Reset() {
+	*x = TaskToolProvision{}
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskToolProvision) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskToolProvision) ProtoMessage() {}
+
+func (x *TaskToolProvision) ProtoReflect() protoreflect.Message {
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskToolProvision.ProtoReflect.Descriptor instead.
+func (*TaskToolProvision) Descriptor() ([]byte, []int) {
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *TaskToolProvision) GetByActor() bool {
+	if x != nil {
+		return x.ByActor
+	}
+	return false
+}
+
+func (x *TaskToolProvision) GetToolInstanceIds() []string {
+	if x != nil {
+		return x.ToolInstanceIds
+	}
+	return nil
+}
+
 type TaskFeasibility struct {
 	state                         protoimpl.MessageState      `protogen:"open.v1"`
 	TaskDefinitionId              string                      `protobuf:"bytes,1,opt,name=task_definition_id,json=taskDefinitionId,proto3" json:"task_definition_id,omitempty"`
@@ -994,7 +1063,7 @@ type TaskFeasibility struct {
 
 func (x *TaskFeasibility) Reset() {
 	*x = TaskFeasibility{}
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1006,7 +1075,7 @@ func (x *TaskFeasibility) String() string {
 func (*TaskFeasibility) ProtoMessage() {}
 
 func (x *TaskFeasibility) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[3]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1019,7 +1088,7 @@ func (x *TaskFeasibility) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskFeasibility.ProtoReflect.Descriptor instead.
 func (*TaskFeasibility) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{3}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TaskFeasibility) GetTaskDefinitionId() string {
@@ -1112,7 +1181,7 @@ type ProcessRunPrecheckResult struct {
 
 func (x *ProcessRunPrecheckResult) Reset() {
 	*x = ProcessRunPrecheckResult{}
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1124,7 +1193,7 @@ func (x *ProcessRunPrecheckResult) String() string {
 func (*ProcessRunPrecheckResult) ProtoMessage() {}
 
 func (x *ProcessRunPrecheckResult) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[4]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1137,7 +1206,7 @@ func (x *ProcessRunPrecheckResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessRunPrecheckResult.ProtoReflect.Descriptor instead.
 func (*ProcessRunPrecheckResult) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{4}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ProcessRunPrecheckResult) GetOk() bool {
@@ -1207,7 +1276,7 @@ type ProcessLoadResult struct {
 
 func (x *ProcessLoadResult) Reset() {
 	*x = ProcessLoadResult{}
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[5]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1219,7 +1288,7 @@ func (x *ProcessLoadResult) String() string {
 func (*ProcessLoadResult) ProtoMessage() {}
 
 func (x *ProcessLoadResult) ProtoReflect() protoreflect.Message {
-	mi := &file_runtime_v1_process_requests_proto_msgTypes[5]
+	mi := &file_runtime_v1_process_requests_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1232,7 +1301,7 @@ func (x *ProcessLoadResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcessLoadResult.ProtoReflect.Descriptor instead.
 func (*ProcessLoadResult) Descriptor() ([]byte, []int) {
-	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{5}
+	return file_runtime_v1_process_requests_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ProcessLoadResult) GetStatus() ProcessLoadStatus {
@@ -1303,12 +1372,18 @@ const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"importance\x18\x0f \x01(\x0e2!.runtime.v1.RequirementImportanceR\n" +
 	"importance\x12&\n" +
-	"\x0fvariant_axis_id\x18\x10 \x01(\tR\rvariantAxisId\"\xda\x01\n" +
+	"\x0fvariant_axis_id\x18\x10 \x01(\tR\rvariantAxisId\"\x8d\x02\n" +
 	"\x18CandidateActorEvaluation\x12)\n" +
 	"\x05actor\x18\x01 \x01(\v2\x13.common.v1.ActorRefR\x05actor\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12B\n" +
 	"\frestrictions\x18\x03 \x03(\v2\x1e.runtime.v1.RuntimeRestrictionR\frestrictions\x123\n" +
-	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\"\xff\x04\n" +
+	"\x06issues\x18\x04 \x03(\v2\x1b.runtime.v1.ProcessRunIssueR\x06issues\x121\n" +
+	"\x04tool\x18\x05 \x01(\v2\x1d.runtime.v1.TaskToolProvisionR\x04tool\"\x94\x02\n" +
+	"\x11TaskToolProvision\x12\x19\n" +
+	"\bby_actor\x18\x01 \x01(\bR\abyActor\x12<\n" +
+	"\x11tool_instance_ids\x18\x02 \x03(\tB\x10\xbaH\r\x92\x01\n" +
+	"\x18\x01\"\x06r\x04\xe0\xf1\x04\x01R\x0ftoolInstanceIds:\xa5\x01\xbaH\xa1\x01\x1a\x9e\x01\n" +
+	"%task_tool_provision.by_actor_or_tools\x12?a tool provision is either by the actor or with tools, not both\x1a4this.by_actor != (this.tool_instance_ids.size() > 0)\"\xff\x04\n" +
 	"\x0fTaskFeasibility\x12,\n" +
 	"\x12task_definition_id\x18\x01 \x01(\tR\x10taskDefinitionId\x12\x1a\n" +
 	"\bfeasible\x18\x02 \x01(\bR\bfeasible\x12>\n" +
@@ -1416,7 +1491,7 @@ func file_runtime_v1_process_requests_proto_rawDescGZIP() []byte {
 }
 
 var file_runtime_v1_process_requests_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_runtime_v1_process_requests_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(ProcessLoadStrategy)(0),         // 0: runtime.v1.ProcessLoadStrategy
 	(AllocationStrategy)(0),          // 1: runtime.v1.AllocationStrategy
@@ -1428,40 +1503,42 @@ var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(*ProcessLoadRequest)(nil),       // 7: runtime.v1.ProcessLoadRequest
 	(*ProcessRunIssue)(nil),          // 8: runtime.v1.ProcessRunIssue
 	(*CandidateActorEvaluation)(nil), // 9: runtime.v1.CandidateActorEvaluation
-	(*TaskFeasibility)(nil),          // 10: runtime.v1.TaskFeasibility
-	(*ProcessRunPrecheckResult)(nil), // 11: runtime.v1.ProcessRunPrecheckResult
-	(*ProcessLoadResult)(nil),        // 12: runtime.v1.ProcessLoadResult
-	(*v11.VariantConfiguration)(nil), // 13: variance.v1.VariantConfiguration
-	(*v1.KeyValueConstraint)(nil),    // 14: common.v1.KeyValueConstraint
-	(*v1.ActorRef)(nil),              // 15: common.v1.ActorRef
-	(*RuntimeRestriction)(nil),       // 16: runtime.v1.RuntimeRestriction
-	(*ProcessRun)(nil),               // 17: runtime.v1.ProcessRun
+	(*TaskToolProvision)(nil),        // 10: runtime.v1.TaskToolProvision
+	(*TaskFeasibility)(nil),          // 11: runtime.v1.TaskFeasibility
+	(*ProcessRunPrecheckResult)(nil), // 12: runtime.v1.ProcessRunPrecheckResult
+	(*ProcessLoadResult)(nil),        // 13: runtime.v1.ProcessLoadResult
+	(*v11.VariantConfiguration)(nil), // 14: variance.v1.VariantConfiguration
+	(*v1.KeyValueConstraint)(nil),    // 15: common.v1.KeyValueConstraint
+	(*v1.ActorRef)(nil),              // 16: common.v1.ActorRef
+	(*RuntimeRestriction)(nil),       // 17: runtime.v1.RuntimeRestriction
+	(*ProcessRun)(nil),               // 18: runtime.v1.ProcessRun
 }
 var file_runtime_v1_process_requests_proto_depIdxs = []int32{
-	13, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
+	14, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
 	0,  // 1: runtime.v1.ProcessLoadRequest.strategy:type_name -> runtime.v1.ProcessLoadStrategy
-	14, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
+	15, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
 	1,  // 3: runtime.v1.ProcessLoadRequest.allocation_strategy:type_name -> runtime.v1.AllocationStrategy
 	2,  // 4: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
 	3,  // 5: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
 	4,  // 6: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
-	15, // 7: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
-	16, // 8: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	16, // 7: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
+	17, // 8: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
 	8,  // 9: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
-	15, // 10: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
-	8,  // 11: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
-	9,  // 12: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	8,  // 13: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
-	10, // 14: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
-	5,  // 15: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
-	6,  // 16: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
-	11, // 17: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
-	17, // 18: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
-	19, // [19:19] is the sub-list for method output_type
-	19, // [19:19] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	10, // 10: runtime.v1.CandidateActorEvaluation.tool:type_name -> runtime.v1.TaskToolProvision
+	16, // 11: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
+	8,  // 12: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	9,  // 13: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	8,  // 14: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	11, // 15: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	5,  // 16: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	6,  // 17: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	12, // 18: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	18, // 19: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+	20, // [20:20] is the sub-list for method output_type
+	20, // [20:20] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_requests_proto_init() }
@@ -1481,7 +1558,7 @@ func file_runtime_v1_process_requests_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_runtime_v1_process_requests_proto_rawDesc), len(file_runtime_v1_process_requests_proto_rawDesc)),
 			NumEnums:      7,
-			NumMessages:   6,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

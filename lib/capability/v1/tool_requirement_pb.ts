@@ -18,6 +18,17 @@ export const file_capability_v1_tool_requirement: GenFile = /*@__PURE__*/
   fileDesc("CiRjYXBhYmlsaXR5L3YxL3Rvb2xfcmVxdWlyZW1lbnQucHJvdG8SDWNhcGFiaWxpdHkudjEi9AEKD1Rvb2xSZXF1aXJlbWVudBI1CgVyb2xlcxgBIAMoDjIXLmNhcGFiaWxpdHkudjEuVG9vbFJvbGVCDbpICpIBByIFggECEAESRwoTcmVxdWlyZWRfcHJvcGVydGllcxgCIAMoDjIbLmNhcGFiaWxpdHkudjEuVG9vbFByb3BlcnR5Qg26SAqSAQciBYIBAhABEjwKEm1pbmltdW1fY2FwYWJpbGl0eRgDIAEoCzIgLmNhcGFiaWxpdHkudjEuQ2FwYWJpbGl0eVByb2ZpbGUSIwobYWxsb3dlZF90b29sX2RlZmluaXRpb25faWRzGAQgAygJKu8BCgxUb29sUHJvcGVydHkSHQoZVE9PTF9QUk9QRVJUWV9VTlNQRUNJRklFRBAAEiMKH1RPT0xfUFJPUEVSVFlfVE9SUVVFX0NPTlRST0xMRUQQARIaChZUT09MX1BST1BFUlRZX0VTRF9TQUZFEAISGwoXVE9PTF9QUk9QRVJUWV9JTlNVTEFURUQQAxIkCiBUT09MX1BST1BFUlRZX0NPTExBQk9SQVRJVkVfU0FGRRAEEhwKGFRPT0xfUFJPUEVSVFlfQ0FMSUJSQVRFRBAFEh4KGlRPT0xfUFJPUEVSVFlfUVVJQ0tfQ0hBTkdFEAZCywEKEWNvbS5jYXBhYmlsaXR5LnYxQhRUb29sUmVxdWlyZW1lbnRQcm90b1ABWkJnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvY2FwYWJpbGl0eS92MTtjYXBhYmlsaXR5djGiAgNDWFiqAhZNZXNzYWdlcy5DYXBhYmlsaXR5LlYxygINQ2FwYWJpbGl0eVxWMeICGUNhcGFiaWxpdHlcVjFcR1BCTWV0YWRhdGHqAg5DYXBhYmlsaXR5OjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_capability_v1_capability_profile, file_capability_v1_skill_definition]);
 
 /**
+ * ToolRequirement says what a task needs to be done with: the roles a tool
+ * has to fill, and the properties and capability it must have.
+ *
+ * An actor can fill the roles itself when the intrinsic tool roles of its
+ * skills (SkillDefinition.intrinsic_tool_roles) cover every role and the
+ * requirement asks for nothing more, i.e. no required_properties, minimum_capability or
+ * allowed_tool_definition_ids: an operator positions or aligns a component by
+ * hand. Otherwise the actor needs a tool instance whose definition has the
+ * roles, properties and capability, and whose actor_kind fits the actor, e.g.
+ * ESD tweezers for an ESD-sensitive part, or a robot's gripper.
+ *
  * @generated from message capability.v1.ToolRequirement
  */
 export type ToolRequirement = Message<"capability.v1.ToolRequirement"> & {

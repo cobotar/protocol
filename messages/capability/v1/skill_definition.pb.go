@@ -256,18 +256,26 @@ func (ToolRole) EnumDescriptor() ([]byte, []int) {
 }
 
 type SkillDefinition struct {
-	state                 protoimpl.MessageState `protogen:"open.v1"`
-	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                  string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon                  string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description           string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Domain                SkillDomain            `protobuf:"varint,5,opt,name=domain,proto3,enum=capability.v1.SkillDomain" json:"domain,omitempty"`
-	ToolRoles             []ToolRole             `protobuf:"varint,6,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
-	SafetyRelevance       v1.SafetyRelevance     `protobuf:"varint,7,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
-	DefaultValidityPolicy *ValidityPolicyRef     `protobuf:"bytes,8,opt,name=default_validity_policy,json=defaultValidityPolicy,proto3" json:"default_validity_policy,omitempty"` // default validity policy
-	StandardWorkerSkill   bool                   `protobuf:"varint,9,opt,name=standard_worker_skill,json=standardWorkerSkill,proto3" json:"standard_worker_skill,omitempty"`      // Automatically add this skill to a worker when the worker is created
-	unknownFields         protoimpl.UnknownFields
-	sizeCache             protoimpl.SizeCache
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Domain      SkillDomain            `protobuf:"varint,5,opt,name=domain,proto3,enum=capability.v1.SkillDomain" json:"domain,omitempty"`
+	// The tool roles of the tools the skill is about, e.g. torque tools for
+	// tightening fasteners.
+	ToolRoles             []ToolRole         `protobuf:"varint,6,rep,packed,name=tool_roles,json=toolRoles,proto3,enum=capability.v1.ToolRole" json:"tool_roles,omitempty"`
+	SafetyRelevance       v1.SafetyRelevance `protobuf:"varint,7,opt,name=safety_relevance,json=safetyRelevance,proto3,enum=common.v1.SafetyRelevance" json:"safety_relevance,omitempty"`
+	DefaultValidityPolicy *ValidityPolicyRef `protobuf:"bytes,8,opt,name=default_validity_policy,json=defaultValidityPolicy,proto3" json:"default_validity_policy,omitempty"` // default validity policy
+	StandardWorkerSkill   bool               `protobuf:"varint,9,opt,name=standard_worker_skill,json=standardWorkerSkill,proto3" json:"standard_worker_skill,omitempty"`      // Automatically add this skill to a worker when the worker is created
+	// The tool roles an actor with this skill fills itself, without a tool,
+	// e.g. an operator's hands grip, position and align components, and their
+	// eyes inspect them. A task's tool requirement needs no tool for an actor
+	// whose skills cover its roles this way, unless it asks for properties,
+	// capability or particular tools (see ToolRequirement).
+	IntrinsicToolRoles []ToolRole `protobuf:"varint,10,rep,packed,name=intrinsic_tool_roles,json=intrinsicToolRoles,proto3,enum=capability.v1.ToolRole" json:"intrinsic_tool_roles,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *SkillDefinition) Reset() {
@@ -363,6 +371,13 @@ func (x *SkillDefinition) GetStandardWorkerSkill() bool {
 	return false
 }
 
+func (x *SkillDefinition) GetIntrinsicToolRoles() []ToolRole {
+	if x != nil {
+		return x.IntrinsicToolRoles
+	}
+	return nil
+}
+
 type SkillDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*SkillDefinition     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -411,7 +426,7 @@ var File_capability_v1_skill_definition_proto protoreflect.FileDescriptor
 
 const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\n" +
-	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xda\x03\n" +
+	"$capability/v1/skill_definition.proto\x12\rcapability.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a\x15common/v1/enums.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb6\x04\n" +
 	"\x0fSkillDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -423,7 +438,9 @@ const file_capability_v1_skill_definition_proto_rawDesc = "" +
 	"\x92\x01\a\"\x05\x82\x01\x02\x10\x01R\ttoolRoles\x12O\n" +
 	"\x10safety_relevance\x18\a \x01(\x0e2\x1a.common.v1.SafetyRelevanceB\b\xbaH\x05\x82\x01\x02\x10\x01R\x0fsafetyRelevance\x12X\n" +
 	"\x17default_validity_policy\x18\b \x01(\v2 .capability.v1.ValidityPolicyRefR\x15defaultValidityPolicy\x122\n" +
-	"\x15standard_worker_skill\x18\t \x01(\bR\x13standardWorkerSkill\"H\n" +
+	"\x15standard_worker_skill\x18\t \x01(\bR\x13standardWorkerSkill\x12Z\n" +
+	"\x14intrinsic_tool_roles\x18\n" +
+	" \x03(\x0e2\x17.capability.v1.ToolRoleB\x0f\xbaH\f\x92\x01\t\x18\x01\"\x05\x82\x01\x02\x10\x01R\x12intrinsicToolRoles\"H\n" +
 	"\x10SkillDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.capability.v1.SkillDefinitionR\x05items*\x92\x02\n" +
 	"\vSkillDomain\x12\x1c\n" +
@@ -481,12 +498,13 @@ var file_capability_v1_skill_definition_proto_depIdxs = []int32{
 	1, // 1: capability.v1.SkillDefinition.tool_roles:type_name -> capability.v1.ToolRole
 	4, // 2: capability.v1.SkillDefinition.safety_relevance:type_name -> common.v1.SafetyRelevance
 	5, // 3: capability.v1.SkillDefinition.default_validity_policy:type_name -> capability.v1.ValidityPolicyRef
-	2, // 4: capability.v1.SkillDefinitions.items:type_name -> capability.v1.SkillDefinition
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	1, // 4: capability.v1.SkillDefinition.intrinsic_tool_roles:type_name -> capability.v1.ToolRole
+	2, // 5: capability.v1.SkillDefinitions.items:type_name -> capability.v1.SkillDefinition
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_capability_v1_skill_definition_proto_init() }

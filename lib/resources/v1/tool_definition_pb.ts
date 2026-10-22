@@ -54,6 +54,10 @@ export type ToolDefinition = Message<"resources.v1.ToolDefinition"> & {
   type: ToolType;
 
   /**
+   * The kind of actor that uses the tool: a human's hand tool, a robot's end
+   * effector, or HYBRID for both. A tool fills a task's tool requirement only
+   * for an actor of its kind; UNSPECIFIED fits any actor.
+   *
    * @generated from field: common.v1.ActorKind actor_kind = 6;
    */
   actorKind: ActorKind;

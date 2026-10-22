@@ -107,8 +107,12 @@ type TaskRuntimeBinding struct {
 	CellId                   string                 `protobuf:"bytes,3,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`                                                           // Concrete cell in which the task runs.
 	ContainerSlot            *v1.ContainerSlotRef   `protobuf:"bytes,4,opt,name=container_slot,json=containerSlot,proto3" json:"container_slot,omitempty"`                                      // Concrete container slot selected for source or destination work.
 	CandidatePartInstanceIds []string               `protobuf:"bytes,5,rep,name=candidate_part_instance_ids,json=candidatePartInstanceIds,proto3" json:"candidate_part_instance_ids,omitempty"` // Candidate parts. Notice that their availability must be checked during runtime. Also, new candidates might be available.
-	unknownFields            protoimpl.UnknownFields
-	sizeCache                protoimpl.SizeCache
+	// How the assigned actor meets the task's tool requirement, e.g. by hand or
+	// with a tool to pick up. Unset when the task has no tool requirement or no
+	// actor is assigned; it changes with the assignment.
+	Tool          *TaskToolProvision `protobuf:"bytes,6,opt,name=tool,proto3" json:"tool,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TaskRuntimeBinding) Reset() {
@@ -172,6 +176,13 @@ func (x *TaskRuntimeBinding) GetContainerSlot() *v1.ContainerSlotRef {
 func (x *TaskRuntimeBinding) GetCandidatePartInstanceIds() []string {
 	if x != nil {
 		return x.CandidatePartInstanceIds
+	}
+	return nil
+}
+
+func (x *TaskRuntimeBinding) GetTool() *TaskToolProvision {
+	if x != nil {
+		return x.Tool
 	}
 	return nil
 }
@@ -454,14 +465,15 @@ var File_runtime_v1_task_run_proto protoreflect.FileDescriptor
 const file_runtime_v1_task_run_proto_rawDesc = "" +
 	"\n" +
 	"\x19runtime/v1/task_run.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xaf\x02\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a\x14common/v1/time.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a'resources/v1/container_definition.proto\x1a!runtime/v1/actor_assignment.proto\x1a!runtime/v1/process_requests.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe2\x02\n" +
 	"\x12TaskRuntimeBinding\x125\n" +
 	"\x11asset_instance_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xb8\xf1\x04\x01R\x0fassetInstanceId\x12(\n" +
 	"\n" +
 	"station_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\tstationId\x12\"\n" +
 	"\acell_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\x06cellId\x12E\n" +
 	"\x0econtainer_slot\x18\x04 \x01(\v2\x1e.resources.v1.ContainerSlotRefR\rcontainerSlot\x12M\n" +
-	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\"\x83\t\n" +
+	"\x1bcandidate_part_instance_ids\x18\x05 \x03(\tB\x0e\xbaH\v\x92\x01\b\"\x06r\x04\xd0\xf1\x04\x01R\x18candidatePartInstanceIds\x121\n" +
+	"\x04tool\x18\x06 \x01(\v2\x1d.runtime.v1.TaskToolProvisionR\x04tool\"\x83\t\n" +
 	"\aTaskRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -521,31 +533,33 @@ var file_runtime_v1_task_run_proto_goTypes = []any{
 	(*TaskRun)(nil),                   // 2: runtime.v1.TaskRun
 	(*TaskRuns)(nil),                  // 3: runtime.v1.TaskRuns
 	(*v1.ContainerSlotRef)(nil),       // 4: resources.v1.ContainerSlotRef
-	(*v11.ActorRef)(nil),              // 5: common.v1.ActorRef
-	(*v11.EstimatedDuration)(nil),     // 6: common.v1.EstimatedDuration
-	(*timestamppb.Timestamp)(nil),     // 7: google.protobuf.Timestamp
-	(*RuntimeRestriction)(nil),        // 8: runtime.v1.RuntimeRestriction
-	(*CandidateActorEvaluation)(nil),  // 9: runtime.v1.CandidateActorEvaluation
-	(*TaskActorAssignmentStatus)(nil), // 10: runtime.v1.TaskActorAssignmentStatus
+	(*TaskToolProvision)(nil),         // 5: runtime.v1.TaskToolProvision
+	(*v11.ActorRef)(nil),              // 6: common.v1.ActorRef
+	(*v11.EstimatedDuration)(nil),     // 7: common.v1.EstimatedDuration
+	(*timestamppb.Timestamp)(nil),     // 8: google.protobuf.Timestamp
+	(*RuntimeRestriction)(nil),        // 9: runtime.v1.RuntimeRestriction
+	(*CandidateActorEvaluation)(nil),  // 10: runtime.v1.CandidateActorEvaluation
+	(*TaskActorAssignmentStatus)(nil), // 11: runtime.v1.TaskActorAssignmentStatus
 }
 var file_runtime_v1_task_run_proto_depIdxs = []int32{
 	4,  // 0: runtime.v1.TaskRuntimeBinding.container_slot:type_name -> resources.v1.ContainerSlotRef
-	0,  // 1: runtime.v1.TaskRun.state:type_name -> runtime.v1.TaskRunState
-	5,  // 2: runtime.v1.TaskRun.candidate_actors:type_name -> common.v1.ActorRef
-	5,  // 3: runtime.v1.TaskRun.assigned_actor:type_name -> common.v1.ActorRef
-	6,  // 4: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
-	7,  // 5: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
-	7,  // 6: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
-	1,  // 7: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
-	8,  // 8: runtime.v1.TaskRun.restrictions:type_name -> runtime.v1.RuntimeRestriction
-	9,  // 9: runtime.v1.TaskRun.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	10, // 10: runtime.v1.TaskRun.actor_assignment_status:type_name -> runtime.v1.TaskActorAssignmentStatus
-	2,  // 11: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	5,  // 1: runtime.v1.TaskRuntimeBinding.tool:type_name -> runtime.v1.TaskToolProvision
+	0,  // 2: runtime.v1.TaskRun.state:type_name -> runtime.v1.TaskRunState
+	6,  // 3: runtime.v1.TaskRun.candidate_actors:type_name -> common.v1.ActorRef
+	6,  // 4: runtime.v1.TaskRun.assigned_actor:type_name -> common.v1.ActorRef
+	7,  // 5: runtime.v1.TaskRun.estimated_duration:type_name -> common.v1.EstimatedDuration
+	8,  // 6: runtime.v1.TaskRun.started_at:type_name -> google.protobuf.Timestamp
+	8,  // 7: runtime.v1.TaskRun.completed_at:type_name -> google.protobuf.Timestamp
+	1,  // 8: runtime.v1.TaskRun.binding:type_name -> runtime.v1.TaskRuntimeBinding
+	9,  // 9: runtime.v1.TaskRun.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	10, // 10: runtime.v1.TaskRun.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	11, // 11: runtime.v1.TaskRun.actor_assignment_status:type_name -> runtime.v1.TaskActorAssignmentStatus
+	2,  // 12: runtime.v1.TaskRuns.items:type_name -> runtime.v1.TaskRun
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_task_run_proto_init() }

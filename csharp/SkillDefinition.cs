@@ -28,7 +28,7 @@ namespace Messages.Capability.V1 {
             "aWxpdHkudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxofY2FwYWJp",
             "bGl0eS92MS9hY3Rvcl9za2lsbC5wcm90bxoVY29tbW9uL3YxL2VudW1zLnBy",
             "b3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnBy",
-            "b3RvItoDCg9Ta2lsbERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
+            "b3RvIrYECg9Ta2lsbERlZmluaXRpb24SDgoCaWQYASABKAlSAmlkEh0KBG5h",
             "bWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJUgRpY29u",
             "EiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhI8CgZkb21haW4Y",
             "BSABKA4yGi5jYXBhYmlsaXR5LnYxLlNraWxsRG9tYWluQgi6SAWCAQIQAVIG",
@@ -38,34 +38,36 @@ namespace Messages.Capability.V1 {
             "BYIBAhABUg9zYWZldHlSZWxldmFuY2USWAoXZGVmYXVsdF92YWxpZGl0eV9w",
             "b2xpY3kYCCABKAsyIC5jYXBhYmlsaXR5LnYxLlZhbGlkaXR5UG9saWN5UmVm",
             "UhVkZWZhdWx0VmFsaWRpdHlQb2xpY3kSMgoVc3RhbmRhcmRfd29ya2VyX3Nr",
-            "aWxsGAkgASgIUhNzdGFuZGFyZFdvcmtlclNraWxsIkgKEFNraWxsRGVmaW5p",
-            "dGlvbnMSNAoFaXRlbXMYASADKAsyHi5jYXBhYmlsaXR5LnYxLlNraWxsRGVm",
-            "aW5pdGlvblIFaXRlbXMqkgIKC1NraWxsRG9tYWluEhwKGFNLSUxMX0RPTUFJ",
-            "Tl9VTlNQRUNJRklFRBAAEhkKFVNLSUxMX0RPTUFJTl9IQU5ETElORxABEhkK",
-            "FVNLSUxMX0RPTUFJTl9BU1NFTUJMWRACEhoKFlNLSUxMX0RPTUFJTl9GQVNU",
-            "RU5JTkcQAxIbChdTS0lMTF9ET01BSU5fSU5TUEVDVElPThAEEhsKF1NLSUxM",
-            "X0RPTUFJTl9FTEVDVFJJQ0FMEAUSHgoaU0tJTExfRE9NQUlOX0NPTExBQk9S",
-            "QVRJT04QBhIXChNTS0lMTF9ET01BSU5fU0FGRVRZEAcSIAocU0tJTExfRE9N",
-            "QUlOX1JPQk9UX09QRVJBVElPThAIKrgDCghUb29sUm9sZRIZChVUT09MX1JP",
-            "TEVfVU5TUEVDSUZJRUQQABIcChhUT09MX1JPTEVfR1JJUF9XT1JLUElFQ0UQ",
-            "ARIgChxUT09MX1JPTEVfUE9TSVRJT05fQ09NUE9ORU5UEAISHQoZVE9PTF9S",
-            "T0xFX0FMSUdOX0NPTVBPTkVOVBADEhoKFlRPT0xfUk9MRV9BUFBMWV9UT1JR",
-            "VUUQBBIgChxUT09MX1JPTEVfQVBQTFlfTElORUFSX0ZPUkNFEAUSHwobVE9P",
-            "TF9ST0xFX01FQVNVUkVfRElNRU5TSU9OEAYSHQoZVE9PTF9ST0xFX0RFVEVD",
-            "VF9QUkVTRU5DRRAHEh8KG1RPT0xfUk9MRV9ESVNQRU5TRV9NQVRFUklBTBAI",
-            "EhwKGFRPT0xfUk9MRV9FWEVDVVRFX01PVElPThAJEiAKHFRPT0xfUk9MRV9T",
-            "QUZFVFlfSU5URVJBQ1RJT04QChIYChRUT09MX1JPTEVfSEFORExFX0VTRBAL",
-            "Eh8KG1RPT0xfUk9MRV9WSVNVQUxfSU5TUEVDVElPThAMEhgKFFRPT0xfUk9M",
-            "RV9XSVBFX0NMRUFOEA1CywEKEWNvbS5jYXBhYmlsaXR5LnYxQhRTa2lsbERl",
-            "ZmluaXRpb25Qcm90b1ABWkJnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wv",
-            "djIvbWVzc2FnZXMvY2FwYWJpbGl0eS92MTtjYXBhYmlsaXR5djGiAgNDWFiq",
-            "AhZNZXNzYWdlcy5DYXBhYmlsaXR5LlYxygINQ2FwYWJpbGl0eVxWMeICGUNh",
-            "cGFiaWxpdHlcVjFcR1BCTWV0YWRhdGHqAg5DYXBhYmlsaXR5OjpWMWIGcHJv",
-            "dG8z"));
+            "aWxsGAkgASgIUhNzdGFuZGFyZFdvcmtlclNraWxsEloKFGludHJpbnNpY190",
+            "b29sX3JvbGVzGAogAygOMhcuY2FwYWJpbGl0eS52MS5Ub29sUm9sZUIPukgM",
+            "kgEJGAEiBYIBAhABUhJpbnRyaW5zaWNUb29sUm9sZXMiSAoQU2tpbGxEZWZp",
+            "bml0aW9ucxI0CgVpdGVtcxgBIAMoCzIeLmNhcGFiaWxpdHkudjEuU2tpbGxE",
+            "ZWZpbml0aW9uUgVpdGVtcyqSAgoLU2tpbGxEb21haW4SHAoYU0tJTExfRE9N",
+            "QUlOX1VOU1BFQ0lGSUVEEAASGQoVU0tJTExfRE9NQUlOX0hBTkRMSU5HEAES",
+            "GQoVU0tJTExfRE9NQUlOX0FTU0VNQkxZEAISGgoWU0tJTExfRE9NQUlOX0ZB",
+            "U1RFTklORxADEhsKF1NLSUxMX0RPTUFJTl9JTlNQRUNUSU9OEAQSGwoXU0tJ",
+            "TExfRE9NQUlOX0VMRUNUUklDQUwQBRIeChpTS0lMTF9ET01BSU5fQ09MTEFC",
+            "T1JBVElPThAGEhcKE1NLSUxMX0RPTUFJTl9TQUZFVFkQBxIgChxTS0lMTF9E",
+            "T01BSU5fUk9CT1RfT1BFUkFUSU9OEAgquAMKCFRvb2xSb2xlEhkKFVRPT0xf",
+            "Uk9MRV9VTlNQRUNJRklFRBAAEhwKGFRPT0xfUk9MRV9HUklQX1dPUktQSUVD",
+            "RRABEiAKHFRPT0xfUk9MRV9QT1NJVElPTl9DT01QT05FTlQQAhIdChlUT09M",
+            "X1JPTEVfQUxJR05fQ09NUE9ORU5UEAMSGgoWVE9PTF9ST0xFX0FQUExZX1RP",
+            "UlFVRRAEEiAKHFRPT0xfUk9MRV9BUFBMWV9MSU5FQVJfRk9SQ0UQBRIfChtU",
+            "T09MX1JPTEVfTUVBU1VSRV9ESU1FTlNJT04QBhIdChlUT09MX1JPTEVfREVU",
+            "RUNUX1BSRVNFTkNFEAcSHwobVE9PTF9ST0xFX0RJU1BFTlNFX01BVEVSSUFM",
+            "EAgSHAoYVE9PTF9ST0xFX0VYRUNVVEVfTU9USU9OEAkSIAocVE9PTF9ST0xF",
+            "X1NBRkVUWV9JTlRFUkFDVElPThAKEhgKFFRPT0xfUk9MRV9IQU5ETEVfRVNE",
+            "EAsSHwobVE9PTF9ST0xFX1ZJU1VBTF9JTlNQRUNUSU9OEAwSGAoUVE9PTF9S",
+            "T0xFX1dJUEVfQ0xFQU4QDULLAQoRY29tLmNhcGFiaWxpdHkudjFCFFNraWxs",
+            "RGVmaW5pdGlvblByb3RvUAFaQmdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2Nv",
+            "bC92Mi9tZXNzYWdlcy9jYXBhYmlsaXR5L3YxO2NhcGFiaWxpdHl2MaICA0NY",
+            "WKoCFk1lc3NhZ2VzLkNhcGFiaWxpdHkuVjHKAg1DYXBhYmlsaXR5XFYx4gIZ",
+            "Q2FwYWJpbGl0eVxWMVxHUEJNZXRhZGF0YeoCDkNhcGFiaWxpdHk6OlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Capability.V1.ActorSkillReflection.Descriptor, global::Messages.Common.V1.EnumsReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Capability.V1.SkillDomain), typeof(global::Messages.Capability.V1.ToolRole), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillDefinition), global::Messages.Capability.V1.SkillDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Domain", "ToolRoles", "SafetyRelevance", "DefaultValidityPolicy", "StandardWorkerSkill" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillDefinition), global::Messages.Capability.V1.SkillDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Domain", "ToolRoles", "SafetyRelevance", "DefaultValidityPolicy", "StandardWorkerSkill", "IntrinsicToolRoles" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Capability.V1.SkillDefinitions), global::Messages.Capability.V1.SkillDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -251,6 +253,7 @@ namespace Messages.Capability.V1 {
       safetyRelevance_ = other.safetyRelevance_;
       defaultValidityPolicy_ = other.defaultValidityPolicy_ != null ? other.defaultValidityPolicy_.Clone() : null;
       standardWorkerSkill_ = other.standardWorkerSkill_;
+      intrinsicToolRoles_ = other.intrinsicToolRoles_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -325,6 +328,10 @@ namespace Messages.Capability.V1 {
     private static readonly pb::FieldCodec<global::Messages.Capability.V1.ToolRole> _repeated_toolRoles_codec
         = pb::FieldCodec.ForEnum(50, x => (int) x, x => (global::Messages.Capability.V1.ToolRole) x);
     private readonly pbc::RepeatedField<global::Messages.Capability.V1.ToolRole> toolRoles_ = new pbc::RepeatedField<global::Messages.Capability.V1.ToolRole>();
+    /// <summary>
+    /// The tool roles of the tools the skill is about, e.g. torque tools for
+    /// tightening fasteners.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Messages.Capability.V1.ToolRole> ToolRoles {
@@ -373,6 +380,24 @@ namespace Messages.Capability.V1 {
       }
     }
 
+    /// <summary>Field number for the "intrinsic_tool_roles" field.</summary>
+    public const int IntrinsicToolRolesFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Messages.Capability.V1.ToolRole> _repeated_intrinsicToolRoles_codec
+        = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Messages.Capability.V1.ToolRole) x);
+    private readonly pbc::RepeatedField<global::Messages.Capability.V1.ToolRole> intrinsicToolRoles_ = new pbc::RepeatedField<global::Messages.Capability.V1.ToolRole>();
+    /// <summary>
+    /// The tool roles an actor with this skill fills itself, without a tool,
+    /// e.g. an operator's hands grip, position and align components, and their
+    /// eyes inspect them. A task's tool requirement needs no tool for an actor
+    /// whose skills cover its roles this way, unless it asks for properties,
+    /// capability or particular tools (see ToolRequirement).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Capability.V1.ToolRole> IntrinsicToolRoles {
+      get { return intrinsicToolRoles_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -397,6 +422,7 @@ namespace Messages.Capability.V1 {
       if (SafetyRelevance != other.SafetyRelevance) return false;
       if (!object.Equals(DefaultValidityPolicy, other.DefaultValidityPolicy)) return false;
       if (StandardWorkerSkill != other.StandardWorkerSkill) return false;
+      if(!intrinsicToolRoles_.Equals(other.intrinsicToolRoles_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -413,6 +439,7 @@ namespace Messages.Capability.V1 {
       if (SafetyRelevance != global::Messages.Common.V1.SafetyRelevance.Unspecified) hash ^= SafetyRelevance.GetHashCode();
       if (defaultValidityPolicy_ != null) hash ^= DefaultValidityPolicy.GetHashCode();
       if (StandardWorkerSkill != false) hash ^= StandardWorkerSkill.GetHashCode();
+      hash ^= intrinsicToolRoles_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -464,6 +491,7 @@ namespace Messages.Capability.V1 {
         output.WriteRawTag(72);
         output.WriteBool(StandardWorkerSkill);
       }
+      intrinsicToolRoles_.WriteTo(output, _repeated_intrinsicToolRoles_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -507,6 +535,7 @@ namespace Messages.Capability.V1 {
         output.WriteRawTag(72);
         output.WriteBool(StandardWorkerSkill);
       }
+      intrinsicToolRoles_.WriteTo(ref output, _repeated_intrinsicToolRoles_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -542,6 +571,7 @@ namespace Messages.Capability.V1 {
       if (StandardWorkerSkill != false) {
         size += 1 + 1;
       }
+      size += intrinsicToolRoles_.CalculateSize(_repeated_intrinsicToolRoles_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -582,6 +612,7 @@ namespace Messages.Capability.V1 {
       if (other.StandardWorkerSkill != false) {
         StandardWorkerSkill = other.StandardWorkerSkill;
       }
+      intrinsicToolRoles_.Add(other.intrinsicToolRoles_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -641,6 +672,11 @@ namespace Messages.Capability.V1 {
             StandardWorkerSkill = input.ReadBool();
             break;
           }
+          case 82:
+          case 80: {
+            intrinsicToolRoles_.AddEntriesFrom(input, _repeated_intrinsicToolRoles_codec);
+            break;
+          }
         }
       }
     #endif
@@ -698,6 +734,11 @@ namespace Messages.Capability.V1 {
           }
           case 72: {
             StandardWorkerSkill = input.ReadBool();
+            break;
+          }
+          case 82:
+          case 80: {
+            intrinsicToolRoles_.AddEntriesFrom(ref input, _repeated_intrinsicToolRoles_codec);
             break;
           }
         }

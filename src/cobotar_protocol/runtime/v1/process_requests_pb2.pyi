@@ -218,16 +218,26 @@ class ProcessRunIssue(_message.Message):
     def __init__(self, failure: _Optional[_Union[ProcessLoadFailure, str]] = ..., message: _Optional[str] = ..., severity: _Optional[_Union[ProcessRunIssueSeverity, str]] = ..., process_recipe_id: _Optional[str] = ..., sequence_definition_id: _Optional[str] = ..., task_definition_id: _Optional[str] = ..., required_tool_role: _Optional[str] = ..., required_skill_id: _Optional[str] = ..., fixture_definition_id: _Optional[str] = ..., cell_id: _Optional[str] = ..., station_id: _Optional[str] = ..., actor_id: _Optional[str] = ..., resource_id: _Optional[str] = ..., remediation: _Optional[str] = ..., importance: _Optional[_Union[RequirementImportance, str]] = ..., variant_axis_id: _Optional[str] = ...) -> None: ...
 
 class CandidateActorEvaluation(_message.Message):
-    __slots__ = ("actor", "feasible", "restrictions", "issues")
+    __slots__ = ("actor", "feasible", "restrictions", "issues", "tool")
     ACTOR_FIELD_NUMBER: _ClassVar[int]
     FEASIBLE_FIELD_NUMBER: _ClassVar[int]
     RESTRICTIONS_FIELD_NUMBER: _ClassVar[int]
     ISSUES_FIELD_NUMBER: _ClassVar[int]
+    TOOL_FIELD_NUMBER: _ClassVar[int]
     actor: _actor_pb2.ActorRef
     feasible: bool
     restrictions: _containers.RepeatedCompositeFieldContainer[_runtime_restriction_pb2.RuntimeRestriction]
     issues: _containers.RepeatedCompositeFieldContainer[ProcessRunIssue]
-    def __init__(self, actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., feasible: bool = ..., restrictions: _Optional[_Iterable[_Union[_runtime_restriction_pb2.RuntimeRestriction, _Mapping]]] = ..., issues: _Optional[_Iterable[_Union[ProcessRunIssue, _Mapping]]] = ...) -> None: ...
+    tool: TaskToolProvision
+    def __init__(self, actor: _Optional[_Union[_actor_pb2.ActorRef, _Mapping]] = ..., feasible: bool = ..., restrictions: _Optional[_Iterable[_Union[_runtime_restriction_pb2.RuntimeRestriction, _Mapping]]] = ..., issues: _Optional[_Iterable[_Union[ProcessRunIssue, _Mapping]]] = ..., tool: _Optional[_Union[TaskToolProvision, _Mapping]] = ...) -> None: ...
+
+class TaskToolProvision(_message.Message):
+    __slots__ = ("by_actor", "tool_instance_ids")
+    BY_ACTOR_FIELD_NUMBER: _ClassVar[int]
+    TOOL_INSTANCE_IDS_FIELD_NUMBER: _ClassVar[int]
+    by_actor: bool
+    tool_instance_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, by_actor: bool = ..., tool_instance_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TaskFeasibility(_message.Message):
     __slots__ = ("task_definition_id", "feasible", "candidate_actors", "candidate_robot_instance_ids", "candidate_tool_instance_ids", "candidate_container_instance_ids", "candidate_asset_instance_ids", "candidate_part_instance_ids", "issues", "candidate_actor_evaluations")

@@ -120,12 +120,15 @@ func (ToolType) EnumDescriptor() ([]byte, []int) {
 }
 
 type ToolDefinition struct {
-	state              protoimpl.MessageState  `protogen:"open.v1"`
-	Id                 string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name               string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon               string                  `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	Description        string                  `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
-	Type               ToolType                `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.ToolType" json:"type,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Type        ToolType               `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.ToolType" json:"type,omitempty"`
+	// The kind of actor that uses the tool: a human's hand tool, a robot's end
+	// effector, or HYBRID for both. A tool fills a task's tool requirement only
+	// for an actor of its kind; UNSPECIFIED fits any actor.
 	ActorKind          v1.ActorKind            `protobuf:"varint,6,opt,name=actor_kind,json=actorKind,proto3,enum=common.v1.ActorKind" json:"actor_kind,omitempty"`
 	Roles              []v11.ToolRole          `protobuf:"varint,7,rep,packed,name=roles,proto3,enum=capability.v1.ToolRole" json:"roles,omitempty"`
 	Properties         []v11.ToolProperty      `protobuf:"varint,8,rep,packed,name=properties,proto3,enum=capability.v1.ToolProperty" json:"properties,omitempty"`

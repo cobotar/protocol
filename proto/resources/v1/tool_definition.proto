@@ -45,6 +45,9 @@ message ToolDefinition {
       example: 3 // TOOL_TYPE_CUTTING
     }
   ];
+  // The kind of actor that uses the tool: a human's hand tool, a robot's end
+  // effector, or HYBRID for both. A tool fills a task's tool requirement only
+  // for an actor of its kind; UNSPECIFIED fits any actor.
   common.v1.ActorKind actor_kind = 6 [(buf.validate.field).enum.defined_only = true];
   repeated capability.v1.ToolRole roles = 7 [
     (buf.validate.field).repeated.items.enum.defined_only = true,

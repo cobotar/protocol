@@ -134,10 +134,22 @@ message SkillDefinition {
   string icon = 3;
   string description = 4;
   SkillDomain domain = 5 [(buf.validate.field).enum.defined_only = true];
+  // The tool roles of the tools the skill is about, e.g. torque tools for
+  // tightening fasteners.
   repeated ToolRole tool_roles = 6 [(buf.validate.field).repeated.items.enum.defined_only = true];
   common.v1.SafetyRelevance safety_relevance = 7 [(buf.validate.field).enum.defined_only = true];
   ValidityPolicyRef default_validity_policy = 8; // default validity policy
   bool standard_worker_skill = 9; // Automatically add this skill to a worker when the worker is created
+
+  // The tool roles an actor with this skill fills itself, without a tool,
+  // e.g. an operator's hands grip, position and align components, and their
+  // eyes inspect them. A task's tool requirement needs no tool for an actor
+  // whose skills cover its roles this way, unless it asks for properties,
+  // capability or particular tools (see ToolRequirement).
+  repeated ToolRole intrinsic_tool_roles = 10 [
+    (buf.validate.field).repeated.items.enum.defined_only = true,
+    (buf.validate.field).repeated.unique = true
+  ];
 }
 
 message SkillDefinitions {

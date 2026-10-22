@@ -214,6 +214,11 @@ namespace Messages.Resources.V1 {
     /// <summary>Field number for the "actor_kind" field.</summary>
     public const int ActorKindFieldNumber = 6;
     private global::Messages.Common.V1.ActorKind actorKind_ = global::Messages.Common.V1.ActorKind.Unspecified;
+    /// <summary>
+    /// The kind of actor that uses the tool: a human's hand tool, a robot's end
+    /// effector, or HYBRID for both. A tool fills a task's tool requirement only
+    /// for an actor of its kind; UNSPECIFIED fits any actor.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Common.V1.ActorKind ActorKind {

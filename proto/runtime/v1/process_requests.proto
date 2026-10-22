@@ -250,6 +250,32 @@ message CandidateActorEvaluation {
 
   // Optional explanations or issues tied specifically to this actor.
   repeated ProcessRunIssue issues = 4;
+
+  // How this actor meets the task's tool requirement. Unset when the task has
+  // none, or the actor can't meet it.
+  TaskToolProvision tool = 5;
+}
+
+// TaskToolProvision says how an actor meets a task's tool requirement
+// (capability.v1.ToolRequirement): by itself, e.g. an operator positioning a
+// component by hand, or with one of the listed tool instances.
+message TaskToolProvision {
+  option (buf.validate.message).cel = {
+    id: "task_tool_provision.by_actor_or_tools"
+    message: "a tool provision is either by the actor or with tools, not both"
+    expression: "this.by_actor != (this.tool_instance_ids.size() > 0)"
+  };
+
+  // The actor fills every role of the requirement itself, through the
+  // intrinsic tool roles of its skills, so no tool is needed.
+  bool by_actor = 1;
+
+  // The tool instances the actor can use, best first, e.g. the tool mounted
+  // on a robot before the ones it can change to.
+  repeated string tool_instance_ids = 2 [
+    (buf.validate.field).repeated.unique = true,
+    (buf.validate.field).repeated.items.string.(validation.v1.tool_instance_id_component) = true
+  ];
 }
 
 message TaskFeasibility {

@@ -733,6 +733,7 @@
     - [ProcessRunIssue](#runtime-v1-ProcessRunIssue)
     - [ProcessRunPrecheckResult](#runtime-v1-ProcessRunPrecheckResult)
     - [TaskFeasibility](#runtime-v1-TaskFeasibility)
+    - [TaskToolProvision](#runtime-v1-TaskToolProvision)
   
     - [AllocationStrategy](#runtime-v1-AllocationStrategy)
     - [ProcessLoadFailure](#runtime-v1-ProcessLoadFailure)
@@ -5036,10 +5037,11 @@ Systems should require strict validation, restricted actor permissions, and expl
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | domain | [SkillDomain](#capability-v1-SkillDomain) |  |  |
-| tool_roles | [ToolRole](#capability-v1-ToolRole) | repeated |  |
+| tool_roles | [ToolRole](#capability-v1-ToolRole) | repeated | The tool roles of the tools the skill is about, e.g. torque tools for tightening fasteners. |
 | safety_relevance | [common.v1.SafetyRelevance](#common-v1-SafetyRelevance) |  |  |
 | default_validity_policy | [ValidityPolicyRef](#capability-v1-ValidityPolicyRef) |  | default validity policy |
 | standard_worker_skill | [bool](#bool) |  | Automatically add this skill to a worker when the worker is created |
+| intrinsic_tool_roles | [ToolRole](#capability-v1-ToolRole) | repeated | The tool roles an actor with this skill fills itself, without a tool, e.g. an operator&#39;s hands grip, position and align components, and their eyes inspect them. A task&#39;s tool requirement needs no tool for an actor whose skills cover its roles this way, unless it asks for properties, capability or particular tools (see ToolRequirement). |
 
 
 
@@ -5165,7 +5167,16 @@ This domain is particularly relevant in human-robot collaboration environments. 
 <a name="capability-v1-ToolRequirement"></a>
 
 ### ToolRequirement
+ToolRequirement says what a task needs to be done with: the roles a tool
+has to fill, and the properties and capability it must have.
 
+An actor can fill the roles itself when the intrinsic tool roles of its
+skills (SkillDefinition.intrinsic_tool_roles) cover every role and the
+requirement asks for nothing more, i.e. no required_properties, minimum_capability or
+allowed_tool_definition_ids: an operator positions or aligns a component by
+hand. Otherwise the actor needs a tool instance whose definition has the
+roles, properties and capability, and whose actor_kind fits the actor, e.g.
+ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 | Field | Type | Label | Description |
@@ -9426,7 +9437,7 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | icon | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | type | [ToolType](#resources-v1-ToolType) |  |  |
-| actor_kind | [common.v1.ActorKind](#common-v1-ActorKind) |  |  |
+| actor_kind | [common.v1.ActorKind](#common-v1-ActorKind) |  | The kind of actor that uses the tool: a human&#39;s hand tool, a robot&#39;s end effector, or HYBRID for both. A tool fills a task&#39;s tool requirement only for an actor of its kind; UNSPECIFIED fits any actor. |
 | roles | [capability.v1.ToolRole](#capability-v1-ToolRole) | repeated |  |
 | properties | [capability.v1.ToolProperty](#capability-v1-ToolProperty) | repeated |  |
 | capability_profile | [capability.v1.CapabilityProfile](#capability-v1-CapabilityProfile) |  |  |
@@ -10889,6 +10900,7 @@ the assigned actor should be copied onto the TaskRun.
 | feasible | [bool](#bool) |  | Whether this actor is currently feasible for the task. |
 | restrictions | [RuntimeRestriction](#runtime-v1-RuntimeRestriction) | repeated | Effective restrictions if this actor were assigned. |
 | issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated | Optional explanations or issues tied specifically to this actor. |
+| tool | [TaskToolProvision](#runtime-v1-TaskToolProvision) |  | How this actor meets the task&#39;s tool requirement. Unset when the task has none, or the actor can&#39;t meet it. |
 
 
 
@@ -11042,6 +11054,24 @@ The load is refused (PROCESS_LOAD_FAILURE_INVALID_DONE_TASKS) if a task isn&#39;
 | candidate_part_instance_ids | [string](#string) | repeated |  |
 | issues | [ProcessRunIssue](#runtime-v1-ProcessRunIssue) | repeated |  |
 | candidate_actor_evaluations | [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation) | repeated |  |
+
+
+
+
+
+
+<a name="runtime-v1-TaskToolProvision"></a>
+
+### TaskToolProvision
+TaskToolProvision says how an actor meets a task&#39;s tool requirement
+(capability.v1.ToolRequirement): by itself, e.g. an operator positioning a
+component by hand, or with one of the listed tool instances.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| by_actor | [bool](#bool) |  | The actor fills every role of the requirement itself, through the intrinsic tool roles of its skills, so no tool is needed. |
+| tool_instance_ids | [string](#string) | repeated | The tool instances the actor can use, best first, e.g. the tool mounted on a robot before the ones it can change to. |
 
 
 
@@ -11588,6 +11618,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | cell_id | [string](#string) |  | Concrete cell in which the task runs. |
 | container_slot | [resources.v1.ContainerSlotRef](#resources-v1-ContainerSlotRef) |  | Concrete container slot selected for source or destination work. |
 | candidate_part_instance_ids | [string](#string) | repeated | Candidate parts. Notice that their availability must be checked during runtime. Also, new candidates might be available. |
+| tool | [TaskToolProvision](#runtime-v1-TaskToolProvision) |  | How the assigned actor meets the task&#39;s tool requirement, e.g. by hand or with a tool to pick up. Unset when the task has no tool requirement or no actor is assigned; it changes with the assignment. |
 
 
 
