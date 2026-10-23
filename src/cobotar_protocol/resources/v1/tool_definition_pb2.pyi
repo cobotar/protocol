@@ -1,10 +1,10 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from capability.v1 import capability_profile_pb2 as _capability_profile_pb2
-from capability.v1 import skill_definition_pb2 as _skill_definition_pb2
-from capability.v1 import tool_requirement_pb2 as _tool_requirement_pb2
-from common.v1 import actor_pb2 as _actor_pb2
-from common.v1 import external_references_pb2 as _external_references_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.capability.v1 import capability_profile_pb2 as _capability_profile_pb2
+from cobotar_protocol.capability.v1 import skill_definition_pb2 as _skill_definition_pb2
+from cobotar_protocol.capability.v1 import tool_requirement_pb2 as _tool_requirement_pb2
+from cobotar_protocol.common.v1 import actor_pb2 as _actor_pb2
+from cobotar_protocol.common.v1 import external_references_pb2 as _external_references_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

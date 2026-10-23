@@ -23,7 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#capability/v1/validity_policy.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8f\x01\n\x0eValidityPolicy\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x18\n\x07version\x18\x05 \x01(\tR\x07version\"G\n\x10ValidityPolicies\x12\x33\n\x05items\x18\x01 \x03(\x0b\x32\x1d.capability.v1.ValidityPolicyR\x05itemsB\xca\x01\n\x11\x63om.capability.v1B\x13ValidityPolicyProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')

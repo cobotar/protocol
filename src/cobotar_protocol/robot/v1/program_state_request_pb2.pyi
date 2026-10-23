@@ -1,4 +1,4 @@
-from robot.v1 import program_state_pb2 as _program_state_pb2
+from cobotar_protocol.robot.v1 import program_state_pb2 as _program_state_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union

@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from geometry.v1 import anchor_pb2 as geometry_dot_v1_dot_anchor__pb2
-from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
-from geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
+from cobotar_protocol.geometry.v1 import anchor_pb2 as geometry_dot_v1_dot_anchor__pb2
+from cobotar_protocol.geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
+from cobotar_protocol.geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1egeometry/v1/local_target.proto\x12\x0bgeometry.v1\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x9f\x01\n\x0bLocalTarget\x12+\n\x06\x61nchor\x18\x01 \x01(\x0b\x32\x13.geometry.v1.AnchorR\x06\x61nchor\x12.\n\x08position\x18\x02 \x01(\x0b\x32\x12.geometry.v1.PointR\x08position\x12\x33\n\x0borientation\x18\x03 \x01(\x0b\x32\x11.geometry.v1.QuadR\x0borientationB\xb9\x01\n\x0f\x63om.geometry.v1B\x10LocalTargetProtoP\x01Z>github.com/cobotar/protocol/v2/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')

@@ -1,4 +1,4 @@
-from geometry.v1 import point_pb2 as _point_pb2
+from cobotar_protocol.geometry.v1 import point_pb2 as _point_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

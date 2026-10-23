@@ -1,9 +1,9 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from process.v1 import process_recipe_pb2 as _process_recipe_pb2
-from process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
-from process.v1 import task_definition_pb2 as _task_definition_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
-from variance.v1 import variant_configuration_pb2 as _variant_configuration_pb2
+from cobotar_protocol.process.v1 import process_recipe_pb2 as _process_recipe_pb2
+from cobotar_protocol.process.v1 import sequence_definition_pb2 as _sequence_definition_pb2
+from cobotar_protocol.process.v1 import task_definition_pb2 as _task_definition_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.variance.v1 import variant_configuration_pb2 as _variant_configuration_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

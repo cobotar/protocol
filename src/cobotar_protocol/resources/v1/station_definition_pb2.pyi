@@ -1,7 +1,7 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from geometry.v1 import pose_pb2 as _pose_pb2
-from resources.v1 import placement_pb2 as _placement_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.geometry.v1 import pose_pb2 as _pose_pb2
+from cobotar_protocol.resources.v1 import placement_pb2 as _placement_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

@@ -1,10 +1,10 @@
-from ar.v1 import definition_status_pb2 as _definition_status_pb2
-from ar.v1 import execution_contract_pb2 as _execution_contract_pb2
-from ar.v1 import function_pb2 as _function_pb2
+from cobotar_protocol.ar.v1 import definition_status_pb2 as _definition_status_pb2
+from cobotar_protocol.ar.v1 import execution_contract_pb2 as _execution_contract_pb2
+from cobotar_protocol.ar.v1 import function_pb2 as _function_pb2
 from buf.validate import validate_pb2 as _validate_pb2
-from common.v1 import property_pb2 as _property_pb2
-from resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.common.v1 import property_pb2 as _property_pb2
+from cobotar_protocol.resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

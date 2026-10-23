@@ -1,8 +1,8 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from resources.v1 import robot_definition_pb2 as _robot_definition_pb2
-from robot.v1 import robot_adapter_pb2 as _robot_adapter_pb2
-from robot.v1 import robot_io_catalog_pb2 as _robot_io_catalog_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.resources.v1 import robot_definition_pb2 as _robot_definition_pb2
+from cobotar_protocol.robot.v1 import robot_adapter_pb2 as _robot_adapter_pb2
+from cobotar_protocol.robot.v1 import robot_io_catalog_pb2 as _robot_io_catalog_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

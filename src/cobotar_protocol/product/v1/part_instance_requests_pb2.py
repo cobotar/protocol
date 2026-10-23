@@ -23,8 +23,8 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from product.v1 import part_instance_pb2 as product_dot_v1_dot_part__instance__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.product.v1 import part_instance_pb2 as product_dot_v1_dot_part__instance__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'product/v1/part_instance_requests.proto\x12\nproduct.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1eproduct/v1/part_instance.proto\x1a+validation/v1/predefined_string_rules.proto\"\xdb\x01\n\x1aPartInstanceBulkCreateSpec\x12:\n\x12part_definition_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xc8\xf1\x04\x01\xc8\x01\x01R\x10partDefinitionId\x12\x31\n\x0einstance_count\x18\x02 \x01(\rB\n\xbaH\x07*\x05\x18\xe8\x07 \x00R\rinstanceCount\x12N\n\x15quantity_per_instance\x18\x03 \x01(\x0b\x32\x1a.product.v1.QuantityStatusR\x13quantityPerInstance\"\xe3\x01\n\x1e\x42ulkCreatePartInstancesRequest\x12H\n\x05parts\x18\x01 \x03(\x0b\x32&.product.v1.PartInstanceBulkCreateSpecB\n\xbaH\x07\x92\x01\x04\x08\x01\x10\x64R\x05parts\x12\x44\n\x08location\x18\x02 \x01(\x0b\x32 .product.v1.PartInstanceLocationB\x06\xbaH\x03\xc8\x01\x01R\x08location\x12\x31\n\x0fidempotency_key\x18\x03 \x01(\tB\x08\xbaH\x05r\x03\x18\x80\x01R\x0eidempotencyKeyB\xbb\x01\n\x0e\x63om.product.v1B\x19PartInstanceRequestsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/product/v1;productv1\xa2\x02\x03PXX\xaa\x02\x13Messages.Product.V1\xca\x02\nProduct\\V1\xe2\x02\x16Product\\V1\\GPBMetadata\xea\x02\x0bProduct::V1b\x06proto3')

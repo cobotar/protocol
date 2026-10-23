@@ -23,7 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x61r/v1/feedback_features.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\x87\x01\n\x0f\x46\x65\x65\x64\x62\x61\x63kFeature\x12\x1b\n\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x35\n\rproperty_keys\x18\x03 \x03(\tB\x10\xbaH\r\x92\x01\n\x18\x01\"\x06r\x04\xe0\xf3\x04\x01R\x0cpropertyKeysB\x94\x01\n\tcom.ar.v1B\x15\x46\x65\x65\x64\x62\x61\x63kFeaturesProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')

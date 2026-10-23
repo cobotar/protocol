@@ -23,8 +23,8 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.geometry.v1 import pose_pb2 as geometry_dot_v1_dot_pose__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cresources/v1/placement.proto\x12\x0cresources.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a+validation/v1/predefined_string_rules.proto\"\x91\x01\n\rToolPlacement\x12\x36\n\x10tool_instance_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf1\x04\x01\xc8\x01\x01R\x0etoolInstanceId\x12.\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x04pose\x12\x18\n\x07\x63omment\x18\x03 \x01(\tR\x07\x63omment\"\x94\x01\n\x0e\x41ssetPlacement\x12\x38\n\x11\x61sset_instance_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xb8\xf1\x04\x01\xc8\x01\x01R\x0f\x61ssetInstanceId\x12.\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x04pose\x12\x18\n\x07\x63omment\x18\x03 \x01(\tR\x07\x63omment\"\x94\x01\n\x0eRobotPlacement\x12\x38\n\x11robot_instance_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xa8\xf1\x04\x01\xc8\x01\x01R\x0frobotInstanceId\x12.\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x04pose\x12\x18\n\x07\x63omment\x18\x03 \x01(\tR\x07\x63omment\"\x97\x01\n\x0fMarkerPlacement\x12:\n\x12marker_instance_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe8\xf1\x04\x01\xc8\x01\x01R\x10markerInstanceId\x12.\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.geometry.v1.LocalizedPoseR\x04pose\x12\x18\n\x07\x63omment\x18\x03 \x01(\tR\x07\x63ommentB\xbe\x01\n\x10\x63om.resources.v1B\x0ePlacementProtoP\x01Z@github.com/cobotar/protocol/v2/messages/resources/v1;resourcesv1\xa2\x02\x03RXX\xaa\x02\x15Messages.Resources.V1\xca\x02\x0cResources\\V1\xe2\x02\x18Resources\\V1\\GPBMetadata\xea\x02\rResources::V1b\x06proto3')

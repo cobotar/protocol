@@ -23,8 +23,8 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$runtime/v1/runtime_restriction.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x15\x63ommon/v1/actor.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf2\x01\n\x12RuntimeRestriction\x12<\n\x04type\x18\x01 \x01(\x0e\x32\x1b.runtime.v1.RestrictionTypeB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x04type\x12\x16\n\x06reason\x18\x02 \x01(\tR\x06reason\x12\x31\n\x0fsource_skill_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x80\xf2\x04\x01R\rsourceSkillId\x12(\n\x10source_policy_id\x18\x04 \x01(\tR\x0esourcePolicyId\x12)\n\x05\x61\x63tor\x18\x05 \x01(\x0b\x32\x13.common.v1.ActorRefR\x05\x61\x63tor*\x9c\x03\n\x0fRestrictionType\x12 \n\x1cRESTRICTION_TYPE_UNSPECIFIED\x10\x00\x12(\n$RESTRICTION_TYPE_REQUIRE_AR_GUIDANCE\x10\x01\x12\x30\n,RESTRICTION_TYPE_REQUIRE_MANUAL_CONFIRMATION\x10\x02\x12\x30\n,RESTRICTION_TYPE_REQUIRE_SUPERVISOR_APPROVAL\x10\x03\x12)\n%RESTRICTION_TYPE_REQUIRE_SECOND_CHECK\x10\x04\x12.\n*RESTRICTION_TYPE_REQUIRE_VISION_VALIDATION\x10\x05\x12*\n&RESTRICTION_TYPE_REQUIRE_TOOL_FEEDBACK\x10\x06\x12(\n$RESTRICTION_TYPE_REQUIRE_HUMAN_ACTOR\x10\x07\x12(\n$RESTRICTION_TYPE_REQUIRE_ROBOT_ACTOR\x10\x08\x42\xb9\x01\n\x0e\x63om.runtime.v1B\x17RuntimeRestrictionProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')

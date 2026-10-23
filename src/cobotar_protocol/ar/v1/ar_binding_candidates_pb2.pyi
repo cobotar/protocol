@@ -1,7 +1,7 @@
-from ar.v1 import ar_config_binding_pb2 as _ar_config_binding_pb2
+from cobotar_protocol.ar.v1 import ar_config_binding_pb2 as _ar_config_binding_pb2
 from buf.validate import validate_pb2 as _validate_pb2
-from resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.resources.v1 import resource_requirement_pb2 as _resource_requirement_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

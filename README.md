@@ -10,6 +10,21 @@ Find it here: [documentation/README.md](documentation/README.md)
 1. Make changes
 2. `make publish bump={patch,minor,major}`
 
+## Python
+
+The generated Python modules are imported below the `cobotar_protocol`
+namespace. Install the package with Buf's generated SDK index enabled, since
+the generated Protovalidate messages are hosted there:
+
+```shell
+python3 -m pip install \
+  --extra-index-url https://buf.build/gen/python \
+  cobotar-protocol
+```
+
+Consumers only add the package's parent directory to `sys.path`; do not add
+the inner `cobotar_protocol/` directory.
+
 
 
 ## NATS subjects

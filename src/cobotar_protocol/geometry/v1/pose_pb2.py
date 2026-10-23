@@ -23,9 +23,9 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from geometry.v1 import anchor_pb2 as geometry_dot_v1_dot_anchor__pb2
-from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
-from geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
+from cobotar_protocol.geometry.v1 import anchor_pb2 as geometry_dot_v1_dot_anchor__pb2
+from cobotar_protocol.geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
+from cobotar_protocol.geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 

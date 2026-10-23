@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from ar.v1 import events_pb2 as ar_dot_v1_dot_events__pb2
+from cobotar_protocol.ar.v1 import events_pb2 as ar_dot_v1_dot_events__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x61r/v1/execution_contract.proto\x12\x05\x61r.v1\x1a\x12\x61r/v1/events.proto\"\xd8\x02\n\x11\x45xecutionContract\x12#\n\rrequire_agent\x18\x01 \x01(\x08R\x0crequireAgent\x12#\n\rrequire_frame\x18\x02 \x01(\x08R\x0crequireFrame\x12\x42\n\x12\x63onsumers_required\x18\x03 \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x11\x63onsumersRequired\x12\x42\n\x12\x63onsumers_optional\x18\x04 \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x11\x63onsumersOptional\x12\x46\n\x11required_handlers\x18\x05 \x03(\x0b\x32\x19.ar.v1.HandlerRequirementR\x10requiredHandlers\x12)\n\x05\x65mits\x18\x06 \x03(\x0b\x32\x13.ar.v1.ExchangeTypeR\x05\x65mitsB\x95\x01\n\tcom.ar.v1B\x16\x45xecutionContractProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')

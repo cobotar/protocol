@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from robot.v1 import program_state_pb2 as robot_dot_v1_dot_program__state__pb2
+from cobotar_protocol.robot.v1 import program_state_pb2 as robot_dot_v1_dot_program__state__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$robot/v1/program_state_request.proto\x12\x08robot.v1\x1a\x1crobot/v1/program_state.proto\"^\n\x13ProgramStateRequest\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12,\n\x05state\x18\x02 \x01(\x0e\x32\x16.robot.v1.ProgramStateR\x05state\"-\n\x10\x41\x63knowledgeRobot\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\"L\n\x15RobotFreeDriveRequest\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12\x18\n\x07\x65nabled\x18\x02 \x01(\x08R\x07\x65nabledB\xac\x01\n\x0c\x63om.robot.v1B\x18ProgramStateRequestProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')

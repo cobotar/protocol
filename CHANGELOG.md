@@ -48,6 +48,11 @@
 
 ### Changed
 
+- Generated Python modules import other protocol modules through the
+  `cobotar_protocol` namespace instead of creating top-level packages such as
+  `common`, `product` and `runtime` (cobotar/protocol#33). The Python package
+  now declares its Protobuf and generated Protovalidate runtime dependencies
+  and its actual Python 3.10 minimum.
 - `plan.robot.path.{robot_instance_id}.{plan_id}` is published by robot adapters, not by Authoring.
 - `edit.property_instance.update-value` is now `edit.property_instance.update_value`, since subject tokens are lower_snake_case.
 - The reserved `edit.{entity}.reset.{child}` route is replaced by `edit.ar_config.reset.presentation_binding`, which takes an `ar.v1.PresentationBindingReset`.

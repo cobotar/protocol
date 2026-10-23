@@ -23,7 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n ar/v1/presentation_binding.proto\x12\x05\x61r.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"\xb3\x01\n\x13PresentationBinding\x12\'\n\x08role_key\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x07roleKey\x12*\n\x0b\x66\x65\x65\x64\x62\x61\x63k_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc0\xf3\x04\x01R\nfeedbackId\x12&\n\taction_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xc8\xf3\x04\x01R\x08\x61\x63tionId:\x1f\xbaH\x1c\"\x1a\n\x0b\x66\x65\x65\x64\x62\x61\x63k_id\n\taction_id\x10\x01\"\x84\x01\n\x19PresentationBindingUpdate\x12)\n\tconfig_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12<\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.ar.v1.PresentationBindingB\x06\xbaH\x03\xc8\x01\x01R\x07\x62inding\"n\n\x18PresentationBindingReset\x12)\n\tconfig_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x90\xf1\x04\x01\xc8\x01\x01R\x08\x63onfigId\x12\'\n\x08role_key\x18\x02 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x07roleKeyB\x97\x01\n\tcom.ar.v1B\x18PresentationBindingProtoP\x01Z2github.com/cobotar/protocol/v2/messages/ar/v1;arv1\xa2\x02\x03\x41XX\xaa\x02\x0eMessages.AR.V1\xca\x02\x05\x41r\\V1\xe2\x02\x11\x41r\\V1\\GPBMetadata\xea\x02\x06\x41r::V1b\x06proto3')

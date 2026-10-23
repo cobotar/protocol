@@ -23,7 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#variance/v1/variant_condition.proto\x12\x0bvariance.v1\x1a\x1b\x62uf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\"i\n\rAxisCondition\x12%\n\x07\x61xis_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\xe0\xf3\x04\x01\xc8\x01\x01R\x06\x61xisId\x12\x31\n\noption_ids\x18\x02 \x03(\tB\x12\xbaH\x0f\x92\x01\x0c\x08\x01\x18\x01\"\x06r\x04\xe0\xf3\x04\x01R\toptionIds\"\xdc\x01\n\x10VariantCondition\x12\xc7\x01\n\x06\x61ll_of\x18\x01 \x03(\x0b\x32\x1a.variance.v1.AxisConditionB\x93\x01\xbaH\x8f\x01\xba\x01\x8b\x01\n(variant_condition.all_of.unique_axis_ids\x12.a variant condition can name an axis only once\x1a/this.map(condition, condition.axis_id).unique()R\x05\x61llOfB\xbe\x01\n\x0f\x63om.variance.v1B\x15VariantConditionProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\x0bVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\x0cVariance::V1b\x06proto3')

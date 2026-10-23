@@ -28,6 +28,10 @@ jobs:
         with:
           go-version-file: go.mod
 
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+
       - name: Run linter
         run: buf lint
 
@@ -38,7 +42,14 @@ jobs:
         run: buf breaking --against "https://github.com/cobotar/protocol.git#branch=main"
 
       - name: Generate proto messages
-        run: buf generate
+        run: |
+          buf generate
+          python3 scripts/rewrite_python_imports.py
+
+      - name: Check generated Python package
+        run: |
+          python3 -m pip install --extra-index-url https://buf.build/gen/python -e .
+          python3 scripts/test_python_package.py --runtime
 
       - name: Check generated NATS subject helpers
         run: |

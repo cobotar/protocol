@@ -23,8 +23,8 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from capability.v1 import capability_profile_pb2 as capability_dot_v1_dot_capability__profile__pb2
-from capability.v1 import skill_definition_pb2 as capability_dot_v1_dot_skill__definition__pb2
+from cobotar_protocol.capability.v1 import capability_profile_pb2 as capability_dot_v1_dot_capability__profile__pb2
+from cobotar_protocol.capability.v1 import skill_definition_pb2 as capability_dot_v1_dot_skill__definition__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$capability/v1/tool_requirement.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a&capability/v1/capability_profile.proto\x1a$capability/v1/skill_definition.proto\"\xbc\x02\n\x0fToolRequirement\x12<\n\x05roles\x18\x01 \x03(\x0e\x32\x17.capability.v1.ToolRoleB\r\xbaH\n\x92\x01\x07\"\x05\x82\x01\x02\x10\x01R\x05roles\x12[\n\x13required_properties\x18\x02 \x03(\x0e\x32\x1b.capability.v1.ToolPropertyB\r\xbaH\n\x92\x01\x07\"\x05\x82\x01\x02\x10\x01R\x12requiredProperties\x12O\n\x12minimum_capability\x18\x03 \x01(\x0b\x32 .capability.v1.CapabilityProfileR\x11minimumCapability\x12=\n\x1b\x61llowed_tool_definition_ids\x18\x04 \x03(\tR\x18\x61llowedToolDefinitionIds*\xef\x01\n\x0cToolProperty\x12\x1d\n\x19TOOL_PROPERTY_UNSPECIFIED\x10\x00\x12#\n\x1fTOOL_PROPERTY_TORQUE_CONTROLLED\x10\x01\x12\x1a\n\x16TOOL_PROPERTY_ESD_SAFE\x10\x02\x12\x1b\n\x17TOOL_PROPERTY_INSULATED\x10\x03\x12$\n TOOL_PROPERTY_COLLABORATIVE_SAFE\x10\x04\x12\x1c\n\x18TOOL_PROPERTY_CALIBRATED\x10\x05\x12\x1e\n\x1aTOOL_PROPERTY_QUICK_CHANGE\x10\x06\x42\xcb\x01\n\x11\x63om.capability.v1B\x14ToolRequirementProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')

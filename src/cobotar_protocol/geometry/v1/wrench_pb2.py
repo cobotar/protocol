@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from geometry.v1 import vector3_pb2 as geometry_dot_v1_dot_vector3__pb2
+from cobotar_protocol.geometry.v1 import vector3_pb2 as geometry_dot_v1_dot_vector3__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18geometry/v1/wrench.proto\x12\x0bgeometry.v1\x1a\x19geometry/v1/vector3.proto\"b\n\x06Wrench\x12*\n\x05\x66orce\x18\x01 \x01(\x0b\x32\x14.geometry.v1.Vector3R\x05\x66orce\x12,\n\x06torque\x18\x02 \x01(\x0b\x32\x14.geometry.v1.Vector3R\x06torqueB\xb4\x01\n\x0f\x63om.geometry.v1B\x0bWrenchProtoP\x01Z>github.com/cobotar/protocol/v2/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\x0bGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\x0cGeometry::V1b\x06proto3')

@@ -24,11 +24,11 @@ _sym_db = _symbol_database.Default()
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from process.v1 import process_recipe_pb2 as process_dot_v1_dot_process__recipe__pb2
-from process.v1 import sequence_definition_pb2 as process_dot_v1_dot_sequence__definition__pb2
-from process.v1 import task_definition_pb2 as process_dot_v1_dot_task__definition__pb2
-from product.v1 import part_definition_pb2 as product_dot_v1_dot_part__definition__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.process.v1 import process_recipe_pb2 as process_dot_v1_dot_process__recipe__pb2
+from cobotar_protocol.process.v1 import sequence_definition_pb2 as process_dot_v1_dot_sequence__definition__pb2
+from cobotar_protocol.process.v1 import task_definition_pb2 as process_dot_v1_dot_task__definition__pb2
+from cobotar_protocol.product.v1 import part_definition_pb2 as product_dot_v1_dot_part__definition__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(runtime/v1/process_run_definitions.proto\x12\nruntime.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\"\xe6\x03\n\x15ProcessRunDefinitions\x12\x32\n\x0eprocess_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId\x12L\n\x06source\x18\x02 \x01(\x0e\x32\'.runtime.v1.ProcessRunDefinitionsSourceB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x06source\x12\x37\n\tpinned_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x08pinnedAt\x12\x31\n\x06recipe\x18\x04 \x01(\x0b\x32\x19.process.v1.ProcessRecipeR\x06recipe\x12Q\n\x14sequence_definitions\x18\x05 \x03(\x0b\x32\x1e.process.v1.SequenceDefinitionR\x13sequenceDefinitions\x12\x45\n\x10task_definitions\x18\x06 \x03(\x0b\x32\x1a.process.v1.TaskDefinitionR\x0ftaskDefinitions\x12\x45\n\x10part_definitions\x18\x07 \x03(\x0b\x32\x1a.product.v1.PartDefinitionR\x0fpartDefinitions\"R\n\x1cProcessRunDefinitionsRequest\x12\x32\n\x0eprocess_run_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x88\xf2\x04\x01\xc8\x01\x01R\x0cprocessRunId*\xa3\x01\n\x1bProcessRunDefinitionsSource\x12.\n*PROCESS_RUN_DEFINITIONS_SOURCE_UNSPECIFIED\x10\x00\x12)\n%PROCESS_RUN_DEFINITIONS_SOURCE_PINNED\x10\x01\x12)\n%PROCESS_RUN_DEFINITIONS_SOURCE_LATEST\x10\x02\x42\xbc\x01\n\x0e\x63om.runtime.v1B\x1aProcessRunDefinitionsProtoP\x01Z<github.com/cobotar/protocol/v2/messages/runtime/v1;runtimev1\xa2\x02\x03RXX\xaa\x02\x13Messages.Runtime.V1\xca\x02\nRuntime\\V1\xe2\x02\x16Runtime\\V1\\GPBMetadata\xea\x02\x0bRuntime::V1b\x06proto3')

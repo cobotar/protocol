@@ -23,9 +23,9 @@ _sym_db = _symbol_database.Default()
 
 
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
-from capability.v1 import actor_skill_pb2 as capability_dot_v1_dot_actor__skill__pb2
-from common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
-from validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
+from cobotar_protocol.capability.v1 import actor_skill_pb2 as capability_dot_v1_dot_actor__skill__pb2
+from cobotar_protocol.common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as validation_dot_v1_dot_predefined__string__rules__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%capability/v1/skill_requirement.proto\x12\rcapability.v1\x1a\x1b\x62uf/validate/validate.proto\x1a\x1f\x63\x61pability/v1/actor_skill.proto\x1a$common/v1/key_value_constraint.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc9\x01\n\x10SkillRequirement\x12\'\n\x08skill_id\x18\x01 \x01(\tB\x0c\xbaH\tr\x04\x80\xf2\x04\x01\xc8\x01\x01R\x07skillId\x12K\n\rminimum_level\x18\x02 \x01(\x0e\x32\x19.capability.v1.SkillLevelB\x0b\xbaH\x08\x82\x01\x02\x10\x01\xc8\x01\x01R\x0cminimumLevel\x12?\n\x0b\x63onstraints\x18\x03 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0b\x63onstraintsB\xcc\x01\n\x11\x63om.capability.v1B\x15SkillRequirementProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')

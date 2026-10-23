@@ -1,6 +1,6 @@
-from geometry.v1 import anchor_pb2 as _anchor_pb2
-from geometry.v1 import point_pb2 as _point_pb2
-from geometry.v1 import quad_pb2 as _quad_pb2
+from cobotar_protocol.geometry.v1 import anchor_pb2 as _anchor_pb2
+from cobotar_protocol.geometry.v1 import point_pb2 as _point_pb2
+from cobotar_protocol.geometry.v1 import quad_pb2 as _quad_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Mapping as _Mapping

@@ -1,8 +1,8 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from geometry.v1 import pose_pb2 as _pose_pb2
-from geometry.v1 import vector3_pb2 as _vector3_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
-from variance.v1 import variant_condition_pb2 as _variant_condition_pb2
+from cobotar_protocol.geometry.v1 import pose_pb2 as _pose_pb2
+from cobotar_protocol.geometry.v1 import vector3_pb2 as _vector3_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.variance.v1 import variant_condition_pb2 as _variant_condition_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

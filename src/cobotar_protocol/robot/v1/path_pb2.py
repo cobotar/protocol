@@ -22,7 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
+from cobotar_protocol.geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13robot/v1/path.proto\x12\x08robot.v1\x1a\x17geometry/v1/point.proto\"d\n\x0bPathMessage\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n\x08robot_id\x18\x02 \x01(\tR\x07robotId\x12*\n\x06points\x18\x03 \x03(\x0b\x32\x12.geometry.v1.PointR\x06pointsB\x9d\x01\n\x0c\x63om.robot.v1B\tPathProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')

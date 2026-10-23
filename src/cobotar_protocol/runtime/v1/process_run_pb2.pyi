@@ -1,11 +1,11 @@
 import datetime
 
 from buf.validate import validate_pb2 as _validate_pb2
-from geometry.v1 import pose_pb2 as _pose_pb2
+from cobotar_protocol.geometry.v1 import pose_pb2 as _pose_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
-from runtime.v1 import actor_assignment_pb2 as _actor_assignment_pb2
-from validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
-from variance.v1 import variant_configuration_pb2 as _variant_configuration_pb2
+from cobotar_protocol.runtime.v1 import actor_assignment_pb2 as _actor_assignment_pb2
+from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
+from cobotar_protocol.variance.v1 import variant_configuration_pb2 as _variant_configuration_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

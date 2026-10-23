@@ -1,6 +1,6 @@
 from buf.validate import validate_pb2 as _validate_pb2
-from capability.v1 import capability_profile_pb2 as _capability_profile_pb2
-from capability.v1 import skill_definition_pb2 as _skill_definition_pb2
+from cobotar_protocol.capability.v1 import capability_profile_pb2 as _capability_profile_pb2
+from cobotar_protocol.capability.v1 import skill_definition_pb2 as _skill_definition_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

@@ -22,8 +22,8 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
-from geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
+from cobotar_protocol.geometry.v1 import point_pb2 as geometry_dot_v1_dot_point__pb2
+from cobotar_protocol.geometry.v1 import quad_pb2 as geometry_dot_v1_dot_quad__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12robot/v1/tcp.proto\x12\x08robot.v1\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x8c\x01\n\nTcpMessage\x12\x19\n\x08robot_id\x18\x01 \x01(\tR\x07robotId\x12.\n\x08position\x18\x02 \x01(\x0b\x32\x12.geometry.v1.PointR\x08position\x12\x33\n\x0borientation\x18\x03 \x01(\x0b\x32\x11.geometry.v1.QuadR\x0borientationB\x9c\x01\n\x0c\x63om.robot.v1B\x08TcpProtoP\x01Z8github.com/cobotar/protocol/v2/messages/robot/v1;robotv1\xa2\x02\x03RXX\xaa\x02\x11Messages.Robot.V1\xca\x02\x08Robot\\V1\xe2\x02\x14Robot\\V1\\GPBMetadata\xea\x02\tRobot::V1b\x06proto3')

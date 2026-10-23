@@ -22,9 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
-from common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
-from common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
+from cobotar_protocol.common.v1 import actor_pb2 as common_dot_v1_dot_actor__pb2
+from cobotar_protocol.common.v1 import enums_pb2 as common_dot_v1_dot_enums__pb2
+from cobotar_protocol.common.v1 import key_value_constraint_pb2 as common_dot_v1_dot_key__value__constraint__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$capability/v1/actor_constraint.proto\x12\rcapability.v1\x1a\x15\x63ommon/v1/actor.proto\x1a\x15\x63ommon/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\"\xe5\x01\n\x0f\x41\x63torConstraint\x12\x44\n\x13\x61llowed_actor_kinds\x18\x01 \x03(\x0e\x32\x14.common.v1.ActorKindR\x11\x61llowedActorKinds\x12K\n\x12\x63ollaboration_mode\x18\x02 \x01(\x0e\x32\x1c.common.v1.CollaborationModeR\x11\x63ollaborationMode\x12?\n\x0b\x63onstraints\x18\x03 \x03(\x0b\x32\x1d.common.v1.KeyValueConstraintR\x0b\x63onstraintsB\xcb\x01\n\x11\x63om.capability.v1B\x14\x41\x63torConstraintProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/capability/v1;capabilityv1\xa2\x02\x03\x43XX\xaa\x02\x16Messages.Capability.V1\xca\x02\rCapability\\V1\xe2\x02\x19\x43\x61pability\\V1\\GPBMetadata\xea\x02\x0e\x43\x61pability::V1b\x06proto3')

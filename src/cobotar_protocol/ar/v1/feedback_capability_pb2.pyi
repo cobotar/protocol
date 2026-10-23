@@ -1,5 +1,5 @@
-from ar.v1 import property_influence_pb2 as _property_influence_pb2
-from ar.v1 import semantic_source_pb2 as _semantic_source_pb2
+from cobotar_protocol.ar.v1 import property_influence_pb2 as _property_influence_pb2
+from cobotar_protocol.ar.v1 import semantic_source_pb2 as _semantic_source_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
