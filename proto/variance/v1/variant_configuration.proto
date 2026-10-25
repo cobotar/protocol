@@ -33,9 +33,10 @@ message VariantConfiguration {
 
 // NamedVariantConfiguration is a configuration a product names, e.g. a row of
 // the configuration table ("Full spec, black"), which an operator can pick
-// instead of choosing axis by axis. It holds the selected axes only. Named
-// configurations are shortcuts: they don't define which configurations are
-// valid.
+// instead of choosing axis by axis. It holds the selected axes only, apart from
+// those of select-at-load groups (VariantGroup.select_at_load), which are
+// chosen when a process is loaded. Named configurations are shortcuts: they
+// don't define which configurations are valid.
 message NamedVariantConfiguration {
   string id = 1 [
     (buf.validate.field).required = true,
@@ -48,4 +49,25 @@ message NamedVariantConfiguration {
   string icon = 3;
   string description = 4;
   VariantConfiguration configuration = 5 [(buf.validate.field).required = true];
+}
+
+// NamedVariantChoice is a named configuration with the operator's choices for
+// the product's select-at-load groups (VariantGroup.select_at_load,
+// cobotar/protocol#35), e.g. "Phone2Lite" with the case in blue.
+message NamedVariantChoice {
+  // One of the product's named configurations, by ID.
+  string named_variant_configuration_id = 1 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).string.(validation.v1.key_component) = true
+  ];
+  // The selected axes of the select-at-load groups, and nothing else. A
+  // product without such groups is loaded with the named configuration alone.
+  VariantConfiguration select_at_load = 2 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).cel = {
+      id: "named_variant_choice.select_at_load.not_empty"
+      message: "a named variant choice must select the axes of the select-at-load groups"
+      expression: "this.selections.size() > 0"
+    }
+  ];
 }

@@ -17,6 +17,10 @@ option go_package = "github.com/cobotar/protocol/v2/messages/variance/v1";
 //
 // Within a group every combination of the selected axes is valid, except the
 // excluded ones, or, when allowed is given, only the allowed ones.
+//
+// A select-at-load group (select_at_load) is chosen by the operator every time
+// a process is loaded, whatever named configuration is picked, e.g. the colour
+// or material of an interchangeable part (cobotar/protocol#35).
 message VariantGroup {
   option (buf.validate.message).cel = {
     id: "variant_group.excluded_or_allowed"
@@ -62,4 +66,12 @@ message VariantGroup {
   // group and nothing else (checked by ProductDefinition). Give it only when
   // listing them is shorter than excluding the rest.
   repeated VariantConfiguration allowed = 7;
+
+  // The group is chosen when a process is loaded, never by a named
+  // configuration (cobotar/protocol#35): named configurations don't select its
+  // axes, and a load that names a configuration selects them separately
+  // (runtime.v1.ProcessLoadRequest.named_variant_choice). Its axes are all
+  // selected ones; a derived axis can't be in such a group (checked by
+  // ProductDefinition).
+  bool select_at_load = 8;
 }

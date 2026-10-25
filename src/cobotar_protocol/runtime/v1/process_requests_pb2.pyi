@@ -150,13 +150,14 @@ PROCESS_LOAD_STATUS_READY: ProcessLoadStatus
 PROCESS_LOAD_STATUS_LOADED: ProcessLoadStatus
 
 class ProcessLoadRequest(_message.Message):
-    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "named_variant_configuration_id", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee", "done_task_definition_ids")
+    __slots__ = ("process_recipe_id", "target_line_id", "target_cell_id", "target_station_id", "variant_configuration", "named_variant_configuration_id", "named_variant_choice", "dry_run", "queue_if_occupied", "strategy", "order_id", "parameters", "allocation_strategy", "target_employee", "done_task_definition_ids")
     PROCESS_RECIPE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_LINE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_CELL_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_STATION_ID_FIELD_NUMBER: _ClassVar[int]
     VARIANT_CONFIGURATION_FIELD_NUMBER: _ClassVar[int]
     NAMED_VARIANT_CONFIGURATION_ID_FIELD_NUMBER: _ClassVar[int]
+    NAMED_VARIANT_CHOICE_FIELD_NUMBER: _ClassVar[int]
     DRY_RUN_FIELD_NUMBER: _ClassVar[int]
     QUEUE_IF_OCCUPIED_FIELD_NUMBER: _ClassVar[int]
     STRATEGY_FIELD_NUMBER: _ClassVar[int]
@@ -171,6 +172,7 @@ class ProcessLoadRequest(_message.Message):
     target_station_id: str
     variant_configuration: _variant_configuration_pb2.VariantConfiguration
     named_variant_configuration_id: str
+    named_variant_choice: _variant_configuration_pb2.NamedVariantChoice
     dry_run: bool
     queue_if_occupied: bool
     strategy: ProcessLoadStrategy
@@ -179,7 +181,7 @@ class ProcessLoadRequest(_message.Message):
     allocation_strategy: AllocationStrategy
     target_employee: str
     done_task_definition_ids: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., named_variant_configuration_id: _Optional[str] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ..., done_task_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, process_recipe_id: _Optional[str] = ..., target_line_id: _Optional[str] = ..., target_cell_id: _Optional[str] = ..., target_station_id: _Optional[str] = ..., variant_configuration: _Optional[_Union[_variant_configuration_pb2.VariantConfiguration, _Mapping]] = ..., named_variant_configuration_id: _Optional[str] = ..., named_variant_choice: _Optional[_Union[_variant_configuration_pb2.NamedVariantChoice, _Mapping]] = ..., dry_run: bool = ..., queue_if_occupied: bool = ..., strategy: _Optional[_Union[ProcessLoadStrategy, str]] = ..., order_id: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., allocation_strategy: _Optional[_Union[AllocationStrategy, str]] = ..., target_employee: _Optional[str] = ..., done_task_definition_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ProcessRunIssue(_message.Message):
     __slots__ = ("failure", "message", "severity", "process_recipe_id", "sequence_definition_id", "task_definition_id", "required_tool_role", "required_skill_id", "fixture_definition_id", "cell_id", "station_id", "actor_id", "resource_id", "remediation", "importance", "variant_axis_id")

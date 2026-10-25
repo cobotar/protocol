@@ -39,18 +39,27 @@ namespace Messages.Variance.V1 {
             "8wQByAEBUgJpZBIgCgRuYW1lGAIgASgJQgy6SAlyBIDxBAHIAQFSBG5hbWUS",
             "EgoEaWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
             "Y3JpcHRpb24STwoNY29uZmlndXJhdGlvbhgFIAEoCzIhLnZhcmlhbmNlLnYx",
-            "LlZhcmlhbnRDb25maWd1cmF0aW9uQga6SAPIAQFSDWNvbmZpZ3VyYXRpb25C",
-            "wgEKD2NvbS52YXJpYW5jZS52MUIZVmFyaWFudENvbmZpZ3VyYXRpb25Qcm90",
-            "b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMv",
-            "dmFyaWFuY2UvdjE7dmFyaWFuY2V2MaICA1ZYWKoCFE1lc3NhZ2VzLlZhcmlh",
-            "bmNlLlYxygILVmFyaWFuY2VcVjHiAhdWYXJpYW5jZVxWMVxHUEJNZXRhZGF0",
-            "YeoCDFZhcmlhbmNlOjpWMWIGcHJvdG8z"));
+            "LlZhcmlhbnRDb25maWd1cmF0aW9uQga6SAPIAQFSDWNvbmZpZ3VyYXRpb24i",
+            "1AIKEk5hbWVkVmFyaWFudENob2ljZRJRCh5uYW1lZF92YXJpYW50X2NvbmZp",
+            "Z3VyYXRpb25faWQYASABKAlCDLpICXIE4PMEAcgBAVIbbmFtZWRWYXJpYW50",
+            "Q29uZmlndXJhdGlvbklkEuoBCg5zZWxlY3RfYXRfbG9hZBgCIAEoCzIhLnZh",
+            "cmlhbmNlLnYxLlZhcmlhbnRDb25maWd1cmF0aW9uQqABukicAboBlQEKLW5h",
+            "bWVkX3ZhcmlhbnRfY2hvaWNlLnNlbGVjdF9hdF9sb2FkLm5vdF9lbXB0eRJI",
+            "YSBuYW1lZCB2YXJpYW50IGNob2ljZSBtdXN0IHNlbGVjdCB0aGUgYXhlcyBv",
+            "ZiB0aGUgc2VsZWN0LWF0LWxvYWQgZ3JvdXBzGhp0aGlzLnNlbGVjdGlvbnMu",
+            "c2l6ZSgpID4gMMgBAVIMc2VsZWN0QXRMb2FkQsIBCg9jb20udmFyaWFuY2Uu",
+            "djFCGVZhcmlhbnRDb25maWd1cmF0aW9uUHJvdG9QAVo+Z2l0aHViLmNvbS9j",
+            "b2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3ZhcmlhbmNlL3YxO3Zhcmlh",
+            "bmNldjGiAgNWWFiqAhRNZXNzYWdlcy5WYXJpYW5jZS5WMcoCC1ZhcmlhbmNl",
+            "XFYx4gIXVmFyaWFuY2VcVjFcR1BCTWV0YWRhdGHqAgxWYXJpYW5jZTo6VjFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantSelection), global::Messages.Variance.V1.VariantSelection.Parser, new[]{ "AxisId", "OptionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantConfiguration), global::Messages.Variance.V1.VariantConfiguration.Parser, new[]{ "Selections" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.NamedVariantConfiguration), global::Messages.Variance.V1.NamedVariantConfiguration.Parser, new[]{ "Id", "Name", "Icon", "Description", "Configuration" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.NamedVariantConfiguration), global::Messages.Variance.V1.NamedVariantConfiguration.Parser, new[]{ "Id", "Name", "Icon", "Description", "Configuration" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.NamedVariantChoice), global::Messages.Variance.V1.NamedVariantChoice.Parser, new[]{ "NamedVariantConfigurationId", "SelectAtLoad" }, null, null, null, null)
           }));
     }
     #endregion
@@ -495,9 +504,10 @@ namespace Messages.Variance.V1 {
   /// <summary>
   /// NamedVariantConfiguration is a configuration a product names, e.g. a row of
   /// the configuration table ("Full spec, black"), which an operator can pick
-  /// instead of choosing axis by axis. It holds the selected axes only. Named
-  /// configurations are shortcuts: they don't define which configurations are
-  /// valid.
+  /// instead of choosing axis by axis. It holds the selected axes only, apart from
+  /// those of select-at-load groups (VariantGroup.select_at_load), which are
+  /// chosen when a process is loaded. Named configurations are shortcuts: they
+  /// don't define which configurations are valid.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class NamedVariantConfiguration : pb::IMessage<NamedVariantConfiguration>
@@ -845,6 +855,262 @@ namespace Messages.Variance.V1 {
               Configuration = new global::Messages.Variance.V1.VariantConfiguration();
             }
             input.ReadMessage(Configuration);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// NamedVariantChoice is a named configuration with the operator's choices for
+  /// the product's select-at-load groups (VariantGroup.select_at_load,
+  /// cobotar/protocol#35), e.g. "Phone2Lite" with the case in blue.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class NamedVariantChoice : pb::IMessage<NamedVariantChoice>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<NamedVariantChoice> _parser = new pb::MessageParser<NamedVariantChoice>(() => new NamedVariantChoice());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<NamedVariantChoice> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NamedVariantChoice() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NamedVariantChoice(NamedVariantChoice other) : this() {
+      namedVariantConfigurationId_ = other.namedVariantConfigurationId_;
+      selectAtLoad_ = other.selectAtLoad_ != null ? other.selectAtLoad_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NamedVariantChoice Clone() {
+      return new NamedVariantChoice(this);
+    }
+
+    /// <summary>Field number for the "named_variant_configuration_id" field.</summary>
+    public const int NamedVariantConfigurationIdFieldNumber = 1;
+    private string namedVariantConfigurationId_ = "";
+    /// <summary>
+    /// One of the product's named configurations, by ID.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NamedVariantConfigurationId {
+      get { return namedVariantConfigurationId_; }
+      set {
+        namedVariantConfigurationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "select_at_load" field.</summary>
+    public const int SelectAtLoadFieldNumber = 2;
+    private global::Messages.Variance.V1.VariantConfiguration selectAtLoad_;
+    /// <summary>
+    /// The selected axes of the select-at-load groups, and nothing else. A
+    /// product without such groups is loaded with the named configuration alone.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Variance.V1.VariantConfiguration SelectAtLoad {
+      get { return selectAtLoad_; }
+      set {
+        selectAtLoad_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as NamedVariantChoice);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(NamedVariantChoice other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (NamedVariantConfigurationId != other.NamedVariantConfigurationId) return false;
+      if (!object.Equals(SelectAtLoad, other.SelectAtLoad)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (NamedVariantConfigurationId.Length != 0) hash ^= NamedVariantConfigurationId.GetHashCode();
+      if (selectAtLoad_ != null) hash ^= SelectAtLoad.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (NamedVariantConfigurationId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(NamedVariantConfigurationId);
+      }
+      if (selectAtLoad_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SelectAtLoad);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (NamedVariantConfigurationId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(NamedVariantConfigurationId);
+      }
+      if (selectAtLoad_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SelectAtLoad);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (NamedVariantConfigurationId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NamedVariantConfigurationId);
+      }
+      if (selectAtLoad_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SelectAtLoad);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(NamedVariantChoice other) {
+      if (other == null) {
+        return;
+      }
+      if (other.NamedVariantConfigurationId.Length != 0) {
+        NamedVariantConfigurationId = other.NamedVariantConfigurationId;
+      }
+      if (other.selectAtLoad_ != null) {
+        if (selectAtLoad_ == null) {
+          SelectAtLoad = new global::Messages.Variance.V1.VariantConfiguration();
+        }
+        SelectAtLoad.MergeFrom(other.SelectAtLoad);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            NamedVariantConfigurationId = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (selectAtLoad_ == null) {
+              SelectAtLoad = new global::Messages.Variance.V1.VariantConfiguration();
+            }
+            input.ReadMessage(SelectAtLoad);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            NamedVariantConfigurationId = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (selectAtLoad_ == null) {
+              SelectAtLoad = new global::Messages.Variance.V1.VariantConfiguration();
+            }
+            input.ReadMessage(SelectAtLoad);
             break;
           }
         }

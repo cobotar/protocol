@@ -175,7 +175,8 @@ type ProcessRun struct {
 	// definition ID, as the run was loaded. Set by the backend.
 	PartDefinitionRevisions map[string]uint64 `protobuf:"bytes,21,rep,name=part_definition_revisions,json=partDefinitionRevisions,proto3" json:"part_definition_revisions,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
 	// The product's named configuration the run was loaded with, if the load
-	// named one. Set by the backend.
+	// named one (alone or with the select-at-load choices, whose options are in
+	// variant_configuration). Set by the backend.
 	NamedVariantConfigurationId string `protobuf:"bytes,22,opt,name=named_variant_configuration_id,json=namedVariantConfigurationId,proto3" json:"named_variant_configuration_id,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache

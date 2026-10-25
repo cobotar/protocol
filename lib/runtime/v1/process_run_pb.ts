@@ -179,7 +179,8 @@ export type ProcessRun = Message<"runtime.v1.ProcessRun"> & {
 
   /**
    * The product's named configuration the run was loaded with, if the load
-   * named one. Set by the backend.
+   * named one (alone or with the select-at-load choices, whose options are in
+   * variant_configuration). Set by the backend.
    *
    * @generated from field: string named_variant_configuration_id = 22;
    */

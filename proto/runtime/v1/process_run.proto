@@ -83,7 +83,8 @@ message ProcessRun {
   // definition ID, as the run was loaded. Set by the backend.
   map<string, uint64> part_definition_revisions = 21;
   // The product's named configuration the run was loaded with, if the load
-  // named one. Set by the backend.
+  // named one (alone or with the select-at-load choices, whose options are in
+  // variant_configuration). Set by the backend.
   string named_variant_configuration_id = 22;
 }
 

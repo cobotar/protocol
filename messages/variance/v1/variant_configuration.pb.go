@@ -126,9 +126,10 @@ func (x *VariantConfiguration) GetSelections() []*VariantSelection {
 
 // NamedVariantConfiguration is a configuration a product names, e.g. a row of
 // the configuration table ("Full spec, black"), which an operator can pick
-// instead of choosing axis by axis. It holds the selected axes only. Named
-// configurations are shortcuts: they don't define which configurations are
-// valid.
+// instead of choosing axis by axis. It holds the selected axes only, apart from
+// those of select-at-load groups (VariantGroup.select_at_load), which are
+// chosen when a process is loaded. Named configurations are shortcuts: they
+// don't define which configurations are valid.
 type NamedVariantConfiguration struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -205,6 +206,64 @@ func (x *NamedVariantConfiguration) GetConfiguration() *VariantConfiguration {
 	return nil
 }
 
+// NamedVariantChoice is a named configuration with the operator's choices for
+// the product's select-at-load groups (VariantGroup.select_at_load,
+// cobotar/protocol#35), e.g. "Phone2Lite" with the case in blue.
+type NamedVariantChoice struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// One of the product's named configurations, by ID.
+	NamedVariantConfigurationId string `protobuf:"bytes,1,opt,name=named_variant_configuration_id,json=namedVariantConfigurationId,proto3" json:"named_variant_configuration_id,omitempty"`
+	// The selected axes of the select-at-load groups, and nothing else. A
+	// product without such groups is loaded with the named configuration alone.
+	SelectAtLoad  *VariantConfiguration `protobuf:"bytes,2,opt,name=select_at_load,json=selectAtLoad,proto3" json:"select_at_load,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *NamedVariantChoice) Reset() {
+	*x = NamedVariantChoice{}
+	mi := &file_variance_v1_variant_configuration_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *NamedVariantChoice) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NamedVariantChoice) ProtoMessage() {}
+
+func (x *NamedVariantChoice) ProtoReflect() protoreflect.Message {
+	mi := &file_variance_v1_variant_configuration_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NamedVariantChoice.ProtoReflect.Descriptor instead.
+func (*NamedVariantChoice) Descriptor() ([]byte, []int) {
+	return file_variance_v1_variant_configuration_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *NamedVariantChoice) GetNamedVariantConfigurationId() string {
+	if x != nil {
+		return x.NamedVariantConfigurationId
+	}
+	return ""
+}
+
+func (x *NamedVariantChoice) GetSelectAtLoad() *VariantConfiguration {
+	if x != nil {
+		return x.SelectAtLoad
+	}
+	return nil
+}
+
 var File_variance_v1_variant_configuration_proto protoreflect.FileDescriptor
 
 const file_variance_v1_variant_configuration_proto_rawDesc = "" +
@@ -223,7 +282,11 @@ const file_variance_v1_variant_configuration_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
 	"\x04icon\x18\x03 \x01(\tR\x04icon\x12 \n" +
 	"\vdescription\x18\x04 \x01(\tR\vdescription\x12O\n" +
-	"\rconfiguration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationB\x06\xbaH\x03\xc8\x01\x01R\rconfigurationB\xc2\x01\n" +
+	"\rconfiguration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationB\x06\xbaH\x03\xc8\x01\x01R\rconfiguration\"\xd4\x02\n" +
+	"\x12NamedVariantChoice\x12Q\n" +
+	"\x1enamed_variant_configuration_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x1bnamedVariantConfigurationId\x12\xea\x01\n" +
+	"\x0eselect_at_load\x18\x02 \x01(\v2!.variance.v1.VariantConfigurationB\xa0\x01\xbaH\x9c\x01\xba\x01\x95\x01\n" +
+	"-named_variant_choice.select_at_load.not_empty\x12Ha named variant choice must select the axes of the select-at-load groups\x1a\x1athis.selections.size() > 0\xc8\x01\x01R\fselectAtLoadB\xc2\x01\n" +
 	"\x0fcom.variance.v1B\x19VariantConfigurationProtoP\x01Z>github.com/cobotar/protocol/v2/messages/variance/v1;variancev1\xa2\x02\x03VXX\xaa\x02\x14Messages.Variance.V1\xca\x02\vVariance\\V1\xe2\x02\x17Variance\\V1\\GPBMetadata\xea\x02\fVariance::V1b\x06proto3"
 
 var (
@@ -238,20 +301,22 @@ func file_variance_v1_variant_configuration_proto_rawDescGZIP() []byte {
 	return file_variance_v1_variant_configuration_proto_rawDescData
 }
 
-var file_variance_v1_variant_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_variance_v1_variant_configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_variance_v1_variant_configuration_proto_goTypes = []any{
 	(*VariantSelection)(nil),          // 0: variance.v1.VariantSelection
 	(*VariantConfiguration)(nil),      // 1: variance.v1.VariantConfiguration
 	(*NamedVariantConfiguration)(nil), // 2: variance.v1.NamedVariantConfiguration
+	(*NamedVariantChoice)(nil),        // 3: variance.v1.NamedVariantChoice
 }
 var file_variance_v1_variant_configuration_proto_depIdxs = []int32{
 	0, // 0: variance.v1.VariantConfiguration.selections:type_name -> variance.v1.VariantSelection
 	1, // 1: variance.v1.NamedVariantConfiguration.configuration:type_name -> variance.v1.VariantConfiguration
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	1, // 2: variance.v1.NamedVariantChoice.select_at_load:type_name -> variance.v1.VariantConfiguration
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_variance_v1_variant_configuration_proto_init() }
@@ -265,7 +330,7 @@ func file_variance_v1_variant_configuration_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_variance_v1_variant_configuration_proto_rawDesc), len(file_variance_v1_variant_configuration_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

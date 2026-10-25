@@ -543,6 +543,7 @@ type ProcessLoadRequest struct {
 	//
 	//	*ProcessLoadRequest_VariantConfiguration
 	//	*ProcessLoadRequest_NamedVariantConfigurationId
+	//	*ProcessLoadRequest_NamedVariantChoice
 	Variant isProcessLoadRequest_Variant `protobuf_oneof:"variant"`
 	// true  -> perform precheck only
 	// false -> perform precheck and instantiate ProcessRun if feasible
@@ -658,6 +659,15 @@ func (x *ProcessLoadRequest) GetNamedVariantConfigurationId() string {
 	return ""
 }
 
+func (x *ProcessLoadRequest) GetNamedVariantChoice() *v11.NamedVariantChoice {
+	if x != nil {
+		if x, ok := x.Variant.(*ProcessLoadRequest_NamedVariantChoice); ok {
+			return x.NamedVariantChoice
+		}
+	}
+	return nil
+}
+
 func (x *ProcessLoadRequest) GetDryRun() bool {
 	if x != nil {
 		return x.DryRun
@@ -728,13 +738,26 @@ type ProcessLoadRequest_VariantConfiguration struct {
 }
 
 type ProcessLoadRequest_NamedVariantConfigurationId struct {
-	// One of the product's named configurations, by ID.
+	// One of the product's named configurations, by ID, for a product
+	// without select-at-load groups; for one with them, the load is refused
+	// (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) since their axes
+	// aren't chosen.
 	NamedVariantConfigurationId string `protobuf:"bytes,14,opt,name=named_variant_configuration_id,json=namedVariantConfigurationId,proto3,oneof"`
+}
+
+type ProcessLoadRequest_NamedVariantChoice struct {
+	// One of the product's named configurations with the choices for the
+	// product's select-at-load groups (cobotar/protocol#35). The backend
+	// combines them and checks the result as a variant_configuration; it also
+	// refuses choices that select an axis outside the select-at-load groups.
+	NamedVariantChoice *v11.NamedVariantChoice `protobuf:"bytes,15,opt,name=named_variant_choice,json=namedVariantChoice,proto3,oneof"`
 }
 
 func (*ProcessLoadRequest_VariantConfiguration) isProcessLoadRequest_Variant() {}
 
 func (*ProcessLoadRequest_NamedVariantConfigurationId) isProcessLoadRequest_Variant() {}
+
+func (*ProcessLoadRequest_NamedVariantChoice) isProcessLoadRequest_Variant() {}
 
 type ProcessRunIssue struct {
 	state    protoimpl.MessageState  `protogen:"open.v1"`
@@ -1330,14 +1353,15 @@ var File_runtime_v1_process_requests_proto protoreflect.FileDescriptor
 const file_runtime_v1_process_requests_proto_rawDesc = "" +
 	"\n" +
 	"!runtime/v1/process_requests.proto\x12\n" +
-	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xe1\x06\n" +
+	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x15common/v1/actor.proto\x1a$common/v1/key_value_constraint.proto\x1a\x1cruntime/v1/process_run.proto\x1a$runtime/v1/runtime_restriction.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xb6\a\n" +
 	"\x12ProcessLoadRequest\x128\n" +
 	"\x11process_recipe_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xa0\xf2\x04\x01R\x0fprocessRecipeId\x122\n" +
 	"\x0etarget_line_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xc0\xf2\x04\x01R\ftargetLineId\x12/\n" +
 	"\x0etarget_cell_id\x18\x03 \x01(\tB\t\xbaH\x06r\x04\xb8\xf2\x04\x01R\ftargetCellId\x125\n" +
 	"\x11target_station_id\x18\x04 \x01(\tB\t\xbaH\x06r\x04\xf8\xf1\x04\x01R\x0ftargetStationId\x12X\n" +
 	"\x15variant_configuration\x18\x05 \x01(\v2!.variance.v1.VariantConfigurationH\x00R\x14variantConfiguration\x12P\n" +
-	"\x1enamed_variant_configuration_id\x18\x0e \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01H\x00R\x1bnamedVariantConfigurationId\x12\x17\n" +
+	"\x1enamed_variant_configuration_id\x18\x0e \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01H\x00R\x1bnamedVariantConfigurationId\x12S\n" +
+	"\x14named_variant_choice\x18\x0f \x01(\v2\x1f.variance.v1.NamedVariantChoiceH\x00R\x12namedVariantChoice\x12\x17\n" +
 	"\adry_run\x18\x06 \x01(\bR\x06dryRun\x12*\n" +
 	"\x11queue_if_occupied\x18\a \x01(\bR\x0fqueueIfOccupied\x12E\n" +
 	"\bstrategy\x18\b \x01(\x0e2\x1f.runtime.v1.ProcessLoadStrategyB\b\xbaH\x05\x82\x01\x02\x10\x01R\bstrategy\x12\x19\n" +
@@ -1508,37 +1532,39 @@ var file_runtime_v1_process_requests_proto_goTypes = []any{
 	(*ProcessRunPrecheckResult)(nil), // 12: runtime.v1.ProcessRunPrecheckResult
 	(*ProcessLoadResult)(nil),        // 13: runtime.v1.ProcessLoadResult
 	(*v11.VariantConfiguration)(nil), // 14: variance.v1.VariantConfiguration
-	(*v1.KeyValueConstraint)(nil),    // 15: common.v1.KeyValueConstraint
-	(*v1.ActorRef)(nil),              // 16: common.v1.ActorRef
-	(*RuntimeRestriction)(nil),       // 17: runtime.v1.RuntimeRestriction
-	(*ProcessRun)(nil),               // 18: runtime.v1.ProcessRun
+	(*v11.NamedVariantChoice)(nil),   // 15: variance.v1.NamedVariantChoice
+	(*v1.KeyValueConstraint)(nil),    // 16: common.v1.KeyValueConstraint
+	(*v1.ActorRef)(nil),              // 17: common.v1.ActorRef
+	(*RuntimeRestriction)(nil),       // 18: runtime.v1.RuntimeRestriction
+	(*ProcessRun)(nil),               // 19: runtime.v1.ProcessRun
 }
 var file_runtime_v1_process_requests_proto_depIdxs = []int32{
 	14, // 0: runtime.v1.ProcessLoadRequest.variant_configuration:type_name -> variance.v1.VariantConfiguration
-	0,  // 1: runtime.v1.ProcessLoadRequest.strategy:type_name -> runtime.v1.ProcessLoadStrategy
-	15, // 2: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
-	1,  // 3: runtime.v1.ProcessLoadRequest.allocation_strategy:type_name -> runtime.v1.AllocationStrategy
-	2,  // 4: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
-	3,  // 5: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
-	4,  // 6: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
-	16, // 7: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
-	17, // 8: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
-	8,  // 9: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
-	10, // 10: runtime.v1.CandidateActorEvaluation.tool:type_name -> runtime.v1.TaskToolProvision
-	16, // 11: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
-	8,  // 12: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
-	9,  // 13: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
-	8,  // 14: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
-	11, // 15: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
-	5,  // 16: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
-	6,  // 17: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
-	12, // 18: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
-	18, // 19: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
-	20, // [20:20] is the sub-list for method output_type
-	20, // [20:20] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	15, // 1: runtime.v1.ProcessLoadRequest.named_variant_choice:type_name -> variance.v1.NamedVariantChoice
+	0,  // 2: runtime.v1.ProcessLoadRequest.strategy:type_name -> runtime.v1.ProcessLoadStrategy
+	16, // 3: runtime.v1.ProcessLoadRequest.parameters:type_name -> common.v1.KeyValueConstraint
+	1,  // 4: runtime.v1.ProcessLoadRequest.allocation_strategy:type_name -> runtime.v1.AllocationStrategy
+	2,  // 5: runtime.v1.ProcessRunIssue.failure:type_name -> runtime.v1.ProcessLoadFailure
+	3,  // 6: runtime.v1.ProcessRunIssue.severity:type_name -> runtime.v1.ProcessRunIssueSeverity
+	4,  // 7: runtime.v1.ProcessRunIssue.importance:type_name -> runtime.v1.RequirementImportance
+	17, // 8: runtime.v1.CandidateActorEvaluation.actor:type_name -> common.v1.ActorRef
+	18, // 9: runtime.v1.CandidateActorEvaluation.restrictions:type_name -> runtime.v1.RuntimeRestriction
+	8,  // 10: runtime.v1.CandidateActorEvaluation.issues:type_name -> runtime.v1.ProcessRunIssue
+	10, // 11: runtime.v1.CandidateActorEvaluation.tool:type_name -> runtime.v1.TaskToolProvision
+	17, // 12: runtime.v1.TaskFeasibility.candidate_actors:type_name -> common.v1.ActorRef
+	8,  // 13: runtime.v1.TaskFeasibility.issues:type_name -> runtime.v1.ProcessRunIssue
+	9,  // 14: runtime.v1.TaskFeasibility.candidate_actor_evaluations:type_name -> runtime.v1.CandidateActorEvaluation
+	8,  // 15: runtime.v1.ProcessRunPrecheckResult.issues:type_name -> runtime.v1.ProcessRunIssue
+	11, // 16: runtime.v1.ProcessRunPrecheckResult.task_feasibility:type_name -> runtime.v1.TaskFeasibility
+	5,  // 17: runtime.v1.ProcessRunPrecheckResult.status:type_name -> runtime.v1.ProcessRunPrecheckStatus
+	6,  // 18: runtime.v1.ProcessLoadResult.status:type_name -> runtime.v1.ProcessLoadStatus
+	12, // 19: runtime.v1.ProcessLoadResult.precheck:type_name -> runtime.v1.ProcessRunPrecheckResult
+	19, // 20: runtime.v1.ProcessLoadResult.process_run:type_name -> runtime.v1.ProcessRun
+	21, // [21:21] is the sub-list for method output_type
+	21, // [21:21] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_runtime_v1_process_requests_proto_init() }
@@ -1551,6 +1577,7 @@ func file_runtime_v1_process_requests_proto_init() {
 	file_runtime_v1_process_requests_proto_msgTypes[0].OneofWrappers = []any{
 		(*ProcessLoadRequest_VariantConfiguration)(nil),
 		(*ProcessLoadRequest_NamedVariantConfigurationId)(nil),
+		(*ProcessLoadRequest_NamedVariantChoice)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

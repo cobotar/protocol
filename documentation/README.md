@@ -446,6 +446,7 @@
     - [ProcessType](#process-v1-ProcessType)
   
 - [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
+    - [NamedVariantChoice](#variance-v1-NamedVariantChoice)
     - [NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration)
     - [VariantConfiguration](#variance-v1-VariantConfiguration)
     - [VariantSelection](#variance-v1-VariantSelection)
@@ -6792,14 +6793,33 @@ ignored.
 
 
 
+<a name="variance-v1-NamedVariantChoice"></a>
+
+### NamedVariantChoice
+NamedVariantChoice is a named configuration with the operator&#39;s choices for
+the product&#39;s select-at-load groups (VariantGroup.select_at_load,
+cobotar/protocol#35), e.g. &#34;Phone2Lite&#34; with the case in blue.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| named_variant_configuration_id | [string](#string) |  | One of the product&#39;s named configurations, by ID. |
+| select_at_load | [VariantConfiguration](#variance-v1-VariantConfiguration) |  | The selected axes of the select-at-load groups, and nothing else. A product without such groups is loaded with the named configuration alone. |
+
+
+
+
+
+
 <a name="variance-v1-NamedVariantConfiguration"></a>
 
 ### NamedVariantConfiguration
 NamedVariantConfiguration is a configuration a product names, e.g. a row of
 the configuration table (&#34;Full spec, black&#34;), which an operator can pick
-instead of choosing axis by axis. It holds the selected axes only. Named
-configurations are shortcuts: they don&#39;t define which configurations are
-valid.
+instead of choosing axis by axis. It holds the selected axes only, apart from
+those of select-at-load groups (VariantGroup.select_at_load), which are
+chosen when a process is loaded. Named configurations are shortcuts: they
+don&#39;t define which configurations are valid.
 
 
 | Field | Type | Label | Description |
@@ -7742,6 +7762,10 @@ e.g. the colour of the case.
 Within a group every combination of the selected axes is valid, except the
 excluded ones, or, when allowed is given, only the allowed ones.
 
+A select-at-load group (select_at_load) is chosen by the operator every time
+a process is loaded, whatever named configuration is picked, e.g. the colour
+or material of an interchangeable part (cobotar/protocol#35).
+
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
@@ -7752,6 +7776,7 @@ excluded ones, or, when allowed is given, only the allowed ones.
 | axis_ids | [string](#string) | repeated |  |
 | excluded | [VariantCondition](#variance-v1-VariantCondition) | repeated | Combinations that aren&#39;t valid, any of which rejects a configuration, e.g. &#34;connectivity: none&#34; and &#34;memory: 32gb&#34;. |
 | allowed | [VariantConfiguration](#variance-v1-VariantConfiguration) | repeated | The only valid combinations, each selecting every selected axis of the group and nothing else (checked by ProductDefinition). Give it only when listing them is shorter than excluding the rest. |
+| select_at_load | [bool](#bool) |  | The group is chosen when a process is loaded, never by a named configuration (cobotar/protocol#35): named configurations don&#39;t select its axes, and a load that names a configuration selects them separately (runtime.v1.ProcessLoadRequest.named_variant_choice). Its axes are all selected ones; a derived axis can&#39;t be in such a group (checked by ProductDefinition). |
 
 
 
@@ -7791,7 +7816,7 @@ TODO: add validation for: root_node_id, nodes
 | nodes | [AssemblyNode](#product-v1-AssemblyNode) | repeated |  |
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | variant_groups | [variance.v1.VariantGroup](#variance-v1-VariantGroup) | repeated | Groups of axes that depend on each other (cobotar/protocol#32). An axis outside every group is independent, and every option of it is valid. |
-| configurations | [variance.v1.NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration) | repeated | Configurations the product names, e.g. the rows of the configuration table, which an operator can pick when loading a process. |
+| configurations | [variance.v1.NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration) | repeated | Configurations the product names, e.g. the rows of the configuration table, which an operator can pick when loading a process. They select every selected axis except those of select-at-load groups. |
 | model_id | [string](#string) |  | A model of the whole product, e.g. the assembly exported from CAD, for its thumbnail in lists and a 3D preview; empty for none. For a product with variants it shows one configuration, such as the one the CAD design had active. It&#39;s only a picture of the product: the nodes and their parts&#39; models are what processes and the AR runtime use. |
 
 
@@ -10742,7 +10767,7 @@ individual tasks to be reassigned, blocked, or suspended.
 | revision | [uint64](#uint64) |  | Revision used to prevent concurrent state changes and reassignments from overwriting one another. Starts at 1. |
 | process_recipe_revision | [uint64](#uint64) |  | The revision of the recipe (process_recipe_id) the run was loaded with. Its sequence and task runs refer to the sequence and task definitions of that recipe revision (cobotar/protocol#19). Set by the backend. |
 | part_definition_revisions | [ProcessRun.PartDefinitionRevisionsEntry](#runtime-v1-ProcessRun-PartDefinitionRevisionsEntry) | repeated | The revisions of the part definitions the run&#39;s tasks target, by part definition ID, as the run was loaded. Set by the backend. |
-| named_variant_configuration_id | [string](#string) |  | The product&#39;s named configuration the run was loaded with, if the load named one. Set by the backend. |
+| named_variant_configuration_id | [string](#string) |  | The product&#39;s named configuration the run was loaded with, if the load named one (alone or with the select-at-load choices, whose options are in variant_configuration). Set by the backend. |
 
 
 
@@ -10955,7 +10980,8 @@ Thus the following must be evaluated:
 | target_cell_id | [string](#string) |  | Optional narrowing of the target scope. If set, the loader must validate and respect these targets. |
 | target_station_id | [string](#string) |  |  |
 | variant_configuration | [variance.v1.VariantConfiguration](#variance-v1-VariantConfiguration) |  | The selected axes only. The backend adds the derived axes and refuses (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) a configuration that misses a selected axis, names an unknown axis or option, selects a derived axis, is excluded by its variant group, or for which a derived axis gets no option or several. |
-| named_variant_configuration_id | [string](#string) |  | One of the product&#39;s named configurations, by ID. |
+| named_variant_configuration_id | [string](#string) |  | One of the product&#39;s named configurations, by ID, for a product without select-at-load groups; for one with them, the load is refused (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) since their axes aren&#39;t chosen. |
+| named_variant_choice | [variance.v1.NamedVariantChoice](#variance-v1-NamedVariantChoice) |  | One of the product&#39;s named configurations with the choices for the product&#39;s select-at-load groups (cobotar/protocol#35). The backend combines them and checks the result as a variant_configuration; it also refuses choices that select an axis outside the select-at-load groups. |
 | dry_run | [bool](#bool) |  | true -&gt; perform precheck only false -&gt; perform precheck and instantiate ProcessRun if feasible |
 | queue_if_occupied | [bool](#bool) |  | If true, the loader may create a queued ProcessRun when the preferred execution target is currently BUSY but otherwise feasible. |
 | strategy | [ProcessLoadStrategy](#runtime-v1-ProcessLoadStrategy) |  | Optional execution preferences for the loader. |

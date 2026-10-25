@@ -31,6 +31,10 @@ const (
 //
 // Within a group every combination of the selected axes is valid, except the
 // excluded ones, or, when allowed is given, only the allowed ones.
+//
+// A select-at-load group (select_at_load) is chosen by the operator every time
+// a process is loaded, whatever named configuration is picked, e.g. the colour
+// or material of an interchangeable part (cobotar/protocol#35).
 type VariantGroup struct {
 	state       protoimpl.MessageState `protogen:"open.v1"`
 	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -44,7 +48,14 @@ type VariantGroup struct {
 	// The only valid combinations, each selecting every selected axis of the
 	// group and nothing else (checked by ProductDefinition). Give it only when
 	// listing them is shorter than excluding the rest.
-	Allowed       []*VariantConfiguration `protobuf:"bytes,7,rep,name=allowed,proto3" json:"allowed,omitempty"`
+	Allowed []*VariantConfiguration `protobuf:"bytes,7,rep,name=allowed,proto3" json:"allowed,omitempty"`
+	// The group is chosen when a process is loaded, never by a named
+	// configuration (cobotar/protocol#35): named configurations don't select its
+	// axes, and a load that names a configuration selects them separately
+	// (runtime.v1.ProcessLoadRequest.named_variant_choice). Its axes are all
+	// selected ones; a derived axis can't be in such a group (checked by
+	// ProductDefinition).
+	SelectAtLoad  bool `protobuf:"varint,8,opt,name=select_at_load,json=selectAtLoad,proto3" json:"select_at_load,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,11 +139,18 @@ func (x *VariantGroup) GetAllowed() []*VariantConfiguration {
 	return nil
 }
 
+func (x *VariantGroup) GetSelectAtLoad() bool {
+	if x != nil {
+		return x.SelectAtLoad
+	}
+	return false
+}
+
 var File_variance_v1_variant_group_proto protoreflect.FileDescriptor
 
 const file_variance_v1_variant_group_proto_rawDesc = "" +
 	"\n" +
-	"\x1fvariance/v1/variant_group.proto\x12\vvariance.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\x1a'variance/v1/variant_configuration.proto\"\xdf\a\n" +
+	"\x1fvariance/v1/variant_group.proto\x12\vvariance.v1\x1a\x1bbuf/validate/validate.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\x1a'variance/v1/variant_configuration.proto\"\x85\b\n" +
 	"\fVariantGroup\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x02id\x12 \n" +
 	"\x04name\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -141,7 +159,8 @@ const file_variance_v1_variant_group_proto_rawDesc = "" +
 	"\baxis_ids\x18\x05 \x03(\tB\x12\xbaH\x0f\x92\x01\f\b\x01\x18\x01\"\x06r\x04\xe0\xf3\x04\x01R\aaxisIds\x12\xc2\x01\n" +
 	"\bexcluded\x18\x06 \x03(\v2\x1d.variance.v1.VariantConditionB\x86\x01\xbaH\x82\x01\xba\x01\x7f\n" +
 	" variant_group.excluded.not_empty\x12)an excluded combination needs a condition\x1a0this.all(condition, condition.all_of.size() > 0)R\bexcluded\x12;\n" +
-	"\aallowed\x18\a \x03(\v2!.variance.v1.VariantConfigurationR\aallowed:\xa7\x04\xbaH\xa3\x04\x1a\x9f\x01\n" +
+	"\aallowed\x18\a \x03(\v2!.variance.v1.VariantConfigurationR\aallowed\x12$\n" +
+	"\x0eselect_at_load\x18\b \x01(\bR\fselectAtLoad:\xa7\x04\xbaH\xa3\x04\x1a\x9f\x01\n" +
 	"!variant_group.excluded_or_allowed\x12Ca variant group can list excluded or allowed combinations, not both\x1a5this.excluded.size() == 0 || this.allowed.size() == 0\x1a\xb3\x01\n" +
 	"\x1fvariant_group.excluded.own_axes\x127excluded combinations can only name axes of their group\x1aWthis.excluded.all(condition, condition.all_of.all(axis, axis.axis_id in this.axis_ids))\x1a\xc8\x01\n" +
 	"\x1evariant_group.allowed.own_axes\x128allowed combinations can only select axes of their group\x1althis.allowed.all(configuration, configuration.selections.all(selection, selection.axis_id in this.axis_ids))B\xba\x01\n" +

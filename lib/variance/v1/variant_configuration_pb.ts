@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file variance/v1/variant_configuration.proto.
  */
 export const file_variance_v1_variant_configuration: GenFile = /*@__PURE__*/
-  fileDesc("Cid2YXJpYW5jZS92MS92YXJpYW50X2NvbmZpZ3VyYXRpb24ucHJvdG8SC3ZhcmlhbmNlLnYxIlIKEFZhcmlhbnRTZWxlY3Rpb24SHQoHYXhpc19pZBgBIAEoCUIMukgJyAEBcgTg8wQBEh8KCW9wdGlvbl9pZBgCIAEoCUIMukgJyAEBcgTg8wQBIvUBChRWYXJpYW50Q29uZmlndXJhdGlvbhLcAQoKc2VsZWN0aW9ucxgBIAMoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRTZWxlY3Rpb25CqAG6SKQBugGgAQowdmFyaWFudF9jb25maWd1cmF0aW9uLnNlbGVjdGlvbnMudW5pcXVlX2F4aXNfaWRzEjthIHZhcmlhbnQgY29uZmlndXJhdGlvbiBjYW4gc2VsZWN0IG9ubHkgb25lIG9wdGlvbiBwZXIgYXhpcxovdGhpcy5tYXAoc2VsZWN0aW9uLCBzZWxlY3Rpb24uYXhpc19pZCkudW5pcXVlKCkitgEKGU5hbWVkVmFyaWFudENvbmZpZ3VyYXRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRJACg1jb25maWd1cmF0aW9uGAUgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25CBrpIA8gBAULCAQoPY29tLnZhcmlhbmNlLnYxQhlWYXJpYW50Q29uZmlndXJhdGlvblByb3RvUAFaPmdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy92YXJpYW5jZS92MTt2YXJpYW5jZXYxogIDVlhYqgIUTWVzc2FnZXMuVmFyaWFuY2UuVjHKAgtWYXJpYW5jZVxWMeICF1ZhcmlhbmNlXFYxXEdQQk1ldGFkYXRh6gIMVmFyaWFuY2U6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
+  fileDesc("Cid2YXJpYW5jZS92MS92YXJpYW50X2NvbmZpZ3VyYXRpb24ucHJvdG8SC3ZhcmlhbmNlLnYxIlIKEFZhcmlhbnRTZWxlY3Rpb24SHQoHYXhpc19pZBgBIAEoCUIMukgJyAEBcgTg8wQBEh8KCW9wdGlvbl9pZBgCIAEoCUIMukgJyAEBcgTg8wQBIvUBChRWYXJpYW50Q29uZmlndXJhdGlvbhLcAQoKc2VsZWN0aW9ucxgBIAMoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRTZWxlY3Rpb25CqAG6SKQBugGgAQowdmFyaWFudF9jb25maWd1cmF0aW9uLnNlbGVjdGlvbnMudW5pcXVlX2F4aXNfaWRzEjthIHZhcmlhbnQgY29uZmlndXJhdGlvbiBjYW4gc2VsZWN0IG9ubHkgb25lIG9wdGlvbiBwZXIgYXhpcxovdGhpcy5tYXAoc2VsZWN0aW9uLCBzZWxlY3Rpb24uYXhpc19pZCkudW5pcXVlKCkitgEKGU5hbWVkVmFyaWFudENvbmZpZ3VyYXRpb24SGAoCaWQYASABKAlCDLpICcgBAXIE4PMEARIaCgRuYW1lGAIgASgJQgy6SAnIAQFyBIDxBAESDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRJACg1jb25maWd1cmF0aW9uGAUgASgLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25CBrpIA8gBASKpAgoSTmFtZWRWYXJpYW50Q2hvaWNlEjQKHm5hbWVkX3ZhcmlhbnRfY29uZmlndXJhdGlvbl9pZBgBIAEoCUIMukgJyAEBcgTg8wQBEtwBCg5zZWxlY3RfYXRfbG9hZBgCIAEoCzIhLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25maWd1cmF0aW9uQqABukicAboBlQEKLW5hbWVkX3ZhcmlhbnRfY2hvaWNlLnNlbGVjdF9hdF9sb2FkLm5vdF9lbXB0eRJIYSBuYW1lZCB2YXJpYW50IGNob2ljZSBtdXN0IHNlbGVjdCB0aGUgYXhlcyBvZiB0aGUgc2VsZWN0LWF0LWxvYWQgZ3JvdXBzGhp0aGlzLnNlbGVjdGlvbnMuc2l6ZSgpID4gMMgBAULCAQoPY29tLnZhcmlhbmNlLnYxQhlWYXJpYW50Q29uZmlndXJhdGlvblByb3RvUAFaPmdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy92YXJpYW5jZS92MTt2YXJpYW5jZXYxogIDVlhYqgIUTWVzc2FnZXMuVmFyaWFuY2UuVjHKAgtWYXJpYW5jZVxWMeICF1ZhcmlhbmNlXFYxXEdQQk1ldGFkYXRh6gIMVmFyaWFuY2U6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_validation_v1_predefined_string_rules]);
 
 /**
  * @generated from message variance.v1.VariantSelection
@@ -66,9 +66,10 @@ export const VariantConfigurationSchema: GenMessage<VariantConfiguration> = /*@_
 /**
  * NamedVariantConfiguration is a configuration a product names, e.g. a row of
  * the configuration table ("Full spec, black"), which an operator can pick
- * instead of choosing axis by axis. It holds the selected axes only. Named
- * configurations are shortcuts: they don't define which configurations are
- * valid.
+ * instead of choosing axis by axis. It holds the selected axes only, apart from
+ * those of select-at-load groups (VariantGroup.select_at_load), which are
+ * chosen when a process is loaded. Named configurations are shortcuts: they
+ * don't define which configurations are valid.
  *
  * @generated from message variance.v1.NamedVariantConfiguration
  */
@@ -105,4 +106,35 @@ export type NamedVariantConfiguration = Message<"variance.v1.NamedVariantConfigu
  */
 export const NamedVariantConfigurationSchema: GenMessage<NamedVariantConfiguration> = /*@__PURE__*/
   messageDesc(file_variance_v1_variant_configuration, 2);
+
+/**
+ * NamedVariantChoice is a named configuration with the operator's choices for
+ * the product's select-at-load groups (VariantGroup.select_at_load,
+ * cobotar/protocol#35), e.g. "Phone2Lite" with the case in blue.
+ *
+ * @generated from message variance.v1.NamedVariantChoice
+ */
+export type NamedVariantChoice = Message<"variance.v1.NamedVariantChoice"> & {
+  /**
+   * One of the product's named configurations, by ID.
+   *
+   * @generated from field: string named_variant_configuration_id = 1;
+   */
+  namedVariantConfigurationId: string;
+
+  /**
+   * The selected axes of the select-at-load groups, and nothing else. A
+   * product without such groups is loaded with the named configuration alone.
+   *
+   * @generated from field: variance.v1.VariantConfiguration select_at_load = 2;
+   */
+  selectAtLoad?: VariantConfiguration;
+};
+
+/**
+ * Describes the message variance.v1.NamedVariantChoice.
+ * Use `create(NamedVariantChoiceSchema)` to create a new message.
+ */
+export const NamedVariantChoiceSchema: GenMessage<NamedVariantChoice> = /*@__PURE__*/
+  messageDesc(file_variance_v1_variant_configuration, 3);
 

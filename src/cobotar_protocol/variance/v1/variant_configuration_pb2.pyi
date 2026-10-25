@@ -35,3 +35,11 @@ class NamedVariantConfiguration(_message.Message):
     description: str
     configuration: VariantConfiguration
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., configuration: _Optional[_Union[VariantConfiguration, _Mapping]] = ...) -> None: ...
+
+class NamedVariantChoice(_message.Message):
+    __slots__ = ("named_variant_configuration_id", "select_at_load")
+    NAMED_VARIANT_CONFIGURATION_ID_FIELD_NUMBER: _ClassVar[int]
+    SELECT_AT_LOAD_FIELD_NUMBER: _ClassVar[int]
+    named_variant_configuration_id: str
+    select_at_load: VariantConfiguration
+    def __init__(self, named_variant_configuration_id: _Optional[str] = ..., select_at_load: _Optional[_Union[VariantConfiguration, _Mapping]] = ...) -> None: ...

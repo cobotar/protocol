@@ -689,7 +689,8 @@ namespace Messages.Runtime.V1 {
     private string namedVariantConfigurationId_ = "";
     /// <summary>
     /// The product's named configuration the run was loaded with, if the load
-    /// named one. Set by the backend.
+    /// named one (alone or with the select-at-load choices, whose options are in
+    /// variant_configuration). Set by the backend.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

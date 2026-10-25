@@ -46,8 +46,18 @@ message ProductDefinition {
   };
   option (buf.validate.message).cel = {
     id: "product_definition.configurations.complete"
-    message: "a named configuration must select every selected axis of the product"
-    expression: "this.configurations.all(named, this.variant_axes.all(axis, has(axis.derivation) || named.configuration.selections.exists(selection, selection.axis_id == axis.id)))"
+    message: "a named configuration must select every selected axis of the product outside select-at-load groups"
+    expression: "this.configurations.all(named, this.variant_axes.all(axis, has(axis.derivation) || this.variant_groups.exists(group, group.select_at_load && axis.id in group.axis_ids) || named.configuration.selections.exists(selection, selection.axis_id == axis.id)))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.configurations.not_select_at_load"
+    message: "a named configuration can't select axes of a select-at-load group; they are chosen when a process is loaded"
+    expression: "this.configurations.all(named, named.configuration.selections.all(selection, !this.variant_groups.exists(group, group.select_at_load && selection.axis_id in group.axis_ids)))"
+  };
+  option (buf.validate.message).cel = {
+    id: "product_definition.variant_groups.select_at_load_selected_only"
+    message: "a select-at-load group can't have derived axes"
+    expression: "this.variant_groups.all(group, !group.select_at_load || group.axis_ids.all(axis_id, this.variant_axes.exists(axis, axis.id == axis_id && !has(axis.derivation))))"
   };
   option (buf.validate.message).cel = {
     id: "product_definition.variant_axes.derivation_known_options"
@@ -111,7 +121,8 @@ message ProductDefinition {
   ];
 
   // Configurations the product names, e.g. the rows of the configuration
-  // table, which an operator can pick when loading a process.
+  // table, which an operator can pick when loading a process. They select
+  // every selected axis except those of select-at-load groups.
   repeated variance.v1.NamedVariantConfiguration configurations = 10 [
     (buf.validate.field).cel = {
       id: "product_definition.configurations.unique_ids"

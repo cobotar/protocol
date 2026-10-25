@@ -91,8 +91,17 @@ message ProcessLoadRequest {
     // axis gets no option or several.
     variance.v1.VariantConfiguration variant_configuration = 5;
 
-    // One of the product's named configurations, by ID.
+    // One of the product's named configurations, by ID, for a product
+    // without select-at-load groups; for one with them, the load is refused
+    // (PROCESS_LOAD_FAILURE_INVALID_VARIANT_CONFIGURATION) since their axes
+    // aren't chosen.
     string named_variant_configuration_id = 14 [(buf.validate.field).string.(validation.v1.key_component) = true];
+
+    // One of the product's named configurations with the choices for the
+    // product's select-at-load groups (cobotar/protocol#35). The backend
+    // combines them and checks the result as a variant_configuration; it also
+    // refuses choices that select an axis outside the select-at-load groups.
+    variance.v1.NamedVariantChoice named_variant_choice = 15;
   }
 
   // true  -> perform precheck only

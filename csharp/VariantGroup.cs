@@ -28,7 +28,7 @@ namespace Messages.Variance.V1 {
             "MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGit2YWxpZGF0aW9uL3Yx",
             "L3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvGiN2YXJpYW5jZS92MS92",
             "YXJpYW50X2NvbmRpdGlvbi5wcm90bxondmFyaWFuY2UvdjEvdmFyaWFudF9j",
-            "b25maWd1cmF0aW9uLnByb3RvIt8HCgxWYXJpYW50R3JvdXASHAoCaWQYASAB",
+            "b25maWd1cmF0aW9uLnByb3RvIoUICgxWYXJpYW50R3JvdXASHAoCaWQYASAB",
             "KAlCDLpICXIE4PMEAcgBAVICaWQSIAoEbmFtZRgCIAEoCUIMukgJcgSA8QQB",
             "yAEBUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24Y",
             "BCABKAlSC2Rlc2NyaXB0aW9uEi0KCGF4aXNfaWRzGAUgAygJQhK6SA+SAQwI",
@@ -38,27 +38,28 @@ namespace Messages.Variance.V1 {
             "dGlvbiBuZWVkcyBhIGNvbmRpdGlvbhowdGhpcy5hbGwoY29uZGl0aW9uLCBj",
             "b25kaXRpb24uYWxsX29mLnNpemUoKSA+IDApUghleGNsdWRlZBI7CgdhbGxv",
             "d2VkGAcgAygLMiEudmFyaWFuY2UudjEuVmFyaWFudENvbmZpZ3VyYXRpb25S",
-            "B2FsbG93ZWQ6pwS6SKMEGp8BCiF2YXJpYW50X2dyb3VwLmV4Y2x1ZGVkX29y",
-            "X2FsbG93ZWQSQ2EgdmFyaWFudCBncm91cCBjYW4gbGlzdCBleGNsdWRlZCBv",
-            "ciBhbGxvd2VkIGNvbWJpbmF0aW9ucywgbm90IGJvdGgaNXRoaXMuZXhjbHVk",
-            "ZWQuc2l6ZSgpID09IDAgfHwgdGhpcy5hbGxvd2VkLnNpemUoKSA9PSAwGrMB",
-            "Ch92YXJpYW50X2dyb3VwLmV4Y2x1ZGVkLm93bl9heGVzEjdleGNsdWRlZCBj",
-            "b21iaW5hdGlvbnMgY2FuIG9ubHkgbmFtZSBheGVzIG9mIHRoZWlyIGdyb3Vw",
-            "Gld0aGlzLmV4Y2x1ZGVkLmFsbChjb25kaXRpb24sIGNvbmRpdGlvbi5hbGxf",
-            "b2YuYWxsKGF4aXMsIGF4aXMuYXhpc19pZCBpbiB0aGlzLmF4aXNfaWRzKSka",
-            "yAEKHnZhcmlhbnRfZ3JvdXAuYWxsb3dlZC5vd25fYXhlcxI4YWxsb3dlZCBj",
-            "b21iaW5hdGlvbnMgY2FuIG9ubHkgc2VsZWN0IGF4ZXMgb2YgdGhlaXIgZ3Jv",
-            "dXAabHRoaXMuYWxsb3dlZC5hbGwoY29uZmlndXJhdGlvbiwgY29uZmlndXJh",
-            "dGlvbi5zZWxlY3Rpb25zLmFsbChzZWxlY3Rpb24sIHNlbGVjdGlvbi5heGlz",
-            "X2lkIGluIHRoaXMuYXhpc19pZHMpKUK6AQoPY29tLnZhcmlhbmNlLnYxQhFW",
-            "YXJpYW50R3JvdXBQcm90b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
-            "b2wvdjIvbWVzc2FnZXMvdmFyaWFuY2UvdjE7dmFyaWFuY2V2MaICA1ZYWKoC",
-            "FE1lc3NhZ2VzLlZhcmlhbmNlLlYxygILVmFyaWFuY2VcVjHiAhdWYXJpYW5j",
-            "ZVxWMVxHUEJNZXRhZGF0YeoCDFZhcmlhbmNlOjpWMWIGcHJvdG8z"));
+            "B2FsbG93ZWQSJAoOc2VsZWN0X2F0X2xvYWQYCCABKAhSDHNlbGVjdEF0TG9h",
+            "ZDqnBLpIowQanwEKIXZhcmlhbnRfZ3JvdXAuZXhjbHVkZWRfb3JfYWxsb3dl",
+            "ZBJDYSB2YXJpYW50IGdyb3VwIGNhbiBsaXN0IGV4Y2x1ZGVkIG9yIGFsbG93",
+            "ZWQgY29tYmluYXRpb25zLCBub3QgYm90aBo1dGhpcy5leGNsdWRlZC5zaXpl",
+            "KCkgPT0gMCB8fCB0aGlzLmFsbG93ZWQuc2l6ZSgpID09IDAaswEKH3Zhcmlh",
+            "bnRfZ3JvdXAuZXhjbHVkZWQub3duX2F4ZXMSN2V4Y2x1ZGVkIGNvbWJpbmF0",
+            "aW9ucyBjYW4gb25seSBuYW1lIGF4ZXMgb2YgdGhlaXIgZ3JvdXAaV3RoaXMu",
+            "ZXhjbHVkZWQuYWxsKGNvbmRpdGlvbiwgY29uZGl0aW9uLmFsbF9vZi5hbGwo",
+            "YXhpcywgYXhpcy5heGlzX2lkIGluIHRoaXMuYXhpc19pZHMpKRrIAQoedmFy",
+            "aWFudF9ncm91cC5hbGxvd2VkLm93bl9heGVzEjhhbGxvd2VkIGNvbWJpbmF0",
+            "aW9ucyBjYW4gb25seSBzZWxlY3QgYXhlcyBvZiB0aGVpciBncm91cBpsdGhp",
+            "cy5hbGxvd2VkLmFsbChjb25maWd1cmF0aW9uLCBjb25maWd1cmF0aW9uLnNl",
+            "bGVjdGlvbnMuYWxsKHNlbGVjdGlvbiwgc2VsZWN0aW9uLmF4aXNfaWQgaW4g",
+            "dGhpcy5heGlzX2lkcykpQroBCg9jb20udmFyaWFuY2UudjFCEVZhcmlhbnRH",
+            "cm91cFByb3RvUAFaPmdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9t",
+            "ZXNzYWdlcy92YXJpYW5jZS92MTt2YXJpYW5jZXYxogIDVlhYqgIUTWVzc2Fn",
+            "ZXMuVmFyaWFuY2UuVjHKAgtWYXJpYW5jZVxWMeICF1ZhcmlhbmNlXFYxXEdQ",
+            "Qk1ldGFkYXRh6gIMVmFyaWFuY2U6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConditionReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantGroup), global::Messages.Variance.V1.VariantGroup.Parser, new[]{ "Id", "Name", "Icon", "Description", "AxisIds", "Excluded", "Allowed" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Variance.V1.VariantGroup), global::Messages.Variance.V1.VariantGroup.Parser, new[]{ "Id", "Name", "Icon", "Description", "AxisIds", "Excluded", "Allowed", "SelectAtLoad" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,6 +75,10 @@ namespace Messages.Variance.V1 {
   ///
   /// Within a group every combination of the selected axes is valid, except the
   /// excluded ones, or, when allowed is given, only the allowed ones.
+  ///
+  /// A select-at-load group (select_at_load) is chosen by the operator every time
+  /// a process is loaded, whatever named configuration is picked, e.g. the colour
+  /// or material of an interchangeable part (cobotar/protocol#35).
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class VariantGroup : pb::IMessage<VariantGroup>
@@ -117,6 +122,7 @@ namespace Messages.Variance.V1 {
       axisIds_ = other.axisIds_.Clone();
       excluded_ = other.excluded_.Clone();
       allowed_ = other.allowed_.Clone();
+      selectAtLoad_ = other.selectAtLoad_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -216,6 +222,26 @@ namespace Messages.Variance.V1 {
       get { return allowed_; }
     }
 
+    /// <summary>Field number for the "select_at_load" field.</summary>
+    public const int SelectAtLoadFieldNumber = 8;
+    private bool selectAtLoad_;
+    /// <summary>
+    /// The group is chosen when a process is loaded, never by a named
+    /// configuration (cobotar/protocol#35): named configurations don't select its
+    /// axes, and a load that names a configuration selects them separately
+    /// (runtime.v1.ProcessLoadRequest.named_variant_choice). Its axes are all
+    /// selected ones; a derived axis can't be in such a group (checked by
+    /// ProductDefinition).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool SelectAtLoad {
+      get { return selectAtLoad_; }
+      set {
+        selectAtLoad_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -238,6 +264,7 @@ namespace Messages.Variance.V1 {
       if(!axisIds_.Equals(other.axisIds_)) return false;
       if(!excluded_.Equals(other.excluded_)) return false;
       if(!allowed_.Equals(other.allowed_)) return false;
+      if (SelectAtLoad != other.SelectAtLoad) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -252,6 +279,7 @@ namespace Messages.Variance.V1 {
       hash ^= axisIds_.GetHashCode();
       hash ^= excluded_.GetHashCode();
       hash ^= allowed_.GetHashCode();
+      if (SelectAtLoad != false) hash ^= SelectAtLoad.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -289,6 +317,10 @@ namespace Messages.Variance.V1 {
       axisIds_.WriteTo(output, _repeated_axisIds_codec);
       excluded_.WriteTo(output, _repeated_excluded_codec);
       allowed_.WriteTo(output, _repeated_allowed_codec);
+      if (SelectAtLoad != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(SelectAtLoad);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -318,6 +350,10 @@ namespace Messages.Variance.V1 {
       axisIds_.WriteTo(ref output, _repeated_axisIds_codec);
       excluded_.WriteTo(ref output, _repeated_excluded_codec);
       allowed_.WriteTo(ref output, _repeated_allowed_codec);
+      if (SelectAtLoad != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(SelectAtLoad);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -343,6 +379,9 @@ namespace Messages.Variance.V1 {
       size += axisIds_.CalculateSize(_repeated_axisIds_codec);
       size += excluded_.CalculateSize(_repeated_excluded_codec);
       size += allowed_.CalculateSize(_repeated_allowed_codec);
+      if (SelectAtLoad != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -370,6 +409,9 @@ namespace Messages.Variance.V1 {
       axisIds_.Add(other.axisIds_);
       excluded_.Add(other.excluded_);
       allowed_.Add(other.allowed_);
+      if (other.SelectAtLoad != false) {
+        SelectAtLoad = other.SelectAtLoad;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -417,6 +459,10 @@ namespace Messages.Variance.V1 {
             allowed_.AddEntriesFrom(input, _repeated_allowed_codec);
             break;
           }
+          case 64: {
+            SelectAtLoad = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -462,6 +508,10 @@ namespace Messages.Variance.V1 {
           }
           case 58: {
             allowed_.AddEntriesFrom(ref input, _repeated_allowed_codec);
+            break;
+          }
+          case 64: {
+            SelectAtLoad = input.ReadBool();
             break;
           }
         }
