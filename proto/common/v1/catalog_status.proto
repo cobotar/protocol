@@ -1,0 +1,29 @@
+syntax = "proto3";
+package common.v1;
+
+option csharp_namespace = "Messages.Common.V1";
+option go_package = "github.com/cobotar/protocol/v2/messages/common/v1";
+
+// How far a built-in, system-owned catalog entry can be relied on: an AR
+// content definition (action, feedback, function) or an adapter definition
+// (robot, asset) (cobotar/protocol#40).
+//
+// Every entry that isn't ACTIVE names the issue that keeps it from active in
+// its status_issue, e.g. "cobotar/HoloCobotAR#25", so a client can show why.
+enum CatalogStatus {
+  CATALOG_STATUS_UNSPECIFIED = 0;
+
+  // Known to work end to end. Offered normally.
+  CATALOG_STATUS_ACTIVE = 1;
+
+  // Available for new instances and supported at runtime, but not known to
+  // work yet, e.g. for experiments. Clients offer it only on request and mark
+  // it as experimental.
+  CATALOG_STATUS_EXPERIMENTAL = 2;
+
+  // Kept for existing instances, but not offered for new ones.
+  CATALOG_STATUS_DEPRECATED = 3;
+
+  // Not available for new instances or at runtime.
+  CATALOG_STATUS_DISABLED = 4;
+}

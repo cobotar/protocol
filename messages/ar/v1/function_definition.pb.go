@@ -116,8 +116,12 @@ type FunctionDefinition struct {
 	Type        FunctionType  `protobuf:"varint,6,opt,name=type,proto3,enum=ar.v1.FunctionType" json:"type,omitempty"`
 	Group       FunctionGroup `protobuf:"varint,7,opt,name=group,proto3,enum=ar.v1.FunctionGroup" json:"group,omitempty"`
 	// Monotonic revision of the externally visible definition contract.
-	Revision             uint64                             `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
-	Status               DefinitionStatus                   `protobuf:"varint,9,opt,name=status,proto3,enum=ar.v1.DefinitionStatus" json:"status,omitempty"`
+	Revision uint64 `protobuf:"varint,8,opt,name=revision,proto3" json:"revision,omitempty"`
+	// How far the definition can be relied on (cobotar/protocol#40).
+	Status v1.CatalogStatus `protobuf:"varint,9,opt,name=status,proto3,enum=common.v1.CatalogStatus" json:"status,omitempty"`
+	// The issue that keeps the definition from ACTIVE, e.g.
+	// "cobotar/HoloCobotAR#25": required unless the status is ACTIVE.
+	StatusIssue          string                             `protobuf:"bytes,15,opt,name=status_issue,json=statusIssue,proto3" json:"status_issue,omitempty"`
 	Properties           []*v1.PropertyTemplate             `protobuf:"bytes,10,rep,name=properties,proto3" json:"properties,omitempty"`
 	Execution            *ExecutionContract                 `protobuf:"bytes,13,opt,name=execution,proto3" json:"execution,omitempty"`
 	ResourceRequirements []*v11.ConsumerResourceRequirement `protobuf:"bytes,14,rep,name=resource_requirements,json=resourceRequirements,proto3" json:"resource_requirements,omitempty"`
@@ -211,11 +215,18 @@ func (x *FunctionDefinition) GetRevision() uint64 {
 	return 0
 }
 
-func (x *FunctionDefinition) GetStatus() DefinitionStatus {
+func (x *FunctionDefinition) GetStatus() v1.CatalogStatus {
 	if x != nil {
 		return x.Status
 	}
-	return DefinitionStatus_DEFINITION_STATUS_UNSPECIFIED
+	return v1.CatalogStatus(0)
+}
+
+func (x *FunctionDefinition) GetStatusIssue() string {
+	if x != nil {
+		return x.StatusIssue
+	}
+	return ""
 }
 
 func (x *FunctionDefinition) GetProperties() []*v1.PropertyTemplate {
@@ -240,7 +251,8 @@ func (x *FunctionDefinition) GetResourceRequirements() []*v11.ConsumerResourceRe
 }
 
 // The catalog service additionally enforces that revisions sharing a key also
-// share a type, and that at most one revision per key/type is ACTIVE.
+// share a type, and that at most one revision per key/type is ACTIVE or
+// EXPERIMENTAL.
 type FunctionDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*FunctionDefinition  `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -289,7 +301,7 @@ var File_ar_v1_function_definition_proto protoreflect.FileDescriptor
 
 const file_ar_v1_function_definition_proto_rawDesc = "" +
 	"\n" +
-	"\x1far/v1/function_definition.proto\x12\x05ar.v1\x1a\x1dar/v1/definition_status.proto\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/function.proto\x1a\x1bbuf/validate/validate.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\xeb\x0f\n" +
+	"\x1far/v1/function_definition.proto\x12\x05ar.v1\x1a\x1ear/v1/execution_contract.proto\x1a\x14ar/v1/function.proto\x1a\x1bbuf/validate/validate.proto\x1a\x1ecommon/v1/catalog_status.proto\x1a\x18common/v1/property.proto\x1a'resources/v1/resource_requirement.proto\x1a+validation/v1/predefined_string_rules.proto\"\x84\x12\n" +
 	"\x12FunctionDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xf8\xf3\x04\x01R\x02id\x12\x1e\n" +
 	"\x03key\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xf3\x04\x01R\x03key\x12\x1d\n" +
@@ -298,15 +310,17 @@ const file_ar_v1_function_definition_proto_rawDesc = "" +
 	"\vdescription\x18\x05 \x01(\tR\vdescription\x124\n" +
 	"\x04type\x18\x06 \x01(\x0e2\x13.ar.v1.FunctionTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x127\n" +
 	"\x05group\x18\a \x01(\x0e2\x14.ar.v1.FunctionGroupB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x05group\x12#\n" +
-	"\brevision\x18\b \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x12<\n" +
-	"\x06status\x18\t \x01(\x0e2\x17.ar.v1.DefinitionStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12\xc3\x01\n" +
+	"\brevision\x18\b \x01(\x04B\a\xbaH\x042\x02(\x01R\brevision\x12=\n" +
+	"\x06status\x18\t \x01(\x0e2\x18.common.v1.CatalogStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12,\n" +
+	"\fstatus_issue\x18\x0f \x01(\tB\t\xbaH\x06r\x04\xb0\xf4\x04\x01R\vstatusIssue\x12\xc3\x01\n" +
 	"\n" +
 	"properties\x18\n" +
 	" \x03(\v2\x1b.common.v1.PropertyTemplateB\x85\x01\xbaH\x81\x01\xba\x01~\n" +
 	"*function_definition.properties.unique_keys\x12%property template keys must be unique\x1a)this.map(property, property.key).unique()R\n" +
 	"properties\x12>\n" +
 	"\texecution\x18\r \x01(\v2\x18.ar.v1.ExecutionContractB\x06\xbaH\x03\xc8\x01\x01R\texecution\x12^\n" +
-	"\x15resource_requirements\x18\x0e \x03(\v2).resources.v1.ConsumerResourceRequirementR\x14resourceRequirements:\xfd\t\xbaH\xf9\t\x1a\xb6\x06\n" +
+	"\x15resource_requirements\x18\x0e \x03(\v2).resources.v1.ConsumerResourceRequirementR\x14resourceRequirements:\xe7\v\xbaH\xe3\v\x1a\xe7\x01\n" +
+	" function_definition.status_issue\x12~status_issue names the issue that keeps the definition from active: required unless the status is ACTIVE, and empty for ACTIVE\x1aCthis.status == 0 || (this.status == 1) == (this.status_issue == '')\x1a\xb6\x06\n" +
 	"Gfunction_definition.resource_requirements.reference_resource_properties\x12Rresource requirements must reference a compatible ROBOT or ASSET property template\x1a\x96\x05this.resource_requirements.all(requirement, this.properties.exists(property, property.key == requirement.resource_property_key && ((property.type == 10 && !has(requirement.requirement.asset_type) && (!has(requirement.requirement.command) || has(requirement.requirement.command.robot_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.robot_telemetry))) || (property.type == 14 && !has(requirement.requirement.plan) && (!has(requirement.requirement.command) || has(requirement.requirement.command.asset_command)) && (!has(requirement.requirement.telemetry) || has(requirement.requirement.telemetry.asset_telemetry))))))\x1a\xbd\x03\n" +
 	"Cfunction_definition.signal_requirements.reference_signal_properties\x12Isignal id property keys must reference a STRING or ENUM property template\x1a\xaa\x02this.resource_requirements.all(requirement, !has(requirement.requirement.signal) || !has(requirement.requirement.signal.signal_id_property_key) || this.properties.exists(property, property.key == requirement.requirement.signal.signal_id_property_key && (property.type == 5 || property.type == 11)))J\x04\b\v\x10\fJ\x04\b\f\x10\r\"\xc7\x03\n" +
 	"\x13FunctionDefinitions\x12\xaf\x03\n" +
@@ -345,7 +359,7 @@ var file_ar_v1_function_definition_proto_goTypes = []any{
 	(*FunctionDefinition)(nil),              // 1: ar.v1.FunctionDefinition
 	(*FunctionDefinitions)(nil),             // 2: ar.v1.FunctionDefinitions
 	(FunctionType)(0),                       // 3: ar.v1.FunctionType
-	(DefinitionStatus)(0),                   // 4: ar.v1.DefinitionStatus
+	(v1.CatalogStatus)(0),                   // 4: common.v1.CatalogStatus
 	(*v1.PropertyTemplate)(nil),             // 5: common.v1.PropertyTemplate
 	(*ExecutionContract)(nil),               // 6: ar.v1.ExecutionContract
 	(*v11.ConsumerResourceRequirement)(nil), // 7: resources.v1.ConsumerResourceRequirement
@@ -353,7 +367,7 @@ var file_ar_v1_function_definition_proto_goTypes = []any{
 var file_ar_v1_function_definition_proto_depIdxs = []int32{
 	3, // 0: ar.v1.FunctionDefinition.type:type_name -> ar.v1.FunctionType
 	0, // 1: ar.v1.FunctionDefinition.group:type_name -> ar.v1.FunctionGroup
-	4, // 2: ar.v1.FunctionDefinition.status:type_name -> ar.v1.DefinitionStatus
+	4, // 2: ar.v1.FunctionDefinition.status:type_name -> common.v1.CatalogStatus
 	5, // 3: ar.v1.FunctionDefinition.properties:type_name -> common.v1.PropertyTemplate
 	6, // 4: ar.v1.FunctionDefinition.execution:type_name -> ar.v1.ExecutionContract
 	7, // 5: ar.v1.FunctionDefinition.resource_requirements:type_name -> resources.v1.ConsumerResourceRequirement
@@ -370,7 +384,6 @@ func file_ar_v1_function_definition_proto_init() {
 	if File_ar_v1_function_definition_proto != nil {
 		return
 	}
-	file_ar_v1_definition_status_proto_init()
 	file_ar_v1_execution_contract_proto_init()
 	file_ar_v1_function_proto_init()
 	type x struct{}

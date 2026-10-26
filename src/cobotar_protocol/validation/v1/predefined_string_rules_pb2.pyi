@@ -111,3 +111,5 @@ ADAPTER_TYPE_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 adapter_type_component: _descriptor.FieldDescriptor
 PART_FAMILY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 part_family_id_component: _descriptor.FieldDescriptor
+ISSUE_REFERENCE_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+issue_reference_component: _descriptor.FieldDescriptor

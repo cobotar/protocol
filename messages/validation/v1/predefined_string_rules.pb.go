@@ -454,6 +454,14 @@ var file_validation_v1_predefined_string_rules_proto_extTypes = []protoimpl.Exte
 		Tag:           "varint,10053,opt,name=part_family_id_component",
 		Filename:      "validation/v1/predefined_string_rules.proto",
 	},
+	{
+		ExtendedType:  (*validate.StringRules)(nil),
+		ExtensionType: (*bool)(nil),
+		Field:         10054,
+		Name:          "validation.v1.issue_reference_component",
+		Tag:           "varint,10054,opt,name=issue_reference_component",
+		Filename:      "validation/v1/predefined_string_rules.proto",
+	},
 }
 
 // Extension fields to validate.StringRules.
@@ -566,6 +574,10 @@ var (
 	E_AdapterTypeComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[52]
 	// optional bool part_family_id_component = 10053;
 	E_PartFamilyIdComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[53]
+	// An issue reference such as "cobotar/HoloCobotAR#25", or empty.
+	//
+	// optional bool issue_reference_component = 10054;
+	E_IssueReferenceComponent = &file_validation_v1_predefined_string_rules_proto_extTypes[54]
 )
 
 var File_validation_v1_predefined_string_rules_proto protoreflect.FileDescriptor
@@ -734,7 +746,10 @@ const file_validation_v1_predefined_string_rules_proto_rawDesc = "" +
 	"\x1dstring.adapter_type_component\x12]adapter type must be 1 to 128 lowercase characters separated by dots, underscores, or hyphens\x1a]this.size() >= 1 && this.size() <= 128 && this.matches('^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$')R\x14adapterTypeComponent:\xd8\x01\n" +
 	"\x18part_family_id_component\x12\x19.buf.validate.StringRules\x18\xc5N \x01(\bB\x82\x01\xc2H\x7f\n" +
 	"}\n" +
-	"\x1fstring.part_family_id_component\x12)this does not seem to be a part family id\x1a/(this == '' || this.startsWith('part_family-'))R\x15partFamilyIdComponentB\xb8\x01\n" +
+	"\x1fstring.part_family_id_component\x12)this does not seem to be a part family id\x1a/(this == '' || this.startsWith('part_family-'))R\x15partFamilyIdComponent:\x9f\x02\n" +
+	"\x19issue_reference_component\x12\x19.buf.validate.StringRules\x18\xc6N \x01(\bB\xc6\x01\xc2H\xc2\x01\n" +
+	"\xbf\x01\n" +
+	" string.issue_reference_component\x12Lan issue reference looks like owner/repo#number, e.g. cobotar/HoloCobotAR#25\x1aM(this == '' || this.matches('^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+#[1-9][0-9]*$'))R\x17issueReferenceComponentB\xb8\x01\n" +
 	"\x11com.validation.v1B\x1aPredefinedStringRulesProtoP\x01ZBgithub.com/cobotar/protocol/v2/messages/validation/v1;validationv1\xa2\x02\x03VXX\xca\x02\rValidation\\V1\xe2\x02\x19Validation\\V1\\GPBMetadata\xea\x02\x0eValidation::V1"
 
 var file_validation_v1_predefined_string_rules_proto_goTypes = []any{
@@ -795,10 +810,11 @@ var file_validation_v1_predefined_string_rules_proto_depIdxs = []int32{
 	0,  // 51: validation.v1.asset_adapter_definition_id_component:extendee -> buf.validate.StringRules
 	0,  // 52: validation.v1.adapter_type_component:extendee -> buf.validate.StringRules
 	0,  // 53: validation.v1.part_family_id_component:extendee -> buf.validate.StringRules
-	54, // [54:54] is the sub-list for method output_type
-	54, // [54:54] is the sub-list for method input_type
-	54, // [54:54] is the sub-list for extension type_name
-	0,  // [0:54] is the sub-list for extension extendee
+	0,  // 54: validation.v1.issue_reference_component:extendee -> buf.validate.StringRules
+	55, // [55:55] is the sub-list for method output_type
+	55, // [55:55] is the sub-list for method input_type
+	55, // [55:55] is the sub-list for extension type_name
+	0,  // [0:55] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
 }
 
@@ -814,7 +830,7 @@ func file_validation_v1_predefined_string_rules_proto_init() {
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_validation_v1_predefined_string_rules_proto_rawDesc), len(file_validation_v1_predefined_string_rules_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
-			NumExtensions: 54,
+			NumExtensions: 55,
 			NumServices:   0,
 		},
 		GoTypes:           file_validation_v1_predefined_string_rules_proto_goTypes,

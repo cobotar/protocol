@@ -8,6 +8,7 @@ package resourcesv1
 
 import (
 	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
+	v11 "github.com/cobotar/protocol/v2/messages/common/v1"
 	v1 "github.com/cobotar/protocol/v2/messages/robot/v1"
 	_ "github.com/cobotar/protocol/v2/messages/validation/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -40,8 +41,14 @@ type RobotAdapterDefinition struct {
 	Plans []*v1.RobotAdapterPlanCapability `protobuf:"bytes,9,rep,name=plans,proto3" json:"plans,omitempty"`
 	// I/O register families that an adapter configuration may expose as named signals.
 	ConfigurableIoRegisterKinds []v1.RobotIORegisterKind `protobuf:"varint,8,rep,packed,name=configurable_io_register_kinds,json=configurableIoRegisterKinds,proto3,enum=robot.v1.RobotIORegisterKind" json:"configurable_io_register_kinds,omitempty"`
-	unknownFields               protoimpl.UnknownFields
-	sizeCache                   protoimpl.SizeCache
+	// How far the definition can be relied on (cobotar/protocol#40), e.g.
+	// EXPERIMENTAL while no adapter implements it yet.
+	Status v11.CatalogStatus `protobuf:"varint,10,opt,name=status,proto3,enum=common.v1.CatalogStatus" json:"status,omitempty"`
+	// The issue that keeps the definition from ACTIVE, e.g.
+	// "cobotar/Authoring#5": required unless the status is ACTIVE.
+	StatusIssue   string `protobuf:"bytes,11,opt,name=status_issue,json=statusIssue,proto3" json:"status_issue,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *RobotAdapterDefinition) Reset() {
@@ -137,6 +144,20 @@ func (x *RobotAdapterDefinition) GetConfigurableIoRegisterKinds() []v1.RobotIORe
 	return nil
 }
 
+func (x *RobotAdapterDefinition) GetStatus() v11.CatalogStatus {
+	if x != nil {
+		return x.Status
+	}
+	return v11.CatalogStatus(0)
+}
+
+func (x *RobotAdapterDefinition) GetStatusIssue() string {
+	if x != nil {
+		return x.StatusIssue
+	}
+	return ""
+}
+
 type RobotAdapterDefinitions struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
 	Items         []*RobotAdapterDefinition `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -185,7 +206,8 @@ var File_resources_v1_robot_adapter_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_robot_adapter_definition_proto_rawDesc = "" +
 	"\n" +
-	"+resources/v1/robot_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#resources/v1/robot_definition.proto\x1a\x1crobot/v1/robot_adapter.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"\xc0\a\n" +
+	"+resources/v1/robot_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1ecommon/v1/catalog_status.proto\x1a#resources/v1/robot_definition.proto\x1a\x1crobot/v1/robot_adapter.proto\x1a\x1frobot/v1/robot_io_catalog.proto\x1a+validation/v1/predefined_string_rules.proto\"\xa3\n" +
+	"\n" +
 	"\x16RobotAdapterDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf4\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -198,7 +220,11 @@ const file_resources_v1_robot_adapter_definition_proto_rawDesc = "" +
 	"/robot_adapter_definition.telemetry.unique_types\x12\x1etelemetry types must be unique\x1a&this.map(stream, stream.type).unique()R\ttelemetry\x12\xae\x01\n" +
 	"\x05plans\x18\t \x03(\v2$.robot.v1.RobotAdapterPlanCapabilityBr\xbaHo\xba\x01l\n" +
 	"+robot_adapter_definition.plans.unique_types\x12\x19plan types must be unique\x1a\"this.map(plan, plan.type).unique()R\x05plans\x12u\n" +
-	"\x1econfigurable_io_register_kinds\x18\b \x03(\x0e2\x1d.robot.v1.RobotIORegisterKindB\x11\xbaH\x0e\x92\x01\v\x18\x01\"\a\x82\x01\x04\x10\x01 \x00R\x1bconfigurableIoRegisterKinds\"\xcd\x04\n" +
+	"\x1econfigurable_io_register_kinds\x18\b \x03(\x0e2\x1d.robot.v1.RobotIORegisterKindB\x11\xbaH\x0e\x92\x01\v\x18\x01\"\a\x82\x01\x04\x10\x01 \x00R\x1bconfigurableIoRegisterKinds\x12=\n" +
+	"\x06status\x18\n" +
+	" \x01(\x0e2\x18.common.v1.CatalogStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12,\n" +
+	"\fstatus_issue\x18\v \x01(\tB\t\xbaH\x06r\x04\xb0\xf4\x04\x01R\vstatusIssue:\xf3\x01\xbaH\xef\x01\x1a\xec\x01\n" +
+	"%robot_adapter_definition.status_issue\x12~status_issue names the issue that keeps the definition from active: required unless the status is ACTIVE, and empty for ACTIVE\x1aCthis.status == 0 || (this.status == 1) == (this.status_issue == '')\"\xcd\x04\n" +
 	"\x17RobotAdapterDefinitions\x12\xb1\x04\n" +
 	"\x05items\x18\x01 \x03(\v2$.resources.v1.RobotAdapterDefinitionB\xf4\x03\xbaH\xf0\x03\xba\x01\x87\x01\n" +
 	"*robot_adapter_definitions.items.unique_ids\x12+robot adapter definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xcb\x01\n" +
@@ -227,6 +253,7 @@ var file_resources_v1_robot_adapter_definition_proto_goTypes = []any{
 	(*v1.RobotAdapterTelemetryCapability)(nil), // 4: robot.v1.RobotAdapterTelemetryCapability
 	(*v1.RobotAdapterPlanCapability)(nil),      // 5: robot.v1.RobotAdapterPlanCapability
 	(v1.RobotIORegisterKind)(0),                // 6: robot.v1.RobotIORegisterKind
+	(v11.CatalogStatus)(0),                     // 7: common.v1.CatalogStatus
 }
 var file_resources_v1_robot_adapter_definition_proto_depIdxs = []int32{
 	2, // 0: resources.v1.RobotAdapterDefinition.supported_robot_types:type_name -> resources.v1.RobotType
@@ -234,12 +261,13 @@ var file_resources_v1_robot_adapter_definition_proto_depIdxs = []int32{
 	4, // 2: resources.v1.RobotAdapterDefinition.telemetry:type_name -> robot.v1.RobotAdapterTelemetryCapability
 	5, // 3: resources.v1.RobotAdapterDefinition.plans:type_name -> robot.v1.RobotAdapterPlanCapability
 	6, // 4: resources.v1.RobotAdapterDefinition.configurable_io_register_kinds:type_name -> robot.v1.RobotIORegisterKind
-	0, // 5: resources.v1.RobotAdapterDefinitions.items:type_name -> resources.v1.RobotAdapterDefinition
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	7, // 5: resources.v1.RobotAdapterDefinition.status:type_name -> common.v1.CatalogStatus
+	0, // 6: resources.v1.RobotAdapterDefinitions.items:type_name -> resources.v1.RobotAdapterDefinition
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_robot_adapter_definition_proto_init() }

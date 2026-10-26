@@ -2,6 +2,7 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
+import "common/v1/catalog_status.proto";
 import "resources/v1/robot_definition.proto";
 import "robot/v1/robot_adapter.proto";
 import "robot/v1/robot_io_catalog.proto";
@@ -13,6 +14,12 @@ option go_package = "github.com/cobotar/protocol/v2/messages/resources/v1";
 // RobotAdapterDefinition describes the capabilities supplied by one adapter
 // implementation independently of any connected robot instance.
 message RobotAdapterDefinition {
+  option (buf.validate.message).cel = {
+    id: "robot_adapter_definition.status_issue"
+    message: "status_issue names the issue that keeps the definition from active: required unless the status is ACTIVE, and empty for ACTIVE"
+    expression: "this.status == 0 || (this.status == 1) == (this.status_issue == '')"
+  };
+
   string id = 1 [
     (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.robot_adapter_definition_id_component) = true
@@ -61,6 +68,16 @@ message RobotAdapterDefinition {
       not_in: [0]
     }
   ];
+
+  // How far the definition can be relied on (cobotar/protocol#40), e.g.
+  // EXPERIMENTAL while no adapter implements it yet.
+  common.v1.CatalogStatus status = 10 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // The issue that keeps the definition from ACTIVE, e.g.
+  // "cobotar/Authoring#5": required unless the status is ACTIVE.
+  string status_issue = 11 [(buf.validate.field).string.(validation.v1.issue_reference_component) = true];
 }
 
 message RobotAdapterDefinitions {

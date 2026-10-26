@@ -58,6 +58,7 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
 
 - [ar/v1/provenance.proto](#ar_v1_provenance-proto)
     - [ARContentProvenance](#ar-v1-ARContentProvenance)
@@ -98,9 +99,6 @@
 
     - [ActionType](#ar-v1-ActionType)
 
-- [ar/v1/definition_status.proto](#ar_v1_definition_status-proto)
-    - [DefinitionStatus](#ar-v1-DefinitionStatus)
-
 - [ar/v1/events.proto](#ar_v1_events-proto)
     - [ExchangeSupport](#ar-v1-ExchangeSupport)
     - [ExchangeType](#ar-v1-ExchangeType)
@@ -115,6 +113,9 @@
 
 - [ar/v1/execution_contract.proto](#ar_v1_execution_contract-proto)
     - [ExecutionContract](#ar-v1-ExecutionContract)
+
+- [common/v1/catalog_status.proto](#common_v1_catalog_status-proto)
+    - [CatalogStatus](#common-v1-CatalogStatus)
 
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
@@ -877,6 +878,7 @@
 | function_definition_id_component | bool | .buf.validate.StringRules | 10047 |  |
 | function_id_component | bool | .buf.validate.StringRules | 10042 |  |
 | image_asset_id_component | bool | .buf.validate.StringRules | 100034 |  |
+| issue_reference_component | bool | .buf.validate.StringRules | 10054 | An issue reference such as &#34;cobotar/HoloCobotAR#25&#34;, or empty. |
 | key_component | bool | .buf.validate.StringRules | 10044 |  |
 | line_id_component | bool | .buf.validate.StringRules | 10024 |  |
 | marker_id_component | bool | .buf.validate.StringRules | 10013 |  |
@@ -1498,39 +1500,6 @@ It will result in AUTHOR/AVAILABLE.
 
 
 
-<a name="ar_v1_definition_status-proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## ar/v1/definition_status.proto
-
-
-
-
-
-<a name="ar-v1-DefinitionStatus"></a>
-
-### DefinitionStatus
-Lifecycle of a built-in, system-owned AR content definition.
-
-Definitions are read-only catalog entities. The public protocol deliberately
-exposes no create, update, or delete messages for them.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| DEFINITION_STATUS_UNSPECIFIED | 0 |  |
-| DEFINITION_STATUS_ACTIVE | 1 | Available for new instances and supported at runtime. |
-| DEFINITION_STATUS_DEPRECATED | 2 | Retained for existing instances, but hidden from normal new authoring. |
-| DEFINITION_STATUS_DISABLED | 3 | Not available for new instances or runtime execution. |
-
-
-
-
-
-
-
-
-
-
 <a name="ar_v1_events-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1740,6 +1709,42 @@ to execute or render a built-in definition.
 
 
 
+
+
+
+
+
+
+
+
+
+
+<a name="common_v1_catalog_status-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## common/v1/catalog_status.proto
+
+
+
+
+
+<a name="common-v1-CatalogStatus"></a>
+
+### CatalogStatus
+How far a built-in, system-owned catalog entry can be relied on: an AR
+content definition (action, feedback, function) or an adapter definition
+(robot, asset) (cobotar/protocol#40).
+
+Every entry that isn&#39;t ACTIVE names the issue that keeps it from active in
+its status_issue, e.g. &#34;cobotar/HoloCobotAR#25&#34;, so a client can show why.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CATALOG_STATUS_UNSPECIFIED | 0 |  |
+| CATALOG_STATUS_ACTIVE | 1 | Known to work end to end. Offered normally. |
+| CATALOG_STATUS_EXPERIMENTAL | 2 | Available for new instances and supported at runtime, but not known to work yet, e.g. for experiments. Clients offer it only on request and mark it as experimental. |
+| CATALOG_STATUS_DEPRECATED | 3 | Kept for existing instances, but not offered for new ones. |
+| CATALOG_STATUS_DISABLED | 4 | Not available for new instances or at runtime. |
 
 
 
@@ -3186,7 +3191,8 @@ resource capability is unavailable.
 | type | [ActionType](#ar-v1-ActionType) |  |  |
 | group | [ActionGroup](#ar-v1-ActionGroup) |  |  |
 | revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
-| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
+| status | [common.v1.CatalogStatus](#common-v1-CatalogStatus) |  | How far the definition can be relied on (cobotar/protocol#40). |
+| status_issue | [string](#string) |  | The issue that keeps the definition from ACTIVE, e.g. &#34;cobotar/HoloCobotAR#25&#34;: required unless the status is ACTIVE. |
 | properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
 | execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
 | resource_requirements | [resources.v1.ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement) | repeated |  |
@@ -3200,7 +3206,8 @@ resource capability is unavailable.
 
 ### ActionDefinitions
 The catalog service additionally enforces that revisions sharing a key also
-share a type, and that at most one revision per key/type is ACTIVE.
+share a type, and that at most one revision per key/type is ACTIVE or
+EXPERIMENTAL.
 
 
 | Field | Type | Label | Description |
@@ -4399,7 +4406,8 @@ Feature says what behavior/configuration the implementation exposes.
 | type | [FeedbackType](#ar-v1-FeedbackType) |  |  |
 | group | [FeedbackGroup](#ar-v1-FeedbackGroup) |  |  |
 | revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
-| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
+| status | [common.v1.CatalogStatus](#common-v1-CatalogStatus) |  | How far the definition can be relied on (cobotar/protocol#40). |
+| status_issue | [string](#string) |  | The issue that keeps the definition from ACTIVE, e.g. &#34;cobotar/HoloCobotAR#25&#34;: required unless the status is ACTIVE. |
 | properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
 | features | [FeedbackFeature](#ar-v1-FeedbackFeature) | repeated | Implementation/configuration features |
 | capabilities | [FeedbackCapability](#ar-v1-FeedbackCapability) | repeated | Assistance semantics |
@@ -4415,7 +4423,8 @@ Feature says what behavior/configuration the implementation exposes.
 
 ### FeedbackDefinitions
 The catalog service additionally enforces that revisions sharing a key also
-share a type, and that at most one revision per key/type is ACTIVE.
+share a type, and that at most one revision per key/type is ACTIVE or
+EXPERIMENTAL.
 
 
 | Field | Type | Label | Description |
@@ -4605,7 +4614,8 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | type | [FunctionType](#ar-v1-FunctionType) |  |  |
 | group | [FunctionGroup](#ar-v1-FunctionGroup) |  |  |
 | revision | [uint64](#uint64) |  | Monotonic revision of the externally visible definition contract. |
-| status | [DefinitionStatus](#ar-v1-DefinitionStatus) |  |  |
+| status | [common.v1.CatalogStatus](#common-v1-CatalogStatus) |  | How far the definition can be relied on (cobotar/protocol#40). |
+| status_issue | [string](#string) |  | The issue that keeps the definition from ACTIVE, e.g. &#34;cobotar/HoloCobotAR#25&#34;: required unless the status is ACTIVE. |
 | properties | [common.v1.PropertyTemplate](#common-v1-PropertyTemplate) | repeated |  |
 | execution | [ExecutionContract](#ar-v1-ExecutionContract) |  |  |
 | resource_requirements | [resources.v1.ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement) | repeated |  |
@@ -4619,7 +4629,8 @@ share a type, and that at most one revision per key/type is ACTIVE.
 
 ### FunctionDefinitions
 The catalog service additionally enforces that revisions sharing a key also
-share a type, and that at most one revision per key/type is ACTIVE.
+share a type, and that at most one revision per key/type is ACTIVE or
+EXPERIMENTAL.
 
 
 | Field | Type | Label | Description |
@@ -8690,6 +8701,8 @@ implementation independently of any connected asset instance.
 | commands | [AssetAdapterCommandCapability](#resources-v1-AssetAdapterCommandCapability) | repeated |  |
 | telemetry | [AssetAdapterTelemetryCapability](#resources-v1-AssetAdapterTelemetryCapability) | repeated |  |
 | signals | [common.v1.SignalDefinition](#common-v1-SignalDefinition) | repeated | Signals known before an asset instance connects. Standard signals use a common semantic; adapter-specific signals leave semantic unspecified. |
+| status | [common.v1.CatalogStatus](#common-v1-CatalogStatus) |  | How far the definition can be relied on (cobotar/protocol#40), e.g. EXPERIMENTAL while no adapter implements it yet. |
+| status_issue | [string](#string) |  | The issue that keeps the definition from ACTIVE, e.g. &#34;cobotar/Authoring#5&#34;: required unless the status is ACTIVE. |
 
 
 
@@ -9482,6 +9495,8 @@ implementation independently of any connected robot instance.
 | telemetry | [robot.v1.RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability) | repeated |  |
 | plans | [robot.v1.RobotAdapterPlanCapability](#robot-v1-RobotAdapterPlanCapability) | repeated | Plans of the robot&#39;s next motion that the adapter publishes. |
 | configurable_io_register_kinds | [robot.v1.RobotIORegisterKind](#robot-v1-RobotIORegisterKind) | repeated | I/O register families that an adapter configuration may expose as named signals. |
+| status | [common.v1.CatalogStatus](#common-v1-CatalogStatus) |  | How far the definition can be relied on (cobotar/protocol#40), e.g. EXPERIMENTAL while no adapter implements it yet. |
+| status_issue | [string](#string) |  | The issue that keeps the definition from ACTIVE, e.g. &#34;cobotar/Authoring#5&#34;: required unless the status is ACTIVE. |
 
 
 

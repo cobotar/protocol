@@ -327,4 +327,11 @@ extend buf.validate.StringRules {
     message: "this does not seem to be a part family id"
     expression: "(this == '' || this.startsWith('part_family-'))"
   }];
+
+  // An issue reference such as "cobotar/HoloCobotAR#25", or empty.
+  optional bool issue_reference_component = 10054 [(buf.validate.predefined).cel = {
+    id: "string.issue_reference_component"
+    message: "an issue reference looks like owner/repo#number, e.g. cobotar/HoloCobotAR#25"
+    expression: "(this == '' || this.matches('^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+#[1-9][0-9]*$'))"
+  }];
 }

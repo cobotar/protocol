@@ -25,54 +25,63 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CityZXNvdXJjZXMvdjEvcm9ib3RfYWRhcHRlcl9kZWZpbml0aW9uLnByb3Rv",
-            "EgxyZXNvdXJjZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoj",
-            "cmVzb3VyY2VzL3YxL3JvYm90X2RlZmluaXRpb24ucHJvdG8aHHJvYm90L3Yx",
-            "L3JvYm90X2FkYXB0ZXIucHJvdG8aH3JvYm90L3YxL3JvYm90X2lvX2NhdGFs",
-            "b2cucHJvdG8aK3ZhbGlkYXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVs",
-            "ZXMucHJvdG8iwAcKFlJvYm90QWRhcHRlckRlZmluaXRpb24SHAoCaWQYASAB",
-            "KAlCDLpICXIEkPQEAcgBAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQB",
-            "UgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIsCgxh",
-            "ZGFwdGVyX3R5cGUYBCABKAlCCbpIBnIEoPQEAVILYWRhcHRlclR5cGUSYAoV",
-            "c3VwcG9ydGVkX3JvYm90X3R5cGVzGAUgAygOMhcucmVzb3VyY2VzLnYxLlJv",
-            "Ym90VHlwZUITukgQkgENCAEYASIHggEEEAEgAFITc3VwcG9ydGVkUm9ib3RU",
-            "eXBlcxLDAQoIY29tbWFuZHMYBiADKAsyJy5yb2JvdC52MS5Sb2JvdEFkYXB0",
-            "ZXJDb21tYW5kQ2FwYWJpbGl0eUJ+ukh7ugF4Ci5yb2JvdF9hZGFwdGVyX2Rl",
-            "ZmluaXRpb24uY29tbWFuZHMudW5pcXVlX3R5cGVzEhxjb21tYW5kIHR5cGVz",
-            "IG11c3QgYmUgdW5pcXVlGih0aGlzLm1hcChjb21tYW5kLCBjb21tYW5kLnR5",
-            "cGUpLnVuaXF1ZSgpUghjb21tYW5kcxLIAQoJdGVsZW1ldHJ5GAcgAygLMiku",
-            "cm9ib3QudjEuUm9ib3RBZGFwdGVyVGVsZW1ldHJ5Q2FwYWJpbGl0eUJ/ukh8",
-            "ugF5Ci9yb2JvdF9hZGFwdGVyX2RlZmluaXRpb24udGVsZW1ldHJ5LnVuaXF1",
-            "ZV90eXBlcxIedGVsZW1ldHJ5IHR5cGVzIG11c3QgYmUgdW5pcXVlGiZ0aGlz",
-            "Lm1hcChzdHJlYW0sIHN0cmVhbS50eXBlKS51bmlxdWUoKVIJdGVsZW1ldHJ5",
-            "Eq4BCgVwbGFucxgJIAMoCzIkLnJvYm90LnYxLlJvYm90QWRhcHRlclBsYW5D",
-            "YXBhYmlsaXR5QnK6SG+6AWwKK3JvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbi5w",
-            "bGFucy51bmlxdWVfdHlwZXMSGXBsYW4gdHlwZXMgbXVzdCBiZSB1bmlxdWUa",
-            "InRoaXMubWFwKHBsYW4sIHBsYW4udHlwZSkudW5pcXVlKClSBXBsYW5zEnUK",
-            "HmNvbmZpZ3VyYWJsZV9pb19yZWdpc3Rlcl9raW5kcxgIIAMoDjIdLnJvYm90",
-            "LnYxLlJvYm90SU9SZWdpc3RlcktpbmRCEbpIDpIBCxgBIgeCAQQQASAAUhtj",
-            "b25maWd1cmFibGVJb1JlZ2lzdGVyS2luZHMizQQKF1JvYm90QWRhcHRlckRl",
-            "ZmluaXRpb25zErEECgVpdGVtcxgBIAMoCzIkLnJlc291cmNlcy52MS5Sb2Jv",
-            "dEFkYXB0ZXJEZWZpbml0aW9uQvQDukjwA7oBhwEKKnJvYm90X2FkYXB0ZXJf",
-            "ZGVmaW5pdGlvbnMuaXRlbXMudW5pcXVlX2lkcxIrcm9ib3QgYWRhcHRlciBk",
-            "ZWZpbml0aW9uIGlkcyBtdXN0IGJlIHVuaXF1ZRosdGhpcy5tYXAoZGVmaW5p",
-            "dGlvbiwgZGVmaW5pdGlvbi5pZCkudW5pcXVlKCm6AcsBCixyb2JvdF9hZGFw",
-            "dGVyX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9uYW1lcxJXcm9ib3QgYWRh",
-            "cHRlciBkZWZpbml0aW9uIG5hbWVzIG11c3QgYmUgdW5pcXVlLCBpZ25vcmlu",
-            "ZyBjYXNlIGFuZCBzdXJyb3VuZGluZyB3aGl0ZXNwYWNlGkJ0aGlzLm1hcChk",
-            "ZWZpbml0aW9uLCBkZWZpbml0aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNjaWko",
-            "KSkudW5pcXVlKCm6AZIBCjRyb2JvdF9hZGFwdGVyX2RlZmluaXRpb25zLml0",
-            "ZW1zLnVuaXF1ZV9hZGFwdGVyX3R5cGVzEiJyb2JvdCBhZGFwdGVyIHR5cGVz",
-            "IG11c3QgYmUgdW5pcXVlGjZ0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0",
-            "aW9uLmFkYXB0ZXJfdHlwZSkudW5pcXVlKClSBWl0ZW1zQssBChBjb20ucmVz",
-            "b3VyY2VzLnYxQhtSb2JvdEFkYXB0ZXJEZWZpbml0aW9uUHJvdG9QAVpAZ2l0",
-            "aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3Jlc291cmNl",
-            "cy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5W",
-            "McoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoC",
-            "DVJlc291cmNlczo6VjFiBnByb3RvMw=="));
+            "EgxyZXNvdXJjZXMudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoe",
+            "Y29tbW9uL3YxL2NhdGFsb2dfc3RhdHVzLnByb3RvGiNyZXNvdXJjZXMvdjEv",
+            "cm9ib3RfZGVmaW5pdGlvbi5wcm90bxoccm9ib3QvdjEvcm9ib3RfYWRhcHRl",
+            "ci5wcm90bxofcm9ib3QvdjEvcm9ib3RfaW9fY2F0YWxvZy5wcm90bxordmFs",
+            "aWRhdGlvbi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90byKjCgoW",
+            "Um9ib3RBZGFwdGVyRGVmaW5pdGlvbhIcCgJpZBgBIAEoCUIMukgJcgSQ9AQB",
+            "yAEBUgJpZBIdCgRuYW1lGAIgASgJQgm6SAZyBIDxBAFSBG5hbWUSIAoLZGVz",
+            "Y3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEiwKDGFkYXB0ZXJfdHlwZRgE",
+            "IAEoCUIJukgGcgSg9AQBUgthZGFwdGVyVHlwZRJgChVzdXBwb3J0ZWRfcm9i",
+            "b3RfdHlwZXMYBSADKA4yFy5yZXNvdXJjZXMudjEuUm9ib3RUeXBlQhO6SBCS",
+            "AQ0IARgBIgeCAQQQASAAUhNzdXBwb3J0ZWRSb2JvdFR5cGVzEsMBCghjb21t",
+            "YW5kcxgGIAMoCzInLnJvYm90LnYxLlJvYm90QWRhcHRlckNvbW1hbmRDYXBh",
+            "YmlsaXR5Qn66SHu6AXgKLnJvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbi5jb21t",
+            "YW5kcy51bmlxdWVfdHlwZXMSHGNvbW1hbmQgdHlwZXMgbXVzdCBiZSB1bmlx",
+            "dWUaKHRoaXMubWFwKGNvbW1hbmQsIGNvbW1hbmQudHlwZSkudW5pcXVlKClS",
+            "CGNvbW1hbmRzEsgBCgl0ZWxlbWV0cnkYByADKAsyKS5yb2JvdC52MS5Sb2Jv",
+            "dEFkYXB0ZXJUZWxlbWV0cnlDYXBhYmlsaXR5Qn+6SHy6AXkKL3JvYm90X2Fk",
+            "YXB0ZXJfZGVmaW5pdGlvbi50ZWxlbWV0cnkudW5pcXVlX3R5cGVzEh50ZWxl",
+            "bWV0cnkgdHlwZXMgbXVzdCBiZSB1bmlxdWUaJnRoaXMubWFwKHN0cmVhbSwg",
+            "c3RyZWFtLnR5cGUpLnVuaXF1ZSgpUgl0ZWxlbWV0cnkSrgEKBXBsYW5zGAkg",
+            "AygLMiQucm9ib3QudjEuUm9ib3RBZGFwdGVyUGxhbkNhcGFiaWxpdHlCcrpI",
+            "b7oBbAorcm9ib3RfYWRhcHRlcl9kZWZpbml0aW9uLnBsYW5zLnVuaXF1ZV90",
+            "eXBlcxIZcGxhbiB0eXBlcyBtdXN0IGJlIHVuaXF1ZRoidGhpcy5tYXAocGxh",
+            "biwgcGxhbi50eXBlKS51bmlxdWUoKVIFcGxhbnMSdQoeY29uZmlndXJhYmxl",
+            "X2lvX3JlZ2lzdGVyX2tpbmRzGAggAygOMh0ucm9ib3QudjEuUm9ib3RJT1Jl",
+            "Z2lzdGVyS2luZEIRukgOkgELGAEiB4IBBBABIABSG2NvbmZpZ3VyYWJsZUlv",
+            "UmVnaXN0ZXJLaW5kcxI9CgZzdGF0dXMYCiABKA4yGC5jb21tb24udjEuQ2F0",
+            "YWxvZ1N0YXR1c0ILukgIggECEAHIAQFSBnN0YXR1cxIsCgxzdGF0dXNfaXNz",
+            "dWUYCyABKAlCCbpIBnIEsPQEAVILc3RhdHVzSXNzdWU68wG6SO8BGuwBCiVy",
+            "b2JvdF9hZGFwdGVyX2RlZmluaXRpb24uc3RhdHVzX2lzc3VlEn5zdGF0dXNf",
+            "aXNzdWUgbmFtZXMgdGhlIGlzc3VlIHRoYXQga2VlcHMgdGhlIGRlZmluaXRp",
+            "b24gZnJvbSBhY3RpdmU6IHJlcXVpcmVkIHVubGVzcyB0aGUgc3RhdHVzIGlz",
+            "IEFDVElWRSwgYW5kIGVtcHR5IGZvciBBQ1RJVkUaQ3RoaXMuc3RhdHVzID09",
+            "IDAgfHwgKHRoaXMuc3RhdHVzID09IDEpID09ICh0aGlzLnN0YXR1c19pc3N1",
+            "ZSA9PSAnJykizQQKF1JvYm90QWRhcHRlckRlZmluaXRpb25zErEECgVpdGVt",
+            "cxgBIAMoCzIkLnJlc291cmNlcy52MS5Sb2JvdEFkYXB0ZXJEZWZpbml0aW9u",
+            "QvQDukjwA7oBhwEKKnJvYm90X2FkYXB0ZXJfZGVmaW5pdGlvbnMuaXRlbXMu",
+            "dW5pcXVlX2lkcxIrcm9ib3QgYWRhcHRlciBkZWZpbml0aW9uIGlkcyBtdXN0",
+            "IGJlIHVuaXF1ZRosdGhpcy5tYXAoZGVmaW5pdGlvbiwgZGVmaW5pdGlvbi5p",
+            "ZCkudW5pcXVlKCm6AcsBCixyb2JvdF9hZGFwdGVyX2RlZmluaXRpb25zLml0",
+            "ZW1zLnVuaXF1ZV9uYW1lcxJXcm9ib3QgYWRhcHRlciBkZWZpbml0aW9uIG5h",
+            "bWVzIG11c3QgYmUgdW5pcXVlLCBpZ25vcmluZyBjYXNlIGFuZCBzdXJyb3Vu",
+            "ZGluZyB3aGl0ZXNwYWNlGkJ0aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0",
+            "aW9uLm5hbWUudHJpbSgpLmxvd2VyQXNjaWkoKSkudW5pcXVlKCm6AZIBCjRy",
+            "b2JvdF9hZGFwdGVyX2RlZmluaXRpb25zLml0ZW1zLnVuaXF1ZV9hZGFwdGVy",
+            "X3R5cGVzEiJyb2JvdCBhZGFwdGVyIHR5cGVzIG11c3QgYmUgdW5pcXVlGjZ0",
+            "aGlzLm1hcChkZWZpbml0aW9uLCBkZWZpbml0aW9uLmFkYXB0ZXJfdHlwZSku",
+            "dW5pcXVlKClSBWl0ZW1zQssBChBjb20ucmVzb3VyY2VzLnYxQhtSb2JvdEFk",
+            "YXB0ZXJEZWZpbml0aW9uUHJvdG9QAVpAZ2l0aHViLmNvbS9jb2JvdGFyL3By",
+            "b3RvY29sL3YyL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaIC",
+            "A1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeIC",
+            "GFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor, global::Messages.Robot.V1.RobotAdapterReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.CatalogStatusReflection.Descriptor, global::Messages.Resources.V1.RobotDefinitionReflection.Descriptor, global::Messages.Robot.V1.RobotAdapterReflection.Descriptor, global::Messages.Robot.V1.RobotIoCatalogReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotAdapterDefinition), global::Messages.Resources.V1.RobotAdapterDefinition.Parser, new[]{ "Id", "Name", "Description", "AdapterType", "SupportedRobotTypes", "Commands", "Telemetry", "Plans", "ConfigurableIoRegisterKinds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotAdapterDefinition), global::Messages.Resources.V1.RobotAdapterDefinition.Parser, new[]{ "Id", "Name", "Description", "AdapterType", "SupportedRobotTypes", "Commands", "Telemetry", "Plans", "ConfigurableIoRegisterKinds", "Status", "StatusIssue" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.RobotAdapterDefinitions), global::Messages.Resources.V1.RobotAdapterDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -128,6 +137,8 @@ namespace Messages.Resources.V1 {
       telemetry_ = other.telemetry_.Clone();
       plans_ = other.plans_.Clone();
       configurableIoRegisterKinds_ = other.configurableIoRegisterKinds_.Clone();
+      status_ = other.status_;
+      statusIssue_ = other.statusIssue_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -249,6 +260,38 @@ namespace Messages.Resources.V1 {
       get { return configurableIoRegisterKinds_; }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 10;
+    private global::Messages.Common.V1.CatalogStatus status_ = global::Messages.Common.V1.CatalogStatus.Unspecified;
+    /// <summary>
+    /// How far the definition can be relied on (cobotar/protocol#40), e.g.
+    /// EXPERIMENTAL while no adapter implements it yet.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Common.V1.CatalogStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "status_issue" field.</summary>
+    public const int StatusIssueFieldNumber = 11;
+    private string statusIssue_ = "";
+    /// <summary>
+    /// The issue that keeps the definition from ACTIVE, e.g.
+    /// "cobotar/Authoring#5": required unless the status is ACTIVE.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StatusIssue {
+      get { return statusIssue_; }
+      set {
+        statusIssue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -273,6 +316,8 @@ namespace Messages.Resources.V1 {
       if(!telemetry_.Equals(other.telemetry_)) return false;
       if(!plans_.Equals(other.plans_)) return false;
       if(!configurableIoRegisterKinds_.Equals(other.configurableIoRegisterKinds_)) return false;
+      if (Status != other.Status) return false;
+      if (StatusIssue != other.StatusIssue) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -289,6 +334,8 @@ namespace Messages.Resources.V1 {
       hash ^= telemetry_.GetHashCode();
       hash ^= plans_.GetHashCode();
       hash ^= configurableIoRegisterKinds_.GetHashCode();
+      if (Status != global::Messages.Common.V1.CatalogStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (StatusIssue.Length != 0) hash ^= StatusIssue.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -328,6 +375,14 @@ namespace Messages.Resources.V1 {
       telemetry_.WriteTo(output, _repeated_telemetry_codec);
       configurableIoRegisterKinds_.WriteTo(output, _repeated_configurableIoRegisterKinds_codec);
       plans_.WriteTo(output, _repeated_plans_codec);
+      if (Status != global::Messages.Common.V1.CatalogStatus.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Status);
+      }
+      if (StatusIssue.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(StatusIssue);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -359,6 +414,14 @@ namespace Messages.Resources.V1 {
       telemetry_.WriteTo(ref output, _repeated_telemetry_codec);
       configurableIoRegisterKinds_.WriteTo(ref output, _repeated_configurableIoRegisterKinds_codec);
       plans_.WriteTo(ref output, _repeated_plans_codec);
+      if (Status != global::Messages.Common.V1.CatalogStatus.Unspecified) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Status);
+      }
+      if (StatusIssue.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(StatusIssue);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -386,6 +449,12 @@ namespace Messages.Resources.V1 {
       size += telemetry_.CalculateSize(_repeated_telemetry_codec);
       size += plans_.CalculateSize(_repeated_plans_codec);
       size += configurableIoRegisterKinds_.CalculateSize(_repeated_configurableIoRegisterKinds_codec);
+      if (Status != global::Messages.Common.V1.CatalogStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (StatusIssue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StatusIssue);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -415,6 +484,12 @@ namespace Messages.Resources.V1 {
       telemetry_.Add(other.telemetry_);
       plans_.Add(other.plans_);
       configurableIoRegisterKinds_.Add(other.configurableIoRegisterKinds_);
+      if (other.Status != global::Messages.Common.V1.CatalogStatus.Unspecified) {
+        Status = other.Status;
+      }
+      if (other.StatusIssue.Length != 0) {
+        StatusIssue = other.StatusIssue;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -472,6 +547,14 @@ namespace Messages.Resources.V1 {
             plans_.AddEntriesFrom(input, _repeated_plans_codec);
             break;
           }
+          case 80: {
+            Status = (global::Messages.Common.V1.CatalogStatus) input.ReadEnum();
+            break;
+          }
+          case 90: {
+            StatusIssue = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -527,6 +610,14 @@ namespace Messages.Resources.V1 {
           }
           case 74: {
             plans_.AddEntriesFrom(ref input, _repeated_plans_codec);
+            break;
+          }
+          case 80: {
+            Status = (global::Messages.Common.V1.CatalogStatus) input.ReadEnum();
+            break;
+          }
+          case 90: {
+            StatusIssue = input.ReadString();
             break;
           }
         }

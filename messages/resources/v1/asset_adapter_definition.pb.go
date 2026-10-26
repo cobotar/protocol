@@ -38,7 +38,13 @@ type AssetAdapterDefinition struct {
 	Telemetry           []*AssetAdapterTelemetryCapability `protobuf:"bytes,7,rep,name=telemetry,proto3" json:"telemetry,omitempty"`
 	// Signals known before an asset instance connects. Standard signals use a
 	// common semantic; adapter-specific signals leave semantic unspecified.
-	Signals       []*v1.SignalDefinition `protobuf:"bytes,8,rep,name=signals,proto3" json:"signals,omitempty"`
+	Signals []*v1.SignalDefinition `protobuf:"bytes,8,rep,name=signals,proto3" json:"signals,omitempty"`
+	// How far the definition can be relied on (cobotar/protocol#40), e.g.
+	// EXPERIMENTAL while no adapter implements it yet.
+	Status v1.CatalogStatus `protobuf:"varint,9,opt,name=status,proto3,enum=common.v1.CatalogStatus" json:"status,omitempty"`
+	// The issue that keeps the definition from ACTIVE, e.g.
+	// "cobotar/Authoring#5": required unless the status is ACTIVE.
+	StatusIssue   string `protobuf:"bytes,10,opt,name=status_issue,json=statusIssue,proto3" json:"status_issue,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -129,6 +135,20 @@ func (x *AssetAdapterDefinition) GetSignals() []*v1.SignalDefinition {
 	return nil
 }
 
+func (x *AssetAdapterDefinition) GetStatus() v1.CatalogStatus {
+	if x != nil {
+		return x.Status
+	}
+	return v1.CatalogStatus(0)
+}
+
+func (x *AssetAdapterDefinition) GetStatusIssue() string {
+	if x != nil {
+		return x.StatusIssue
+	}
+	return ""
+}
+
 type AssetAdapterDefinitions struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
 	Items         []*AssetAdapterDefinition `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -177,7 +197,8 @@ var File_resources_v1_asset_adapter_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_asset_adapter_definition_proto_rawDesc = "" +
 	"\n" +
-	"+resources/v1/asset_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16common/v1/signal.proto\x1a resources/v1/asset_adapter.proto\x1a#resources/v1/asset_definition.proto\x1a+validation/v1/predefined_string_rules.proto\"\x8a\b\n" +
+	"+resources/v1/asset_adapter_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1ecommon/v1/catalog_status.proto\x1a\x16common/v1/signal.proto\x1a resources/v1/asset_adapter.proto\x1a#resources/v1/asset_definition.proto\x1a+validation/v1/predefined_string_rules.proto\"\xed\n" +
+	"\n" +
 	"\x16AssetAdapterDefinition\x12\x1c\n" +
 	"\x02id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x98\xf4\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12 \n" +
@@ -190,7 +211,11 @@ const file_resources_v1_asset_adapter_definition_proto_rawDesc = "" +
 	"/asset_adapter_definition.telemetry.unique_types\x12\x1etelemetry types must be unique\x1a&this.map(stream, stream.type).unique()R\ttelemetry\x12\xe7\x02\n" +
 	"\asignals\x18\b \x03(\v2\x1b.common.v1.SignalDefinitionB\xaf\x02\xbaH\xab\x02\xba\x01u\n" +
 	"+asset_adapter_definition.signals.unique_ids\x12\x19signal ids must be unique\x1a+this.map(signal, signal.signal_id).unique()\xba\x01\xaf\x01\n" +
-	"1asset_adapter_definition.signals.unique_semantics\x12)specified signal semantics must be unique\x1aOthis.filter(signal, signal.semantic != 0).map(signal, signal.semantic).unique()R\asignals\"\xcd\x04\n" +
+	"1asset_adapter_definition.signals.unique_semantics\x12)specified signal semantics must be unique\x1aOthis.filter(signal, signal.semantic != 0).map(signal, signal.semantic).unique()R\asignals\x12=\n" +
+	"\x06status\x18\t \x01(\x0e2\x18.common.v1.CatalogStatusB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x06status\x12,\n" +
+	"\fstatus_issue\x18\n" +
+	" \x01(\tB\t\xbaH\x06r\x04\xb0\xf4\x04\x01R\vstatusIssue:\xf3\x01\xbaH\xef\x01\x1a\xec\x01\n" +
+	"%asset_adapter_definition.status_issue\x12~status_issue names the issue that keeps the definition from active: required unless the status is ACTIVE, and empty for ACTIVE\x1aCthis.status == 0 || (this.status == 1) == (this.status_issue == '')\"\xcd\x04\n" +
 	"\x17AssetAdapterDefinitions\x12\xb1\x04\n" +
 	"\x05items\x18\x01 \x03(\v2$.resources.v1.AssetAdapterDefinitionB\xf4\x03\xbaH\xf0\x03\xba\x01\x87\x01\n" +
 	"*asset_adapter_definitions.items.unique_ids\x12+asset adapter definition ids must be unique\x1a,this.map(definition, definition.id).unique()\xba\x01\xcb\x01\n" +
@@ -218,18 +243,20 @@ var file_resources_v1_asset_adapter_definition_proto_goTypes = []any{
 	(*AssetAdapterCommandCapability)(nil),   // 3: resources.v1.AssetAdapterCommandCapability
 	(*AssetAdapterTelemetryCapability)(nil), // 4: resources.v1.AssetAdapterTelemetryCapability
 	(*v1.SignalDefinition)(nil),             // 5: common.v1.SignalDefinition
+	(v1.CatalogStatus)(0),                   // 6: common.v1.CatalogStatus
 }
 var file_resources_v1_asset_adapter_definition_proto_depIdxs = []int32{
 	2, // 0: resources.v1.AssetAdapterDefinition.supported_asset_types:type_name -> resources.v1.AssetType
 	3, // 1: resources.v1.AssetAdapterDefinition.commands:type_name -> resources.v1.AssetAdapterCommandCapability
 	4, // 2: resources.v1.AssetAdapterDefinition.telemetry:type_name -> resources.v1.AssetAdapterTelemetryCapability
 	5, // 3: resources.v1.AssetAdapterDefinition.signals:type_name -> common.v1.SignalDefinition
-	0, // 4: resources.v1.AssetAdapterDefinitions.items:type_name -> resources.v1.AssetAdapterDefinition
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	6, // 4: resources.v1.AssetAdapterDefinition.status:type_name -> common.v1.CatalogStatus
+	0, // 5: resources.v1.AssetAdapterDefinitions.items:type_name -> resources.v1.AssetAdapterDefinition
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_asset_adapter_definition_proto_init() }

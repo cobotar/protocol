@@ -2,9 +2,9 @@ syntax = "proto3";
 package ar.v1;
 
 import "ar/v1/action.proto";
-import "ar/v1/definition_status.proto";
 import "ar/v1/execution_contract.proto";
 import "buf/validate/validate.proto";
+import "common/v1/catalog_status.proto";
 import "common/v1/property.proto";
 import "resources/v1/resource_requirement.proto";
 import "validation/v1/predefined_string_rules.proto";
@@ -20,6 +20,11 @@ enum ActionGroup {
 }
 
 message ActionDefinition {
+  option (buf.validate.message).cel = {
+    id: "action_definition.status_issue"
+    message: "status_issue names the issue that keeps the definition from active: required unless the status is ACTIVE, and empty for ACTIVE"
+    expression: "this.status == 0 || (this.status == 1) == (this.status_issue == '')"
+  };
   option (buf.validate.message).cel = {
     id: "action_definition.resource_requirements.reference_resource_properties"
     message: "resource requirements must reference a compatible ROBOT or ASSET property template"
@@ -57,10 +62,14 @@ message ActionDefinition {
   ];
   // Monotonic revision of the externally visible definition contract.
   uint64 revision = 8 [(buf.validate.field).uint64.gte = 1];
-  DefinitionStatus status = 9 [
+  // How far the definition can be relied on (cobotar/protocol#40).
+  common.v1.CatalogStatus status = 9 [
     (buf.validate.field).required = true,
     (buf.validate.field).enum.defined_only = true
   ];
+  // The issue that keeps the definition from ACTIVE, e.g.
+  // "cobotar/HoloCobotAR#25": required unless the status is ACTIVE.
+  string status_issue = 15 [(buf.validate.field).string.(validation.v1.issue_reference_component) = true];
   repeated common.v1.PropertyTemplate properties = 10 [(buf.validate.field).cel = {
     id: "action_definition.properties.unique_keys"
     message: "property template keys must be unique"
@@ -72,7 +81,8 @@ message ActionDefinition {
 }
 
 // The catalog service additionally enforces that revisions sharing a key also
-// share a type, and that at most one revision per key/type is ACTIVE.
+// share a type, and that at most one revision per key/type is ACTIVE or
+// EXPERIMENTAL.
 message ActionDefinitions {
   repeated ActionDefinition items = 1 [
     (buf.validate.field).cel = {

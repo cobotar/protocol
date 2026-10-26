@@ -1,4 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
+from cobotar_protocol.common.v1 import catalog_status_pb2 as _catalog_status_pb2
 from cobotar_protocol.resources.v1 import robot_definition_pb2 as _robot_definition_pb2
 from cobotar_protocol.robot.v1 import robot_adapter_pb2 as _robot_adapter_pb2
 from cobotar_protocol.robot.v1 import robot_io_catalog_pb2 as _robot_io_catalog_pb2
@@ -12,7 +13,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RobotAdapterDefinition(_message.Message):
-    __slots__ = ("id", "name", "description", "adapter_type", "supported_robot_types", "commands", "telemetry", "plans", "configurable_io_register_kinds")
+    __slots__ = ("id", "name", "description", "adapter_type", "supported_robot_types", "commands", "telemetry", "plans", "configurable_io_register_kinds", "status", "status_issue")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -22,6 +23,8 @@ class RobotAdapterDefinition(_message.Message):
     TELEMETRY_FIELD_NUMBER: _ClassVar[int]
     PLANS_FIELD_NUMBER: _ClassVar[int]
     CONFIGURABLE_IO_REGISTER_KINDS_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    STATUS_ISSUE_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     description: str
@@ -31,7 +34,9 @@ class RobotAdapterDefinition(_message.Message):
     telemetry: _containers.RepeatedCompositeFieldContainer[_robot_adapter_pb2.RobotAdapterTelemetryCapability]
     plans: _containers.RepeatedCompositeFieldContainer[_robot_adapter_pb2.RobotAdapterPlanCapability]
     configurable_io_register_kinds: _containers.RepeatedScalarFieldContainer[_robot_io_catalog_pb2.RobotIORegisterKind]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., adapter_type: _Optional[str] = ..., supported_robot_types: _Optional[_Iterable[_Union[_robot_definition_pb2.RobotType, str]]] = ..., commands: _Optional[_Iterable[_Union[_robot_adapter_pb2.RobotAdapterCommandCapability, _Mapping]]] = ..., telemetry: _Optional[_Iterable[_Union[_robot_adapter_pb2.RobotAdapterTelemetryCapability, _Mapping]]] = ..., plans: _Optional[_Iterable[_Union[_robot_adapter_pb2.RobotAdapterPlanCapability, _Mapping]]] = ..., configurable_io_register_kinds: _Optional[_Iterable[_Union[_robot_io_catalog_pb2.RobotIORegisterKind, str]]] = ...) -> None: ...
+    status: _catalog_status_pb2.CatalogStatus
+    status_issue: str
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., adapter_type: _Optional[str] = ..., supported_robot_types: _Optional[_Iterable[_Union[_robot_definition_pb2.RobotType, str]]] = ..., commands: _Optional[_Iterable[_Union[_robot_adapter_pb2.RobotAdapterCommandCapability, _Mapping]]] = ..., telemetry: _Optional[_Iterable[_Union[_robot_adapter_pb2.RobotAdapterTelemetryCapability, _Mapping]]] = ..., plans: _Optional[_Iterable[_Union[_robot_adapter_pb2.RobotAdapterPlanCapability, _Mapping]]] = ..., configurable_io_register_kinds: _Optional[_Iterable[_Union[_robot_io_catalog_pb2.RobotIORegisterKind, str]]] = ..., status: _Optional[_Union[_catalog_status_pb2.CatalogStatus, str]] = ..., status_issue: _Optional[str] = ...) -> None: ...
 
 class RobotAdapterDefinitions(_message.Message):
     __slots__ = ("items",)
