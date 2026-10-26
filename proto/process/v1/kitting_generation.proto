@@ -123,13 +123,15 @@ enum KittingTaskGranularity {
   KITTING_TASK_GRANULARITY_PICK_AND_PLACE = 2;
 }
 
-// Overrides selection or static routing for one product occurrence or every
-// occurrence of a particular part definition.
+// Overrides selection or static routing for one product occurrence, every
+// occurrence of a particular part definition, or every occurrence of a part in
+// a part family.
 message KittingItemRoutingOverride {
   option (buf.validate.message).oneof = {
     fields: [
       "assembly_node_id",
-      "part_definition_id"
+      "part_definition_id",
+      "part_family_id"
     ]
     required: true
   };
@@ -150,6 +152,12 @@ message KittingItemRoutingOverride {
   // Optional authoring-time destination constraint. References the target kit
   // definition and optionally a particular kit slot.
   ContainerTarget destination = 5;
+
+  // Select every applicable occurrence of a part in this part family
+  // (product.v1.PartFamily, cobotar/protocol#36), e.g. the case in every
+  // colour. An override for an occurrence or a part applies before one for its
+  // family.
+  string part_family_id = 6 [(buf.validate.field).string.(validation.v1.part_family_id_component) = true];
 }
 
 // DraftKittingProcessRecipeGenerateRequest asks the backend to generate an

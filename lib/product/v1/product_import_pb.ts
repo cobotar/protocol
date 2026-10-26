@@ -7,6 +7,8 @@ import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { PartDefinition } from "./part_definition_pb.ts";
 import { file_product_v1_part_definition } from "./part_definition_pb.ts";
+import type { PartFamily } from "./part_family_pb.ts";
+import { file_product_v1_part_family } from "./part_family_pb.ts";
 import type { ProductDefinition } from "./product_definition_pb.ts";
 import { file_product_v1_product_definition } from "./product_definition_pb.ts";
 import type { CreateModelArtifact } from "../../resources/v1/model_requests_pb.ts";
@@ -20,7 +22,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file product/v1/product_import.proto.
  */
 export const file_product_v1_product_import: GenFile = /*@__PURE__*/
-  fileDesc("Ch9wcm9kdWN0L3YxL3Byb2R1Y3RfaW1wb3J0LnByb3RvEgpwcm9kdWN0LnYxIs8PCg1JbXBvcnRQcm9kdWN0EpQBCgZtb2RlbHMYASADKAsyGS5wcm9kdWN0LnYxLkltcG9ydGVkTW9kZWxCabpIZroBYwohaW1wb3J0X3Byb2R1Y3QubW9kZWxzLnVuaXF1ZV9rZXlzEhltb2RlbCBrZXlzIG11c3QgYmUgdW5pcXVlGiN0aGlzLm1hcChtb2RlbCwgbW9kZWwua2V5KS51bmlxdWUoKRKOAQoFcGFydHMYAiADKAsyGC5wcm9kdWN0LnYxLkltcG9ydGVkUGFydEJlukhiugFfCiBpbXBvcnRfcHJvZHVjdC5wYXJ0cy51bmlxdWVfa2V5cxIYcGFydCBrZXlzIG11c3QgYmUgdW5pcXVlGiF0aGlzLm1hcChwYXJ0LCBwYXJ0LmtleSkudW5pcXVlKCkSLgoHcHJvZHVjdBgDIAEoCzIdLnByb2R1Y3QudjEuUHJvZHVjdERlZmluaXRpb24SGQoRcHJvZHVjdF9tb2RlbF9rZXkYBCABKAk6ygy6SMYMGssBCiFpbXBvcnRfcHJvZHVjdC5tb2RlbF9rZXlzX2RlZmluZWQSQGV2ZXJ5IHBhcnQncyBtb2RlbF9rZXkgbXVzdCBiZSB0aGUga2V5IG9mIGEgbW9kZWwgaW4gdGhlIHJlcXVlc3QaZHRoaXMucGFydHMuYWxsKHBhcnQsIHBhcnQubW9kZWxfa2V5ID09ICcnIHx8IHRoaXMubW9kZWxzLmV4aXN0cyhtb2RlbCwgbW9kZWwua2V5ID09IHBhcnQubW9kZWxfa2V5KSkaiQIKIGltcG9ydF9wcm9kdWN0LnBhcnRfa2V5c19kZWZpbmVkElFldmVyeSBhc3NlbWJseSBub2RlJ3MgcGFydF9kZWZpbml0aW9uX2lkIG11c3QgYmUgdGhlIGtleSBvZiBhIHBhcnQgaW4gdGhlIHJlcXVlc3QakQEhaGFzKHRoaXMucHJvZHVjdCkgfHwgdGhpcy5wcm9kdWN0Lm5vZGVzLmFsbChub2RlLCBub2RlLnBhcnRfZGVmaW5pdGlvbl9pZCA9PSAnJyB8fCB0aGlzLnBhcnRzLmV4aXN0cyhwYXJ0LCBwYXJ0LmtleSA9PSBub2RlLnBhcnRfZGVmaW5pdGlvbl9pZCkpGtYCCiVpbXBvcnRfcHJvZHVjdC5wYXJ0X3JlZmVyZW5jZXNfdW5pcXVlElB0d28gaW1wb3J0ZWQgcGFydHMgbXVzdCBub3Qgc2hhcmUgYW4gZXh0ZXJuYWwgcmVmZXJlbmNlIChzeXN0ZW0gYW5kIGV4dGVybmFsX2lkKRraAXRoaXMucGFydHMuYWxsKHBhcnQsIHBhcnQucGFydC5leHRlcm5hbF9yZWZlcmVuY2VzLmFsbChyZWZlcmVuY2UsIHRoaXMucGFydHMuZmlsdGVyKG90aGVyLCBvdGhlci5wYXJ0LmV4dGVybmFsX3JlZmVyZW5jZXMuZXhpc3RzKHIsIHIuc3lzdGVtID09IHJlZmVyZW5jZS5zeXN0ZW0gJiYgci5leHRlcm5hbF9pZCA9PSByZWZlcmVuY2UuZXh0ZXJuYWxfaWQpKS5zaXplKCkgPT0gMSkpGp4BCiFpbXBvcnRfcHJvZHVjdC5wcm9kdWN0X3dpdGhvdXRfaWQSTHRoZSBpbXBvcnRlZCBwcm9kdWN0IG11c3Qgbm90IGhhdmUgYW4gaWQ7IGl0J3MgbWF0Y2hlZCBieSBleHRlcm5hbCByZWZlcmVuY2UaKyFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnByb2R1Y3QuaWQgPT0gJyca8wEKKGltcG9ydF9wcm9kdWN0LnByb2R1Y3RfbW9kZWxfa2V5X2RlZmluZWQSUHByb2R1Y3RfbW9kZWxfa2V5IG11c3QgYmUgdGhlIGtleSBvZiBhIG1vZGVsIGluIHRoZSByZXF1ZXN0LCBhbmQgbmVlZHMgYSBwcm9kdWN0GnV0aGlzLnByb2R1Y3RfbW9kZWxfa2V5ID09ICcnIHx8IChoYXModGhpcy5wcm9kdWN0KSAmJiB0aGlzLm1vZGVscy5leGlzdHMobW9kZWwsIG1vZGVsLmtleSA9PSB0aGlzLnByb2R1Y3RfbW9kZWxfa2V5KSkasQEKJ2ltcG9ydF9wcm9kdWN0LnByb2R1Y3Rfd2l0aG91dF9tb2RlbF9pZBJTdGhlIGltcG9ydGVkIHByb2R1Y3QgbXVzdCBub3Qgc2V0IG1vZGVsX2lkOyBpdCBuYW1lcyBpdHMgbW9kZWwgYnkgcHJvZHVjdF9tb2RlbF9rZXkaMSFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnByb2R1Y3QubW9kZWxfaWQgPT0gJycaxQEKK2ltcG9ydF9wcm9kdWN0Lm5vZGVzX3dpdGhvdXRfb3ZlcnJpZGVfbW9kZWwSRGFzc2VtYmx5IG5vZGVzIG9mIGFuIGltcG9ydGVkIHByb2R1Y3QgbXVzdCBub3Qgc2V0IG92ZXJyaWRlX21vZGVsX2lkGlAhaGFzKHRoaXMucHJvZHVjdCkgfHwgdGhpcy5wcm9kdWN0Lm5vZGVzLmFsbChub2RlLCBub2RlLm92ZXJyaWRlX21vZGVsX2lkID09ICcnKSJhCg1JbXBvcnRlZE1vZGVsEhYKA2tleRgBIAEoCUIJukgGcgTg8wQBEjgKBW1vZGVsGAIgASgLMiEucmVzb3VyY2VzLnYxLkNyZWF0ZU1vZGVsQXJ0aWZhY3RCBrpIA8gBASK5AgoMSW1wb3J0ZWRQYXJ0EhYKA2tleRgBIAEoCUIJukgGcgTg8wQBEjAKBHBhcnQYAiABKAsyGi5wcm9kdWN0LnYxLlBhcnREZWZpbml0aW9uQga6SAPIAQESEQoJbW9kZWxfa2V5GAMgASgJOssBukjHARrEAQoZaW1wb3J0ZWRfcGFydC53aXRob3V0X2lkcxI+YW4gaW1wb3J0ZWQgcGFydCBtdXN0IG5vdCBzZXQgaWQsIHJldmlzaW9uIG9yIGRlZmF1bHRfbW9kZWxfaWQaZyFoYXModGhpcy5wYXJ0KSB8fCAodGhpcy5wYXJ0LmlkID09ICcnICYmIHRoaXMucGFydC5yZXZpc2lvbiA9PSAwdSAmJiB0aGlzLnBhcnQuZGVmYXVsdF9tb2RlbF9pZCA9PSAnJykivgQKE0ltcG9ydFByb2R1Y3RSZXN1bHQSjwEKB3Byb2R1Y3QYASABKAsyGi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5QmK6SF+6AVwKKWltcG9ydF9wcm9kdWN0X3Jlc3VsdC5wcm9kdWN0X3dpdGhvdXRfa2V5Eh90aGUgcHJvZHVjdCdzIHJlc3VsdCBoYXMgbm8ga2V5Gg50aGlzLmtleSA9PSAnJxLMAQoGbW9kZWxzGAIgAygLMhoucHJvZHVjdC52MS5JbXBvcnRlZEVudGl0eUKfAbpImwG6AZcBCiJpbXBvcnRfcHJvZHVjdF9yZXN1bHQubW9kZWxzX2tleWVkEihldmVyeSBtb2RlbCdzIHJlc3VsdCBuYW1lcyBpdHMga2V5LCBvbmNlGkd0aGlzLmFsbChtb2RlbCwgbW9kZWwua2V5ICE9ICcnKSAmJiB0aGlzLm1hcChtb2RlbCwgbW9kZWwua2V5KS51bmlxdWUoKRLFAQoFcGFydHMYAyADKAsyGi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5QpkBukiVAboBkQEKIWltcG9ydF9wcm9kdWN0X3Jlc3VsdC5wYXJ0c19rZXllZBInZXZlcnkgcGFydCdzIHJlc3VsdCBuYW1lcyBpdHMga2V5LCBvbmNlGkN0aGlzLmFsbChwYXJ0LCBwYXJ0LmtleSAhPSAnJykgJiYgdGhpcy5tYXAocGFydCwgcGFydC5rZXkpLnVuaXF1ZSgpImsKDkltcG9ydGVkRW50aXR5EgsKA2tleRgBIAEoCRISCgJpZBgCIAEoCUIGukgDyAEBEjgKBnN0YXR1cxgDIAEoDjIaLnNlcnZpY2UudjEuTXV0YXRpb25TdGF0dXNCDLpICYIBBhgBGAIYA0K0AQoOY29tLnByb2R1Y3QudjFCElByb2R1Y3RJbXBvcnRQcm90b1ABWjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFcR1BCTWV0YWRhdGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_product_v1_part_definition, file_product_v1_product_definition, file_resources_v1_model_requests, file_service_v1_response, file_validation_v1_predefined_string_rules]);
+  fileDesc("Ch9wcm9kdWN0L3YxL3Byb2R1Y3RfaW1wb3J0LnByb3RvEgpwcm9kdWN0LnYxIskbCg1JbXBvcnRQcm9kdWN0EpQBCgZtb2RlbHMYASADKAsyGS5wcm9kdWN0LnYxLkltcG9ydGVkTW9kZWxCabpIZroBYwohaW1wb3J0X3Byb2R1Y3QubW9kZWxzLnVuaXF1ZV9rZXlzEhltb2RlbCBrZXlzIG11c3QgYmUgdW5pcXVlGiN0aGlzLm1hcChtb2RlbCwgbW9kZWwua2V5KS51bmlxdWUoKRKOAQoFcGFydHMYAiADKAsyGC5wcm9kdWN0LnYxLkltcG9ydGVkUGFydEJlukhiugFfCiBpbXBvcnRfcHJvZHVjdC5wYXJ0cy51bmlxdWVfa2V5cxIYcGFydCBrZXlzIG11c3QgYmUgdW5pcXVlGiF0aGlzLm1hcChwYXJ0LCBwYXJ0LmtleSkudW5pcXVlKCkSLgoHcHJvZHVjdBgDIAEoCzIdLnByb2R1Y3QudjEuUHJvZHVjdERlZmluaXRpb24SGQoRcHJvZHVjdF9tb2RlbF9rZXkYBCABKAkSpQEKCGZhbWlsaWVzGAUgAygLMh4ucHJvZHVjdC52MS5JbXBvcnRlZFBhcnRGYW1pbHlCc7pIcLoBbQojaW1wb3J0X3Byb2R1Y3QuZmFtaWxpZXMudW5pcXVlX2tleXMSH3BhcnQgZmFtaWx5IGtleXMgbXVzdCBiZSB1bmlxdWUaJXRoaXMubWFwKGZhbWlseSwgZmFtaWx5LmtleSkudW5pcXVlKCk6nBe6SJgXGssBCiFpbXBvcnRfcHJvZHVjdC5tb2RlbF9rZXlzX2RlZmluZWQSQGV2ZXJ5IHBhcnQncyBtb2RlbF9rZXkgbXVzdCBiZSB0aGUga2V5IG9mIGEgbW9kZWwgaW4gdGhlIHJlcXVlc3QaZHRoaXMucGFydHMuYWxsKHBhcnQsIHBhcnQubW9kZWxfa2V5ID09ICcnIHx8IHRoaXMubW9kZWxzLmV4aXN0cyhtb2RlbCwgbW9kZWwua2V5ID09IHBhcnQubW9kZWxfa2V5KSkaiQIKIGltcG9ydF9wcm9kdWN0LnBhcnRfa2V5c19kZWZpbmVkElFldmVyeSBhc3NlbWJseSBub2RlJ3MgcGFydF9kZWZpbml0aW9uX2lkIG11c3QgYmUgdGhlIGtleSBvZiBhIHBhcnQgaW4gdGhlIHJlcXVlc3QakQEhaGFzKHRoaXMucHJvZHVjdCkgfHwgdGhpcy5wcm9kdWN0Lm5vZGVzLmFsbChub2RlLCBub2RlLnBhcnRfZGVmaW5pdGlvbl9pZCA9PSAnJyB8fCB0aGlzLnBhcnRzLmV4aXN0cyhwYXJ0LCBwYXJ0LmtleSA9PSBub2RlLnBhcnRfZGVmaW5pdGlvbl9pZCkpGtYCCiVpbXBvcnRfcHJvZHVjdC5wYXJ0X3JlZmVyZW5jZXNfdW5pcXVlElB0d28gaW1wb3J0ZWQgcGFydHMgbXVzdCBub3Qgc2hhcmUgYW4gZXh0ZXJuYWwgcmVmZXJlbmNlIChzeXN0ZW0gYW5kIGV4dGVybmFsX2lkKRraAXRoaXMucGFydHMuYWxsKHBhcnQsIHBhcnQucGFydC5leHRlcm5hbF9yZWZlcmVuY2VzLmFsbChyZWZlcmVuY2UsIHRoaXMucGFydHMuZmlsdGVyKG90aGVyLCBvdGhlci5wYXJ0LmV4dGVybmFsX3JlZmVyZW5jZXMuZXhpc3RzKHIsIHIuc3lzdGVtID09IHJlZmVyZW5jZS5zeXN0ZW0gJiYgci5leHRlcm5hbF9pZCA9PSByZWZlcmVuY2UuZXh0ZXJuYWxfaWQpKS5zaXplKCkgPT0gMSkpGusBCiJpbXBvcnRfcHJvZHVjdC5mYW1pbHlfa2V5c19kZWZpbmVkEkdldmVyeSBwYXJ0J3MgZmFtaWx5X2tleSBtdXN0IGJlIHRoZSBrZXkgb2YgYSBwYXJ0IGZhbWlseSBpbiB0aGUgcmVxdWVzdBp8dGhpcy5wYXJ0cy5hbGwocGFydCwgcGFydC5mYW1pbGllcy5pdGVtcy5hbGwobWVtYmVyc2hpcCwgdGhpcy5mYW1pbGllcy5leGlzdHMoZmFtaWx5LCBmYW1pbHkua2V5ID09IG1lbWJlcnNoaXAuZmFtaWx5X2tleSkpKRrbAgoiaW1wb3J0X3Byb2R1Y3Qub25lX2ZhbWlseV9wZXJfa2luZBI5YSBwYXJ0IGNhbiBiZWxvbmcgdG8gYXQgbW9zdCBvbmUgcGFydCBmYW1pbHkgb2YgZWFjaCBraW5kGvkBdGhpcy5wYXJ0cy5hbGwocGFydCwgcGFydC5mYW1pbGllcy5pdGVtcy5hbGwobWVtYmVyc2hpcCwgcGFydC5mYW1pbGllcy5pdGVtcy5maWx0ZXIob3RoZXIsIHRoaXMuZmFtaWxpZXMuZXhpc3RzKGEsIGEua2V5ID09IG1lbWJlcnNoaXAuZmFtaWx5X2tleSAmJiB0aGlzLmZhbWlsaWVzLmV4aXN0cyhiLCBiLmtleSA9PSBvdGhlci5mYW1pbHlfa2V5ICYmIGIuZmFtaWx5LmtpbmQgPT0gYS5mYW1pbHkua2luZCkpKS5zaXplKCkgPD0gMSkpGpIDCiVpbXBvcnRfcHJvZHVjdC5mYW1pbHlfdmFsdWVzX2NvbXBsZXRlElJhIHBhcnQncyB2YWx1ZXMgZm9yIGEgZmFtaWx5IG11c3QgYmUga2V5ZWQgYnkgZXhhY3RseSB0aGF0IGZhbWlseSdzIGRpbWVuc2lvbiBrZXlzGpQCdGhpcy5wYXJ0cy5hbGwocGFydCwgcGFydC5mYW1pbGllcy5pdGVtcy5hbGwobWVtYmVyc2hpcCwgdGhpcy5mYW1pbGllcy5maWx0ZXIoZmFtaWx5LCBmYW1pbHkua2V5ID09IG1lbWJlcnNoaXAuZmFtaWx5X2tleSkuYWxsKGZhbWlseSwgbWVtYmVyc2hpcC52YWx1ZXMuc2l6ZSgpID09IGZhbWlseS5mYW1pbHkuZGltZW5zaW9ucy5zaXplKCkgJiYgZmFtaWx5LmZhbWlseS5kaW1lbnNpb25zLmFsbChkaW1lbnNpb24sIGRpbWVuc2lvbi5rZXkgaW4gbWVtYmVyc2hpcC52YWx1ZXMpKSkpGu4CCidpbXBvcnRfcHJvZHVjdC5mYW1pbHlfcmVmZXJlbmNlc191bmlxdWUSWHR3byBpbXBvcnRlZCBwYXJ0IGZhbWlsaWVzIG11c3Qgbm90IHNoYXJlIGFuIGV4dGVybmFsIHJlZmVyZW5jZSAoc3lzdGVtIGFuZCBleHRlcm5hbF9pZCka6AF0aGlzLmZhbWlsaWVzLmFsbChmYW1pbHksIGZhbWlseS5mYW1pbHkuZXh0ZXJuYWxfcmVmZXJlbmNlcy5hbGwocmVmZXJlbmNlLCB0aGlzLmZhbWlsaWVzLmZpbHRlcihvdGhlciwgb3RoZXIuZmFtaWx5LmV4dGVybmFsX3JlZmVyZW5jZXMuZXhpc3RzKHIsIHIuc3lzdGVtID09IHJlZmVyZW5jZS5zeXN0ZW0gJiYgci5leHRlcm5hbF9pZCA9PSByZWZlcmVuY2UuZXh0ZXJuYWxfaWQpKS5zaXplKCkgPT0gMSkpGp4BCiFpbXBvcnRfcHJvZHVjdC5wcm9kdWN0X3dpdGhvdXRfaWQSTHRoZSBpbXBvcnRlZCBwcm9kdWN0IG11c3Qgbm90IGhhdmUgYW4gaWQ7IGl0J3MgbWF0Y2hlZCBieSBleHRlcm5hbCByZWZlcmVuY2UaKyFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnByb2R1Y3QuaWQgPT0gJyca8wEKKGltcG9ydF9wcm9kdWN0LnByb2R1Y3RfbW9kZWxfa2V5X2RlZmluZWQSUHByb2R1Y3RfbW9kZWxfa2V5IG11c3QgYmUgdGhlIGtleSBvZiBhIG1vZGVsIGluIHRoZSByZXF1ZXN0LCBhbmQgbmVlZHMgYSBwcm9kdWN0GnV0aGlzLnByb2R1Y3RfbW9kZWxfa2V5ID09ICcnIHx8IChoYXModGhpcy5wcm9kdWN0KSAmJiB0aGlzLm1vZGVscy5leGlzdHMobW9kZWwsIG1vZGVsLmtleSA9PSB0aGlzLnByb2R1Y3RfbW9kZWxfa2V5KSkasQEKJ2ltcG9ydF9wcm9kdWN0LnByb2R1Y3Rfd2l0aG91dF9tb2RlbF9pZBJTdGhlIGltcG9ydGVkIHByb2R1Y3QgbXVzdCBub3Qgc2V0IG1vZGVsX2lkOyBpdCBuYW1lcyBpdHMgbW9kZWwgYnkgcHJvZHVjdF9tb2RlbF9rZXkaMSFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnByb2R1Y3QubW9kZWxfaWQgPT0gJycaxQEKK2ltcG9ydF9wcm9kdWN0Lm5vZGVzX3dpdGhvdXRfb3ZlcnJpZGVfbW9kZWwSRGFzc2VtYmx5IG5vZGVzIG9mIGFuIGltcG9ydGVkIHByb2R1Y3QgbXVzdCBub3Qgc2V0IG92ZXJyaWRlX21vZGVsX2lkGlAhaGFzKHRoaXMucHJvZHVjdCkgfHwgdGhpcy5wcm9kdWN0Lm5vZGVzLmFsbChub2RlLCBub2RlLm92ZXJyaWRlX21vZGVsX2lkID09ICcnKSJhCg1JbXBvcnRlZE1vZGVsEhYKA2tleRgBIAEoCUIJukgGcgTg8wQBEjgKBW1vZGVsGAIgASgLMiEucmVzb3VyY2VzLnYxLkNyZWF0ZU1vZGVsQXJ0aWZhY3RCBrpIA8gBASKjAwoMSW1wb3J0ZWRQYXJ0EhYKA2tleRgBIAEoCUIJukgGcgTg8wQBEjAKBHBhcnQYAiABKAsyGi5wcm9kdWN0LnYxLlBhcnREZWZpbml0aW9uQga6SAPIAQESEQoJbW9kZWxfa2V5GAMgASgJEjsKCGZhbWlsaWVzGAQgASgLMikucHJvZHVjdC52MS5JbXBvcnRlZFBhcnRGYW1pbHlNZW1iZXJzaGlwczr4AbpI9AEa8QEKGWltcG9ydGVkX3BhcnQud2l0aG91dF9pZHMSSGFuIGltcG9ydGVkIHBhcnQgbXVzdCBub3Qgc2V0IGlkLCByZXZpc2lvbiwgZGVmYXVsdF9tb2RlbF9pZCBvciBmYW1pbGllcxqJASFoYXModGhpcy5wYXJ0KSB8fCAodGhpcy5wYXJ0LmlkID09ICcnICYmIHRoaXMucGFydC5yZXZpc2lvbiA9PSAwdSAmJiB0aGlzLnBhcnQuZGVmYXVsdF9tb2RlbF9pZCA9PSAnJyAmJiB0aGlzLnBhcnQuZmFtaWxpZXMuc2l6ZSgpID09IDApIuUBCh1JbXBvcnRlZFBhcnRGYW1pbHlNZW1iZXJzaGlwcxLDAQoFaXRlbXMYASADKAsyKC5wcm9kdWN0LnYxLkltcG9ydGVkUGFydEZhbWlseU1lbWJlcnNoaXBCiQG6SIUBugGBAQodaW1wb3J0ZWRfcGFydC5mYW1pbGllcy51bmlxdWUSKmFuIGltcG9ydGVkIHBhcnQgY2FuJ3QgbmFtZSBhIGZhbWlseSB0d2ljZRo0dGhpcy5tYXAobWVtYmVyc2hpcCwgbWVtYmVyc2hpcC5mYW1pbHlfa2V5KS51bmlxdWUoKSLKAQocSW1wb3J0ZWRQYXJ0RmFtaWx5TWVtYmVyc2hpcBIdCgpmYW1pbHlfa2V5GAEgASgJQgm6SAZyBODzBAESXAoGdmFsdWVzGAIgAygLMjQucHJvZHVjdC52MS5JbXBvcnRlZFBhcnRGYW1pbHlNZW1iZXJzaGlwLlZhbHVlc0VudHJ5Qha6SBOaARAiBnIE4PMEASoGcgSA8QQBGi0KC1ZhbHVlc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAEiiAIKEkltcG9ydGVkUGFydEZhbWlseRIWCgNrZXkYASABKAlCCbpIBnIE4PMEARIuCgZmYW1pbHkYAiABKAsyFi5wcm9kdWN0LnYxLlBhcnRGYW1pbHlCBrpIA8gBATqpAbpIpQEaogEKIGltcG9ydGVkX3BhcnRfZmFtaWx5LndpdGhvdXRfaWRzEjNhbiBpbXBvcnRlZCBwYXJ0IGZhbWlseSBtdXN0IG5vdCBzZXQgaWQgb3IgcmV2aXNpb24aSSFoYXModGhpcy5mYW1pbHkpIHx8ICh0aGlzLmZhbWlseS5pZCA9PSAnJyAmJiB0aGlzLmZhbWlseS5yZXZpc2lvbiA9PSAwdSkimwYKE0ltcG9ydFByb2R1Y3RSZXN1bHQSjwEKB3Byb2R1Y3QYASABKAsyGi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5QmK6SF+6AVwKKWltcG9ydF9wcm9kdWN0X3Jlc3VsdC5wcm9kdWN0X3dpdGhvdXRfa2V5Eh90aGUgcHJvZHVjdCdzIHJlc3VsdCBoYXMgbm8ga2V5Gg50aGlzLmtleSA9PSAnJxLMAQoGbW9kZWxzGAIgAygLMhoucHJvZHVjdC52MS5JbXBvcnRlZEVudGl0eUKfAbpImwG6AZcBCiJpbXBvcnRfcHJvZHVjdF9yZXN1bHQubW9kZWxzX2tleWVkEihldmVyeSBtb2RlbCdzIHJlc3VsdCBuYW1lcyBpdHMga2V5LCBvbmNlGkd0aGlzLmFsbChtb2RlbCwgbW9kZWwua2V5ICE9ICcnKSAmJiB0aGlzLm1hcChtb2RlbCwgbW9kZWwua2V5KS51bmlxdWUoKRLFAQoFcGFydHMYAyADKAsyGi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5QpkBukiVAboBkQEKIWltcG9ydF9wcm9kdWN0X3Jlc3VsdC5wYXJ0c19rZXllZBInZXZlcnkgcGFydCdzIHJlc3VsdCBuYW1lcyBpdHMga2V5LCBvbmNlGkN0aGlzLmFsbChwYXJ0LCBwYXJ0LmtleSAhPSAnJykgJiYgdGhpcy5tYXAocGFydCwgcGFydC5rZXkpLnVuaXF1ZSgpEtoBCghmYW1pbGllcxgEIAMoCzIaLnByb2R1Y3QudjEuSW1wb3J0ZWRFbnRpdHlCqwG6SKcBugGjAQokaW1wb3J0X3Byb2R1Y3RfcmVzdWx0LmZhbWlsaWVzX2tleWVkEi5ldmVyeSBwYXJ0IGZhbWlseSdzIHJlc3VsdCBuYW1lcyBpdHMga2V5LCBvbmNlGkt0aGlzLmFsbChmYW1pbHksIGZhbWlseS5rZXkgIT0gJycpICYmIHRoaXMubWFwKGZhbWlseSwgZmFtaWx5LmtleSkudW5pcXVlKCkiawoOSW1wb3J0ZWRFbnRpdHkSCwoDa2V5GAEgASgJEhIKAmlkGAIgASgJQga6SAPIAQESOAoGc3RhdHVzGAMgASgOMhouc2VydmljZS52MS5NdXRhdGlvblN0YXR1c0IMukgJggEGGAEYAhgDQrQBCg5jb20ucHJvZHVjdC52MUISUHJvZHVjdEltcG9ydFByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaICA1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJvZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_product_v1_part_definition, file_product_v1_part_family, file_product_v1_product_definition, file_resources_v1_model_requests, file_service_v1_response, file_validation_v1_predefined_string_rules]);
 
 /**
  * ImportProduct creates or updates a product with its models and parts in one
@@ -30,9 +32,10 @@ export const file_product_v1_product_import: GenFile = /*@__PURE__*/
  * changes everything or nothing. The files are uploaded first (see
  * resources.v1.UploadedObject).
  *
- * The models and parts have keys, which are only valid within the request: a
- * part names its default model by model_key, and an assembly node names its
- * part by the part's key in part_definition_id.
+ * The models, part families and parts have keys, which are only valid within
+ * the request: a part names its default model by model_key and its families by
+ * family_key (ImportedPart.families), and an assembly node names its part by
+ * the part's key in part_definition_id.
  *
  * Importing again is matched by external reference. An imported part or
  * product that has an external reference (system and external_id) of an
@@ -41,9 +44,20 @@ export const file_product_v1_product_import: GenFile = /*@__PURE__*/
  * keep that one (cobotar/protocol#19). Models are matched by content hash, not
  * by external reference: a model whose files changed is a new model, which the
  * part's new revision points to, while the earlier model stays for the
- * earlier revision. A part or product without external references is always
- * created. An import is refused when two of its parts share a reference, or
- * when one reference matches several existing parts or products.
+ * earlier revision. Part families are matched by external reference like
+ * parts (cobotar/protocol#36). A part, family or product without external
+ * references is always created. An import is refused when two of its parts or
+ * two of its families share a reference, or when one reference matches
+ * several existing parts, families or products.
+ *
+ * An imported part's memberships follow ImportedPart.families: when it's
+ * absent, an updated part keeps its memberships (so an exporter that doesn't
+ * know about families leaves them alone); when it's present, they're replaced
+ * with its items, and an empty list removes them. An imported family
+ * is created or updated with the request's dimensions, under the same rules
+ * as other changes to a family (PartFamily): a family with members keeps its
+ * dimension keys, so an import that adds or removes a dimension of such a
+ * family is refused.
  *
  * @generated from message product.v1.ImportProduct
  */
@@ -74,6 +88,13 @@ export type ImportProduct = Message<"product.v1.ImportProduct"> & {
    * @generated from field: string product_model_key = 4;
    */
   productModelKey: string;
+
+  /**
+   * The part families the parts name by key in ImportedPart.families.
+   *
+   * @generated from field: repeated product.v1.ImportedPartFamily families = 5;
+   */
+  families: ImportedPartFamily[];
 };
 
 /**
@@ -109,8 +130,9 @@ export const ImportedModelSchema: GenMessage<ImportedModel> = /*@__PURE__*/
 
 /**
  * ImportedPart is a part definition of an ImportProduct, with its key in the
- * request. The part has no id, revision or default_model_id: it's matched by
- * external reference, and names its default model by model_key.
+ * request. The part has no id, revision, default_model_id or families: it's
+ * matched by external reference, names its default model by model_key and its
+ * families by key in families.
  *
  * @generated from message product.v1.ImportedPart
  */
@@ -131,6 +153,16 @@ export type ImportedPart = Message<"product.v1.ImportedPart"> & {
    * @generated from field: string model_key = 3;
    */
   modelKey: string;
+
+  /**
+   * The part's families (ImportProduct.families, by key), at most one of each
+   * kind, with its value for each of their dimensions. Absent keeps the
+   * memberships of the part the import updates; present replaces them, and
+   * present but empty removes them.
+   *
+   * @generated from field: product.v1.ImportedPartFamilyMemberships families = 4;
+   */
+  families?: ImportedPartFamilyMemberships;
 };
 
 /**
@@ -139,6 +171,79 @@ export type ImportedPart = Message<"product.v1.ImportedPart"> & {
  */
 export const ImportedPartSchema: GenMessage<ImportedPart> = /*@__PURE__*/
   messageDesc(file_product_v1_product_import, 2);
+
+/**
+ * ImportedPartFamilyMemberships wraps an imported part's memberships, so an
+ * import can tell "leave them" (absent) from "none" (present, empty).
+ *
+ * @generated from message product.v1.ImportedPartFamilyMemberships
+ */
+export type ImportedPartFamilyMemberships = Message<"product.v1.ImportedPartFamilyMemberships"> & {
+  /**
+   * @generated from field: repeated product.v1.ImportedPartFamilyMembership items = 1;
+   */
+  items: ImportedPartFamilyMembership[];
+};
+
+/**
+ * Describes the message product.v1.ImportedPartFamilyMemberships.
+ * Use `create(ImportedPartFamilyMembershipsSchema)` to create a new message.
+ */
+export const ImportedPartFamilyMembershipsSchema: GenMessage<ImportedPartFamilyMemberships> = /*@__PURE__*/
+  messageDesc(file_product_v1_product_import, 3);
+
+/**
+ * ImportedPartFamilyMembership is a PartFamilyMembership of an imported part,
+ * naming the family by its key in the request.
+ *
+ * @generated from message product.v1.ImportedPartFamilyMembership
+ */
+export type ImportedPartFamilyMembership = Message<"product.v1.ImportedPartFamilyMembership"> & {
+  /**
+   * @generated from field: string family_key = 1;
+   */
+  familyKey: string;
+
+  /**
+   * The part's value for each dimension of the family, by dimension key.
+   *
+   * @generated from field: map<string, string> values = 2;
+   */
+  values: { [key: string]: string };
+};
+
+/**
+ * Describes the message product.v1.ImportedPartFamilyMembership.
+ * Use `create(ImportedPartFamilyMembershipSchema)` to create a new message.
+ */
+export const ImportedPartFamilyMembershipSchema: GenMessage<ImportedPartFamilyMembership> = /*@__PURE__*/
+  messageDesc(file_product_v1_product_import, 4);
+
+/**
+ * ImportedPartFamily is a part family of an ImportProduct, with its key in the
+ * request. The family has no id or revision: it's matched by external
+ * reference.
+ *
+ * @generated from message product.v1.ImportedPartFamily
+ */
+export type ImportedPartFamily = Message<"product.v1.ImportedPartFamily"> & {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key: string;
+
+  /**
+   * @generated from field: product.v1.PartFamily family = 2;
+   */
+  family?: PartFamily;
+};
+
+/**
+ * Describes the message product.v1.ImportedPartFamily.
+ * Use `create(ImportedPartFamilySchema)` to create a new message.
+ */
+export const ImportedPartFamilySchema: GenMessage<ImportedPartFamily> = /*@__PURE__*/
+  messageDesc(file_product_v1_product_import, 5);
 
 /**
  * ImportProductResult answers an ImportProduct that was applied. A refused
@@ -167,6 +272,13 @@ export type ImportProductResult = Message<"product.v1.ImportProductResult"> & {
    * @generated from field: repeated product.v1.ImportedEntity parts = 3;
    */
   parts: ImportedEntity[];
+
+  /**
+   * One per part family of the request, in its order.
+   *
+   * @generated from field: repeated product.v1.ImportedEntity families = 4;
+   */
+  families: ImportedEntity[];
 };
 
 /**
@@ -174,13 +286,13 @@ export type ImportProductResult = Message<"product.v1.ImportProductResult"> & {
  * Use `create(ImportProductResultSchema)` to create a new message.
  */
 export const ImportProductResultSchema: GenMessage<ImportProductResult> = /*@__PURE__*/
-  messageDesc(file_product_v1_product_import, 3);
+  messageDesc(file_product_v1_product_import, 6);
 
 /**
- * ImportedEntity is what an import did with one model, part or product:
- * CREATED, UPDATED (a part's new revision, or the product), or UNCHANGED (an
- * existing model with the same content, or a part or product that matched and
- * didn't change).
+ * ImportedEntity is what an import did with one model, part family, part or
+ * product: CREATED, UPDATED (a part's or family's new revision, or the
+ * product), or UNCHANGED (an existing model with the same content, or a part,
+ * family or product that matched and didn't change).
  *
  * @generated from message product.v1.ImportedEntity
  */
@@ -208,5 +320,5 @@ export type ImportedEntity = Message<"product.v1.ImportedEntity"> & {
  * Use `create(ImportedEntitySchema)` to create a new message.
  */
 export const ImportedEntitySchema: GenMessage<ImportedEntity> = /*@__PURE__*/
-  messageDesc(file_product_v1_product_import, 4);
+  messageDesc(file_product_v1_product_import, 7);
 

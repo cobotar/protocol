@@ -5,6 +5,7 @@ import "buf/validate/validate.proto";
 import "common/v1/external_references.proto";
 import "common/v1/key_value_constraint.proto";
 import "common/v1/time.proto";
+import "product/v1/part_family.proto";
 import "validation/v1/predefined_string_rules.proto";
 
 option csharp_namespace = "Messages.Product.V1";
@@ -130,6 +131,17 @@ message PartDefinition {
   // the part definition it was based on, and is refused if it changed since.
   // Ignored on create.
   uint64 revision = 16;
+
+  // The part families this part belongs to, with its value for each of their
+  // dimensions (cobotar/protocol#36), e.g. the variant family of a case in
+  // several colours. At most one family of each kind; the backend refuses
+  // unknown families and a second family of a kind. An imported part names
+  // its families by key instead (ImportedPart.families).
+  repeated PartFamilyMembership families = 17 [(buf.validate.field).cel = {
+    id: "part_definition.families.unique"
+    message: "a part can't name a family twice"
+    expression: "this.map(membership, membership.family_id).unique()"
+  }];
 }
 
 message PartDefinitions {

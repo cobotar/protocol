@@ -45,6 +45,7 @@ jobs:
         run: |
           buf generate
           python3 scripts/rewrite_python_imports.py
+          python3 scripts/strip_doc_whitespace.py
 
       - name: Check generated Python package
         run: |

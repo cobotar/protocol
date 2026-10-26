@@ -32,7 +32,7 @@ namespace Messages.Resources.V1 {
             "bnRhaW5lclNsb3RSZWYSMgoVY29udGFpbmVyX2luc3RhbmNlX2lkGAEgASgJ",
             "UhNjb250YWluZXJJbnN0YW5jZUlkEhcKB3Nsb3RfaWQYAiABKAlSBnNsb3RJ",
             "ZBIzCgR0eXBlGAMgASgOMh8ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RU",
-            "eXBlUgR0eXBlIqoEChdDb250YWluZXJTbG90RGVmaW5pdGlvbhIOCgJpZBgB",
+            "eXBlUgR0eXBlIvsEChdDb250YWluZXJTbG90RGVmaW5pdGlvbhIOCgJpZBgB",
             "IAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGlj",
             "b24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
             "aW9uEiUKBHBvc2UYBSABKAsyES5nZW9tZXRyeS52MS5Qb3NlUgRwb3NlEigK",
@@ -44,34 +44,36 @@ namespace Messages.Resources.V1 {
             "dXBwb3J0ZWRSb290UGFydERlZmluaXRpb25JZHMSQQodc3VwcG9ydGVkX3Bh",
             "cnRfZGVmaW5pdGlvbl9pZHMYCiADKAlSGnN1cHBvcnRlZFBhcnREZWZpbml0",
             "aW9uSWRzEj8KC2NvbnN0cmFpbnRzGAsgAygLMh0uY29tbW9uLnYxLktleVZh",
-            "bHVlQ29uc3RyYWludFILY29uc3RyYWludHMi0QIKE0NvbnRhaW5lckRlZmlu",
-            "aXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
-            "aWNvbhgDIAEoCVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3Jp",
-            "cHRpb24SPAoEdHlwZRgFIAEoDjIbLnJlc291cmNlcy52MS5Db250YWluZXJU",
-            "eXBlQgu6SAiCAQIQAcgBAVIEdHlwZRIkCghtb2RlbF9pZBgGIAEoCUIJukgG",
-            "cgSI8QQBUgdtb2RlbElkEjsKBXNsb3RzGAcgAygLMiUucmVzb3VyY2VzLnYx",
-            "LkNvbnRhaW5lclNsb3REZWZpbml0aW9uUgVzbG90cxI/Cgtjb25zdHJhaW50",
-            "cxgIIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0",
-            "cmFpbnRzIk8KFENvbnRhaW5lckRlZmluaXRpb25zEjcKBWl0ZW1zGAEgAygL",
-            "MiEucmVzb3VyY2VzLnYxLkNvbnRhaW5lckRlZmluaXRpb25SBWl0ZW1zKpgB",
-            "Cg1Db250YWluZXJUeXBlEh4KGkNPTlRBSU5FUl9UWVBFX1VOU1BFQ0lGSUVE",
-            "EAASGgoWQ09OVEFJTkVSX1RZUEVfU1RPUkFHRRABEhYKEkNPTlRBSU5FUl9U",
-            "WVBFX0tJVBACEhcKE0NPTlRBSU5FUl9UWVBFX1RSQVkQAxIaChZDT05UQUlO",
-            "RVJfVFlQRV9GSVhUVVJFEAQqyAEKEUNvbnRhaW5lclNsb3RUeXBlEiMKH0NP",
-            "TlRBSU5FUl9TTE9UX1RZUEVfVU5TUEVDSUZJRUQQABIjCh9DT05UQUlORVJf",
-            "U0xPVF9UWVBFX1NUT1JBR0VfQklOEAESIAocQ09OVEFJTkVSX1NMT1RfVFlQ",
-            "RV9LSVRfU0xPVBACEiEKHUNPTlRBSU5FUl9TTE9UX1RZUEVfVFJBWV9DRUxM",
-            "EAMSJAogQ09OVEFJTkVSX1NMT1RfVFlQRV9GSVhUVVJFX1NMT1QQBELIAQoQ",
-            "Y29tLnJlc291cmNlcy52MUIYQ29udGFpbmVyRGVmaW5pdGlvblByb3RvUAFa",
-            "QGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9yZXNv",
-            "dXJjZXMvdjE7cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJj",
-            "ZXMuVjHKAgxSZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRh",
-            "dGHqAg1SZXNvdXJjZXM6OlYxYgZwcm90bzM="));
+            "bHVlQ29uc3RyYWludFILY29uc3RyYWludHMSTwoZc3VwcG9ydGVkX3BhcnRf",
+            "ZmFtaWx5X2lkcxgMIAMoCUIUukgRkgEOGAEiCnIIiPQEAaj0BAFSFnN1cHBv",
+            "cnRlZFBhcnRGYW1pbHlJZHMi0QIKE0NvbnRhaW5lckRlZmluaXRpb24SDgoC",
+            "aWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
+            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SPAoE",
+            "dHlwZRgFIAEoDjIbLnJlc291cmNlcy52MS5Db250YWluZXJUeXBlQgu6SAiC",
+            "AQIQAcgBAVIEdHlwZRIkCghtb2RlbF9pZBgGIAEoCUIJukgGcgSI8QQBUgdt",
+            "b2RlbElkEjsKBXNsb3RzGAcgAygLMiUucmVzb3VyY2VzLnYxLkNvbnRhaW5l",
+            "clNsb3REZWZpbml0aW9uUgVzbG90cxI/Cgtjb25zdHJhaW50cxgIIAMoCzId",
+            "LmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIk8K",
+            "FENvbnRhaW5lckRlZmluaXRpb25zEjcKBWl0ZW1zGAEgAygLMiEucmVzb3Vy",
+            "Y2VzLnYxLkNvbnRhaW5lckRlZmluaXRpb25SBWl0ZW1zKpgBCg1Db250YWlu",
+            "ZXJUeXBlEh4KGkNPTlRBSU5FUl9UWVBFX1VOU1BFQ0lGSUVEEAASGgoWQ09O",
+            "VEFJTkVSX1RZUEVfU1RPUkFHRRABEhYKEkNPTlRBSU5FUl9UWVBFX0tJVBAC",
+            "EhcKE0NPTlRBSU5FUl9UWVBFX1RSQVkQAxIaChZDT05UQUlORVJfVFlQRV9G",
+            "SVhUVVJFEAQqyAEKEUNvbnRhaW5lclNsb3RUeXBlEiMKH0NPTlRBSU5FUl9T",
+            "TE9UX1RZUEVfVU5TUEVDSUZJRUQQABIjCh9DT05UQUlORVJfU0xPVF9UWVBF",
+            "X1NUT1JBR0VfQklOEAESIAocQ09OVEFJTkVSX1NMT1RfVFlQRV9LSVRfU0xP",
+            "VBACEiEKHUNPTlRBSU5FUl9TTE9UX1RZUEVfVFJBWV9DRUxMEAMSJAogQ09O",
+            "VEFJTkVSX1NMT1RfVFlQRV9GSVhUVVJFX1NMT1QQBELIAQoQY29tLnJlc291",
+            "cmNlcy52MUIYQ29udGFpbmVyRGVmaW5pdGlvblByb3RvUAFaQGdpdGh1Yi5j",
+            "b20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7",
+            "cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxS",
+            "ZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNv",
+            "dXJjZXM6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ContainerType), typeof(global::Messages.Resources.V1.ContainerSlotType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotRef), global::Messages.Resources.V1.ContainerSlotRef.Parser, new[]{ "ContainerInstanceId", "SlotId", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotDefinition), global::Messages.Resources.V1.ContainerSlotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Pose", "Size", "Type", "SupportedProductDefinitionIds", "SupportedRootPartDefinitionIds", "SupportedPartDefinitionIds", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotDefinition), global::Messages.Resources.V1.ContainerSlotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Pose", "Size", "Type", "SupportedProductDefinitionIds", "SupportedRootPartDefinitionIds", "SupportedPartDefinitionIds", "Constraints", "SupportedPartFamilyIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerDefinition), global::Messages.Resources.V1.ContainerDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ModelId", "Slots", "Constraints" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerDefinitions), global::Messages.Resources.V1.ContainerDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -482,6 +484,7 @@ namespace Messages.Resources.V1 {
       supportedRootPartDefinitionIds_ = other.supportedRootPartDefinitionIds_.Clone();
       supportedPartDefinitionIds_ = other.supportedPartDefinitionIds_.Clone();
       constraints_ = other.constraints_.Clone();
+      supportedPartFamilyIds_ = other.supportedPartFamilyIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -652,6 +655,24 @@ namespace Messages.Resources.V1 {
       get { return constraints_; }
     }
 
+    /// <summary>Field number for the "supported_part_family_ids" field.</summary>
+    public const int SupportedPartFamilyIdsFieldNumber = 12;
+    private static readonly pb::FieldCodec<string> _repeated_supportedPartFamilyIds_codec
+        = pb::FieldCodec.ForString(98);
+    private readonly pbc::RepeatedField<string> supportedPartFamilyIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// Part families (product.v1.PartFamily) whose members this slot supports, so
+    /// a slot for a case accepts every colour without listing each part
+    /// (cobotar/protocol#36). A part is supported when it's in
+    /// supported_part_definition_ids or a member of one of these families; with
+    /// both empty, the slot supports any part.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> SupportedPartFamilyIds {
+      get { return supportedPartFamilyIds_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -678,6 +699,7 @@ namespace Messages.Resources.V1 {
       if(!supportedRootPartDefinitionIds_.Equals(other.supportedRootPartDefinitionIds_)) return false;
       if(!supportedPartDefinitionIds_.Equals(other.supportedPartDefinitionIds_)) return false;
       if(!constraints_.Equals(other.constraints_)) return false;
+      if(!supportedPartFamilyIds_.Equals(other.supportedPartFamilyIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -696,6 +718,7 @@ namespace Messages.Resources.V1 {
       hash ^= supportedRootPartDefinitionIds_.GetHashCode();
       hash ^= supportedPartDefinitionIds_.GetHashCode();
       hash ^= constraints_.GetHashCode();
+      hash ^= supportedPartFamilyIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -746,6 +769,7 @@ namespace Messages.Resources.V1 {
       supportedRootPartDefinitionIds_.WriteTo(output, _repeated_supportedRootPartDefinitionIds_codec);
       supportedPartDefinitionIds_.WriteTo(output, _repeated_supportedPartDefinitionIds_codec);
       constraints_.WriteTo(output, _repeated_constraints_codec);
+      supportedPartFamilyIds_.WriteTo(output, _repeated_supportedPartFamilyIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -788,6 +812,7 @@ namespace Messages.Resources.V1 {
       supportedRootPartDefinitionIds_.WriteTo(ref output, _repeated_supportedRootPartDefinitionIds_codec);
       supportedPartDefinitionIds_.WriteTo(ref output, _repeated_supportedPartDefinitionIds_codec);
       constraints_.WriteTo(ref output, _repeated_constraints_codec);
+      supportedPartFamilyIds_.WriteTo(ref output, _repeated_supportedPartFamilyIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -823,6 +848,7 @@ namespace Messages.Resources.V1 {
       size += supportedRootPartDefinitionIds_.CalculateSize(_repeated_supportedRootPartDefinitionIds_codec);
       size += supportedPartDefinitionIds_.CalculateSize(_repeated_supportedPartDefinitionIds_codec);
       size += constraints_.CalculateSize(_repeated_constraints_codec);
+      size += supportedPartFamilyIds_.CalculateSize(_repeated_supportedPartFamilyIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -866,6 +892,7 @@ namespace Messages.Resources.V1 {
       supportedRootPartDefinitionIds_.Add(other.supportedRootPartDefinitionIds_);
       supportedPartDefinitionIds_.Add(other.supportedPartDefinitionIds_);
       constraints_.Add(other.constraints_);
+      supportedPartFamilyIds_.Add(other.supportedPartFamilyIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -935,6 +962,10 @@ namespace Messages.Resources.V1 {
             constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
+          case 98: {
+            supportedPartFamilyIds_.AddEntriesFrom(input, _repeated_supportedPartFamilyIds_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1002,6 +1033,10 @@ namespace Messages.Resources.V1 {
           }
           case 90: {
             constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
+            break;
+          }
+          case 98: {
+            supportedPartFamilyIds_.AddEntriesFrom(ref input, _repeated_supportedPartFamilyIds_codec);
             break;
           }
         }

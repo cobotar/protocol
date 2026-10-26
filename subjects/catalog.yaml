@@ -67,6 +67,8 @@ entities:
     messages: {entity: resources.v1.ModelArtifact, list: resources.v1.ModelArtifacts, create: resources.v1.CreateModelArtifact, update: resources.v1.ModelArtifact}
   - name: part_definition
     messages: {entity: product.v1.PartDefinition, list: product.v1.PartDefinitions, create: product.v1.PartDefinition, update: product.v1.PartDefinition}
+  - name: part_family
+    messages: {entity: product.v1.PartFamily, list: product.v1.PartFamilies, create: product.v1.PartFamily, update: product.v1.PartFamily}
   - name: part_instance
     messages: {entity: product.v1.PartInstance, list: product.v1.PartInstances, create: product.v1.PartInstance, update: product.v1.PartInstance}
   - name: presentation_strategy
@@ -119,7 +121,7 @@ entity_sets:
     [action, action_definition, actor_availability, actor_skill, ar_config, ar_config_binding,
      asset_adapter_definition, asset_definition, asset_instance, cell, container_definition,
      container_instance, device, execution_evidence, feedback, feedback_definition, function,
-     function_definition, line, marker, model, part_definition, part_instance,
+     function_definition, line, marker, model, part_definition, part_family, part_instance,
      presentation_strategy, process_recipe, process_run, product, property_definition,
      property_instance, robot_adapter_definition, robot_definition, robot_instance,
      sequence_definition, sequence_run, skill, station, task_definition, task_run,
@@ -127,24 +129,32 @@ entity_sets:
   creatable:
     [action, actor_skill, ar_config, ar_config_binding, asset_definition, asset_instance, cell,
      container_definition, container_instance, device, execution_evidence, feedback, function,
-     line, marker, model, part_definition, part_instance, presentation_strategy, process_recipe,
-     product, property_definition, property_instance, robot_definition, robot_instance,
+     line, marker, model, part_definition, part_family, part_instance, presentation_strategy,
+     process_recipe, product, property_definition, property_instance, robot_definition, robot_instance,
      sequence_definition, skill, station, task_definition, tool_definition, tool_instance,
      validity_policy, worker, zone]
   mutable:
     [action, actor_skill, ar_config, ar_config_binding, asset_definition, asset_instance, cell,
      container_definition, container_instance, device, feedback, function, line, marker, model,
-     part_definition, part_instance, presentation_strategy, process_recipe, product,
+     part_definition, part_family, part_instance, presentation_strategy, process_recipe, product,
      property_definition, property_instance, robot_definition, robot_instance,
      sequence_definition, skill, station, task_definition, tool_definition, tool_instance,
      validity_policy, worker, zone]
+  # The entities that can be cloned (edit.{entity}.clone): the mutable ones except part families, since a clone
+  # would be an empty family with the same dimensions and no client plans one (cobotar/protocol#36).
+  cloneable:
+    [action, actor_skill, ar_config, ar_config_binding, asset_definition, asset_instance, cell,
+     container_definition, container_instance, device, feedback, function, line, marker, model,
+     part_definition, part_instance, presentation_strategy, process_recipe, product,
+     property_definition, property_instance, robot_definition, robot_instance, sequence_definition,
+     skill, station, task_definition, tool_definition, tool_instance, validity_policy, worker, zone]
   # Authoring publishes added, updated and removed events for the readable entities and for the last adapter info it
   # keeps per robot and asset instance (cobotar/Authoring#49, #65).
   evented:
     [action, action_definition, actor_availability, actor_skill, ar_config, ar_config_binding,
      asset_adapter_definition, asset_adapter_info, asset_definition, asset_instance, cell,
      container_definition, container_instance, device, execution_evidence, feedback,
-     feedback_definition, function, function_definition, line, marker, model, part_definition,
+     feedback_definition, function, function_definition, line, marker, model, part_definition, part_family,
      part_instance, presentation_strategy, process_recipe, process_run, product,
      property_definition, property_instance, robot_adapter_definition, robot_adapter_info,
      robot_definition, robot_instance, sequence_definition, sequence_run, skill, station,
@@ -170,6 +180,11 @@ route_families:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
       task_run:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        publishers: [authoring, web_cobotar]
 
   - id: get.entity.some
     pattern: get.{entity}.some
@@ -181,6 +196,12 @@ route_families:
     replies: {success: $list, failure: service.v1.Response}
     publishers: [authoring, web_cobotar, holo_cobotar]
     consumers: [authoring]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        publishers: [authoring, web_cobotar]
 
   - id: get.entity.one
     pattern: get.{entity}.one
@@ -197,6 +218,11 @@ route_families:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
       part_instance:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        publishers: [authoring, web_cobotar]
 
   - id: edit.entity.add
     pattern: edit.{entity}.add
@@ -208,10 +234,15 @@ route_families:
     replies: {success: service.v1.Response, failure: service.v1.Response}
     publishers: [web_cobotar]
     consumers: [authoring]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
 
   - id: edit.entity.clone
     pattern: edit.{entity}.clone
-    entity_set: mutable
+    entity_set: cloneable
     lifecycle: active
     conformance: {mode: staged, tracking_issue: cobotar/protocol#11}
     interaction: request_reply
@@ -230,6 +261,11 @@ route_families:
     replies: {success: service.v1.Response, failure: service.v1.Response}
     publishers: [web_cobotar]
     consumers: [authoring]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
 
   - id: edit.entity.remove
     pattern: edit.{entity}.remove
@@ -241,6 +277,11 @@ route_families:
     replies: {success: service.v1.Response, failure: service.v1.Response}
     publishers: [web_cobotar]
     consumers: [authoring]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
 
   - id: event.entity.added
     pattern: event.{entity}.added.{entity_id}
@@ -256,6 +297,12 @@ route_families:
         parameters: [entity]
     publishers: [authoring]
     consumers: [web_cobotar, holo_cobotar]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        consumers: [web_cobotar]
 
   - id: event.entity.updated
     pattern: event.{entity}.updated.{entity_id}
@@ -271,6 +318,12 @@ route_families:
         parameters: [entity]
     publishers: [authoring]
     consumers: [web_cobotar, holo_cobotar]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        consumers: [web_cobotar]
 
   - id: event.entity.removed
     pattern: event.{entity}.removed.{entity_id}
@@ -286,6 +339,12 @@ route_families:
         parameters: [entity]
     publishers: [authoring]
     consumers: [web_cobotar, holo_cobotar]
+    entity_overrides:
+      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      part_family:
+        lifecycle: planned
+        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        consumers: [web_cobotar]
 
 routes:
   - id: command.action.request_ownership

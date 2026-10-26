@@ -42,6 +42,7 @@ const (
 	SaveSeedEntity_SAVE_SEED_ENTITY_TOOL_DEFINITIONS      SaveSeedEntity = 34
 	SaveSeedEntity_SAVE_SEED_ENTITY_TOOL_INSTANCES        SaveSeedEntity = 35
 	SaveSeedEntity_SAVE_SEED_ENTITY_MARKERS               SaveSeedEntity = 36
+	SaveSeedEntity_SAVE_SEED_ENTITY_PART_FAMILIES         SaveSeedEntity = 39
 	SaveSeedEntity_SAVE_SEED_ENTITY_PART_DEFINITIONS      SaveSeedEntity = 40
 	SaveSeedEntity_SAVE_SEED_ENTITY_PART_INSTANCES        SaveSeedEntity = 41
 	SaveSeedEntity_SAVE_SEED_ENTITY_PRODUCTS              SaveSeedEntity = 42
@@ -76,6 +77,7 @@ var (
 		34: "SAVE_SEED_ENTITY_TOOL_DEFINITIONS",
 		35: "SAVE_SEED_ENTITY_TOOL_INSTANCES",
 		36: "SAVE_SEED_ENTITY_MARKERS",
+		39: "SAVE_SEED_ENTITY_PART_FAMILIES",
 		40: "SAVE_SEED_ENTITY_PART_DEFINITIONS",
 		41: "SAVE_SEED_ENTITY_PART_INSTANCES",
 		42: "SAVE_SEED_ENTITY_PRODUCTS",
@@ -107,6 +109,7 @@ var (
 		"SAVE_SEED_ENTITY_TOOL_DEFINITIONS":      34,
 		"SAVE_SEED_ENTITY_TOOL_INSTANCES":        35,
 		"SAVE_SEED_ENTITY_MARKERS":               36,
+		"SAVE_SEED_ENTITY_PART_FAMILIES":         39,
 		"SAVE_SEED_ENTITY_PART_DEFINITIONS":      40,
 		"SAVE_SEED_ENTITY_PART_INSTANCES":        41,
 		"SAVE_SEED_ENTITY_PRODUCTS":              42,
@@ -280,7 +283,7 @@ const file_seed_v1_seed_request_proto_rawDesc = "" +
 	"\ainclude\x18\x04 \x03(\x0e2\x17.seed.v1.SaveSeedEntityR\ainclude\x121\n" +
 	"\aexclude\x18\x05 \x03(\x0e2\x17.seed.v1.SaveSeedEntityR\aexclude\"!\n" +
 	"\x0fLoadSeedRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id*\xe4\a\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id*\x88\b\n" +
 	"\x0eSaveSeedEntity\x12 \n" +
 	"\x1cSAVE_SEED_ENTITY_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16SAVE_SEED_ENTITY_LINES\x10\x01\x12\x1a\n" +
@@ -300,7 +303,8 @@ const file_seed_v1_seed_request_proto_rawDesc = "" +
 	"$SAVE_SEED_ENTITY_CONTAINER_INSTANCES\x10!\x12%\n" +
 	"!SAVE_SEED_ENTITY_TOOL_DEFINITIONS\x10\"\x12#\n" +
 	"\x1fSAVE_SEED_ENTITY_TOOL_INSTANCES\x10#\x12\x1c\n" +
-	"\x18SAVE_SEED_ENTITY_MARKERS\x10$\x12%\n" +
+	"\x18SAVE_SEED_ENTITY_MARKERS\x10$\x12\"\n" +
+	"\x1eSAVE_SEED_ENTITY_PART_FAMILIES\x10'\x12%\n" +
 	"!SAVE_SEED_ENTITY_PART_DEFINITIONS\x10(\x12#\n" +
 	"\x1fSAVE_SEED_ENTITY_PART_INSTANCES\x10)\x12\x1d\n" +
 	"\x19SAVE_SEED_ENTITY_PRODUCTS\x10*\x12\x1c\n" +

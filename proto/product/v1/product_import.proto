@@ -3,6 +3,7 @@ package product.v1;
 
 import "buf/validate/validate.proto";
 import "product/v1/part_definition.proto";
+import "product/v1/part_family.proto";
 import "product/v1/product_definition.proto";
 import "resources/v1/model_requests.proto";
 import "service/v1/response.proto";
@@ -18,9 +19,10 @@ option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 // changes everything or nothing. The files are uploaded first (see
 // resources.v1.UploadedObject).
 //
-// The models and parts have keys, which are only valid within the request: a
-// part names its default model by model_key, and an assembly node names its
-// part by the part's key in part_definition_id.
+// The models, part families and parts have keys, which are only valid within
+// the request: a part names its default model by model_key and its families by
+// family_key (ImportedPart.families), and an assembly node names its part by
+// the part's key in part_definition_id.
 //
 // Importing again is matched by external reference. An imported part or
 // product that has an external reference (system and external_id) of an
@@ -29,9 +31,20 @@ option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
 // keep that one (cobotar/protocol#19). Models are matched by content hash, not
 // by external reference: a model whose files changed is a new model, which the
 // part's new revision points to, while the earlier model stays for the
-// earlier revision. A part or product without external references is always
-// created. An import is refused when two of its parts share a reference, or
-// when one reference matches several existing parts or products.
+// earlier revision. Part families are matched by external reference like
+// parts (cobotar/protocol#36). A part, family or product without external
+// references is always created. An import is refused when two of its parts or
+// two of its families share a reference, or when one reference matches
+// several existing parts, families or products.
+//
+// An imported part's memberships follow ImportedPart.families: when it's
+// absent, an updated part keeps its memberships (so an exporter that doesn't
+// know about families leaves them alone); when it's present, they're replaced
+// with its items, and an empty list removes them. An imported family
+// is created or updated with the request's dimensions, under the same rules
+// as other changes to a family (PartFamily): a family with members keeps its
+// dimension keys, so an import that adds or removes a dimension of such a
+// family is refused.
 message ImportProduct {
   option (buf.validate.message).cel = {
     id: "import_product.model_keys_defined"
@@ -47,6 +60,26 @@ message ImportProduct {
     id: "import_product.part_references_unique"
     message: "two imported parts must not share an external reference (system and external_id)"
     expression: "this.parts.all(part, part.part.external_references.all(reference, this.parts.filter(other, other.part.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_product.family_keys_defined"
+    message: "every part's family_key must be the key of a part family in the request"
+    expression: "this.parts.all(part, part.families.items.all(membership, this.families.exists(family, family.key == membership.family_key)))"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_product.one_family_per_kind"
+    message: "a part can belong to at most one part family of each kind"
+    expression: "this.parts.all(part, part.families.items.all(membership, part.families.items.filter(other, this.families.exists(a, a.key == membership.family_key && this.families.exists(b, b.key == other.family_key && b.family.kind == a.family.kind))).size() <= 1))"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_product.family_values_complete"
+    message: "a part's values for a family must be keyed by exactly that family's dimension keys"
+    expression: "this.parts.all(part, part.families.items.all(membership, this.families.filter(family, family.key == membership.family_key).all(family, membership.values.size() == family.family.dimensions.size() && family.family.dimensions.all(dimension, dimension.key in membership.values))))"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_product.family_references_unique"
+    message: "two imported part families must not share an external reference (system and external_id)"
+    expression: "this.families.all(family, family.family.external_references.all(reference, this.families.filter(other, other.family.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))"
   };
   option (buf.validate.message).cel = {
     id: "import_product.product_without_id"
@@ -86,6 +119,12 @@ message ImportProduct {
   // request, e.g. the whole assembly with its thumbnail; empty for none, which
   // keeps the model of the product the import updates.
   string product_model_key = 4;
+  // The part families the parts name by key in ImportedPart.families.
+  repeated ImportedPartFamily families = 5 [(buf.validate.field).cel = {
+    id: "import_product.families.unique_keys"
+    message: "part family keys must be unique"
+    expression: "this.map(family, family.key).unique()"
+  }];
 }
 
 // ImportedModel is a model of an ImportProduct, with its key in the request.
@@ -95,19 +134,60 @@ message ImportedModel {
 }
 
 // ImportedPart is a part definition of an ImportProduct, with its key in the
-// request. The part has no id, revision or default_model_id: it's matched by
-// external reference, and names its default model by model_key.
+// request. The part has no id, revision, default_model_id or families: it's
+// matched by external reference, names its default model by model_key and its
+// families by key in families.
 message ImportedPart {
   option (buf.validate.message).cel = {
     id: "imported_part.without_ids"
-    message: "an imported part must not set id, revision or default_model_id"
-    expression: "!has(this.part) || (this.part.id == '' && this.part.revision == 0u && this.part.default_model_id == '')"
+    message: "an imported part must not set id, revision, default_model_id or families"
+    expression: "!has(this.part) || (this.part.id == '' && this.part.revision == 0u && this.part.default_model_id == '' && this.part.families.size() == 0)"
   };
 
   string key = 1 [(buf.validate.field).string.(validation.v1.key_component) = true];
   PartDefinition part = 2 [(buf.validate.field).required = true];
   // The key of the part's default model in the request; empty for none.
   string model_key = 3;
+  // The part's families (ImportProduct.families, by key), at most one of each
+  // kind, with its value for each of their dimensions. Absent keeps the
+  // memberships of the part the import updates; present replaces them, and
+  // present but empty removes them.
+  ImportedPartFamilyMemberships families = 4;
+}
+
+// ImportedPartFamilyMemberships wraps an imported part's memberships, so an
+// import can tell "leave them" (absent) from "none" (present, empty).
+message ImportedPartFamilyMemberships {
+  repeated ImportedPartFamilyMembership items = 1 [(buf.validate.field).cel = {
+    id: "imported_part.families.unique"
+    message: "an imported part can't name a family twice"
+    expression: "this.map(membership, membership.family_key).unique()"
+  }];
+}
+
+// ImportedPartFamilyMembership is a PartFamilyMembership of an imported part,
+// naming the family by its key in the request.
+message ImportedPartFamilyMembership {
+  string family_key = 1 [(buf.validate.field).string.(validation.v1.key_component) = true];
+  // The part's value for each dimension of the family, by dimension key.
+  map<string, string> values = 2 [
+    (buf.validate.field).map.keys.string.(validation.v1.key_component) = true,
+    (buf.validate.field).map.values.string.(validation.v1.name_component) = true
+  ];
+}
+
+// ImportedPartFamily is a part family of an ImportProduct, with its key in the
+// request. The family has no id or revision: it's matched by external
+// reference.
+message ImportedPartFamily {
+  option (buf.validate.message).cel = {
+    id: "imported_part_family.without_ids"
+    message: "an imported part family must not set id or revision"
+    expression: "!has(this.family) || (this.family.id == '' && this.family.revision == 0u)"
+  };
+
+  string key = 1 [(buf.validate.field).string.(validation.v1.key_component) = true];
+  PartFamily family = 2 [(buf.validate.field).required = true];
 }
 
 // ImportProductResult answers an ImportProduct that was applied. A refused
@@ -131,12 +211,18 @@ message ImportProductResult {
     message: "every part's result names its key, once"
     expression: "this.all(part, part.key != '') && this.map(part, part.key).unique()"
   }];
+  // One per part family of the request, in its order.
+  repeated ImportedEntity families = 4 [(buf.validate.field).cel = {
+    id: "import_product_result.families_keyed"
+    message: "every part family's result names its key, once"
+    expression: "this.all(family, family.key != '') && this.map(family, family.key).unique()"
+  }];
 }
 
-// ImportedEntity is what an import did with one model, part or product:
-// CREATED, UPDATED (a part's new revision, or the product), or UNCHANGED (an
-// existing model with the same content, or a part or product that matched and
-// didn't change).
+// ImportedEntity is what an import did with one model, part family, part or
+// product: CREATED, UPDATED (a part's or family's new revision, or the
+// product), or UNCHANGED (an existing model with the same content, or a part,
+// family or product that matched and didn't change).
 message ImportedEntity {
   string key = 1; // Empty for the product.
   string id = 2 [(buf.validate.field).required = true];

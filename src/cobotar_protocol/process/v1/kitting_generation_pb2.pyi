@@ -85,18 +85,20 @@ KITTING_TASK_GRANULARITY_ATOMIC_TRANSFER: KittingTaskGranularity
 KITTING_TASK_GRANULARITY_PICK_AND_PLACE: KittingTaskGranularity
 
 class KittingItemRoutingOverride(_message.Message):
-    __slots__ = ("assembly_node_id", "part_definition_id", "action", "source", "destination")
+    __slots__ = ("assembly_node_id", "part_definition_id", "action", "source", "destination", "part_family_id")
     ASSEMBLY_NODE_ID_FIELD_NUMBER: _ClassVar[int]
     PART_DEFINITION_ID_FIELD_NUMBER: _ClassVar[int]
     ACTION_FIELD_NUMBER: _ClassVar[int]
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_FIELD_NUMBER: _ClassVar[int]
+    PART_FAMILY_ID_FIELD_NUMBER: _ClassVar[int]
     assembly_node_id: str
     part_definition_id: str
     action: KittingItemAction
     source: _task_definition_pb2.ContainerTarget
     destination: _task_definition_pb2.ContainerTarget
-    def __init__(self, assembly_node_id: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., action: _Optional[_Union[KittingItemAction, str]] = ..., source: _Optional[_Union[_task_definition_pb2.ContainerTarget, _Mapping]] = ..., destination: _Optional[_Union[_task_definition_pb2.ContainerTarget, _Mapping]] = ...) -> None: ...
+    part_family_id: str
+    def __init__(self, assembly_node_id: _Optional[str] = ..., part_definition_id: _Optional[str] = ..., action: _Optional[_Union[KittingItemAction, str]] = ..., source: _Optional[_Union[_task_definition_pb2.ContainerTarget, _Mapping]] = ..., destination: _Optional[_Union[_task_definition_pb2.ContainerTarget, _Mapping]] = ..., part_family_id: _Optional[str] = ...) -> None: ...
 
 class DraftKittingProcessRecipeGenerateRequest(_message.Message):
     __slots__ = ("product_definition_id", "recipe_id", "recipe_name", "recipe_icon", "recipe_description", "variant_generation_mode", "variant_configuration", "root_node_id", "include_optional_nodes", "bom_mode", "product_units_per_kit", "source_container_definition_ids", "target_kit_container_definition_id", "routing_overrides", "item_order", "item_validation_mode", "generate_final_kit_verification", "unresolved_item_policy", "excluded_part_types", "aggregation_mode", "task_granularity")

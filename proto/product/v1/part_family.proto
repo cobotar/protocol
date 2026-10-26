@@ -1,0 +1,115 @@
+syntax = "proto3";
+package product.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/external_references.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Product.V1";
+option go_package = "github.com/cobotar/protocol/v2/messages/product/v1";
+
+// PartFamilyKind says how the members of a part family relate
+// (cobotar/protocol#36). It's fixed when the family is created.
+enum PartFamilyKind {
+  PART_FAMILY_KIND_UNSPECIFIED = 0;
+
+  // The members are the same design in another colour, material or similar,
+  // e.g. the options of a disjoint variant axis ("Case – Alu-red",
+  // "Case – Alu-blue"). The product's variant configuration picks one, so they
+  // aren't interchangeable within a process run: a slot or kitting override
+  // that names the family accepts every member, and the configuration decides
+  // which one a run needs. A variant family has at least one dimension, and no
+  // two of its members have the same values.
+  PART_FAMILY_KIND_VARIANT_ALTERNATIVE = 1;
+
+  // Any member will do, e.g. the same screw from two suppliers. Reserved for
+  // runtime substitution, which isn't specified yet: until then, clients and
+  // the backend treat a substitute family like any other grouping and don't
+  // swap one member for another.
+  PART_FAMILY_KIND_SUBSTITUTE = 2;
+}
+
+// PartFamilyDimension is one way the members of a part family differ, e.g.
+// the colour. Members give their value by key, so the name can be changed
+// without touching them.
+message PartFamilyDimension {
+  // Stable identifier within the family, e.g. "colour". It can't change while
+  // the family has members.
+  string key = 1 [(buf.validate.field).string.(validation.v1.key_component) = true];
+  // Display name, e.g. "Colour"; can be changed at any time.
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+}
+
+// PartFamily links part definitions that belong together
+// (cobotar/protocol#36). A part joins a family with a PartFamilyMembership in
+// PartDefinition.families, which gives its value for every dimension of the
+// family. A part belongs to at most one family of each kind. A family is
+// global, like a part, so its members can be used in several products.
+//
+// Changes, enforced by the backend:
+// - kind can't change after the family is created;
+// - while the family has members (parts whose current revision names it),
+//   dimensions can be renamed and reordered, but none can be added or removed
+//   and no key can change, since every member gives a value for exactly the
+//   family's dimensions;
+// - a family can't be removed while a part's current revision or a container
+//   slot names it. Earlier part revisions, kept for the runs that use them
+//   (cobotar/protocol#19), keep their memberships as they were, and may name a
+//   family that has since been removed: clients show them without it.
+message PartFamily {
+  option (buf.validate.message).cel = {
+    id: "part_family.dimensions.unique_keys"
+    message: "the dimension keys of a part family must be unique"
+    expression: "this.dimensions.map(dimension, dimension.key).unique()"
+  };
+  option (buf.validate.message).cel = {
+    id: "part_family.dimensions.unique_names"
+    message: "the dimension names of a part family must be unique, ignoring case and surrounding whitespace"
+    expression: "this.dimensions.map(dimension, dimension.name.trim().lowerAscii()).unique()"
+  };
+  option (buf.validate.message).cel = {
+    id: "part_family.variant_alternative.dimensions"
+    message: "a variant alternative family needs at least one dimension"
+    expression: "this.kind != 1 || this.dimensions.size() > 0"
+  };
+
+  string id = 1 [(buf.validate.field).string.(validation.v1.part_family_id_component) = true];
+  string name = 2 [(buf.validate.field).string.(validation.v1.name_component) = true];
+  string icon = 3;
+  string description = 4;
+  PartFamilyKind kind = 5 [
+    (buf.validate.field).required = true,
+    (buf.validate.field).enum.defined_only = true
+  ];
+  // How the members differ, e.g. colour and material. These are the family's
+  // own, not variant axes, since axes belong to one product and a family
+  // doesn't.
+  repeated PartFamilyDimension dimensions = 6;
+  repeated common.v1.ExternalReference external_references = 7;
+
+  // Revision of the part family, set by the backend: it increases with every
+  // change. An update has to carry the revision it was based on, and is
+  // refused if the family changed since. Ignored on create.
+  uint64 revision = 8;
+}
+
+message PartFamilies {
+  repeated PartFamily items = 1;
+}
+
+// PartFamilyMembership says that a part belongs to a part family, and how it
+// differs from the other members: its value for each dimension of the family,
+// by dimension key, e.g. {"colour": "Alu-red"}. The backend refuses a
+// membership that misses a dimension or names a key the family doesn't have,
+// and two members of a variant alternative family with the same values
+// (compared ignoring case and surrounding whitespace).
+message PartFamilyMembership {
+  string family_id = 1 [
+    (buf.validate.field).string.(validation.v1.not_blank) = true,
+    (buf.validate.field).string.(validation.v1.part_family_id_component) = true
+  ];
+  map<string, string> values = 2 [
+    (buf.validate.field).map.keys.string.(validation.v1.key_component) = true,
+    (buf.validate.field).map.values.string.(validation.v1.name_component) = true
+  ];
+}

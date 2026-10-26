@@ -109,3 +109,5 @@ ASSET_ADAPTER_DEFINITION_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 asset_adapter_definition_id_component: _descriptor.FieldDescriptor
 ADAPTER_TYPE_COMPONENT_FIELD_NUMBER: _ClassVar[int]
 adapter_type_component: _descriptor.FieldDescriptor
+PART_FAMILY_ID_COMPONENT_FIELD_NUMBER: _ClassVar[int]
+part_family_id_component: _descriptor.FieldDescriptor

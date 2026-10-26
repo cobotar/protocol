@@ -562,7 +562,13 @@ type PartDefinition struct {
 	// changes, so clients may cache it. An update has to carry the revision of
 	// the part definition it was based on, and is refused if it changed since.
 	// Ignored on create.
-	Revision      uint64 `protobuf:"varint,16,opt,name=revision,proto3" json:"revision,omitempty"`
+	Revision uint64 `protobuf:"varint,16,opt,name=revision,proto3" json:"revision,omitempty"`
+	// The part families this part belongs to, with its value for each of their
+	// dimensions (cobotar/protocol#36), e.g. the variant family of a case in
+	// several colours. At most one family of each kind; the backend refuses
+	// unknown families and a second family of a kind. An imported part names
+	// its families by key instead (ImportedPart.families).
+	Families      []*PartFamilyMembership `protobuf:"bytes,17,rep,name=families,proto3" json:"families,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -702,6 +708,13 @@ func (x *PartDefinition) GetRevision() uint64 {
 	return 0
 }
 
+func (x *PartDefinition) GetFamilies() []*PartFamilyMembership {
+	if x != nil {
+		return x.Families
+	}
+	return nil
+}
+
 type PartDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*PartDefinition      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -751,7 +764,7 @@ var File_product_v1_part_definition_proto protoreflect.FileDescriptor
 const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\n" +
 	" product/v1/part_definition.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a+validation/v1/predefined_string_rules.proto\"u\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1cproduct/v1/part_family.proto\x1a+validation/v1/predefined_string_rules.proto\"u\n" +
 	"\n" +
 	"Dimensions\x12!\n" +
 	"\x04x_mm\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x03xMm\x12!\n" +
@@ -782,7 +795,7 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\x17pre_lubrication_part_id\x18\x06 \x01(\tR\x14preLubricationPartId\x127\n" +
 	"\x18post_lubrication_part_id\x18\a \x01(\tR\x15postLubricationPartId\x12'\n" +
 	"\x0frequires_wiping\x18\b \x01(\bR\x0erequiresWiping\x12?\n" +
-	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\x86\x05\n" +
+	"\vconstraints\x18\t \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xc5\x06\n" +
 	"\x0ePartDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -801,7 +814,9 @@ const file_product_v1_part_definition_proto_rawDesc = "" +
 	"\aprocess\x18\f \x01(\v2\x1e.product.v1.PartProcessProfileR\aprocess\x12M\n" +
 	"\x13external_references\x18\r \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\x12\x18\n" +
 	"\aversion\x18\x0f \x01(\tR\aversion\x12\x1a\n" +
-	"\brevision\x18\x10 \x01(\x04R\brevision\"C\n" +
+	"\brevision\x18\x10 \x01(\x04R\brevision\x12\xbc\x01\n" +
+	"\bfamilies\x18\x11 \x03(\v2 .product.v1.PartFamilyMembershipB~\xbaH{\xba\x01x\n" +
+	"\x1fpart_definition.families.unique\x12 a part can't name a family twice\x1a3this.map(membership, membership.family_id).unique()R\bfamilies\"C\n" +
 	"\x0fPartDefinitions\x120\n" +
 	"\x05items\x18\x01 \x03(\v2\x1a.product.v1.PartDefinitionR\x05items*\xe8\x02\n" +
 	"\bPartType\x12\x19\n" +
@@ -862,6 +877,7 @@ var file_product_v1_part_definition_proto_goTypes = []any{
 	(*v1.KeyValueConstraint)(nil), // 8: common.v1.KeyValueConstraint
 	(*v1.EstimatedDuration)(nil),  // 9: common.v1.EstimatedDuration
 	(*v1.ExternalReference)(nil),  // 10: common.v1.ExternalReference
+	(*PartFamilyMembership)(nil),  // 11: product.v1.PartFamilyMembership
 }
 var file_product_v1_part_definition_proto_depIdxs = []int32{
 	1,  // 0: product.v1.MaterialSpec.category:type_name -> product.v1.MaterialCategory
@@ -875,12 +891,13 @@ var file_product_v1_part_definition_proto_depIdxs = []int32{
 	4,  // 8: product.v1.PartDefinition.handling:type_name -> product.v1.PartHandlingProfile
 	5,  // 9: product.v1.PartDefinition.process:type_name -> product.v1.PartProcessProfile
 	10, // 10: product.v1.PartDefinition.external_references:type_name -> common.v1.ExternalReference
-	6,  // 11: product.v1.PartDefinitions.items:type_name -> product.v1.PartDefinition
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	11, // 11: product.v1.PartDefinition.families:type_name -> product.v1.PartFamilyMembership
+	6,  // 12: product.v1.PartDefinitions.items:type_name -> product.v1.PartDefinition
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_product_v1_part_definition_proto_init() }
@@ -888,6 +905,7 @@ func file_product_v1_part_definition_proto_init() {
 	if File_product_v1_part_definition_proto != nil {
 		return
 	}
+	file_product_v1_part_family_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

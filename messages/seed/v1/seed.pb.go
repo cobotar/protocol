@@ -46,6 +46,7 @@ type Seed struct {
 	ToolDefinitions      []*v1.ToolDefinition      `protobuf:"bytes,34,rep,name=tool_definitions,json=toolDefinitions,proto3" json:"tool_definitions,omitempty"`
 	ToolInstances        []*v1.ToolInstance        `protobuf:"bytes,35,rep,name=tool_instances,json=toolInstances,proto3" json:"tool_instances,omitempty"`
 	Markers              []*v1.MarkerInstance      `protobuf:"bytes,36,rep,name=markers,proto3" json:"markers,omitempty"`
+	PartFamilies         []*v12.PartFamily         `protobuf:"bytes,39,rep,name=part_families,json=partFamilies,proto3" json:"part_families,omitempty"`
 	PartDefinitions      []*v12.PartDefinition     `protobuf:"bytes,40,rep,name=part_definitions,json=partDefinitions,proto3" json:"part_definitions,omitempty"`
 	PartInstances        []*v12.PartInstance       `protobuf:"bytes,41,rep,name=part_instances,json=partInstances,proto3" json:"part_instances,omitempty"`
 	Products             []*v12.ProductDefinition  `protobuf:"bytes,42,rep,name=products,proto3" json:"products,omitempty"`
@@ -210,6 +211,13 @@ func (x *Seed) GetMarkers() []*v1.MarkerInstance {
 	return nil
 }
 
+func (x *Seed) GetPartFamilies() []*v12.PartFamily {
+	if x != nil {
+		return x.PartFamilies
+	}
+	return nil
+}
+
 func (x *Seed) GetPartDefinitions() []*v12.PartDefinition {
 	if x != nil {
 		return x.PartDefinitions
@@ -291,7 +299,7 @@ var File_seed_v1_seed_proto protoreflect.FileDescriptor
 
 const file_seed_v1_seed_proto_rawDesc = "" +
 	"\n" +
-	"\x12seed/v1/seed.proto\x12\aseed.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a$capability/v1/skill_definition.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a\x1eproduct/v1/part_instance.proto\x1a#product/v1/product_definition.proto\x1a#resources/v1/asset_definition.proto\x1a!resources/v1/asset_instance.proto\x1a\"resources/v1/cell_definition.proto\x1a'resources/v1/container_definition.proto\x1a%resources/v1/container_instance.proto\x1a\x19resources/v1/device.proto\x1a\"resources/v1/line_definition.proto\x1a\"resources/v1/marker_instance.proto\x1a\x18resources/v1/model.proto\x1a#resources/v1/robot_definition.proto\x1a!resources/v1/robot_instance.proto\x1a%resources/v1/station_definition.proto\x1a\"resources/v1/tool_definition.proto\x1a resources/v1/tool_instance.proto\x1a$resources/v1/worker_definition.proto\x1a\x1cruntime/v1/process_run.proto\x1a\x1druntime/v1/sequence_run.proto\x1a\x19runtime/v1/task_run.proto\"\xcb\r\n" +
+	"\x12seed/v1/seed.proto\x12\aseed.v1\x1a\x12ar/v1/action.proto\x1a\x14ar/v1/feedback.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a$capability/v1/skill_definition.proto\x1a\x1fprocess/v1/process_recipe.proto\x1a$process/v1/sequence_definition.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a\x1cproduct/v1/part_family.proto\x1a\x1eproduct/v1/part_instance.proto\x1a#product/v1/product_definition.proto\x1a#resources/v1/asset_definition.proto\x1a!resources/v1/asset_instance.proto\x1a\"resources/v1/cell_definition.proto\x1a'resources/v1/container_definition.proto\x1a%resources/v1/container_instance.proto\x1a\x19resources/v1/device.proto\x1a\"resources/v1/line_definition.proto\x1a\"resources/v1/marker_instance.proto\x1a\x18resources/v1/model.proto\x1a#resources/v1/robot_definition.proto\x1a!resources/v1/robot_instance.proto\x1a%resources/v1/station_definition.proto\x1a\"resources/v1/tool_definition.proto\x1a resources/v1/tool_instance.proto\x1a$resources/v1/worker_definition.proto\x1a\x1cruntime/v1/process_run.proto\x1a\x1druntime/v1/sequence_run.proto\x1a\x19runtime/v1/task_run.proto\"\x88\x0e\n" +
 	"\x04Seed\x122\n" +
 	"\x05lines\x18\x01 \x03(\v2\x1c.resources.v1.LineDefinitionR\x05lines\x122\n" +
 	"\x05cells\x18\x02 \x03(\v2\x1c.resources.v1.CellDefinitionR\x05cells\x12;\n" +
@@ -310,7 +318,8 @@ const file_seed_v1_seed_proto_rawDesc = "" +
 	"\x13container_instances\x18! \x03(\v2\x1f.resources.v1.ContainerInstanceR\x12containerInstances\x12G\n" +
 	"\x10tool_definitions\x18\" \x03(\v2\x1c.resources.v1.ToolDefinitionR\x0ftoolDefinitions\x12A\n" +
 	"\x0etool_instances\x18# \x03(\v2\x1a.resources.v1.ToolInstanceR\rtoolInstances\x126\n" +
-	"\amarkers\x18$ \x03(\v2\x1c.resources.v1.MarkerInstanceR\amarkers\x12E\n" +
+	"\amarkers\x18$ \x03(\v2\x1c.resources.v1.MarkerInstanceR\amarkers\x12;\n" +
+	"\rpart_families\x18' \x03(\v2\x16.product.v1.PartFamilyR\fpartFamilies\x12E\n" +
 	"\x10part_definitions\x18( \x03(\v2\x1a.product.v1.PartDefinitionR\x0fpartDefinitions\x12?\n" +
 	"\x0epart_instances\x18) \x03(\v2\x18.product.v1.PartInstanceR\rpartInstances\x129\n" +
 	"\bproducts\x18* \x03(\v2\x1d.product.v1.ProductDefinitionR\bproducts\x123\n" +
@@ -356,17 +365,18 @@ var file_seed_v1_seed_proto_goTypes = []any{
 	(*v1.ToolDefinition)(nil),      // 15: resources.v1.ToolDefinition
 	(*v1.ToolInstance)(nil),        // 16: resources.v1.ToolInstance
 	(*v1.MarkerInstance)(nil),      // 17: resources.v1.MarkerInstance
-	(*v12.PartDefinition)(nil),     // 18: product.v1.PartDefinition
-	(*v12.PartInstance)(nil),       // 19: product.v1.PartInstance
-	(*v12.ProductDefinition)(nil),  // 20: product.v1.ProductDefinition
-	(*v13.ProcessRecipe)(nil),      // 21: process.v1.ProcessRecipe
-	(*v13.SequenceDefinition)(nil), // 22: process.v1.SequenceDefinition
-	(*v13.TaskDefinition)(nil),     // 23: process.v1.TaskDefinition
-	(*v14.ProcessRun)(nil),         // 24: runtime.v1.ProcessRun
-	(*v14.SequenceRun)(nil),        // 25: runtime.v1.SequenceRun
-	(*v14.TaskRun)(nil),            // 26: runtime.v1.TaskRun
-	(*v15.FeedbackMessage)(nil),    // 27: ar.v1.FeedbackMessage
-	(*v15.ActionMessage)(nil),      // 28: ar.v1.ActionMessage
+	(*v12.PartFamily)(nil),         // 18: product.v1.PartFamily
+	(*v12.PartDefinition)(nil),     // 19: product.v1.PartDefinition
+	(*v12.PartInstance)(nil),       // 20: product.v1.PartInstance
+	(*v12.ProductDefinition)(nil),  // 21: product.v1.ProductDefinition
+	(*v13.ProcessRecipe)(nil),      // 22: process.v1.ProcessRecipe
+	(*v13.SequenceDefinition)(nil), // 23: process.v1.SequenceDefinition
+	(*v13.TaskDefinition)(nil),     // 24: process.v1.TaskDefinition
+	(*v14.ProcessRun)(nil),         // 25: runtime.v1.ProcessRun
+	(*v14.SequenceRun)(nil),        // 26: runtime.v1.SequenceRun
+	(*v14.TaskRun)(nil),            // 27: runtime.v1.TaskRun
+	(*v15.FeedbackMessage)(nil),    // 28: ar.v1.FeedbackMessage
+	(*v15.ActionMessage)(nil),      // 29: ar.v1.ActionMessage
 }
 var file_seed_v1_seed_proto_depIdxs = []int32{
 	1,  // 0: seed.v1.Seed.lines:type_name -> resources.v1.LineDefinition
@@ -386,22 +396,23 @@ var file_seed_v1_seed_proto_depIdxs = []int32{
 	15, // 14: seed.v1.Seed.tool_definitions:type_name -> resources.v1.ToolDefinition
 	16, // 15: seed.v1.Seed.tool_instances:type_name -> resources.v1.ToolInstance
 	17, // 16: seed.v1.Seed.markers:type_name -> resources.v1.MarkerInstance
-	18, // 17: seed.v1.Seed.part_definitions:type_name -> product.v1.PartDefinition
-	19, // 18: seed.v1.Seed.part_instances:type_name -> product.v1.PartInstance
-	20, // 19: seed.v1.Seed.products:type_name -> product.v1.ProductDefinition
-	21, // 20: seed.v1.Seed.recipes:type_name -> process.v1.ProcessRecipe
-	22, // 21: seed.v1.Seed.sequences:type_name -> process.v1.SequenceDefinition
-	23, // 22: seed.v1.Seed.tasks:type_name -> process.v1.TaskDefinition
-	24, // 23: seed.v1.Seed.processes:type_name -> runtime.v1.ProcessRun
-	25, // 24: seed.v1.Seed.sequence_runs:type_name -> runtime.v1.SequenceRun
-	26, // 25: seed.v1.Seed.task_runs:type_name -> runtime.v1.TaskRun
-	27, // 26: seed.v1.Seed.feedback:type_name -> ar.v1.FeedbackMessage
-	28, // 27: seed.v1.Seed.actions:type_name -> ar.v1.ActionMessage
-	28, // [28:28] is the sub-list for method output_type
-	28, // [28:28] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	18, // 17: seed.v1.Seed.part_families:type_name -> product.v1.PartFamily
+	19, // 18: seed.v1.Seed.part_definitions:type_name -> product.v1.PartDefinition
+	20, // 19: seed.v1.Seed.part_instances:type_name -> product.v1.PartInstance
+	21, // 20: seed.v1.Seed.products:type_name -> product.v1.ProductDefinition
+	22, // 21: seed.v1.Seed.recipes:type_name -> process.v1.ProcessRecipe
+	23, // 22: seed.v1.Seed.sequences:type_name -> process.v1.SequenceDefinition
+	24, // 23: seed.v1.Seed.tasks:type_name -> process.v1.TaskDefinition
+	25, // 24: seed.v1.Seed.processes:type_name -> runtime.v1.ProcessRun
+	26, // 25: seed.v1.Seed.sequence_runs:type_name -> runtime.v1.SequenceRun
+	27, // 26: seed.v1.Seed.task_runs:type_name -> runtime.v1.TaskRun
+	28, // 27: seed.v1.Seed.feedback:type_name -> ar.v1.FeedbackMessage
+	29, // 28: seed.v1.Seed.actions:type_name -> ar.v1.ActionMessage
+	29, // [29:29] is the sub-list for method output_type
+	29, // [29:29] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_seed_v1_seed_proto_init() }

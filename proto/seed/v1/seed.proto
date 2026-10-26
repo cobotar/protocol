@@ -9,6 +9,7 @@ import "process/v1/process_recipe.proto";
 import "process/v1/sequence_definition.proto";
 import "process/v1/task_definition.proto";
 import "product/v1/part_definition.proto";
+import "product/v1/part_family.proto";
 import "product/v1/part_instance.proto";
 import "product/v1/product_definition.proto";
 import "resources/v1/asset_definition.proto";
@@ -58,6 +59,7 @@ message Seed {
 
   repeated resources.v1.MarkerInstance markers = 36;
 
+  repeated product.v1.PartFamily part_families = 39;
   repeated product.v1.PartDefinition part_definitions = 40;
   repeated product.v1.PartInstance part_instances = 41;
   repeated product.v1.ProductDefinition products = 42;

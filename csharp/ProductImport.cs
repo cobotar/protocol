@@ -26,93 +26,155 @@ namespace Messages.Product.V1 {
           string.Concat(
             "Ch9wcm9kdWN0L3YxL3Byb2R1Y3RfaW1wb3J0LnByb3RvEgpwcm9kdWN0LnYx",
             "GhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aIHByb2R1Y3QvdjEvcGFy",
-            "dF9kZWZpbml0aW9uLnByb3RvGiNwcm9kdWN0L3YxL3Byb2R1Y3RfZGVmaW5p",
-            "dGlvbi5wcm90bxohcmVzb3VyY2VzL3YxL21vZGVsX3JlcXVlc3RzLnByb3Rv",
-            "GhlzZXJ2aWNlL3YxL3Jlc3BvbnNlLnByb3RvGit2YWxpZGF0aW9uL3YxL3By",
-            "ZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIvgPCg1JbXBvcnRQcm9kdWN0",
-            "EpwBCgZtb2RlbHMYASADKAsyGS5wcm9kdWN0LnYxLkltcG9ydGVkTW9kZWxC",
-            "abpIZroBYwohaW1wb3J0X3Byb2R1Y3QubW9kZWxzLnVuaXF1ZV9rZXlzEhlt",
-            "b2RlbCBrZXlzIG11c3QgYmUgdW5pcXVlGiN0aGlzLm1hcChtb2RlbCwgbW9k",
-            "ZWwua2V5KS51bmlxdWUoKVIGbW9kZWxzEpUBCgVwYXJ0cxgCIAMoCzIYLnBy",
-            "b2R1Y3QudjEuSW1wb3J0ZWRQYXJ0QmW6SGK6AV8KIGltcG9ydF9wcm9kdWN0",
-            "LnBhcnRzLnVuaXF1ZV9rZXlzEhhwYXJ0IGtleXMgbXVzdCBiZSB1bmlxdWUa",
-            "IXRoaXMubWFwKHBhcnQsIHBhcnQua2V5KS51bmlxdWUoKVIFcGFydHMSNwoH",
-            "cHJvZHVjdBgDIAEoCzIdLnByb2R1Y3QudjEuUHJvZHVjdERlZmluaXRpb25S",
-            "B3Byb2R1Y3QSKgoRcHJvZHVjdF9tb2RlbF9rZXkYBCABKAlSD3Byb2R1Y3RN",
-            "b2RlbEtleTrKDLpIxgwaywEKIWltcG9ydF9wcm9kdWN0Lm1vZGVsX2tleXNf",
-            "ZGVmaW5lZBJAZXZlcnkgcGFydCdzIG1vZGVsX2tleSBtdXN0IGJlIHRoZSBr",
-            "ZXkgb2YgYSBtb2RlbCBpbiB0aGUgcmVxdWVzdBpkdGhpcy5wYXJ0cy5hbGwo",
-            "cGFydCwgcGFydC5tb2RlbF9rZXkgPT0gJycgfHwgdGhpcy5tb2RlbHMuZXhp",
-            "c3RzKG1vZGVsLCBtb2RlbC5rZXkgPT0gcGFydC5tb2RlbF9rZXkpKRqJAgog",
-            "aW1wb3J0X3Byb2R1Y3QucGFydF9rZXlzX2RlZmluZWQSUWV2ZXJ5IGFzc2Vt",
-            "Ymx5IG5vZGUncyBwYXJ0X2RlZmluaXRpb25faWQgbXVzdCBiZSB0aGUga2V5",
-            "IG9mIGEgcGFydCBpbiB0aGUgcmVxdWVzdBqRASFoYXModGhpcy5wcm9kdWN0",
-            "KSB8fCB0aGlzLnByb2R1Y3Qubm9kZXMuYWxsKG5vZGUsIG5vZGUucGFydF9k",
-            "ZWZpbml0aW9uX2lkID09ICcnIHx8IHRoaXMucGFydHMuZXhpc3RzKHBhcnQs",
-            "IHBhcnQua2V5ID09IG5vZGUucGFydF9kZWZpbml0aW9uX2lkKSka1gIKJWlt",
-            "cG9ydF9wcm9kdWN0LnBhcnRfcmVmZXJlbmNlc191bmlxdWUSUHR3byBpbXBv",
-            "cnRlZCBwYXJ0cyBtdXN0IG5vdCBzaGFyZSBhbiBleHRlcm5hbCByZWZlcmVu",
-            "Y2UgKHN5c3RlbSBhbmQgZXh0ZXJuYWxfaWQpGtoBdGhpcy5wYXJ0cy5hbGwo",
-            "cGFydCwgcGFydC5wYXJ0LmV4dGVybmFsX3JlZmVyZW5jZXMuYWxsKHJlZmVy",
-            "ZW5jZSwgdGhpcy5wYXJ0cy5maWx0ZXIob3RoZXIsIG90aGVyLnBhcnQuZXh0",
-            "ZXJuYWxfcmVmZXJlbmNlcy5leGlzdHMociwgci5zeXN0ZW0gPT0gcmVmZXJl",
-            "bmNlLnN5c3RlbSAmJiByLmV4dGVybmFsX2lkID09IHJlZmVyZW5jZS5leHRl",
-            "cm5hbF9pZCkpLnNpemUoKSA9PSAxKSkangEKIWltcG9ydF9wcm9kdWN0LnBy",
-            "b2R1Y3Rfd2l0aG91dF9pZBJMdGhlIGltcG9ydGVkIHByb2R1Y3QgbXVzdCBu",
-            "b3QgaGF2ZSBhbiBpZDsgaXQncyBtYXRjaGVkIGJ5IGV4dGVybmFsIHJlZmVy",
-            "ZW5jZRorIWhhcyh0aGlzLnByb2R1Y3QpIHx8IHRoaXMucHJvZHVjdC5pZCA9",
-            "PSAnJxrzAQooaW1wb3J0X3Byb2R1Y3QucHJvZHVjdF9tb2RlbF9rZXlfZGVm",
-            "aW5lZBJQcHJvZHVjdF9tb2RlbF9rZXkgbXVzdCBiZSB0aGUga2V5IG9mIGEg",
-            "bW9kZWwgaW4gdGhlIHJlcXVlc3QsIGFuZCBuZWVkcyBhIHByb2R1Y3QadXRo",
-            "aXMucHJvZHVjdF9tb2RlbF9rZXkgPT0gJycgfHwgKGhhcyh0aGlzLnByb2R1",
-            "Y3QpICYmIHRoaXMubW9kZWxzLmV4aXN0cyhtb2RlbCwgbW9kZWwua2V5ID09",
-            "IHRoaXMucHJvZHVjdF9tb2RlbF9rZXkpKRqxAQonaW1wb3J0X3Byb2R1Y3Qu",
-            "cHJvZHVjdF93aXRob3V0X21vZGVsX2lkElN0aGUgaW1wb3J0ZWQgcHJvZHVj",
-            "dCBtdXN0IG5vdCBzZXQgbW9kZWxfaWQ7IGl0IG5hbWVzIGl0cyBtb2RlbCBi",
-            "eSBwcm9kdWN0X21vZGVsX2tleRoxIWhhcyh0aGlzLnByb2R1Y3QpIHx8IHRo",
-            "aXMucHJvZHVjdC5tb2RlbF9pZCA9PSAnJxrFAQoraW1wb3J0X3Byb2R1Y3Qu",
-            "bm9kZXNfd2l0aG91dF9vdmVycmlkZV9tb2RlbBJEYXNzZW1ibHkgbm9kZXMg",
-            "b2YgYW4gaW1wb3J0ZWQgcHJvZHVjdCBtdXN0IG5vdCBzZXQgb3ZlcnJpZGVf",
-            "bW9kZWxfaWQaUCFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnByb2R1Y3Qu",
-            "bm9kZXMuYWxsKG5vZGUsIG5vZGUub3ZlcnJpZGVfbW9kZWxfaWQgPT0gJycp",
-            "Im0KDUltcG9ydGVkTW9kZWwSGwoDa2V5GAEgASgJQgm6SAZyBODzBAFSA2tl",
-            "eRI/CgVtb2RlbBgCIAEoCzIhLnJlc291cmNlcy52MS5DcmVhdGVNb2RlbEFy",
-            "dGlmYWN0Qga6SAPIAQFSBW1vZGVsIs4CCgxJbXBvcnRlZFBhcnQSGwoDa2V5",
-            "GAEgASgJQgm6SAZyBODzBAFSA2tleRI2CgRwYXJ0GAIgASgLMhoucHJvZHVj",
-            "dC52MS5QYXJ0RGVmaW5pdGlvbkIGukgDyAEBUgRwYXJ0EhsKCW1vZGVsX2tl",
-            "eRgDIAEoCVIIbW9kZWxLZXk6ywG6SMcBGsQBChlpbXBvcnRlZF9wYXJ0Lndp",
-            "dGhvdXRfaWRzEj5hbiBpbXBvcnRlZCBwYXJ0IG11c3Qgbm90IHNldCBpZCwg",
-            "cmV2aXNpb24gb3IgZGVmYXVsdF9tb2RlbF9pZBpnIWhhcyh0aGlzLnBhcnQp",
-            "IHx8ICh0aGlzLnBhcnQuaWQgPT0gJycgJiYgdGhpcy5wYXJ0LnJldmlzaW9u",
-            "ID09IDB1ICYmIHRoaXMucGFydC5kZWZhdWx0X21vZGVsX2lkID09ICcnKSLW",
-            "BAoTSW1wb3J0UHJvZHVjdFJlc3VsdBKYAQoHcHJvZHVjdBgBIAEoCzIaLnBy",
-            "b2R1Y3QudjEuSW1wb3J0ZWRFbnRpdHlCYrpIX7oBXAopaW1wb3J0X3Byb2R1",
-            "Y3RfcmVzdWx0LnByb2R1Y3Rfd2l0aG91dF9rZXkSH3RoZSBwcm9kdWN0J3Mg",
-            "cmVzdWx0IGhhcyBubyBrZXkaDnRoaXMua2V5ID09ICcnUgdwcm9kdWN0EtQB",
-            "CgZtb2RlbHMYAiADKAsyGi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5Qp8B",
-            "ukibAboBlwEKImltcG9ydF9wcm9kdWN0X3Jlc3VsdC5tb2RlbHNfa2V5ZWQS",
-            "KGV2ZXJ5IG1vZGVsJ3MgcmVzdWx0IG5hbWVzIGl0cyBrZXksIG9uY2UaR3Ro",
-            "aXMuYWxsKG1vZGVsLCBtb2RlbC5rZXkgIT0gJycpICYmIHRoaXMubWFwKG1v",
-            "ZGVsLCBtb2RlbC5rZXkpLnVuaXF1ZSgpUgZtb2RlbHMSzAEKBXBhcnRzGAMg",
-            "AygLMhoucHJvZHVjdC52MS5JbXBvcnRlZEVudGl0eUKZAbpIlQG6AZEBCiFp",
-            "bXBvcnRfcHJvZHVjdF9yZXN1bHQucGFydHNfa2V5ZWQSJ2V2ZXJ5IHBhcnQn",
-            "cyByZXN1bHQgbmFtZXMgaXRzIGtleSwgb25jZRpDdGhpcy5hbGwocGFydCwg",
-            "cGFydC5rZXkgIT0gJycpICYmIHRoaXMubWFwKHBhcnQsIHBhcnQua2V5KS51",
-            "bmlxdWUoKVIFcGFydHMifAoOSW1wb3J0ZWRFbnRpdHkSEAoDa2V5GAEgASgJ",
-            "UgNrZXkSFgoCaWQYAiABKAlCBrpIA8gBAVICaWQSQAoGc3RhdHVzGAMgASgO",
-            "Mhouc2VydmljZS52MS5NdXRhdGlvblN0YXR1c0IMukgJggEGGAEYAhgDUgZz",
-            "dGF0dXNCtAEKDmNvbS5wcm9kdWN0LnYxQhJQcm9kdWN0SW1wb3J0UHJvdG9Q",
-            "AVo8Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3By",
-            "b2R1Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5W",
-            "McoCClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJv",
-            "ZHVjdDo6VjFiBnByb3RvMw=="));
+            "dF9kZWZpbml0aW9uLnByb3RvGhxwcm9kdWN0L3YxL3BhcnRfZmFtaWx5LnBy",
+            "b3RvGiNwcm9kdWN0L3YxL3Byb2R1Y3RfZGVmaW5pdGlvbi5wcm90bxohcmVz",
+            "b3VyY2VzL3YxL21vZGVsX3JlcXVlc3RzLnByb3RvGhlzZXJ2aWNlL3YxL3Jl",
+            "c3BvbnNlLnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmluZWRfc3RyaW5n",
+            "X3J1bGVzLnByb3RvIvwbCg1JbXBvcnRQcm9kdWN0EpwBCgZtb2RlbHMYASAD",
+            "KAsyGS5wcm9kdWN0LnYxLkltcG9ydGVkTW9kZWxCabpIZroBYwohaW1wb3J0",
+            "X3Byb2R1Y3QubW9kZWxzLnVuaXF1ZV9rZXlzEhltb2RlbCBrZXlzIG11c3Qg",
+            "YmUgdW5pcXVlGiN0aGlzLm1hcChtb2RlbCwgbW9kZWwua2V5KS51bmlxdWUo",
+            "KVIGbW9kZWxzEpUBCgVwYXJ0cxgCIAMoCzIYLnByb2R1Y3QudjEuSW1wb3J0",
+            "ZWRQYXJ0QmW6SGK6AV8KIGltcG9ydF9wcm9kdWN0LnBhcnRzLnVuaXF1ZV9r",
+            "ZXlzEhhwYXJ0IGtleXMgbXVzdCBiZSB1bmlxdWUaIXRoaXMubWFwKHBhcnQs",
+            "IHBhcnQua2V5KS51bmlxdWUoKVIFcGFydHMSNwoHcHJvZHVjdBgDIAEoCzId",
+            "LnByb2R1Y3QudjEuUHJvZHVjdERlZmluaXRpb25SB3Byb2R1Y3QSKgoRcHJv",
+            "ZHVjdF9tb2RlbF9rZXkYBCABKAlSD3Byb2R1Y3RNb2RlbEtleRKvAQoIZmFt",
+            "aWxpZXMYBSADKAsyHi5wcm9kdWN0LnYxLkltcG9ydGVkUGFydEZhbWlseUJz",
+            "ukhwugFtCiNpbXBvcnRfcHJvZHVjdC5mYW1pbGllcy51bmlxdWVfa2V5cxIf",
+            "cGFydCBmYW1pbHkga2V5cyBtdXN0IGJlIHVuaXF1ZRoldGhpcy5tYXAoZmFt",
+            "aWx5LCBmYW1pbHkua2V5KS51bmlxdWUoKVIIZmFtaWxpZXM6nBe6SJgXGssB",
+            "CiFpbXBvcnRfcHJvZHVjdC5tb2RlbF9rZXlzX2RlZmluZWQSQGV2ZXJ5IHBh",
+            "cnQncyBtb2RlbF9rZXkgbXVzdCBiZSB0aGUga2V5IG9mIGEgbW9kZWwgaW4g",
+            "dGhlIHJlcXVlc3QaZHRoaXMucGFydHMuYWxsKHBhcnQsIHBhcnQubW9kZWxf",
+            "a2V5ID09ICcnIHx8IHRoaXMubW9kZWxzLmV4aXN0cyhtb2RlbCwgbW9kZWwu",
+            "a2V5ID09IHBhcnQubW9kZWxfa2V5KSkaiQIKIGltcG9ydF9wcm9kdWN0LnBh",
+            "cnRfa2V5c19kZWZpbmVkElFldmVyeSBhc3NlbWJseSBub2RlJ3MgcGFydF9k",
+            "ZWZpbml0aW9uX2lkIG11c3QgYmUgdGhlIGtleSBvZiBhIHBhcnQgaW4gdGhl",
+            "IHJlcXVlc3QakQEhaGFzKHRoaXMucHJvZHVjdCkgfHwgdGhpcy5wcm9kdWN0",
+            "Lm5vZGVzLmFsbChub2RlLCBub2RlLnBhcnRfZGVmaW5pdGlvbl9pZCA9PSAn",
+            "JyB8fCB0aGlzLnBhcnRzLmV4aXN0cyhwYXJ0LCBwYXJ0LmtleSA9PSBub2Rl",
+            "LnBhcnRfZGVmaW5pdGlvbl9pZCkpGtYCCiVpbXBvcnRfcHJvZHVjdC5wYXJ0",
+            "X3JlZmVyZW5jZXNfdW5pcXVlElB0d28gaW1wb3J0ZWQgcGFydHMgbXVzdCBu",
+            "b3Qgc2hhcmUgYW4gZXh0ZXJuYWwgcmVmZXJlbmNlIChzeXN0ZW0gYW5kIGV4",
+            "dGVybmFsX2lkKRraAXRoaXMucGFydHMuYWxsKHBhcnQsIHBhcnQucGFydC5l",
+            "eHRlcm5hbF9yZWZlcmVuY2VzLmFsbChyZWZlcmVuY2UsIHRoaXMucGFydHMu",
+            "ZmlsdGVyKG90aGVyLCBvdGhlci5wYXJ0LmV4dGVybmFsX3JlZmVyZW5jZXMu",
+            "ZXhpc3RzKHIsIHIuc3lzdGVtID09IHJlZmVyZW5jZS5zeXN0ZW0gJiYgci5l",
+            "eHRlcm5hbF9pZCA9PSByZWZlcmVuY2UuZXh0ZXJuYWxfaWQpKS5zaXplKCkg",
+            "PT0gMSkpGusBCiJpbXBvcnRfcHJvZHVjdC5mYW1pbHlfa2V5c19kZWZpbmVk",
+            "EkdldmVyeSBwYXJ0J3MgZmFtaWx5X2tleSBtdXN0IGJlIHRoZSBrZXkgb2Yg",
+            "YSBwYXJ0IGZhbWlseSBpbiB0aGUgcmVxdWVzdBp8dGhpcy5wYXJ0cy5hbGwo",
+            "cGFydCwgcGFydC5mYW1pbGllcy5pdGVtcy5hbGwobWVtYmVyc2hpcCwgdGhp",
+            "cy5mYW1pbGllcy5leGlzdHMoZmFtaWx5LCBmYW1pbHkua2V5ID09IG1lbWJl",
+            "cnNoaXAuZmFtaWx5X2tleSkpKRrbAgoiaW1wb3J0X3Byb2R1Y3Qub25lX2Zh",
+            "bWlseV9wZXJfa2luZBI5YSBwYXJ0IGNhbiBiZWxvbmcgdG8gYXQgbW9zdCBv",
+            "bmUgcGFydCBmYW1pbHkgb2YgZWFjaCBraW5kGvkBdGhpcy5wYXJ0cy5hbGwo",
+            "cGFydCwgcGFydC5mYW1pbGllcy5pdGVtcy5hbGwobWVtYmVyc2hpcCwgcGFy",
+            "dC5mYW1pbGllcy5pdGVtcy5maWx0ZXIob3RoZXIsIHRoaXMuZmFtaWxpZXMu",
+            "ZXhpc3RzKGEsIGEua2V5ID09IG1lbWJlcnNoaXAuZmFtaWx5X2tleSAmJiB0",
+            "aGlzLmZhbWlsaWVzLmV4aXN0cyhiLCBiLmtleSA9PSBvdGhlci5mYW1pbHlf",
+            "a2V5ICYmIGIuZmFtaWx5LmtpbmQgPT0gYS5mYW1pbHkua2luZCkpKS5zaXpl",
+            "KCkgPD0gMSkpGpIDCiVpbXBvcnRfcHJvZHVjdC5mYW1pbHlfdmFsdWVzX2Nv",
+            "bXBsZXRlElJhIHBhcnQncyB2YWx1ZXMgZm9yIGEgZmFtaWx5IG11c3QgYmUg",
+            "a2V5ZWQgYnkgZXhhY3RseSB0aGF0IGZhbWlseSdzIGRpbWVuc2lvbiBrZXlz",
+            "GpQCdGhpcy5wYXJ0cy5hbGwocGFydCwgcGFydC5mYW1pbGllcy5pdGVtcy5h",
+            "bGwobWVtYmVyc2hpcCwgdGhpcy5mYW1pbGllcy5maWx0ZXIoZmFtaWx5LCBm",
+            "YW1pbHkua2V5ID09IG1lbWJlcnNoaXAuZmFtaWx5X2tleSkuYWxsKGZhbWls",
+            "eSwgbWVtYmVyc2hpcC52YWx1ZXMuc2l6ZSgpID09IGZhbWlseS5mYW1pbHku",
+            "ZGltZW5zaW9ucy5zaXplKCkgJiYgZmFtaWx5LmZhbWlseS5kaW1lbnNpb25z",
+            "LmFsbChkaW1lbnNpb24sIGRpbWVuc2lvbi5rZXkgaW4gbWVtYmVyc2hpcC52",
+            "YWx1ZXMpKSkpGu4CCidpbXBvcnRfcHJvZHVjdC5mYW1pbHlfcmVmZXJlbmNl",
+            "c191bmlxdWUSWHR3byBpbXBvcnRlZCBwYXJ0IGZhbWlsaWVzIG11c3Qgbm90",
+            "IHNoYXJlIGFuIGV4dGVybmFsIHJlZmVyZW5jZSAoc3lzdGVtIGFuZCBleHRl",
+            "cm5hbF9pZCka6AF0aGlzLmZhbWlsaWVzLmFsbChmYW1pbHksIGZhbWlseS5m",
+            "YW1pbHkuZXh0ZXJuYWxfcmVmZXJlbmNlcy5hbGwocmVmZXJlbmNlLCB0aGlz",
+            "LmZhbWlsaWVzLmZpbHRlcihvdGhlciwgb3RoZXIuZmFtaWx5LmV4dGVybmFs",
+            "X3JlZmVyZW5jZXMuZXhpc3RzKHIsIHIuc3lzdGVtID09IHJlZmVyZW5jZS5z",
+            "eXN0ZW0gJiYgci5leHRlcm5hbF9pZCA9PSByZWZlcmVuY2UuZXh0ZXJuYWxf",
+            "aWQpKS5zaXplKCkgPT0gMSkpGp4BCiFpbXBvcnRfcHJvZHVjdC5wcm9kdWN0",
+            "X3dpdGhvdXRfaWQSTHRoZSBpbXBvcnRlZCBwcm9kdWN0IG11c3Qgbm90IGhh",
+            "dmUgYW4gaWQ7IGl0J3MgbWF0Y2hlZCBieSBleHRlcm5hbCByZWZlcmVuY2Ua",
+            "KyFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnByb2R1Y3QuaWQgPT0gJyca",
+            "8wEKKGltcG9ydF9wcm9kdWN0LnByb2R1Y3RfbW9kZWxfa2V5X2RlZmluZWQS",
+            "UHByb2R1Y3RfbW9kZWxfa2V5IG11c3QgYmUgdGhlIGtleSBvZiBhIG1vZGVs",
+            "IGluIHRoZSByZXF1ZXN0LCBhbmQgbmVlZHMgYSBwcm9kdWN0GnV0aGlzLnBy",
+            "b2R1Y3RfbW9kZWxfa2V5ID09ICcnIHx8IChoYXModGhpcy5wcm9kdWN0KSAm",
+            "JiB0aGlzLm1vZGVscy5leGlzdHMobW9kZWwsIG1vZGVsLmtleSA9PSB0aGlz",
+            "LnByb2R1Y3RfbW9kZWxfa2V5KSkasQEKJ2ltcG9ydF9wcm9kdWN0LnByb2R1",
+            "Y3Rfd2l0aG91dF9tb2RlbF9pZBJTdGhlIGltcG9ydGVkIHByb2R1Y3QgbXVz",
+            "dCBub3Qgc2V0IG1vZGVsX2lkOyBpdCBuYW1lcyBpdHMgbW9kZWwgYnkgcHJv",
+            "ZHVjdF9tb2RlbF9rZXkaMSFoYXModGhpcy5wcm9kdWN0KSB8fCB0aGlzLnBy",
+            "b2R1Y3QubW9kZWxfaWQgPT0gJycaxQEKK2ltcG9ydF9wcm9kdWN0Lm5vZGVz",
+            "X3dpdGhvdXRfb3ZlcnJpZGVfbW9kZWwSRGFzc2VtYmx5IG5vZGVzIG9mIGFu",
+            "IGltcG9ydGVkIHByb2R1Y3QgbXVzdCBub3Qgc2V0IG92ZXJyaWRlX21vZGVs",
+            "X2lkGlAhaGFzKHRoaXMucHJvZHVjdCkgfHwgdGhpcy5wcm9kdWN0Lm5vZGVz",
+            "LmFsbChub2RlLCBub2RlLm92ZXJyaWRlX21vZGVsX2lkID09ICcnKSJtCg1J",
+            "bXBvcnRlZE1vZGVsEhsKA2tleRgBIAEoCUIJukgGcgTg8wQBUgNrZXkSPwoF",
+            "bW9kZWwYAiABKAsyIS5yZXNvdXJjZXMudjEuQ3JlYXRlTW9kZWxBcnRpZmFj",
+            "dEIGukgDyAEBUgVtb2RlbCLCAwoMSW1wb3J0ZWRQYXJ0EhsKA2tleRgBIAEo",
+            "CUIJukgGcgTg8wQBUgNrZXkSNgoEcGFydBgCIAEoCzIaLnByb2R1Y3QudjEu",
+            "UGFydERlZmluaXRpb25CBrpIA8gBAVIEcGFydBIbCgltb2RlbF9rZXkYAyAB",
+            "KAlSCG1vZGVsS2V5EkUKCGZhbWlsaWVzGAQgASgLMikucHJvZHVjdC52MS5J",
+            "bXBvcnRlZFBhcnRGYW1pbHlNZW1iZXJzaGlwc1IIZmFtaWxpZXM6+AG6SPQB",
+            "GvEBChlpbXBvcnRlZF9wYXJ0LndpdGhvdXRfaWRzEkhhbiBpbXBvcnRlZCBw",
+            "YXJ0IG11c3Qgbm90IHNldCBpZCwgcmV2aXNpb24sIGRlZmF1bHRfbW9kZWxf",
+            "aWQgb3IgZmFtaWxpZXMaiQEhaGFzKHRoaXMucGFydCkgfHwgKHRoaXMucGFy",
+            "dC5pZCA9PSAnJyAmJiB0aGlzLnBhcnQucmV2aXNpb24gPT0gMHUgJiYgdGhp",
+            "cy5wYXJ0LmRlZmF1bHRfbW9kZWxfaWQgPT0gJycgJiYgdGhpcy5wYXJ0LmZh",
+            "bWlsaWVzLnNpemUoKSA9PSAwKSLsAQodSW1wb3J0ZWRQYXJ0RmFtaWx5TWVt",
+            "YmVyc2hpcHMSygEKBWl0ZW1zGAEgAygLMigucHJvZHVjdC52MS5JbXBvcnRl",
+            "ZFBhcnRGYW1pbHlNZW1iZXJzaGlwQokBukiFAboBgQEKHWltcG9ydGVkX3Bh",
+            "cnQuZmFtaWxpZXMudW5pcXVlEiphbiBpbXBvcnRlZCBwYXJ0IGNhbid0IG5h",
+            "bWUgYSBmYW1pbHkgdHdpY2UaNHRoaXMubWFwKG1lbWJlcnNoaXAsIG1lbWJl",
+            "cnNoaXAuZmFtaWx5X2tleSkudW5pcXVlKClSBWl0ZW1zIukBChxJbXBvcnRl",
+            "ZFBhcnRGYW1pbHlNZW1iZXJzaGlwEigKCmZhbWlseV9rZXkYASABKAlCCbpI",
+            "BnIE4PMEAVIJZmFtaWx5S2V5EmQKBnZhbHVlcxgCIAMoCzI0LnByb2R1Y3Qu",
+            "djEuSW1wb3J0ZWRQYXJ0RmFtaWx5TWVtYmVyc2hpcC5WYWx1ZXNFbnRyeUIW",
+            "ukgTmgEQIgZyBODzBAEqBnIEgPEEAVIGdmFsdWVzGjkKC1ZhbHVlc0VudHJ5",
+            "EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAEi",
+            "lQIKEkltcG9ydGVkUGFydEZhbWlseRIbCgNrZXkYASABKAlCCbpIBnIE4PME",
+            "AVIDa2V5EjYKBmZhbWlseRgCIAEoCzIWLnByb2R1Y3QudjEuUGFydEZhbWls",
+            "eUIGukgDyAEBUgZmYW1pbHk6qQG6SKUBGqIBCiBpbXBvcnRlZF9wYXJ0X2Zh",
+            "bWlseS53aXRob3V0X2lkcxIzYW4gaW1wb3J0ZWQgcGFydCBmYW1pbHkgbXVz",
+            "dCBub3Qgc2V0IGlkIG9yIHJldmlzaW9uGkkhaGFzKHRoaXMuZmFtaWx5KSB8",
+            "fCAodGhpcy5mYW1pbHkuaWQgPT0gJycgJiYgdGhpcy5mYW1pbHkucmV2aXNp",
+            "b24gPT0gMHUpIr0GChNJbXBvcnRQcm9kdWN0UmVzdWx0EpgBCgdwcm9kdWN0",
+            "GAEgASgLMhoucHJvZHVjdC52MS5JbXBvcnRlZEVudGl0eUJiukhfugFcCilp",
+            "bXBvcnRfcHJvZHVjdF9yZXN1bHQucHJvZHVjdF93aXRob3V0X2tleRIfdGhl",
+            "IHByb2R1Y3QncyByZXN1bHQgaGFzIG5vIGtleRoOdGhpcy5rZXkgPT0gJydS",
+            "B3Byb2R1Y3QS1AEKBm1vZGVscxgCIAMoCzIaLnByb2R1Y3QudjEuSW1wb3J0",
+            "ZWRFbnRpdHlCnwG6SJsBugGXAQoiaW1wb3J0X3Byb2R1Y3RfcmVzdWx0Lm1v",
+            "ZGVsc19rZXllZBIoZXZlcnkgbW9kZWwncyByZXN1bHQgbmFtZXMgaXRzIGtl",
+            "eSwgb25jZRpHdGhpcy5hbGwobW9kZWwsIG1vZGVsLmtleSAhPSAnJykgJiYg",
+            "dGhpcy5tYXAobW9kZWwsIG1vZGVsLmtleSkudW5pcXVlKClSBm1vZGVscxLM",
+            "AQoFcGFydHMYAyADKAsyGi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5QpkB",
+            "ukiVAboBkQEKIWltcG9ydF9wcm9kdWN0X3Jlc3VsdC5wYXJ0c19rZXllZBIn",
+            "ZXZlcnkgcGFydCdzIHJlc3VsdCBuYW1lcyBpdHMga2V5LCBvbmNlGkN0aGlz",
+            "LmFsbChwYXJ0LCBwYXJ0LmtleSAhPSAnJykgJiYgdGhpcy5tYXAocGFydCwg",
+            "cGFydC5rZXkpLnVuaXF1ZSgpUgVwYXJ0cxLkAQoIZmFtaWxpZXMYBCADKAsy",
+            "Gi5wcm9kdWN0LnYxLkltcG9ydGVkRW50aXR5QqsBukinAboBowEKJGltcG9y",
+            "dF9wcm9kdWN0X3Jlc3VsdC5mYW1pbGllc19rZXllZBIuZXZlcnkgcGFydCBm",
+            "YW1pbHkncyByZXN1bHQgbmFtZXMgaXRzIGtleSwgb25jZRpLdGhpcy5hbGwo",
+            "ZmFtaWx5LCBmYW1pbHkua2V5ICE9ICcnKSAmJiB0aGlzLm1hcChmYW1pbHks",
+            "IGZhbWlseS5rZXkpLnVuaXF1ZSgpUghmYW1pbGllcyJ8Cg5JbXBvcnRlZEVu",
+            "dGl0eRIQCgNrZXkYASABKAlSA2tleRIWCgJpZBgCIAEoCUIGukgDyAEBUgJp",
+            "ZBJACgZzdGF0dXMYAyABKA4yGi5zZXJ2aWNlLnYxLk11dGF0aW9uU3RhdHVz",
+            "Qgy6SAmCAQYYARgCGANSBnN0YXR1c0K0AQoOY29tLnByb2R1Y3QudjFCElBy",
+            "b2R1Y3RJbXBvcnRQcm90b1ABWjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvdjIvbWVzc2FnZXMvcHJvZHVjdC92MTtwcm9kdWN0djGiAgNQWFiqAhNN",
+            "ZXNzYWdlcy5Qcm9kdWN0LlYxygIKUHJvZHVjdFxWMeICFlByb2R1Y3RcVjFc",
+            "R1BCTWV0YWRhdGHqAgtQcm9kdWN0OjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Product.V1.PartDefinitionReflection.Descriptor, global::Messages.Product.V1.ProductDefinitionReflection.Descriptor, global::Messages.Resources.V1.ModelRequestsReflection.Descriptor, global::Messages.Service.V1.ResponseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Product.V1.PartDefinitionReflection.Descriptor, global::Messages.Product.V1.PartFamilyReflection.Descriptor, global::Messages.Product.V1.ProductDefinitionReflection.Descriptor, global::Messages.Resources.V1.ModelRequestsReflection.Descriptor, global::Messages.Service.V1.ResponseReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportProduct), global::Messages.Product.V1.ImportProduct.Parser, new[]{ "Models", "Parts", "Product", "ProductModelKey" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportProduct), global::Messages.Product.V1.ImportProduct.Parser, new[]{ "Models", "Parts", "Product", "ProductModelKey", "Families" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedModel), global::Messages.Product.V1.ImportedModel.Parser, new[]{ "Key", "Model" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedPart), global::Messages.Product.V1.ImportedPart.Parser, new[]{ "Key", "Part", "ModelKey" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportProductResult), global::Messages.Product.V1.ImportProductResult.Parser, new[]{ "Product", "Models", "Parts" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedPart), global::Messages.Product.V1.ImportedPart.Parser, new[]{ "Key", "Part", "ModelKey", "Families" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedPartFamilyMemberships), global::Messages.Product.V1.ImportedPartFamilyMemberships.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedPartFamilyMembership), global::Messages.Product.V1.ImportedPartFamilyMembership.Parser, new[]{ "FamilyKey", "Values" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedPartFamily), global::Messages.Product.V1.ImportedPartFamily.Parser, new[]{ "Key", "Family" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportProductResult), global::Messages.Product.V1.ImportProductResult.Parser, new[]{ "Product", "Models", "Parts", "Families" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Product.V1.ImportedEntity), global::Messages.Product.V1.ImportedEntity.Parser, new[]{ "Key", "Id", "Status" }, null, null, null, null)
           }));
     }
@@ -128,9 +190,10 @@ namespace Messages.Product.V1 {
   /// changes everything or nothing. The files are uploaded first (see
   /// resources.v1.UploadedObject).
   ///
-  /// The models and parts have keys, which are only valid within the request: a
-  /// part names its default model by model_key, and an assembly node names its
-  /// part by the part's key in part_definition_id.
+  /// The models, part families and parts have keys, which are only valid within
+  /// the request: a part names its default model by model_key and its families by
+  /// family_key (ImportedPart.families), and an assembly node names its part by
+  /// the part's key in part_definition_id.
   ///
   /// Importing again is matched by external reference. An imported part or
   /// product that has an external reference (system and external_id) of an
@@ -139,9 +202,20 @@ namespace Messages.Product.V1 {
   /// keep that one (cobotar/protocol#19). Models are matched by content hash, not
   /// by external reference: a model whose files changed is a new model, which the
   /// part's new revision points to, while the earlier model stays for the
-  /// earlier revision. A part or product without external references is always
-  /// created. An import is refused when two of its parts share a reference, or
-  /// when one reference matches several existing parts or products.
+  /// earlier revision. Part families are matched by external reference like
+  /// parts (cobotar/protocol#36). A part, family or product without external
+  /// references is always created. An import is refused when two of its parts or
+  /// two of its families share a reference, or when one reference matches
+  /// several existing parts, families or products.
+  ///
+  /// An imported part's memberships follow ImportedPart.families: when it's
+  /// absent, an updated part keeps its memberships (so an exporter that doesn't
+  /// know about families leaves them alone); when it's present, they're replaced
+  /// with its items, and an empty list removes them. An imported family
+  /// is created or updated with the request's dimensions, under the same rules
+  /// as other changes to a family (PartFamily): a family with members keeps its
+  /// dimension keys, so an import that adds or removes a dimension of such a
+  /// family is refused.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ImportProduct : pb::IMessage<ImportProduct>
@@ -182,6 +256,7 @@ namespace Messages.Product.V1 {
       parts_ = other.parts_.Clone();
       product_ = other.product_ != null ? other.product_.Clone() : null;
       productModelKey_ = other.productModelKey_;
+      families_ = other.families_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -246,6 +321,20 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "families" field.</summary>
+    public const int FamiliesFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Messages.Product.V1.ImportedPartFamily> _repeated_families_codec
+        = pb::FieldCodec.ForMessage(42, global::Messages.Product.V1.ImportedPartFamily.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Product.V1.ImportedPartFamily> families_ = new pbc::RepeatedField<global::Messages.Product.V1.ImportedPartFamily>();
+    /// <summary>
+    /// The part families the parts name by key in ImportedPart.families.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Product.V1.ImportedPartFamily> Families {
+      get { return families_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -265,6 +354,7 @@ namespace Messages.Product.V1 {
       if(!parts_.Equals(other.parts_)) return false;
       if (!object.Equals(Product, other.Product)) return false;
       if (ProductModelKey != other.ProductModelKey) return false;
+      if(!families_.Equals(other.families_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -276,6 +366,7 @@ namespace Messages.Product.V1 {
       hash ^= parts_.GetHashCode();
       if (product_ != null) hash ^= Product.GetHashCode();
       if (ProductModelKey.Length != 0) hash ^= ProductModelKey.GetHashCode();
+      hash ^= families_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -304,6 +395,7 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(34);
         output.WriteString(ProductModelKey);
       }
+      families_.WriteTo(output, _repeated_families_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -324,6 +416,7 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(34);
         output.WriteString(ProductModelKey);
       }
+      families_.WriteTo(ref output, _repeated_families_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -342,6 +435,7 @@ namespace Messages.Product.V1 {
       if (ProductModelKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ProductModelKey);
       }
+      size += families_.CalculateSize(_repeated_families_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -365,6 +459,7 @@ namespace Messages.Product.V1 {
       if (other.ProductModelKey.Length != 0) {
         ProductModelKey = other.ProductModelKey;
       }
+      families_.Add(other.families_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -403,6 +498,10 @@ namespace Messages.Product.V1 {
             ProductModelKey = input.ReadString();
             break;
           }
+          case 42: {
+            families_.AddEntriesFrom(input, _repeated_families_codec);
+            break;
+          }
         }
       }
     #endif
@@ -439,6 +538,10 @@ namespace Messages.Product.V1 {
           }
           case 34: {
             ProductModelKey = input.ReadString();
+            break;
+          }
+          case 42: {
+            families_.AddEntriesFrom(ref input, _repeated_families_codec);
             break;
           }
         }
@@ -697,8 +800,9 @@ namespace Messages.Product.V1 {
 
   /// <summary>
   /// ImportedPart is a part definition of an ImportProduct, with its key in the
-  /// request. The part has no id, revision or default_model_id: it's matched by
-  /// external reference, and names its default model by model_key.
+  /// request. The part has no id, revision, default_model_id or families: it's
+  /// matched by external reference, names its default model by model_key and its
+  /// families by key in families.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ImportedPart : pb::IMessage<ImportedPart>
@@ -738,6 +842,7 @@ namespace Messages.Product.V1 {
       key_ = other.key_;
       part_ = other.part_ != null ? other.part_.Clone() : null;
       modelKey_ = other.modelKey_;
+      families_ = other.families_ != null ? other.families_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -786,6 +891,24 @@ namespace Messages.Product.V1 {
       }
     }
 
+    /// <summary>Field number for the "families" field.</summary>
+    public const int FamiliesFieldNumber = 4;
+    private global::Messages.Product.V1.ImportedPartFamilyMemberships families_;
+    /// <summary>
+    /// The part's families (ImportProduct.families, by key), at most one of each
+    /// kind, with its value for each of their dimensions. Absent keeps the
+    /// memberships of the part the import updates; present replaces them, and
+    /// present but empty removes them.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Product.V1.ImportedPartFamilyMemberships Families {
+      get { return families_; }
+      set {
+        families_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -804,6 +927,7 @@ namespace Messages.Product.V1 {
       if (Key != other.Key) return false;
       if (!object.Equals(Part, other.Part)) return false;
       if (ModelKey != other.ModelKey) return false;
+      if (!object.Equals(Families, other.Families)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -814,6 +938,7 @@ namespace Messages.Product.V1 {
       if (Key.Length != 0) hash ^= Key.GetHashCode();
       if (part_ != null) hash ^= Part.GetHashCode();
       if (ModelKey.Length != 0) hash ^= ModelKey.GetHashCode();
+      if (families_ != null) hash ^= Families.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -844,6 +969,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(26);
         output.WriteString(ModelKey);
       }
+      if (families_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Families);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -866,6 +995,10 @@ namespace Messages.Product.V1 {
         output.WriteRawTag(26);
         output.WriteString(ModelKey);
       }
+      if (families_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Families);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -884,6 +1017,9 @@ namespace Messages.Product.V1 {
       }
       if (ModelKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelKey);
+      }
+      if (families_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Families);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -908,6 +1044,12 @@ namespace Messages.Product.V1 {
       }
       if (other.ModelKey.Length != 0) {
         ModelKey = other.ModelKey;
+      }
+      if (other.families_ != null) {
+        if (families_ == null) {
+          Families = new global::Messages.Product.V1.ImportedPartFamilyMemberships();
+        }
+        Families.MergeFrom(other.Families);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -941,6 +1083,13 @@ namespace Messages.Product.V1 {
           }
           case 26: {
             ModelKey = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (families_ == null) {
+              Families = new global::Messages.Product.V1.ImportedPartFamilyMemberships();
+            }
+            input.ReadMessage(Families);
             break;
           }
         }
@@ -977,6 +1126,684 @@ namespace Messages.Product.V1 {
             ModelKey = input.ReadString();
             break;
           }
+          case 34: {
+            if (families_ == null) {
+              Families = new global::Messages.Product.V1.ImportedPartFamilyMemberships();
+            }
+            input.ReadMessage(Families);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// ImportedPartFamilyMemberships wraps an imported part's memberships, so an
+  /// import can tell "leave them" (absent) from "none" (present, empty).
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ImportedPartFamilyMemberships : pb::IMessage<ImportedPartFamilyMemberships>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ImportedPartFamilyMemberships> _parser = new pb::MessageParser<ImportedPartFamilyMemberships>(() => new ImportedPartFamilyMemberships());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ImportedPartFamilyMemberships> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamilyMemberships() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamilyMemberships(ImportedPartFamilyMemberships other) : this() {
+      items_ = other.items_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamilyMemberships Clone() {
+      return new ImportedPartFamilyMemberships(this);
+    }
+
+    /// <summary>Field number for the "items" field.</summary>
+    public const int ItemsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Messages.Product.V1.ImportedPartFamilyMembership> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Messages.Product.V1.ImportedPartFamilyMembership.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Product.V1.ImportedPartFamilyMembership> items_ = new pbc::RepeatedField<global::Messages.Product.V1.ImportedPartFamilyMembership>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Product.V1.ImportedPartFamilyMembership> Items {
+      get { return items_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ImportedPartFamilyMemberships);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ImportedPartFamilyMemberships other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!items_.Equals(other.items_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= items_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      items_.WriteTo(output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      items_.WriteTo(ref output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += items_.CalculateSize(_repeated_items_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ImportedPartFamilyMemberships other) {
+      if (other == null) {
+        return;
+      }
+      items_.Add(other.items_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            items_.AddEntriesFrom(input, _repeated_items_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            items_.AddEntriesFrom(ref input, _repeated_items_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// ImportedPartFamilyMembership is a PartFamilyMembership of an imported part,
+  /// naming the family by its key in the request.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ImportedPartFamilyMembership : pb::IMessage<ImportedPartFamilyMembership>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ImportedPartFamilyMembership> _parser = new pb::MessageParser<ImportedPartFamilyMembership>(() => new ImportedPartFamilyMembership());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ImportedPartFamilyMembership> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamilyMembership() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamilyMembership(ImportedPartFamilyMembership other) : this() {
+      familyKey_ = other.familyKey_;
+      values_ = other.values_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamilyMembership Clone() {
+      return new ImportedPartFamilyMembership(this);
+    }
+
+    /// <summary>Field number for the "family_key" field.</summary>
+    public const int FamilyKeyFieldNumber = 1;
+    private string familyKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FamilyKey {
+      get { return familyKey_; }
+      set {
+        familyKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "values" field.</summary>
+    public const int ValuesFieldNumber = 2;
+    private static readonly pbc::MapField<string, string>.Codec _map_values_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 18);
+    private readonly pbc::MapField<string, string> values_ = new pbc::MapField<string, string>();
+    /// <summary>
+    /// The part's value for each dimension of the family, by dimension key.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Values {
+      get { return values_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ImportedPartFamilyMembership);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ImportedPartFamilyMembership other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FamilyKey != other.FamilyKey) return false;
+      if (!Values.Equals(other.Values)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FamilyKey.Length != 0) hash ^= FamilyKey.GetHashCode();
+      hash ^= Values.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (FamilyKey.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FamilyKey);
+      }
+      values_.WriteTo(output, _map_values_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (FamilyKey.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FamilyKey);
+      }
+      values_.WriteTo(ref output, _map_values_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (FamilyKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FamilyKey);
+      }
+      size += values_.CalculateSize(_map_values_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ImportedPartFamilyMembership other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FamilyKey.Length != 0) {
+        FamilyKey = other.FamilyKey;
+      }
+      values_.MergeFrom(other.values_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            FamilyKey = input.ReadString();
+            break;
+          }
+          case 18: {
+            values_.AddEntriesFrom(input, _map_values_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            FamilyKey = input.ReadString();
+            break;
+          }
+          case 18: {
+            values_.AddEntriesFrom(ref input, _map_values_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// ImportedPartFamily is a part family of an ImportProduct, with its key in the
+  /// request. The family has no id or revision: it's matched by external
+  /// reference.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ImportedPartFamily : pb::IMessage<ImportedPartFamily>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ImportedPartFamily> _parser = new pb::MessageParser<ImportedPartFamily>(() => new ImportedPartFamily());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ImportedPartFamily> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamily() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamily(ImportedPartFamily other) : this() {
+      key_ = other.key_;
+      family_ = other.family_ != null ? other.family_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ImportedPartFamily Clone() {
+      return new ImportedPartFamily(this);
+    }
+
+    /// <summary>Field number for the "key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private string key_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Key {
+      get { return key_; }
+      set {
+        key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "family" field.</summary>
+    public const int FamilyFieldNumber = 2;
+    private global::Messages.Product.V1.PartFamily family_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Messages.Product.V1.PartFamily Family {
+      get { return family_; }
+      set {
+        family_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ImportedPartFamily);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ImportedPartFamily other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (!object.Equals(Family, other.Family)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key.Length != 0) hash ^= Key.GetHashCode();
+      if (family_ != null) hash ^= Family.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Key.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Key);
+      }
+      if (family_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Family);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Key.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Key);
+      }
+      if (family_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Family);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      if (family_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Family);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ImportedPartFamily other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key.Length != 0) {
+        Key = other.Key;
+      }
+      if (other.family_ != null) {
+        if (family_ == null) {
+          Family = new global::Messages.Product.V1.PartFamily();
+        }
+        Family.MergeFrom(other.Family);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Key = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (family_ == null) {
+              Family = new global::Messages.Product.V1.PartFamily();
+            }
+            input.ReadMessage(Family);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Key = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (family_ == null) {
+              Family = new global::Messages.Product.V1.PartFamily();
+            }
+            input.ReadMessage(Family);
+            break;
+          }
         }
       }
     }
@@ -1003,7 +1830,7 @@ namespace Messages.Product.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1026,6 +1853,7 @@ namespace Messages.Product.V1 {
       product_ = other.product_ != null ? other.product_.Clone() : null;
       models_ = other.models_.Clone();
       parts_ = other.parts_.Clone();
+      families_ = other.families_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1078,6 +1906,20 @@ namespace Messages.Product.V1 {
       get { return parts_; }
     }
 
+    /// <summary>Field number for the "families" field.</summary>
+    public const int FamiliesFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Messages.Product.V1.ImportedEntity> _repeated_families_codec
+        = pb::FieldCodec.ForMessage(34, global::Messages.Product.V1.ImportedEntity.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Product.V1.ImportedEntity> families_ = new pbc::RepeatedField<global::Messages.Product.V1.ImportedEntity>();
+    /// <summary>
+    /// One per part family of the request, in its order.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Product.V1.ImportedEntity> Families {
+      get { return families_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1096,6 +1938,7 @@ namespace Messages.Product.V1 {
       if (!object.Equals(Product, other.Product)) return false;
       if(!models_.Equals(other.models_)) return false;
       if(!parts_.Equals(other.parts_)) return false;
+      if(!families_.Equals(other.families_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1106,6 +1949,7 @@ namespace Messages.Product.V1 {
       if (product_ != null) hash ^= Product.GetHashCode();
       hash ^= models_.GetHashCode();
       hash ^= parts_.GetHashCode();
+      hash ^= families_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1130,6 +1974,7 @@ namespace Messages.Product.V1 {
       }
       models_.WriteTo(output, _repeated_models_codec);
       parts_.WriteTo(output, _repeated_parts_codec);
+      families_.WriteTo(output, _repeated_families_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1146,6 +1991,7 @@ namespace Messages.Product.V1 {
       }
       models_.WriteTo(ref output, _repeated_models_codec);
       parts_.WriteTo(ref output, _repeated_parts_codec);
+      families_.WriteTo(ref output, _repeated_families_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1161,6 +2007,7 @@ namespace Messages.Product.V1 {
       }
       size += models_.CalculateSize(_repeated_models_codec);
       size += parts_.CalculateSize(_repeated_parts_codec);
+      size += families_.CalculateSize(_repeated_families_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1181,6 +2028,7 @@ namespace Messages.Product.V1 {
       }
       models_.Add(other.models_);
       parts_.Add(other.parts_);
+      families_.Add(other.families_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1213,6 +2061,10 @@ namespace Messages.Product.V1 {
           }
           case 26: {
             parts_.AddEntriesFrom(input, _repeated_parts_codec);
+            break;
+          }
+          case 34: {
+            families_.AddEntriesFrom(input, _repeated_families_codec);
             break;
           }
         }
@@ -1249,6 +2101,10 @@ namespace Messages.Product.V1 {
             parts_.AddEntriesFrom(ref input, _repeated_parts_codec);
             break;
           }
+          case 34: {
+            families_.AddEntriesFrom(ref input, _repeated_families_codec);
+            break;
+          }
         }
       }
     }
@@ -1257,10 +2113,10 @@ namespace Messages.Product.V1 {
   }
 
   /// <summary>
-  /// ImportedEntity is what an import did with one model, part or product:
-  /// CREATED, UPDATED (a part's new revision, or the product), or UNCHANGED (an
-  /// existing model with the same content, or a part or product that matched and
-  /// didn't change).
+  /// ImportedEntity is what an import did with one model, part family, part or
+  /// product: CREATED, UPDATED (a part's or family's new revision, or the
+  /// product), or UNCHANGED (an existing model with the same content, or a part,
+  /// family or product that matched and didn't change).
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ImportedEntity : pb::IMessage<ImportedEntity>
@@ -1277,7 +2133,7 @@ namespace Messages.Product.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Messages.Product.V1.ProductImportReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

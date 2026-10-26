@@ -57,85 +57,86 @@
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
     - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
-  
+    - [File-level Extensions](#validation_v1_predefined_string_rules-proto-extensions)
+
 - [ar/v1/provenance.proto](#ar_v1_provenance-proto)
     - [ARContentProvenance](#ar-v1-ARContentProvenance)
-  
+
     - [ARContentOrigin](#ar-v1-ARContentOrigin)
     - [AdaptiveParticipation](#ar-v1-AdaptiveParticipation)
-  
+
 - [common/v1/actor.proto](#common_v1_actor-proto)
     - [ActorRef](#common-v1-ActorRef)
-  
+
     - [ActorKind](#common-v1-ActorKind)
-  
+
 - [capability/v1/actor_skill.proto](#capability_v1_actor_skill-proto)
     - [ActorSkill](#capability-v1-ActorSkill)
     - [ActorSkills](#capability-v1-ActorSkills)
     - [SkillEvidenceStats](#capability-v1-SkillEvidenceStats)
     - [ValidityPolicyRef](#capability-v1-ValidityPolicyRef)
-  
+
     - [SkillInvalidityReason](#capability-v1-SkillInvalidityReason)
     - [SkillLevel](#capability-v1-SkillLevel)
     - [SkillNextAction](#capability-v1-SkillNextAction)
     - [SkillStatus](#capability-v1-SkillStatus)
-  
+
 - [common/v1/key_value_constraint.proto](#common_v1_key_value_constraint-proto)
     - [KeyValueConstraint](#common-v1-KeyValueConstraint)
-  
+
     - [ConstraintOperator](#common-v1-ConstraintOperator)
-  
+
 - [capability/v1/skill_requirement.proto](#capability_v1_skill_requirement-proto)
     - [SkillRequirement](#capability-v1-SkillRequirement)
-  
+
 - [ar/v1/action.proto](#ar_v1_action-proto)
     - [ActionAddMessage](#ar-v1-ActionAddMessage)
     - [ActionMessage](#ar-v1-ActionMessage)
     - [ActionMessages](#ar-v1-ActionMessages)
     - [ActionUpdateMessage](#ar-v1-ActionUpdateMessage)
     - [RequestActionOwnership](#ar-v1-RequestActionOwnership)
-  
+
     - [ActionType](#ar-v1-ActionType)
-  
+
 - [ar/v1/definition_status.proto](#ar_v1_definition_status-proto)
     - [DefinitionStatus](#ar-v1-DefinitionStatus)
-  
+
 - [ar/v1/events.proto](#ar_v1_events-proto)
     - [ExchangeSupport](#ar-v1-ExchangeSupport)
     - [ExchangeType](#ar-v1-ExchangeType)
     - [HandlerRequirement](#ar-v1-HandlerRequirement)
     - [SupportedExchangesMessage](#ar-v1-SupportedExchangesMessage)
-  
+
     - [CommandType](#ar-v1-CommandType)
     - [EventType](#ar-v1-EventType)
     - [HandlerCardinality](#ar-v1-HandlerCardinality)
     - [PlanType](#ar-v1-PlanType)
     - [TelemetryType](#ar-v1-TelemetryType)
-  
+
 - [ar/v1/execution_contract.proto](#ar_v1_execution_contract-proto)
     - [ExecutionContract](#ar-v1-ExecutionContract)
-  
+
 - [common/v1/color.proto](#common_v1_color-proto)
     - [Color](#common-v1-Color)
-  
+
 - [geometry/v1/anchor.proto](#geometry_v1_anchor-proto)
     - [Anchor](#geometry-v1-Anchor)
-  
+
 - [geometry/v1/point.proto](#geometry_v1_point-proto)
     - [Point](#geometry-v1-Point)
-  
+
 - [geometry/v1/quad.proto](#geometry_v1_quad-proto)
     - [Quad](#geometry-v1-Quad)
-  
+
 - [geometry/v1/pose.proto](#geometry_v1_pose-proto)
     - [LocalizedPose](#geometry-v1-LocalizedPose)
     - [Pose](#geometry-v1-Pose)
-  
+
     - [LocalizedState](#geometry-v1-LocalizedState)
-  
+
 - [geometry/v1/vector3.proto](#geometry_v1_vector3-proto)
     - [Vector3](#geometry-v1-Vector3)
-  
+
 - [common/v1/property.proto](#common_v1_property-proto)
     - [AnchorExtras](#common-v1-AnchorExtras)
     - [ColorExtras](#common-v1-ColorExtras)
@@ -152,49 +153,49 @@
     - [PropertyTemplate](#common-v1-PropertyTemplate)
     - [PropertyValue](#common-v1-PropertyValue)
     - [Vector3Extras](#common-v1-Vector3Extras)
-  
+
     - [PropertyGroup](#common-v1-PropertyGroup)
     - [PropertyOrigin](#common-v1-PropertyOrigin)
     - [PropertyPermission](#common-v1-PropertyPermission)
     - [PropertyScope](#common-v1-PropertyScope)
     - [PropertySemanticRole](#common-v1-PropertySemanticRole)
     - [PropertyType](#common-v1-PropertyType)
-  
+
 - [common/v1/signal.proto](#common_v1_signal-proto)
     - [SignalCatalog](#common-v1-SignalCatalog)
     - [SignalDefinition](#common-v1-SignalDefinition)
-  
+
     - [SignalDataType](#common-v1-SignalDataType)
     - [SignalSemantic](#common-v1-SignalSemantic)
-  
+
 - [resources/v1/asset_adapter.proto](#resources_v1_asset_adapter-proto)
     - [AssetAdapterCommandCapability](#resources-v1-AssetAdapterCommandCapability)
     - [AssetAdapterInfoMessage](#resources-v1-AssetAdapterInfoMessage)
     - [AssetAdapterTelemetryCapability](#resources-v1-AssetAdapterTelemetryCapability)
     - [AssetControllerIdentity](#resources-v1-AssetControllerIdentity)
-  
+
     - [AssetAdapterCommandType](#resources-v1-AssetAdapterCommandType)
     - [AssetAdapterTelemetryType](#resources-v1-AssetAdapterTelemetryType)
-  
+
 - [resources/v1/asset_definition.proto](#resources_v1_asset_definition-proto)
     - [AssetDefinition](#resources-v1-AssetDefinition)
     - [AssetDefinitions](#resources-v1-AssetDefinitions)
     - [VisionCapability](#resources-v1-VisionCapability)
-  
+
     - [AssetType](#resources-v1-AssetType)
     - [ValidationMode](#resources-v1-ValidationMode)
-  
+
 - [robot/v1/robot_adapter.proto](#robot_v1_robot_adapter-proto)
     - [RobotAdapterCommandCapability](#robot-v1-RobotAdapterCommandCapability)
     - [RobotAdapterInfoMessage](#robot-v1-RobotAdapterInfoMessage)
     - [RobotAdapterPlanCapability](#robot-v1-RobotAdapterPlanCapability)
     - [RobotAdapterTelemetryCapability](#robot-v1-RobotAdapterTelemetryCapability)
     - [RobotControllerIdentity](#robot-v1-RobotControllerIdentity)
-  
+
     - [RobotAdapterCommandType](#robot-v1-RobotAdapterCommandType)
     - [RobotAdapterPlanType](#robot-v1-RobotAdapterPlanType)
     - [RobotAdapterTelemetryType](#robot-v1-RobotAdapterTelemetryType)
-  
+
 - [resources/v1/resource_requirement.proto](#resources_v1_resource_requirement-proto)
     - [ConsumerResourceRequirement](#resources-v1-ConsumerResourceRequirement)
     - [ResourceAssetTypeRequirement](#resources-v1-ResourceAssetTypeRequirement)
@@ -204,30 +205,30 @@
     - [ResourceRequirements](#resources-v1-ResourceRequirements)
     - [ResourceSignalRequirement](#resources-v1-ResourceSignalRequirement)
     - [ResourceTelemetryRequirement](#resources-v1-ResourceTelemetryRequirement)
-  
+
     - [ResourceRequirementLevel](#resources-v1-ResourceRequirementLevel)
-  
+
 - [ar/v1/action_definition.proto](#ar_v1_action_definition-proto)
     - [ActionDefinition](#ar-v1-ActionDefinition)
     - [ActionDefinitions](#ar-v1-ActionDefinitions)
-  
+
     - [ActionGroup](#ar-v1-ActionGroup)
-  
+
 - [ar/v1/ar_config_binding.proto](#ar_v1_ar_config_binding-proto)
     - [ARConfigBindingMessage](#ar-v1-ARConfigBindingMessage)
     - [ARConfigBindingMessages](#ar-v1-ARConfigBindingMessages)
     - [ARResourceBinding](#ar-v1-ARResourceBinding)
     - [ARResourceRequirementConsumer](#ar-v1-ARResourceRequirementConsumer)
     - [ARUnmetResourceRequirement](#ar-v1-ARUnmetResourceRequirement)
-  
+
     - [ARResourceBindingStatus](#ar-v1-ARResourceBindingStatus)
-  
+
 - [ar/v1/ar_binding_candidates.proto](#ar_v1_ar_binding_candidates-proto)
     - [ARBindingCandidate](#ar-v1-ARBindingCandidate)
     - [ARBindingCandidatesRequest](#ar-v1-ARBindingCandidatesRequest)
     - [ARBindingCandidatesResponse](#ar-v1-ARBindingCandidatesResponse)
     - [ARResourceRequirementUsage](#ar-v1-ARResourceRequirementUsage)
-  
+
 - [ar/v1/input_slot.proto](#ar_v1_input_slot-proto)
     - [ARActorSelector](#ar-v1-ARActorSelector)
     - [ARInputSlotAddMessage](#ar-v1-ARInputSlotAddMessage)
@@ -236,16 +237,16 @@
     - [ARInputSlotMessages](#ar-v1-ARInputSlotMessages)
     - [ARInputSlotUpdateMessage](#ar-v1-ARInputSlotUpdateMessage)
     - [ARRunContextSelector](#ar-v1-ARRunContextSelector)
-  
+
     - [ARContextSlotType](#ar-v1-ARContextSlotType)
     - [ARResourceSlotType](#ar-v1-ARResourceSlotType)
     - [ARRunSelection](#ar-v1-ARRunSelection)
-  
+
 - [ar/v1/presentation_binding.proto](#ar_v1_presentation_binding-proto)
     - [PresentationBinding](#ar-v1-PresentationBinding)
     - [PresentationBindingReset](#ar-v1-PresentationBindingReset)
     - [PresentationBindingUpdate](#ar-v1-PresentationBindingUpdate)
-  
+
 - [ar/v1/ar_config.proto](#ar_v1_ar_config-proto)
     - [ARConfigAddMessage](#ar-v1-ARConfigAddMessage)
     - [ARConfigInfoMessage](#ar-v1-ARConfigInfoMessage)
@@ -253,57 +254,57 @@
     - [ARConfigMessage](#ar-v1-ARConfigMessage)
     - [ARConfigMessages](#ar-v1-ARConfigMessages)
     - [ARConfigUpdateMessage](#ar-v1-ARConfigUpdateMessage)
-  
+
     - [ARConfigPrimaryType](#ar-v1-ARConfigPrimaryType)
-  
+
 - [ar/v1/feedback.proto](#ar_v1_feedback-proto)
     - [FeedbackAddMessage](#ar-v1-FeedbackAddMessage)
     - [FeedbackMessage](#ar-v1-FeedbackMessage)
     - [FeedbackMessages](#ar-v1-FeedbackMessages)
     - [FeedbackUpdateMessage](#ar-v1-FeedbackUpdateMessage)
     - [RequestFeedbackOwnership](#ar-v1-RequestFeedbackOwnership)
-  
+
     - [FeedbackType](#ar-v1-FeedbackType)
-  
+
 - [ar/v1/property_influence.proto](#ar_v1_property_influence-proto)
     - [PropertyInfluence](#ar-v1-PropertyInfluence)
-  
+
     - [AssistanceScalingAxis](#ar-v1-AssistanceScalingAxis)
     - [PropertyInfluenceType](#ar-v1-PropertyInfluenceType)
-  
+
 - [ar/v1/semantic_source.proto](#ar_v1_semantic_source-proto)
     - [SemanticSourceRequirement](#ar-v1-SemanticSourceRequirement)
-  
+
     - [AssistanceSemantic](#ar-v1-AssistanceSemantic)
     - [SemanticSourceType](#ar-v1-SemanticSourceType)
     - [SemanticValueType](#ar-v1-SemanticValueType)
-  
+
 - [ar/v1/feedback_capability.proto](#ar_v1_feedback_capability-proto)
     - [FeedbackCapability](#ar-v1-FeedbackCapability)
-  
+
 - [ar/v1/feedback_features.proto](#ar_v1_feedback_features-proto)
     - [FeedbackFeature](#ar-v1-FeedbackFeature)
-  
+
 - [ar/v1/feedback_definition.proto](#ar_v1_feedback_definition-proto)
     - [FeedbackDefinition](#ar-v1-FeedbackDefinition)
     - [FeedbackDefinitions](#ar-v1-FeedbackDefinitions)
-  
+
     - [FeedbackGroup](#ar-v1-FeedbackGroup)
-  
+
 - [ar/v1/function.proto](#ar_v1_function-proto)
     - [FunctionAddMessage](#ar-v1-FunctionAddMessage)
     - [FunctionMessage](#ar-v1-FunctionMessage)
     - [FunctionMessages](#ar-v1-FunctionMessages)
     - [FunctionUpdateMessage](#ar-v1-FunctionUpdateMessage)
-  
+
     - [FunctionType](#ar-v1-FunctionType)
-  
+
 - [ar/v1/function_definition.proto](#ar_v1_function_definition-proto)
     - [FunctionDefinition](#ar-v1-FunctionDefinition)
     - [FunctionDefinitions](#ar-v1-FunctionDefinitions)
-  
+
     - [FunctionGroup](#ar-v1-FunctionGroup)
-  
+
 - [ar/v1/presentation_strategy.proto](#ar_v1_presentation_strategy-proto)
     - [AssistancePresentationRule](#ar-v1-AssistancePresentationRule)
     - [PresentationFidelityAnchor](#ar-v1-PresentationFidelityAnchor)
@@ -313,56 +314,56 @@
     - [PresentationStrategy](#ar-v1-PresentationStrategy)
     - [PresentationStrategyAdd](#ar-v1-PresentationStrategyAdd)
     - [PropertyValueAssignment](#ar-v1-PropertyValueAssignment)
-  
+
     - [PresentationFidelity](#ar-v1-PresentationFidelity)
-  
+
 - [common/v1/enums.proto](#common_v1_enums-proto)
     - [CollaborationMode](#common-v1-CollaborationMode)
     - [ResourceStatus](#common-v1-ResourceStatus)
     - [SafetyRelevance](#common-v1-SafetyRelevance)
-  
+
 - [capability/v1/actor_constraint.proto](#capability_v1_actor_constraint-proto)
     - [ActorConstraint](#capability-v1-ActorConstraint)
-  
+
 - [capability/v1/capability_profile.proto](#capability_v1_capability_profile-proto)
     - [CapabilityProfile](#capability-v1-CapabilityProfile)
-  
+
 - [capability/v1/skill_definition.proto](#capability_v1_skill_definition-proto)
     - [SkillDefinition](#capability-v1-SkillDefinition)
     - [SkillDefinitions](#capability-v1-SkillDefinitions)
-  
+
     - [SkillDomain](#capability-v1-SkillDomain)
     - [ToolRole](#capability-v1-ToolRole)
-  
+
 - [capability/v1/tool_requirement.proto](#capability_v1_tool_requirement-proto)
     - [ToolRequirement](#capability-v1-ToolRequirement)
-  
+
     - [ToolProperty](#capability-v1-ToolProperty)
-  
+
 - [capability/v1/validity_policy.proto](#capability_v1_validity_policy-proto)
     - [ValidityPolicies](#capability-v1-ValidityPolicies)
     - [ValidityPolicy](#capability-v1-ValidityPolicy)
-  
+
 - [common/v1/clone.proto](#common_v1_clone-proto)
     - [CloneMessage](#common-v1-CloneMessage)
-  
+
 - [common/v1/delete.proto](#common_v1_delete-proto)
     - [DeleteMessage](#common-v1-DeleteMessage)
-  
+
 - [common/v1/display_text.proto](#common_v1_display_text-proto)
     - [DisplayText](#common-v1-DisplayText)
-  
+
 - [common/v1/empty.proto](#common_v1_empty-proto)
     - [EmptyMessage](#common-v1-EmptyMessage)
-  
+
 - [common/v1/external_references.proto](#common_v1_external_references-proto)
     - [ExternalReference](#common-v1-ExternalReference)
-  
+
 - [common/v1/get.proto](#common_v1_get-proto)
     - [GetByFieldMessage](#common-v1-GetByFieldMessage)
     - [GetByIdMessage](#common-v1-GetByIdMessage)
     - [GetMessage](#common-v1-GetMessage)
-  
+
 - [common/v1/log.proto](#common_v1_log-proto)
     - [LogAttribute](#common-v1-LogAttribute)
     - [LogAttributeValue](#common-v1-LogAttributeValue)
@@ -371,46 +372,46 @@
     - [LogRecords](#common-v1-LogRecords)
     - [LogResource](#common-v1-LogResource)
     - [LogSource](#common-v1-LogSource)
-  
+
     - [LogSeverity](#common-v1-LogSeverity)
-  
+
 - [common/v1/ref.proto](#common_v1_ref-proto)
     - [NamedRef](#common-v1-NamedRef)
     - [Ref](#common-v1-Ref)
-  
+
 - [common/v1/time.proto](#common_v1_time-proto)
     - [EstimatedDuration](#common-v1-EstimatedDuration)
     - [TimeWindow](#common-v1-TimeWindow)
-  
+
 - [geometry/v1/local_target.proto](#geometry_v1_local_target-proto)
     - [LocalTarget](#geometry-v1-LocalTarget)
-  
+
 - [geometry/v1/wrench.proto](#geometry_v1_wrench-proto)
     - [Wrench](#geometry-v1-Wrench)
-  
+
 - [geometry/v1/zone.proto](#geometry_v1_zone-proto)
     - [ZoneDefinition](#geometry-v1-ZoneDefinition)
     - [ZoneDefinitions](#geometry-v1-ZoneDefinitions)
-  
+
 - [variance/v1/variant_condition.proto](#variance_v1_variant_condition-proto)
     - [AxisCondition](#variance-v1-AxisCondition)
     - [VariantCondition](#variance-v1-VariantCondition)
-  
+
 - [process/v1/sequence_definition.proto](#process_v1_sequence_definition-proto)
     - [SequenceDefinition](#process-v1-SequenceDefinition)
     - [SequenceDefinitions](#process-v1-SequenceDefinitions)
-  
+
     - [SequenceOperator](#process-v1-SequenceOperator)
-  
+
 - [resources/v1/container_definition.proto](#resources_v1_container_definition-proto)
     - [ContainerDefinition](#resources-v1-ContainerDefinition)
     - [ContainerDefinitions](#resources-v1-ContainerDefinitions)
     - [ContainerSlotDefinition](#resources-v1-ContainerSlotDefinition)
     - [ContainerSlotRef](#resources-v1-ContainerSlotRef)
-  
+
     - [ContainerSlotType](#resources-v1-ContainerSlotType)
     - [ContainerType](#resources-v1-ContainerType)
-  
+
 - [process/v1/task_definition.proto](#process_v1_task_definition-proto)
     - [ContainerTarget](#process-v1-ContainerTarget)
     - [OrientationConstraint](#process-v1-OrientationConstraint)
@@ -425,11 +426,11 @@
     - [TaskOverride](#process-v1-TaskOverride)
     - [TaskTarget](#process-v1-TaskTarget)
     - [ValidationRequirement](#process-v1-ValidationRequirement)
-  
+
     - [ActorUnavailabilityPolicy](#process-v1-ActorUnavailabilityPolicy)
     - [TaskAssignmentPreference](#process-v1-TaskAssignmentPreference)
     - [TaskType](#process-v1-TaskType)
-  
+
 - [process/v1/process_recipe.proto](#process_v1_process_recipe-proto)
     - [AddChildSequenceRequest](#process-v1-AddChildSequenceRequest)
     - [AddChildTaskRequest](#process-v1-AddChildTaskRequest)
@@ -442,23 +443,32 @@
     - [RemoveTaskRequest](#process-v1-RemoveTaskRequest)
     - [UpdateSequenceDefinition](#process-v1-UpdateSequenceDefinition)
     - [UpdateTaskDefinition](#process-v1-UpdateTaskDefinition)
-  
+
     - [ProcessType](#process-v1-ProcessType)
-  
+
 - [variance/v1/variant_configuration.proto](#variance_v1_variant_configuration-proto)
     - [NamedVariantChoice](#variance-v1-NamedVariantChoice)
     - [NamedVariantConfiguration](#variance-v1-NamedVariantConfiguration)
     - [VariantConfiguration](#variance-v1-VariantConfiguration)
     - [VariantSelection](#variance-v1-VariantSelection)
-  
+
 - [process/v1/generation_requests.proto](#process_v1_generation_requests-proto)
     - [DraftDisassemblyProcessRecipeGenerateRequest](#process-v1-DraftDisassemblyProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateIssue](#process-v1-DraftProcessRecipeGenerateIssue)
     - [DraftProcessRecipeGenerateRequest](#process-v1-DraftProcessRecipeGenerateRequest)
     - [DraftProcessRecipeGenerateResult](#process-v1-DraftProcessRecipeGenerateResult)
-  
+
     - [VariantGenerationMode](#process-v1-VariantGenerationMode)
-  
+
+- [product/v1/part_family.proto](#product_v1_part_family-proto)
+    - [PartFamilies](#product-v1-PartFamilies)
+    - [PartFamily](#product-v1-PartFamily)
+    - [PartFamilyDimension](#product-v1-PartFamilyDimension)
+    - [PartFamilyMembership](#product-v1-PartFamilyMembership)
+    - [PartFamilyMembership.ValuesEntry](#product-v1-PartFamilyMembership-ValuesEntry)
+
+    - [PartFamilyKind](#product-v1-PartFamilyKind)
+
 - [product/v1/part_definition.proto](#product_v1_part_definition-proto)
     - [Dimensions](#product-v1-Dimensions)
     - [MaterialSpec](#product-v1-MaterialSpec)
@@ -466,14 +476,14 @@
     - [PartDefinitions](#product-v1-PartDefinitions)
     - [PartHandlingProfile](#product-v1-PartHandlingProfile)
     - [PartProcessProfile](#product-v1-PartProcessProfile)
-  
+
     - [MaterialCategory](#product-v1-MaterialCategory)
     - [PartType](#product-v1-PartType)
-  
+
 - [process/v1/kitting_generation.proto](#process_v1_kitting_generation-proto)
     - [DraftKittingProcessRecipeGenerateRequest](#process-v1-DraftKittingProcessRecipeGenerateRequest)
     - [KittingItemRoutingOverride](#process-v1-KittingItemRoutingOverride)
-  
+
     - [KittingAggregationMode](#process-v1-KittingAggregationMode)
     - [KittingBomMode](#process-v1-KittingBomMode)
     - [KittingItemAction](#process-v1-KittingItemAction)
@@ -481,36 +491,36 @@
     - [KittingItemValidationMode](#process-v1-KittingItemValidationMode)
     - [KittingTaskGranularity](#process-v1-KittingTaskGranularity)
     - [UnresolvedKittingItemPolicy](#process-v1-UnresolvedKittingItemPolicy)
-  
+
 - [product/v1/assembly_node.proto](#product_v1_assembly_node-proto)
     - [AssemblyNode](#product-v1-AssemblyNode)
-  
+
     - [JoinMethod](#product-v1-JoinMethod)
     - [NodeKind](#product-v1-NodeKind)
-  
+
 - [product/v1/part_instance.proto](#product_v1_part_instance-proto)
     - [PartInstance](#product-v1-PartInstance)
     - [PartInstanceLocation](#product-v1-PartInstanceLocation)
     - [PartInstances](#product-v1-PartInstances)
     - [QuantityStatus](#product-v1-QuantityStatus)
-  
+
 - [product/v1/part_instance_requests.proto](#product_v1_part_instance_requests-proto)
     - [BulkCreatePartInstancesRequest](#product-v1-BulkCreatePartInstancesRequest)
     - [PartInstanceBulkCreateSpec](#product-v1-PartInstanceBulkCreateSpec)
-  
+
 - [variance/v1/variant_axis.proto](#variance_v1_variant_axis-proto)
     - [DerivedVariantOption](#variance-v1-DerivedVariantOption)
     - [VariantAxis](#variance-v1-VariantAxis)
     - [VariantDerivation](#variance-v1-VariantDerivation)
     - [VariantOption](#variance-v1-VariantOption)
-  
+
 - [variance/v1/variant_group.proto](#variance_v1_variant_group-proto)
     - [VariantGroup](#variance-v1-VariantGroup)
-  
+
 - [product/v1/product_definition.proto](#product_v1_product_definition-proto)
     - [ProductDefinition](#product-v1-ProductDefinition)
     - [ProductDefinitions](#product-v1-ProductDefinitions)
-  
+
 - [resources/v1/model.proto](#resources_v1_model-proto)
     - [FileLocation](#resources-v1-FileLocation)
     - [ImageAssetRef](#resources-v1-ImageAssetRef)
@@ -518,7 +528,7 @@
     - [ModelArtifacts](#resources-v1-ModelArtifacts)
     - [ModelAssetRef](#resources-v1-ModelAssetRef)
     - [SidecarAssetRef](#resources-v1-SidecarAssetRef)
-  
+
     - [ImageAssetFormat](#resources-v1-ImageAssetFormat)
     - [ModelAssetFormat](#resources-v1-ModelAssetFormat)
     - [ModelAssetRole](#resources-v1-ModelAssetRole)
@@ -527,206 +537,210 @@
     - [ModelStorageBackend](#resources-v1-ModelStorageBackend)
     - [ModelUnit](#resources-v1-ModelUnit)
     - [SidecarAssetFormat](#resources-v1-SidecarAssetFormat)
-  
+
 - [resources/v1/model_requests.proto](#resources_v1_model_requests-proto)
     - [CreateModelArtifact](#resources-v1-CreateModelArtifact)
     - [UploadedObject](#resources-v1-UploadedObject)
-  
+
 - [service/v1/response.proto](#service_v1_response-proto)
     - [Response](#service-v1-Response)
     - [ValidationViolation](#service-v1-ValidationViolation)
-  
+
     - [MutationStatus](#service-v1-MutationStatus)
-  
+
 - [product/v1/product_import.proto](#product_v1_product_import-proto)
     - [ImportProduct](#product-v1-ImportProduct)
     - [ImportProductResult](#product-v1-ImportProductResult)
     - [ImportedEntity](#product-v1-ImportedEntity)
     - [ImportedModel](#product-v1-ImportedModel)
     - [ImportedPart](#product-v1-ImportedPart)
-  
+    - [ImportedPartFamily](#product-v1-ImportedPartFamily)
+    - [ImportedPartFamilyMembership](#product-v1-ImportedPartFamilyMembership)
+    - [ImportedPartFamilyMembership.ValuesEntry](#product-v1-ImportedPartFamilyMembership-ValuesEntry)
+    - [ImportedPartFamilyMemberships](#product-v1-ImportedPartFamilyMemberships)
+
 - [resources/v1/asset_adapter_definition.proto](#resources_v1_asset_adapter_definition-proto)
     - [AssetAdapterDefinition](#resources-v1-AssetAdapterDefinition)
     - [AssetAdapterDefinitions](#resources-v1-AssetAdapterDefinitions)
-  
+
 - [resources/v1/asset_instance.proto](#resources_v1_asset_instance-proto)
     - [AssetInstance](#resources-v1-AssetInstance)
     - [AssetInstances](#resources-v1-AssetInstances)
-  
+
 - [resources/v1/placement.proto](#resources_v1_placement-proto)
     - [AssetPlacement](#resources-v1-AssetPlacement)
     - [MarkerPlacement](#resources-v1-MarkerPlacement)
     - [RobotPlacement](#resources-v1-RobotPlacement)
     - [ToolPlacement](#resources-v1-ToolPlacement)
-  
+
 - [resources/v1/cell_definition.proto](#resources_v1_cell_definition-proto)
     - [CellDefinition](#resources-v1-CellDefinition)
     - [CellDefinitions](#resources-v1-CellDefinitions)
-  
+
     - [CellStatus](#resources-v1-CellStatus)
-  
+
 - [resources/v1/container_instance.proto](#resources_v1_container_instance-proto)
     - [ContainerInstance](#resources-v1-ContainerInstance)
     - [ContainerInstances](#resources-v1-ContainerInstances)
     - [ContainerLocation](#resources-v1-ContainerLocation)
-  
+
 - [resources/v1/device.proto](#resources_v1_device-proto)
     - [DeviceHeartbeat](#resources-v1-DeviceHeartbeat)
     - [DeviceMessage](#resources-v1-DeviceMessage)
     - [DeviceMessages](#resources-v1-DeviceMessages)
-  
+
     - [DeviceBatteryStatus](#resources-v1-DeviceBatteryStatus)
     - [DeviceStatus](#resources-v1-DeviceStatus)
     - [DeviceType](#resources-v1-DeviceType)
-  
+
 - [resources/v1/line_definition.proto](#resources_v1_line_definition-proto)
     - [LineDefinition](#resources-v1-LineDefinition)
     - [LineDefinitions](#resources-v1-LineDefinitions)
-  
+
     - [LineStatus](#resources-v1-LineStatus)
     - [LineType](#resources-v1-LineType)
-  
+
 - [resources/v1/marker_instance.proto](#resources_v1_marker_instance-proto)
     - [MarkerInstance](#resources-v1-MarkerInstance)
     - [MarkerInstances](#resources-v1-MarkerInstances)
-  
+
     - [MarkerType](#resources-v1-MarkerType)
-  
+
 - [resources/v1/robot_definition.proto](#resources_v1_robot_definition-proto)
     - [DefaultRobotSkill](#resources-v1-DefaultRobotSkill)
     - [RobotDefinition](#resources-v1-RobotDefinition)
     - [RobotDefinitions](#resources-v1-RobotDefinitions)
-  
+
     - [RobotType](#resources-v1-RobotType)
-  
+
 - [robot/v1/robot_io_catalog.proto](#robot_v1_robot_io_catalog-proto)
     - [RobotIORegisterKind](#robot-v1-RobotIORegisterKind)
-  
+
 - [resources/v1/robot_adapter_definition.proto](#resources_v1_robot_adapter_definition-proto)
     - [RobotAdapterDefinition](#resources-v1-RobotAdapterDefinition)
     - [RobotAdapterDefinitions](#resources-v1-RobotAdapterDefinitions)
-  
+
 - [resources/v1/robot_instance.proto](#resources_v1_robot_instance-proto)
     - [RobotInstance](#resources-v1-RobotInstance)
     - [RobotInstances](#resources-v1-RobotInstances)
-  
+
 - [resources/v1/station_definition.proto](#resources_v1_station_definition-proto)
     - [StationDefinition](#resources-v1-StationDefinition)
     - [StationDefinitions](#resources-v1-StationDefinitions)
-  
+
     - [StationStatus](#resources-v1-StationStatus)
     - [StationType](#resources-v1-StationType)
-  
+
 - [resources/v1/tool_definition.proto](#resources_v1_tool_definition-proto)
     - [ToolDefinition](#resources-v1-ToolDefinition)
     - [ToolDefinitions](#resources-v1-ToolDefinitions)
-  
+
     - [ToolType](#resources-v1-ToolType)
-  
+
 - [resources/v1/tool_instance.proto](#resources_v1_tool_instance-proto)
     - [ToolInstance](#resources-v1-ToolInstance)
     - [ToolInstances](#resources-v1-ToolInstances)
-  
+
 - [resources/v1/worker_definition.proto](#resources_v1_worker_definition-proto)
     - [WorkerDefinition](#resources-v1-WorkerDefinition)
     - [WorkerDefinitions](#resources-v1-WorkerDefinitions)
-  
+
     - [EditPermission](#resources-v1-EditPermission)
     - [Handedness](#resources-v1-Handedness)
     - [InteractionSide](#resources-v1-InteractionSide)
     - [TextSizePreference](#resources-v1-TextSizePreference)
     - [WorkerRole](#resources-v1-WorkerRole)
-  
+
 - [robot/v1/end_effector.proto](#robot_v1_end_effector-proto)
     - [EndEffectorStateMessage](#robot-v1-EndEffectorStateMessage)
-  
+
 - [robot/v1/jointstate.proto](#robot_v1_jointstate-proto)
     - [JointStateMessage](#robot-v1-JointStateMessage)
-  
+
 - [robot/v1/path.proto](#robot_v1_path-proto)
     - [PathMessage](#robot-v1-PathMessage)
-  
+
 - [robot/v1/popup.proto](#robot_v1_popup-proto)
     - [RobotHidePopupRequest](#robot-v1-RobotHidePopupRequest)
     - [RobotShowPopupRequest](#robot-v1-RobotShowPopupRequest)
-  
+
 - [robot/v1/program_state.proto](#robot_v1_program_state-proto)
     - [ProgramStateMessage](#robot-v1-ProgramStateMessage)
-  
+
     - [ProgramState](#robot-v1-ProgramState)
-  
+
 - [robot/v1/program_state_request.proto](#robot_v1_program_state_request-proto)
     - [AcknowledgeRobot](#robot-v1-AcknowledgeRobot)
     - [ProgramStateRequest](#robot-v1-ProgramStateRequest)
     - [RobotFreeDriveRequest](#robot-v1-RobotFreeDriveRequest)
-  
+
 - [robot/v1/robot_controller_status.proto](#robot_v1_robot_controller_status-proto)
     - [RobotControllerStatusMessage](#robot-v1-RobotControllerStatusMessage)
-  
+
     - [RobotControlAuthority](#robot-v1-RobotControlAuthority)
     - [RobotMode](#robot-v1-RobotMode)
     - [RobotOperationalMode](#robot-v1-RobotOperationalMode)
     - [RobotSafetyStatus](#robot-v1-RobotSafetyStatus)
-  
+
 - [robot/v1/robot_io.proto](#robot_v1_robot_io-proto)
     - [RobotIOCommand](#robot-v1-RobotIOCommand)
     - [RobotIOSignalValue](#robot-v1-RobotIOSignalValue)
     - [RobotIOState](#robot-v1-RobotIOState)
-  
+
 - [robot/v1/robot_state.proto](#robot_v1_robot_state-proto)
     - [RobotStateMessage](#robot-v1-RobotStateMessage)
-  
+
     - [RobotState](#robot-v1-RobotState)
-  
+
 - [robot/v1/robot_visibility.proto](#robot_v1_robot_visibility-proto)
     - [RobotVisibilityMessage](#robot-v1-RobotVisibilityMessage)
-  
+
 - [robot/v1/tcp.proto](#robot_v1_tcp-proto)
     - [TcpMessage](#robot-v1-TcpMessage)
-  
+
 - [robot/v1/waypoints.proto](#robot_v1_waypoints-proto)
     - [WaypointMessage](#robot-v1-WaypointMessage)
     - [WaypointsMessage](#robot-v1-WaypointsMessage)
-  
+
 - [runtime/v1/actor_assignment.proto](#runtime_v1_actor_assignment-proto)
     - [ActorAssignment](#runtime-v1-ActorAssignment)
     - [ActorAssignments](#runtime-v1-ActorAssignments)
     - [TaskActorAssignmentStatus](#runtime-v1-TaskActorAssignmentStatus)
-  
+
     - [TaskActorAssignmentReason](#runtime-v1-TaskActorAssignmentReason)
     - [TaskActorAssignmentState](#runtime-v1-TaskActorAssignmentState)
-  
+
 - [runtime/v1/actor_availability.proto](#runtime_v1_actor_availability-proto)
     - [ActorAvailabilities](#runtime-v1-ActorAvailabilities)
     - [ActorAvailability](#runtime-v1-ActorAvailability)
     - [ActorLocation](#runtime-v1-ActorLocation)
-  
+
     - [ActorAvailabilitySource](#runtime-v1-ActorAvailabilitySource)
     - [ActorAvailabilityStatus](#runtime-v1-ActorAvailabilityStatus)
-  
+
 - [runtime/v1/actor_availability_requests.proto](#runtime_v1_actor_availability_requests-proto)
     - [ActorAvailabilityOverrideClearRequest](#runtime-v1-ActorAvailabilityOverrideClearRequest)
     - [ActorAvailabilityOverrideRequest](#runtime-v1-ActorAvailabilityOverrideRequest)
     - [ActorAvailabilityReportRequest](#runtime-v1-ActorAvailabilityReportRequest)
-  
+
 - [runtime/v1/execution_evidence.proto](#runtime_v1_execution_evidence-proto)
     - [EvidenceFact](#runtime-v1-EvidenceFact)
     - [ExecutionEvidence](#runtime-v1-ExecutionEvidence)
     - [ExecutionEvidences](#runtime-v1-ExecutionEvidences)
-  
+
 - [runtime/v1/process_run.proto](#runtime_v1_process_run-proto)
     - [ProcessRun](#runtime-v1-ProcessRun)
     - [ProcessRun.PartDefinitionRevisionsEntry](#runtime-v1-ProcessRun-PartDefinitionRevisionsEntry)
     - [ProcessRuns](#runtime-v1-ProcessRuns)
     - [RunParameter](#runtime-v1-RunParameter)
-  
+
     - [ProcessRunState](#runtime-v1-ProcessRunState)
-  
+
 - [runtime/v1/runtime_restriction.proto](#runtime_v1_runtime_restriction-proto)
     - [RuntimeRestriction](#runtime-v1-RuntimeRestriction)
-  
+
     - [RestrictionType](#runtime-v1-RestrictionType)
-  
+
 - [runtime/v1/process_requests.proto](#runtime_v1_process_requests-proto)
     - [CandidateActorEvaluation](#runtime-v1-CandidateActorEvaluation)
     - [ProcessLoadRequest](#runtime-v1-ProcessLoadRequest)
@@ -735,7 +749,7 @@
     - [ProcessRunPrecheckResult](#runtime-v1-ProcessRunPrecheckResult)
     - [TaskFeasibility](#runtime-v1-TaskFeasibility)
     - [TaskToolProvision](#runtime-v1-TaskToolProvision)
-  
+
     - [AllocationStrategy](#runtime-v1-AllocationStrategy)
     - [ProcessLoadFailure](#runtime-v1-ProcessLoadFailure)
     - [ProcessLoadStatus](#runtime-v1-ProcessLoadStatus)
@@ -743,13 +757,13 @@
     - [ProcessRunIssueSeverity](#runtime-v1-ProcessRunIssueSeverity)
     - [ProcessRunPrecheckStatus](#runtime-v1-ProcessRunPrecheckStatus)
     - [RequirementImportance](#runtime-v1-RequirementImportance)
-  
+
 - [runtime/v1/process_run_definitions.proto](#runtime_v1_process_run_definitions-proto)
     - [ProcessRunDefinitions](#runtime-v1-ProcessRunDefinitions)
     - [ProcessRunDefinitionsRequest](#runtime-v1-ProcessRunDefinitionsRequest)
-  
+
     - [ProcessRunDefinitionsSource](#runtime-v1-ProcessRunDefinitionsSource)
-  
+
 - [runtime/v1/runtime_requests.proto](#runtime_v1_runtime_requests-proto)
     - [ProcessAbortRequest](#runtime-v1-ProcessAbortRequest)
     - [SequenceCompleteRequest](#runtime-v1-SequenceCompleteRequest)
@@ -757,55 +771,55 @@
     - [TaskProgressUpdate](#runtime-v1-TaskProgressUpdate)
     - [TaskReassignRequest](#runtime-v1-TaskReassignRequest)
     - [TaskStateChangeRequest](#runtime-v1-TaskStateChangeRequest)
-  
+
     - [TaskProgressPhase](#runtime-v1-TaskProgressPhase)
     - [TaskStateRequest](#runtime-v1-TaskStateRequest)
-  
+
 - [runtime/v1/sequence_run.proto](#runtime_v1_sequence_run-proto)
     - [SequenceRun](#runtime-v1-SequenceRun)
     - [SequenceRuns](#runtime-v1-SequenceRuns)
-  
+
     - [SequenceRunState](#runtime-v1-SequenceRunState)
-  
+
 - [runtime/v1/task_run.proto](#runtime_v1_task_run-proto)
     - [TaskRun](#runtime-v1-TaskRun)
     - [TaskRuns](#runtime-v1-TaskRuns)
     - [TaskRuntimeBinding](#runtime-v1-TaskRuntimeBinding)
-  
+
     - [TaskRunState](#runtime-v1-TaskRunState)
-  
+
 - [runtime/v1/validation_result.proto](#runtime_v1_validation_result-proto)
     - [ValidationResult](#runtime-v1-ValidationResult)
-  
+
     - [ValidationStatus](#runtime-v1-ValidationStatus)
-  
+
 - [seed/v1/seed.proto](#seed_v1_seed-proto)
     - [Seed](#seed-v1-Seed)
-  
+
 - [seed/v1/seed_file.proto](#seed_v1_seed_file-proto)
     - [SeedFile](#seed-v1-SeedFile)
     - [SeedFiles](#seed-v1-SeedFiles)
-  
+
 - [seed/v1/seed_request.proto](#seed_v1_seed_request-proto)
     - [LoadSeedRequest](#seed-v1-LoadSeedRequest)
     - [SaveSeedRequest](#seed-v1-SaveSeedRequest)
-  
+
     - [SaveSeedEntity](#seed-v1-SaveSeedEntity)
-  
+
 - [service/v1/ar_client.proto](#service_v1_ar_client-proto)
     - [ARClientMessage](#service-v1-ARClientMessage)
-  
+
     - [ARClientRole](#service-v1-ARClientRole)
-  
+
 - [service/v1/server.proto](#service_v1_server-proto)
     - [ServerHeartbeat](#service-v1-ServerHeartbeat)
     - [ServerInfo](#service-v1-ServerInfo)
-  
+
 - [service/v1/status.proto](#service_v1_status-proto)
     - [ServiceStatus](#service-v1-ServiceStatus)
-  
+
     - [Status](#service-v1-Status)
-  
+
 - [service/v1/storage.proto](#service_v1_storage-proto)
     - [StorageClearRequest](#service-v1-StorageClearRequest)
     - [StorageCollectGarbageRequest](#service-v1-StorageCollectGarbageRequest)
@@ -818,7 +832,7 @@
     - [StorageLoadRequest](#service-v1-StorageLoadRequest)
     - [StorageObject](#service-v1-StorageObject)
     - [StorageSeedRecord](#service-v1-StorageSeedRecord)
-  
+
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -829,9 +843,9 @@
 ## validation/v1/predefined_string_rules.proto
 
 
- 
 
- 
+
+
 
 
 <a name="validation_v1_predefined_string_rules-proto-extensions"></a>
@@ -871,6 +885,7 @@
 | name_component | bool | .buf.validate.StringRules | 10000 |  |
 | not_blank | bool | .buf.validate.StringRules | 10049 |  |
 | part_definition_id_component | bool | .buf.validate.StringRules | 10009 |  |
+| part_family_id_component | bool | .buf.validate.StringRules | 10053 |  |
 | part_instance_id_component | bool | .buf.validate.StringRules | 10010 |  |
 | presentation_strategy_id_component | bool | .buf.validate.StringRules | 10043 |  |
 | process_recipe_id_component | bool | .buf.validate.StringRules | 10020 |  |
@@ -893,9 +908,9 @@
 | worker_id_component | bool | .buf.validate.StringRules | 100027 |  |
 | zone_id_component | bool | .buf.validate.StringRules | 100037 |  |
 
- 
 
- 
+
+
 
 
 
@@ -950,7 +965,7 @@ Where the system might have to create/delete {Strategy, Managed} when moving bet
 
 
 
- 
+
 
 
 <a name="ar-v1-ARContentOrigin"></a>
@@ -979,11 +994,11 @@ Where the system might have to create/delete {Strategy, Managed} when moving bet
 | ADAPTIVE_PARTICIPATION_MANAGED | 3 | Strategy-owned content whose lifecycle is controlled by reconciliation. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1009,7 +1024,7 @@ Where the system might have to create/delete {Strategy, Managed} when moving bet
 
 
 
- 
+
 
 
 <a name="common-v1-ActorKind"></a>
@@ -1025,11 +1040,11 @@ Where the system might have to create/delete {Strategy, Managed} when moving bet
 | ACTOR_KIND_HYBRID | 3 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1139,7 +1154,7 @@ to derive validity, degradation, and recovery behavior for this actor skill.
 
 
 
- 
+
 
 
 <a name="capability-v1-SkillInvalidityReason"></a>
@@ -1251,11 +1266,11 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | SKILL_STATUS_EXPIRED | 3 | Skill is no longer valid and cannot be used. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1283,7 +1298,7 @@ Examples: - AR guidance required - manual confirmation required - second check r
 
 
 
- 
+
 
 
 <a name="common-v1-ConstraintOperator"></a>
@@ -1304,11 +1319,11 @@ Examples: - AR guidance required - manual confirmation required - second check r
 | CONSTRAINT_OPERATOR_NOT_IN | 8 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1335,13 +1350,13 @@ Examples: - AR guidance required - manual confirmation required - second check r
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -1447,7 +1462,7 @@ It will result in AUTHOR/AVAILABLE.
 
 
 
- 
+
 
 
 <a name="ar-v1-ActionType"></a>
@@ -1475,11 +1490,11 @@ It will result in AUTHOR/AVAILABLE.
 | ACTION_TYPE_ROBOT_CONFIGURABLE_INPUT | 55 | Activates a configured robot input. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1489,7 +1504,7 @@ It will result in AUTHOR/AVAILABLE.
 ## ar/v1/definition_status.proto
 
 
- 
+
 
 
 <a name="ar-v1-DefinitionStatus"></a>
@@ -1508,11 +1523,11 @@ exposes no create, update, or delete messages for them.
 | DEFINITION_STATUS_DISABLED | 3 | Not available for new instances or runtime execution. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1595,7 +1610,7 @@ TODO: should this be a field of ARConfig?
 
 
 
- 
+
 
 
 <a name="ar-v1-CommandType"></a>
@@ -1690,11 +1705,11 @@ It is expected to be high-frequency updates or at least updates every time the s
 | TELEMETRY_TYPE_ROBOT_STATE | 110 | Current robot state. Check robot.v1.robot_state.proto for actual values. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1725,13 +1740,13 @@ to execute or render a built-in definition.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -1759,13 +1774,13 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -1791,13 +1806,13 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -1824,13 +1839,13 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -1858,13 +1873,13 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -1910,7 +1925,7 @@ A simple pose consisting of a position and orientation
 
 
 
- 
+
 
 
 <a name="geometry-v1-LocalizedState"></a>
@@ -1926,11 +1941,11 @@ A simple pose consisting of a position and orientation
 | LOCALIZED_STATE_STATIC | 3 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -1957,13 +1972,13 @@ A simple pose consisting of a position and orientation
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -2350,7 +2365,7 @@ PropertyValue
 
 
 
- 
+
 
 
 <a name="common-v1-PropertyGroup"></a>
@@ -2503,11 +2518,11 @@ Used to specify the type of a property
 | PROPERTY_TYPE_WORKER | 15 | Worker type property - worker_id as string |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -2554,7 +2569,7 @@ of the transport or controller register that implements it.
 
 
 
- 
+
 
 
 <a name="common-v1-SignalDataType"></a>
@@ -2595,11 +2610,11 @@ the adapter-specific signal id. Unspecified is valid for non-standard signals.
 | SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE | 101 | Robot output that puts the robot in free drive while it is set, e.g. a digital output wired to a configurable input with the Freedrive action, or a register that the robot program watches. The adapter sets it for FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but not writable by clients. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -2678,7 +2693,7 @@ the adapter-specific signal id. Unspecified is valid for non-standard signals.
 
 
 
- 
+
 
 
 <a name="resources-v1-AssetAdapterCommandType"></a>
@@ -2712,11 +2727,11 @@ the adapter-specific signal id. Unspecified is valid for non-standard signals.
 | ASSET_ADAPTER_TELEMETRY_TYPE_RESULT | 4 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -2780,7 +2795,7 @@ TODO: add ToolRole or similar way to express capabilities?
 
 
 
- 
+
 
 
 <a name="resources-v1-AssetType"></a>
@@ -2815,11 +2830,11 @@ TODO: add ToolRole or similar way to express capabilities?
 | VALIDATION_MODE_SURFACE_CHECK | 5 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -2913,7 +2928,7 @@ TODO: add ToolRole or similar way to express capabilities?
 
 
 
- 
+
 
 
 <a name="robot-v1-RobotAdapterCommandType"></a>
@@ -2970,11 +2985,11 @@ publishes, however it gets it (e.g. from the robot program).
 | ROBOT_ADAPTER_TELEMETRY_TYPE_IO_STATE | 5 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -3124,7 +3139,7 @@ signal matching the data type and direction satisfies the requirement.
 
 
 
- 
+
 
 
 <a name="resources-v1-ResourceRequirementLevel"></a>
@@ -3140,11 +3155,11 @@ resource capability is unavailable.
 | RESOURCE_REQUIREMENT_LEVEL_OPTIONAL | 2 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -3196,7 +3211,7 @@ share a type, and that at most one revision per key/type is ACTIVE.
 
 
 
- 
+
 
 
 <a name="ar-v1-ActionGroup"></a>
@@ -3212,11 +3227,11 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | ACTION_GROUP_TASK | 3 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -3337,7 +3352,7 @@ UNSPECIFIED to mean any data type.
 
 
 
- 
+
 
 
 <a name="ar-v1-ARResourceBindingStatus"></a>
@@ -3356,11 +3371,11 @@ against a slot&#39;s explicit and consumer-derived requirements.
 | AR_RESOURCE_BINDING_STATUS_OFFLINE | 5 | The adapter of the bound resource isn&#39;t running, so none of the slot&#39;s requirements are available until it is back. unmet_requirements lists every requirement, required and optional, with the consumers that need it; a slot without requirements keeps its status. This is runtime state: the backend doesn&#39;t store it and reports it only for existing bindings, never for binding candidates. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -3445,13 +3460,13 @@ their consumer.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -3620,7 +3635,7 @@ context slot&#39;s generated property remains empty.
 
 
 
- 
+
 
 
 <a name="ar-v1-ARContextSlotType"></a>
@@ -3697,11 +3712,11 @@ The selected task need not currently be workable. Tasks that cannot be assigned 
 | AR_RUN_SELECTION_FIRST_IN_ERROR | 5 | Select the first ordered ERROR task associated with the actor. This policy is valid only for TASK_RUN_ID. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -3764,13 +3779,13 @@ are implementation dependencies and should be reconciled by the backend.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -3894,7 +3909,7 @@ are later materialized through ARConfigBindingMessage and runtime resolution.
 
 
 
- 
+
 
 
 <a name="ar-v1-ARConfigPrimaryType"></a>
@@ -3924,11 +3939,11 @@ actions, properties, and input slots.
 | AR_CONFIG_PRIMARY_TYPE_SAFETY_GUIDANCE | 9 | Safety-focused configuration used to communicate hazards, restricted zones, required approvals, or critical warnings. Typical defaults: warning/error colors, safety zones, alert sounds, approval prompts, and high-visibility icons. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4032,7 +4047,7 @@ It will result in AUTHOR/AVAILABLE
 
 
 
- 
+
 
 
 <a name="ar-v1-FeedbackType"></a>
@@ -4120,11 +4135,11 @@ Custom training video       MANUAL_ONLY
 | FEEDBACK_TYPE_PLAY_SOUND | 204 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4151,7 +4166,7 @@ Custom training video       MANUAL_ONLY
 
 
 
- 
+
 
 
 <a name="ar-v1-AssistanceScalingAxis"></a>
@@ -4181,11 +4196,11 @@ Custom training video       MANUAL_ONLY
 | PROPERTY_INFLUENCE_TYPE_SELECTS | 3 | Property selects between discrete representations/modes. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4212,7 +4227,7 @@ Custom training video       MANUAL_ONLY
 
 
 
- 
+
 
 
 <a name="ar-v1-AssistanceSemantic"></a>
@@ -4281,11 +4296,11 @@ Custom training video       MANUAL_ONLY
 | SEMANTIC_VALUE_TYPE_PROCESS_TRANSITION | 20 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4313,13 +4328,13 @@ Capability says what assistance it can provide.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -4351,13 +4366,13 @@ Feature says what behavior/configuration the implementation exposes.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -4411,7 +4426,7 @@ share a type, and that at most one revision per key/type is ACTIVE.
 
 
 
- 
+
 
 
 <a name="ar-v1-FeedbackGroup"></a>
@@ -4431,11 +4446,11 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | FEEDBACK_GROUP_COLLABORATION | 7 | Human-robot collaboration semantics. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4519,7 +4534,7 @@ share a type, and that at most one revision per key/type is ACTIVE.
 
 
 
- 
+
 
 
 <a name="ar-v1-FunctionType"></a>
@@ -4559,11 +4574,11 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | FUNCTION_TYPE_ROBOT_STATE | 123 | Outputs a robot&#39;s state (robot.v1.RobotState). |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4615,7 +4630,7 @@ share a type, and that at most one revision per key/type is ACTIVE.
 
 
 
- 
+
 
 
 <a name="ar-v1-FunctionGroup"></a>
@@ -4637,11 +4652,11 @@ share a type, and that at most one revision per key/type is ACTIVE.
 | FUNCTION_GROUP_TEMPORAL | 9 | Functions related to durations, timing, and schedules. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4825,7 +4840,7 @@ the presentation role.
 
 
 
- 
+
 
 
 <a name="ar-v1-PresentationFidelity"></a>
@@ -4841,11 +4856,11 @@ the presentation role.
 | PRESENTATION_FIDELITY_HIGH | 3 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4855,7 +4870,7 @@ the presentation role.
 ## common/v1/enums.proto
 
 
- 
+
 
 
 <a name="common-v1-CollaborationMode"></a>
@@ -4941,11 +4956,11 @@ Examples: - safety-critical fasteners - interacting with safety systems - hazard
 Systems should require strict validation, restricted actor permissions, and explicit confirmation before completion. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -4972,13 +4987,13 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5011,13 +5026,13 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5066,7 +5081,7 @@ Systems should require strict validation, restricted actor permissions, and expl
 
 
 
- 
+
 
 
 <a name="capability-v1-SkillDomain"></a>
@@ -5153,11 +5168,11 @@ This domain is particularly relevant in human-robot collaboration environments. 
 | TOOL_ROLE_WIPE_CLEAN | 13 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -5194,7 +5209,7 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 
- 
+
 
 
 <a name="capability-v1-ToolProperty"></a>
@@ -5213,11 +5228,11 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 | TOOL_PROPERTY_QUICK_CHANGE | 6 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -5261,13 +5276,13 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5296,13 +5311,13 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5328,13 +5343,13 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5361,13 +5376,13 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5387,13 +5402,13 @@ ESD tweezers for an ESD-sensitive part, or a robot&#39;s gripper.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5424,13 +5439,13 @@ required, since the pair is what an import matches earlier imports by
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5486,13 +5501,13 @@ Used to retrieve entities which have a field with the given value. The actual fi
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5632,7 +5647,7 @@ Source-code location when available.
 
 
 
- 
+
 
 
 <a name="common-v1-LogSeverity"></a>
@@ -5654,11 +5669,11 @@ importance or process-run issue severity.
 | LOG_SEVERITY_FATAL | 6 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -5699,13 +5714,13 @@ importance or process-run issue severity.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5748,13 +5763,13 @@ importance or process-run issue severity.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5781,13 +5796,13 @@ importance or process-run issue severity.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5813,13 +5828,13 @@ importance or process-run issue severity.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5863,13 +5878,13 @@ importance or process-run issue severity.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5923,13 +5938,13 @@ are used only where &#34;any of&#34; is meant: exclusions.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -5993,7 +6008,7 @@ evaluated by the runtime according to the specified operator.
 
 
 
- 
+
 
 
 <a name="process-v1-SequenceOperator"></a>
@@ -6038,11 +6053,11 @@ The sequence completes when all selected children have completed.
 Example: Optional inspections: - Visual inspection - Torque verification - Leak test |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -6120,6 +6135,7 @@ Examples:
 | supported_root_part_definition_ids | [string](#string) | repeated | Root assemblies/root parts that this slot supports. |
 | supported_part_definition_ids | [string](#string) | repeated | Specific part definitions that this slot supports. |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Additional semantic/compatibility constraints such as orientation, handedness, or required variants. |
+| supported_part_family_ids | [string](#string) | repeated | Part families (product.v1.PartFamily) whose members this slot supports, so a slot for a case accepts every colour without listing each part (cobotar/protocol#36). A part is supported when it&#39;s in supported_part_definition_ids or a member of one of these families; with both empty, the slot supports any part. |
 
 
 
@@ -6146,7 +6162,7 @@ addressable place inside it.
 
 
 
- 
+
 
 
 <a name="resources-v1-ContainerSlotType"></a>
@@ -6187,11 +6203,11 @@ one or more addressable slots.
 | CONTAINER_TYPE_FIXTURE | 4 | A workholding/presentation container such as a base, clamp, jig, or pallet. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -6469,7 +6485,7 @@ They should stay reusable across workcells and deployments.
 
 
 
- 
+
 
 
 <a name="process-v1-ActorUnavailabilityPolicy"></a>
@@ -6531,11 +6547,11 @@ They should stay reusable across workcells and deployments.
 | TASK_TYPE_ACKNOWLEDGE | 19 | Start, stop, reset, open, close, |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -6759,7 +6775,7 @@ ignored.
 
 
 
- 
+
 
 
 <a name="process-v1-ProcessType"></a>
@@ -6778,11 +6794,11 @@ ignored.
 | PROCESS_TYPE_MAINTENANCE | 6 | Example: replace filter |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -6869,13 +6885,13 @@ ones included.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -6994,7 +7010,7 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 
 
 
- 
+
 
 
 <a name="process-v1-VariantGenerationMode"></a>
@@ -7009,11 +7025,148 @@ DraftProcessRecipeGenerateResult contains the generated draft recipe.
 | VARIANT_GENERATION_MODE_SELECTED_CONFIGURATION | 2 | Generate a recipe specialized for one concrete variant configuration. |
 
 
- 
 
- 
 
- 
+
+
+
+
+
+
+<a name="product_v1_part_family-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## product/v1/part_family.proto
+
+
+
+<a name="product-v1-PartFamilies"></a>
+
+### PartFamilies
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [PartFamily](#product-v1-PartFamily) | repeated |  |
+
+
+
+
+
+
+<a name="product-v1-PartFamily"></a>
+
+### PartFamily
+PartFamily links part definitions that belong together
+(cobotar/protocol#36). A part joins a family with a PartFamilyMembership in
+PartDefinition.families, which gives its value for every dimension of the
+family. A part belongs to at most one family of each kind. A family is
+global, like a part, so its members can be used in several products.
+
+Changes, enforced by the backend:
+- kind can&#39;t change after the family is created;
+- while the family has members (parts whose current revision names it),
+  dimensions can be renamed and reordered, but none can be added or removed
+  and no key can change, since every member gives a value for exactly the
+  family&#39;s dimensions;
+- a family can&#39;t be removed while a part&#39;s current revision or a container
+  slot names it. Earlier part revisions, kept for the runs that use them
+  (cobotar/protocol#19), keep their memberships as they were, and may name a
+  family that has since been removed: clients show them without it.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| name | [string](#string) |  |  |
+| icon | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| kind | [PartFamilyKind](#product-v1-PartFamilyKind) |  |  |
+| dimensions | [PartFamilyDimension](#product-v1-PartFamilyDimension) | repeated | How the members differ, e.g. colour and material. These are the family&#39;s own, not variant axes, since axes belong to one product and a family doesn&#39;t. |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
+| revision | [uint64](#uint64) |  | Revision of the part family, set by the backend: it increases with every change. An update has to carry the revision it was based on, and is refused if the family changed since. Ignored on create. |
+
+
+
+
+
+
+<a name="product-v1-PartFamilyDimension"></a>
+
+### PartFamilyDimension
+PartFamilyDimension is one way the members of a part family differ, e.g.
+the colour. Members give their value by key, so the name can be changed
+without touching them.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | Stable identifier within the family, e.g. &#34;colour&#34;. It can&#39;t change while the family has members. |
+| name | [string](#string) |  | Display name, e.g. &#34;Colour&#34;; can be changed at any time. |
+
+
+
+
+
+
+<a name="product-v1-PartFamilyMembership"></a>
+
+### PartFamilyMembership
+PartFamilyMembership says that a part belongs to a part family, and how it
+differs from the other members: its value for each dimension of the family,
+by dimension key, e.g. {&#34;colour&#34;: &#34;Alu-red&#34;}. The backend refuses a
+membership that misses a dimension or names a key the family doesn&#39;t have,
+and two members of a variant alternative family with the same values
+(compared ignoring case and surrounding whitespace).
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| family_id | [string](#string) |  |  |
+| values | [PartFamilyMembership.ValuesEntry](#product-v1-PartFamilyMembership-ValuesEntry) | repeated |  |
+
+
+
+
+
+
+<a name="product-v1-PartFamilyMembership-ValuesEntry"></a>
+
+### PartFamilyMembership.ValuesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+
+
+
+
+
+
+
+
+<a name="product-v1-PartFamilyKind"></a>
+
+### PartFamilyKind
+PartFamilyKind says how the members of a part family relate
+(cobotar/protocol#36). It&#39;s fixed when the family is created.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PART_FAMILY_KIND_UNSPECIFIED | 0 |  |
+| PART_FAMILY_KIND_VARIANT_ALTERNATIVE | 1 | The members are the same design in another colour, material or similar, e.g. the options of a disjoint variant axis (&#34;Case – Alu-red&#34;, &#34;Case – Alu-blue&#34;). The product&#39;s variant configuration picks one, so they aren&#39;t interchangeable within a process run: a slot or kitting override that names the family accepts every member, and the configuration decides which one a run needs. A variant family has at least one dimension, and no two of its members have the same values. |
+| PART_FAMILY_KIND_SUBSTITUTE | 2 | Any member will do, e.g. the same screw from two suppliers. Reserved for runtime substitution, which isn&#39;t specified yet: until then, clients and the backend treat a substitute family like any other grouping and don&#39;t swap one member for another. |
+
+
+
+
+
+
+
 
 
 
@@ -7091,6 +7244,7 @@ name: TPU, grade: 70 Shore A
 | external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated |  |
 | version | [string](#string) |  |  |
 | revision | [uint64](#uint64) |  | Revision of the part definition, set by the backend: it increases with every change (cobotar/protocol#19). It isn&#39;t the user-facing version. Revisions are immutable: a part definition at a given (id, revision) never changes, so clients may cache it. An update has to carry the revision of the part definition it was based on, and is refused if it changed since. Ignored on create. |
+| families | [PartFamilyMembership](#product-v1-PartFamilyMembership) | repeated | The part families this part belongs to, with its value for each of their dimensions (cobotar/protocol#36), e.g. the variant family of a case in several colours. At most one family of each kind; the backend refuses unknown families and a second family of a kind. An imported part names its families by key instead (ImportedPart.families). |
 
 
 
@@ -7160,7 +7314,7 @@ involving this part.
 
 
 
- 
+
 
 
 <a name="product-v1-MaterialCategory"></a>
@@ -7207,11 +7361,11 @@ involving this part.
 | PART_TYPE_SUBASSEMBLY | 21 | A part that is itself composed of multiple child parts, |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -7264,8 +7418,9 @@ inventory and container instances are resolved when creating a ProcessRun.
 <a name="process-v1-KittingItemRoutingOverride"></a>
 
 ### KittingItemRoutingOverride
-Overrides selection or static routing for one product occurrence or every
-occurrence of a particular part definition.
+Overrides selection or static routing for one product occurrence, every
+occurrence of a particular part definition, or every occurrence of a part in
+a part family.
 
 
 | Field | Type | Label | Description |
@@ -7275,12 +7430,13 @@ occurrence of a particular part definition.
 | action | [KittingItemAction](#process-v1-KittingItemAction) |  | Optionally force inclusion or exclusion. UNSPECIFIED only overrides routing. |
 | source | [ContainerTarget](#process-v1-ContainerTarget) |  | Optional authoring-time source constraint. References a container definition and optionally one of its storage slots—not a runtime instance. |
 | destination | [ContainerTarget](#process-v1-ContainerTarget) |  | Optional authoring-time destination constraint. References the target kit definition and optionally a particular kit slot. |
+| part_family_id | [string](#string) |  | Select every applicable occurrence of a part in this part family (product.v1.PartFamily, cobotar/protocol#36), e.g. the case in every colour. An override for an occurrence or a part applies before one for its family. |
 
 
 
 
 
- 
+
 
 
 <a name="process-v1-KittingAggregationMode"></a>
@@ -7387,11 +7543,11 @@ be resolved from container definitions and routing overrides.
 | UNRESOLVED_KITTING_ITEM_POLICY_SKIP | 3 | Omit the unresolved item and return a generation issue. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -7431,7 +7587,7 @@ TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just t
 
 
 
- 
+
 
 
 <a name="product-v1-JoinMethod"></a>
@@ -7474,11 +7630,11 @@ SUBASSEMBLY_OCCURRENCE assembly containing parts     ✅               ✅
 | NODE_KIND_SUBASSEMBLY_OCCURRENCE | 3 | Physical occurrence of an assembly that contains parts itself, hence it have child nodes. References a PartDefinition for the subassembly itself. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -7576,13 +7732,13 @@ Examples:
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -7641,13 +7797,13 @@ Omit this for independently tracked discrete parts. |
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -7733,13 +7889,13 @@ is saved.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -7782,13 +7938,13 @@ or material of an interchangeable part (cobotar/protocol#35).
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -7838,13 +7994,13 @@ TODO: add validation for: root_node_id, nodes
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -7997,7 +8153,7 @@ content_type: &#34;model/gltf-binary&#34;
 
 
 
- 
+
 
 
 <a name="resources-v1-ImageAssetFormat"></a>
@@ -8136,11 +8292,11 @@ content_type: &#34;model/gltf-binary&#34;
 | SIDECAR_ASSET_FORMAT_ZIP | 84 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -8217,13 +8373,13 @@ digest in the key, and fills in size, digest and content type.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -8269,7 +8425,7 @@ digest in the key, and fills in size, digest and content type.
 
 
 
- 
+
 
 
 <a name="service-v1-MutationStatus"></a>
@@ -8286,11 +8442,11 @@ digest in the key, and fills in size, digest and content type.
 | MUTATION_STATUS_DELETED | 4 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -8311,9 +8467,10 @@ only the models and parts. The backend applies it in one unit of work: it
 changes everything or nothing. The files are uploaded first (see
 resources.v1.UploadedObject).
 
-The models and parts have keys, which are only valid within the request: a
-part names its default model by model_key, and an assembly node names its
-part by the part&#39;s key in part_definition_id.
+The models, part families and parts have keys, which are only valid within
+the request: a part names its default model by model_key and its families by
+family_key (ImportedPart.families), and an assembly node names its part by
+the part&#39;s key in part_definition_id.
 
 Importing again is matched by external reference. An imported part or
 product that has an external reference (system and external_id) of an
@@ -8322,9 +8479,20 @@ updated part gets a new revision, so runs pinned to its earlier revision
 keep that one (cobotar/protocol#19). Models are matched by content hash, not
 by external reference: a model whose files changed is a new model, which the
 part&#39;s new revision points to, while the earlier model stays for the
-earlier revision. A part or product without external references is always
-created. An import is refused when two of its parts share a reference, or
-when one reference matches several existing parts or products.
+earlier revision. Part families are matched by external reference like
+parts (cobotar/protocol#36). A part, family or product without external
+references is always created. An import is refused when two of its parts or
+two of its families share a reference, or when one reference matches
+several existing parts, families or products.
+
+An imported part&#39;s memberships follow ImportedPart.families: when it&#39;s
+absent, an updated part keeps its memberships (so an exporter that doesn&#39;t
+know about families leaves them alone); when it&#39;s present, they&#39;re replaced
+with its items, and an empty list removes them. An imported family
+is created or updated with the request&#39;s dimensions, under the same rules
+as other changes to a family (PartFamily): a family with members keeps its
+dimension keys, so an import that adds or removes a dimension of such a
+family is refused.
 
 
 | Field | Type | Label | Description |
@@ -8333,6 +8501,7 @@ when one reference matches several existing parts or products.
 | parts | [ImportedPart](#product-v1-ImportedPart) | repeated |  |
 | product | [ProductDefinition](#product-v1-ProductDefinition) |  | The product, if the import has one. Its nodes name their parts by key in part_definition_id. |
 | product_model_key | [string](#string) |  | The key of the product&#39;s model (ProductDefinition.model_id) in the request, e.g. the whole assembly with its thumbnail; empty for none, which keeps the model of the product the import updates. |
+| families | [ImportedPartFamily](#product-v1-ImportedPartFamily) | repeated | The part families the parts name by key in ImportedPart.families. |
 
 
 
@@ -8351,6 +8520,7 @@ import is answered with a failed service.v1.Response.
 | product | [ImportedEntity](#product-v1-ImportedEntity) |  | Set when the import had a product. |
 | models | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per model of the request, in its order. |
 | parts | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per part of the request, in its order. |
+| families | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per part family of the request, in its order. |
 
 
 
@@ -8360,10 +8530,10 @@ import is answered with a failed service.v1.Response.
 <a name="product-v1-ImportedEntity"></a>
 
 ### ImportedEntity
-ImportedEntity is what an import did with one model, part or product:
-CREATED, UPDATED (a part&#39;s new revision, or the product), or UNCHANGED (an
-existing model with the same content, or a part or product that matched and
-didn&#39;t change).
+ImportedEntity is what an import did with one model, part family, part or
+product: CREATED, UPDATED (a part&#39;s or family&#39;s new revision, or the
+product), or UNCHANGED (an existing model with the same content, or a part,
+family or product that matched and didn&#39;t change).
 
 
 | Field | Type | Label | Description |
@@ -8397,8 +8567,9 @@ ImportedModel is a model of an ImportProduct, with its key in the request.
 
 ### ImportedPart
 ImportedPart is a part definition of an ImportProduct, with its key in the
-request. The part has no id, revision or default_model_id: it&#39;s matched by
-external reference, and names its default model by model_key.
+request. The part has no id, revision, default_model_id or families: it&#39;s
+matched by external reference, names its default model by model_key and its
+families by key in families.
 
 
 | Field | Type | Label | Description |
@@ -8406,18 +8577,86 @@ external reference, and names its default model by model_key.
 | key | [string](#string) |  |  |
 | part | [PartDefinition](#product-v1-PartDefinition) |  |  |
 | model_key | [string](#string) |  | The key of the part&#39;s default model in the request; empty for none. |
+| families | [ImportedPartFamilyMemberships](#product-v1-ImportedPartFamilyMemberships) |  | The part&#39;s families (ImportProduct.families, by key), at most one of each kind, with its value for each of their dimensions. Absent keeps the memberships of the part the import updates; present replaces them, and present but empty removes them. |
 
 
 
 
 
- 
 
- 
+<a name="product-v1-ImportedPartFamily"></a>
 
- 
+### ImportedPartFamily
+ImportedPartFamily is a part family of an ImportProduct, with its key in the
+request. The family has no id or revision: it&#39;s matched by external
+reference.
 
- 
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| family | [PartFamily](#product-v1-PartFamily) |  |  |
+
+
+
+
+
+
+<a name="product-v1-ImportedPartFamilyMembership"></a>
+
+### ImportedPartFamilyMembership
+ImportedPartFamilyMembership is a PartFamilyMembership of an imported part,
+naming the family by its key in the request.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| family_key | [string](#string) |  |  |
+| values | [ImportedPartFamilyMembership.ValuesEntry](#product-v1-ImportedPartFamilyMembership-ValuesEntry) | repeated | The part&#39;s value for each dimension of the family, by dimension key. |
+
+
+
+
+
+
+<a name="product-v1-ImportedPartFamilyMembership-ValuesEntry"></a>
+
+### ImportedPartFamilyMembership.ValuesEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="product-v1-ImportedPartFamilyMemberships"></a>
+
+### ImportedPartFamilyMemberships
+ImportedPartFamilyMemberships wraps an imported part&#39;s memberships, so an
+import can tell &#34;leave them&#34; (absent) from &#34;none&#34; (present, empty).
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| items | [ImportedPartFamilyMembership](#product-v1-ImportedPartFamilyMembership) | repeated |  |
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8465,13 +8704,13 @@ implementation independently of any connected asset instance.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -8516,13 +8755,13 @@ implementation independently of any connected asset instance.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -8600,13 +8839,13 @@ implementation independently of any connected asset instance.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -8678,7 +8917,7 @@ current location because they move independently through the system.
 
 
 
- 
+
 
 
 <a name="resources-v1-CellStatus"></a>
@@ -8713,11 +8952,11 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | CELL_STATUS_BLOCKED | 4 | Cell is temporarily unavailable due to fault, interlock, maintenance state, or similar blocking condition. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -8786,13 +9025,13 @@ Examples:
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -8858,7 +9097,7 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 
 
 
- 
+
 
 
 <a name="resources-v1-DeviceBatteryStatus"></a>
@@ -8903,11 +9142,11 @@ DeviceMessage hold basic information about AR-devices, such as a HoloLens2
 | DEVICE_TYPE_PC | 4 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -8966,7 +9205,7 @@ Typical line responsibilities:
 
 
 
- 
+
 
 
 <a name="resources-v1-LineStatus"></a>
@@ -9013,11 +9252,11 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | LINE_TYPE_UNSPECIFIED | 0 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9064,7 +9303,7 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 
 
 
- 
+
 
 
 <a name="resources-v1-MarkerType"></a>
@@ -9078,11 +9317,11 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | MARKER_TYPE_QR_CODE | 1 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9149,7 +9388,7 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 
 
 
- 
+
 
 
 <a name="resources-v1-RobotType"></a>
@@ -9166,11 +9405,11 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | ROBOT_TYPE_KUKA_IIWA | 20 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9180,7 +9419,7 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 ## robot/v1/robot_io_catalog.proto
 
 
- 
+
 
 
 <a name="robot-v1-RobotIORegisterKind"></a>
@@ -9204,11 +9443,11 @@ as a configured, named signal. Direction follows controller terminology.
 | ROBOT_IO_REGISTER_KIND_OUTPUT_DOUBLE_REGISTER | 22 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9257,13 +9496,13 @@ implementation independently of any connected robot instance.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9313,13 +9552,13 @@ implementation independently of any connected robot instance.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9390,7 +9629,7 @@ current location because they move independently through the system.
 
 
 
- 
+
 
 
 <a name="resources-v1-StationStatus"></a>
@@ -9439,11 +9678,11 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | STATION_TYPE_HYBRID_STATION | 4 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9493,7 +9732,7 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 
 
 
- 
+
 
 
 <a name="resources-v1-ToolType"></a>
@@ -9523,11 +9762,11 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | TOOL_TYPE_CLEANING | 17 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9575,13 +9814,13 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9637,7 +9876,7 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 
 
 
- 
+
 
 
 <a name="resources-v1-EditPermission"></a>
@@ -9724,11 +9963,11 @@ ar_edit_permission.
 | WORKER_ROLE_ADMIN | 5 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9755,13 +9994,13 @@ ar_edit_permission.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9789,13 +10028,13 @@ ar_edit_permission.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9822,13 +10061,13 @@ ar_edit_permission.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9869,13 +10108,13 @@ ar_edit_permission.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -9903,7 +10142,7 @@ ar_edit_permission.
 
 
 
- 
+
 
 
 <a name="robot-v1-ProgramState"></a>
@@ -9919,11 +10158,11 @@ ar_edit_permission.
 | PROGRAM_STATE_STOP | 3 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -9981,13 +10220,13 @@ command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10019,7 +10258,7 @@ command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
 
 
 
- 
+
 
 
 <a name="robot-v1-RobotControlAuthority"></a>
@@ -10088,11 +10327,11 @@ command.robot_instance.free_drive.{robot_instance_id}. Both are idempotent.
 | ROBOT_SAFETY_STATUS_FAULT | 9 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -10153,13 +10392,13 @@ Complete snapshot of the configured readable signals.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10188,7 +10427,7 @@ Complete snapshot of the configured readable signals.
 
 
 
- 
+
 
 
 <a name="robot-v1-RobotState"></a>
@@ -10207,11 +10446,11 @@ Complete snapshot of the configured readable signals.
 | ROBOT_STATE_RESUMING | 6 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -10242,13 +10481,13 @@ Complete snapshot of the configured readable signals.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10275,13 +10514,13 @@ Complete snapshot of the configured readable signals.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10326,13 +10565,13 @@ Complete snapshot of the configured readable signals.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10397,7 +10636,7 @@ Complete snapshot of the configured readable signals.
 
 
 
- 
+
 
 
 <a name="runtime-v1-TaskActorAssignmentReason"></a>
@@ -10428,11 +10667,11 @@ Complete snapshot of the configured readable signals.
 | TASK_ACTOR_ASSIGNMENT_STATE_BLOCKED | 3 | Assignment was evaluated, but no currently available capable actor exists. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -10521,7 +10760,7 @@ scopes can be resolved through the station/cell/line hierarchy.
 
 
 
- 
+
 
 
 <a name="runtime-v1-ActorAvailabilitySource"></a>
@@ -10555,11 +10794,11 @@ considered for new task assignments.
 | ACTOR_AVAILABILITY_STATUS_UNKNOWN | 3 | The actor&#39;s current availability cannot be determined from the available observations. UNKNOWN must not be treated as AVAILABLE automatically. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -10637,13 +10876,13 @@ The backend should validate that the caller is authorized to report using the se
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10717,13 +10956,13 @@ simpler and more robust than parsing facts alone.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -10820,7 +11059,7 @@ individual tasks to be reassigned, blocked, or suspended.
 
 
 
- 
+
 
 
 <a name="runtime-v1-ProcessRunState"></a>
@@ -10838,11 +11077,11 @@ individual tasks to be reassigned, blocked, or suspended.
 | PROCESS_RUN_STATE_ABORTED | 5 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -10882,7 +11121,7 @@ the assigned actor should be copied onto the TaskRun.
 
 
 
- 
+
 
 
 <a name="runtime-v1-RestrictionType"></a>
@@ -10903,11 +11142,11 @@ the assigned actor should be copied onto the TaskRun.
 | RESTRICTION_TYPE_REQUIRE_ROBOT_ACTOR | 8 | The task may only be executed by a robot actor. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11108,7 +11347,7 @@ component by hand, or with one of the listed tool instances.
 
 
 
- 
+
 
 
 <a name="runtime-v1-AllocationStrategy"></a>
@@ -11239,11 +11478,11 @@ A human is required but no worker with valid skills exists. |
 | REQUIREMENT_IMPORTANCE_PREFERRED | 2 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11315,7 +11554,7 @@ ProcessRunDefinitions for which version is returned.
 
 
 
- 
+
 
 
 <a name="runtime-v1-ProcessRunDefinitionsSource"></a>
@@ -11331,11 +11570,11 @@ ProcessRunDefinitions holds.
 | PROCESS_RUN_DEFINITIONS_SOURCE_LATEST | 2 | The run ended longer ago than the retention period, so its pinned definitions are no longer kept and these are the current versions. Definitions deleted since the run was loaded are missing. Show the run with a note that this isn&#39;t the version it used. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11453,7 +11692,7 @@ ProcessRunDefinitions holds.
 
 
 
- 
+
 
 
 <a name="runtime-v1-TaskProgressPhase"></a>
@@ -11493,11 +11732,11 @@ is represented by TASK_RUN_STATE_DONE.
 | TASK_STATE_REQUEST_RESET | 6 | Reset a failed task to ready so that it can be replanned, reassigned, or restarted. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11548,7 +11787,7 @@ is represented by TASK_RUN_STATE_DONE.
 
 
 
- 
+
 
 
 <a name="runtime-v1-SequenceRunState"></a>
@@ -11566,11 +11805,11 @@ is represented by TASK_RUN_STATE_DONE.
 | SEQUENCE_RUN_STATE_ABORTED | 5 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11655,7 +11894,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
+
 
 
 <a name="runtime-v1-TaskRunState"></a>
@@ -11675,11 +11914,11 @@ Concrete runtime/deployment bindings resolved for this task run.
 | TASK_RUN_STATE_SUSPENDED | 7 | The task is paused after starting and may later resume in progress. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11711,7 +11950,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
+
 
 
 <a name="runtime-v1-ValidationStatus"></a>
@@ -11728,11 +11967,11 @@ Concrete runtime/deployment bindings resolved for this task run.
 | VALIDATION_STATUS_BYPASSED | 4 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11768,6 +12007,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | tool_definitions | [resources.v1.ToolDefinition](#resources-v1-ToolDefinition) | repeated |  |
 | tool_instances | [resources.v1.ToolInstance](#resources-v1-ToolInstance) | repeated |  |
 | markers | [resources.v1.MarkerInstance](#resources-v1-MarkerInstance) | repeated |  |
+| part_families | [product.v1.PartFamily](#product-v1-PartFamily) | repeated |  |
 | part_definitions | [product.v1.PartDefinition](#product-v1-PartDefinition) | repeated |  |
 | part_instances | [product.v1.PartInstance](#product-v1-PartInstance) | repeated |  |
 | products | [product.v1.ProductDefinition](#product-v1-ProductDefinition) | repeated |  |
@@ -11784,13 +12024,13 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -11834,13 +12074,13 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -11884,7 +12124,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
+
 
 
 <a name="seed-v1-SaveSeedEntity"></a>
@@ -11912,6 +12152,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 | SAVE_SEED_ENTITY_TOOL_DEFINITIONS | 34 |  |
 | SAVE_SEED_ENTITY_TOOL_INSTANCES | 35 |  |
 | SAVE_SEED_ENTITY_MARKERS | 36 |  |
+| SAVE_SEED_ENTITY_PART_FAMILIES | 39 |  |
 | SAVE_SEED_ENTITY_PART_DEFINITIONS | 40 |  |
 | SAVE_SEED_ENTITY_PART_INSTANCES | 41 |  |
 | SAVE_SEED_ENTITY_PRODUCTS | 42 |  |
@@ -11925,11 +12166,11 @@ Concrete runtime/deployment bindings resolved for this task run.
 | SAVE_SEED_ENTITY_ACTIONS | 61 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -11956,7 +12197,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
+
 
 
 <a name="service-v1-ARClientRole"></a>
@@ -11971,11 +12212,11 @@ Concrete runtime/deployment bindings resolved for this task run.
 | AR_CLIENT_ROLE_SPECTATOR | 2 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -12024,13 +12265,13 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -12060,7 +12301,7 @@ Concrete runtime/deployment bindings resolved for this task run.
 
 
 
- 
+
 
 
 <a name="service-v1-Status"></a>
@@ -12075,11 +12316,11 @@ Concrete runtime/deployment bindings resolved for this task run.
 | STATUS_ONLINE | 2 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -12317,13 +12558,13 @@ dump that did not record it).
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 

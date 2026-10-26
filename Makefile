@@ -43,6 +43,7 @@ generate:
 	@echo 'Generating new files...'
 	buf generate
 	python3 ./scripts/rewrite_python_imports.py
+	python3 ./scripts/strip_doc_whitespace.py
 	go run ./cmd/subjectgen generate
 
 ## python-check: verify generated Python imports work from the package root

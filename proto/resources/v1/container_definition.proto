@@ -77,6 +77,17 @@ message ContainerSlotDefinition {
   repeated string supported_part_definition_ids = 10; // Specific part definitions that this slot supports.
 
   repeated common.v1.KeyValueConstraint constraints = 11; // Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
+
+  // Part families (product.v1.PartFamily) whose members this slot supports, so
+  // a slot for a case accepts every colour without listing each part
+  // (cobotar/protocol#36). A part is supported when it's in
+  // supported_part_definition_ids or a member of one of these families; with
+  // both empty, the slot supports any part.
+  repeated string supported_part_family_ids = 12 [
+    (buf.validate.field).repeated.unique = true,
+    (buf.validate.field).repeated.items.string.(validation.v1.not_blank) = true,
+    (buf.validate.field).repeated.items.string.(validation.v1.part_family_id_component) = true
+  ];
 }
 
 // ContainerDefinition describes a physical holder/carrier with one or more slots.

@@ -32,9 +32,10 @@ const (
 // changes everything or nothing. The files are uploaded first (see
 // resources.v1.UploadedObject).
 //
-// The models and parts have keys, which are only valid within the request: a
-// part names its default model by model_key, and an assembly node names its
-// part by the part's key in part_definition_id.
+// The models, part families and parts have keys, which are only valid within
+// the request: a part names its default model by model_key and its families by
+// family_key (ImportedPart.families), and an assembly node names its part by
+// the part's key in part_definition_id.
 //
 // Importing again is matched by external reference. An imported part or
 // product that has an external reference (system and external_id) of an
@@ -43,9 +44,20 @@ const (
 // keep that one (cobotar/protocol#19). Models are matched by content hash, not
 // by external reference: a model whose files changed is a new model, which the
 // part's new revision points to, while the earlier model stays for the
-// earlier revision. A part or product without external references is always
-// created. An import is refused when two of its parts share a reference, or
-// when one reference matches several existing parts or products.
+// earlier revision. Part families are matched by external reference like
+// parts (cobotar/protocol#36). A part, family or product without external
+// references is always created. An import is refused when two of its parts or
+// two of its families share a reference, or when one reference matches
+// several existing parts, families or products.
+//
+// An imported part's memberships follow ImportedPart.families: when it's
+// absent, an updated part keeps its memberships (so an exporter that doesn't
+// know about families leaves them alone); when it's present, they're replaced
+// with its items, and an empty list removes them. An imported family
+// is created or updated with the request's dimensions, under the same rules
+// as other changes to a family (PartFamily): a family with members keeps its
+// dimension keys, so an import that adds or removes a dimension of such a
+// family is refused.
 type ImportProduct struct {
 	state  protoimpl.MessageState `protogen:"open.v1"`
 	Models []*ImportedModel       `protobuf:"bytes,1,rep,name=models,proto3" json:"models,omitempty"`
@@ -57,8 +69,10 @@ type ImportProduct struct {
 	// request, e.g. the whole assembly with its thumbnail; empty for none, which
 	// keeps the model of the product the import updates.
 	ProductModelKey string `protobuf:"bytes,4,opt,name=product_model_key,json=productModelKey,proto3" json:"product_model_key,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// The part families the parts name by key in ImportedPart.families.
+	Families      []*ImportedPartFamily `protobuf:"bytes,5,rep,name=families,proto3" json:"families,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ImportProduct) Reset() {
@@ -119,6 +133,13 @@ func (x *ImportProduct) GetProductModelKey() string {
 	return ""
 }
 
+func (x *ImportProduct) GetFamilies() []*ImportedPartFamily {
+	if x != nil {
+		return x.Families
+	}
+	return nil
+}
+
 // ImportedModel is a model of an ImportProduct, with its key in the request.
 type ImportedModel struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
@@ -173,14 +194,20 @@ func (x *ImportedModel) GetModel() *v1.CreateModelArtifact {
 }
 
 // ImportedPart is a part definition of an ImportProduct, with its key in the
-// request. The part has no id, revision or default_model_id: it's matched by
-// external reference, and names its default model by model_key.
+// request. The part has no id, revision, default_model_id or families: it's
+// matched by external reference, names its default model by model_key and its
+// families by key in families.
 type ImportedPart struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	Key   string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	Part  *PartDefinition        `protobuf:"bytes,2,opt,name=part,proto3" json:"part,omitempty"`
 	// The key of the part's default model in the request; empty for none.
-	ModelKey      string `protobuf:"bytes,3,opt,name=model_key,json=modelKey,proto3" json:"model_key,omitempty"`
+	ModelKey string `protobuf:"bytes,3,opt,name=model_key,json=modelKey,proto3" json:"model_key,omitempty"`
+	// The part's families (ImportProduct.families, by key), at most one of each
+	// kind, with its value for each of their dimensions. Absent keeps the
+	// memberships of the part the import updates; present replaces them, and
+	// present but empty removes them.
+	Families      *ImportedPartFamilyMemberships `protobuf:"bytes,4,opt,name=families,proto3" json:"families,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -236,6 +263,169 @@ func (x *ImportedPart) GetModelKey() string {
 	return ""
 }
 
+func (x *ImportedPart) GetFamilies() *ImportedPartFamilyMemberships {
+	if x != nil {
+		return x.Families
+	}
+	return nil
+}
+
+// ImportedPartFamilyMemberships wraps an imported part's memberships, so an
+// import can tell "leave them" (absent) from "none" (present, empty).
+type ImportedPartFamilyMemberships struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Items         []*ImportedPartFamilyMembership `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ImportedPartFamilyMemberships) Reset() {
+	*x = ImportedPartFamilyMemberships{}
+	mi := &file_product_v1_product_import_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImportedPartFamilyMemberships) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImportedPartFamilyMemberships) ProtoMessage() {}
+
+func (x *ImportedPartFamilyMemberships) ProtoReflect() protoreflect.Message {
+	mi := &file_product_v1_product_import_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImportedPartFamilyMemberships.ProtoReflect.Descriptor instead.
+func (*ImportedPartFamilyMemberships) Descriptor() ([]byte, []int) {
+	return file_product_v1_product_import_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ImportedPartFamilyMemberships) GetItems() []*ImportedPartFamilyMembership {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+// ImportedPartFamilyMembership is a PartFamilyMembership of an imported part,
+// naming the family by its key in the request.
+type ImportedPartFamilyMembership struct {
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	FamilyKey string                 `protobuf:"bytes,1,opt,name=family_key,json=familyKey,proto3" json:"family_key,omitempty"`
+	// The part's value for each dimension of the family, by dimension key.
+	Values        map[string]string `protobuf:"bytes,2,rep,name=values,proto3" json:"values,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ImportedPartFamilyMembership) Reset() {
+	*x = ImportedPartFamilyMembership{}
+	mi := &file_product_v1_product_import_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImportedPartFamilyMembership) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImportedPartFamilyMembership) ProtoMessage() {}
+
+func (x *ImportedPartFamilyMembership) ProtoReflect() protoreflect.Message {
+	mi := &file_product_v1_product_import_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImportedPartFamilyMembership.ProtoReflect.Descriptor instead.
+func (*ImportedPartFamilyMembership) Descriptor() ([]byte, []int) {
+	return file_product_v1_product_import_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ImportedPartFamilyMembership) GetFamilyKey() string {
+	if x != nil {
+		return x.FamilyKey
+	}
+	return ""
+}
+
+func (x *ImportedPartFamilyMembership) GetValues() map[string]string {
+	if x != nil {
+		return x.Values
+	}
+	return nil
+}
+
+// ImportedPartFamily is a part family of an ImportProduct, with its key in the
+// request. The family has no id or revision: it's matched by external
+// reference.
+type ImportedPartFamily struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Family        *PartFamily            `protobuf:"bytes,2,opt,name=family,proto3" json:"family,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ImportedPartFamily) Reset() {
+	*x = ImportedPartFamily{}
+	mi := &file_product_v1_product_import_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImportedPartFamily) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImportedPartFamily) ProtoMessage() {}
+
+func (x *ImportedPartFamily) ProtoReflect() protoreflect.Message {
+	mi := &file_product_v1_product_import_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImportedPartFamily.ProtoReflect.Descriptor instead.
+func (*ImportedPartFamily) Descriptor() ([]byte, []int) {
+	return file_product_v1_product_import_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ImportedPartFamily) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *ImportedPartFamily) GetFamily() *PartFamily {
+	if x != nil {
+		return x.Family
+	}
+	return nil
+}
+
 // ImportProductResult answers an ImportProduct that was applied. A refused
 // import is answered with a failed service.v1.Response.
 type ImportProductResult struct {
@@ -245,14 +435,16 @@ type ImportProductResult struct {
 	// One per model of the request, in its order.
 	Models []*ImportedEntity `protobuf:"bytes,2,rep,name=models,proto3" json:"models,omitempty"`
 	// One per part of the request, in its order.
-	Parts         []*ImportedEntity `protobuf:"bytes,3,rep,name=parts,proto3" json:"parts,omitempty"`
+	Parts []*ImportedEntity `protobuf:"bytes,3,rep,name=parts,proto3" json:"parts,omitempty"`
+	// One per part family of the request, in its order.
+	Families      []*ImportedEntity `protobuf:"bytes,4,rep,name=families,proto3" json:"families,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ImportProductResult) Reset() {
 	*x = ImportProductResult{}
-	mi := &file_product_v1_product_import_proto_msgTypes[3]
+	mi := &file_product_v1_product_import_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -264,7 +456,7 @@ func (x *ImportProductResult) String() string {
 func (*ImportProductResult) ProtoMessage() {}
 
 func (x *ImportProductResult) ProtoReflect() protoreflect.Message {
-	mi := &file_product_v1_product_import_proto_msgTypes[3]
+	mi := &file_product_v1_product_import_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -277,7 +469,7 @@ func (x *ImportProductResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImportProductResult.ProtoReflect.Descriptor instead.
 func (*ImportProductResult) Descriptor() ([]byte, []int) {
-	return file_product_v1_product_import_proto_rawDescGZIP(), []int{3}
+	return file_product_v1_product_import_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ImportProductResult) GetProduct() *ImportedEntity {
@@ -301,10 +493,17 @@ func (x *ImportProductResult) GetParts() []*ImportedEntity {
 	return nil
 }
 
-// ImportedEntity is what an import did with one model, part or product:
-// CREATED, UPDATED (a part's new revision, or the product), or UNCHANGED (an
-// existing model with the same content, or a part or product that matched and
-// didn't change).
+func (x *ImportProductResult) GetFamilies() []*ImportedEntity {
+	if x != nil {
+		return x.Families
+	}
+	return nil
+}
+
+// ImportedEntity is what an import did with one model, part family, part or
+// product: CREATED, UPDATED (a part's or family's new revision, or the
+// product), or UNCHANGED (an existing model with the same content, or a part,
+// family or product that matched and didn't change).
 type ImportedEntity struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"` // Empty for the product.
@@ -316,7 +515,7 @@ type ImportedEntity struct {
 
 func (x *ImportedEntity) Reset() {
 	*x = ImportedEntity{}
-	mi := &file_product_v1_product_import_proto_msgTypes[4]
+	mi := &file_product_v1_product_import_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -328,7 +527,7 @@ func (x *ImportedEntity) String() string {
 func (*ImportedEntity) ProtoMessage() {}
 
 func (x *ImportedEntity) ProtoReflect() protoreflect.Message {
-	mi := &file_product_v1_product_import_proto_msgTypes[4]
+	mi := &file_product_v1_product_import_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +540,7 @@ func (x *ImportedEntity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImportedEntity.ProtoReflect.Descriptor instead.
 func (*ImportedEntity) Descriptor() ([]byte, []int) {
-	return file_product_v1_product_import_proto_rawDescGZIP(), []int{4}
+	return file_product_v1_product_import_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ImportedEntity) GetKey() string {
@@ -370,36 +569,59 @@ var File_product_v1_product_import_proto protoreflect.FileDescriptor
 const file_product_v1_product_import_proto_rawDesc = "" +
 	"\n" +
 	"\x1fproduct/v1/product_import.proto\x12\n" +
-	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a product/v1/part_definition.proto\x1a#product/v1/product_definition.proto\x1a!resources/v1/model_requests.proto\x1a\x19service/v1/response.proto\x1a+validation/v1/predefined_string_rules.proto\"\xf8\x0f\n" +
+	"product.v1\x1a\x1bbuf/validate/validate.proto\x1a product/v1/part_definition.proto\x1a\x1cproduct/v1/part_family.proto\x1a#product/v1/product_definition.proto\x1a!resources/v1/model_requests.proto\x1a\x19service/v1/response.proto\x1a+validation/v1/predefined_string_rules.proto\"\xfc\x1b\n" +
 	"\rImportProduct\x12\x9c\x01\n" +
 	"\x06models\x18\x01 \x03(\v2\x19.product.v1.ImportedModelBi\xbaHf\xba\x01c\n" +
 	"!import_product.models.unique_keys\x12\x19model keys must be unique\x1a#this.map(model, model.key).unique()R\x06models\x12\x95\x01\n" +
 	"\x05parts\x18\x02 \x03(\v2\x18.product.v1.ImportedPartBe\xbaHb\xba\x01_\n" +
 	" import_product.parts.unique_keys\x12\x18part keys must be unique\x1a!this.map(part, part.key).unique()R\x05parts\x127\n" +
 	"\aproduct\x18\x03 \x01(\v2\x1d.product.v1.ProductDefinitionR\aproduct\x12*\n" +
-	"\x11product_model_key\x18\x04 \x01(\tR\x0fproductModelKey:\xca\f\xbaH\xc6\f\x1a\xcb\x01\n" +
+	"\x11product_model_key\x18\x04 \x01(\tR\x0fproductModelKey\x12\xaf\x01\n" +
+	"\bfamilies\x18\x05 \x03(\v2\x1e.product.v1.ImportedPartFamilyBs\xbaHp\xba\x01m\n" +
+	"#import_product.families.unique_keys\x12\x1fpart family keys must be unique\x1a%this.map(family, family.key).unique()R\bfamilies:\x9c\x17\xbaH\x98\x17\x1a\xcb\x01\n" +
 	"!import_product.model_keys_defined\x12@every part's model_key must be the key of a model in the request\x1adthis.parts.all(part, part.model_key == '' || this.models.exists(model, model.key == part.model_key))\x1a\x89\x02\n" +
 	" import_product.part_keys_defined\x12Qevery assembly node's part_definition_id must be the key of a part in the request\x1a\x91\x01!has(this.product) || this.product.nodes.all(node, node.part_definition_id == '' || this.parts.exists(part, part.key == node.part_definition_id))\x1a\xd6\x02\n" +
-	"%import_product.part_references_unique\x12Ptwo imported parts must not share an external reference (system and external_id)\x1a\xda\x01this.parts.all(part, part.part.external_references.all(reference, this.parts.filter(other, other.part.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))\x1a\x9e\x01\n" +
+	"%import_product.part_references_unique\x12Ptwo imported parts must not share an external reference (system and external_id)\x1a\xda\x01this.parts.all(part, part.part.external_references.all(reference, this.parts.filter(other, other.part.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))\x1a\xeb\x01\n" +
+	"\"import_product.family_keys_defined\x12Gevery part's family_key must be the key of a part family in the request\x1a|this.parts.all(part, part.families.items.all(membership, this.families.exists(family, family.key == membership.family_key)))\x1a\xdb\x02\n" +
+	"\"import_product.one_family_per_kind\x129a part can belong to at most one part family of each kind\x1a\xf9\x01this.parts.all(part, part.families.items.all(membership, part.families.items.filter(other, this.families.exists(a, a.key == membership.family_key && this.families.exists(b, b.key == other.family_key && b.family.kind == a.family.kind))).size() <= 1))\x1a\x92\x03\n" +
+	"%import_product.family_values_complete\x12Ra part's values for a family must be keyed by exactly that family's dimension keys\x1a\x94\x02this.parts.all(part, part.families.items.all(membership, this.families.filter(family, family.key == membership.family_key).all(family, membership.values.size() == family.family.dimensions.size() && family.family.dimensions.all(dimension, dimension.key in membership.values))))\x1a\xee\x02\n" +
+	"'import_product.family_references_unique\x12Xtwo imported part families must not share an external reference (system and external_id)\x1a\xe8\x01this.families.all(family, family.family.external_references.all(reference, this.families.filter(other, other.family.external_references.exists(r, r.system == reference.system && r.external_id == reference.external_id)).size() == 1))\x1a\x9e\x01\n" +
 	"!import_product.product_without_id\x12Lthe imported product must not have an id; it's matched by external reference\x1a+!has(this.product) || this.product.id == ''\x1a\xf3\x01\n" +
 	"(import_product.product_model_key_defined\x12Pproduct_model_key must be the key of a model in the request, and needs a product\x1authis.product_model_key == '' || (has(this.product) && this.models.exists(model, model.key == this.product_model_key))\x1a\xb1\x01\n" +
 	"'import_product.product_without_model_id\x12Sthe imported product must not set model_id; it names its model by product_model_key\x1a1!has(this.product) || this.product.model_id == ''\x1a\xc5\x01\n" +
 	"+import_product.nodes_without_override_model\x12Dassembly nodes of an imported product must not set override_model_id\x1aP!has(this.product) || this.product.nodes.all(node, node.override_model_id == '')\"m\n" +
 	"\rImportedModel\x12\x1b\n" +
 	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x12?\n" +
-	"\x05model\x18\x02 \x01(\v2!.resources.v1.CreateModelArtifactB\x06\xbaH\x03\xc8\x01\x01R\x05model\"\xce\x02\n" +
+	"\x05model\x18\x02 \x01(\v2!.resources.v1.CreateModelArtifactB\x06\xbaH\x03\xc8\x01\x01R\x05model\"\xc2\x03\n" +
 	"\fImportedPart\x12\x1b\n" +
 	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x126\n" +
 	"\x04part\x18\x02 \x01(\v2\x1a.product.v1.PartDefinitionB\x06\xbaH\x03\xc8\x01\x01R\x04part\x12\x1b\n" +
-	"\tmodel_key\x18\x03 \x01(\tR\bmodelKey:\xcb\x01\xbaH\xc7\x01\x1a\xc4\x01\n" +
-	"\x19imported_part.without_ids\x12>an imported part must not set id, revision or default_model_id\x1ag!has(this.part) || (this.part.id == '' && this.part.revision == 0u && this.part.default_model_id == '')\"\xd6\x04\n" +
+	"\tmodel_key\x18\x03 \x01(\tR\bmodelKey\x12E\n" +
+	"\bfamilies\x18\x04 \x01(\v2).product.v1.ImportedPartFamilyMembershipsR\bfamilies:\xf8\x01\xbaH\xf4\x01\x1a\xf1\x01\n" +
+	"\x19imported_part.without_ids\x12Han imported part must not set id, revision, default_model_id or families\x1a\x89\x01!has(this.part) || (this.part.id == '' && this.part.revision == 0u && this.part.default_model_id == '' && this.part.families.size() == 0)\"\xec\x01\n" +
+	"\x1dImportedPartFamilyMemberships\x12\xca\x01\n" +
+	"\x05items\x18\x01 \x03(\v2(.product.v1.ImportedPartFamilyMembershipB\x89\x01\xbaH\x85\x01\xba\x01\x81\x01\n" +
+	"\x1dimported_part.families.unique\x12*an imported part can't name a family twice\x1a4this.map(membership, membership.family_key).unique()R\x05items\"\xe9\x01\n" +
+	"\x1cImportedPartFamilyMembership\x12(\n" +
+	"\n" +
+	"family_key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\tfamilyKey\x12d\n" +
+	"\x06values\x18\x02 \x03(\v24.product.v1.ImportedPartFamilyMembership.ValuesEntryB\x16\xbaH\x13\x9a\x01\x10\"\x06r\x04\xe0\xf3\x04\x01*\x06r\x04\x80\xf1\x04\x01R\x06values\x1a9\n" +
+	"\vValuesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x95\x02\n" +
+	"\x12ImportedPartFamily\x12\x1b\n" +
+	"\x03key\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xe0\xf3\x04\x01R\x03key\x126\n" +
+	"\x06family\x18\x02 \x01(\v2\x16.product.v1.PartFamilyB\x06\xbaH\x03\xc8\x01\x01R\x06family:\xa9\x01\xbaH\xa5\x01\x1a\xa2\x01\n" +
+	" imported_part_family.without_ids\x123an imported part family must not set id or revision\x1aI!has(this.family) || (this.family.id == '' && this.family.revision == 0u)\"\xbd\x06\n" +
 	"\x13ImportProductResult\x12\x98\x01\n" +
 	"\aproduct\x18\x01 \x01(\v2\x1a.product.v1.ImportedEntityBb\xbaH_\xba\x01\\\n" +
 	")import_product_result.product_without_key\x12\x1fthe product's result has no key\x1a\x0ethis.key == ''R\aproduct\x12\xd4\x01\n" +
 	"\x06models\x18\x02 \x03(\v2\x1a.product.v1.ImportedEntityB\x9f\x01\xbaH\x9b\x01\xba\x01\x97\x01\n" +
 	"\"import_product_result.models_keyed\x12(every model's result names its key, once\x1aGthis.all(model, model.key != '') && this.map(model, model.key).unique()R\x06models\x12\xcc\x01\n" +
 	"\x05parts\x18\x03 \x03(\v2\x1a.product.v1.ImportedEntityB\x99\x01\xbaH\x95\x01\xba\x01\x91\x01\n" +
-	"!import_product_result.parts_keyed\x12'every part's result names its key, once\x1aCthis.all(part, part.key != '') && this.map(part, part.key).unique()R\x05parts\"|\n" +
+	"!import_product_result.parts_keyed\x12'every part's result names its key, once\x1aCthis.all(part, part.key != '') && this.map(part, part.key).unique()R\x05parts\x12\xe4\x01\n" +
+	"\bfamilies\x18\x04 \x03(\v2\x1a.product.v1.ImportedEntityB\xab\x01\xbaH\xa7\x01\xba\x01\xa3\x01\n" +
+	"$import_product_result.families_keyed\x12.every part family's result names its key, once\x1aKthis.all(family, family.key != '') && this.map(family, family.key).unique()R\bfamilies\"|\n" +
 	"\x0eImportedEntity\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x16\n" +
 	"\x02id\x18\x02 \x01(\tB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12@\n" +
@@ -419,33 +641,44 @@ func file_product_v1_product_import_proto_rawDescGZIP() []byte {
 	return file_product_v1_product_import_proto_rawDescData
 }
 
-var file_product_v1_product_import_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_product_v1_product_import_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_product_v1_product_import_proto_goTypes = []any{
-	(*ImportProduct)(nil),          // 0: product.v1.ImportProduct
-	(*ImportedModel)(nil),          // 1: product.v1.ImportedModel
-	(*ImportedPart)(nil),           // 2: product.v1.ImportedPart
-	(*ImportProductResult)(nil),    // 3: product.v1.ImportProductResult
-	(*ImportedEntity)(nil),         // 4: product.v1.ImportedEntity
-	(*ProductDefinition)(nil),      // 5: product.v1.ProductDefinition
-	(*v1.CreateModelArtifact)(nil), // 6: resources.v1.CreateModelArtifact
-	(*PartDefinition)(nil),         // 7: product.v1.PartDefinition
-	(v11.MutationStatus)(0),        // 8: service.v1.MutationStatus
+	(*ImportProduct)(nil),                 // 0: product.v1.ImportProduct
+	(*ImportedModel)(nil),                 // 1: product.v1.ImportedModel
+	(*ImportedPart)(nil),                  // 2: product.v1.ImportedPart
+	(*ImportedPartFamilyMemberships)(nil), // 3: product.v1.ImportedPartFamilyMemberships
+	(*ImportedPartFamilyMembership)(nil),  // 4: product.v1.ImportedPartFamilyMembership
+	(*ImportedPartFamily)(nil),            // 5: product.v1.ImportedPartFamily
+	(*ImportProductResult)(nil),           // 6: product.v1.ImportProductResult
+	(*ImportedEntity)(nil),                // 7: product.v1.ImportedEntity
+	nil,                                   // 8: product.v1.ImportedPartFamilyMembership.ValuesEntry
+	(*ProductDefinition)(nil),             // 9: product.v1.ProductDefinition
+	(*v1.CreateModelArtifact)(nil),        // 10: resources.v1.CreateModelArtifact
+	(*PartDefinition)(nil),                // 11: product.v1.PartDefinition
+	(*PartFamily)(nil),                    // 12: product.v1.PartFamily
+	(v11.MutationStatus)(0),               // 13: service.v1.MutationStatus
 }
 var file_product_v1_product_import_proto_depIdxs = []int32{
-	1, // 0: product.v1.ImportProduct.models:type_name -> product.v1.ImportedModel
-	2, // 1: product.v1.ImportProduct.parts:type_name -> product.v1.ImportedPart
-	5, // 2: product.v1.ImportProduct.product:type_name -> product.v1.ProductDefinition
-	6, // 3: product.v1.ImportedModel.model:type_name -> resources.v1.CreateModelArtifact
-	7, // 4: product.v1.ImportedPart.part:type_name -> product.v1.PartDefinition
-	4, // 5: product.v1.ImportProductResult.product:type_name -> product.v1.ImportedEntity
-	4, // 6: product.v1.ImportProductResult.models:type_name -> product.v1.ImportedEntity
-	4, // 7: product.v1.ImportProductResult.parts:type_name -> product.v1.ImportedEntity
-	8, // 8: product.v1.ImportedEntity.status:type_name -> service.v1.MutationStatus
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	1,  // 0: product.v1.ImportProduct.models:type_name -> product.v1.ImportedModel
+	2,  // 1: product.v1.ImportProduct.parts:type_name -> product.v1.ImportedPart
+	9,  // 2: product.v1.ImportProduct.product:type_name -> product.v1.ProductDefinition
+	5,  // 3: product.v1.ImportProduct.families:type_name -> product.v1.ImportedPartFamily
+	10, // 4: product.v1.ImportedModel.model:type_name -> resources.v1.CreateModelArtifact
+	11, // 5: product.v1.ImportedPart.part:type_name -> product.v1.PartDefinition
+	3,  // 6: product.v1.ImportedPart.families:type_name -> product.v1.ImportedPartFamilyMemberships
+	4,  // 7: product.v1.ImportedPartFamilyMemberships.items:type_name -> product.v1.ImportedPartFamilyMembership
+	8,  // 8: product.v1.ImportedPartFamilyMembership.values:type_name -> product.v1.ImportedPartFamilyMembership.ValuesEntry
+	12, // 9: product.v1.ImportedPartFamily.family:type_name -> product.v1.PartFamily
+	7,  // 10: product.v1.ImportProductResult.product:type_name -> product.v1.ImportedEntity
+	7,  // 11: product.v1.ImportProductResult.models:type_name -> product.v1.ImportedEntity
+	7,  // 12: product.v1.ImportProductResult.parts:type_name -> product.v1.ImportedEntity
+	7,  // 13: product.v1.ImportProductResult.families:type_name -> product.v1.ImportedEntity
+	13, // 14: product.v1.ImportedEntity.status:type_name -> service.v1.MutationStatus
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_product_v1_product_import_proto_init() }
@@ -454,6 +687,7 @@ func file_product_v1_product_import_proto_init() {
 		return
 	}
 	file_product_v1_part_definition_proto_init()
+	file_product_v1_part_family_proto_init()
 	file_product_v1_product_definition_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -461,7 +695,7 @@ func file_product_v1_product_import_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_product_v1_product_import_proto_rawDesc), len(file_product_v1_product_import_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

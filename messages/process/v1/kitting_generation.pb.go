@@ -428,8 +428,9 @@ func (KittingTaskGranularity) EnumDescriptor() ([]byte, []int) {
 	return file_process_v1_kitting_generation_proto_rawDescGZIP(), []int{6}
 }
 
-// Overrides selection or static routing for one product occurrence or every
-// occurrence of a particular part definition.
+// Overrides selection or static routing for one product occurrence, every
+// occurrence of a particular part definition, or every occurrence of a part in
+// a part family.
 type KittingItemRoutingOverride struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Select one exact occurrence from the ProductDefinition assembly tree.
@@ -443,7 +444,12 @@ type KittingItemRoutingOverride struct {
 	Source *ContainerTarget `protobuf:"bytes,4,opt,name=source,proto3" json:"source,omitempty"`
 	// Optional authoring-time destination constraint. References the target kit
 	// definition and optionally a particular kit slot.
-	Destination   *ContainerTarget `protobuf:"bytes,5,opt,name=destination,proto3" json:"destination,omitempty"`
+	Destination *ContainerTarget `protobuf:"bytes,5,opt,name=destination,proto3" json:"destination,omitempty"`
+	// Select every applicable occurrence of a part in this part family
+	// (product.v1.PartFamily, cobotar/protocol#36), e.g. the case in every
+	// colour. An override for an occurrence or a part applies before one for its
+	// family.
+	PartFamilyId  string `protobuf:"bytes,6,opt,name=part_family_id,json=partFamilyId,proto3" json:"part_family_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -511,6 +517,13 @@ func (x *KittingItemRoutingOverride) GetDestination() *ContainerTarget {
 		return x.Destination
 	}
 	return nil
+}
+
+func (x *KittingItemRoutingOverride) GetPartFamilyId() string {
+	if x != nil {
+		return x.PartFamilyId
+	}
+	return ""
 }
 
 // DraftKittingProcessRecipeGenerateRequest asks the backend to generate an
@@ -757,15 +770,17 @@ var File_process_v1_kitting_generation_proto protoreflect.FileDescriptor
 const file_process_v1_kitting_generation_proto_rawDesc = "" +
 	"\n" +
 	"#process/v1/kitting_generation.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$process/v1/generation_requests.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xe3\x02\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$process/v1/generation_requests.proto\x1a process/v1/task_definition.proto\x1a product/v1/part_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"\xa4\x03\n" +
 	"\x1aKittingItemRoutingOverride\x12(\n" +
 	"\x10assembly_node_id\x18\x01 \x01(\tR\x0eassemblyNodeId\x127\n" +
 	"\x12part_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\x12?\n" +
 	"\x06action\x18\x03 \x01(\x0e2\x1d.process.v1.KittingItemActionB\b\xbaH\x05\x82\x01\x02\x10\x01R\x06action\x123\n" +
 	"\x06source\x18\x04 \x01(\v2\x1b.process.v1.ContainerTargetR\x06source\x12=\n" +
-	"\vdestination\x18\x05 \x01(\v2\x1b.process.v1.ContainerTargetR\vdestination:-\xbaH*\"(\n" +
+	"\vdestination\x18\x05 \x01(\v2\x1b.process.v1.ContainerTargetR\vdestination\x12/\n" +
+	"\x0epart_family_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\xa8\xf4\x04\x01R\fpartFamilyId:=\xbaH:\"8\n" +
 	"\x10assembly_node_id\n" +
-	"\x12part_definition_id\x10\x01\"\xc5\x0e\n" +
+	"\x12part_definition_id\n" +
+	"\x0epart_family_id\x10\x01\"\xc5\x0e\n" +
 	"(DraftKittingProcessRecipeGenerateRequest\x12@\n" +
 	"\x15product_definition_id\x18\x01 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\xe0\xeb0\x01R\x13productDefinitionId\x12&\n" +
 	"\trecipe_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xa0\xf2\x04\x01R\brecipeId\x12\x1f\n" +

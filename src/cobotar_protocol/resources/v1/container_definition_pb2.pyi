@@ -49,7 +49,7 @@ class ContainerSlotRef(_message.Message):
     def __init__(self, container_instance_id: _Optional[str] = ..., slot_id: _Optional[str] = ..., type: _Optional[_Union[ContainerSlotType, str]] = ...) -> None: ...
 
 class ContainerSlotDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "pose", "size", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "supported_part_definition_ids", "constraints")
+    __slots__ = ("id", "name", "icon", "description", "pose", "size", "type", "supported_product_definition_ids", "supported_root_part_definition_ids", "supported_part_definition_ids", "constraints", "supported_part_family_ids")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -61,6 +61,7 @@ class ContainerSlotDefinition(_message.Message):
     SUPPORTED_ROOT_PART_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     SUPPORTED_PART_DEFINITION_IDS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
+    SUPPORTED_PART_FAMILY_IDS_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -72,7 +73,8 @@ class ContainerSlotDefinition(_message.Message):
     supported_root_part_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     supported_part_definition_ids: _containers.RepeatedScalarFieldContainer[str]
     constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., size: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., type: _Optional[_Union[ContainerSlotType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    supported_part_family_ids: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., size: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., type: _Optional[_Union[ContainerSlotType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., supported_part_family_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ContainerDefinition(_message.Message):
     __slots__ = ("id", "name", "icon", "description", "type", "model_id", "slots", "constraints")

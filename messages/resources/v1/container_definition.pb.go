@@ -232,8 +232,14 @@ type ContainerSlotDefinition struct {
 	SupportedRootPartDefinitionIds []string                  `protobuf:"bytes,9,rep,name=supported_root_part_definition_ids,json=supportedRootPartDefinitionIds,proto3" json:"supported_root_part_definition_ids,omitempty"` // Root assemblies/root parts that this slot supports.
 	SupportedPartDefinitionIds     []string                  `protobuf:"bytes,10,rep,name=supported_part_definition_ids,json=supportedPartDefinitionIds,proto3" json:"supported_part_definition_ids,omitempty"`              // Specific part definitions that this slot supports.
 	Constraints                    []*v11.KeyValueConstraint `protobuf:"bytes,11,rep,name=constraints,proto3" json:"constraints,omitempty"`                                                                                  // Additional semantic/compatibility constraints such as orientation, handedness, or required variants.
-	unknownFields                  protoimpl.UnknownFields
-	sizeCache                      protoimpl.SizeCache
+	// Part families (product.v1.PartFamily) whose members this slot supports, so
+	// a slot for a case accepts every colour without listing each part
+	// (cobotar/protocol#36). A part is supported when it's in
+	// supported_part_definition_ids or a member of one of these families; with
+	// both empty, the slot supports any part.
+	SupportedPartFamilyIds []string `protobuf:"bytes,12,rep,name=supported_part_family_ids,json=supportedPartFamilyIds,proto3" json:"supported_part_family_ids,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *ContainerSlotDefinition) Reset() {
@@ -339,6 +345,13 @@ func (x *ContainerSlotDefinition) GetSupportedPartDefinitionIds() []string {
 func (x *ContainerSlotDefinition) GetConstraints() []*v11.KeyValueConstraint {
 	if x != nil {
 		return x.Constraints
+	}
+	return nil
+}
+
+func (x *ContainerSlotDefinition) GetSupportedPartFamilyIds() []string {
+	if x != nil {
+		return x.SupportedPartFamilyIds
 	}
 	return nil
 }
@@ -500,7 +513,7 @@ const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\x10ContainerSlotRef\x122\n" +
 	"\x15container_instance_id\x18\x01 \x01(\tR\x13containerInstanceId\x12\x17\n" +
 	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x123\n" +
-	"\x04type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeR\x04type\"\xaa\x04\n" +
+	"\x04type\x18\x03 \x01(\x0e2\x1f.resources.v1.ContainerSlotTypeR\x04type\"\xfb\x04\n" +
 	"\x17ContainerSlotDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -513,7 +526,9 @@ const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\"supported_root_part_definition_ids\x18\t \x03(\tR\x1esupportedRootPartDefinitionIds\x12A\n" +
 	"\x1dsupported_part_definition_ids\x18\n" +
 	" \x03(\tR\x1asupportedPartDefinitionIds\x12?\n" +
-	"\vconstraints\x18\v \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"\xd1\x02\n" +
+	"\vconstraints\x18\v \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\x12O\n" +
+	"\x19supported_part_family_ids\x18\f \x03(\tB\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
+	"r\b\x88\xf4\x04\x01\xa8\xf4\x04\x01R\x16supportedPartFamilyIds\"\xd1\x02\n" +
 	"\x13ContainerDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +

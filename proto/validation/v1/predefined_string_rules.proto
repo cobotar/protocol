@@ -321,4 +321,10 @@ extend buf.validate.StringRules {
     message: "adapter type must be 1 to 128 lowercase characters separated by dots, underscores, or hyphens"
     expression: "this.size() >= 1 && this.size() <= 128 && this.matches('^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$')"
   }];
+
+  optional bool part_family_id_component = 10053 [(buf.validate.predefined).cel = {
+    id: "string.part_family_id_component"
+    message: "this does not seem to be a part family id"
+    expression: "(this == '' || this.startsWith('part_family-'))"
+  }];
 }
