@@ -8485,10 +8485,15 @@ references is always created. An import is refused when two of its parts or
 two of its families share a reference, or when one reference matches
 several existing parts, families or products.
 
-An imported part&#39;s memberships follow ImportedPart.families: when it&#39;s
-absent, an updated part keeps its memberships (so an exporter that doesn&#39;t
-know about families leaves them alone); when it&#39;s present, they&#39;re replaced
-with its items, and an empty list removes them. An imported family
+An imported part&#39;s memberships follow ImportedPart.families, and an import
+only changes the memberships of the families it carries
+(ImportProduct.families): when ImportedPart.families is absent, an updated
+part keeps all its memberships (so an exporter that doesn&#39;t know about
+families leaves them alone); when it&#39;s present, the part&#39;s memberships of
+the import&#39;s families become its items (an empty list removes them), and
+its memberships of other families, e.g. ones added in another client, are
+kept. To take a part out of a family, an import carries the family. An
+imported family
 is created or updated with the request&#39;s dimensions, under the same rules
 as other changes to a family (PartFamily): a family with members keeps its
 dimension keys, so an import that adds or removes a dimension of such a
@@ -8577,7 +8582,7 @@ families by key in families.
 | key | [string](#string) |  |  |
 | part | [PartDefinition](#product-v1-PartDefinition) |  |  |
 | model_key | [string](#string) |  | The key of the part&#39;s default model in the request; empty for none. |
-| families | [ImportedPartFamilyMemberships](#product-v1-ImportedPartFamilyMemberships) |  | The part&#39;s families (ImportProduct.families, by key), at most one of each kind, with its value for each of their dimensions. Absent keeps the memberships of the part the import updates; present replaces them, and present but empty removes them. |
+| families | [ImportedPartFamilyMemberships](#product-v1-ImportedPartFamilyMemberships) |  | The part&#39;s families (ImportProduct.families, by key), with its value for each of their dimensions. Absent keeps the memberships of the part the import updates. Present sets its memberships of the import&#39;s families to these (present but empty removes them) and keeps its memberships of other families. Together with those, the part is in at most one family of each kind. |
 
 
 
@@ -8639,7 +8644,8 @@ naming the family by its key in the request.
 
 ### ImportedPartFamilyMemberships
 ImportedPartFamilyMemberships wraps an imported part&#39;s memberships, so an
-import can tell &#34;leave them&#34; (absent) from &#34;none&#34; (present, empty).
+import can tell &#34;leave them&#34; (absent) from &#34;none of the import&#39;s families&#34;
+(present, empty).
 
 
 | Field | Type | Label | Description |

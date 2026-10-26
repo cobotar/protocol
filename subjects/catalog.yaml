@@ -180,10 +180,10 @@ route_families:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
       task_run:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
         publishers: [authoring, web_cobotar]
 
   - id: get.entity.some
@@ -197,10 +197,10 @@ route_families:
     publishers: [authoring, web_cobotar, holo_cobotar]
     consumers: [authoring]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
         publishers: [authoring, web_cobotar]
 
   - id: get.entity.one
@@ -218,10 +218,10 @@ route_families:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
       part_instance:
         publishers: [authoring, web_cobotar, holo_cobotar, robot_adapter]
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
         publishers: [authoring, web_cobotar]
 
   - id: edit.entity.add
@@ -235,10 +235,10 @@ route_families:
     publishers: [web_cobotar]
     consumers: [authoring]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
 
   - id: edit.entity.clone
     pattern: edit.{entity}.clone
@@ -262,10 +262,10 @@ route_families:
     publishers: [web_cobotar]
     consumers: [authoring]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
 
   - id: edit.entity.remove
     pattern: edit.{entity}.remove
@@ -278,10 +278,10 @@ route_families:
     publishers: [web_cobotar]
     consumers: [authoring]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
 
   - id: event.entity.added
     pattern: event.{entity}.added.{entity_id}
@@ -298,10 +298,10 @@ route_families:
     publishers: [authoring]
     consumers: [web_cobotar, holo_cobotar]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
         consumers: [web_cobotar]
 
   - id: event.entity.updated
@@ -319,10 +319,10 @@ route_families:
     publishers: [authoring]
     consumers: [web_cobotar, holo_cobotar]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
         consumers: [web_cobotar]
 
   - id: event.entity.removed
@@ -340,10 +340,10 @@ route_families:
     publishers: [authoring]
     consumers: [web_cobotar, holo_cobotar]
     entity_overrides:
-      # Part families (cobotar/protocol#36) are planned until Authoring serves them (cobotar/Authoring#95); HoloCobotAR doesn't use them.
+      # Part families (cobotar/protocol#36) are served by Authoring (cobotar/Authoring#95); web-cobotar uses them from
+      # cobotar/web-cobotar#56, HoloCobotAR doesn't.
       part_family:
-        lifecycle: planned
-        conformance: {mode: staged, tracking_issue: cobotar/Authoring#95}
+        conformance: {mode: staged, tracking_issue: cobotar/web-cobotar#56}
         consumers: [web_cobotar]
 
 routes:

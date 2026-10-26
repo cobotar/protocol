@@ -181,9 +181,9 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `edit.part_definition.clone` | `edit.part_definition.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_definition.remove` | `edit.part_definition.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_definition.update` | `edit.part_definition.update` | `edit.entity.update` | active | staged | product.v1.PartDefinition → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.part_family.add` | `edit.part_family.add` | `edit.entity.add` | planned | staged | product.v1.PartFamily → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.part_family.remove` | `edit.part_family.remove` | `edit.entity.remove` | planned | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
-| `edit.part_family.update` | `edit.part_family.update` | `edit.entity.update` | planned | staged | product.v1.PartFamily → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.part_family.add` | `edit.part_family.add` | `edit.entity.add` | active | staged | product.v1.PartFamily → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.part_family.remove` | `edit.part_family.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
+| `edit.part_family.update` | `edit.part_family.update` | `edit.entity.update` | active | staged | product.v1.PartFamily → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_instance.add` | `edit.part_instance.add` | `edit.entity.add` | active | staged | product.v1.PartInstance → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_instance.clone` | `edit.part_instance.clone` | `edit.entity.clone` | active | staged | common.v1.CloneMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
 | `edit.part_instance.remove` | `edit.part_instance.remove` | `edit.entity.remove` | active | staged | common.v1.DeleteMessage → service.v1.Response / service.v1.Response | web_cobotar | authoring |
@@ -321,9 +321,9 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `event.part_definition.added` | `event.part_definition.added.{entity_id}` | `event.entity.added` | active | staged | product.v1.PartDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.part_definition.removed` | `event.part_definition.removed.{entity_id}` | `event.entity.removed` | active | staged | product.v1.PartDefinition | authoring | web_cobotar, holo_cobotar |
 | `event.part_definition.updated` | `event.part_definition.updated.{entity_id}` | `event.entity.updated` | active | staged | product.v1.PartDefinition | authoring | web_cobotar, holo_cobotar |
-| `event.part_family.added` | `event.part_family.added.{entity_id}` | `event.entity.added` | planned | staged | product.v1.PartFamily | authoring | web_cobotar |
-| `event.part_family.removed` | `event.part_family.removed.{entity_id}` | `event.entity.removed` | planned | staged | product.v1.PartFamily | authoring | web_cobotar |
-| `event.part_family.updated` | `event.part_family.updated.{entity_id}` | `event.entity.updated` | planned | staged | product.v1.PartFamily | authoring | web_cobotar |
+| `event.part_family.added` | `event.part_family.added.{entity_id}` | `event.entity.added` | active | staged | product.v1.PartFamily | authoring | web_cobotar |
+| `event.part_family.removed` | `event.part_family.removed.{entity_id}` | `event.entity.removed` | active | staged | product.v1.PartFamily | authoring | web_cobotar |
+| `event.part_family.updated` | `event.part_family.updated.{entity_id}` | `event.entity.updated` | active | staged | product.v1.PartFamily | authoring | web_cobotar |
 | `event.part_instance.added` | `event.part_instance.added.{entity_id}` | `event.entity.added` | active | staged | product.v1.PartInstance | authoring | web_cobotar, holo_cobotar |
 | `event.part_instance.removed` | `event.part_instance.removed.{entity_id}` | `event.entity.removed` | active | staged | product.v1.PartInstance | authoring | web_cobotar, holo_cobotar |
 | `event.part_instance.updated` | `event.part_instance.updated.{entity_id}` | `event.entity.updated` | active | staged | product.v1.PartInstance | authoring | web_cobotar, holo_cobotar |
@@ -456,9 +456,9 @@ Route families expand into concrete, message-aware catalog entries. Generic help
 | `get.part_definition.all` | `get.part_definition.all` | `get.entity.all` | active | staged | (empty) → product.v1.PartDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.part_definition.one` | `get.part_definition.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartDefinition / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.part_definition.some` | `get.part_definition.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → product.v1.PartDefinitions / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
-| `get.part_family.all` | `get.part_family.all` | `get.entity.all` | planned | staged | (empty) → product.v1.PartFamilies / service.v1.Response | authoring, web_cobotar | authoring |
-| `get.part_family.one` | `get.part_family.one` | `get.entity.one` | planned | staged | common.v1.GetMessage → product.v1.PartFamily / service.v1.Response | authoring, web_cobotar | authoring |
-| `get.part_family.some` | `get.part_family.some` | `get.entity.some` | planned | staged | common.v1.GetByIdMessage → product.v1.PartFamilies / service.v1.Response | authoring, web_cobotar | authoring |
+| `get.part_family.all` | `get.part_family.all` | `get.entity.all` | active | staged | (empty) → product.v1.PartFamilies / service.v1.Response | authoring, web_cobotar | authoring |
+| `get.part_family.one` | `get.part_family.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartFamily / service.v1.Response | authoring, web_cobotar | authoring |
+| `get.part_family.some` | `get.part_family.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → product.v1.PartFamilies / service.v1.Response | authoring, web_cobotar | authoring |
 | `get.part_instance.all` | `get.part_instance.all` | `get.entity.all` | active | staged | (empty) → product.v1.PartInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |
 | `get.part_instance.one` | `get.part_instance.one` | `get.entity.one` | active | staged | common.v1.GetMessage → product.v1.PartInstance / service.v1.Response | authoring, web_cobotar, holo_cobotar, robot_adapter | authoring |
 | `get.part_instance.some` | `get.part_instance.some` | `get.entity.some` | active | staged | common.v1.GetByIdMessage → product.v1.PartInstances / service.v1.Response | authoring, web_cobotar, holo_cobotar | authoring |

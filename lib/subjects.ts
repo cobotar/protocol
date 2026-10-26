@@ -233,9 +233,9 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "edit.part_definition.clone", pattern: "edit.part_definition.clone", family: "edit.entity.clone", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.CloneMessage", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.part_definition.remove", pattern: "edit.part_definition.remove", family: "edit.entity.remove", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.DeleteMessage", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.part_definition.update", pattern: "edit.part_definition.update", family: "edit.entity.update", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartDefinition", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
-  { id: "edit.part_family.add", pattern: "edit.part_family.add", family: "edit.entity.add", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartFamily", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#95" },
-  { id: "edit.part_family.remove", pattern: "edit.part_family.remove", family: "edit.entity.remove", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.DeleteMessage", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#95" },
-  { id: "edit.part_family.update", pattern: "edit.part_family.update", family: "edit.entity.update", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartFamily", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#95" },
+  { id: "edit.part_family.add", pattern: "edit.part_family.add", family: "edit.entity.add", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartFamily", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/web-cobotar#56" },
+  { id: "edit.part_family.remove", pattern: "edit.part_family.remove", family: "edit.entity.remove", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.DeleteMessage", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/web-cobotar#56" },
+  { id: "edit.part_family.update", pattern: "edit.part_family.update", family: "edit.entity.update", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartFamily", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/web-cobotar#56" },
   { id: "edit.part_instance.add", pattern: "edit.part_instance.add", family: "edit.entity.add", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "product.v1.PartInstance", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.part_instance.clone", pattern: "edit.part_instance.clone", family: "edit.entity.clone", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.CloneMessage", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "edit.part_instance.remove", pattern: "edit.part_instance.remove", family: "edit.entity.remove", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.DeleteMessage", emptyRequest: false, successReply: "service.v1.Response", failureReply: "service.v1.Response", publishers: ["web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
@@ -373,9 +373,9 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "event.part_definition.added", pattern: "event.part_definition.added.{entity_id}", family: "event.entity.added", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartDefinition", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
   { id: "event.part_definition.removed", pattern: "event.part_definition.removed.{entity_id}", family: "event.entity.removed", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartDefinition", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
   { id: "event.part_definition.updated", pattern: "event.part_definition.updated.{entity_id}", family: "event.entity.updated", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartDefinition", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
-  { id: "event.part_family.added", pattern: "event.part_family.added.{entity_id}", family: "event.entity.added", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "publish", payload: "product.v1.PartFamily", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar"], trackingIssue: "cobotar/Authoring#95" },
-  { id: "event.part_family.removed", pattern: "event.part_family.removed.{entity_id}", family: "event.entity.removed", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "publish", payload: "product.v1.PartFamily", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar"], trackingIssue: "cobotar/Authoring#95" },
-  { id: "event.part_family.updated", pattern: "event.part_family.updated.{entity_id}", family: "event.entity.updated", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "publish", payload: "product.v1.PartFamily", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar"], trackingIssue: "cobotar/Authoring#95" },
+  { id: "event.part_family.added", pattern: "event.part_family.added.{entity_id}", family: "event.entity.added", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartFamily", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar"], trackingIssue: "cobotar/web-cobotar#56" },
+  { id: "event.part_family.removed", pattern: "event.part_family.removed.{entity_id}", family: "event.entity.removed", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartFamily", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar"], trackingIssue: "cobotar/web-cobotar#56" },
+  { id: "event.part_family.updated", pattern: "event.part_family.updated.{entity_id}", family: "event.entity.updated", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartFamily", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar"], trackingIssue: "cobotar/web-cobotar#56" },
   { id: "event.part_instance.added", pattern: "event.part_instance.added.{entity_id}", family: "event.entity.added", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartInstance", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
   { id: "event.part_instance.removed", pattern: "event.part_instance.removed.{entity_id}", family: "event.entity.removed", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartInstance", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
   { id: "event.part_instance.updated", pattern: "event.part_instance.updated.{entity_id}", family: "event.entity.updated", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "publish", payload: "product.v1.PartInstance", request: "", emptyRequest: false, successReply: "", failureReply: "", publishers: ["authoring"], consumers: ["web_cobotar", "holo_cobotar"], trackingIssue: "cobotar/protocol#11" },
@@ -508,9 +508,9 @@ export const subjectCatalog: readonly SubjectDefinition[] = [
   { id: "get.part_definition.all", pattern: "get.part_definition.all", family: "get.entity.all", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "product.v1.PartDefinitions", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "get.part_definition.one", pattern: "get.part_definition.one", family: "get.entity.one", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "product.v1.PartDefinition", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar", "robot_adapter"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "get.part_definition.some", pattern: "get.part_definition.some", family: "get.entity.some", entity: "part_definition", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetByIdMessage", emptyRequest: false, successReply: "product.v1.PartDefinitions", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
-  { id: "get.part_family.all", pattern: "get.part_family.all", family: "get.entity.all", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "product.v1.PartFamilies", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#95" },
-  { id: "get.part_family.one", pattern: "get.part_family.one", family: "get.entity.one", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "product.v1.PartFamily", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#95" },
-  { id: "get.part_family.some", pattern: "get.part_family.some", family: "get.entity.some", entity: "part_family", lifecycle: "planned", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetByIdMessage", emptyRequest: false, successReply: "product.v1.PartFamilies", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/Authoring#95" },
+  { id: "get.part_family.all", pattern: "get.part_family.all", family: "get.entity.all", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "product.v1.PartFamilies", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/web-cobotar#56" },
+  { id: "get.part_family.one", pattern: "get.part_family.one", family: "get.entity.one", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "product.v1.PartFamily", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/web-cobotar#56" },
+  { id: "get.part_family.some", pattern: "get.part_family.some", family: "get.entity.some", entity: "part_family", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetByIdMessage", emptyRequest: false, successReply: "product.v1.PartFamilies", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/web-cobotar#56" },
   { id: "get.part_instance.all", pattern: "get.part_instance.all", family: "get.entity.all", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "", emptyRequest: true, successReply: "product.v1.PartInstances", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "get.part_instance.one", pattern: "get.part_instance.one", family: "get.entity.one", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetMessage", emptyRequest: false, successReply: "product.v1.PartInstance", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar", "robot_adapter"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
   { id: "get.part_instance.some", pattern: "get.part_instance.some", family: "get.entity.some", entity: "part_instance", lifecycle: "active", conformance: "staged", interaction: "request_reply", payload: "", request: "common.v1.GetByIdMessage", emptyRequest: false, successReply: "product.v1.PartInstances", failureReply: "service.v1.Response", publishers: ["authoring", "web_cobotar", "holo_cobotar"], consumers: ["authoring"], trackingIssue: "cobotar/protocol#11" },
@@ -1438,17 +1438,17 @@ export const editPartDefinitionRemove = "edit.part_definition.remove"
 export const editPartDefinitionUpdate = "edit.part_definition.update"
 
 /** Builds `edit.part_family.add`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export const editPartFamilyAdd = "edit.part_family.add"
 
 /** Builds `edit.part_family.remove`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export const editPartFamilyRemove = "edit.part_family.remove"
 
 /** Builds `edit.part_family.update`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export const editPartFamilyUpdate = "edit.part_family.update"
 
@@ -2414,7 +2414,7 @@ export function eventPartDefinitionUpdated(entityId: string): string {
 export function subscribeEventPartDefinitionUpdatedAny(): string { return "event.part_definition.updated.*" }
 
 /** Builds `event.part_family.added.{entity_id}`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export function eventPartFamilyAdded(entityId: string): string {
   return buildSubject("event.part_family.added.{entity_id}", { entity_id: entityId })
@@ -2423,7 +2423,7 @@ export function eventPartFamilyAdded(entityId: string): string {
 export function subscribeEventPartFamilyAddedAny(): string { return "event.part_family.added.*" }
 
 /** Builds `event.part_family.removed.{entity_id}`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export function eventPartFamilyRemoved(entityId: string): string {
   return buildSubject("event.part_family.removed.{entity_id}", { entity_id: entityId })
@@ -2432,7 +2432,7 @@ export function eventPartFamilyRemoved(entityId: string): string {
 export function subscribeEventPartFamilyRemovedAny(): string { return "event.part_family.removed.*" }
 
 /** Builds `event.part_family.updated.{entity_id}`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export function eventPartFamilyUpdated(entityId: string): string {
   return buildSubject("event.part_family.updated.{entity_id}", { entity_id: entityId })
@@ -3365,17 +3365,17 @@ export const getPartDefinitionOne = "get.part_definition.one"
 export const getPartDefinitionSome = "get.part_definition.some"
 
 /** Builds `get.part_family.all`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export const getPartFamilyAll = "get.part_family.all"
 
 /** Builds `get.part_family.one`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export const getPartFamilyOne = "get.part_family.one"
 
 /** Builds `get.part_family.some`.
- * @experimental lifecycle=planned, conformance=staged; see cobotar/Authoring#95.
+ * @experimental lifecycle=active, conformance=staged; see cobotar/web-cobotar#56.
  */
 export const getPartFamilySome = "get.part_family.some"
 

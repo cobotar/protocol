@@ -208,10 +208,15 @@ namespace Messages.Product.V1 {
   /// two of its families share a reference, or when one reference matches
   /// several existing parts, families or products.
   ///
-  /// An imported part's memberships follow ImportedPart.families: when it's
-  /// absent, an updated part keeps its memberships (so an exporter that doesn't
-  /// know about families leaves them alone); when it's present, they're replaced
-  /// with its items, and an empty list removes them. An imported family
+  /// An imported part's memberships follow ImportedPart.families, and an import
+  /// only changes the memberships of the families it carries
+  /// (ImportProduct.families): when ImportedPart.families is absent, an updated
+  /// part keeps all its memberships (so an exporter that doesn't know about
+  /// families leaves them alone); when it's present, the part's memberships of
+  /// the import's families become its items (an empty list removes them), and
+  /// its memberships of other families, e.g. ones added in another client, are
+  /// kept. To take a part out of a family, an import carries the family. An
+  /// imported family
   /// is created or updated with the request's dimensions, under the same rules
   /// as other changes to a family (PartFamily): a family with members keeps its
   /// dimension keys, so an import that adds or removes a dimension of such a
@@ -895,10 +900,12 @@ namespace Messages.Product.V1 {
     public const int FamiliesFieldNumber = 4;
     private global::Messages.Product.V1.ImportedPartFamilyMemberships families_;
     /// <summary>
-    /// The part's families (ImportProduct.families, by key), at most one of each
-    /// kind, with its value for each of their dimensions. Absent keeps the
-    /// memberships of the part the import updates; present replaces them, and
-    /// present but empty removes them.
+    /// The part's families (ImportProduct.families, by key), with its value for
+    /// each of their dimensions. Absent keeps the memberships of the part the
+    /// import updates. Present sets its memberships of the import's families to
+    /// these (present but empty removes them) and keeps its memberships of other
+    /// families. Together with those, the part is in at most one family of each
+    /// kind.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1142,7 +1149,8 @@ namespace Messages.Product.V1 {
 
   /// <summary>
   /// ImportedPartFamilyMemberships wraps an imported part's memberships, so an
-  /// import can tell "leave them" (absent) from "none" (present, empty).
+  /// import can tell "leave them" (absent) from "none of the import's families"
+  /// (present, empty).
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ImportedPartFamilyMemberships : pb::IMessage<ImportedPartFamilyMemberships>
