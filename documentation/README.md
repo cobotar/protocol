@@ -580,6 +580,11 @@
 
     - [CellStatus](#resources-v1-CellStatus)
 
+- [resources/v1/container_import.proto](#resources_v1_container_import-proto)
+    - [ImportContainer](#resources-v1-ImportContainer)
+    - [ImportContainerResult](#resources-v1-ImportContainerResult)
+    - [ImportedSlotReferences](#resources-v1-ImportedSlotReferences)
+
 - [resources/v1/container_instance.proto](#resources_v1_container_instance-proto)
     - [ContainerInstance](#resources-v1-ContainerInstance)
     - [ContainerInstances](#resources-v1-ContainerInstances)
@@ -6099,6 +6104,7 @@ ContainerSlotType rather than by separate top-level resources.
 | model_id | [string](#string) |  | Optional 3D model used in simulation, AR, and UI rendering. |
 | slots | [ContainerSlotDefinition](#resources-v1-ContainerSlotDefinition) | repeated | Addressable places inside/on the container. |
 | constraints | [common.v1.KeyValueConstraint](#common-v1-KeyValueConstraint) | repeated | Container-level constraints applying to the whole carrier. |
+| external_references | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated | The entity in another system the container comes from, e.g. the Fusion document of a fixture design. An import (ImportContainer) updates the container with the same reference instead of creating another (cobotar/protocol#42). |
 
 
 
@@ -6139,8 +6145,8 @@ Examples:
 | name | [string](#string) |  | Human-readable slot name shown in UI and AR, e.g. &#34;Slot A&#34; or &#34;Motor Nest&#34;. |
 | icon | [string](#string) |  | Optional icon override for UIs. If empty, the container icon may be reused. |
 | description | [string](#string) |  | Optional longer description of the slot&#39;s purpose or usage constraints. |
-| pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | Pose of the slot relative to the container definition coordinate frame. |
-| size | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approximate slot extents/bounds, useful for UI, AR, and planning. |
+| pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | Pose of the slot in the container&#39;s frame, in mm: the frame of the container&#39;s model (model_id), with the axes its asset declares. It is where the frame of the item the slot holds sits: the root frame of a product, or the frame of a part&#39;s model (cobotar/protocol#42). |
+| size | [geometry.v1.Vector3](#geometry-v1-Vector3) |  | Optional approximate extents of the slot, in mm along the axes of its pose, useful for UI, AR and planning. |
 | type | [ContainerSlotType](#resources-v1-ContainerSlotType) |  | Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot. |
 | supported_product_definition_ids | [string](#string) | repeated | Products that this slot explicitly supports holding/presenting. |
 | supported_root_part_definition_ids | [string](#string) | repeated | Root assemblies/root parts that this slot supports. |
@@ -8969,6 +8975,103 @@ are set by hand. CLOSED and BLOCKED are always set by hand.
 | CELL_STATUS_BUSY | 2 | Cell is currently occupied by one or more active runs. Depending on policy, new runs may still be queued. |
 | CELL_STATUS_CLOSED | 3 | Cell is intentionally unavailable for loading or running work. |
 | CELL_STATUS_BLOCKED | 4 | Cell is temporarily unavailable due to fault, interlock, maintenance state, or similar blocking condition. |
+
+
+
+
+
+
+
+
+
+
+<a name="resources_v1_container_import-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## resources/v1/container_import.proto
+
+
+
+<a name="resources-v1-ImportContainer"></a>
+
+### ImportContainer
+ImportContainer creates or updates a container definition with its model in
+one request (edit.container_definition.import, cobotar/protocol#42), e.g. a
+fixture or tray exported from a CAD tool. The backend applies it in one unit
+of work: it changes everything or nothing. The model&#39;s files are uploaded
+first (see UploadedObject).
+
+Importing again is matched by external reference: a container with an
+external reference (system and external_id) of an existing container
+updates that one instead of creating another. A container without external
+references is always created. An import is refused when one reference
+matches several existing containers.
+
+The import owns the container&#39;s name, type and model, its list of slots
+(slots it doesn&#39;t carry are removed), and each slot&#39;s name, type, pose, size
+and supported products, parts and part families. The container&#39;s and each
+slot&#39;s icon, description and constraints are set when the import gives
+them; empty ones keep what the updated container has, e.g. constraints
+added in web-cobotar. Slots are matched by id, so recipes and runs that
+name a slot keep it as long as its id stays the same.
+
+The items a slot holds usually come from other imports (a product or part
+exported from another document), so a slot can name them by external
+reference in slot_references; the backend resolves each reference to the
+existing product, part or part family and adds it to the slot&#39;s supported
+IDs. An import is refused when a reference matches no entity, or several.
+IDs the import knows can be given directly in the slot&#39;s supported_* lists.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container | [ContainerDefinition](#resources-v1-ContainerDefinition) |  | The container, without id or model_id. Its slots&#39; poses and sizes are in mm in the frame of the model (see ContainerSlotDefinition). |
+| model | [CreateModelArtifact](#resources-v1-CreateModelArtifact) |  | The container&#39;s model, from uploaded files. Absent keeps the model of the container the import updates (none for a new container). A model with the same content as an existing one is reused. |
+| slot_references | [ImportedSlotReferences](#resources-v1-ImportedSlotReferences) | repeated | Products, parts and part families the slots hold, by external reference. |
+
+
+
+
+
+
+<a name="resources-v1-ImportContainerResult"></a>
+
+### ImportContainerResult
+ImportContainerResult answers an ImportContainer that was applied. A
+refused import is answered with a failed service.v1.Response.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| container_id | [string](#string) |  | The container&#39;s ID, and whether it was CREATED, UPDATED or UNCHANGED. |
+| container_status | [service.v1.MutationStatus](#service-v1-MutationStatus) |  |  |
+| model_id | [string](#string) |  | The model&#39;s ID and status (UNCHANGED for an existing model with the same content); empty when the import had no model. |
+| model_status | [service.v1.MutationStatus](#service-v1-MutationStatus) |  |  |
+
+
+
+
+
+
+<a name="resources-v1-ImportedSlotReferences"></a>
+
+### ImportedSlotReferences
+ImportedSlotReferences names the items one slot of an ImportContainer holds
+by their external references. Each reference has to match exactly one
+existing entity of its kind.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| slot_id | [string](#string) |  |  |
+| products | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated | Products the slot holds, e.g. the product an exported fixture design inserts: added to supported_product_definition_ids. |
+| parts | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated | Parts the slot holds: added to supported_part_definition_ids. |
+| part_families | [common.v1.ExternalReference](#common-v1-ExternalReference) | repeated | Part families whose members the slot holds: added to supported_part_family_ids. |
+
+
+
+
+
 
 
 

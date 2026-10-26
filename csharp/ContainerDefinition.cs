@@ -25,56 +25,58 @@ namespace Messages.Resources.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidyZXNvdXJjZXMvdjEvY29udGFpbmVyX2RlZmluaXRpb24ucHJvdG8SDHJl",
-            "c291cmNlcy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiRjb21t",
-            "b24vdjEva2V5X3ZhbHVlX2NvbnN0cmFpbnQucHJvdG8aFmdlb21ldHJ5L3Yx",
-            "L3Bvc2UucHJvdG8aGWdlb21ldHJ5L3YxL3ZlY3RvcjMucHJvdG8aK3ZhbGlk",
-            "YXRpb24vdjEvcHJlZGVmaW5lZF9zdHJpbmdfcnVsZXMucHJvdG8ilAEKEENv",
-            "bnRhaW5lclNsb3RSZWYSMgoVY29udGFpbmVyX2luc3RhbmNlX2lkGAEgASgJ",
-            "UhNjb250YWluZXJJbnN0YW5jZUlkEhcKB3Nsb3RfaWQYAiABKAlSBnNsb3RJ",
-            "ZBIzCgR0eXBlGAMgASgOMh8ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RU",
-            "eXBlUgR0eXBlIvsEChdDb250YWluZXJTbG90RGVmaW5pdGlvbhIOCgJpZBgB",
-            "IAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGlj",
-            "b24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
-            "aW9uEiUKBHBvc2UYBSABKAsyES5nZW9tZXRyeS52MS5Qb3NlUgRwb3NlEigK",
-            "BHNpemUYBiABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzUgRzaXplEkAKBHR5",
-            "cGUYByABKA4yHy5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdFR5cGVCC7pI",
-            "CIIBAhAByAEBUgR0eXBlEkcKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRp",
-            "b25faWRzGAggAygJUh1zdXBwb3J0ZWRQcm9kdWN0RGVmaW5pdGlvbklkcxJK",
-            "CiJzdXBwb3J0ZWRfcm9vdF9wYXJ0X2RlZmluaXRpb25faWRzGAkgAygJUh5z",
-            "dXBwb3J0ZWRSb290UGFydERlZmluaXRpb25JZHMSQQodc3VwcG9ydGVkX3Bh",
-            "cnRfZGVmaW5pdGlvbl9pZHMYCiADKAlSGnN1cHBvcnRlZFBhcnREZWZpbml0",
-            "aW9uSWRzEj8KC2NvbnN0cmFpbnRzGAsgAygLMh0uY29tbW9uLnYxLktleVZh",
-            "bHVlQ29uc3RyYWludFILY29uc3RyYWludHMSTwoZc3VwcG9ydGVkX3BhcnRf",
-            "ZmFtaWx5X2lkcxgMIAMoCUIUukgRkgEOGAEiCnIIiPQEAaj0BAFSFnN1cHBv",
-            "cnRlZFBhcnRGYW1pbHlJZHMi0QIKE0NvbnRhaW5lckRlZmluaXRpb24SDgoC",
-            "aWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEaWNvbhgDIAEo",
-            "CVIEaWNvbhIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SPAoE",
-            "dHlwZRgFIAEoDjIbLnJlc291cmNlcy52MS5Db250YWluZXJUeXBlQgu6SAiC",
-            "AQIQAcgBAVIEdHlwZRIkCghtb2RlbF9pZBgGIAEoCUIJukgGcgSI8QQBUgdt",
-            "b2RlbElkEjsKBXNsb3RzGAcgAygLMiUucmVzb3VyY2VzLnYxLkNvbnRhaW5l",
-            "clNsb3REZWZpbml0aW9uUgVzbG90cxI/Cgtjb25zdHJhaW50cxgIIAMoCzId",
-            "LmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0cmFpbnRSC2NvbnN0cmFpbnRzIk8K",
-            "FENvbnRhaW5lckRlZmluaXRpb25zEjcKBWl0ZW1zGAEgAygLMiEucmVzb3Vy",
-            "Y2VzLnYxLkNvbnRhaW5lckRlZmluaXRpb25SBWl0ZW1zKpgBCg1Db250YWlu",
-            "ZXJUeXBlEh4KGkNPTlRBSU5FUl9UWVBFX1VOU1BFQ0lGSUVEEAASGgoWQ09O",
-            "VEFJTkVSX1RZUEVfU1RPUkFHRRABEhYKEkNPTlRBSU5FUl9UWVBFX0tJVBAC",
-            "EhcKE0NPTlRBSU5FUl9UWVBFX1RSQVkQAxIaChZDT05UQUlORVJfVFlQRV9G",
-            "SVhUVVJFEAQqyAEKEUNvbnRhaW5lclNsb3RUeXBlEiMKH0NPTlRBSU5FUl9T",
-            "TE9UX1RZUEVfVU5TUEVDSUZJRUQQABIjCh9DT05UQUlORVJfU0xPVF9UWVBF",
-            "X1NUT1JBR0VfQklOEAESIAocQ09OVEFJTkVSX1NMT1RfVFlQRV9LSVRfU0xP",
-            "VBACEiEKHUNPTlRBSU5FUl9TTE9UX1RZUEVfVFJBWV9DRUxMEAMSJAogQ09O",
-            "VEFJTkVSX1NMT1RfVFlQRV9GSVhUVVJFX1NMT1QQBELIAQoQY29tLnJlc291",
-            "cmNlcy52MUIYQ29udGFpbmVyRGVmaW5pdGlvblByb3RvUAFaQGdpdGh1Yi5j",
-            "b20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9yZXNvdXJjZXMvdjE7",
-            "cmVzb3VyY2VzdjGiAgNSWFiqAhVNZXNzYWdlcy5SZXNvdXJjZXMuVjHKAgxS",
-            "ZXNvdXJjZXNcVjHiAhhSZXNvdXJjZXNcVjFcR1BCTWV0YWRhdGHqAg1SZXNv",
-            "dXJjZXM6OlYxYgZwcm90bzM="));
+            "c291cmNlcy52MRobYnVmL3ZhbGlkYXRlL3ZhbGlkYXRlLnByb3RvGiNjb21t",
+            "b24vdjEvZXh0ZXJuYWxfcmVmZXJlbmNlcy5wcm90bxokY29tbW9uL3YxL2tl",
+            "eV92YWx1ZV9jb25zdHJhaW50LnByb3RvGhZnZW9tZXRyeS92MS9wb3NlLnBy",
+            "b3RvGhlnZW9tZXRyeS92MS92ZWN0b3IzLnByb3RvGit2YWxpZGF0aW9uL3Yx",
+            "L3ByZWRlZmluZWRfc3RyaW5nX3J1bGVzLnByb3RvIpQBChBDb250YWluZXJT",
+            "bG90UmVmEjIKFWNvbnRhaW5lcl9pbnN0YW5jZV9pZBgBIAEoCVITY29udGFp",
+            "bmVySW5zdGFuY2VJZBIXCgdzbG90X2lkGAIgASgJUgZzbG90SWQSMwoEdHlw",
+            "ZRgDIAEoDjIfLnJlc291cmNlcy52MS5Db250YWluZXJTbG90VHlwZVIEdHlw",
+            "ZSL7BAoXQ29udGFpbmVyU2xvdERlZmluaXRpb24SDgoCaWQYASABKAlSAmlk",
+            "Eh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFtZRISCgRpY29uGAMgASgJ",
+            "UgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIlCgRw",
+            "b3NlGAUgASgLMhEuZ2VvbWV0cnkudjEuUG9zZVIEcG9zZRIoCgRzaXplGAYg",
+            "ASgLMhQuZ2VvbWV0cnkudjEuVmVjdG9yM1IEc2l6ZRJACgR0eXBlGAcgASgO",
+            "Mh8ucmVzb3VyY2VzLnYxLkNvbnRhaW5lclNsb3RUeXBlQgu6SAiCAQIQAcgB",
+            "AVIEdHlwZRJHCiBzdXBwb3J0ZWRfcHJvZHVjdF9kZWZpbml0aW9uX2lkcxgI",
+            "IAMoCVIdc3VwcG9ydGVkUHJvZHVjdERlZmluaXRpb25JZHMSSgoic3VwcG9y",
+            "dGVkX3Jvb3RfcGFydF9kZWZpbml0aW9uX2lkcxgJIAMoCVIec3VwcG9ydGVk",
+            "Um9vdFBhcnREZWZpbml0aW9uSWRzEkEKHXN1cHBvcnRlZF9wYXJ0X2RlZmlu",
+            "aXRpb25faWRzGAogAygJUhpzdXBwb3J0ZWRQYXJ0RGVmaW5pdGlvbklkcxI/",
+            "Cgtjb25zdHJhaW50cxgLIAMoCzIdLmNvbW1vbi52MS5LZXlWYWx1ZUNvbnN0",
+            "cmFpbnRSC2NvbnN0cmFpbnRzEk8KGXN1cHBvcnRlZF9wYXJ0X2ZhbWlseV9p",
+            "ZHMYDCADKAlCFLpIEZIBDhgBIgpyCIj0BAGo9AQBUhZzdXBwb3J0ZWRQYXJ0",
+            "RmFtaWx5SWRzIqADChNDb250YWluZXJEZWZpbml0aW9uEg4KAmlkGAEgASgJ",
+            "UgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhIKBGljb24YAyABKAlSBGljb24S",
+            "IAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEjwKBHR5cGUYBSAB",
+            "KA4yGy5yZXNvdXJjZXMudjEuQ29udGFpbmVyVHlwZUILukgIggECEAHIAQFS",
+            "BHR5cGUSJAoIbW9kZWxfaWQYBiABKAlCCbpIBnIEiPEEAVIHbW9kZWxJZBI7",
+            "CgVzbG90cxgHIAMoCzIlLnJlc291cmNlcy52MS5Db250YWluZXJTbG90RGVm",
+            "aW5pdGlvblIFc2xvdHMSPwoLY29uc3RyYWludHMYCCADKAsyHS5jb21tb24u",
+            "djEuS2V5VmFsdWVDb25zdHJhaW50Ugtjb25zdHJhaW50cxJNChNleHRlcm5h",
+            "bF9yZWZlcmVuY2VzGAkgAygLMhwuY29tbW9uLnYxLkV4dGVybmFsUmVmZXJl",
+            "bmNlUhJleHRlcm5hbFJlZmVyZW5jZXMiTwoUQ29udGFpbmVyRGVmaW5pdGlv",
+            "bnMSNwoFaXRlbXMYASADKAsyIS5yZXNvdXJjZXMudjEuQ29udGFpbmVyRGVm",
+            "aW5pdGlvblIFaXRlbXMqmAEKDUNvbnRhaW5lclR5cGUSHgoaQ09OVEFJTkVS",
+            "X1RZUEVfVU5TUEVDSUZJRUQQABIaChZDT05UQUlORVJfVFlQRV9TVE9SQUdF",
+            "EAESFgoSQ09OVEFJTkVSX1RZUEVfS0lUEAISFwoTQ09OVEFJTkVSX1RZUEVf",
+            "VFJBWRADEhoKFkNPTlRBSU5FUl9UWVBFX0ZJWFRVUkUQBCrIAQoRQ29udGFp",
+            "bmVyU2xvdFR5cGUSIwofQ09OVEFJTkVSX1NMT1RfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEiMKH0NPTlRBSU5FUl9TTE9UX1RZUEVfU1RPUkFHRV9CSU4QARIgChxD",
+            "T05UQUlORVJfU0xPVF9UWVBFX0tJVF9TTE9UEAISIQodQ09OVEFJTkVSX1NM",
+            "T1RfVFlQRV9UUkFZX0NFTEwQAxIkCiBDT05UQUlORVJfU0xPVF9UWVBFX0ZJ",
+            "WFRVUkVfU0xPVBAEQsgBChBjb20ucmVzb3VyY2VzLnYxQhhDb250YWluZXJE",
+            "ZWZpbml0aW9uUHJvdG9QAVpAZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29s",
+            "L3YyL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoC",
+            "FU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291",
+            "cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Common.V1.ExternalReferencesReflection.Descriptor, global::Messages.Common.V1.KeyValueConstraintReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Resources.V1.ContainerType), typeof(global::Messages.Resources.V1.ContainerSlotType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotRef), global::Messages.Resources.V1.ContainerSlotRef.Parser, new[]{ "ContainerInstanceId", "SlotId", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerSlotDefinition), global::Messages.Resources.V1.ContainerSlotDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Pose", "Size", "Type", "SupportedProductDefinitionIds", "SupportedRootPartDefinitionIds", "SupportedPartDefinitionIds", "Constraints", "SupportedPartFamilyIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerDefinition), global::Messages.Resources.V1.ContainerDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ModelId", "Slots", "Constraints" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerDefinition), global::Messages.Resources.V1.ContainerDefinition.Parser, new[]{ "Id", "Name", "Icon", "Description", "Type", "ModelId", "Slots", "Constraints", "ExternalReferences" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Resources.V1.ContainerDefinitions), global::Messages.Resources.V1.ContainerDefinitions.Parser, new[]{ "Items" }, null, null, null, null)
           }));
     }
@@ -558,7 +560,10 @@ namespace Messages.Resources.V1 {
     public const int PoseFieldNumber = 5;
     private global::Messages.Geometry.V1.Pose pose_;
     /// <summary>
-    /// Pose of the slot relative to the container definition coordinate frame.
+    /// Pose of the slot in the container's frame, in mm: the frame of the
+    /// container's model (model_id), with the axes its asset declares. It is
+    /// where the frame of the item the slot holds sits: the root frame of a
+    /// product, or the frame of a part's model (cobotar/protocol#42).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -573,7 +578,8 @@ namespace Messages.Resources.V1 {
     public const int SizeFieldNumber = 6;
     private global::Messages.Geometry.V1.Vector3 size_;
     /// <summary>
-    /// Optional approximate slot extents/bounds, useful for UI, AR, and planning.
+    /// Optional approximate extents of the slot, in mm along the axes of its
+    /// pose, useful for UI, AR and planning.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1096,6 +1102,7 @@ namespace Messages.Resources.V1 {
       modelId_ = other.modelId_;
       slots_ = other.slots_.Clone();
       constraints_ = other.constraints_.Clone();
+      externalReferences_ = other.externalReferences_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1223,6 +1230,23 @@ namespace Messages.Resources.V1 {
       get { return constraints_; }
     }
 
+    /// <summary>Field number for the "external_references" field.</summary>
+    public const int ExternalReferencesFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Messages.Common.V1.ExternalReference> _repeated_externalReferences_codec
+        = pb::FieldCodec.ForMessage(74, global::Messages.Common.V1.ExternalReference.Parser);
+    private readonly pbc::RepeatedField<global::Messages.Common.V1.ExternalReference> externalReferences_ = new pbc::RepeatedField<global::Messages.Common.V1.ExternalReference>();
+    /// <summary>
+    /// The entity in another system the container comes from, e.g. the Fusion
+    /// document of a fixture design. An import (ImportContainer) updates the
+    /// container with the same reference instead of creating another
+    /// (cobotar/protocol#42).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Messages.Common.V1.ExternalReference> ExternalReferences {
+      get { return externalReferences_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1246,6 +1270,7 @@ namespace Messages.Resources.V1 {
       if (ModelId != other.ModelId) return false;
       if(!slots_.Equals(other.slots_)) return false;
       if(!constraints_.Equals(other.constraints_)) return false;
+      if(!externalReferences_.Equals(other.externalReferences_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1261,6 +1286,7 @@ namespace Messages.Resources.V1 {
       if (ModelId.Length != 0) hash ^= ModelId.GetHashCode();
       hash ^= slots_.GetHashCode();
       hash ^= constraints_.GetHashCode();
+      hash ^= externalReferences_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1305,6 +1331,7 @@ namespace Messages.Resources.V1 {
       }
       slots_.WriteTo(output, _repeated_slots_codec);
       constraints_.WriteTo(output, _repeated_constraints_codec);
+      externalReferences_.WriteTo(output, _repeated_externalReferences_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1341,6 +1368,7 @@ namespace Messages.Resources.V1 {
       }
       slots_.WriteTo(ref output, _repeated_slots_codec);
       constraints_.WriteTo(ref output, _repeated_constraints_codec);
+      externalReferences_.WriteTo(ref output, _repeated_externalReferences_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1371,6 +1399,7 @@ namespace Messages.Resources.V1 {
       }
       size += slots_.CalculateSize(_repeated_slots_codec);
       size += constraints_.CalculateSize(_repeated_constraints_codec);
+      size += externalReferences_.CalculateSize(_repeated_externalReferences_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1403,6 +1432,7 @@ namespace Messages.Resources.V1 {
       }
       slots_.Add(other.slots_);
       constraints_.Add(other.constraints_);
+      externalReferences_.Add(other.externalReferences_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1454,6 +1484,10 @@ namespace Messages.Resources.V1 {
             constraints_.AddEntriesFrom(input, _repeated_constraints_codec);
             break;
           }
+          case 74: {
+            externalReferences_.AddEntriesFrom(input, _repeated_externalReferences_codec);
+            break;
+          }
         }
       }
     #endif
@@ -1503,6 +1537,10 @@ namespace Messages.Resources.V1 {
           }
           case 66: {
             constraints_.AddEntriesFrom(ref input, _repeated_constraints_codec);
+            break;
+          }
+          case 74: {
+            externalReferences_.AddEntriesFrom(ref input, _repeated_externalReferences_codec);
             break;
           }
         }

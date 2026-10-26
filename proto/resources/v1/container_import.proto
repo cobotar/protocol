@@ -1,0 +1,106 @@
+syntax = "proto3";
+package resources.v1;
+
+import "buf/validate/validate.proto";
+import "common/v1/external_references.proto";
+import "resources/v1/container_definition.proto";
+import "resources/v1/model_requests.proto";
+import "service/v1/response.proto";
+import "validation/v1/predefined_string_rules.proto";
+
+option csharp_namespace = "Messages.Resources.V1";
+option go_package = "github.com/cobotar/protocol/v2/messages/resources/v1";
+
+// ImportContainer creates or updates a container definition with its model in
+// one request (edit.container_definition.import, cobotar/protocol#42), e.g. a
+// fixture or tray exported from a CAD tool. The backend applies it in one unit
+// of work: it changes everything or nothing. The model's files are uploaded
+// first (see UploadedObject).
+//
+// Importing again is matched by external reference: a container with an
+// external reference (system and external_id) of an existing container
+// updates that one instead of creating another. A container without external
+// references is always created. An import is refused when one reference
+// matches several existing containers.
+//
+// The import owns the container's name, type and model, its list of slots
+// (slots it doesn't carry are removed), and each slot's name, type, pose, size
+// and supported products, parts and part families. The container's and each
+// slot's icon, description and constraints are set when the import gives
+// them; empty ones keep what the updated container has, e.g. constraints
+// added in web-cobotar. Slots are matched by id, so recipes and runs that
+// name a slot keep it as long as its id stays the same.
+//
+// The items a slot holds usually come from other imports (a product or part
+// exported from another document), so a slot can name them by external
+// reference in slot_references; the backend resolves each reference to the
+// existing product, part or part family and adds it to the slot's supported
+// IDs. An import is refused when a reference matches no entity, or several.
+// IDs the import knows can be given directly in the slot's supported_* lists.
+message ImportContainer {
+  option (buf.validate.message).cel = {
+    id: "import_container.without_ids"
+    message: "the imported container must not set id or model_id; it's matched by external reference and names its model in model"
+    expression: "!has(this.container) || (this.container.id == '' && this.container.model_id == '')"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_container.slot_ids"
+    message: "every slot of an imported container needs an id of at most 64 lowercase letters, digits and underscores, starting with a letter"
+    expression: "!has(this.container) || this.container.slots.all(slot, slot.id.size() <= 64 && slot.id.matches('^[a-z][a-z0-9_]*$'))"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_container.slot_ids_unique"
+    message: "slot ids must be unique within the container"
+    expression: "!has(this.container) || this.container.slots.map(slot, slot.id).unique()"
+  };
+  option (buf.validate.message).cel = {
+    id: "import_container.slot_references_defined"
+    message: "every slot_references entry must name a slot of the container, once"
+    expression: "this.slot_references.all(entry, has(this.container) && this.container.slots.exists(slot, slot.id == entry.slot_id)) && this.slot_references.map(entry, entry.slot_id).unique()"
+  };
+
+  // The container, without id or model_id. Its slots' poses and sizes are in
+  // mm in the frame of the model (see ContainerSlotDefinition).
+  ContainerDefinition container = 1 [(buf.validate.field).required = true];
+
+  // The container's model, from uploaded files. Absent keeps the model of the
+  // container the import updates (none for a new container). A model with the
+  // same content as an existing one is reused.
+  CreateModelArtifact model = 2;
+
+  // Products, parts and part families the slots hold, by external reference.
+  repeated ImportedSlotReferences slot_references = 3;
+}
+
+// ImportedSlotReferences names the items one slot of an ImportContainer holds
+// by their external references. Each reference has to match exactly one
+// existing entity of its kind.
+message ImportedSlotReferences {
+  string slot_id = 1 [(buf.validate.field).string.(validation.v1.key_component) = true];
+  // Products the slot holds, e.g. the product an exported fixture design
+  // inserts: added to supported_product_definition_ids.
+  repeated common.v1.ExternalReference products = 2;
+  // Parts the slot holds: added to supported_part_definition_ids.
+  repeated common.v1.ExternalReference parts = 3;
+  // Part families whose members the slot holds: added to
+  // supported_part_family_ids.
+  repeated common.v1.ExternalReference part_families = 4;
+}
+
+// ImportContainerResult answers an ImportContainer that was applied. A
+// refused import is answered with a failed service.v1.Response.
+message ImportContainerResult {
+  // The container's ID, and whether it was CREATED, UPDATED or UNCHANGED.
+  string container_id = 1 [(buf.validate.field).required = true];
+  service.v1.MutationStatus container_status = 2 [(buf.validate.field).enum = {
+    in: [
+      1,
+      2,
+      3
+    ]
+  }];
+  // The model's ID and status (UNCHANGED for an existing model with the same
+  // content); empty when the import had no model.
+  string model_id = 3;
+  service.v1.MutationStatus model_status = 4 [(buf.validate.field).enum.defined_only = true];
+}

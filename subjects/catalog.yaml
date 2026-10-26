@@ -579,6 +579,21 @@ routes:
     consumers: [authoring]
     description: Reset a presentation binding of an AR config to the strategy's default.
 
+  - id: edit.container_definition.import
+    pattern: edit.container_definition.import
+    lifecycle: planned
+    conformance:
+      mode: staged
+      tracking_issue: cobotar/Authoring#103
+    interaction: request_reply
+    request: resources.v1.ImportContainer
+    replies:
+      success: resources.v1.ImportContainerResult
+      failure: service.v1.Response
+    publishers: [fusion360_exporter]
+    consumers: [authoring]
+    description: Create or update a container definition (e.g. a fixture exported from CAD) with its model in one unit of work, matching earlier imports by external reference and resolving the items its slots hold by external reference (cobotar/protocol#42).
+
   - id: edit.part_instance.add_many
     pattern: edit.part_instance.add_many
     lifecycle: active

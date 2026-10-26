@@ -1,4 +1,5 @@
 from buf.validate import validate_pb2 as _validate_pb2
+from cobotar_protocol.common.v1 import external_references_pb2 as _external_references_pb2
 from cobotar_protocol.common.v1 import key_value_constraint_pb2 as _key_value_constraint_pb2
 from cobotar_protocol.geometry.v1 import pose_pb2 as _pose_pb2
 from cobotar_protocol.geometry.v1 import vector3_pb2 as _vector3_pb2
@@ -77,7 +78,7 @@ class ContainerSlotDefinition(_message.Message):
     def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., pose: _Optional[_Union[_pose_pb2.Pose, _Mapping]] = ..., size: _Optional[_Union[_vector3_pb2.Vector3, _Mapping]] = ..., type: _Optional[_Union[ContainerSlotType, str]] = ..., supported_product_definition_ids: _Optional[_Iterable[str]] = ..., supported_root_part_definition_ids: _Optional[_Iterable[str]] = ..., supported_part_definition_ids: _Optional[_Iterable[str]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., supported_part_family_ids: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ContainerDefinition(_message.Message):
-    __slots__ = ("id", "name", "icon", "description", "type", "model_id", "slots", "constraints")
+    __slots__ = ("id", "name", "icon", "description", "type", "model_id", "slots", "constraints", "external_references")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     ICON_FIELD_NUMBER: _ClassVar[int]
@@ -86,6 +87,7 @@ class ContainerDefinition(_message.Message):
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     SLOTS_FIELD_NUMBER: _ClassVar[int]
     CONSTRAINTS_FIELD_NUMBER: _ClassVar[int]
+    EXTERNAL_REFERENCES_FIELD_NUMBER: _ClassVar[int]
     id: str
     name: str
     icon: str
@@ -94,7 +96,8 @@ class ContainerDefinition(_message.Message):
     model_id: str
     slots: _containers.RepeatedCompositeFieldContainer[ContainerSlotDefinition]
     constraints: _containers.RepeatedCompositeFieldContainer[_key_value_constraint_pb2.KeyValueConstraint]
-    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ContainerType, str]] = ..., model_id: _Optional[str] = ..., slots: _Optional[_Iterable[_Union[ContainerSlotDefinition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ...) -> None: ...
+    external_references: _containers.RepeatedCompositeFieldContainer[_external_references_pb2.ExternalReference]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., icon: _Optional[str] = ..., description: _Optional[str] = ..., type: _Optional[_Union[ContainerType, str]] = ..., model_id: _Optional[str] = ..., slots: _Optional[_Iterable[_Union[ContainerSlotDefinition, _Mapping]]] = ..., constraints: _Optional[_Iterable[_Union[_key_value_constraint_pb2.KeyValueConstraint, _Mapping]]] = ..., external_references: _Optional[_Iterable[_Union[_external_references_pb2.ExternalReference, _Mapping]]] = ...) -> None: ...
 
 class ContainerDefinitions(_message.Message):
     __slots__ = ("items",)

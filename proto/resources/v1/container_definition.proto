@@ -2,6 +2,7 @@ syntax = "proto3";
 package resources.v1;
 
 import "buf/validate/validate.proto";
+import "common/v1/external_references.proto";
 import "common/v1/key_value_constraint.proto";
 import "geometry/v1/pose.proto";
 import "geometry/v1/vector3.proto";
@@ -64,8 +65,14 @@ message ContainerSlotDefinition {
   string icon = 3; // Optional icon override for UIs. If empty, the container icon may be reused.
   string description = 4; // Optional longer description of the slot's purpose or usage constraints.
 
-  geometry.v1.Pose pose = 5; // Pose of the slot relative to the container definition coordinate frame.
-  geometry.v1.Vector3 size = 6; // Optional approximate slot extents/bounds, useful for UI, AR, and planning.
+  // Pose of the slot in the container's frame, in mm: the frame of the
+  // container's model (model_id), with the axes its asset declares. It is
+  // where the frame of the item the slot holds sits: the root frame of a
+  // product, or the frame of a part's model (cobotar/protocol#42).
+  geometry.v1.Pose pose = 5;
+  // Optional approximate extents of the slot, in mm along the axes of its
+  // pose, useful for UI, AR and planning.
+  geometry.v1.Vector3 size = 6;
 
   ContainerSlotType type = 7 [
     (buf.validate.field).required = true,
@@ -110,6 +117,12 @@ message ContainerDefinition {
   repeated ContainerSlotDefinition slots = 7; // Addressable places inside/on the container.
 
   repeated common.v1.KeyValueConstraint constraints = 8; // Container-level constraints applying to the whole carrier.
+
+  // The entity in another system the container comes from, e.g. the Fusion
+  // document of a fixture design. An import (ImportContainer) updates the
+  // container with the same reference instead of creating another
+  // (cobotar/protocol#42).
+  repeated common.v1.ExternalReference external_references = 9;
 }
 
 message ContainerDefinitions {

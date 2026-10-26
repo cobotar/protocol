@@ -5,6 +5,8 @@
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
+import type { ExternalReference } from "../../common/v1/external_references_pb.ts";
+import { file_common_v1_external_references } from "../../common/v1/external_references_pb.ts";
 import type { KeyValueConstraint } from "../../common/v1/key_value_constraint_pb.ts";
 import { file_common_v1_key_value_constraint } from "../../common/v1/key_value_constraint_pb.ts";
 import type { Pose } from "../../geometry/v1/pose_pb.ts";
@@ -18,7 +20,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file resources/v1/container_definition.proto.
  */
 export const file_resources_v1_container_definition: GenFile = /*@__PURE__*/
-  fileDesc("CidyZXNvdXJjZXMvdjEvY29udGFpbmVyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJxChBDb250YWluZXJTbG90UmVmEh0KFWNvbnRhaW5lcl9pbnN0YW5jZV9pZBgBIAEoCRIPCgdzbG90X2lkGAIgASgJEi0KBHR5cGUYAyABKA4yHy5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdFR5cGUizAMKF0NvbnRhaW5lclNsb3REZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KBHBvc2UYBSABKAsyES5nZW9tZXRyeS52MS5Qb3NlEiIKBHNpemUYBiABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEjoKBHR5cGUYByABKA4yHy5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdFR5cGVCC7pICMgBAYIBAhABEigKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRpb25faWRzGAggAygJEioKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9pZHMYCSADKAkSJQodc3VwcG9ydGVkX3BhcnRfZGVmaW5pdGlvbl9pZHMYCiADKAkSMgoLY29uc3RyYWludHMYCyADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50EjcKGXN1cHBvcnRlZF9wYXJ0X2ZhbWlseV9pZHMYDCADKAlCFLpIEZIBDhgBIgpyCIj0BAGo9AQBIpECChNDb250YWluZXJEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRI2CgR0eXBlGAUgASgOMhsucmVzb3VyY2VzLnYxLkNvbnRhaW5lclR5cGVCC7pICMgBAYIBAhABEhsKCG1vZGVsX2lkGAYgASgJQgm6SAZyBIjxBAESNAoFc2xvdHMYByADKAsyJS5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdERlZmluaXRpb24SMgoLY29uc3RyYWludHMYCCADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50IkgKFENvbnRhaW5lckRlZmluaXRpb25zEjAKBWl0ZW1zGAEgAygLMiEucmVzb3VyY2VzLnYxLkNvbnRhaW5lckRlZmluaXRpb24qmAEKDUNvbnRhaW5lclR5cGUSHgoaQ09OVEFJTkVSX1RZUEVfVU5TUEVDSUZJRUQQABIaChZDT05UQUlORVJfVFlQRV9TVE9SQUdFEAESFgoSQ09OVEFJTkVSX1RZUEVfS0lUEAISFwoTQ09OVEFJTkVSX1RZUEVfVFJBWRADEhoKFkNPTlRBSU5FUl9UWVBFX0ZJWFRVUkUQBCrIAQoRQ29udGFpbmVyU2xvdFR5cGUSIwofQ09OVEFJTkVSX1NMT1RfVFlQRV9VTlNQRUNJRklFRBAAEiMKH0NPTlRBSU5FUl9TTE9UX1RZUEVfU1RPUkFHRV9CSU4QARIgChxDT05UQUlORVJfU0xPVF9UWVBFX0tJVF9TTE9UEAISIQodQ09OVEFJTkVSX1NMT1RfVFlQRV9UUkFZX0NFTEwQAxIkCiBDT05UQUlORVJfU0xPVF9UWVBFX0ZJWFRVUkVfU0xPVBAEQsgBChBjb20ucmVzb3VyY2VzLnYxQhhDb250YWluZXJEZWZpbml0aW9uUHJvdG9QAVpAZ2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3Jlc291cmNlcy92MTtyZXNvdXJjZXN2MaICA1JYWKoCFU1lc3NhZ2VzLlJlc291cmNlcy5WMcoCDFJlc291cmNlc1xWMeICGFJlc291cmNlc1xWMVxHUEJNZXRhZGF0YeoCDVJlc291cmNlczo6VjFiBnByb3RvMw", [file_buf_validate_validate, file_common_v1_key_value_constraint, file_geometry_v1_pose, file_geometry_v1_vector3, file_validation_v1_predefined_string_rules]);
+  fileDesc("CidyZXNvdXJjZXMvdjEvY29udGFpbmVyX2RlZmluaXRpb24ucHJvdG8SDHJlc291cmNlcy52MSJxChBDb250YWluZXJTbG90UmVmEh0KFWNvbnRhaW5lcl9pbnN0YW5jZV9pZBgBIAEoCRIPCgdzbG90X2lkGAIgASgJEi0KBHR5cGUYAyABKA4yHy5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdFR5cGUizAMKF0NvbnRhaW5lclNsb3REZWZpbml0aW9uEgoKAmlkGAEgASgJEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEh8KBHBvc2UYBSABKAsyES5nZW9tZXRyeS52MS5Qb3NlEiIKBHNpemUYBiABKAsyFC5nZW9tZXRyeS52MS5WZWN0b3IzEjoKBHR5cGUYByABKA4yHy5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdFR5cGVCC7pICMgBAYIBAhABEigKIHN1cHBvcnRlZF9wcm9kdWN0X2RlZmluaXRpb25faWRzGAggAygJEioKInN1cHBvcnRlZF9yb290X3BhcnRfZGVmaW5pdGlvbl9pZHMYCSADKAkSJQodc3VwcG9ydGVkX3BhcnRfZGVmaW5pdGlvbl9pZHMYCiADKAkSMgoLY29uc3RyYWludHMYCyADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50EjcKGXN1cHBvcnRlZF9wYXJ0X2ZhbWlseV9pZHMYDCADKAlCFLpIEZIBDhgBIgpyCIj0BAGo9AQBIswCChNDb250YWluZXJEZWZpbml0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDAoEaWNvbhgDIAEoCRITCgtkZXNjcmlwdGlvbhgEIAEoCRI2CgR0eXBlGAUgASgOMhsucmVzb3VyY2VzLnYxLkNvbnRhaW5lclR5cGVCC7pICMgBAYIBAhABEhsKCG1vZGVsX2lkGAYgASgJQgm6SAZyBIjxBAESNAoFc2xvdHMYByADKAsyJS5yZXNvdXJjZXMudjEuQ29udGFpbmVyU2xvdERlZmluaXRpb24SMgoLY29uc3RyYWludHMYCCADKAsyHS5jb21tb24udjEuS2V5VmFsdWVDb25zdHJhaW50EjkKE2V4dGVybmFsX3JlZmVyZW5jZXMYCSADKAsyHC5jb21tb24udjEuRXh0ZXJuYWxSZWZlcmVuY2UiSAoUQ29udGFpbmVyRGVmaW5pdGlvbnMSMAoFaXRlbXMYASADKAsyIS5yZXNvdXJjZXMudjEuQ29udGFpbmVyRGVmaW5pdGlvbiqYAQoNQ29udGFpbmVyVHlwZRIeChpDT05UQUlORVJfVFlQRV9VTlNQRUNJRklFRBAAEhoKFkNPTlRBSU5FUl9UWVBFX1NUT1JBR0UQARIWChJDT05UQUlORVJfVFlQRV9LSVQQAhIXChNDT05UQUlORVJfVFlQRV9UUkFZEAMSGgoWQ09OVEFJTkVSX1RZUEVfRklYVFVSRRAEKsgBChFDb250YWluZXJTbG90VHlwZRIjCh9DT05UQUlORVJfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAASIwofQ09OVEFJTkVSX1NMT1RfVFlQRV9TVE9SQUdFX0JJThABEiAKHENPTlRBSU5FUl9TTE9UX1RZUEVfS0lUX1NMT1QQAhIhCh1DT05UQUlORVJfU0xPVF9UWVBFX1RSQVlfQ0VMTBADEiQKIENPTlRBSU5FUl9TTE9UX1RZUEVfRklYVFVSRV9TTE9UEARCyAEKEGNvbS5yZXNvdXJjZXMudjFCGENvbnRhaW5lckRlZmluaXRpb25Qcm90b1ABWkBnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcmVzb3VyY2VzL3YxO3Jlc291cmNlc3YxogIDUlhYqgIVTWVzc2FnZXMuUmVzb3VyY2VzLlYxygIMUmVzb3VyY2VzXFYx4gIYUmVzb3VyY2VzXFYxXEdQQk1ldGFkYXRh6gINUmVzb3VyY2VzOjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_common_v1_external_references, file_common_v1_key_value_constraint, file_geometry_v1_pose, file_geometry_v1_vector3, file_validation_v1_predefined_string_rules]);
 
 /**
  * ContainerSlotRef points to a concrete slot on a concrete container instance.
@@ -101,14 +103,18 @@ export type ContainerSlotDefinition = Message<"resources.v1.ContainerSlotDefinit
   description: string;
 
   /**
-   * Pose of the slot relative to the container definition coordinate frame.
+   * Pose of the slot in the container's frame, in mm: the frame of the
+   * container's model (model_id), with the axes its asset declares. It is
+   * where the frame of the item the slot holds sits: the root frame of a
+   * product, or the frame of a part's model (cobotar/protocol#42).
    *
    * @generated from field: geometry.v1.Pose pose = 5;
    */
   pose?: Pose;
 
   /**
-   * Optional approximate slot extents/bounds, useful for UI, AR, and planning.
+   * Optional approximate extents of the slot, in mm along the axes of its
+   * pose, useful for UI, AR and planning.
    *
    * @generated from field: geometry.v1.Vector3 size = 6;
    */
@@ -233,6 +239,16 @@ export type ContainerDefinition = Message<"resources.v1.ContainerDefinition"> & 
    * @generated from field: repeated common.v1.KeyValueConstraint constraints = 8;
    */
   constraints: KeyValueConstraint[];
+
+  /**
+   * The entity in another system the container comes from, e.g. the Fusion
+   * document of a fixture design. An import (ImportContainer) updates the
+   * container with the same reference instead of creating another
+   * (cobotar/protocol#42).
+   *
+   * @generated from field: repeated common.v1.ExternalReference external_references = 9;
+   */
+  externalReferences: ExternalReference[];
 };
 
 /**

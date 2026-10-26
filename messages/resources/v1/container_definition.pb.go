@@ -220,13 +220,19 @@ func (x *ContainerSlotRef) GetType() ContainerSlotType {
 // - a tray pocket
 // - a fixture nest / clamp position / pallet pocket
 type ContainerSlotDefinition struct {
-	state                          protoimpl.MessageState    `protogen:"open.v1"`
-	Id                             string                    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                                                                                     // Stable identifier unique within the parent container definition.
-	Name                           string                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                                                                                 // Human-readable slot name shown in UI and AR, e.g. "Slot A" or "Motor Nest".
-	Icon                           string                    `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`                                                                                                 // Optional icon override for UIs. If empty, the container icon may be reused.
-	Description                    string                    `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`                                                                                   // Optional longer description of the slot's purpose or usage constraints.
-	Pose                           *v1.Pose                  `protobuf:"bytes,5,opt,name=pose,proto3" json:"pose,omitempty"`                                                                                                 // Pose of the slot relative to the container definition coordinate frame.
-	Size                           *v1.Vector3               `protobuf:"bytes,6,opt,name=size,proto3" json:"size,omitempty"`                                                                                                 // Optional approximate slot extents/bounds, useful for UI, AR, and planning.
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                   // Stable identifier unique within the parent container definition.
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`               // Human-readable slot name shown in UI and AR, e.g. "Slot A" or "Motor Nest".
+	Icon        string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`               // Optional icon override for UIs. If empty, the container icon may be reused.
+	Description string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"` // Optional longer description of the slot's purpose or usage constraints.
+	// Pose of the slot in the container's frame, in mm: the frame of the
+	// container's model (model_id), with the axes its asset declares. It is
+	// where the frame of the item the slot holds sits: the root frame of a
+	// product, or the frame of a part's model (cobotar/protocol#42).
+	Pose *v1.Pose `protobuf:"bytes,5,opt,name=pose,proto3" json:"pose,omitempty"`
+	// Optional approximate extents of the slot, in mm along the axes of its
+	// pose, useful for UI, AR and planning.
+	Size                           *v1.Vector3               `protobuf:"bytes,6,opt,name=size,proto3" json:"size,omitempty"`
 	Type                           ContainerSlotType         `protobuf:"varint,7,opt,name=type,proto3,enum=resources.v1.ContainerSlotType" json:"type,omitempty"`                                                            // Semantic role of the slot, e.g. storage bin, kit slot, tray cell, or fixture slot.
 	SupportedProductDefinitionIds  []string                  `protobuf:"bytes,8,rep,name=supported_product_definition_ids,json=supportedProductDefinitionIds,proto3" json:"supported_product_definition_ids,omitempty"`      // Products that this slot explicitly supports holding/presenting.
 	SupportedRootPartDefinitionIds []string                  `protobuf:"bytes,9,rep,name=supported_root_part_definition_ids,json=supportedRootPartDefinitionIds,proto3" json:"supported_root_part_definition_ids,omitempty"` // Root assemblies/root parts that this slot supports.
@@ -362,17 +368,22 @@ func (x *ContainerSlotDefinition) GetSupportedPartFamilyIds() []string {
 // bins, and trays/totes. The semantic differences are captured by ContainerType and
 // ContainerSlotType rather than by separate top-level resources.
 type ContainerDefinition struct {
-	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Id            string                     `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                      // Stable identifier of the reusable container definition.
-	Name          string                     `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                  // Display name, e.g. "Shelf Bin 01", "Starter Kit Tray", or "Motor Pallet".
-	Icon          string                     `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`                                  // UI icon representing the container.
-	Description   string                     `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`                    // Human-readable description of the container's purpose.
-	Type          ContainerType              `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.ContainerType" json:"type,omitempty"` // High-level category: storage, kit, tray, or fixture.
-	ModelId       string                     `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`             // Optional 3D model used in simulation, AR, and UI rendering.
-	Slots         []*ContainerSlotDefinition `protobuf:"bytes,7,rep,name=slots,proto3" json:"slots,omitempty"`                                // Addressable places inside/on the container.
-	Constraints   []*v11.KeyValueConstraint  `protobuf:"bytes,8,rep,name=constraints,proto3" json:"constraints,omitempty"`                    // Container-level constraints applying to the whole carrier.
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state       protoimpl.MessageState     `protogen:"open.v1"`
+	Id          string                     `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                      // Stable identifier of the reusable container definition.
+	Name        string                     `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                  // Display name, e.g. "Shelf Bin 01", "Starter Kit Tray", or "Motor Pallet".
+	Icon        string                     `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`                                  // UI icon representing the container.
+	Description string                     `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`                    // Human-readable description of the container's purpose.
+	Type        ContainerType              `protobuf:"varint,5,opt,name=type,proto3,enum=resources.v1.ContainerType" json:"type,omitempty"` // High-level category: storage, kit, tray, or fixture.
+	ModelId     string                     `protobuf:"bytes,6,opt,name=model_id,json=modelId,proto3" json:"model_id,omitempty"`             // Optional 3D model used in simulation, AR, and UI rendering.
+	Slots       []*ContainerSlotDefinition `protobuf:"bytes,7,rep,name=slots,proto3" json:"slots,omitempty"`                                // Addressable places inside/on the container.
+	Constraints []*v11.KeyValueConstraint  `protobuf:"bytes,8,rep,name=constraints,proto3" json:"constraints,omitempty"`                    // Container-level constraints applying to the whole carrier.
+	// The entity in another system the container comes from, e.g. the Fusion
+	// document of a fixture design. An import (ImportContainer) updates the
+	// container with the same reference instead of creating another
+	// (cobotar/protocol#42).
+	ExternalReferences []*v11.ExternalReference `protobuf:"bytes,9,rep,name=external_references,json=externalReferences,proto3" json:"external_references,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *ContainerDefinition) Reset() {
@@ -461,6 +472,13 @@ func (x *ContainerDefinition) GetConstraints() []*v11.KeyValueConstraint {
 	return nil
 }
 
+func (x *ContainerDefinition) GetExternalReferences() []*v11.ExternalReference {
+	if x != nil {
+		return x.ExternalReferences
+	}
+	return nil
+}
+
 type ContainerDefinitions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ContainerDefinition `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"` // List wrapper used for transport/query responses.
@@ -509,7 +527,7 @@ var File_resources_v1_container_definition_proto protoreflect.FileDescriptor
 
 const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\n" +
-	"'resources/v1/container_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a$common/v1/key_value_constraint.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x94\x01\n" +
+	"'resources/v1/container_definition.proto\x12\fresources.v1\x1a\x1bbuf/validate/validate.proto\x1a#common/v1/external_references.proto\x1a$common/v1/key_value_constraint.proto\x1a\x16geometry/v1/pose.proto\x1a\x19geometry/v1/vector3.proto\x1a+validation/v1/predefined_string_rules.proto\"\x94\x01\n" +
 	"\x10ContainerSlotRef\x122\n" +
 	"\x15container_instance_id\x18\x01 \x01(\tR\x13containerInstanceId\x12\x17\n" +
 	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x123\n" +
@@ -528,7 +546,7 @@ const file_resources_v1_container_definition_proto_rawDesc = "" +
 	" \x03(\tR\x1asupportedPartDefinitionIds\x12?\n" +
 	"\vconstraints\x18\v \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\x12O\n" +
 	"\x19supported_part_family_ids\x18\f \x03(\tB\x14\xbaH\x11\x92\x01\x0e\x18\x01\"\n" +
-	"r\b\x88\xf4\x04\x01\xa8\xf4\x04\x01R\x16supportedPartFamilyIds\"\xd1\x02\n" +
+	"r\b\x88\xf4\x04\x01\xa8\xf4\x04\x01R\x16supportedPartFamilyIds\"\xa0\x03\n" +
 	"\x13ContainerDefinition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -537,7 +555,8 @@ const file_resources_v1_container_definition_proto_rawDesc = "" +
 	"\x04type\x18\x05 \x01(\x0e2\x1b.resources.v1.ContainerTypeB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\x04type\x12$\n" +
 	"\bmodel_id\x18\x06 \x01(\tB\t\xbaH\x06r\x04\x88\xf1\x04\x01R\amodelId\x12;\n" +
 	"\x05slots\x18\a \x03(\v2%.resources.v1.ContainerSlotDefinitionR\x05slots\x12?\n" +
-	"\vconstraints\x18\b \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\"O\n" +
+	"\vconstraints\x18\b \x03(\v2\x1d.common.v1.KeyValueConstraintR\vconstraints\x12M\n" +
+	"\x13external_references\x18\t \x03(\v2\x1c.common.v1.ExternalReferenceR\x12externalReferences\"O\n" +
 	"\x14ContainerDefinitions\x127\n" +
 	"\x05items\x18\x01 \x03(\v2!.resources.v1.ContainerDefinitionR\x05items*\x98\x01\n" +
 	"\rContainerType\x12\x1e\n" +
@@ -578,22 +597,24 @@ var file_resources_v1_container_definition_proto_goTypes = []any{
 	(*v1.Pose)(nil),                 // 6: geometry.v1.Pose
 	(*v1.Vector3)(nil),              // 7: geometry.v1.Vector3
 	(*v11.KeyValueConstraint)(nil),  // 8: common.v1.KeyValueConstraint
+	(*v11.ExternalReference)(nil),   // 9: common.v1.ExternalReference
 }
 var file_resources_v1_container_definition_proto_depIdxs = []int32{
-	1, // 0: resources.v1.ContainerSlotRef.type:type_name -> resources.v1.ContainerSlotType
-	6, // 1: resources.v1.ContainerSlotDefinition.pose:type_name -> geometry.v1.Pose
-	7, // 2: resources.v1.ContainerSlotDefinition.size:type_name -> geometry.v1.Vector3
-	1, // 3: resources.v1.ContainerSlotDefinition.type:type_name -> resources.v1.ContainerSlotType
-	8, // 4: resources.v1.ContainerSlotDefinition.constraints:type_name -> common.v1.KeyValueConstraint
-	0, // 5: resources.v1.ContainerDefinition.type:type_name -> resources.v1.ContainerType
-	3, // 6: resources.v1.ContainerDefinition.slots:type_name -> resources.v1.ContainerSlotDefinition
-	8, // 7: resources.v1.ContainerDefinition.constraints:type_name -> common.v1.KeyValueConstraint
-	4, // 8: resources.v1.ContainerDefinitions.items:type_name -> resources.v1.ContainerDefinition
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	1,  // 0: resources.v1.ContainerSlotRef.type:type_name -> resources.v1.ContainerSlotType
+	6,  // 1: resources.v1.ContainerSlotDefinition.pose:type_name -> geometry.v1.Pose
+	7,  // 2: resources.v1.ContainerSlotDefinition.size:type_name -> geometry.v1.Vector3
+	1,  // 3: resources.v1.ContainerSlotDefinition.type:type_name -> resources.v1.ContainerSlotType
+	8,  // 4: resources.v1.ContainerSlotDefinition.constraints:type_name -> common.v1.KeyValueConstraint
+	0,  // 5: resources.v1.ContainerDefinition.type:type_name -> resources.v1.ContainerType
+	3,  // 6: resources.v1.ContainerDefinition.slots:type_name -> resources.v1.ContainerSlotDefinition
+	8,  // 7: resources.v1.ContainerDefinition.constraints:type_name -> common.v1.KeyValueConstraint
+	9,  // 8: resources.v1.ContainerDefinition.external_references:type_name -> common.v1.ExternalReference
+	4,  // 9: resources.v1.ContainerDefinitions.items:type_name -> resources.v1.ContainerDefinition
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_resources_v1_container_definition_proto_init() }
