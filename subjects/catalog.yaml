@@ -581,7 +581,7 @@ routes:
 
   - id: edit.container_definition.import
     pattern: edit.container_definition.import
-    lifecycle: planned
+    lifecycle: active
     conformance:
       mode: staged
       tracking_issue: cobotar/Authoring#103
