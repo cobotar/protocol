@@ -3624,23 +3624,29 @@ be updated because it changes resolution policy without changing value type.
 <a name="ar-v1-ARRunContextSelector"></a>
 
 ### ARRunContextSelector
-ARRunContextSelector selects an actor-related task and projects it to the run
-ID requested by the owning input slot:
+ARRunContextSelector selects one of an actor&#39;s runs for the owning input
+slot:
 
-- TASK_RUN_ID returns the selected task.
-- SEQUENCE_RUN_ID returns the selected task&#39;s immediate parent sequence.
-- PROCESS_RUN_ID returns the process containing the selected task.
+- TASK_RUN_ID returns the task the selection picks.
+- SEQUENCE_RUN_ID returns that task&#39;s immediate parent sequence.
+- PROCESS_RUN_ID returns a process run, chosen so it stays the same while
+  the actor works through it: the first ordered process run with a task the
+  selection could pick (for ASSIGNED, a task assigned to the actor that isn&#39;t
+  done; for ACTIONABLE, also a task the actor could take over), kept until it
+  is done or aborted. LAST_COMPLETED returns the most recently completed
+  process run with a task the actor completed, and NEXT_EXPECTED the process
+  run after the ASSIGNED one that has a task assigned to the actor.
 
 FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
 to a parent sequence or process.
 
-If no task satisfies the policy, resolution produces no value and the
+If no run satisfies the policy, resolution produces no value and the
 context slot&#39;s generated property remains empty.
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| selection | [ARRunSelection](#ar-v1-ARRunSelection) |  | Policy used to choose a task before projecting it to the requested run ID. |
+| selection | [ARRunSelection](#ar-v1-ARRunSelection) |  | Policy used to choose the actor&#39;s run. |
 | actor | [ARActorSelector](#ar-v1-ARActorSelector) |  | Actor whose tasks are considered. |
 
 
@@ -3684,12 +3690,15 @@ context slot&#39;s generated property remains empty.
 <a name="ar-v1-ARRunSelection"></a>
 
 ### ARRunSelection
-ARRunSelection defines how an actor-related task candidate is chosen.
+ARRunSelection defines which of an actor&#39;s tasks a run context slot follows.
 
 Candidate tasks are limited to ProcessRuns associated with the station or
-cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
-assigned to or performed by the selected actor are excluded unless a policy
-explicitly selects historical or errored work.
+cell targeted by the resolved ARConfigBindingMessage. The backend assigns
+tasks to actors when a run is loaded and when actors become available, so
+most tasks are assigned to someone; an actor is a candidate for the tasks it
+could take over (TaskRun.candidate_actors). Tasks that cannot be assigned to
+or performed by the selected actor are excluded unless a policy explicitly
+selects historical or errored work.
 
 Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
 1. state precedence: IN_PROGRESS, READY, QUEUED
@@ -3702,26 +3711,28 @@ deterministic tie-breaker when a policy otherwise considers candidates
 equivalent.
 
 To summarize
-• FIRST_WORKABLE: actionable now.
-• CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
-• NEXT_EXPECTED: likely relevant next, but potentially blocked.
-• LAST_COMPLETED: most recently completed.
-• FIRST_IN_ERROR: errored task requiring attention.
+• ASSIGNED: the actor&#39;s own task, the one it&#39;s working on or can start now.
+• ACTIONABLE: like ASSIGNED, or else work the actor could take over now.
+• NEXT_EXPECTED: the actor&#39;s task after that, which may still be blocked.
+• LAST_COMPLETED: the actor&#39;s most recently completed task.
+• FIRST_IN_ERROR: the actor&#39;s failed task, which needs attention.
+
+Guidance for a worker usually follows ACTIONABLE, and guidance for a robot
+ASSIGNED; a robot actor can&#39;t use ACTIONABLE. Feedback that shows a task
+assigned to another actor should make that clear.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | AR_RUN_SELECTION_UNSPECIFIED | 0 | No selection policy specified. Invalid for a stored run selector. |
-| AR_RUN_SELECTION_FIRST_WORKABLE | 1 | Select the first ordered task that is currently workable for the actor. Workability is determined by runtime assignment, actor feasibility, task state, dependencies, and other effective execution restrictions. |
-| AR_RUN_SELECTION_CURRENT_ASSIGNED | 2 | Select the first ordered task assigned to the actor where state is READY or IN_PROGRESS. This answers &#34;what is this actor&#39;s current task?&#34;.
+| AR_RUN_SELECTION_ACTIONABLE | 1 | Select what the actor can do now: the ASSIGNED task, or, when the actor has none, the first ordered READY task assigned to another actor or to none that the actor could take over (it is a feasible candidate, and the task can be reassigned).
 
-Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work; the task must already be assigned to the actor. |
-| AR_RUN_SELECTION_NEXT_EXPECTED | 3 | Select the next non-terminal task expected to become relevant to the actor.
+Not valid for a robot actor, whose work is decided by assignment. |
+| AR_RUN_SELECTION_ASSIGNED | 2 | Select the actor&#39;s own task: the first ordered task assigned to the actor that it is working on (IN_PROGRESS or SUSPENDED), or else the first ordered task assigned to it that it can start now (READY and can_do).
 
-Resolution: 1. Build the actor&#39;s ordered candidate task list. 2. If FIRST_WORKABLE resolves, select the first later non-terminal candidate. 3. Otherwise, select the first candidate expected to become workable after its currently unmet dependencies are completed.
-
-The selected task need not currently be workable. Tasks that cannot be assigned to or performed by the actor are excluded. |
+The task stays selected while the actor works on it, and the actor&#39;s next task is selected once it is done. Tasks assigned to other actors are never selected. |
+| AR_RUN_SELECTION_NEXT_EXPECTED | 3 | Select the actor&#39;s next task after the ASSIGNED one: the first later ordered task assigned to the actor that isn&#39;t done, even if it can&#39;t start yet. Without an ASSIGNED task, the actor&#39;s first task that isn&#39;t done. |
 | AR_RUN_SELECTION_LAST_COMPLETED | 4 | Select the actor&#39;s completed task with the latest completed_at timestamp. Canonical execution order and then id are used as tie-breakers. |
-| AR_RUN_SELECTION_FIRST_IN_ERROR | 5 | Select the first ordered ERROR task associated with the actor. This policy is valid only for TASK_RUN_ID. |
+| AR_RUN_SELECTION_FIRST_IN_ERROR | 5 | Select the first ordered FAILED task associated with the actor (assigned to it, or with the actor as a candidate). This policy is valid only for TASK_RUN_ID. |
 
 
 

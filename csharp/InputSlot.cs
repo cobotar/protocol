@@ -30,119 +30,125 @@ namespace Messages.AR.V1 {
             "cnVsZXMucHJvdG8imAEKD0FSQWN0b3JTZWxlY3RvchIlCg5jdXJyZW50X3dv",
             "cmtlchgBIAEoCFINY3VycmVudFdvcmtlchIzChByZXNvdXJjZV9zbG90X2lk",
             "GAIgASgJQgm6SAZyBPjrMAFSDnJlc291cmNlU2xvdElkOim6SCYiJAoOY3Vy",
-            "cmVudF93b3JrZXIKEHJlc291cmNlX3Nsb3RfaWQQASKOAQoUQVJSdW5Db250",
+            "cmVudF93b3JrZXIKEHJlc291cmNlX3Nsb3RfaWQQASKYAwoUQVJSdW5Db250",
             "ZXh0U2VsZWN0b3ISQAoJc2VsZWN0aW9uGAEgASgOMhUuYXIudjEuQVJSdW5T",
             "ZWxlY3Rpb25CC7pICIIBAhAByAEBUglzZWxlY3Rpb24SNAoFYWN0b3IYAiAB",
-            "KAsyFi5hci52MS5BUkFjdG9yU2VsZWN0b3JCBrpIA8gBAVIFYWN0b3Iivw4K",
-            "EkFSSW5wdXRTbG90TWVzc2FnZRIZCgJpZBgBIAEoCUIJukgGcgT46zABUgJp",
-            "ZBIpCgljb25maWdfaWQYAiABKAlCDLpICXIEkPEEAcgBAVIIY29uZmlnSWQS",
-            "HQoEbmFtZRgDIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIKBGljb24YBCABKAlS",
-            "BGljb24SIAoLZGVzY3JpcHRpb24YBSABKAlSC2Rlc2NyaXB0aW9uEkAKFWdl",
-            "bmVyYXRlZF9wcm9wZXJ0eV9pZBgHIAEoCUIMukgJcgSY8QQByAEBUhNnZW5l",
-            "cmF0ZWRQcm9wZXJ0eUlkEkgKDXJlc291cmNlX3R5cGUYCCABKA4yGS5hci52",
-            "MS5BUlJlc291cmNlU2xvdFR5cGVCCLpIBYIBAhABUgxyZXNvdXJjZVR5cGUS",
-            "RQoMY29udGV4dF90eXBlGAkgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5",
-            "cGVCCLpIBYIBAhABUgtjb250ZXh0VHlwZRI+CgxydW5fc2VsZWN0b3IYCiAB",
-            "KAsyGy5hci52MS5BUlJ1bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3IS",
-            "VgoVZXhwbGljaXRfcmVxdWlyZW1lbnRzGAsgAygLMiEucmVzb3VyY2VzLnYx",
-            "LlJlc291cmNlUmVxdWlyZW1lbnRSFGV4cGxpY2l0UmVxdWlyZW1lbnRzOqIK",
-            "ukieChqdAgorYXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25fcmVxdWly",
-            "ZXNfdGFzaxIsRklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBmb3IgVEFT",
-            "S19SVU5fSUQavwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0aGlzLnJ1",
-            "bl9zZWxlY3Rvci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxlY3Rpb24u",
-            "QVJfUlVOX1NFTEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlzLmNvbnRl",
-            "eHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhU",
-            "X1NMT1RfVFlQRV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xvdC5ydW5f",
-            "c2VsZWN0b3JfbWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxlY3RvciBp",
-            "cyByZXF1aXJlZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHByb2hpYml0",
-            "ZWQgb3RoZXJ3aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFS",
-            "Q29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1Nf",
-            "UlVOX0lEIHx8IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4",
-            "dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNFX1JVTl9J",
-            "RCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90",
-            "VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkgPT0gaGFz",
-            "KHRoaXMucnVuX3NlbGVjdG9yKRrIBAo3YXJfaW5wdXRfc2xvdC5leHBsaWNp",
-            "dF9yZXF1aXJlbWVudHNfbWF0Y2hfcmVzb3VyY2VfdHlwZRJTZXhwbGljaXQg",
-            "Y29uc3RyYWludHMgbXVzdCBzZWxlY3QgYSBzaWduYWwgb3IgYW4gYXNzZXQg",
-            "dHlwZSBjb21wYXRpYmxlIHdpdGggdGhlIHNsb3QatwN0aGlzLmV4cGxpY2l0",
-            "X3JlcXVpcmVtZW50cy5hbGwocmVxdWlyZW1lbnQsIHRoaXMucmVzb3VyY2Vf",
-            "dHlwZSA9PSBhci52MS5BUlJlc291cmNlU2xvdFR5cGUuQVJfUkVTT1VSQ0Vf",
-            "U0xPVF9UWVBFX1JPQk9UID8gaGFzKHJlcXVpcmVtZW50LnNpZ25hbCkgJiYg",
-            "KGhhcyhyZXF1aXJlbWVudC5zaWduYWwuc2lnbmFsX2lkKSB8fCBoYXMocmVx",
-            "dWlyZW1lbnQuc2lnbmFsLnNlbWFudGljKSkgOiB0aGlzLnJlc291cmNlX3R5",
-            "cGUgPT0gYXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlLkFSX1JFU09VUkNFX1NM",
-            "T1RfVFlQRV9BU1NFVCA/IGhhcyhyZXF1aXJlbWVudC5hc3NldF90eXBlKSB8",
-            "fCAoaGFzKHJlcXVpcmVtZW50LnNpZ25hbCkgJiYgKGhhcyhyZXF1aXJlbWVu",
-            "dC5zaWduYWwuc2lnbmFsX2lkKSB8fCBoYXMocmVxdWlyZW1lbnQuc2lnbmFs",
-            "LnNlbWFudGljKSkpIDogZmFsc2UpIh8KDXJlc291cmNlX3R5cGUKDGNvbnRl",
-            "eHRfdHlwZRABIkYKE0FSSW5wdXRTbG90TWVzc2FnZXMSLwoFc2xvdHMYASAD",
-            "KAsyGS5hci52MS5BUklucHV0U2xvdE1lc3NhZ2VSBXNsb3RzIuUNChVBUklu",
-            "cHV0U2xvdEFkZE1lc3NhZ2USKQoJY29uZmlnX2lkGAEgASgJQgy6SAlyBJDx",
-            "BAHIAQFSCGNvbmZpZ0lkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFt",
-            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
-            "ZXNjcmlwdGlvbhJICg1yZXNvdXJjZV90eXBlGAggASgOMhkuYXIudjEuQVJS",
-            "ZXNvdXJjZVNsb3RUeXBlQgi6SAWCAQIQAVIMcmVzb3VyY2VUeXBlEkUKDGNv",
-            "bnRleHRfdHlwZRgJIAEoDjIYLmFyLnYxLkFSQ29udGV4dFNsb3RUeXBlQgi6",
-            "SAWCAQIQAVILY29udGV4dFR5cGUSPgoMcnVuX3NlbGVjdG9yGAogASgLMhsu",
-            "YXIudjEuQVJSdW5Db250ZXh0U2VsZWN0b3JSC3J1blNlbGVjdG9yElYKFWV4",
-            "cGxpY2l0X3JlcXVpcmVtZW50cxgLIAMoCzIhLnJlc291cmNlcy52MS5SZXNv",
-            "dXJjZVJlcXVpcmVtZW50UhRleHBsaWNpdFJlcXVpcmVtZW50czqiCrpIngoa",
-            "nQIKK2FyX2lucHV0X3Nsb3QuZXJyb3Jfc2VsZWN0aW9uX3JlcXVpcmVzX3Rh",
-            "c2sSLEZJUlNUX0lOX0VSUk9SIGlzIG9ubHkgdmFsaWQgZm9yIFRBU0tfUlVO",
-            "X0lEGr8BIWhhcyh0aGlzLnJ1bl9zZWxlY3RvcikgfHwgdGhpcy5ydW5fc2Vs",
-            "ZWN0b3Iuc2VsZWN0aW9uICE9IGFyLnYxLkFSUnVuU2VsZWN0aW9uLkFSX1JV",
-            "Tl9TRUxFQ1RJT05fRklSU1RfSU5fRVJST1IgfHwgdGhpcy5jb250ZXh0X3R5",
-            "cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUuQVJfQ09OVEVYVF9TTE9U",
-            "X1RZUEVfVEFTS19SVU5fSUQajwMKL2FyX2lucHV0X3Nsb3QucnVuX3NlbGVj",
-            "dG9yX21hdGNoZXNfY29udGV4dF90eXBlEkdydW5fc2VsZWN0b3IgaXMgcmVx",
-            "dWlyZWQgZm9yIHJ1biBjb250ZXh0IHNsb3RzIGFuZCBwcm9oaWJpdGVkIG90",
-            "aGVyd2lzZRqSAih0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRl",
-            "eHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9QUk9DRVNTX1JVTl9J",
-            "RCB8fCB0aGlzLmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90",
-            "VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5fSUQgfHwg",
-            "dGhpcy5jb250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xvdFR5cGUu",
-            "QVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQpID09IGhhcyh0aGlz",
-            "LnJ1bl9zZWxlY3RvcikayAQKN2FyX2lucHV0X3Nsb3QuZXhwbGljaXRfcmVx",
-            "dWlyZW1lbnRzX21hdGNoX3Jlc291cmNlX3R5cGUSU2V4cGxpY2l0IGNvbnN0",
-            "cmFpbnRzIG11c3Qgc2VsZWN0IGEgc2lnbmFsIG9yIGFuIGFzc2V0IHR5cGUg",
-            "Y29tcGF0aWJsZSB3aXRoIHRoZSBzbG90GrcDdGhpcy5leHBsaWNpdF9yZXF1",
-            "aXJlbWVudHMuYWxsKHJlcXVpcmVtZW50LCB0aGlzLnJlc291cmNlX3R5cGUg",
-            "PT0gYXIudjEuQVJSZXNvdXJjZVNsb3RUeXBlLkFSX1JFU09VUkNFX1NMT1Rf",
-            "VFlQRV9ST0JPVCA/IGhhcyhyZXF1aXJlbWVudC5zaWduYWwpICYmIChoYXMo",
-            "cmVxdWlyZW1lbnQuc2lnbmFsLnNpZ25hbF9pZCkgfHwgaGFzKHJlcXVpcmVt",
-            "ZW50LnNpZ25hbC5zZW1hbnRpYykpIDogdGhpcy5yZXNvdXJjZV90eXBlID09",
-            "IGFyLnYxLkFSUmVzb3VyY2VTbG90VHlwZS5BUl9SRVNPVVJDRV9TTE9UX1RZ",
-            "UEVfQVNTRVQgPyBoYXMocmVxdWlyZW1lbnQuYXNzZXRfdHlwZSkgfHwgKGhh",
-            "cyhyZXF1aXJlbWVudC5zaWduYWwpICYmIChoYXMocmVxdWlyZW1lbnQuc2ln",
-            "bmFsLnNpZ25hbF9pZCkgfHwgaGFzKHJlcXVpcmVtZW50LnNpZ25hbC5zZW1h",
-            "bnRpYykpKSA6IGZhbHNlKSIfCg1yZXNvdXJjZV90eXBlCgxjb250ZXh0X3R5",
-            "cGUQASKjAgoYQVJJbnB1dFNsb3RVcGRhdGVNZXNzYWdlEhkKAmlkGAEgASgJ",
-            "Qgm6SAZyBPjrMAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIEbmFt",
-            "ZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtk",
-            "ZXNjcmlwdGlvbhI+CgxydW5fc2VsZWN0b3IYBiABKAsyGy5hci52MS5BUlJ1",
-            "bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3ISVwoVZXhwbGljaXRfcmVx",
-            "dWlyZW1lbnRzGAcgASgLMiIucmVzb3VyY2VzLnYxLlJlc291cmNlUmVxdWly",
-            "ZW1lbnRzUhRleHBsaWNpdFJlcXVpcmVtZW50cyI4ChhBUklucHV0U2xvdERl",
-            "bGV0ZU1lc3NhZ2USHAoCaWQYASABKAlCDLpICXIE+OswAcgBAVICaWQqfQoS",
-            "QVJSZXNvdXJjZVNsb3RUeXBlEiUKIUFSX1JFU09VUkNFX1NMT1RfVFlQRV9V",
-            "TlNQRUNJRklFRBAAEh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9ST0JPVBAB",
-            "Eh8KG0FSX1JFU09VUkNFX1NMT1RfVFlQRV9BU1NFVBACKr8CChFBUkNvbnRl",
-            "eHRTbG90VHlwZRIkCiBBUl9DT05URVhUX1NMT1RfVFlQRV9VTlNQRUNJRklF",
-            "RBAAEiAKHEFSX0NPTlRFWFRfU0xPVF9UWVBFX0xJTkVfSUQQARIgChxBUl9D",
-            "T05URVhUX1NMT1RfVFlQRV9DRUxMX0lEEAISIwofQVJfQ09OVEVYVF9TTE9U",
-            "X1RZUEVfU1RBVElPTl9JRBADEiIKHkFSX0NPTlRFWFRfU0xPVF9UWVBFX1dP",
-            "UktFUl9JRBAEEicKI0FSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVO",
-            "X0lEEAUSKAokQVJfQ09OVEVYVF9TTE9UX1RZUEVfU0VRVUVOQ0VfUlVOX0lE",
-            "EAYSJAogQVJfQ09OVEVYVF9TTE9UX1RZUEVfVEFTS19SVU5fSUQQByrsAQoO",
-            "QVJSdW5TZWxlY3Rpb24SIAocQVJfUlVOX1NFTEVDVElPTl9VTlNQRUNJRklF",
-            "RBAAEiMKH0FSX1JVTl9TRUxFQ1RJT05fRklSU1RfV09SS0FCTEUQARIlCiFB",
-            "Ul9SVU5fU0VMRUNUSU9OX0NVUlJFTlRfQVNTSUdORUQQAhIiCh5BUl9SVU5f",
-            "U0VMRUNUSU9OX05FWFRfRVhQRUNURUQQAxIjCh9BUl9SVU5fU0VMRUNUSU9O",
-            "X0xBU1RfQ09NUExFVEVEEAQSIwofQVJfUlVOX1NFTEVDVElPTl9GSVJTVF9J",
-            "Tl9FUlJPUhAFQo0BCgljb20uYXIudjFCDklucHV0U2xvdFByb3RvUAFaMmdp",
-            "dGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9hci92MTth",
-            "cnYxogIDQVhYqgIOTWVzc2FnZXMuQVIuVjHKAgVBclxWMeICEUFyXFYxXEdQ",
-            "Qk1ldGFkYXRh6gIGQXI6OlYxYgZwcm90bzM="));
+            "KAsyFi5hci52MS5BUkFjdG9yU2VsZWN0b3JCBrpIA8gBAVIFYWN0b3I6hwK6",
+            "SIMCGoACCixhcl9ydW5fY29udGV4dF9zZWxlY3Rvci5yb2JvdF9ub3RfYWN0",
+            "aW9uYWJsZRJTQUNUSU9OQUJMRSBpcyBvbmx5IHZhbGlkIGZvciB0aGUgY3Vy",
+            "cmVudCB3b3JrZXI7IGEgcm9ib3QgZm9sbG93cyBpdHMgQVNTSUdORUQgdGFz",
+            "a3MaeyFoYXModGhpcy5hY3RvcikgfHwgdGhpcy5hY3Rvci5yZXNvdXJjZV9z",
+            "bG90X2lkID09ICcnIHx8IHRoaXMuc2VsZWN0aW9uICE9IGFyLnYxLkFSUnVu",
+            "U2VsZWN0aW9uLkFSX1JVTl9TRUxFQ1RJT05fQUNUSU9OQUJMRSK/DgoSQVJJ",
+            "bnB1dFNsb3RNZXNzYWdlEhkKAmlkGAEgASgJQgm6SAZyBPjrMAFSAmlkEikK",
+            "CWNvbmZpZ19pZBgCIAEoCUIMukgJcgSQ8QQByAEBUghjb25maWdJZBIdCgRu",
+            "YW1lGAMgASgJQgm6SAZyBIDxBAFSBG5hbWUSEgoEaWNvbhgEIAEoCVIEaWNv",
+            "bhIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24SQAoVZ2VuZXJh",
+            "dGVkX3Byb3BlcnR5X2lkGAcgASgJQgy6SAlyBJjxBAHIAQFSE2dlbmVyYXRl",
+            "ZFByb3BlcnR5SWQSSAoNcmVzb3VyY2VfdHlwZRgIIAEoDjIZLmFyLnYxLkFS",
+            "UmVzb3VyY2VTbG90VHlwZUIIukgFggECEAFSDHJlc291cmNlVHlwZRJFCgxj",
+            "b250ZXh0X3R5cGUYCSABKA4yGC5hci52MS5BUkNvbnRleHRTbG90VHlwZUII",
+            "ukgFggECEAFSC2NvbnRleHRUeXBlEj4KDHJ1bl9zZWxlY3RvchgKIAEoCzIb",
+            "LmFyLnYxLkFSUnVuQ29udGV4dFNlbGVjdG9yUgtydW5TZWxlY3RvchJWChVl",
+            "eHBsaWNpdF9yZXF1aXJlbWVudHMYCyADKAsyIS5yZXNvdXJjZXMudjEuUmVz",
+            "b3VyY2VSZXF1aXJlbWVudFIUZXhwbGljaXRSZXF1aXJlbWVudHM6ogq6SJ4K",
+            "Gp0CCithcl9pbnB1dF9zbG90LmVycm9yX3NlbGVjdGlvbl9yZXF1aXJlc190",
+            "YXNrEixGSVJTVF9JTl9FUlJPUiBpcyBvbmx5IHZhbGlkIGZvciBUQVNLX1JV",
+            "Tl9JRBq/ASFoYXModGhpcy5ydW5fc2VsZWN0b3IpIHx8IHRoaXMucnVuX3Nl",
+            "bGVjdG9yLnNlbGVjdGlvbiAhPSBhci52MS5BUlJ1blNlbGVjdGlvbi5BUl9S",
+            "VU5fU0VMRUNUSU9OX0ZJUlNUX0lOX0VSUk9SIHx8IHRoaXMuY29udGV4dF90",
+            "eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBlLkFSX0NPTlRFWFRfU0xP",
+            "VF9UWVBFX1RBU0tfUlVOX0lEGo8DCi9hcl9pbnB1dF9zbG90LnJ1bl9zZWxl",
+            "Y3Rvcl9tYXRjaGVzX2NvbnRleHRfdHlwZRJHcnVuX3NlbGVjdG9yIGlzIHJl",
+            "cXVpcmVkIGZvciBydW4gY29udGV4dCBzbG90cyBhbmQgcHJvaGliaXRlZCBv",
+            "dGhlcndpc2UakgIodGhpcy5jb250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250",
+            "ZXh0U2xvdFR5cGUuQVJfQ09OVEVYVF9TTE9UX1RZUEVfUFJPQ0VTU19SVU5f",
+            "SUQgfHwgdGhpcy5jb250ZXh0X3R5cGUgPT0gYXIudjEuQVJDb250ZXh0U2xv",
+            "dFR5cGUuQVJfQ09OVEVYVF9TTE9UX1RZUEVfU0VRVUVOQ0VfUlVOX0lEIHx8",
+            "IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBl",
+            "LkFSX0NPTlRFWFRfU0xPVF9UWVBFX1RBU0tfUlVOX0lEKSA9PSBoYXModGhp",
+            "cy5ydW5fc2VsZWN0b3IpGsgECjdhcl9pbnB1dF9zbG90LmV4cGxpY2l0X3Jl",
+            "cXVpcmVtZW50c19tYXRjaF9yZXNvdXJjZV90eXBlElNleHBsaWNpdCBjb25z",
+            "dHJhaW50cyBtdXN0IHNlbGVjdCBhIHNpZ25hbCBvciBhbiBhc3NldCB0eXBl",
+            "IGNvbXBhdGlibGUgd2l0aCB0aGUgc2xvdBq3A3RoaXMuZXhwbGljaXRfcmVx",
+            "dWlyZW1lbnRzLmFsbChyZXF1aXJlbWVudCwgdGhpcy5yZXNvdXJjZV90eXBl",
+            "ID09IGFyLnYxLkFSUmVzb3VyY2VTbG90VHlwZS5BUl9SRVNPVVJDRV9TTE9U",
+            "X1RZUEVfUk9CT1QgPyBoYXMocmVxdWlyZW1lbnQuc2lnbmFsKSAmJiAoaGFz",
+            "KHJlcXVpcmVtZW50LnNpZ25hbC5zaWduYWxfaWQpIHx8IGhhcyhyZXF1aXJl",
+            "bWVudC5zaWduYWwuc2VtYW50aWMpKSA6IHRoaXMucmVzb3VyY2VfdHlwZSA9",
+            "PSBhci52MS5BUlJlc291cmNlU2xvdFR5cGUuQVJfUkVTT1VSQ0VfU0xPVF9U",
+            "WVBFX0FTU0VUID8gaGFzKHJlcXVpcmVtZW50LmFzc2V0X3R5cGUpIHx8ICho",
+            "YXMocmVxdWlyZW1lbnQuc2lnbmFsKSAmJiAoaGFzKHJlcXVpcmVtZW50LnNp",
+            "Z25hbC5zaWduYWxfaWQpIHx8IGhhcyhyZXF1aXJlbWVudC5zaWduYWwuc2Vt",
+            "YW50aWMpKSkgOiBmYWxzZSkiHwoNcmVzb3VyY2VfdHlwZQoMY29udGV4dF90",
+            "eXBlEAEiRgoTQVJJbnB1dFNsb3RNZXNzYWdlcxIvCgVzbG90cxgBIAMoCzIZ",
+            "LmFyLnYxLkFSSW5wdXRTbG90TWVzc2FnZVIFc2xvdHMi5Q0KFUFSSW5wdXRT",
+            "bG90QWRkTWVzc2FnZRIpCgljb25maWdfaWQYASABKAlCDLpICXIEkPEEAcgB",
+            "AVIIY29uZmlnSWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEkgKDXJlc291cmNlX3R5cGUYCCABKA4yGS5hci52MS5BUlJlc291",
+            "cmNlU2xvdFR5cGVCCLpIBYIBAhABUgxyZXNvdXJjZVR5cGUSRQoMY29udGV4",
+            "dF90eXBlGAkgASgOMhguYXIudjEuQVJDb250ZXh0U2xvdFR5cGVCCLpIBYIB",
+            "AhABUgtjb250ZXh0VHlwZRI+CgxydW5fc2VsZWN0b3IYCiABKAsyGy5hci52",
+            "MS5BUlJ1bkNvbnRleHRTZWxlY3RvclILcnVuU2VsZWN0b3ISVgoVZXhwbGlj",
+            "aXRfcmVxdWlyZW1lbnRzGAsgAygLMiEucmVzb3VyY2VzLnYxLlJlc291cmNl",
+            "UmVxdWlyZW1lbnRSFGV4cGxpY2l0UmVxdWlyZW1lbnRzOqIKukieChqdAgor",
+            "YXJfaW5wdXRfc2xvdC5lcnJvcl9zZWxlY3Rpb25fcmVxdWlyZXNfdGFzaxIs",
+            "RklSU1RfSU5fRVJST1IgaXMgb25seSB2YWxpZCBmb3IgVEFTS19SVU5fSUQa",
+            "vwEhaGFzKHRoaXMucnVuX3NlbGVjdG9yKSB8fCB0aGlzLnJ1bl9zZWxlY3Rv",
+            "ci5zZWxlY3Rpb24gIT0gYXIudjEuQVJSdW5TZWxlY3Rpb24uQVJfUlVOX1NF",
+            "TEVDVElPTl9GSVJTVF9JTl9FUlJPUiB8fCB0aGlzLmNvbnRleHRfdHlwZSA9",
+            "PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9DT05URVhUX1NMT1RfVFlQ",
+            "RV9UQVNLX1JVTl9JRBqPAwovYXJfaW5wdXRfc2xvdC5ydW5fc2VsZWN0b3Jf",
+            "bWF0Y2hlc19jb250ZXh0X3R5cGUSR3J1bl9zZWxlY3RvciBpcyByZXF1aXJl",
+            "ZCBmb3IgcnVuIGNvbnRleHQgc2xvdHMgYW5kIHByb2hpYml0ZWQgb3RoZXJ3",
+            "aXNlGpICKHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNs",
+            "b3RUeXBlLkFSX0NPTlRFWFRfU0xPVF9UWVBFX1BST0NFU1NfUlVOX0lEIHx8",
+            "IHRoaXMuY29udGV4dF90eXBlID09IGFyLnYxLkFSQ29udGV4dFNsb3RUeXBl",
+            "LkFSX0NPTlRFWFRfU0xPVF9UWVBFX1NFUVVFTkNFX1JVTl9JRCB8fCB0aGlz",
+            "LmNvbnRleHRfdHlwZSA9PSBhci52MS5BUkNvbnRleHRTbG90VHlwZS5BUl9D",
+            "T05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRCkgPT0gaGFzKHRoaXMucnVu",
+            "X3NlbGVjdG9yKRrIBAo3YXJfaW5wdXRfc2xvdC5leHBsaWNpdF9yZXF1aXJl",
+            "bWVudHNfbWF0Y2hfcmVzb3VyY2VfdHlwZRJTZXhwbGljaXQgY29uc3RyYWlu",
+            "dHMgbXVzdCBzZWxlY3QgYSBzaWduYWwgb3IgYW4gYXNzZXQgdHlwZSBjb21w",
+            "YXRpYmxlIHdpdGggdGhlIHNsb3QatwN0aGlzLmV4cGxpY2l0X3JlcXVpcmVt",
+            "ZW50cy5hbGwocmVxdWlyZW1lbnQsIHRoaXMucmVzb3VyY2VfdHlwZSA9PSBh",
+            "ci52MS5BUlJlc291cmNlU2xvdFR5cGUuQVJfUkVTT1VSQ0VfU0xPVF9UWVBF",
+            "X1JPQk9UID8gaGFzKHJlcXVpcmVtZW50LnNpZ25hbCkgJiYgKGhhcyhyZXF1",
+            "aXJlbWVudC5zaWduYWwuc2lnbmFsX2lkKSB8fCBoYXMocmVxdWlyZW1lbnQu",
+            "c2lnbmFsLnNlbWFudGljKSkgOiB0aGlzLnJlc291cmNlX3R5cGUgPT0gYXIu",
+            "djEuQVJSZXNvdXJjZVNsb3RUeXBlLkFSX1JFU09VUkNFX1NMT1RfVFlQRV9B",
+            "U1NFVCA/IGhhcyhyZXF1aXJlbWVudC5hc3NldF90eXBlKSB8fCAoaGFzKHJl",
+            "cXVpcmVtZW50LnNpZ25hbCkgJiYgKGhhcyhyZXF1aXJlbWVudC5zaWduYWwu",
+            "c2lnbmFsX2lkKSB8fCBoYXMocmVxdWlyZW1lbnQuc2lnbmFsLnNlbWFudGlj",
+            "KSkpIDogZmFsc2UpIh8KDXJlc291cmNlX3R5cGUKDGNvbnRleHRfdHlwZRAB",
+            "IqMCChhBUklucHV0U2xvdFVwZGF0ZU1lc3NhZ2USGQoCaWQYASABKAlCCbpI",
+            "BnIE+OswAVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1lEhIK",
+            "BGljb24YAyABKAlSBGljb24SIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2Ny",
+            "aXB0aW9uEj4KDHJ1bl9zZWxlY3RvchgGIAEoCzIbLmFyLnYxLkFSUnVuQ29u",
+            "dGV4dFNlbGVjdG9yUgtydW5TZWxlY3RvchJXChVleHBsaWNpdF9yZXF1aXJl",
+            "bWVudHMYByABKAsyIi5yZXNvdXJjZXMudjEuUmVzb3VyY2VSZXF1aXJlbWVu",
+            "dHNSFGV4cGxpY2l0UmVxdWlyZW1lbnRzIjgKGEFSSW5wdXRTbG90RGVsZXRl",
+            "TWVzc2FnZRIcCgJpZBgBIAEoCUIMukgJcgT46zAByAEBUgJpZCp9ChJBUlJl",
+            "c291cmNlU2xvdFR5cGUSJQohQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX1VOU1BF",
+            "Q0lGSUVEEAASHwobQVJfUkVTT1VSQ0VfU0xPVF9UWVBFX1JPQk9UEAESHwob",
+            "QVJfUkVTT1VSQ0VfU0xPVF9UWVBFX0FTU0VUEAIqvwIKEUFSQ29udGV4dFNs",
+            "b3RUeXBlEiQKIEFSX0NPTlRFWFRfU0xPVF9UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "IAocQVJfQ09OVEVYVF9TTE9UX1RZUEVfTElORV9JRBABEiAKHEFSX0NPTlRF",
+            "WFRfU0xPVF9UWVBFX0NFTExfSUQQAhIjCh9BUl9DT05URVhUX1NMT1RfVFlQ",
+            "RV9TVEFUSU9OX0lEEAMSIgoeQVJfQ09OVEVYVF9TTE9UX1RZUEVfV09SS0VS",
+            "X0lEEAQSJwojQVJfQ09OVEVYVF9TTE9UX1RZUEVfUFJPQ0VTU19SVU5fSUQQ",
+            "BRIoCiRBUl9DT05URVhUX1NMT1RfVFlQRV9TRVFVRU5DRV9SVU5fSUQQBhIk",
+            "CiBBUl9DT05URVhUX1NMT1RfVFlQRV9UQVNLX1JVTl9JRBAHKuABCg5BUlJ1",
+            "blNlbGVjdGlvbhIgChxBUl9SVU5fU0VMRUNUSU9OX1VOU1BFQ0lGSUVEEAAS",
+            "HwobQVJfUlVOX1NFTEVDVElPTl9BQ1RJT05BQkxFEAESHQoZQVJfUlVOX1NF",
+            "TEVDVElPTl9BU1NJR05FRBACEiIKHkFSX1JVTl9TRUxFQ1RJT05fTkVYVF9F",
+            "WFBFQ1RFRBADEiMKH0FSX1JVTl9TRUxFQ1RJT05fTEFTVF9DT01QTEVURUQQ",
+            "BBIjCh9BUl9SVU5fU0VMRUNUSU9OX0ZJUlNUX0lOX0VSUk9SEAVCjQEKCWNv",
+            "bS5hci52MUIOSW5wdXRTbG90UHJvdG9QAVoyZ2l0aHViLmNvbS9jb2JvdGFy",
+            "L3Byb3RvY29sL3YyL21lc3NhZ2VzL2FyL3YxO2FydjGiAgNBWFiqAg5NZXNz",
+            "YWdlcy5BUi5WMcoCBUFyXFYx4gIRQXJcVjFcR1BCTWV0YWRhdGHqAgZBcjo6",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Resources.V1.ResourceRequirementReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.AR.V1.ARResourceSlotType), typeof(global::Messages.AR.V1.ARContextSlotType), typeof(global::Messages.AR.V1.ARRunSelection), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -211,12 +217,15 @@ namespace Messages.AR.V1 {
   }
 
   /// <summary>
-  /// ARRunSelection defines how an actor-related task candidate is chosen.
+  /// ARRunSelection defines which of an actor's tasks a run context slot follows.
   ///
   /// Candidate tasks are limited to ProcessRuns associated with the station or
-  /// cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
-  /// assigned to or performed by the selected actor are excluded unless a policy
-  /// explicitly selects historical or errored work.
+  /// cell targeted by the resolved ARConfigBindingMessage. The backend assigns
+  /// tasks to actors when a run is loaded and when actors become available, so
+  /// most tasks are assigned to someone; an actor is a candidate for the tasks it
+  /// could take over (TaskRun.candidate_actors). Tasks that cannot be assigned to
+  /// or performed by the selected actor are excluded unless a policy explicitly
+  /// selects historical or errored work.
   ///
   /// Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
   /// 1. state precedence: IN_PROGRESS, READY, QUEUED
@@ -229,11 +238,15 @@ namespace Messages.AR.V1 {
   /// equivalent.
   ///
   /// To summarize
-  /// • FIRST_WORKABLE: actionable now.
-  /// • CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
-  /// • NEXT_EXPECTED: likely relevant next, but potentially blocked.
-  /// • LAST_COMPLETED: most recently completed.
-  /// • FIRST_IN_ERROR: errored task requiring attention.
+  /// • ASSIGNED: the actor's own task, the one it's working on or can start now.
+  /// • ACTIONABLE: like ASSIGNED, or else work the actor could take over now.
+  /// • NEXT_EXPECTED: the actor's task after that, which may still be blocked.
+  /// • LAST_COMPLETED: the actor's most recently completed task.
+  /// • FIRST_IN_ERROR: the actor's failed task, which needs attention.
+  ///
+  /// Guidance for a worker usually follows ACTIONABLE, and guidance for a robot
+  /// ASSIGNED; a robot actor can't use ACTIONABLE. Feedback that shows a task
+  /// assigned to another actor should make that clear.
   /// </summary>
   public enum ARRunSelection {
     /// <summary>
@@ -241,31 +254,28 @@ namespace Messages.AR.V1 {
     /// </summary>
     [pbr::OriginalName("AR_RUN_SELECTION_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// Select the first ordered task that is currently workable for the actor.
-    /// Workability is determined by runtime assignment, actor feasibility, task
-    /// state, dependencies, and other effective execution restrictions.
+    /// Select what the actor can do now: the ASSIGNED task, or, when the actor has
+    /// none, the first ordered READY task assigned to another actor or to none
+    /// that the actor could take over (it is a feasible candidate, and the task
+    /// can be reassigned).
+    ///
+    /// Not valid for a robot actor, whose work is decided by assignment.
     /// </summary>
-    [pbr::OriginalName("AR_RUN_SELECTION_FIRST_WORKABLE")] FirstWorkable = 1,
+    [pbr::OriginalName("AR_RUN_SELECTION_ACTIONABLE")] Actionable = 1,
     /// <summary>
-    /// Select the first ordered task assigned to the actor where state is READY or
-    /// IN_PROGRESS. This answers "what is this actor's current task?".
+    /// Select the actor's own task: the first ordered task assigned to the actor
+    /// that it is working on (IN_PROGRESS or SUSPENDED), or else the first ordered
+    /// task assigned to it that it can start now (READY and can_do).
     ///
-    /// Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work;
-    /// the task must already be assigned to the actor.
+    /// The task stays selected while the actor works on it, and the actor's next
+    /// task is selected once it is done. Tasks assigned to other actors are never
+    /// selected.
     /// </summary>
-    [pbr::OriginalName("AR_RUN_SELECTION_CURRENT_ASSIGNED")] CurrentAssigned = 2,
+    [pbr::OriginalName("AR_RUN_SELECTION_ASSIGNED")] Assigned = 2,
     /// <summary>
-    /// Select the next non-terminal task expected to become relevant to the actor.
-    ///
-    /// Resolution:
-    /// 1. Build the actor's ordered candidate task list.
-    /// 2. If FIRST_WORKABLE resolves, select the first later non-terminal
-    ///    candidate.
-    /// 3. Otherwise, select the first candidate expected to become workable after
-    ///    its currently unmet dependencies are completed.
-    ///
-    /// The selected task need not currently be workable. Tasks that cannot be
-    /// assigned to or performed by the actor are excluded.
+    /// Select the actor's next task after the ASSIGNED one: the first later
+    /// ordered task assigned to the actor that isn't done, even if it can't start
+    /// yet. Without an ASSIGNED task, the actor's first task that isn't done.
     /// </summary>
     [pbr::OriginalName("AR_RUN_SELECTION_NEXT_EXPECTED")] NextExpected = 3,
     /// <summary>
@@ -274,7 +284,8 @@ namespace Messages.AR.V1 {
     /// </summary>
     [pbr::OriginalName("AR_RUN_SELECTION_LAST_COMPLETED")] LastCompleted = 4,
     /// <summary>
-    /// Select the first ordered ERROR task associated with the actor.
+    /// Select the first ordered FAILED task associated with the actor (assigned to
+    /// it, or with the actor as a candidate).
     /// This policy is valid only for TASK_RUN_ID.
     /// </summary>
     [pbr::OriginalName("AR_RUN_SELECTION_FIRST_IN_ERROR")] FirstInError = 5,
@@ -533,17 +544,23 @@ namespace Messages.AR.V1 {
   }
 
   /// <summary>
-  /// ARRunContextSelector selects an actor-related task and projects it to the run
-  /// ID requested by the owning input slot:
+  /// ARRunContextSelector selects one of an actor's runs for the owning input
+  /// slot:
   ///
-  /// - TASK_RUN_ID returns the selected task.
-  /// - SEQUENCE_RUN_ID returns the selected task's immediate parent sequence.
-  /// - PROCESS_RUN_ID returns the process containing the selected task.
+  /// - TASK_RUN_ID returns the task the selection picks.
+  /// - SEQUENCE_RUN_ID returns that task's immediate parent sequence.
+  /// - PROCESS_RUN_ID returns a process run, chosen so it stays the same while
+  ///   the actor works through it: the first ordered process run with a task the
+  ///   selection could pick (for ASSIGNED, a task assigned to the actor that isn't
+  ///   done; for ACTIONABLE, also a task the actor could take over), kept until it
+  ///   is done or aborted. LAST_COMPLETED returns the most recently completed
+  ///   process run with a task the actor completed, and NEXT_EXPECTED the process
+  ///   run after the ASSIGNED one that has a task assigned to the actor.
   ///
   /// FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
   /// to a parent sequence or process.
   ///
-  /// If no task satisfies the policy, resolution produces no value and the
+  /// If no run satisfies the policy, resolution produces no value and the
   /// context slot's generated property remains empty.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -596,7 +613,7 @@ namespace Messages.AR.V1 {
     public const int SelectionFieldNumber = 1;
     private global::Messages.AR.V1.ARRunSelection selection_ = global::Messages.AR.V1.ARRunSelection.Unspecified;
     /// <summary>
-    /// Policy used to choose a task before projecting it to the requested run ID.
+    /// Policy used to choose the actor's run.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

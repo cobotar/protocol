@@ -30,8 +30,8 @@ class ARContextSlotType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 class ARRunSelection(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     AR_RUN_SELECTION_UNSPECIFIED: _ClassVar[ARRunSelection]
-    AR_RUN_SELECTION_FIRST_WORKABLE: _ClassVar[ARRunSelection]
-    AR_RUN_SELECTION_CURRENT_ASSIGNED: _ClassVar[ARRunSelection]
+    AR_RUN_SELECTION_ACTIONABLE: _ClassVar[ARRunSelection]
+    AR_RUN_SELECTION_ASSIGNED: _ClassVar[ARRunSelection]
     AR_RUN_SELECTION_NEXT_EXPECTED: _ClassVar[ARRunSelection]
     AR_RUN_SELECTION_LAST_COMPLETED: _ClassVar[ARRunSelection]
     AR_RUN_SELECTION_FIRST_IN_ERROR: _ClassVar[ARRunSelection]
@@ -47,8 +47,8 @@ AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID: ARContextSlotType
 AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID: ARContextSlotType
 AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID: ARContextSlotType
 AR_RUN_SELECTION_UNSPECIFIED: ARRunSelection
-AR_RUN_SELECTION_FIRST_WORKABLE: ARRunSelection
-AR_RUN_SELECTION_CURRENT_ASSIGNED: ARRunSelection
+AR_RUN_SELECTION_ACTIONABLE: ARRunSelection
+AR_RUN_SELECTION_ASSIGNED: ARRunSelection
 AR_RUN_SELECTION_NEXT_EXPECTED: ARRunSelection
 AR_RUN_SELECTION_LAST_COMPLETED: ARRunSelection
 AR_RUN_SELECTION_FIRST_IN_ERROR: ARRunSelection

@@ -149,12 +149,15 @@ func (ARContextSlotType) EnumDescriptor() ([]byte, []int) {
 	return file_ar_v1_input_slot_proto_rawDescGZIP(), []int{1}
 }
 
-// ARRunSelection defines how an actor-related task candidate is chosen.
+// ARRunSelection defines which of an actor's tasks a run context slot follows.
 //
 // Candidate tasks are limited to ProcessRuns associated with the station or
-// cell targeted by the resolved ARConfigBindingMessage. Tasks that cannot be
-// assigned to or performed by the selected actor are excluded unless a policy
-// explicitly selects historical or errored work.
+// cell targeted by the resolved ARConfigBindingMessage. The backend assigns
+// tasks to actors when a run is loaded and when actors become available, so
+// most tasks are assigned to someone; an actor is a candidate for the tasks it
+// could take over (TaskRun.candidate_actors). Tasks that cannot be assigned to
+// or performed by the selected actor are excluded unless a policy explicitly
+// selects historical or errored work.
 //
 // Unless a policy specifies otherwise, candidate ProcessRuns are ordered by:
 // 1. state precedence: IN_PROGRESS, READY, QUEUED
@@ -167,42 +170,44 @@ func (ARContextSlotType) EnumDescriptor() ([]byte, []int) {
 // equivalent.
 //
 // To summarize
-// • FIRST_WORKABLE: actionable now.
-// • CURRENT_ASSIGNED: assigned to this actor and ready/in progress.
-// • NEXT_EXPECTED: likely relevant next, but potentially blocked.
-// • LAST_COMPLETED: most recently completed.
-// • FIRST_IN_ERROR: errored task requiring attention.
+// • ASSIGNED: the actor's own task, the one it's working on or can start now.
+// • ACTIONABLE: like ASSIGNED, or else work the actor could take over now.
+// • NEXT_EXPECTED: the actor's task after that, which may still be blocked.
+// • LAST_COMPLETED: the actor's most recently completed task.
+// • FIRST_IN_ERROR: the actor's failed task, which needs attention.
+//
+// Guidance for a worker usually follows ACTIONABLE, and guidance for a robot
+// ASSIGNED; a robot actor can't use ACTIONABLE. Feedback that shows a task
+// assigned to another actor should make that clear.
 type ARRunSelection int32
 
 const (
 	// No selection policy specified. Invalid for a stored run selector.
 	ARRunSelection_AR_RUN_SELECTION_UNSPECIFIED ARRunSelection = 0
-	// Select the first ordered task that is currently workable for the actor.
-	// Workability is determined by runtime assignment, actor feasibility, task
-	// state, dependencies, and other effective execution restrictions.
-	ARRunSelection_AR_RUN_SELECTION_FIRST_WORKABLE ARRunSelection = 1
-	// Select the first ordered task assigned to the actor where state is READY or
-	// IN_PROGRESS. This answers "what is this actor's current task?".
+	// Select what the actor can do now: the ASSIGNED task, or, when the actor has
+	// none, the first ordered READY task assigned to another actor or to none
+	// that the actor could take over (it is a feasible candidate, and the task
+	// can be reassigned).
 	//
-	// Unlike FIRST_WORKABLE, this does not select merely feasible/candidate work;
-	// the task must already be assigned to the actor.
-	ARRunSelection_AR_RUN_SELECTION_CURRENT_ASSIGNED ARRunSelection = 2
-	// Select the next non-terminal task expected to become relevant to the actor.
+	// Not valid for a robot actor, whose work is decided by assignment.
+	ARRunSelection_AR_RUN_SELECTION_ACTIONABLE ARRunSelection = 1
+	// Select the actor's own task: the first ordered task assigned to the actor
+	// that it is working on (IN_PROGRESS or SUSPENDED), or else the first ordered
+	// task assigned to it that it can start now (READY and can_do).
 	//
-	// Resolution:
-	//  1. Build the actor's ordered candidate task list.
-	//  2. If FIRST_WORKABLE resolves, select the first later non-terminal
-	//     candidate.
-	//  3. Otherwise, select the first candidate expected to become workable after
-	//     its currently unmet dependencies are completed.
-	//
-	// The selected task need not currently be workable. Tasks that cannot be
-	// assigned to or performed by the actor are excluded.
+	// The task stays selected while the actor works on it, and the actor's next
+	// task is selected once it is done. Tasks assigned to other actors are never
+	// selected.
+	ARRunSelection_AR_RUN_SELECTION_ASSIGNED ARRunSelection = 2
+	// Select the actor's next task after the ASSIGNED one: the first later
+	// ordered task assigned to the actor that isn't done, even if it can't start
+	// yet. Without an ASSIGNED task, the actor's first task that isn't done.
 	ARRunSelection_AR_RUN_SELECTION_NEXT_EXPECTED ARRunSelection = 3
 	// Select the actor's completed task with the latest completed_at timestamp.
 	// Canonical execution order and then id are used as tie-breakers.
 	ARRunSelection_AR_RUN_SELECTION_LAST_COMPLETED ARRunSelection = 4
-	// Select the first ordered ERROR task associated with the actor.
+	// Select the first ordered FAILED task associated with the actor (assigned to
+	// it, or with the actor as a candidate).
 	// This policy is valid only for TASK_RUN_ID.
 	ARRunSelection_AR_RUN_SELECTION_FIRST_IN_ERROR ARRunSelection = 5
 )
@@ -211,19 +216,19 @@ const (
 var (
 	ARRunSelection_name = map[int32]string{
 		0: "AR_RUN_SELECTION_UNSPECIFIED",
-		1: "AR_RUN_SELECTION_FIRST_WORKABLE",
-		2: "AR_RUN_SELECTION_CURRENT_ASSIGNED",
+		1: "AR_RUN_SELECTION_ACTIONABLE",
+		2: "AR_RUN_SELECTION_ASSIGNED",
 		3: "AR_RUN_SELECTION_NEXT_EXPECTED",
 		4: "AR_RUN_SELECTION_LAST_COMPLETED",
 		5: "AR_RUN_SELECTION_FIRST_IN_ERROR",
 	}
 	ARRunSelection_value = map[string]int32{
-		"AR_RUN_SELECTION_UNSPECIFIED":      0,
-		"AR_RUN_SELECTION_FIRST_WORKABLE":   1,
-		"AR_RUN_SELECTION_CURRENT_ASSIGNED": 2,
-		"AR_RUN_SELECTION_NEXT_EXPECTED":    3,
-		"AR_RUN_SELECTION_LAST_COMPLETED":   4,
-		"AR_RUN_SELECTION_FIRST_IN_ERROR":   5,
+		"AR_RUN_SELECTION_UNSPECIFIED":    0,
+		"AR_RUN_SELECTION_ACTIONABLE":     1,
+		"AR_RUN_SELECTION_ASSIGNED":       2,
+		"AR_RUN_SELECTION_NEXT_EXPECTED":  3,
+		"AR_RUN_SELECTION_LAST_COMPLETED": 4,
+		"AR_RUN_SELECTION_FIRST_IN_ERROR": 5,
 	}
 )
 
@@ -314,21 +319,27 @@ func (x *ARActorSelector) GetResourceSlotId() string {
 	return ""
 }
 
-// ARRunContextSelector selects an actor-related task and projects it to the run
-// ID requested by the owning input slot:
+// ARRunContextSelector selects one of an actor's runs for the owning input
+// slot:
 //
-// - TASK_RUN_ID returns the selected task.
-// - SEQUENCE_RUN_ID returns the selected task's immediate parent sequence.
-// - PROCESS_RUN_ID returns the process containing the selected task.
+//   - TASK_RUN_ID returns the task the selection picks.
+//   - SEQUENCE_RUN_ID returns that task's immediate parent sequence.
+//   - PROCESS_RUN_ID returns a process run, chosen so it stays the same while
+//     the actor works through it: the first ordered process run with a task the
+//     selection could pick (for ASSIGNED, a task assigned to the actor that isn't
+//     done; for ACTIONABLE, also a task the actor could take over), kept until it
+//     is done or aborted. LAST_COMPLETED returns the most recently completed
+//     process run with a task the actor completed, and NEXT_EXPECTED the process
+//     run after the ASSIGNED one that has a task assigned to the actor.
 //
 // FIRST_IN_ERROR is intentionally limited to TASK_RUN_ID and is not projected
 // to a parent sequence or process.
 //
-// If no task satisfies the policy, resolution produces no value and the
+// If no run satisfies the policy, resolution produces no value and the
 // context slot's generated property remains empty.
 type ARRunContextSelector struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Policy used to choose a task before projecting it to the requested run ID.
+	// Policy used to choose the actor's run.
 	Selection     ARRunSelection   `protobuf:"varint,1,opt,name=selection,proto3,enum=ar.v1.ARRunSelection" json:"selection,omitempty"`
 	Actor         *ARActorSelector `protobuf:"bytes,2,opt,name=actor,proto3" json:"actor,omitempty"` // Actor whose tasks are considered.
 	unknownFields protoimpl.UnknownFields
@@ -798,10 +809,11 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\x0ecurrent_worker\x18\x01 \x01(\bR\rcurrentWorker\x123\n" +
 	"\x10resource_slot_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x0eresourceSlotId:)\xbaH&\"$\n" +
 	"\x0ecurrent_worker\n" +
-	"\x10resource_slot_id\x10\x01\"\x8e\x01\n" +
+	"\x10resource_slot_id\x10\x01\"\x98\x03\n" +
 	"\x14ARRunContextSelector\x12@\n" +
 	"\tselection\x18\x01 \x01(\x0e2\x15.ar.v1.ARRunSelectionB\v\xbaH\b\xc8\x01\x01\x82\x01\x02\x10\x01R\tselection\x124\n" +
-	"\x05actor\x18\x02 \x01(\v2\x16.ar.v1.ARActorSelectorB\x06\xbaH\x03\xc8\x01\x01R\x05actor\"\xbf\x0e\n" +
+	"\x05actor\x18\x02 \x01(\v2\x16.ar.v1.ARActorSelectorB\x06\xbaH\x03\xc8\x01\x01R\x05actor:\x87\x02\xbaH\x83\x02\x1a\x80\x02\n" +
+	",ar_run_context_selector.robot_not_actionable\x12SACTIONABLE is only valid for the current worker; a robot follows its ASSIGNED tasks\x1a{!has(this.actor) || this.actor.resource_slot_id == '' || this.selection != ar.v1.ARRunSelection.AR_RUN_SELECTION_ACTIONABLE\"\xbf\x0e\n" +
 	"\x12ARInputSlotMessage\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xf8\xeb0\x01R\x02id\x12)\n" +
 	"\tconfig_id\x18\x02 \x01(\tB\f\xbaH\t\xc8\x01\x01r\x04\x90\xf1\x04\x01R\bconfigId\x12\x1d\n" +
@@ -861,11 +873,11 @@ const file_ar_v1_input_slot_proto_rawDesc = "" +
 	"\x1eAR_CONTEXT_SLOT_TYPE_WORKER_ID\x10\x04\x12'\n" +
 	"#AR_CONTEXT_SLOT_TYPE_PROCESS_RUN_ID\x10\x05\x12(\n" +
 	"$AR_CONTEXT_SLOT_TYPE_SEQUENCE_RUN_ID\x10\x06\x12$\n" +
-	" AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID\x10\a*\xec\x01\n" +
+	" AR_CONTEXT_SLOT_TYPE_TASK_RUN_ID\x10\a*\xe0\x01\n" +
 	"\x0eARRunSelection\x12 \n" +
-	"\x1cAR_RUN_SELECTION_UNSPECIFIED\x10\x00\x12#\n" +
-	"\x1fAR_RUN_SELECTION_FIRST_WORKABLE\x10\x01\x12%\n" +
-	"!AR_RUN_SELECTION_CURRENT_ASSIGNED\x10\x02\x12\"\n" +
+	"\x1cAR_RUN_SELECTION_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bAR_RUN_SELECTION_ACTIONABLE\x10\x01\x12\x1d\n" +
+	"\x19AR_RUN_SELECTION_ASSIGNED\x10\x02\x12\"\n" +
 	"\x1eAR_RUN_SELECTION_NEXT_EXPECTED\x10\x03\x12#\n" +
 	"\x1fAR_RUN_SELECTION_LAST_COMPLETED\x10\x04\x12#\n" +
 	"\x1fAR_RUN_SELECTION_FIRST_IN_ERROR\x10\x05B\x8d\x01\n" +
