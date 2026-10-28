@@ -560,6 +560,8 @@
     - [ImportedPartFamilyMembership.ValuesEntry](#product-v1-ImportedPartFamilyMembership-ValuesEntry)
     - [ImportedPartFamilyMemberships](#product-v1-ImportedPartFamilyMemberships)
 
+    - [ProductImportMode](#product-v1-ProductImportMode)
+
 - [resources/v1/asset_adapter_definition.proto](#resources_v1_asset_adapter_definition-proto)
     - [AssetAdapterDefinition](#resources-v1-AssetAdapterDefinition)
     - [AssetAdapterDefinitions](#resources-v1-AssetAdapterDefinitions)
@@ -8511,7 +8513,9 @@ earlier revision. Part families are matched by external reference like
 parts (cobotar/protocol#36). A part, family or product without external
 references is always created. An import is refused when two of its parts or
 two of its families share a reference, or when one reference matches
-several existing parts, families or products.
+several existing parts, families or products. product_mode says whether the
+product updates the one it matches or is a new product (ProductImportMode,
+cobotar/protocol#44); parts and families are matched in every mode.
 
 An imported part&#39;s memberships follow ImportedPart.families, and an import
 only changes the memberships of the families it carries
@@ -8535,6 +8539,7 @@ family is refused.
 | product | [ProductDefinition](#product-v1-ProductDefinition) |  | The product, if the import has one. Its nodes name their parts by key in part_definition_id. |
 | product_model_key | [string](#string) |  | The key of the product&#39;s model (ProductDefinition.model_id) in the request, e.g. the whole assembly with its thumbnail; empty for none, which keeps the model of the product the import updates. |
 | families | [ImportedPartFamily](#product-v1-ImportedPartFamily) | repeated | The part families the parts name by key in ImportedPart.families. |
+| product_mode | [ProductImportMode](#product-v1-ProductImportMode) |  | What the product does with the product it matches by external reference; required when the import has a product. |
 
 
 
@@ -8554,6 +8559,7 @@ import is answered with a failed service.v1.Response.
 | models | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per model of the request, in its order. |
 | parts | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per part of the request, in its order. |
 | families | [ImportedEntity](#product-v1-ImportedEntity) | repeated | One per part family of the request, in its order. |
+| replaced_product | [ImportedEntity](#product-v1-ImportedEntity) |  | With PRODUCT_IMPORT_MODE_NEW_TAKES_OVER, the product that lost its references to the new one (UPDATED); unset otherwise. |
 
 
 
@@ -8684,6 +8690,24 @@ import can tell &#34;leave them&#34; (absent) from &#34;none of the import&#39;s
 
 
 
+
+
+
+<a name="product-v1-ProductImportMode"></a>
+
+### ProductImportMode
+ProductImportMode is what an imported product does with the existing product
+that has one of its external references (cobotar/protocol#44). The importer
+always sends the product&#39;s references; the mode decides what the backend
+does with them. Parts and part families are matched and updated in every
+mode, since other entities name them.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PRODUCT_IMPORT_MODE_UNSPECIFIED | 0 |  |
+| PRODUCT_IMPORT_MODE_UPDATE | 1 | Update the product with the reference, or create it when there is none. Later imports update it. |
+| PRODUCT_IMPORT_MODE_NEW_TAKES_OVER | 2 | Create a new product with the references, which later imports update. The product that had them loses those references, and keeps its contents and recipes; &#34; (replaced)&#34; is appended to its name and a line naming the new product to its description, and ImportProductResult.replaced_product names it. Without such a product, the new one is created as with UPDATE. |
+| PRODUCT_IMPORT_MODE_NEW_DETACHED | 3 | Create a new product without the references, as a one-off copy. Later imports keep updating the product that has them. |
 
 
 

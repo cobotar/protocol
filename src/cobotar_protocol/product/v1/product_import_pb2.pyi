@@ -6,6 +6,7 @@ from cobotar_protocol.resources.v1 import model_requests_pb2 as _model_requests_
 from cobotar_protocol.service.v1 import response_pb2 as _response_pb2
 from cobotar_protocol.validation.v1 import predefined_string_rules_pb2 as _predefined_string_rules_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from collections.abc import Iterable as _Iterable, Mapping as _Mapping
@@ -13,19 +14,32 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class ProductImportMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    PRODUCT_IMPORT_MODE_UNSPECIFIED: _ClassVar[ProductImportMode]
+    PRODUCT_IMPORT_MODE_UPDATE: _ClassVar[ProductImportMode]
+    PRODUCT_IMPORT_MODE_NEW_TAKES_OVER: _ClassVar[ProductImportMode]
+    PRODUCT_IMPORT_MODE_NEW_DETACHED: _ClassVar[ProductImportMode]
+PRODUCT_IMPORT_MODE_UNSPECIFIED: ProductImportMode
+PRODUCT_IMPORT_MODE_UPDATE: ProductImportMode
+PRODUCT_IMPORT_MODE_NEW_TAKES_OVER: ProductImportMode
+PRODUCT_IMPORT_MODE_NEW_DETACHED: ProductImportMode
+
 class ImportProduct(_message.Message):
-    __slots__ = ("models", "parts", "product", "product_model_key", "families")
+    __slots__ = ("models", "parts", "product", "product_model_key", "families", "product_mode")
     MODELS_FIELD_NUMBER: _ClassVar[int]
     PARTS_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     PRODUCT_MODEL_KEY_FIELD_NUMBER: _ClassVar[int]
     FAMILIES_FIELD_NUMBER: _ClassVar[int]
+    PRODUCT_MODE_FIELD_NUMBER: _ClassVar[int]
     models: _containers.RepeatedCompositeFieldContainer[ImportedModel]
     parts: _containers.RepeatedCompositeFieldContainer[ImportedPart]
     product: _product_definition_pb2.ProductDefinition
     product_model_key: str
     families: _containers.RepeatedCompositeFieldContainer[ImportedPartFamily]
-    def __init__(self, models: _Optional[_Iterable[_Union[ImportedModel, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[ImportedPart, _Mapping]]] = ..., product: _Optional[_Union[_product_definition_pb2.ProductDefinition, _Mapping]] = ..., product_model_key: _Optional[str] = ..., families: _Optional[_Iterable[_Union[ImportedPartFamily, _Mapping]]] = ...) -> None: ...
+    product_mode: ProductImportMode
+    def __init__(self, models: _Optional[_Iterable[_Union[ImportedModel, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[ImportedPart, _Mapping]]] = ..., product: _Optional[_Union[_product_definition_pb2.ProductDefinition, _Mapping]] = ..., product_model_key: _Optional[str] = ..., families: _Optional[_Iterable[_Union[ImportedPartFamily, _Mapping]]] = ..., product_mode: _Optional[_Union[ProductImportMode, str]] = ...) -> None: ...
 
 class ImportedModel(_message.Message):
     __slots__ = ("key", "model")
@@ -77,16 +91,18 @@ class ImportedPartFamily(_message.Message):
     def __init__(self, key: _Optional[str] = ..., family: _Optional[_Union[_part_family_pb2.PartFamily, _Mapping]] = ...) -> None: ...
 
 class ImportProductResult(_message.Message):
-    __slots__ = ("product", "models", "parts", "families")
+    __slots__ = ("product", "models", "parts", "families", "replaced_product")
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     MODELS_FIELD_NUMBER: _ClassVar[int]
     PARTS_FIELD_NUMBER: _ClassVar[int]
     FAMILIES_FIELD_NUMBER: _ClassVar[int]
+    REPLACED_PRODUCT_FIELD_NUMBER: _ClassVar[int]
     product: ImportedEntity
     models: _containers.RepeatedCompositeFieldContainer[ImportedEntity]
     parts: _containers.RepeatedCompositeFieldContainer[ImportedEntity]
     families: _containers.RepeatedCompositeFieldContainer[ImportedEntity]
-    def __init__(self, product: _Optional[_Union[ImportedEntity, _Mapping]] = ..., models: _Optional[_Iterable[_Union[ImportedEntity, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[ImportedEntity, _Mapping]]] = ..., families: _Optional[_Iterable[_Union[ImportedEntity, _Mapping]]] = ...) -> None: ...
+    replaced_product: ImportedEntity
+    def __init__(self, product: _Optional[_Union[ImportedEntity, _Mapping]] = ..., models: _Optional[_Iterable[_Union[ImportedEntity, _Mapping]]] = ..., parts: _Optional[_Iterable[_Union[ImportedEntity, _Mapping]]] = ..., families: _Optional[_Iterable[_Union[ImportedEntity, _Mapping]]] = ..., replaced_product: _Optional[_Union[ImportedEntity, _Mapping]] = ...) -> None: ...
 
 class ImportedEntity(_message.Message):
     __slots__ = ("key", "id", "status")
