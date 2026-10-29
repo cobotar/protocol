@@ -197,8 +197,10 @@ export enum SignalSemantic {
 
   /**
    * Robot input that the robot program waits on to continue, e.g. after a
-   * worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command,
-   * so it is readable but not writable by clients.
+   * worker confirmed a step, for an adapter that implements the ACKNOWLEDGE
+   * command by pulsing it, as the UR adapter does. It describes how the adapter
+   * implements the command; it is not a requirement (cobotar/Authoring#106).
+   * The adapter owns it, so it is readable but not writable by clients.
    *
    * @generated from enum value: SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE = 100;
    */
@@ -207,9 +209,11 @@ export enum SignalSemantic {
   /**
    * Robot output that puts the robot in free drive while it is set, e.g. a
    * digital output wired to a configurable input with the Freedrive action, or
-   * a register that the robot program watches. The adapter sets it for
-   * FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but
-   * not writable by clients.
+   * a register that the robot program watches, for an adapter that implements
+   * FREE_DRIVE_START and FREE_DRIVE_STOP by setting and clearing it. It
+   * describes how the adapter implements the commands; it is not a requirement
+   * (cobotar/Authoring#106). The adapter owns it, so it is readable but not
+   * writable by clients.
    *
    * @generated from enum value: SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE = 101;
    */

@@ -96,11 +96,21 @@ namespace Messages.Robot.V1 {
 
   }
   #region Enums
+  /// <summary>
+  /// RobotAdapterCommandType is a command that an adapter definition offers. The
+  /// command is the capability: how the adapter implements it, e.g. an I/O signal
+  /// for ACKNOWLEDGE, is up to the adapter, and isn't required of the robot
+  /// (cobotar/Authoring#106).
+  /// </summary>
   public enum RobotAdapterCommandType {
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY")] ProgramPlay = 1,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE")] ProgramPause = 2,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP")] ProgramStop = 3,
+    /// <summary>
+    /// Lets the robot program continue a step it waits on, e.g. after a worker
+    /// confirmed it.
+    /// </summary>
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE")] Acknowledge = 10,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP")] ShowPopup = 11,
     [pbr::OriginalName("ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP")] HidePopup = 12,

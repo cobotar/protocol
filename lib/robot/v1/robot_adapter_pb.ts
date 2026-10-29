@@ -159,6 +159,11 @@ export const RobotAdapterInfoMessageSchema: GenMessage<RobotAdapterInfoMessage> 
   messageDesc(file_robot_v1_robot_adapter, 4);
 
 /**
+ * RobotAdapterCommandType is a command that an adapter definition offers. The
+ * command is the capability: how the adapter implements it, e.g. an I/O signal
+ * for ACKNOWLEDGE, is up to the adapter, and isn't required of the robot
+ * (cobotar/Authoring#106).
+ *
  * @generated from enum robot.v1.RobotAdapterCommandType
  */
 export enum RobotAdapterCommandType {
@@ -183,6 +188,9 @@ export enum RobotAdapterCommandType {
   PROGRAM_STOP = 3,
 
   /**
+   * Lets the robot program continue a step it waits on, e.g. after a worker
+   * confirmed it.
+   *
    * @generated from enum value: ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE = 10;
    */
   ACKNOWLEDGE = 10,

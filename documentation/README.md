@@ -2618,8 +2618,8 @@ the adapter-specific signal id. Unspecified is valid for non-standard signals.
 | SIGNAL_SEMANTIC_ASSET_HMI_INSTRUCTIONS_VISIBLE | 50 | Whether an HMI is currently showing work instructions. |
 | SIGNAL_SEMANTIC_ASSET_PART_FEEDER_READY | 60 | Part-feeder availability states. |
 | SIGNAL_SEMANTIC_ASSET_PART_FEEDER_EMPTY | 61 |  |
-| SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE | 100 | Robot input that the robot program waits on to continue, e.g. after a worker confirmed a step. The adapter pulses it for the ACKNOWLEDGE command, so it is readable but not writable by clients. |
-| SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE | 101 | Robot output that puts the robot in free drive while it is set, e.g. a digital output wired to a configurable input with the Freedrive action, or a register that the robot program watches. The adapter sets it for FREE_DRIVE_START and clears it for FREE_DRIVE_STOP, so it is readable but not writable by clients. |
+| SIGNAL_SEMANTIC_ROBOT_ACKNOWLEDGE | 100 | Robot input that the robot program waits on to continue, e.g. after a worker confirmed a step, for an adapter that implements the ACKNOWLEDGE command by pulsing it, as the UR adapter does. It describes how the adapter implements the command; it is not a requirement (cobotar/Authoring#106). The adapter owns it, so it is readable but not writable by clients. |
+| SIGNAL_SEMANTIC_ROBOT_FREE_DRIVE | 101 | Robot output that puts the robot in free drive while it is set, e.g. a digital output wired to a configurable input with the Freedrive action, or a register that the robot program watches, for an adapter that implements FREE_DRIVE_START and FREE_DRIVE_STOP by setting and clearing it. It describes how the adapter implements the commands; it is not a requirement (cobotar/Authoring#106). The adapter owns it, so it is readable but not writable by clients. |
 
 
 
@@ -2946,7 +2946,10 @@ TODO: add ToolRole or similar way to express capabilities?
 <a name="robot-v1-RobotAdapterCommandType"></a>
 
 ### RobotAdapterCommandType
-
+RobotAdapterCommandType is a command that an adapter definition offers. The
+command is the capability: how the adapter implements it, e.g. an I/O signal
+for ACKNOWLEDGE, is up to the adapter, and isn&#39;t required of the robot
+(cobotar/Authoring#106).
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -2954,7 +2957,7 @@ TODO: add ToolRole or similar way to express capabilities?
 | ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY | 1 |  |
 | ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE | 2 |  |
 | ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP | 3 |  |
-| ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE | 10 |  |
+| ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE | 10 | Lets the robot program continue a step it waits on, e.g. after a worker confirmed it. |
 | ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP | 11 |  |
 | ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP | 12 |  |
 | ROBOT_ADAPTER_COMMAND_TYPE_LOAD_PROGRAM | 20 |  |

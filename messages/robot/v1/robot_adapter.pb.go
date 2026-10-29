@@ -24,13 +24,19 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// RobotAdapterCommandType is a command that an adapter definition offers. The
+// command is the capability: how the adapter implements it, e.g. an I/O signal
+// for ACKNOWLEDGE, is up to the adapter, and isn't required of the robot
+// (cobotar/Authoring#106).
 type RobotAdapterCommandType int32
 
 const (
-	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED       RobotAdapterCommandType = 0
-	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY      RobotAdapterCommandType = 1
-	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE     RobotAdapterCommandType = 2
-	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP      RobotAdapterCommandType = 3
+	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_UNSPECIFIED   RobotAdapterCommandType = 0
+	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PLAY  RobotAdapterCommandType = 1
+	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_PAUSE RobotAdapterCommandType = 2
+	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_PROGRAM_STOP  RobotAdapterCommandType = 3
+	// Lets the robot program continue a step it waits on, e.g. after a worker
+	// confirmed it.
 	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_ACKNOWLEDGE       RobotAdapterCommandType = 10
 	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_SHOW_POPUP        RobotAdapterCommandType = 11
 	RobotAdapterCommandType_ROBOT_ADAPTER_COMMAND_TYPE_HIDE_POPUP        RobotAdapterCommandType = 12
