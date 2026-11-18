@@ -16,7 +16,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file process/v1/sequence_definition.proto.
  */
 export const file_process_v1_sequence_definition: GenFile = /*@__PURE__*/
-  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEiiQ0KElNlcXVlbmNlRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgSo8gQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiAKD3NlcXVlbmNlX251bWJlchgFIAEoBUIHukgEGgIoABIlChJwYXJlbnRfc2VxdWVuY2VfaWQYBiABKAlCCbpIBnIEqPIEARI4CghvcGVyYXRvchgHIAEoDjIcLnByb2Nlc3MudjEuU2VxdWVuY2VPcGVyYXRvckIIukgFggECEAESKgoSY2hpbGRfc2VxdWVuY2VfaWRzGAggAygJQg66SAuSAQgiBnIEqPIEARImCg5jaGlsZF90YXNrX2lkcxgJIAMoCUIOukgLkgEIIgZyBLDyBAESLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgSNAoNYXBwbGljYWJpbGl0eRgNIAEoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25kaXRpb246tQm6SLEJGsIBCiZzZXF1ZW5jZV9kZWZpbml0aW9uLmNoaWxkcmVuX25vdF9taXhlZBJRYSBzZXF1ZW5jZSBtdXN0IGNvbnRhaW4gZWl0aGVyIGNoaWxkX3NlcXVlbmNlX2lkcyBvciBjaGlsZF90YXNrX2lkcywgYnV0IG5vdCBib3RoGkUhKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpID4gMCAmJiBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID4gMCkazQEKOnNlcXVlbmNlX2RlZmluaXRpb24ub3BlcmF0b3Jfc3BlY2lmaWVkX3doZW5fY2hpbGRyZW5fZXhpc3QSN29wZXJhdG9yIG11c3QgYmUgc3BlY2lmaWVkIHdoZW4gYSBzZXF1ZW5jZSBoYXMgY2hpbGRyZW4aVihzaXplKHRoaXMuY2hpbGRfc2VxdWVuY2VfaWRzKSArIHNpemUodGhpcy5jaGlsZF90YXNrX2lkcykgPT0gMCkgfHwgdGhpcy5vcGVyYXRvciAhPSAwGscBCjdzZXF1ZW5jZV9kZWZpbml0aW9uLnBhcmFsbGVsX3JlcXVpcmVzX211bHRpcGxlX2NoaWxkcmVuEjRQQVJBTExFTCBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDIgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRrJAQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5leGNsdXNpdmVfcmVxdWlyZXNfbXVsdGlwbGVfY2hpbGRyZW4SNUVYQ0xVU0lWRSBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDMgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRrJAQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5pbmNsdXNpdmVfcmVxdWlyZXNfbXVsdGlwbGVfY2hpbGRyZW4SNUlOQ0xVU0lWRSBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDQgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRq3AQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5idWxrX2NvbXBsZXRlX3JlcXVpcmVzX3Rhc2tfY2hpbGRyZW4SQWNhbl9idWxrX2NvbXBsZXRlIGlzIG9ubHkgdmFsaWQgZm9yIHNlcXVlbmNlcyB3aXRoIGNoaWxkX3Rhc2tfaWRzGjghdGhpcy5jYW5fYnVsa19jb21wbGV0ZSB8fCBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID4gMCJEChNTZXF1ZW5jZURlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmluaXRpb24qtgEKEFNlcXVlbmNlT3BlcmF0b3ISIQodU0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRFUkVEEAESHgoaU0VRVUVOQ0VfT1BFUkFUT1JfUEFSQUxMRUwQAhIfChtTRVFVRU5DRV9PUEVSQVRPUl9FWENMVVNJVkUQAxIfChtTRVFVRU5DRV9PUEVSQVRPUl9JTkNMVVNJVkUQBEK5AQoOY29tLnByb2Nlc3MudjFCF1NlcXVlbmNlRGVmaW5pdGlvblByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_local_target, file_validation_v1_predefined_string_rules, file_variance_v1_variant_condition]);
+  fileDesc("CiRwcm9jZXNzL3YxL3NlcXVlbmNlX2RlZmluaXRpb24ucHJvdG8SCnByb2Nlc3MudjEiwRIKElNlcXVlbmNlRGVmaW5pdGlvbhIVCgJpZBgBIAEoCUIJukgGcgSo8gQBEhcKBG5hbWUYAiABKAlCCbpIBnIEgPEEARIMCgRpY29uGAMgASgJEhMKC2Rlc2NyaXB0aW9uGAQgASgJEiAKD3NlcXVlbmNlX251bWJlchgFIAEoBUIHukgEGgIoABIlChJwYXJlbnRfc2VxdWVuY2VfaWQYBiABKAlCCbpIBnIEqPIEARI4CghvcGVyYXRvchgHIAEoDjIcLnByb2Nlc3MudjEuU2VxdWVuY2VPcGVyYXRvckIIukgFggECEAESKgoSY2hpbGRfc2VxdWVuY2VfaWRzGAggAygJQg66SAuSAQgiBnIEqPIEARImCg5jaGlsZF90YXNrX2lkcxgJIAMoCUIOukgLkgEIIgZyBLDyBAESLgoMbG9jYWxfdGFyZ2V0GAogASgLMhguZ2VvbWV0cnkudjEuTG9jYWxUYXJnZXQSEAoIb3B0aW9uYWwYCyABKAgSGQoRY2FuX2J1bGtfY29tcGxldGUYDCABKAgSNAoNYXBwbGljYWJpbGl0eRgNIAEoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25kaXRpb2467Q66SOkOGsIBCiZzZXF1ZW5jZV9kZWZpbml0aW9uLmNoaWxkcmVuX25vdF9taXhlZBJRYSBzZXF1ZW5jZSBtdXN0IGNvbnRhaW4gZWl0aGVyIGNoaWxkX3NlcXVlbmNlX2lkcyBvciBjaGlsZF90YXNrX2lkcywgYnV0IG5vdCBib3RoGkUhKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpID4gMCAmJiBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID4gMCkazQEKOnNlcXVlbmNlX2RlZmluaXRpb24ub3BlcmF0b3Jfc3BlY2lmaWVkX3doZW5fY2hpbGRyZW5fZXhpc3QSN29wZXJhdG9yIG11c3QgYmUgc3BlY2lmaWVkIHdoZW4gYSBzZXF1ZW5jZSBoYXMgY2hpbGRyZW4aVihzaXplKHRoaXMuY2hpbGRfc2VxdWVuY2VfaWRzKSArIHNpemUodGhpcy5jaGlsZF90YXNrX2lkcykgPT0gMCkgfHwgdGhpcy5vcGVyYXRvciAhPSAwGscBCjdzZXF1ZW5jZV9kZWZpbml0aW9uLnBhcmFsbGVsX3JlcXVpcmVzX211bHRpcGxlX2NoaWxkcmVuEjRQQVJBTExFTCBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDIgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRrJAQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5leGNsdXNpdmVfcmVxdWlyZXNfbXVsdGlwbGVfY2hpbGRyZW4SNUVYQ0xVU0lWRSBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDMgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRrJAQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5pbmNsdXNpdmVfcmVxdWlyZXNfbXVsdGlwbGVfY2hpbGRyZW4SNUlOQ0xVU0lWRSBzZXF1ZW5jZXMgc2hvdWxkIGhhdmUgYXQgbGVhc3QgdHdvIGNoaWxkcmVuGlZ0aGlzLm9wZXJhdG9yICE9IDQgfHwgKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpICsgc2l6ZSh0aGlzLmNoaWxkX3Rhc2tfaWRzKSA+PSAyKRq3AQo4c2VxdWVuY2VfZGVmaW5pdGlvbi5idWxrX2NvbXBsZXRlX3JlcXVpcmVzX3Rhc2tfY2hpbGRyZW4SQWNhbl9idWxrX2NvbXBsZXRlIGlzIG9ubHkgdmFsaWQgZm9yIHNlcXVlbmNlcyB3aXRoIGNoaWxkX3Rhc2tfaWRzGjghdGhpcy5jYW5fYnVsa19jb21wbGV0ZSB8fCBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMpID4gMBq/Awovc2VxdWVuY2VfZGVmaW5pdGlvbi5sb2NhbF90YXJnZXQucHJvY2Vzc19hbmNob3ISemEgc2VxdWVuY2UncyBsb2NhbF90YXJnZXQuYW5jaG9yIG11c3QgbmFtZSBgPHByb2Nlc3M+YCwgYDxwYXJlbnQ+YCBvciBhbiBhbmNlc3RvciBzZXF1ZW5jZSBkZWZpbml0aW9uLCB3aXRoIGZyYW1lICJvcmlnaW4iGo8CIWhhcyh0aGlzLmxvY2FsX3RhcmdldC5hbmNob3IpIHx8ICh0aGlzLmxvY2FsX3RhcmdldC5hbmNob3IuZnJhbWUgPT0gJ29yaWdpbicgJiYgKHRoaXMubG9jYWxfdGFyZ2V0LmFuY2hvci5yZWZlcmVuY2UgaW4gWyc8cHJvY2Vzcz4nLCAnPHBhcmVudD4nXSB8fCAodGhpcy5sb2NhbF90YXJnZXQuYW5jaG9yLnJlZmVyZW5jZS5zdGFydHNXaXRoKCdzZXF1ZW5jZV9kZWZpbml0aW9uLScpICYmIHRoaXMubG9jYWxfdGFyZ2V0LmFuY2hvci5yZWZlcmVuY2UgIT0gdGhpcy5pZCkpKRrzAQosc2VxdWVuY2VfZGVmaW5pdGlvbi5sb2NhbF90YXJnZXQucm9vdF9hbmNob3ISTXRoZSByb290IHNlcXVlbmNlIChubyBwYXJlbnRfc2VxdWVuY2VfaWQpIGNhbiBvbmx5IGJlIGFuY2hvcmVkIHRvIGA8cHJvY2Vzcz5gGnR0aGlzLnBhcmVudF9zZXF1ZW5jZV9pZCAhPSAnJyB8fCAhaGFzKHRoaXMubG9jYWxfdGFyZ2V0LmFuY2hvcikgfHwgdGhpcy5sb2NhbF90YXJnZXQuYW5jaG9yLnJlZmVyZW5jZSA9PSAnPHByb2Nlc3M+JyJEChNTZXF1ZW5jZURlZmluaXRpb25zEi0KBWl0ZW1zGAEgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmluaXRpb24qtgEKEFNlcXVlbmNlT3BlcmF0b3ISIQodU0VRVUVOQ0VfT1BFUkFUT1JfVU5TUEVDSUZJRUQQABIdChlTRVFVRU5DRV9PUEVSQVRPUl9PUkRFUkVEEAESHgoaU0VRVUVOQ0VfT1BFUkFUT1JfUEFSQUxMRUwQAhIfChtTRVFVRU5DRV9PUEVSQVRPUl9FWENMVVNJVkUQAxIfChtTRVFVRU5DRV9PUEVSQVRPUl9JTkNMVVNJVkUQBEK5AQoOY29tLnByb2Nlc3MudjFCF1NlcXVlbmNlRGVmaW5pdGlvblByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rhci9wcm90b2NvbC92Mi9tZXNzYWdlcy9wcm9jZXNzL3YxO3Byb2Nlc3N2MaICA1BYWKoCE01lc3NhZ2VzLlByb2Nlc3MuVjHKAgpQcm9jZXNzXFYx4gIWUHJvY2Vzc1xWMVxHUEJNZXRhZGF0YeoCC1Byb2Nlc3M6OlYxYgZwcm90bzM", [file_buf_validate_validate, file_geometry_v1_local_target, file_validation_v1_predefined_string_rules, file_variance_v1_variant_condition]);
 
 /**
  * SequenceDefinition represents a unit of control flow within a process recipe.
@@ -103,7 +103,54 @@ export type SequenceDefinition = Message<"process.v1.SequenceDefinition"> & {
   childTaskIds: string[];
 
   /**
-   * Optional local target defining the spatial or logical context for this sequence.
+   * The sequence's frame: a pose in the frame its anchor names
+   * (cobotar/protocol#50). Its child sequences and tasks are placed in this
+   * frame when they name `<parent>`, or name no anchor.
+   *
+   * Process-local anchors, used by sequences and by ProductTarget.local_target,
+   * always with frame "origin":
+   * - `<process>`: the process-run origin, where the root frame of the
+   *   recipe's product sits (see runtime.v1.ProcessRun.frame).
+   * - `<parent>`: the frame of the immediate containing sequence, i.e. the
+   *   parent sequence of a sequence, or the sequence that lists a task in its
+   *   child_task_ids. The root sequence has none.
+   * - a sequence definition ID: the frame of that sequence, which has to be an
+   *   ancestor on this sequence's (or task's) direct line to the root
+   *   sequence. Siblings, descendants, the sequence itself and sequences
+   *   outside the recipe are invalid.
+   * An omitted anchor, or an omitted local_target, means `<parent>`, and
+   * `<process>` for the root sequence. An omitted local_target is the identity
+   * in that frame. Other references, e.g. a product node ID as the frame of an
+   * anchor without a reference, are invalid and refused; they have no defined
+   * meaning.
+   *
+   * Below the process-run origin, positions are in mm and orientations in
+   * the frame of the recipe's product (ProcessRecipe.product_definition_id):
+   * the frame in which its root AssemblyNode.local_pose is given. An assembly
+   * node's pose is relative to its parent node, so a target taken from a
+   * node's pose is relative to the frame of that node's parent: a generator
+   * anchors it to the sequence whose frame is that node's parent's frame, or
+   * composes the poses up to the anchor it names. Clients convert to their
+   * own units and axes once, at the process-run origin, with the axes the
+   * product's model declares. A recipe without a product uses mm,
+   * right-handed with +Z up.
+   *
+   * A pose resolves as: environment (station or cell) -> optional container
+   * instance -> optional slot -> process-run origin (`<process>`) -> root
+   * sequence -> child sequences -> task target, each step applying the next
+   * local_target in the frame its anchor names. The checks that span several
+   * definitions are the recipe's (see ProcessRecipe), with these rule IDs in
+   * service.v1.ValidationViolation.rule_id:
+   * - `process_pose.anchor_not_ancestor`: a sequence ID that isn't an
+   *   ancestor on the direct line, e.g. a sibling, a descendant, a sequence of
+   *   another branch or of another recipe;
+   * - `process_pose.sequence_cycle`: the parent sequences form a cycle;
+   * - `process_pose.parent_mismatch`: parent_sequence_id and the parent's
+   *   child_sequence_ids disagree, or a sequence without parent_sequence_id
+   *   isn't the recipe's root sequence;
+   * - `process_pose.task_owner_missing`: a task that no sequence of the
+   *   recipe lists in child_task_ids, so `<parent>` has no meaning;
+   * - `process_pose.task_owner_ambiguous`: a task that several sequences list.
    *
    * @generated from field: geometry.v1.LocalTarget local_target = 10;
    */

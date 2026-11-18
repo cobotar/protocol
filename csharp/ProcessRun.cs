@@ -30,7 +30,7 @@ namespace Messages.Runtime.V1 {
             "bWUvdjEvYWN0b3JfYXNzaWdubWVudC5wcm90bxordmFsaWRhdGlvbi92MS9w",
             "cmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxondmFyaWFuY2UvdjEvdmFy",
             "aWFudF9jb25maWd1cmF0aW9uLnByb3RvIjYKDFJ1blBhcmFtZXRlchIQCgNr",
-            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUizgkKClByb2Nl",
+            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUiow0KClByb2Nl",
             "c3NSdW4SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoE",
             "aWNvbhgDIAEoCVIEaWNvbhI4ChFwcm9jZXNzX3JlY2lwZV9pZBgEIAEoCUIM",
             "ukgJcgSg8gQByAEBUg9wcm9jZXNzUmVjaXBlSWQSGQoIb3JkZXJfaWQYBSAB",
@@ -58,17 +58,27 @@ namespace Messages.Runtime.V1 {
             "Ch5uYW1lZF92YXJpYW50X2NvbmZpZ3VyYXRpb25faWQYFiABKAlSG25hbWVk",
             "VmFyaWFudENvbmZpZ3VyYXRpb25JZBpKChxQYXJ0RGVmaW5pdGlvblJldmlz",
             "aW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgEUgV2",
-            "YWx1ZToCOAEiOwoLUHJvY2Vzc1J1bnMSLAoFaXRlbXMYASADKAsyFi5ydW50",
-            "aW1lLnYxLlByb2Nlc3NSdW5SBWl0ZW1zKs0BCg9Qcm9jZXNzUnVuU3RhdGUS",
-            "IQodUFJPQ0VTU19SVU5fU1RBVEVfVU5TUEVDSUZJRUQQABIcChhQUk9DRVNT",
-            "X1JVTl9TVEFURV9RVUVVRUQQARIbChdQUk9DRVNTX1JVTl9TVEFURV9SRUFE",
-            "WRACEiEKHVBST0NFU1NfUlVOX1NUQVRFX0lOX1BST0dSRVNTEAMSGgoWUFJP",
-            "Q0VTU19SVU5fU1RBVEVfRE9ORRAEEh0KGVBST0NFU1NfUlVOX1NUQVRFX0FC",
-            "T1JURUQQBUKxAQoOY29tLnJ1bnRpbWUudjFCD1Byb2Nlc3NSdW5Qcm90b1AB",
-            "WjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcnVu",
-            "dGltZS92MTtydW50aW1ldjGiAgNSWFiqAhNNZXNzYWdlcy5SdW50aW1lLlYx",
-            "ygIKUnVudGltZVxWMeICFlJ1bnRpbWVcVjFcR1BCTWV0YWRhdGHqAgtSdW50",
-            "aW1lOjpWMWIGcHJvdG8z"));
+            "YWx1ZToCOAE60gO6SM4DGssDChhwcm9jZXNzX3J1bi5mcmFtZS5hbmNob3IS",
+            "jQFhIHByb2Nlc3MgcnVuJ3MgZnJhbWUgaXMgYW5jaG9yZWQgdG8gYDxlbnZp",
+            "cm9ubWVudD5gIChmcmFtZSAib3JpZ2luIikgb3IgdG8gYSBjb250YWluZXIg",
+            "aW5zdGFuY2UgKGZyYW1lICJvcmlnaW4iIG9yIGEgc2xvdCBJRCksIG9yIG5v",
+            "dCBhdCBhbGwangIhaGFzKHRoaXMuZnJhbWUuYW5jaG9yKSB8fCAodGhpcy5m",
+            "cmFtZS5hbmNob3IucmVmZXJlbmNlID09ICcnICYmIHRoaXMuZnJhbWUuYW5j",
+            "aG9yLmZyYW1lID09ICcnKSB8fCAodGhpcy5mcmFtZS5hbmNob3IucmVmZXJl",
+            "bmNlID09ICc8ZW52aXJvbm1lbnQ+JyAmJiB0aGlzLmZyYW1lLmFuY2hvci5m",
+            "cmFtZSA9PSAnb3JpZ2luJykgfHwgKHRoaXMuZnJhbWUuYW5jaG9yLnJlZmVy",
+            "ZW5jZS5zdGFydHNXaXRoKCdjb250YWluZXJfaW5zdGFuY2UtJykgJiYgdGhp",
+            "cy5mcmFtZS5hbmNob3IuZnJhbWUgIT0gJycpIjsKC1Byb2Nlc3NSdW5zEiwK",
+            "BWl0ZW1zGAEgAygLMhYucnVudGltZS52MS5Qcm9jZXNzUnVuUgVpdGVtcyrN",
+            "AQoPUHJvY2Vzc1J1blN0YXRlEiEKHVBST0NFU1NfUlVOX1NUQVRFX1VOU1BF",
+            "Q0lGSUVEEAASHAoYUFJPQ0VTU19SVU5fU1RBVEVfUVVFVUVEEAESGwoXUFJP",
+            "Q0VTU19SVU5fU1RBVEVfUkVBRFkQAhIhCh1QUk9DRVNTX1JVTl9TVEFURV9J",
+            "Tl9QUk9HUkVTUxADEhoKFlBST0NFU1NfUlVOX1NUQVRFX0RPTkUQBBIdChlQ",
+            "Uk9DRVNTX1JVTl9TVEFURV9BQk9SVEVEEAVCsQEKDmNvbS5ydW50aW1lLnYx",
+            "Qg9Qcm9jZXNzUnVuUHJvdG9QAVo8Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3Rv",
+            "Y29sL3YyL21lc3NhZ2VzL3J1bnRpbWUvdjE7cnVudGltZXYxogIDUlhYqgIT",
+            "TWVzc2FnZXMuUnVudGltZS5WMcoCClJ1bnRpbWVcVjHiAhZSdW50aW1lXFYx",
+            "XEdQQk1ldGFkYXRh6gILUnVudGltZTo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Messages.Runtime.V1.ActorAssignmentReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConfigurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Runtime.V1.ProcessRunState), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -515,6 +525,20 @@ namespace Messages.Runtime.V1 {
     /// <summary>Field number for the "frame" field.</summary>
     public const int FrameFieldNumber = 9;
     private global::Messages.Geometry.V1.LocalizedPose frame_;
+    /// <summary>
+    /// The process-run origin (`&lt;process>` in the recipe's local targets,
+    /// cobotar/protocol#50): where the root frame of the recipe's product sits.
+    /// - Omitted: the origin of the run's environment, its station or else its
+    ///   cell (a run without a fixture).
+    /// - Anchored to `&lt;environment>` (frame "origin"), or without an anchor: a
+    ///   pose relative to that origin, in the units and axes of station and cell
+    ///   placements.
+    /// - Anchored to a container instance, with frame "origin" or one of its
+    ///   slot IDs: a pose relative to the container's origin or to that slot, in
+    ///   mm in the frame of the container's model (as
+    ///   resources.v1.ContainerSlotDefinition.pose). A slot's frame is where the
+    ///   product it holds sits, so the pose is usually the identity.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Messages.Geometry.V1.LocalizedPose Frame {

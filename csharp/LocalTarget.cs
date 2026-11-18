@@ -25,18 +25,30 @@ namespace Messages.Geometry.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5nZW9tZXRyeS92MS9sb2NhbF90YXJnZXQucHJvdG8SC2dlb21ldHJ5LnYx",
-            "GhhnZW9tZXRyeS92MS9hbmNob3IucHJvdG8aF2dlb21ldHJ5L3YxL3BvaW50",
-            "LnByb3RvGhZnZW9tZXRyeS92MS9xdWFkLnByb3RvIp8BCgtMb2NhbFRhcmdl",
-            "dBIrCgZhbmNob3IYASABKAsyEy5nZW9tZXRyeS52MS5BbmNob3JSBmFuY2hv",
-            "chIuCghwb3NpdGlvbhgCIAEoCzISLmdlb21ldHJ5LnYxLlBvaW50Ughwb3Np",
-            "dGlvbhIzCgtvcmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRS",
-            "C29yaWVudGF0aW9uQrkBCg9jb20uZ2VvbWV0cnkudjFCEExvY2FsVGFyZ2V0",
-            "UHJvdG9QAVo+Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3Nh",
-            "Z2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhRNZXNzYWdlcy5H",
-            "ZW9tZXRyeS5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0",
-            "YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw=="));
+            "GhtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8aGGdlb21ldHJ5L3YxL2Fu",
+            "Y2hvci5wcm90bxoXZ2VvbWV0cnkvdjEvcG9pbnQucHJvdG8aFmdlb21ldHJ5",
+            "L3YxL3F1YWQucHJvdG8iiAUKC0xvY2FsVGFyZ2V0EisKBmFuY2hvchgBIAEo",
+            "CzITLmdlb21ldHJ5LnYxLkFuY2hvclIGYW5jaG9yEi4KCHBvc2l0aW9uGAIg",
+            "ASgLMhIuZ2VvbWV0cnkudjEuUG9pbnRSCHBvc2l0aW9uEjMKC29yaWVudGF0",
+            "aW9uGAMgASgLMhEuZ2VvbWV0cnkudjEuUXVhZFILb3JpZW50YXRpb2465gO6",
+            "SOIDGt8DCh1sb2NhbF90YXJnZXQub3JpZW50YXRpb24udW5pdBI/b3JpZW50",
+            "YXRpb24gbXVzdCBiZSBhIHVuaXQgcXVhdGVybmlvbjsgb21pdCBpdCBmb3Ig",
+            "dGhlIGlkZW50aXR5GvwCIWhhcyh0aGlzLm9yaWVudGF0aW9uKSB8fCAodGhp",
+            "cy5vcmllbnRhdGlvbi54ICogdGhpcy5vcmllbnRhdGlvbi54ICsgdGhpcy5v",
+            "cmllbnRhdGlvbi55ICogdGhpcy5vcmllbnRhdGlvbi55ICsgdGhpcy5vcmll",
+            "bnRhdGlvbi56ICogdGhpcy5vcmllbnRhdGlvbi56ICsgdGhpcy5vcmllbnRh",
+            "dGlvbi53ICogdGhpcy5vcmllbnRhdGlvbi53ID49IDAuOTk5ICYmIHRoaXMu",
+            "b3JpZW50YXRpb24ueCAqIHRoaXMub3JpZW50YXRpb24ueCArIHRoaXMub3Jp",
+            "ZW50YXRpb24ueSAqIHRoaXMub3JpZW50YXRpb24ueSArIHRoaXMub3JpZW50",
+            "YXRpb24ueiAqIHRoaXMub3JpZW50YXRpb24ueiArIHRoaXMub3JpZW50YXRp",
+            "b24udyAqIHRoaXMub3JpZW50YXRpb24udyA8PSAxLjAwMSlCuQEKD2NvbS5n",
+            "ZW9tZXRyeS52MUIQTG9jYWxUYXJnZXRQcm90b1ABWj5naXRodWIuY29tL2Nv",
+            "Ym90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0",
+            "cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdlb21ldHJ5LlYxygILR2VvbWV0cnlc",
+            "VjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Messages.Geometry.V1.PointReflection.Descriptor, global::Messages.Geometry.V1.QuadReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.AnchorReflection.Descriptor, global::Messages.Geometry.V1.PointReflection.Descriptor, global::Messages.Geometry.V1.QuadReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Messages.Geometry.V1.LocalTarget), global::Messages.Geometry.V1.LocalTarget.Parser, new[]{ "Anchor", "Position", "Orientation" }, null, null, null, null)
           }));
@@ -45,6 +57,19 @@ namespace Messages.Geometry.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// A pose relative to an anchor: the position and orientation of a frame in
+  /// the frame the anchor names. What an anchor may name depends on where the
+  /// target is used. In a process recipe (SequenceDefinition.local_target and
+  /// ProductTarget.local_target) it names a process-local frame: `&lt;process>`,
+  /// `&lt;parent>` or an ancestor sequence (cobotar/protocol#50, see
+  /// process.v1.SequenceDefinition.local_target).
+  ///
+  /// An omitted position is the anchor's origin, and an omitted orientation is
+  /// the identity. A present orientation is a unit quaternion (its squared
+  /// length is within 0.001 of 1); an all-zero one is refused rather than read as
+  /// the identity.
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class LocalTarget : pb::IMessage<LocalTarget>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

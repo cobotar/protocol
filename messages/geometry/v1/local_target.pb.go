@@ -7,6 +7,7 @@
 package geometryv1
 
 import (
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21,6 +22,17 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// A pose relative to an anchor: the position and orientation of a frame in
+// the frame the anchor names. What an anchor may name depends on where the
+// target is used. In a process recipe (SequenceDefinition.local_target and
+// ProductTarget.local_target) it names a process-local frame: `<process>`,
+// `<parent>` or an ancestor sequence (cobotar/protocol#50, see
+// process.v1.SequenceDefinition.local_target).
+//
+// An omitted position is the anchor's origin, and an omitted orientation is
+// the identity. A present orientation is a unit quaternion (its squared
+// length is within 0.001 of 1); an all-zero one is refused rather than read as
+// the identity.
 type LocalTarget struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Anchor        *Anchor                `protobuf:"bytes,1,opt,name=anchor,proto3" json:"anchor,omitempty"`
@@ -85,11 +97,12 @@ var File_geometry_v1_local_target_proto protoreflect.FileDescriptor
 
 const file_geometry_v1_local_target_proto_rawDesc = "" +
 	"\n" +
-	"\x1egeometry/v1/local_target.proto\x12\vgeometry.v1\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x9f\x01\n" +
+	"\x1egeometry/v1/local_target.proto\x12\vgeometry.v1\x1a\x1bbuf/validate/validate.proto\x1a\x18geometry/v1/anchor.proto\x1a\x17geometry/v1/point.proto\x1a\x16geometry/v1/quad.proto\"\x88\x05\n" +
 	"\vLocalTarget\x12+\n" +
 	"\x06anchor\x18\x01 \x01(\v2\x13.geometry.v1.AnchorR\x06anchor\x12.\n" +
 	"\bposition\x18\x02 \x01(\v2\x12.geometry.v1.PointR\bposition\x123\n" +
-	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadR\vorientationB\xb9\x01\n" +
+	"\vorientation\x18\x03 \x01(\v2\x11.geometry.v1.QuadR\vorientation:\xe6\x03\xbaH\xe2\x03\x1a\xdf\x03\n" +
+	"\x1dlocal_target.orientation.unit\x12?orientation must be a unit quaternion; omit it for the identity\x1a\xfc\x02!has(this.orientation) || (this.orientation.x * this.orientation.x + this.orientation.y * this.orientation.y + this.orientation.z * this.orientation.z + this.orientation.w * this.orientation.w >= 0.999 && this.orientation.x * this.orientation.x + this.orientation.y * this.orientation.y + this.orientation.z * this.orientation.z + this.orientation.w * this.orientation.w <= 1.001)B\xb9\x01\n" +
 	"\x0fcom.geometry.v1B\x10LocalTargetProtoP\x01Z>github.com/cobotar/protocol/v2/messages/geometry/v1;geometryv1\xa2\x02\x03GXX\xaa\x02\x14Messages.Geometry.V1\xca\x02\vGeometry\\V1\xe2\x02\x17Geometry\\V1\\GPBMetadata\xea\x02\fGeometry::V1b\x06proto3"
 
 var (

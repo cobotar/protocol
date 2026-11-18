@@ -404,6 +404,11 @@ namespace Messages.Process.V1 {
   /// - What skills are required
   /// - What actor constrains exist
   /// - What validation is needed
+  ///
+  /// Its sequences and tasks form a tree under root_sequence_id, along which
+  /// their poses resolve from the process-run origin (cobotar/protocol#50, see
+  /// SequenceDefinition.local_target). The backend checks the tree, with the
+  /// `process_pose.*` rule IDs listed there, before it accepts a change.
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProcessRecipe : pb::IMessage<ProcessRecipe>

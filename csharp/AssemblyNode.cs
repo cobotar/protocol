@@ -28,7 +28,7 @@ namespace Messages.Product.V1 {
             "G2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoWZ2VvbWV0cnkvdjEvcG9z",
             "ZS5wcm90bxoZZ2VvbWV0cnkvdjEvdmVjdG9yMy5wcm90bxordmFsaWRhdGlv",
             "bi92MS9wcmVkZWZpbmVkX3N0cmluZ19ydWxlcy5wcm90bxojdmFyaWFuY2Uv",
-            "djEvdmFyaWFudF9jb25kaXRpb24ucHJvdG8inggKDEFzc2VtYmx5Tm9kZRIO",
+            "djEvdmFyaWFudF9jb25kaXRpb24ucHJvdG8i0g0KDEFzc2VtYmx5Tm9kZRIO",
             "CgJpZBgBIAEoCVICaWQSHQoEbmFtZRgCIAEoCUIJukgGcgSA8QQBUgRuYW1l",
             "EiQKDnBhcmVudF9ub2RlX2lkGAMgASgJUgxwYXJlbnROb2RlSWQSNQoEa2lu",
             "ZBgEIAEoDjIULnByb2R1Y3QudjEuTm9kZUtpbmRCC7pICIIBAhAByAEBUgRr",
@@ -43,27 +43,43 @@ namespace Messages.Product.V1 {
             "ZnNldEhpbnQSRgoUYXBwcm9hY2hfb2Zmc2V0X2hpbnQYDSABKAsyFC5nZW9t",
             "ZXRyeS52MS5WZWN0b3IzUhJhcHByb2FjaE9mZnNldEhpbnQSGgoIb3B0aW9u",
             "YWwYDiABKAhSCG9wdGlvbmFsEkMKDWFwcGxpY2FiaWxpdHkYDyABKAsyHS52",
-            "YXJpYW5jZS52MS5WYXJpYW50Q29uZGl0aW9uUg1hcHBsaWNhYmlsaXR5OusC",
-            "ukjnAhqRAQoxYXNzZW1ibHlfbm9kZS5ncm91cF9tdXN0X25vdF9oYXZlX3Bh",
-            "cnRfZGVmaW5pdGlvbhIrR1JPVVAgbm9kZXMgbXVzdCBub3Qgc2V0IHBhcnRf",
-            "ZGVmaW5pdGlvbl9pZBovdGhpcy5raW5kICE9IDEgfHwgdGhpcy5wYXJ0X2Rl",
-            "ZmluaXRpb25faWQgPT0gJyca0AEKOmFzc2VtYmx5X25vZGUucGh5c2ljYWxf",
-            "b2NjdXJyZW5jZV9yZXF1aXJlc19wYXJ0X2RlZmluaXRpb24STFBBUlRfT0ND",
-            "VVJSRU5DRSBhbmQgU1VCQVNTRU1CTFlfT0NDVVJSRU5DRSBub2RlcyBtdXN0",
-            "IHNldCBwYXJ0X2RlZmluaXRpb25faWQaRCEodGhpcy5raW5kID09IDIgfHwg",
-            "dGhpcy5raW5kID09IDMpIHx8IHRoaXMucGFydF9kZWZpbml0aW9uX2lkICE9",
-            "ICcnKn8KCE5vZGVLaW5kEhkKFU5PREVfS0lORF9VTlNQRUNJRklFRBAAEhMK",
-            "D05PREVfS0lORF9HUk9VUBABEh0KGU5PREVfS0lORF9QQVJUX09DQ1VSUkVO",
-            "Q0UQAhIkCiBOT0RFX0tJTkRfU1VCQVNTRU1CTFlfT0NDVVJSRU5DRRADKtMB",
-            "CgpKb2luTWV0aG9kEhsKF0pPSU5fTUVUSE9EX1VOU1BFQ0lGSUVEEAASFAoQ",
-            "Sk9JTl9NRVRIT0RfTk9ORRABEhYKEkpPSU5fTUVUSE9EX0ZBU1RFThACEhkK",
-            "FUpPSU5fTUVUSE9EX1BSRVNTX0ZJVBADEhgKFEpPSU5fTUVUSE9EX1NOQVBf",
-            "RklUEAQSGAoUSk9JTl9NRVRIT0RfQURIRVNJVkUQBRIUChBKT0lOX01FVEhP",
-            "RF9XRUxEEAYSFQoRSk9JTl9NRVRIT0RfUExBQ0UQB0KzAQoOY29tLnByb2R1",
-            "Y3QudjFCEUFzc2VtYmx5Tm9kZVByb3RvUAFaPGdpdGh1Yi5jb20vY29ib3Rh",
-            "ci9wcm90b2NvbC92Mi9tZXNzYWdlcy9wcm9kdWN0L3YxO3Byb2R1Y3R2MaIC",
-            "A1BYWKoCE01lc3NhZ2VzLlByb2R1Y3QuVjHKAgpQcm9kdWN0XFYx4gIWUHJv",
-            "ZHVjdFxWMVxHUEJNZXRhZGF0YeoCC1Byb2R1Y3Q6OlYxYgZwcm90bzM="));
+            "YXJpYW5jZS52MS5WYXJpYW50Q29uZGl0aW9uUg1hcHBsaWNhYmlsaXR5Op8I",
+            "ukibCBqxBQopYXNzZW1ibHlfbm9kZS5sb2NhbF9wb3NlLm9yaWVudGF0aW9u",
+            "X3VuaXQSSmxvY2FsX3Bvc2Uub3JpZW50YXRpb24gbXVzdCBiZSBhIHVuaXQg",
+            "cXVhdGVybmlvbjsgb21pdCBpdCBmb3IgdGhlIGlkZW50aXR5GrcEIWhhcyh0",
+            "aGlzLmxvY2FsX3Bvc2Uub3JpZW50YXRpb24pIHx8ICh0aGlzLmxvY2FsX3Bv",
+            "c2Uub3JpZW50YXRpb24ueCAqIHRoaXMubG9jYWxfcG9zZS5vcmllbnRhdGlv",
+            "bi54ICsgdGhpcy5sb2NhbF9wb3NlLm9yaWVudGF0aW9uLnkgKiB0aGlzLmxv",
+            "Y2FsX3Bvc2Uub3JpZW50YXRpb24ueSArIHRoaXMubG9jYWxfcG9zZS5vcmll",
+            "bnRhdGlvbi56ICogdGhpcy5sb2NhbF9wb3NlLm9yaWVudGF0aW9uLnogKyB0",
+            "aGlzLmxvY2FsX3Bvc2Uub3JpZW50YXRpb24udyAqIHRoaXMubG9jYWxfcG9z",
+            "ZS5vcmllbnRhdGlvbi53ID49IDAuOTk5ICYmIHRoaXMubG9jYWxfcG9zZS5v",
+            "cmllbnRhdGlvbi54ICogdGhpcy5sb2NhbF9wb3NlLm9yaWVudGF0aW9uLngg",
+            "KyB0aGlzLmxvY2FsX3Bvc2Uub3JpZW50YXRpb24ueSAqIHRoaXMubG9jYWxf",
+            "cG9zZS5vcmllbnRhdGlvbi55ICsgdGhpcy5sb2NhbF9wb3NlLm9yaWVudGF0",
+            "aW9uLnogKiB0aGlzLmxvY2FsX3Bvc2Uub3JpZW50YXRpb24ueiArIHRoaXMu",
+            "bG9jYWxfcG9zZS5vcmllbnRhdGlvbi53ICogdGhpcy5sb2NhbF9wb3NlLm9y",
+            "aWVudGF0aW9uLncgPD0gMS4wMDEpGpEBCjFhc3NlbWJseV9ub2RlLmdyb3Vw",
+            "X211c3Rfbm90X2hhdmVfcGFydF9kZWZpbml0aW9uEitHUk9VUCBub2RlcyBt",
+            "dXN0IG5vdCBzZXQgcGFydF9kZWZpbml0aW9uX2lkGi90aGlzLmtpbmQgIT0g",
+            "MSB8fCB0aGlzLnBhcnRfZGVmaW5pdGlvbl9pZCA9PSAnJxrQAQo6YXNzZW1i",
+            "bHlfbm9kZS5waHlzaWNhbF9vY2N1cnJlbmNlX3JlcXVpcmVzX3BhcnRfZGVm",
+            "aW5pdGlvbhJMUEFSVF9PQ0NVUlJFTkNFIGFuZCBTVUJBU1NFTUJMWV9PQ0NV",
+            "UlJFTkNFIG5vZGVzIG11c3Qgc2V0IHBhcnRfZGVmaW5pdGlvbl9pZBpEISh0",
+            "aGlzLmtpbmQgPT0gMiB8fCB0aGlzLmtpbmQgPT0gMykgfHwgdGhpcy5wYXJ0",
+            "X2RlZmluaXRpb25faWQgIT0gJycqfwoITm9kZUtpbmQSGQoVTk9ERV9LSU5E",
+            "X1VOU1BFQ0lGSUVEEAASEwoPTk9ERV9LSU5EX0dST1VQEAESHQoZTk9ERV9L",
+            "SU5EX1BBUlRfT0NDVVJSRU5DRRACEiQKIE5PREVfS0lORF9TVUJBU1NFTUJM",
+            "WV9PQ0NVUlJFTkNFEAMq0wEKCkpvaW5NZXRob2QSGwoXSk9JTl9NRVRIT0Rf",
+            "VU5TUEVDSUZJRUQQABIUChBKT0lOX01FVEhPRF9OT05FEAESFgoSSk9JTl9N",
+            "RVRIT0RfRkFTVEVOEAISGQoVSk9JTl9NRVRIT0RfUFJFU1NfRklUEAMSGAoU",
+            "Sk9JTl9NRVRIT0RfU05BUF9GSVQQBBIYChRKT0lOX01FVEhPRF9BREhFU0lW",
+            "RRAFEhQKEEpPSU5fTUVUSE9EX1dFTEQQBhIVChFKT0lOX01FVEhPRF9QTEFD",
+            "RRAHQrMBCg5jb20ucHJvZHVjdC52MUIRQXNzZW1ibHlOb2RlUHJvdG9QAVo8",
+            "Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL3Byb2R1",
+            "Y3QvdjE7cHJvZHVjdHYxogIDUFhYqgITTWVzc2FnZXMuUHJvZHVjdC5WMcoC",
+            "ClByb2R1Y3RcVjHiAhZQcm9kdWN0XFYxXEdQQk1ldGFkYXRh6gILUHJvZHVj",
+            "dDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.PoseReflection.Descriptor, global::Messages.Geometry.V1.Vector3Reflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Product.V1.NodeKind), typeof(global::Messages.Product.V1.JoinMethod), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -286,7 +302,17 @@ namespace Messages.Product.V1 {
     public const int LocalPoseFieldNumber = 7;
     private global::Messages.Geometry.V1.Pose localPose_;
     /// <summary>
-    /// final pose, in mm
+    /// The node's final pose relative to its parent (cobotar/protocol#50): in
+    /// the frame of the node parent_node_id names, or, for the root node, in the
+    /// product's frame (the frame of ProductDefinition.model_id, which a
+    /// container slot holding the product places). Position in mm; orientation a
+    /// unit quaternion (its squared length within 0.001 of 1), omitted for the
+    /// identity. The node's frame is its parent's frame composed with this pose;
+    /// its part's model sits in it, and its children are placed in it, also for a
+    /// GROUP node. A pose relative to the product's frame or to another ancestor isn't
+    /// allowed: a producer with such poses converts them before export. An
+    /// omitted local_pose means the pose isn't known: consumers place the node in
+    /// its parent's frame and may report it.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

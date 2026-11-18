@@ -1,3 +1,4 @@
+from buf.validate import validate_pb2 as _validate_pb2
 from cobotar_protocol.geometry.v1 import anchor_pb2 as _anchor_pb2
 from cobotar_protocol.geometry.v1 import point_pb2 as _point_pb2
 from cobotar_protocol.geometry.v1 import quad_pb2 as _quad_pb2

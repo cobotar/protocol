@@ -1806,7 +1806,11 @@ Represents a color. Where (255, 255, 255, 255) is solid white, (255, 0, 0, 128) 
 <a name="geometry-v1-Anchor"></a>
 
 ### Anchor
-
+An anchor names a frame: a reference (the thing) and a frame of it.
+References in angle brackets are reserved tokens: `&lt;environment&gt;` is the
+station or cell a runtime entity belongs to, and in a process recipe
+`&lt;process&gt;` and `&lt;parent&gt;` are process-local frames (cobotar/protocol#50, see
+process.v1.SequenceDefinition.local_target).
 
 
 | Field | Type | Label | Description |
@@ -5815,7 +5819,17 @@ importance or process-run issue severity.
 <a name="geometry-v1-LocalTarget"></a>
 
 ### LocalTarget
+A pose relative to an anchor: the position and orientation of a frame in
+the frame the anchor names. What an anchor may name depends on where the
+target is used. In a process recipe (SequenceDefinition.local_target and
+ProductTarget.local_target) it names a process-local frame: `&lt;process&gt;`,
+`&lt;parent&gt;` or an ancestor sequence (cobotar/protocol#50, see
+process.v1.SequenceDefinition.local_target).
 
+An omitted position is the anchor&#39;s origin, and an omitted orientation is
+the identity. A present orientation is a unit quaternion (its squared
+length is within 0.001 of 1); an all-zero one is refused rather than read as
+the identity.
 
 
 | Field | Type | Label | Description |
@@ -6016,7 +6030,13 @@ evaluated by the runtime according to the specified operator.
 | operator | [SequenceOperator](#process-v1-SequenceOperator) |  | Defines how child elements (sequences or tasks) are executed and combined. |
 | child_sequence_ids | [string](#string) | repeated | Child sequence references used when this sequence acts as an orchestration node. Only one of child_sequence_ids or child_task_ids should be populated. |
 | child_task_ids | [string](#string) | repeated | Child task references used when this sequence is a leaf execution node. Only one of child_sequence_ids or child_task_ids should be populated. |
-| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Optional local target defining the spatial or logical context for this sequence. |
+| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | The sequence&#39;s frame: a pose in the frame its anchor names (cobotar/protocol#50). Its child sequences and tasks are placed in this frame when they name `&lt;parent&gt;`, or name no anchor.
+
+Process-local anchors, used by sequences and by ProductTarget.local_target, always with frame &#34;origin&#34;: - `&lt;process&gt;`: the process-run origin, where the root frame of the recipe&#39;s product sits (see runtime.v1.ProcessRun.frame). - `&lt;parent&gt;`: the frame of the immediate containing sequence, i.e. the parent sequence of a sequence, or the sequence that lists a task in its child_task_ids. The root sequence has none. - a sequence definition ID: the frame of that sequence, which has to be an ancestor on this sequence&#39;s (or task&#39;s) direct line to the root sequence. Siblings, descendants, the sequence itself and sequences outside the recipe are invalid. An omitted anchor, or an omitted local_target, means `&lt;parent&gt;`, and `&lt;process&gt;` for the root sequence. An omitted local_target is the identity in that frame. Other references, e.g. a product node ID as the frame of an anchor without a reference, are invalid and refused; they have no defined meaning.
+
+Below the process-run origin, positions are in mm and orientations in the frame of the recipe&#39;s product (ProcessRecipe.product_definition_id): the frame in which its root AssemblyNode.local_pose is given. An assembly node&#39;s pose is relative to its parent node, so a target taken from a node&#39;s pose is relative to the frame of that node&#39;s parent: a generator anchors it to the sequence whose frame is that node&#39;s parent&#39;s frame, or composes the poses up to the anchor it names. Clients convert to their own units and axes once, at the process-run origin, with the axes the product&#39;s model declares. A recipe without a product uses mm, right-handed with &#43;Z up.
+
+A pose resolves as: environment (station or cell) -&gt; optional container instance -&gt; optional slot -&gt; process-run origin (`&lt;process&gt;`) -&gt; root sequence -&gt; child sequences -&gt; task target, each step applying the next local_target in the frame its anchor names. The checks that span several definitions are the recipe&#39;s (see ProcessRecipe), with these rule IDs in service.v1.ValidationViolation.rule_id: - `process_pose.anchor_not_ancestor`: a sequence ID that isn&#39;t an ancestor on the direct line, e.g. a sibling, a descendant, a sequence of another branch or of another recipe; - `process_pose.sequence_cycle`: the parent sequences form a cycle; - `process_pose.parent_mismatch`: parent_sequence_id and the parent&#39;s child_sequence_ids disagree, or a sequence without parent_sequence_id isn&#39;t the recipe&#39;s root sequence; - `process_pose.task_owner_missing`: a task that no sequence of the recipe lists in child_task_ids, so `&lt;parent&gt;` has no meaning; - `process_pose.task_owner_ambiguous`: a task that several sequences list. |
 | optional | [bool](#bool) |  | Indicates whether this sequence is optional and may be skipped during execution. |
 | can_bulk_complete | [bool](#bool) |  | Indicates whether all child tasks in this sequence can be completed in bulk. |
 | applicability | [variance.v1.VariantCondition](#variance-v1-VariantCondition) |  | The sequence applies when this condition, every ancestor sequence&#39;s and the recipe&#39;s include condition hold. Empty means it applies wherever its parent does. Its axes are axes of the recipe&#39;s product. |
@@ -6295,7 +6315,7 @@ remains authoritative and is intentionally not duplicated here.
 | ----- | ---- | ----- | ----------- |
 | node_id | [string](#string) |  | Assembly node occurrence the task acts on. |
 | part_definition_id | [string](#string) |  | Optional denormalized helper. |
-| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Pose/anchor relative to the chosen product reference. |
+| local_target | [geometry.v1.LocalTarget](#geometry-v1-LocalTarget) |  | Where the task places or finds the occurrence: a pose in the frame of a process-local anchor, by default `&lt;parent&gt;`, the sequence that lists the task (cobotar/protocol#50). In mm in the frame of the recipe&#39;s product; see SequenceDefinition.local_target for the anchors, the defaults and how a pose resolves. The same holds for the targets of TaskDefinition.target, source, destination and TaskOverride.target. |
 
 
 
@@ -6672,6 +6692,11 @@ ProcessRecipe describes the following:
 - What skills are required
 - What actor constrains exist
 - What validation is needed
+
+Its sequences and tasks form a tree under root_sequence_id, along which
+their poses resolve from the process-run origin (cobotar/protocol#50, see
+SequenceDefinition.local_target). The backend checks the tree, with the
+`process_pose.*` rule IDs listed there, before it accepts a change.
 
 
 | Field | Type | Label | Description |
@@ -7605,7 +7630,7 @@ TODO: add validation for: id, ...
 | kind | [NodeKind](#product-v1-NodeKind) |  |  |
 | part_definition_id | [string](#string) |  |  |
 | override_model_id | [string](#string) |  |  |
-| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | final pose, in mm |
+| local_pose | [geometry.v1.Pose](#geometry-v1-Pose) |  | The node&#39;s final pose relative to its parent (cobotar/protocol#50): in the frame of the node parent_node_id names, or, for the root node, in the product&#39;s frame (the frame of ProductDefinition.model_id, which a container slot holding the product places). Position in mm; orientation a unit quaternion (its squared length within 0.001 of 1), omitted for the identity. The node&#39;s frame is its parent&#39;s frame composed with this pose; its part&#39;s model sits in it, and its children are placed in it, also for a GROUP node. A pose relative to the product&#39;s frame or to another ancestor isn&#39;t allowed: a producer with such poses converts them before export. An omitted local_pose means the pose isn&#39;t known: consumers place the node in its parent&#39;s frame and may report it. |
 | sequence_hint | [int32](#int32) |  | repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id |
 | cad_occurrence_path | [string](#string) |  | CAD/BOM path if available, e.g. &#34;TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3&#34; |
 | join_method_hint | [JoinMethod](#product-v1-JoinMethod) |  |  |
@@ -11155,7 +11180,7 @@ individual tasks to be reassigned, blocked, or suspended.
 | station_id | [string](#string) |  |  |
 | cell_id | [string](#string) |  |  |
 | line_id | [string](#string) |  |  |
-| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  |  |
+| frame | [geometry.v1.LocalizedPose](#geometry-v1-LocalizedPose) |  | The process-run origin (`&lt;process&gt;` in the recipe&#39;s local targets, cobotar/protocol#50): where the root frame of the recipe&#39;s product sits. - Omitted: the origin of the run&#39;s environment, its station or else its cell (a run without a fixture). - Anchored to `&lt;environment&gt;` (frame &#34;origin&#34;), or without an anchor: a pose relative to that origin, in the units and axes of station and cell placements. - Anchored to a container instance, with frame &#34;origin&#34; or one of its slot IDs: a pose relative to the container&#39;s origin or to that slot, in mm in the frame of the container&#39;s model (as resources.v1.ContainerSlotDefinition.pose). A slot&#39;s frame is where the product it holds sits, so the pose is usually the identity. |
 | root_sequence_run_id | [string](#string) |  |  |
 | sequence_run_ids | [string](#string) | repeated |  |
 | task_run_ids | [string](#string) | repeated |  |

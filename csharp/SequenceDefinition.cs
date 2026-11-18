@@ -28,7 +28,7 @@ namespace Messages.Process.V1 {
             "c3MudjEaG2J1Zi92YWxpZGF0ZS92YWxpZGF0ZS5wcm90bxoeZ2VvbWV0cnkv",
             "djEvbG9jYWxfdGFyZ2V0LnByb3RvGit2YWxpZGF0aW9uL3YxL3ByZWRlZmlu",
             "ZWRfc3RyaW5nX3J1bGVzLnByb3RvGiN2YXJpYW5jZS92MS92YXJpYW50X2Nv",
-            "bmRpdGlvbi5wcm90byKpDgoSU2VxdWVuY2VEZWZpbml0aW9uEhkKAmlkGAEg",
+            "bmRpdGlvbi5wcm90byLhEwoSU2VxdWVuY2VEZWZpbml0aW9uEhkKAmlkGAEg",
             "ASgJQgm6SAZyBKjyBAFSAmlkEh0KBG5hbWUYAiABKAlCCbpIBnIEgPEEAVIE",
             "bmFtZRISCgRpY29uGAMgASgJUgRpY29uEiAKC2Rlc2NyaXB0aW9uGAQgASgJ",
             "UgtkZXNjcmlwdGlvbhIwCg9zZXF1ZW5jZV9udW1iZXIYBSABKAVCB7pIBBoC",
@@ -42,7 +42,7 @@ namespace Messages.Process.V1 {
             "YXJnZXQSGgoIb3B0aW9uYWwYCyABKAhSCG9wdGlvbmFsEioKEWNhbl9idWxr",
             "X2NvbXBsZXRlGAwgASgIUg9jYW5CdWxrQ29tcGxldGUSQwoNYXBwbGljYWJp",
             "bGl0eRgNIAEoCzIdLnZhcmlhbmNlLnYxLlZhcmlhbnRDb25kaXRpb25SDWFw",
-            "cGxpY2FiaWxpdHk6tQm6SLEJGsIBCiZzZXF1ZW5jZV9kZWZpbml0aW9uLmNo",
+            "cGxpY2FiaWxpdHk67Q66SOkOGsIBCiZzZXF1ZW5jZV9kZWZpbml0aW9uLmNo",
             "aWxkcmVuX25vdF9taXhlZBJRYSBzZXF1ZW5jZSBtdXN0IGNvbnRhaW4gZWl0",
             "aGVyIGNoaWxkX3NlcXVlbmNlX2lkcyBvciBjaGlsZF90YXNrX2lkcywgYnV0",
             "IG5vdCBib3RoGkUhKHNpemUodGhpcy5jaGlsZF9zZXF1ZW5jZV9pZHMpID4g",
@@ -69,17 +69,32 @@ namespace Messages.Process.V1 {
             "X3Rhc2tfY2hpbGRyZW4SQWNhbl9idWxrX2NvbXBsZXRlIGlzIG9ubHkgdmFs",
             "aWQgZm9yIHNlcXVlbmNlcyB3aXRoIGNoaWxkX3Rhc2tfaWRzGjghdGhpcy5j",
             "YW5fYnVsa19jb21wbGV0ZSB8fCBzaXplKHRoaXMuY2hpbGRfdGFza19pZHMp",
-            "ID4gMCJLChNTZXF1ZW5jZURlZmluaXRpb25zEjQKBWl0ZW1zGAEgAygLMh4u",
-            "cHJvY2Vzcy52MS5TZXF1ZW5jZURlZmluaXRpb25SBWl0ZW1zKrYBChBTZXF1",
-            "ZW5jZU9wZXJhdG9yEiEKHVNFUVVFTkNFX09QRVJBVE9SX1VOU1BFQ0lGSUVE",
-            "EAASHQoZU0VRVUVOQ0VfT1BFUkFUT1JfT1JERVJFRBABEh4KGlNFUVVFTkNF",
-            "X09QRVJBVE9SX1BBUkFMTEVMEAISHwobU0VRVUVOQ0VfT1BFUkFUT1JfRVhD",
-            "TFVTSVZFEAMSHwobU0VRVUVOQ0VfT1BFUkFUT1JfSU5DTFVTSVZFEARCuQEK",
-            "DmNvbS5wcm9jZXNzLnYxQhdTZXF1ZW5jZURlZmluaXRpb25Qcm90b1ABWjxn",
-            "aXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvcHJvY2Vz",
-            "cy92MTtwcm9jZXNzdjGiAgNQWFiqAhNNZXNzYWdlcy5Qcm9jZXNzLlYxygIK",
-            "UHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFcR1BCTWV0YWRhdGHqAgtQcm9jZXNz",
-            "OjpWMWIGcHJvdG8z"));
+            "ID4gMBq/Awovc2VxdWVuY2VfZGVmaW5pdGlvbi5sb2NhbF90YXJnZXQucHJv",
+            "Y2Vzc19hbmNob3ISemEgc2VxdWVuY2UncyBsb2NhbF90YXJnZXQuYW5jaG9y",
+            "IG11c3QgbmFtZSBgPHByb2Nlc3M+YCwgYDxwYXJlbnQ+YCBvciBhbiBhbmNl",
+            "c3RvciBzZXF1ZW5jZSBkZWZpbml0aW9uLCB3aXRoIGZyYW1lICJvcmlnaW4i",
+            "Go8CIWhhcyh0aGlzLmxvY2FsX3RhcmdldC5hbmNob3IpIHx8ICh0aGlzLmxv",
+            "Y2FsX3RhcmdldC5hbmNob3IuZnJhbWUgPT0gJ29yaWdpbicgJiYgKHRoaXMu",
+            "bG9jYWxfdGFyZ2V0LmFuY2hvci5yZWZlcmVuY2UgaW4gWyc8cHJvY2Vzcz4n",
+            "LCAnPHBhcmVudD4nXSB8fCAodGhpcy5sb2NhbF90YXJnZXQuYW5jaG9yLnJl",
+            "ZmVyZW5jZS5zdGFydHNXaXRoKCdzZXF1ZW5jZV9kZWZpbml0aW9uLScpICYm",
+            "IHRoaXMubG9jYWxfdGFyZ2V0LmFuY2hvci5yZWZlcmVuY2UgIT0gdGhpcy5p",
+            "ZCkpKRrzAQosc2VxdWVuY2VfZGVmaW5pdGlvbi5sb2NhbF90YXJnZXQucm9v",
+            "dF9hbmNob3ISTXRoZSByb290IHNlcXVlbmNlIChubyBwYXJlbnRfc2VxdWVu",
+            "Y2VfaWQpIGNhbiBvbmx5IGJlIGFuY2hvcmVkIHRvIGA8cHJvY2Vzcz5gGnR0",
+            "aGlzLnBhcmVudF9zZXF1ZW5jZV9pZCAhPSAnJyB8fCAhaGFzKHRoaXMubG9j",
+            "YWxfdGFyZ2V0LmFuY2hvcikgfHwgdGhpcy5sb2NhbF90YXJnZXQuYW5jaG9y",
+            "LnJlZmVyZW5jZSA9PSAnPHByb2Nlc3M+JyJLChNTZXF1ZW5jZURlZmluaXRp",
+            "b25zEjQKBWl0ZW1zGAEgAygLMh4ucHJvY2Vzcy52MS5TZXF1ZW5jZURlZmlu",
+            "aXRpb25SBWl0ZW1zKrYBChBTZXF1ZW5jZU9wZXJhdG9yEiEKHVNFUVVFTkNF",
+            "X09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASHQoZU0VRVUVOQ0VfT1BFUkFUT1Jf",
+            "T1JERVJFRBABEh4KGlNFUVVFTkNFX09QRVJBVE9SX1BBUkFMTEVMEAISHwob",
+            "U0VRVUVOQ0VfT1BFUkFUT1JfRVhDTFVTSVZFEAMSHwobU0VRVUVOQ0VfT1BF",
+            "UkFUT1JfSU5DTFVTSVZFEARCuQEKDmNvbS5wcm9jZXNzLnYxQhdTZXF1ZW5j",
+            "ZURlZmluaXRpb25Qcm90b1ABWjxnaXRodWIuY29tL2NvYm90YXIvcHJvdG9j",
+            "b2wvdjIvbWVzc2FnZXMvcHJvY2Vzcy92MTtwcm9jZXNzdjGiAgNQWFiqAhNN",
+            "ZXNzYWdlcy5Qcm9jZXNzLlYxygIKUHJvY2Vzc1xWMeICFlByb2Nlc3NcVjFc",
+            "R1BCTWV0YWRhdGHqAgtQcm9jZXNzOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Messages.Geometry.V1.LocalTargetReflection.Descriptor, global::Validation.V1.PredefinedStringRulesReflection.Descriptor, global::Messages.Variance.V1.VariantConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Messages.Process.V1.SequenceOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -382,7 +397,54 @@ namespace Messages.Process.V1 {
     public const int LocalTargetFieldNumber = 10;
     private global::Messages.Geometry.V1.LocalTarget localTarget_;
     /// <summary>
-    /// Optional local target defining the spatial or logical context for this sequence.
+    /// The sequence's frame: a pose in the frame its anchor names
+    /// (cobotar/protocol#50). Its child sequences and tasks are placed in this
+    /// frame when they name `&lt;parent>`, or name no anchor.
+    ///
+    /// Process-local anchors, used by sequences and by ProductTarget.local_target,
+    /// always with frame "origin":
+    /// - `&lt;process>`: the process-run origin, where the root frame of the
+    ///   recipe's product sits (see runtime.v1.ProcessRun.frame).
+    /// - `&lt;parent>`: the frame of the immediate containing sequence, i.e. the
+    ///   parent sequence of a sequence, or the sequence that lists a task in its
+    ///   child_task_ids. The root sequence has none.
+    /// - a sequence definition ID: the frame of that sequence, which has to be an
+    ///   ancestor on this sequence's (or task's) direct line to the root
+    ///   sequence. Siblings, descendants, the sequence itself and sequences
+    ///   outside the recipe are invalid.
+    /// An omitted anchor, or an omitted local_target, means `&lt;parent>`, and
+    /// `&lt;process>` for the root sequence. An omitted local_target is the identity
+    /// in that frame. Other references, e.g. a product node ID as the frame of an
+    /// anchor without a reference, are invalid and refused; they have no defined
+    /// meaning.
+    ///
+    /// Below the process-run origin, positions are in mm and orientations in
+    /// the frame of the recipe's product (ProcessRecipe.product_definition_id):
+    /// the frame in which its root AssemblyNode.local_pose is given. An assembly
+    /// node's pose is relative to its parent node, so a target taken from a
+    /// node's pose is relative to the frame of that node's parent: a generator
+    /// anchors it to the sequence whose frame is that node's parent's frame, or
+    /// composes the poses up to the anchor it names. Clients convert to their
+    /// own units and axes once, at the process-run origin, with the axes the
+    /// product's model declares. A recipe without a product uses mm,
+    /// right-handed with +Z up.
+    ///
+    /// A pose resolves as: environment (station or cell) -> optional container
+    /// instance -> optional slot -> process-run origin (`&lt;process>`) -> root
+    /// sequence -> child sequences -> task target, each step applying the next
+    /// local_target in the frame its anchor names. The checks that span several
+    /// definitions are the recipe's (see ProcessRecipe), with these rule IDs in
+    /// service.v1.ValidationViolation.rule_id:
+    /// - `process_pose.anchor_not_ancestor`: a sequence ID that isn't an
+    ///   ancestor on the direct line, e.g. a sibling, a descendant, a sequence of
+    ///   another branch or of another recipe;
+    /// - `process_pose.sequence_cycle`: the parent sequences form a cycle;
+    /// - `process_pose.parent_mismatch`: parent_sequence_id and the parent's
+    ///   child_sequence_ids disagree, or a sequence without parent_sequence_id
+    ///   isn't the recipe's root sequence;
+    /// - `process_pose.task_owner_missing`: a task that no sequence of the
+    ///   recipe lists in child_task_ids, so `&lt;parent>` has no meaning;
+    /// - `process_pose.task_owner_ambiguous`: a task that several sequences list.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

@@ -49,7 +49,18 @@ message AssemblyNode {
   ];
   string part_definition_id = 5;
   string override_model_id = 6;
-  geometry.v1.Pose local_pose = 7; // final pose, in mm
+  // The node's final pose relative to its parent (cobotar/protocol#50): in
+  // the frame of the node parent_node_id names, or, for the root node, in the
+  // product's frame (the frame of ProductDefinition.model_id, which a
+  // container slot holding the product places). Position in mm; orientation a
+  // unit quaternion (its squared length within 0.001 of 1), omitted for the
+  // identity. The node's frame is its parent's frame composed with this pose;
+  // its part's model sits in it, and its children are placed in it, also for a
+  // GROUP node. A pose relative to the product's frame or to another ancestor isn't
+  // allowed: a producer with such poses converts them before export. An
+  // omitted local_pose means the pose isn't known: consumers place the node in
+  // its parent's frame and may report it.
+  geometry.v1.Pose local_pose = 7;
   // repeated string child_node_ids = 8; // Children of this node, their parent_node_id must be set to this.id
   int32 sequence_hint = 9;
   string cad_occurrence_path = 10; // CAD/BOM path if available, e.g. "TopAssembly/DriveUnit:1/CoverSubAsm:1/Screw_M4x12:3"
@@ -63,6 +74,15 @@ message AssemblyNode {
   // stay independent.
   variance.v1.VariantCondition applicability = 15;
   // TODO: string or anchor reference_frame = 17; // allow tasks to anchor not just to a part but to features, e.g. insert screw into hole_1
+
+  option (buf.validate.message).cel = {
+    id: "assembly_node.local_pose.orientation_unit"
+    message: "local_pose.orientation must be a unit quaternion; omit it for the identity"
+    expression:
+      "!has(this.local_pose.orientation) || ("
+      "this.local_pose.orientation.x * this.local_pose.orientation.x + this.local_pose.orientation.y * this.local_pose.orientation.y + this.local_pose.orientation.z * this.local_pose.orientation.z + this.local_pose.orientation.w * this.local_pose.orientation.w >= 0.999 && "
+      "this.local_pose.orientation.x * this.local_pose.orientation.x + this.local_pose.orientation.y * this.local_pose.orientation.y + this.local_pose.orientation.z * this.local_pose.orientation.z + this.local_pose.orientation.w * this.local_pose.orientation.w <= 1.001)"
+  };
 
   option (buf.validate.message).cel = {
     id: "assembly_node.group_must_not_have_part_definition"

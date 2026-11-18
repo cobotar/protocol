@@ -66,6 +66,11 @@ export const RecipeApplicabilitySchema: GenMessage<RecipeApplicability> = /*@__P
  * - What actor constrains exist
  * - What validation is needed
  *
+ * Its sequences and tasks form a tree under root_sequence_id, along which
+ * their poses resolve from the process-run origin (cobotar/protocol#50, see
+ * SequenceDefinition.local_target). The backend checks the tree, with the
+ * `process_pose.*` rule IDs listed there, before it accepts a change.
+ *
  * @generated from message process.v1.ProcessRecipe
  */
 export type ProcessRecipe = Message<"process.v1.ProcessRecipe"> & {

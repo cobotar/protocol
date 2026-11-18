@@ -78,9 +78,25 @@ enum ActorUnavailabilityPolicy {
 }
 
 message ProductTarget {
+  option (buf.validate.message).cel = {
+    id: "product_target.local_target.process_anchor"
+    message: "a task target's local_target.anchor must name `<process>`, `<parent>` or an ancestor sequence definition, with frame \"origin\""
+    expression:
+      "!has(this.local_target.anchor) || ("
+      "this.local_target.anchor.frame == 'origin' && ("
+      "this.local_target.anchor.reference in ['<process>', '<parent>'] || "
+      "this.local_target.anchor.reference.startsWith('sequence_definition-')))"
+  };
+
   string node_id = 1; // Assembly node occurrence the task acts on.
   string part_definition_id = 2 [(buf.validate.field).string.(validation.v1.part_definition_id_component) = true]; // Optional denormalized helper.
-  geometry.v1.LocalTarget local_target = 3; // Pose/anchor relative to the chosen product reference.
+  // Where the task places or finds the occurrence: a pose in the frame of a
+  // process-local anchor, by default `<parent>`, the sequence that lists the
+  // task (cobotar/protocol#50). In mm in the frame of the recipe's product; see
+  // SequenceDefinition.local_target for the anchors, the defaults and how a
+  // pose resolves. The same holds for the targets of TaskDefinition.target,
+  // source, destination and TaskOverride.target.
+  geometry.v1.LocalTarget local_target = 3;
 }
 
 message ContainerTarget {

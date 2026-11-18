@@ -4,6 +4,7 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_buf_validate_validate } from "../../buf/validate/validate_pb.ts";
 import type { Anchor } from "./anchor_pb.ts";
 import { file_geometry_v1_anchor } from "./anchor_pb.ts";
 import type { Point } from "./point_pb.ts";
@@ -16,9 +17,21 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file geometry/v1/local_target.proto.
  */
 export const file_geometry_v1_local_target: GenFile = /*@__PURE__*/
-  fileDesc("Ch5nZW9tZXRyeS92MS9sb2NhbF90YXJnZXQucHJvdG8SC2dlb21ldHJ5LnYxIoABCgtMb2NhbFRhcmdldBIjCgZhbmNob3IYASABKAsyEy5nZW9tZXRyeS52MS5BbmNob3ISJAoIcG9zaXRpb24YAiABKAsyEi5nZW9tZXRyeS52MS5Qb2ludBImCgtvcmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWRCuQEKD2NvbS5nZW9tZXRyeS52MUIQTG9jYWxUYXJnZXRQcm90b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdlb21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z", [file_geometry_v1_anchor, file_geometry_v1_point, file_geometry_v1_quad]);
+  fileDesc("Ch5nZW9tZXRyeS92MS9sb2NhbF90YXJnZXQucHJvdG8SC2dlb21ldHJ5LnYxIukECgtMb2NhbFRhcmdldBIjCgZhbmNob3IYASABKAsyEy5nZW9tZXRyeS52MS5BbmNob3ISJAoIcG9zaXRpb24YAiABKAsyEi5nZW9tZXRyeS52MS5Qb2ludBImCgtvcmllbnRhdGlvbhgDIAEoCzIRLmdlb21ldHJ5LnYxLlF1YWQ65gO6SOIDGt8DCh1sb2NhbF90YXJnZXQub3JpZW50YXRpb24udW5pdBI/b3JpZW50YXRpb24gbXVzdCBiZSBhIHVuaXQgcXVhdGVybmlvbjsgb21pdCBpdCBmb3IgdGhlIGlkZW50aXR5GvwCIWhhcyh0aGlzLm9yaWVudGF0aW9uKSB8fCAodGhpcy5vcmllbnRhdGlvbi54ICogdGhpcy5vcmllbnRhdGlvbi54ICsgdGhpcy5vcmllbnRhdGlvbi55ICogdGhpcy5vcmllbnRhdGlvbi55ICsgdGhpcy5vcmllbnRhdGlvbi56ICogdGhpcy5vcmllbnRhdGlvbi56ICsgdGhpcy5vcmllbnRhdGlvbi53ICogdGhpcy5vcmllbnRhdGlvbi53ID49IDAuOTk5ICYmIHRoaXMub3JpZW50YXRpb24ueCAqIHRoaXMub3JpZW50YXRpb24ueCArIHRoaXMub3JpZW50YXRpb24ueSAqIHRoaXMub3JpZW50YXRpb24ueSArIHRoaXMub3JpZW50YXRpb24ueiAqIHRoaXMub3JpZW50YXRpb24ueiArIHRoaXMub3JpZW50YXRpb24udyAqIHRoaXMub3JpZW50YXRpb24udyA8PSAxLjAwMSlCuQEKD2NvbS5nZW9tZXRyeS52MUIQTG9jYWxUYXJnZXRQcm90b1ABWj5naXRodWIuY29tL2NvYm90YXIvcHJvdG9jb2wvdjIvbWVzc2FnZXMvZ2VvbWV0cnkvdjE7Z2VvbWV0cnl2MaICA0dYWKoCFE1lc3NhZ2VzLkdlb21ldHJ5LlYxygILR2VvbWV0cnlcVjHiAhdHZW9tZXRyeVxWMVxHUEJNZXRhZGF0YeoCDEdlb21ldHJ5OjpWMWIGcHJvdG8z", [file_buf_validate_validate, file_geometry_v1_anchor, file_geometry_v1_point, file_geometry_v1_quad]);
 
 /**
+ * A pose relative to an anchor: the position and orientation of a frame in
+ * the frame the anchor names. What an anchor may name depends on where the
+ * target is used. In a process recipe (SequenceDefinition.local_target and
+ * ProductTarget.local_target) it names a process-local frame: `<process>`,
+ * `<parent>` or an ancestor sequence (cobotar/protocol#50, see
+ * process.v1.SequenceDefinition.local_target).
+ *
+ * An omitted position is the anchor's origin, and an omitted orientation is
+ * the identity. A present orientation is a unit quaternion (its squared
+ * length is within 0.001 of 1); an all-zero one is refused rather than read as
+ * the identity.
+ *
  * @generated from message geometry.v1.LocalTarget
  */
 export type LocalTarget = Message<"geometry.v1.LocalTarget"> & {

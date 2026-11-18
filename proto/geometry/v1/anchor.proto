@@ -4,6 +4,11 @@ package geometry.v1;
 option csharp_namespace = "Messages.Geometry.V1";
 option go_package = "github.com/cobotar/protocol/v2/messages/geometry/v1";
 
+// An anchor names a frame: a reference (the thing) and a frame of it.
+// References in angle brackets are reserved tokens: `<environment>` is the
+// station or cell a runtime entity belongs to, and in a process recipe
+// `<process>` and `<parent>` are process-local frames (cobotar/protocol#50, see
+// process.v1.SequenceDefinition.local_target).
 message Anchor {
   // Reference point towards an object or a thing, e.g. the environment, a robot, the user, ...
   string reference = 1;

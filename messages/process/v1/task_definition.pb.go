@@ -257,9 +257,15 @@ type ProductTarget struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	NodeId           string                 `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`                                 // Assembly node occurrence the task acts on.
 	PartDefinitionId string                 `protobuf:"bytes,2,opt,name=part_definition_id,json=partDefinitionId,proto3" json:"part_definition_id,omitempty"` // Optional denormalized helper.
-	LocalTarget      *v1.LocalTarget        `protobuf:"bytes,3,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`                  // Pose/anchor relative to the chosen product reference.
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// Where the task places or finds the occurrence: a pose in the frame of a
+	// process-local anchor, by default `<parent>`, the sequence that lists the
+	// task (cobotar/protocol#50). In mm in the frame of the recipe's product; see
+	// SequenceDefinition.local_target for the anchors, the defaults and how a
+	// pose resolves. The same holds for the targets of TaskDefinition.target,
+	// source, destination and TaskOverride.target.
+	LocalTarget   *v1.LocalTarget `protobuf:"bytes,3,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProductTarget) Reset() {
@@ -1241,11 +1247,12 @@ var File_process_v1_task_definition_proto protoreflect.FileDescriptor
 const file_process_v1_task_definition_proto_rawDesc = "" +
 	"\n" +
 	" process/v1/task_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\x9e\x01\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a$capability/v1/actor_constraint.proto\x1a\x1fcapability/v1/actor_skill.proto\x1a%capability/v1/skill_requirement.proto\x1a$capability/v1/tool_requirement.proto\x1a\x15common/v1/enums.proto\x1a$common/v1/key_value_constraint.proto\x1a\x14common/v1/time.proto\x1a\x1egeometry/v1/local_target.proto\x1a\x19geometry/v1/vector3.proto\x1a#resources/v1/asset_definition.proto\x1a'resources/v1/container_definition.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\xb2\x04\n" +
 	"\rProductTarget\x12\x17\n" +
 	"\anode_id\x18\x01 \x01(\tR\x06nodeId\x127\n" +
 	"\x12part_definition_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\xc8\xf1\x04\x01R\x10partDefinitionId\x12;\n" +
-	"\flocal_target\x18\x03 \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\"\xb5\x01\n" +
+	"\flocal_target\x18\x03 \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget:\x91\x03\xbaH\x8d\x03\x1a\x8a\x03\n" +
+	"*product_target.local_target.process_anchor\x12}a task target's local_target.anchor must name `<process>`, `<parent>` or an ancestor sequence definition, with frame \"origin\"\x1a\xdc\x01!has(this.local_target.anchor) || (this.local_target.anchor.frame == 'origin' && (this.local_target.anchor.reference in ['<process>', '<parent>'] || this.local_target.anchor.reference.startsWith('sequence_definition-')))\"\xb5\x01\n" +
 	"\x0fContainerTarget\x12A\n" +
 	"\x17container_definition_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xc8\xf2\x04\x01R\x15containerDefinitionId\x12\x17\n" +
 	"\aslot_id\x18\x02 \x01(\tR\x06slotId\x12F\n" +

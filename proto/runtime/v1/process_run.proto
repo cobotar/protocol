@@ -31,6 +31,16 @@ message RunParameter {
 // the run is created. Runtime conditions may subsequently change, causing
 // individual tasks to be reassigned, blocked, or suspended.
 message ProcessRun {
+  option (buf.validate.message).cel = {
+    id: "process_run.frame.anchor"
+    message: "a process run's frame is anchored to `<environment>` (frame \"origin\") or to a container instance (frame \"origin\" or a slot ID), or not at all"
+    expression:
+      "!has(this.frame.anchor) || "
+      "(this.frame.anchor.reference == '' && this.frame.anchor.frame == '') || "
+      "(this.frame.anchor.reference == '<environment>' && this.frame.anchor.frame == 'origin') || "
+      "(this.frame.anchor.reference.startsWith('container_instance-') && this.frame.anchor.frame != '')"
+  };
+
   string id = 1;
   string name = 2;
   string icon = 3;
@@ -51,6 +61,18 @@ message ProcessRun {
     // (buf.validate.field).required = true,
     (buf.validate.field).string.(validation.v1.line_id_component) = true
   ];
+  // The process-run origin (`<process>` in the recipe's local targets,
+  // cobotar/protocol#50): where the root frame of the recipe's product sits.
+  // - Omitted: the origin of the run's environment, its station or else its
+  //   cell (a run without a fixture).
+  // - Anchored to `<environment>` (frame "origin"), or without an anchor: a
+  //   pose relative to that origin, in the units and axes of station and cell
+  //   placements.
+  // - Anchored to a container instance, with frame "origin" or one of its
+  //   slot IDs: a pose relative to the container's origin or to that slot, in
+  //   mm in the frame of the container's model (as
+  //   resources.v1.ContainerSlotDefinition.pose). A slot's frame is where the
+  //   product it holds sits, so the pose is usually the identity.
   geometry.v1.LocalizedPose frame = 9;
   string root_sequence_run_id = 10 [
     (buf.validate.field).required = true,

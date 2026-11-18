@@ -13,6 +13,12 @@ export const file_geometry_v1_anchor: GenFile = /*@__PURE__*/
   fileDesc("ChhnZW9tZXRyeS92MS9hbmNob3IucHJvdG8SC2dlb21ldHJ5LnYxIioKBkFuY2hvchIRCglyZWZlcmVuY2UYASABKAkSDQoFZnJhbWUYAiABKAlCtAEKD2NvbS5nZW9tZXRyeS52MUILQW5jaG9yUHJvdG9QAVo+Z2l0aHViLmNvbS9jb2JvdGFyL3Byb3RvY29sL3YyL21lc3NhZ2VzL2dlb21ldHJ5L3YxO2dlb21ldHJ5djGiAgNHWFiqAhRNZXNzYWdlcy5HZW9tZXRyeS5WMcoCC0dlb21ldHJ5XFYx4gIXR2VvbWV0cnlcVjFcR1BCTWV0YWRhdGHqAgxHZW9tZXRyeTo6VjFiBnByb3RvMw");
 
 /**
+ * An anchor names a frame: a reference (the thing) and a frame of it.
+ * References in angle brackets are reserved tokens: `<environment>` is the
+ * station or cell a runtime entity belongs to, and in a process recipe
+ * `<process>` and `<parent>` are process-local frames (cobotar/protocol#50, see
+ * process.v1.SequenceDefinition.local_target).
+ *
  * @generated from message geometry.v1.Anchor
  */
 export type Anchor = Message<"geometry.v1.Anchor"> & {

@@ -127,6 +127,22 @@ message SequenceDefinition {
     expression: "!this.can_bulk_complete || size(this.child_task_ids) > 0"
   };
 
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.local_target.process_anchor"
+    message: "a sequence's local_target.anchor must name `<process>`, `<parent>` or an ancestor sequence definition, with frame \"origin\""
+    expression:
+      "!has(this.local_target.anchor) || ("
+      "this.local_target.anchor.frame == 'origin' && ("
+      "this.local_target.anchor.reference in ['<process>', '<parent>'] || "
+      "(this.local_target.anchor.reference.startsWith('sequence_definition-') && this.local_target.anchor.reference != this.id)))"
+  };
+
+  option (buf.validate.message).cel = {
+    id: "sequence_definition.local_target.root_anchor"
+    message: "the root sequence (no parent_sequence_id) can only be anchored to `<process>`"
+    expression: "this.parent_sequence_id != '' || !has(this.local_target.anchor) || this.local_target.anchor.reference == '<process>'"
+  };
+
   // Unique identifier for the sequence definition.
   string id = 1 [(buf.validate.field).string.(validation.v1.sequence_definition_id_component) = true];
 
@@ -157,7 +173,54 @@ message SequenceDefinition {
   // Only one of child_sequence_ids or child_task_ids should be populated.
   repeated string child_task_ids = 9 [(buf.validate.field).repeated.items.string.(validation.v1.task_definition_id_component) = true];
 
-  // Optional local target defining the spatial or logical context for this sequence.
+  // The sequence's frame: a pose in the frame its anchor names
+  // (cobotar/protocol#50). Its child sequences and tasks are placed in this
+  // frame when they name `<parent>`, or name no anchor.
+  //
+  // Process-local anchors, used by sequences and by ProductTarget.local_target,
+  // always with frame "origin":
+  // - `<process>`: the process-run origin, where the root frame of the
+  //   recipe's product sits (see runtime.v1.ProcessRun.frame).
+  // - `<parent>`: the frame of the immediate containing sequence, i.e. the
+  //   parent sequence of a sequence, or the sequence that lists a task in its
+  //   child_task_ids. The root sequence has none.
+  // - a sequence definition ID: the frame of that sequence, which has to be an
+  //   ancestor on this sequence's (or task's) direct line to the root
+  //   sequence. Siblings, descendants, the sequence itself and sequences
+  //   outside the recipe are invalid.
+  // An omitted anchor, or an omitted local_target, means `<parent>`, and
+  // `<process>` for the root sequence. An omitted local_target is the identity
+  // in that frame. Other references, e.g. a product node ID as the frame of an
+  // anchor without a reference, are invalid and refused; they have no defined
+  // meaning.
+  //
+  // Below the process-run origin, positions are in mm and orientations in
+  // the frame of the recipe's product (ProcessRecipe.product_definition_id):
+  // the frame in which its root AssemblyNode.local_pose is given. An assembly
+  // node's pose is relative to its parent node, so a target taken from a
+  // node's pose is relative to the frame of that node's parent: a generator
+  // anchors it to the sequence whose frame is that node's parent's frame, or
+  // composes the poses up to the anchor it names. Clients convert to their
+  // own units and axes once, at the process-run origin, with the axes the
+  // product's model declares. A recipe without a product uses mm,
+  // right-handed with +Z up.
+  //
+  // A pose resolves as: environment (station or cell) -> optional container
+  // instance -> optional slot -> process-run origin (`<process>`) -> root
+  // sequence -> child sequences -> task target, each step applying the next
+  // local_target in the frame its anchor names. The checks that span several
+  // definitions are the recipe's (see ProcessRecipe), with these rule IDs in
+  // service.v1.ValidationViolation.rule_id:
+  // - `process_pose.anchor_not_ancestor`: a sequence ID that isn't an
+  //   ancestor on the direct line, e.g. a sibling, a descendant, a sequence of
+  //   another branch or of another recipe;
+  // - `process_pose.sequence_cycle`: the parent sequences form a cycle;
+  // - `process_pose.parent_mismatch`: parent_sequence_id and the parent's
+  //   child_sequence_ids disagree, or a sequence without parent_sequence_id
+  //   isn't the recipe's root sequence;
+  // - `process_pose.task_owner_missing`: a task that no sequence of the
+  //   recipe lists in child_task_ids, so `<parent>` has no meaning;
+  // - `process_pose.task_owner_ambiguous`: a task that several sequences list.
   geometry.v1.LocalTarget local_target = 10;
 
   // Indicates whether this sequence is optional and may be skipped during execution.

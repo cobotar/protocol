@@ -176,7 +176,55 @@ type SequenceDefinition struct {
 	// Child task references used when this sequence is a leaf execution node.
 	// Only one of child_sequence_ids or child_task_ids should be populated.
 	ChildTaskIds []string `protobuf:"bytes,9,rep,name=child_task_ids,json=childTaskIds,proto3" json:"child_task_ids,omitempty"`
-	// Optional local target defining the spatial or logical context for this sequence.
+	// The sequence's frame: a pose in the frame its anchor names
+	// (cobotar/protocol#50). Its child sequences and tasks are placed in this
+	// frame when they name `<parent>`, or name no anchor.
+	//
+	// Process-local anchors, used by sequences and by ProductTarget.local_target,
+	// always with frame "origin":
+	//   - `<process>`: the process-run origin, where the root frame of the
+	//     recipe's product sits (see runtime.v1.ProcessRun.frame).
+	//   - `<parent>`: the frame of the immediate containing sequence, i.e. the
+	//     parent sequence of a sequence, or the sequence that lists a task in its
+	//     child_task_ids. The root sequence has none.
+	//   - a sequence definition ID: the frame of that sequence, which has to be an
+	//     ancestor on this sequence's (or task's) direct line to the root
+	//     sequence. Siblings, descendants, the sequence itself and sequences
+	//     outside the recipe are invalid.
+	//
+	// An omitted anchor, or an omitted local_target, means `<parent>`, and
+	// `<process>` for the root sequence. An omitted local_target is the identity
+	// in that frame. Other references, e.g. a product node ID as the frame of an
+	// anchor without a reference, are invalid and refused; they have no defined
+	// meaning.
+	//
+	// Below the process-run origin, positions are in mm and orientations in
+	// the frame of the recipe's product (ProcessRecipe.product_definition_id):
+	// the frame in which its root AssemblyNode.local_pose is given. An assembly
+	// node's pose is relative to its parent node, so a target taken from a
+	// node's pose is relative to the frame of that node's parent: a generator
+	// anchors it to the sequence whose frame is that node's parent's frame, or
+	// composes the poses up to the anchor it names. Clients convert to their
+	// own units and axes once, at the process-run origin, with the axes the
+	// product's model declares. A recipe without a product uses mm,
+	// right-handed with +Z up.
+	//
+	// A pose resolves as: environment (station or cell) -> optional container
+	// instance -> optional slot -> process-run origin (`<process>`) -> root
+	// sequence -> child sequences -> task target, each step applying the next
+	// local_target in the frame its anchor names. The checks that span several
+	// definitions are the recipe's (see ProcessRecipe), with these rule IDs in
+	// service.v1.ValidationViolation.rule_id:
+	//   - `process_pose.anchor_not_ancestor`: a sequence ID that isn't an
+	//     ancestor on the direct line, e.g. a sibling, a descendant, a sequence of
+	//     another branch or of another recipe;
+	//   - `process_pose.sequence_cycle`: the parent sequences form a cycle;
+	//   - `process_pose.parent_mismatch`: parent_sequence_id and the parent's
+	//     child_sequence_ids disagree, or a sequence without parent_sequence_id
+	//     isn't the recipe's root sequence;
+	//   - `process_pose.task_owner_missing`: a task that no sequence of the
+	//     recipe lists in child_task_ids, so `<parent>` has no meaning;
+	//   - `process_pose.task_owner_ambiguous`: a task that several sequences list.
 	LocalTarget *v1.LocalTarget `protobuf:"bytes,10,opt,name=local_target,json=localTarget,proto3" json:"local_target,omitempty"`
 	// Indicates whether this sequence is optional and may be skipped during execution.
 	Optional bool `protobuf:"varint,11,opt,name=optional,proto3" json:"optional,omitempty"`
@@ -360,7 +408,7 @@ var File_process_v1_sequence_definition_proto protoreflect.FileDescriptor
 const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	"\n" +
 	"$process/v1/sequence_definition.proto\x12\n" +
-	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\xa9\x0e\n" +
+	"process.v1\x1a\x1bbuf/validate/validate.proto\x1a\x1egeometry/v1/local_target.proto\x1a+validation/v1/predefined_string_rules.proto\x1a#variance/v1/variant_condition.proto\"\xe1\x13\n" +
 	"\x12SequenceDefinition\x12\x19\n" +
 	"\x02id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\xa8\xf2\x04\x01R\x02id\x12\x1d\n" +
 	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x80\xf1\x04\x01R\x04name\x12\x12\n" +
@@ -375,13 +423,15 @@ const file_process_v1_sequence_definition_proto_rawDesc = "" +
 	" \x01(\v2\x18.geometry.v1.LocalTargetR\vlocalTarget\x12\x1a\n" +
 	"\boptional\x18\v \x01(\bR\boptional\x12*\n" +
 	"\x11can_bulk_complete\x18\f \x01(\bR\x0fcanBulkComplete\x12C\n" +
-	"\rapplicability\x18\r \x01(\v2\x1d.variance.v1.VariantConditionR\rapplicability:\xb5\t\xbaH\xb1\t\x1a\xc2\x01\n" +
+	"\rapplicability\x18\r \x01(\v2\x1d.variance.v1.VariantConditionR\rapplicability:\xed\x0e\xbaH\xe9\x0e\x1a\xc2\x01\n" +
 	"&sequence_definition.children_not_mixed\x12Qa sequence must contain either child_sequence_ids or child_task_ids, but not both\x1aE!(size(this.child_sequence_ids) > 0 && size(this.child_task_ids) > 0)\x1a\xcd\x01\n" +
 	":sequence_definition.operator_specified_when_children_exist\x127operator must be specified when a sequence has children\x1aV(size(this.child_sequence_ids) + size(this.child_task_ids) == 0) || this.operator != 0\x1a\xc7\x01\n" +
 	"7sequence_definition.parallel_requires_multiple_children\x124PARALLEL sequences should have at least two children\x1aVthis.operator != 2 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xc9\x01\n" +
 	"8sequence_definition.exclusive_requires_multiple_children\x125EXCLUSIVE sequences should have at least two children\x1aVthis.operator != 3 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xc9\x01\n" +
 	"8sequence_definition.inclusive_requires_multiple_children\x125INCLUSIVE sequences should have at least two children\x1aVthis.operator != 4 || (size(this.child_sequence_ids) + size(this.child_task_ids) >= 2)\x1a\xb7\x01\n" +
-	"8sequence_definition.bulk_complete_requires_task_children\x12Acan_bulk_complete is only valid for sequences with child_task_ids\x1a8!this.can_bulk_complete || size(this.child_task_ids) > 0\"K\n" +
+	"8sequence_definition.bulk_complete_requires_task_children\x12Acan_bulk_complete is only valid for sequences with child_task_ids\x1a8!this.can_bulk_complete || size(this.child_task_ids) > 0\x1a\xbf\x03\n" +
+	"/sequence_definition.local_target.process_anchor\x12za sequence's local_target.anchor must name `<process>`, `<parent>` or an ancestor sequence definition, with frame \"origin\"\x1a\x8f\x02!has(this.local_target.anchor) || (this.local_target.anchor.frame == 'origin' && (this.local_target.anchor.reference in ['<process>', '<parent>'] || (this.local_target.anchor.reference.startsWith('sequence_definition-') && this.local_target.anchor.reference != this.id)))\x1a\xf3\x01\n" +
+	",sequence_definition.local_target.root_anchor\x12Mthe root sequence (no parent_sequence_id) can only be anchored to `<process>`\x1atthis.parent_sequence_id != '' || !has(this.local_target.anchor) || this.local_target.anchor.reference == '<process>'\"K\n" +
 	"\x13SequenceDefinitions\x124\n" +
 	"\x05items\x18\x01 \x03(\v2\x1e.process.v1.SequenceDefinitionR\x05items*\xb6\x01\n" +
 	"\x10SequenceOperator\x12!\n" +

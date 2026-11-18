@@ -21,6 +21,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// An anchor names a frame: a reference (the thing) and a frame of it.
+// References in angle brackets are reserved tokens: `<environment>` is the
+// station or cell a runtime entity belongs to, and in a process recipe
+// `<process>` and `<parent>` are process-local frames (cobotar/protocol#50, see
+// process.v1.SequenceDefinition.local_target).
 type Anchor struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Reference point towards an object or a thing, e.g. the environment, a robot, the user, ...

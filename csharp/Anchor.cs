@@ -41,6 +41,13 @@ namespace Messages.Geometry.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// An anchor names a frame: a reference (the thing) and a frame of it.
+  /// References in angle brackets are reserved tokens: `&lt;environment>` is the
+  /// station or cell a runtime entity belongs to, and in a process recipe
+  /// `&lt;process>` and `&lt;parent>` are process-local frames (cobotar/protocol#50, see
+  /// process.v1.SequenceDefinition.local_target).
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Anchor : pb::IMessage<Anchor>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

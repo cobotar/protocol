@@ -142,15 +142,27 @@ func (x *RunParameter) GetValue() string {
 // the run is created. Runtime conditions may subsequently change, causing
 // individual tasks to be reassigned, blocked, or suspended.
 type ProcessRun struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name              string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Icon              string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
-	ProcessRecipeId   string                 `protobuf:"bytes,4,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
-	OrderId           string                 `protobuf:"bytes,5,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
-	StationId         string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
-	CellId            string                 `protobuf:"bytes,7,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
-	LineId            string                 `protobuf:"bytes,8,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Icon            string                 `protobuf:"bytes,3,opt,name=icon,proto3" json:"icon,omitempty"`
+	ProcessRecipeId string                 `protobuf:"bytes,4,opt,name=process_recipe_id,json=processRecipeId,proto3" json:"process_recipe_id,omitempty"`
+	OrderId         string                 `protobuf:"bytes,5,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	StationId       string                 `protobuf:"bytes,6,opt,name=station_id,json=stationId,proto3" json:"station_id,omitempty"`
+	CellId          string                 `protobuf:"bytes,7,opt,name=cell_id,json=cellId,proto3" json:"cell_id,omitempty"`
+	LineId          string                 `protobuf:"bytes,8,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty"`
+	// The process-run origin (`<process>` in the recipe's local targets,
+	// cobotar/protocol#50): where the root frame of the recipe's product sits.
+	//   - Omitted: the origin of the run's environment, its station or else its
+	//     cell (a run without a fixture).
+	//   - Anchored to `<environment>` (frame "origin"), or without an anchor: a
+	//     pose relative to that origin, in the units and axes of station and cell
+	//     placements.
+	//   - Anchored to a container instance, with frame "origin" or one of its
+	//     slot IDs: a pose relative to the container's origin or to that slot, in
+	//     mm in the frame of the container's model (as
+	//     resources.v1.ContainerSlotDefinition.pose). A slot's frame is where the
+	//     product it holds sits, so the pose is usually the identity.
 	Frame             *v1.LocalizedPose      `protobuf:"bytes,9,opt,name=frame,proto3" json:"frame,omitempty"`
 	RootSequenceRunId string                 `protobuf:"bytes,10,opt,name=root_sequence_run_id,json=rootSequenceRunId,proto3" json:"root_sequence_run_id,omitempty"`
 	SequenceRunIds    []string               `protobuf:"bytes,11,rep,name=sequence_run_ids,json=sequenceRunIds,proto3" json:"sequence_run_ids,omitempty"`
@@ -418,7 +430,7 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"runtime.v1\x1a\x1bbuf/validate/validate.proto\x1a\x16geometry/v1/pose.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a!runtime/v1/actor_assignment.proto\x1a+validation/v1/predefined_string_rules.proto\x1a'variance/v1/variant_configuration.proto\"6\n" +
 	"\fRunParameter\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xce\t\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xa3\r\n" +
 	"\n" +
 	"ProcessRun\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -450,7 +462,8 @@ const file_runtime_v1_process_run_proto_rawDesc = "" +
 	"\x1enamed_variant_configuration_id\x18\x16 \x01(\tR\x1bnamedVariantConfigurationId\x1aJ\n" +
 	"\x1cPartDefinitionRevisionsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01\";\n" +
+	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01:\xd2\x03\xbaH\xce\x03\x1a\xcb\x03\n" +
+	"\x18process_run.frame.anchor\x12\x8d\x01a process run's frame is anchored to `<environment>` (frame \"origin\") or to a container instance (frame \"origin\" or a slot ID), or not at all\x1a\x9e\x02!has(this.frame.anchor) || (this.frame.anchor.reference == '' && this.frame.anchor.frame == '') || (this.frame.anchor.reference == '<environment>' && this.frame.anchor.frame == 'origin') || (this.frame.anchor.reference.startsWith('container_instance-') && this.frame.anchor.frame != '')\";\n" +
 	"\vProcessRuns\x12,\n" +
 	"\x05items\x18\x01 \x03(\v2\x16.runtime.v1.ProcessRunR\x05items*\xcd\x01\n" +
 	"\x0fProcessRunState\x12!\n" +

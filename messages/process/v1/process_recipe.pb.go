@@ -155,6 +155,11 @@ func (x *RecipeApplicability) GetExclude() []*v1.VariantCondition {
 // - What skills are required
 // - What actor constrains exist
 // - What validation is needed
+//
+// Its sequences and tasks form a tree under root_sequence_id, along which
+// their poses resolve from the process-run origin (cobotar/protocol#50, see
+// SequenceDefinition.local_target). The backend checks the tree, with the
+// `process_pose.*` rule IDs listed there, before it accepts a change.
 type ProcessRecipe struct {
 	state                           protoimpl.MessageState   `protogen:"open.v1"`
 	Id                              string                   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
