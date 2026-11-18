@@ -1705,8 +1705,8 @@ to execute or render a built-in definition.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| require_agent | [bool](#bool) |  |  |
-| require_frame | [bool](#bool) |  |  |
+| require_agent | [bool](#bool) |  | The definition acts on, or shows, a robot: an instance needs a robot (its ROBOT property bound to a robot or a robot slot) when it&#39;s added. Feedback about tasks, parts, tools and places doesn&#39;t, even when a robot does the task (cobotar/Authoring#9). |
+| require_frame | [bool](#bool) |  | An instance needs an anchor, the frame its location is relative to, when it&#39;s added. A definition that places itself at its subject (a part, a tool, a task&#39;s target) can do without one. |
 | consumers_required | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs the action expects to receive |
 | consumers_optional | [ExchangeType](#ar-v1-ExchangeType) | repeated | Inputs that will enhance the action, but are not needed to function |
 | required_handlers | [HandlerRequirement](#ar-v1-HandlerRequirement) | repeated | Events that MUST have at least one handler somewhere else in the system. |
@@ -4132,17 +4132,17 @@ Custom training video       MANUAL_ONLY
 | ---- | ------ | ----------- |
 | FEEDBACK_TYPE_UNSPECIFIED | 0 |  |
 | FEEDBACK_TYPE_TARGET_GHOST | 10 | Shows a ghost/translucent preview of the final placement. |
-| FEEDBACK_TYPE_TARGET_HIGHLIGHT | 11 | Highlights the precise interaction point (e.g. hole, connector). |
+| FEEDBACK_TYPE_TARGET_HIGHLIGHT | 11 | Highlights the precise interaction point (e.g. hole, connector) of the task run in `task_run_id`, at its target. It needs a task run: without one it shows nothing (cobotar/Authoring#9). |
 | FEEDBACK_TYPE_SNAP_GUIDES | 12 | Shows insertion direction, rotation, or alignment guides. |
 | FEEDBACK_TYPE_CONTACT_SURFACE_HIGHLIGHT | 13 | Highlights surfaces that should meet or align. |
 | FEEDBACK_TYPE_TOLERANCE_ZONE | 14 | Shows acceptable placement zone / tolerance envelope. |
-| FEEDBACK_TYPE_EXPLODED_VIEW | 15 | Shows an exploded assembly view (optionally animated). |
-| FEEDBACK_TYPE_PART_HIGHLIGHT | 30 | Highlights the part used in the current task. |
-| FEEDBACK_TYPE_TOOL_HIGHLIGHT | 31 | Highlights the tool used in the current task. |
+| FEEDBACK_TYPE_EXPLODED_VIEW | 15 | Shows an exploded assembly view (optionally animated) of the sequence run in `sequence_run_id`. |
+| FEEDBACK_TYPE_PART_HIGHLIGHT | 30 | Highlights a part instance where it is. It&#39;s bound to the part instance in `part_instance_id`, or to the task run in `task_run_id`, which takes precedence: then it highlights the first of the task run&#39;s candidate part instances (TaskRuntimeBinding.candidate_part_instance_ids) that has a known location (cobotar/Authoring#9). |
+| FEEDBACK_TYPE_TOOL_HIGHLIGHT | 31 | Highlights a tool instance where it is. It&#39;s bound to the tool instance in `tool_instance_id`, or to the task run in `task_run_id`, which takes precedence: then it highlights the first, best tool of the task run&#39;s tool provision (TaskRuntimeBinding.tool), and nothing when the actor needs no tool (cobotar/Authoring#9). |
 | FEEDBACK_TYPE_CONSUMABLE_INDICATOR | 32 | Shows consumable level or remaining amount. |
-| FEEDBACK_TYPE_INSTRUCTION | 50 | Shows the current task instruction. |
-| FEEDBACK_TYPE_CHECKLIST | 51 | Shows current/previous/upcoming tasks. |
-| FEEDBACK_TYPE_PROGRESS_PANEL | 52 | Shows broader process/sequence overview. |
+| FEEDBACK_TYPE_INSTRUCTION | 50 | Shows the instruction of the task run in `task_run_id`. |
+| FEEDBACK_TYPE_CHECKLIST | 51 | Shows the task runs of the process run in `process_run_id`: current, previous and upcoming. It selects the task run in `current_task_run_id` until the operator picks another, and publishes the selection in `selected_task_run_id`. |
+| FEEDBACK_TYPE_PROGRESS_PANEL | 52 | Shows an overview of the process run in `process_run_id`. Its `progress` (0 to 1) is resolved from the run: the share of its task runs that are done (cobotar/Authoring#9). |
 | FEEDBACK_TYPE_DEPENDENCY_GRAPH | 53 | Shows task dependencies or branching structure. |
 | FEEDBACK_TYPE_TIME_ESTIMATE | 54 | Shows task/sequence timing estimates. |
 | FEEDBACK_TYPE_RULER | 70 | Shows measurement guides (length, gap, angle, etc.). |
@@ -4582,11 +4582,11 @@ EXPERIMENTAL.
 | FUNCTION_TYPE_PROXIMITY | 10 | Evaluates whether two spatial entities are within a configured distance. |
 | FUNCTION_TYPE_STATIONARY | 11 | Evaluates whether a spatial entity is stationary. |
 | FUNCTION_TYPE_TIMER | 21 | Produces an active output for a configured duration after being triggered. A rising edge of `trigger` makes `active` true for `duration`; a new rising edge while it&#39;s active restarts the duration. |
-| FUNCTION_TYPE_DELAY | 22 | Propagates a boolean input after a configured delay: a transport delay. Every transition of `input`, rising and falling, reaches `output` `delay` after it happened, in order, so a pulse shorter than the delay is kept rather than swallowed (Debounce filters short pulses). A changed `delay` applies to transitions after the change. `pending` is true while a transition is waiting to reach `output`. |
+| FUNCTION_TYPE_DELAY | 22 | Propagates a boolean input after a configured delay: a transport delay. Every transition of `input`, rising and falling, reaches `output` `delay` after it happened, so `output` is `input` as it was `delay` ago, and a pulse shorter than the delay is kept rather than swallowed (Debounce filters short pulses). A changed `delay` re-times the waiting transitions too: each is due when it happened plus the new delay, and those already past that arrive at once. Due times follow the order the transitions happened in, so they arrive in that order. `pending` is true while a transition is waiting to reach `output`. |
 | FUNCTION_TYPE_TIMEOUT | 23 | Indicates that an expected event did not occur within a configured duration. A rising edge of `trigger` starts a window of `duration`, or restarts a running one, and clears `timed_out`. The window is satisfied, and ends, when `expected_event` is true at any moment in it, including at its start. `waiting` is true while the window runs. If it ends unsatisfied, `timed_out` becomes true and stays true until `expected_event` becomes true (the late event) or a new trigger starts another window. |
 | FUNCTION_TYPE_DEBOUNCE | 24 | Changes its output only after the input has remained stable for a configured duration. A change of `input` reaches `output` once `input` has kept the new value for `duration`; a change back before then cancels it. One duration applies to both edges. `pending` is true while `input` differs from `output`. |
 | FUNCTION_TYPE_ELAPSED_TIME | 25 | A stopwatch: reports the time accumulated while its run input is true. `elapsed_time` (milliseconds) grows while `run` is true and keeps its value while `run` is false, so a later true resumes it. A rising edge of `reset` sets it to zero, and it keeps running if `run` is true. `running` follows `run`. |
-| FUNCTION_TYPE_SCHEDULE | 26 | Indicates whether the current time falls within a weekly schedule, in the device&#39;s local time. A window starts at `start_time` (HH:MM, 24-hour) on each of the selected `days` and ends at `end_time`; an end before the start ends on the next day, and an end equal to the start makes the window 24 hours. `active` is true while `enabled` and inside a window. `next_transition` is the local time of the next change of `active`, as an ISO 8601 date-time with its UTC offset, or empty when there&#39;s none (disabled, no days, or an invalid time). |
+| FUNCTION_TYPE_SCHEDULE | 26 | Indicates whether the current time falls within a weekly schedule, in the device&#39;s local time. A window starts at `start_time` on each of the selected `days` and ends at `end_time`, the start included and the end not. Times are HH:MM, two-digit hours and minutes from 00:00 to 23:59. An end before the start ends on the next day, and an end equal to the start makes the window 24 hours. `active` is true while `enabled` and inside a window. `next_transition` is the local time of the next change of `active`, as an ISO 8601 date-time with its UTC offset, or empty when there&#39;s none (disabled, no days, or an invalid time). |
 | FUNCTION_TYPE_PART_FOR_TASK | 40 | Resolves the part associated with a task. |
 | FUNCTION_TYPE_IS_PART_OF_TYPE | 50 | Evaluates whether a part matches a specified part type. |
 | FUNCTION_TYPE_CLOSEST_WORKABLE_TASK | 51 | Resolves the closest task that is currently workable. |

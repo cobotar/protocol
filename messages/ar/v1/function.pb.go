@@ -35,8 +35,10 @@ const (
 	// `active` true for `duration`; a new rising edge while it's active restarts the duration.
 	FunctionType_FUNCTION_TYPE_TIMER FunctionType = 21
 	// Propagates a boolean input after a configured delay: a transport delay. Every transition of `input`, rising and
-	// falling, reaches `output` `delay` after it happened, in order, so a pulse shorter than the delay is kept rather
-	// than swallowed (Debounce filters short pulses). A changed `delay` applies to transitions after the change.
+	// falling, reaches `output` `delay` after it happened, so `output` is `input` as it was `delay` ago, and a pulse
+	// shorter than the delay is kept rather than swallowed (Debounce filters short pulses). A changed `delay` re-times
+	// the waiting transitions too: each is due when it happened plus the new delay, and those already past that arrive
+	// at once. Due times follow the order the transitions happened in, so they arrive in that order.
 	// `pending` is true while a transition is waiting to reach `output`.
 	FunctionType_FUNCTION_TYPE_DELAY FunctionType = 22
 	// Indicates that an expected event did not occur within a configured duration. A rising edge of `trigger` starts
@@ -54,10 +56,11 @@ const (
 	// sets it to zero, and it keeps running if `run` is true. `running` follows `run`.
 	FunctionType_FUNCTION_TYPE_ELAPSED_TIME FunctionType = 25
 	// Indicates whether the current time falls within a weekly schedule, in the device's local time. A window starts
-	// at `start_time` (HH:MM, 24-hour) on each of the selected `days` and ends at `end_time`; an end before the start
-	// ends on the next day, and an end equal to the start makes the window 24 hours. `active` is true while
-	// `enabled` and inside a window. `next_transition` is the local time of the next change of `active`, as an ISO 8601
-	// date-time with its UTC offset, or empty when there's none (disabled, no days, or an invalid time).
+	// at `start_time` on each of the selected `days` and ends at `end_time`, the start included and the end not. Times
+	// are HH:MM, two-digit hours and minutes from 00:00 to 23:59. An end before the start ends on the next day, and an
+	// end equal to the start makes the window 24 hours. `active` is true while `enabled` and inside a window.
+	// `next_transition` is the local time of the next change of `active`, as an ISO 8601 date-time with its UTC
+	// offset, or empty when there's none (disabled, no days, or an invalid time).
 	FunctionType_FUNCTION_TYPE_SCHEDULE FunctionType = 26
 	// Resolves the part associated with a task.
 	FunctionType_FUNCTION_TYPE_PART_FOR_TASK FunctionType = 40

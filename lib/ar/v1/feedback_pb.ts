@@ -256,7 +256,8 @@ export enum FeedbackType {
   TARGET_GHOST = 10,
 
   /**
-   * Highlights the precise interaction point (e.g. hole, connector).
+   * Highlights the precise interaction point (e.g. hole, connector) of the task run in `task_run_id`, at its
+   * target. It needs a task run: without one it shows nothing (cobotar/Authoring#9).
    *
    * @generated from enum value: FEEDBACK_TYPE_TARGET_HIGHLIGHT = 11;
    */
@@ -284,21 +285,25 @@ export enum FeedbackType {
   TOLERANCE_ZONE = 14,
 
   /**
-   * Shows an exploded assembly view (optionally animated).
+   * Shows an exploded assembly view (optionally animated) of the sequence run in `sequence_run_id`.
    *
    * @generated from enum value: FEEDBACK_TYPE_EXPLODED_VIEW = 15;
    */
   EXPLODED_VIEW = 15,
 
   /**
-   * Highlights the part used in the current task.
+   * Highlights a part instance where it is. It's bound to the part instance in `part_instance_id`, or to the task
+   * run in `task_run_id`, which takes precedence: then it highlights the first of the task run's candidate part
+   * instances (TaskRuntimeBinding.candidate_part_instance_ids) that has a known location (cobotar/Authoring#9).
    *
    * @generated from enum value: FEEDBACK_TYPE_PART_HIGHLIGHT = 30;
    */
   PART_HIGHLIGHT = 30,
 
   /**
-   * Highlights the tool used in the current task.
+   * Highlights a tool instance where it is. It's bound to the tool instance in `tool_instance_id`, or to the task
+   * run in `task_run_id`, which takes precedence: then it highlights the first, best tool of the task run's tool
+   * provision (TaskRuntimeBinding.tool), and nothing when the actor needs no tool (cobotar/Authoring#9).
    *
    * @generated from enum value: FEEDBACK_TYPE_TOOL_HIGHLIGHT = 31;
    */
@@ -312,21 +317,24 @@ export enum FeedbackType {
   CONSUMABLE_INDICATOR = 32,
 
   /**
-   * Shows the current task instruction.
+   * Shows the instruction of the task run in `task_run_id`.
    *
    * @generated from enum value: FEEDBACK_TYPE_INSTRUCTION = 50;
    */
   INSTRUCTION = 50,
 
   /**
-   * Shows current/previous/upcoming tasks.
+   * Shows the task runs of the process run in `process_run_id`: current, previous and upcoming. It selects the task
+   * run in `current_task_run_id` until the operator picks another, and publishes the selection in
+   * `selected_task_run_id`.
    *
    * @generated from enum value: FEEDBACK_TYPE_CHECKLIST = 51;
    */
   CHECKLIST = 51,
 
   /**
-   * Shows broader process/sequence overview.
+   * Shows an overview of the process run in `process_run_id`. Its `progress` (0 to 1) is resolved from the run: the
+   * share of its task runs that are done (cobotar/Authoring#9).
    *
    * @generated from enum value: FEEDBACK_TYPE_PROGRESS_PANEL = 52;
    */

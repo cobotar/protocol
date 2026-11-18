@@ -9,7 +9,12 @@ option go_package = "github.com/cobotar/protocol/v2/messages/ar/v1";
 // ExecutionContract declares the runtime dependencies and exchanges required
 // to execute or render a built-in definition.
 message ExecutionContract {
+  // The definition acts on, or shows, a robot: an instance needs a robot (its ROBOT property bound to a robot or
+  // a robot slot) when it's added. Feedback about tasks, parts, tools and places doesn't, even when a robot does the
+  // task (cobotar/Authoring#9).
   bool require_agent = 1;
+  // An instance needs an anchor, the frame its location is relative to, when it's added. A definition that places
+  // itself at its subject (a part, a tool, a task's target) can do without one.
   bool require_frame = 2;
   repeated ExchangeType consumers_required = 3; // Inputs the action expects to receive
   repeated ExchangeType consumers_optional = 4; // Inputs that will enhance the action, but are not needed to function

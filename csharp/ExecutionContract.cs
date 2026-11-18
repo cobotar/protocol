@@ -104,6 +104,11 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "require_agent" field.</summary>
     public const int RequireAgentFieldNumber = 1;
     private bool requireAgent_;
+    /// <summary>
+    /// The definition acts on, or shows, a robot: an instance needs a robot (its ROBOT property bound to a robot or
+    /// a robot slot) when it's added. Feedback about tasks, parts, tools and places doesn't, even when a robot does the
+    /// task (cobotar/Authoring#9).
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool RequireAgent {
@@ -116,6 +121,10 @@ namespace Messages.AR.V1 {
     /// <summary>Field number for the "require_frame" field.</summary>
     public const int RequireFrameFieldNumber = 2;
     private bool requireFrame_;
+    /// <summary>
+    /// An instance needs an anchor, the frame its location is relative to, when it's added. A definition that places
+    /// itself at its subject (a part, a tool, a task's target) can do without one.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool RequireFrame {

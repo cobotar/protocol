@@ -24,13 +24,18 @@ const (
 // ExecutionContract declares the runtime dependencies and exchanges required
 // to execute or render a built-in definition.
 type ExecutionContract struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	RequireAgent      bool                   `protobuf:"varint,1,opt,name=require_agent,json=requireAgent,proto3" json:"require_agent,omitempty"`
-	RequireFrame      bool                   `protobuf:"varint,2,opt,name=require_frame,json=requireFrame,proto3" json:"require_frame,omitempty"`
-	ConsumersRequired []*ExchangeType        `protobuf:"bytes,3,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"` // Inputs the action expects to receive
-	ConsumersOptional []*ExchangeType        `protobuf:"bytes,4,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the action, but are not needed to function
-	RequiredHandlers  []*HandlerRequirement  `protobuf:"bytes,5,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system.
-	Emits             []*ExchangeType        `protobuf:"bytes,6,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // Outputs the action publishes
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The definition acts on, or shows, a robot: an instance needs a robot (its ROBOT property bound to a robot or
+	// a robot slot) when it's added. Feedback about tasks, parts, tools and places doesn't, even when a robot does the
+	// task (cobotar/Authoring#9).
+	RequireAgent bool `protobuf:"varint,1,opt,name=require_agent,json=requireAgent,proto3" json:"require_agent,omitempty"`
+	// An instance needs an anchor, the frame its location is relative to, when it's added. A definition that places
+	// itself at its subject (a part, a tool, a task's target) can do without one.
+	RequireFrame      bool                  `protobuf:"varint,2,opt,name=require_frame,json=requireFrame,proto3" json:"require_frame,omitempty"`
+	ConsumersRequired []*ExchangeType       `protobuf:"bytes,3,rep,name=consumers_required,json=consumersRequired,proto3" json:"consumers_required,omitempty"` // Inputs the action expects to receive
+	ConsumersOptional []*ExchangeType       `protobuf:"bytes,4,rep,name=consumers_optional,json=consumersOptional,proto3" json:"consumers_optional,omitempty"` // Inputs that will enhance the action, but are not needed to function
+	RequiredHandlers  []*HandlerRequirement `protobuf:"bytes,5,rep,name=required_handlers,json=requiredHandlers,proto3" json:"required_handlers,omitempty"`    // Events that MUST have at least one handler somewhere else in the system.
+	Emits             []*ExchangeType       `protobuf:"bytes,6,rep,name=emits,proto3" json:"emits,omitempty"`                                                  // Outputs the action publishes
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
