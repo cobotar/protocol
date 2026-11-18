@@ -92,27 +92,43 @@ namespace Messages.AR.V1 {
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_STATIONARY")] Stationary = 11,
     /// <summary>
-    /// Produces an active output for a configured duration after being triggered.
+    /// Produces an active output for a configured duration after being triggered. A rising edge of `trigger` makes
+    /// `active` true for `duration`; a new rising edge while it's active restarts the duration.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_TIMER")] Timer = 21,
     /// <summary>
-    /// Propagates an input or trigger after a configured delay.
+    /// Propagates a boolean input after a configured delay: a transport delay. Every transition of `input`, rising and
+    /// falling, reaches `output` `delay` after it happened, in order, so a pulse shorter than the delay is kept rather
+    /// than swallowed (Debounce filters short pulses). A changed `delay` applies to transitions after the change.
+    /// `pending` is true while a transition is waiting to reach `output`.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_DELAY")] Delay = 22,
     /// <summary>
-    /// Indicates that an expected input or event did not occur within a configured duration.
+    /// Indicates that an expected event did not occur within a configured duration. A rising edge of `trigger` starts
+    /// a window of `duration`, or restarts a running one, and clears `timed_out`. The window is satisfied, and ends,
+    /// when `expected_event` is true at any moment in it, including at its start. `waiting` is true while the window
+    /// runs. If it ends unsatisfied, `timed_out` becomes true and stays true until `expected_event` becomes true (the
+    /// late event) or a new trigger starts another window.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_TIMEOUT")] Timeout = 23,
     /// <summary>
-    /// Changes its output only after the input has remained stable for a configured duration.
+    /// Changes its output only after the input has remained stable for a configured duration. A change of `input`
+    /// reaches `output` once `input` has kept the new value for `duration`; a change back before then cancels it. One
+    /// duration applies to both edges. `pending` is true while `input` differs from `output`.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_DEBOUNCE")] Debounce = 24,
     /// <summary>
-    /// Reports the time elapsed since it was triggered or reset.
+    /// A stopwatch: reports the time accumulated while its run input is true. `elapsed_time` (milliseconds) grows while
+    /// `run` is true and keeps its value while `run` is false, so a later true resumes it. A rising edge of `reset`
+    /// sets it to zero, and it keeps running if `run` is true. `running` follows `run`.
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_ELAPSED_TIME")] ElapsedTime = 25,
     /// <summary>
-    /// Indicates whether the current time falls within a configured absolute or recurring schedule.
+    /// Indicates whether the current time falls within a weekly schedule, in the device's local time. A window starts
+    /// at `start_time` (HH:MM, 24-hour) on each of the selected `days` and ends at `end_time`; an end before the start
+    /// ends on the next day, and an end equal to the start makes the window 24 hours. `active` is true while
+    /// `enabled` and inside a window. `next_transition` is the local time of the next change of `active`, as an ISO 8601
+    /// date-time with its UTC offset, or empty when there's none (disabled, no days, or an invalid time).
     /// </summary>
     [pbr::OriginalName("FUNCTION_TYPE_SCHEDULE")] Schedule = 26,
     /// <summary>
